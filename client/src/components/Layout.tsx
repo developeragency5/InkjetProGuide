@@ -11,7 +11,7 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -21,6 +21,12 @@ export function Layout({ children }: LayoutProps) {
   });
   const cartCount = cartData?.items?.length || 0;
 
+  // Fetch wishlist count
+  const { data: wishlistData } = useQuery({
+    queryKey: ["/api/wishlist"],
+  });
+  const wishlistCount = wishlistData?.items?.length || 0;
+
   // Fetch current user
   const { data: currentUser } = useQuery({
     queryKey: ["/api/user"],
@@ -28,13 +34,21 @@ export function Layout({ children }: LayoutProps) {
   });
   const isLoggedIn = !!currentUser;
 
-  const categories = [
-    { name: "All Printers", path: "/products" },
-    { name: "Office Printers", path: "/products?category=office" },
-    { name: "Home Printers", path: "/products?category=home" },
-    { name: "Portable", path: "/products?category=portable" },
-    { name: "Accessories", path: "/products?category=accessories" },
+  const navigationLinks = [
+    { name: "Home", path: "/" },
+    { name: "Shop Printers", path: "/products" },
+    { name: "Printer Guides", path: "/guides" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
+
+  const handleSearch = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (searchQuery.trim()) {
+      setLocation(`/products?search=${encodeURIComponent(searchQuery)}`);
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -51,7 +65,7 @@ export function Layout({ children }: LayoutProps) {
               </Link>
             ) : (
               <Link href="/auth">
-                <span className="hover-elevate px-2 py-1 rounded-md cursor-pointer" data-testid="link-signin">
+                <span className="hover-elevate px-2 py-1 rounded-md cursor-pointer" data-testid="link-signin-top">
                   Sign In / Sign Up
                 </span>
               </Link>
@@ -60,59 +74,67 @@ export function Layout({ children }: LayoutProps) {
         </div>
       </div>
 
-      {/* Main Header */}
-      <header className="sticky top-0 z-50 bg-background border-b">
+      {/* Main Header - Sticky */}
+      <header className="sticky top-0 z-50 bg-background border-b shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <Link href="/">
               <span className="flex items-center gap-2 cursor-pointer" data-testid="link-home">
-                <h1 className="text-2xl font-bold text-foreground tracking-tight">
+                <h1 className="text-2xl font-bold text-primary tracking-tight">
                   InjetProGuide
                 </h1>
               </span>
             </Link>
 
             {/* Search Bar - Desktop */}
-            <div className="hidden md:flex flex-1 max-w-xl">
-              <div className="relative w-full">
+            <div className="hidden lg:flex flex-1 max-w-xl">
+              <form onSubmit={handleSearch} className="relative w-full">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <Input
                   type="search"
                   placeholder="Search for HP printers..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && searchQuery.trim()) {
-                      window.location.href = `/products?search=${encodeURIComponent(searchQuery)}`;
-                    }
-                  }}
                   className="pl-10 pr-4"
                   data-testid="input-search"
                 />
-              </div>
+              </form>
             </div>
+
+            {/* Navigation Menu - Desktop */}
+            <nav className="hidden lg:flex items-center gap-1">
+              {navigationLinks.map((link) => (
+                <Link key={link.path} href={link.path}>
+                  <span
+                    className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors cursor-pointer inline-block ${
+                      location === link.path
+                        ? "text-primary bg-primary/5"
+                        : "text-foreground"
+                    }`}
+                    data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {link.name}
+                  </span>
+                </Link>
+              ))}
+            </nav>
 
             {/* Icons */}
             <div className="flex items-center gap-2">
-              <Button
-                size="icon"
-                variant="ghost"
-                className="hidden md:flex"
-                onClick={() => {
-                  const input = document.querySelector('[data-testid="input-search"]') as HTMLInputElement;
-                  input?.focus();
-                }}
-                data-testid="button-search"
-              >
-                <Search className="w-5 h-5" />
-              </Button>
-              
               <Link href="/wishlist">
                 <span data-testid="button-wishlist">
-                  <Button size="icon" variant="ghost" asChild>
+                  <Button size="icon" variant="ghost" className="relative" asChild>
                     <span>
                       <Heart className="w-5 h-5" />
+                      {wishlistCount > 0 && (
+                        <Badge 
+                          className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
+                          data-testid="badge-wishlist-count"
+                        >
+                          {wishlistCount}
+                        </Badge>
+                      )}
                     </span>
                   </Button>
                 </span>
@@ -148,7 +170,7 @@ export function Layout({ children }: LayoutProps) {
                 </Link>
               ) : (
                 <Link href="/auth">
-                  <Button size="sm" variant="default" data-testid="button-signin">
+                  <Button size="sm" variant="default" className="hidden md:flex" data-testid="button-signin">
                     Sign In
                   </Button>
                 </Link>
@@ -157,7 +179,7 @@ export function Layout({ children }: LayoutProps) {
               <Button
                 size="icon"
                 variant="ghost"
-                className="md:hidden"
+                className="lg:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 data-testid="button-menu"
               >
@@ -166,73 +188,59 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
-          {/* Search Bar - Mobile */}
-          <div className="md:hidden mt-3">
-            <div className="relative">
+          {/* Search Bar - Mobile/Tablet */}
+          <div className="lg:hidden mt-3">
+            <form onSubmit={handleSearch} className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Search for HP printers..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && searchQuery.trim()) {
-                    window.location.href = `/products?search=${encodeURIComponent(searchQuery)}`;
-                  }
-                }}
                 className="pl-9 pr-4 text-sm"
                 data-testid="input-search-mobile"
               />
-            </div>
+            </form>
           </div>
         </div>
 
-        {/* Category Menu - Desktop */}
-        <nav className="hidden md:block border-t">
-          <div className="max-w-7xl mx-auto px-4">
-            <ul className="flex items-center gap-8 py-3">
-              {categories.map((category) => (
-                <li key={category.path}>
-                  <Link href={category.path}>
-                    <span
-                      className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors cursor-pointer inline-block ${
-                        location === category.path
-                          ? "text-primary"
-                          : "text-foreground"
-                      }`}
-                      data-testid={`link-category-${category.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    >
-                      {category.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
-
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t bg-background">
-            <ul className="py-2">
-              {categories.map((category) => (
-                <li key={category.path}>
-                  <Link href={category.path}>
-                    <span
-                      className={`block px-4 py-3 text-sm font-medium hover-elevate cursor-pointer ${
-                        location === category.path
-                          ? "text-primary bg-accent"
-                          : "text-foreground"
-                      }`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      data-testid={`link-mobile-category-${category.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    >
-                      {category.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <nav className="lg:hidden border-t bg-background">
+            <div className="max-w-7xl mx-auto px-4 py-4">
+              <ul className="space-y-2">
+                {navigationLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link href={link.path}>
+                      <span
+                        className={`block px-4 py-3 text-sm font-medium hover-elevate rounded-md cursor-pointer ${
+                          location === link.path
+                            ? "text-primary bg-primary/5"
+                            : "text-foreground"
+                        }`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        data-testid={`link-mobile-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                      >
+                        {link.name}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+                {!isLoggedIn && (
+                  <li>
+                    <Link href="/auth">
+                      <Button 
+                        className="w-full" 
+                        onClick={() => setMobileMenuOpen(false)}
+                        data-testid="button-signin-mobile"
+                      >
+                        Sign In / Sign Up
+                      </Button>
+                    </Link>
+                  </li>
+                )}
+              </ul>
+            </div>
           </nav>
         )}
       </header>
@@ -242,56 +250,28 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Footer */}
       <footer className="bg-card border-t mt-auto">
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            {/* About */}
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
             <div>
-              <h3 className="font-semibold text-lg mb-4">About InjetProGuide</h3>
+              <h3 className="font-semibold text-lg mb-4">InjetProGuide</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Your trusted source for premium HP inkjet printers. We offer the best selection and prices in the USA.
+                Your trusted source for HP inkjet printers with expert guidance, 
+                setup instructions, and maintenance tips.
               </p>
               <p className="text-sm text-muted-foreground">
-                📧 support@injetproguide.com
-                <br />
-                📞 1-800-PRINTER
+                © 2024 InjetProGuide. All rights reserved.
               </p>
             </div>
 
-            {/* Customer Service */}
+            {/* Shop */}
             <div>
-              <h3 className="font-semibold text-lg mb-4">Customer Service</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md">
-                    Shipping Information
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md">
-                    Returns & Exchanges
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md">
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md">
-                    Contact Support
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+              <h3 className="font-semibold text-lg mb-4">Shop</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/products">
                     <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      All Products
+                      All Printers
                     </span>
                   </Link>
                 </li>
@@ -310,8 +290,41 @@ export function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/products?category=portable">
+                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                      Portable Printers
+                    </span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Customer Service */}
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Customer Service</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/contact">
+                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                      Contact Us
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/guides">
+                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                      Printer Guides
+                    </span>
+                  </Link>
+                </li>
+                <li>
                   <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                    Special Deals
+                    Shipping Information
+                  </span>
+                </li>
+                <li>
+                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    Returns & Warranty
                   </span>
                 </li>
               </ul>
@@ -321,36 +334,31 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="font-semibold text-lg mb-4">Newsletter</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Subscribe for exclusive deals and new product alerts!
+                Get exclusive deals and expert printing tips delivered to your inbox.
               </p>
               <div className="flex gap-2">
-                <Input
-                  type="email"
-                  placeholder="Your email"
+                <Input 
+                  type="email" 
+                  placeholder="Your email" 
                   className="text-sm"
-                  data-testid="input-newsletter"
+                  data-testid="input-newsletter-footer"
                 />
-                <Button size="sm" data-testid="button-subscribe">
+                <Button size="sm" data-testid="button-subscribe-footer">
                   Subscribe
                 </Button>
               </div>
             </div>
           </div>
 
-          {/* Bottom Bar */}
-          <div className="border-t pt-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-sm text-muted-foreground">
-                © 2025 InjetProGuide. All rights reserved.
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span>We accept:</span>
-                  <span className="font-semibold">VISA</span>
-                  <span className="font-semibold">Mastercard</span>
-                  <span className="font-semibold">Amex</span>
-                  <span className="font-semibold">Cash</span>
-                </div>
+          <div className="border-t mt-8 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-4">
+                <span className="hover:text-foreground cursor-pointer">Privacy Policy</span>
+                <span className="hover:text-foreground cursor-pointer">Terms of Service</span>
+                <span className="hover:text-foreground cursor-pointer">Cookie Policy</span>
+              </div>
+              <div className="flex gap-4">
+                <span>Made with ❤️ in the USA</span>
               </div>
             </div>
           </div>
