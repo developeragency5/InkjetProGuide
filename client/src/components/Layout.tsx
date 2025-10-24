@@ -16,13 +16,13 @@ export function Layout({ children }: LayoutProps) {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Fetch cart count
-  const { data: cartData } = useQuery({
+  const { data: cartData } = useQuery<{ items: any[] }>({
     queryKey: ["/api/cart"],
   });
   const cartCount = cartData?.items?.length || 0;
 
   // Fetch wishlist count
-  const { data: wishlistData } = useQuery({
+  const { data: wishlistData } = useQuery<{ items: any[] }>({
     queryKey: ["/api/wishlist"],
   });
   const wishlistCount = wishlistData?.items?.length || 0;
