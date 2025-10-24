@@ -24,6 +24,7 @@ import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { ProductCard } from "@/components/ProductCard";
 import type { Product } from "@shared/schema";
+import { useComparison } from "@/contexts/ComparisonContext";
 
 export default function ProductDetailPage() {
   const [, params] = useRoute("/product/:id");
@@ -34,6 +35,7 @@ export default function ProductDetailPage() {
   const [reviewFilter, setReviewFilter] = useState("all");
   const [showStickyCart, setShowStickyCart] = useState(false);
   const { toast } = useToast();
+  const { selectedProducts, addToComparison, removeFromComparison, isInComparison } = useComparison();
 
   const { data: product, isLoading } = useQuery<Product>({
     queryKey: ["/api/products", productId],
@@ -363,9 +365,18 @@ export default function ProductDetailPage() {
                   size="lg"
                   variant="outline"
                   className="font-semibold"
+                  onClick={() => {
+                    if (productId) {
+                      if (isInComparison(productId)) {
+                        removeFromComparison(productId);
+                      } else {
+                        addToComparison(productId);
+                      }
+                    }
+                  }}
                   data-testid="button-compare"
                 >
-                  <GitCompare className="w-5 h-5 mr-2" />
+                  <GitCompare className={`w-5 h-5 mr-2 ${productId && isInComparison(productId) ? "fill-current" : ""}`} />
                   Compare
                 </Button>
               </div>
