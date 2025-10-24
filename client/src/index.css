@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE - Modern Purple & Amber Theme */
+/* LIGHT MODE - Elegant Gold & White Theme */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);
@@ -14,67 +14,67 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Sophisticated Purple & Amber Theme */
-  --background: 270 100% 99%;  /* Very light lavender background #FDFCFF */
+  /* Luxury Gold & White Theme */
+  --background: 45 50% 98%;  /* Very light cream background #FFFDF8 */
   
-  --foreground: 258 25% 25%;  /* Deep purple-gray for text */
+  --foreground: 30 15% 20%;  /* Dark brown-gray for text */
 
-  --border: 270 40% 90%;  /* Light purple border */
+  --border: 45 30% 88%;  /* Light gold border */
 
   --card: 0 0% 100%;  /* Pure white cards #FFFFFF */
 
-  --card-foreground: 258 25% 25%;  /* Deep purple-gray text */
+  --card-foreground: 30 15% 20%;  /* Dark text */
 
-  --card-border: 270 40% 92%;  /* Subtle card borders */
+  --card-border: 45 30% 90%;  /* Subtle card borders */
 
-  --sidebar: 270 100% 97%;  /* Light lavender sidebar #F9F5FF */
+  --sidebar: 45 60% 96%;  /* Light champagne sidebar */
 
-  --sidebar-foreground: 258 25% 25%;  /* Deep purple text */
+  --sidebar-foreground: 30 15% 20%;  /* Dark text */
 
-  --sidebar-border: 270 40% 90%;
+  --sidebar-border: 45 30% 88%;
 
-  --sidebar-primary: 258 84% 57%;  /* Deep purple #7C3AED */
+  --sidebar-primary: 43 74% 49%;  /* Rich gold #D4AF37 */
 
   --sidebar-primary-foreground: 0 0% 100%;  /* White text */
 
-  --sidebar-accent: 270 100% 95%;  /* Lighter lavender */
+  --sidebar-accent: 45 60% 92%;  /* Lighter champagne */
 
-  --sidebar-accent-foreground: 258 25% 25%;
+  --sidebar-accent-foreground: 30 15% 20%;
 
-  --sidebar-ring: 38 92% 50%;  /* Amber ring */
+  --sidebar-ring: 43 74% 49%;  /* Gold ring */
 
   --popover: 0 0% 100%;  /* White popover */
 
-  --popover-foreground: 258 25% 25%;
+  --popover-foreground: 30 15% 20%;
 
-  --popover-border: 270 40% 90%;
+  --popover-border: 45 30% 88%;
 
-  --primary: 258 84% 57%;  /* Deep purple primary #7C3AED */
+  --primary: 43 74% 49%;  /* Rich gold primary #D4AF37 */
 
-  --primary-foreground: 0 0% 100%;  /* White text on primary */
+  --primary-foreground: 0 0% 100%;  /* White text on gold */
 
-  --secondary: 270 100% 96%;  /* Light lavender #F3E8FF */
+  --secondary: 45 60% 95%;  /* Light champagne */
 
-  --secondary-foreground: 258 25% 25%;  /* Deep purple text */
+  --secondary-foreground: 30 15% 20%;  /* Dark text */
 
-  --muted: 270 100% 95%;  /* Muted lavender backgrounds */
+  --muted: 45 40% 94%;  /* Muted cream backgrounds */
 
-  --muted-foreground: 258 15% 50%;  /* Purple-gray for muted text */
+  --muted-foreground: 30 10% 50%;  /* Gray for muted text */
 
-  --accent: 38 92% 50%;  /* Amber accent #F59E0B */
+  --accent: 38 95% 54%;  /* Bright gold accent #F5B942 */
 
-  --accent-foreground: 0 0% 100%;  /* White text on amber */
+  --accent-foreground: 0 0% 100%;  /* White text on accent */
 
   --destructive: 0 84% 60%;  /* Red for destructive actions */
 
   --destructive-foreground: 0 0% 100%;
 
-  --input: 270 40% 85%;  /* Input border color */
-  --ring: 38 92% 50%;  /* Amber focus ring */
+  --input: 45 30% 80%;  /* Input border color */
+  --ring: 43 74% 49%;  /* Gold focus ring */
   
-  /* Chart colors with purple and amber accents */
-  --chart-1: 258 84% 57%;  /* Deep purple */
-  --chart-2: 38 92% 50%;  /* Amber */
+  /* Chart colors with gold accents */
+  --chart-1: 43 74% 49%;  /* Rich gold */
+  --chart-2: 38 95% 54%;  /* Bright gold */
   --chart-3: 217 91% 60%;  /* Blue */
   --chart-4: 173 80% 40%;  /* Teal */
   --chart-5: 340 82% 52%;  /* Pink */
@@ -87,15 +87,15 @@
   /* Rounded corners - modern and soft */
   --radius: 0.5rem; /* 8px - perfect for modern look */
   
-  /* Subtle shadows for depth */
-  --shadow-2xs: 0px 1px 2px 0px rgba(124, 58, 237, 0.06);
-  --shadow-xs: 0px 1px 2px 0px rgba(124, 58, 237, 0.08);
-  --shadow-sm: 0px 2px 4px 0px rgba(124, 58, 237, 0.08), 0px 1px 2px -1px rgba(124, 58, 237, 0.08);
-  --shadow: 0px 4px 6px 0px rgba(124, 58, 237, 0.08), 0px 2px 4px -1px rgba(124, 58, 237, 0.08);
-  --shadow-md: 0px 6px 8px -1px rgba(124, 58, 237, 0.10), 0px 3px 5px -2px rgba(124, 58, 237, 0.10);
-  --shadow-lg: 0px 12px 16px -4px rgba(124, 58, 237, 0.12), 0px 6px 8px -4px rgba(124, 58, 237, 0.10);
-  --shadow-xl: 0px 24px 32px -8px rgba(124, 58, 237, 0.14), 0px 12px 16px -6px rgba(124, 58, 237, 0.12);
-  --shadow-2xl: 0px 32px 48px -12px rgba(124, 58, 237, 0.18);
+  /* Subtle shadows for depth with warm tones */
+  --shadow-2xs: 0px 1px 2px 0px rgba(212, 175, 55, 0.08);
+  --shadow-xs: 0px 1px 2px 0px rgba(212, 175, 55, 0.10);
+  --shadow-sm: 0px 2px 4px 0px rgba(212, 175, 55, 0.10), 0px 1px 2px -1px rgba(212, 175, 55, 0.10);
+  --shadow: 0px 4px 6px 0px rgba(212, 175, 55, 0.10), 0px 2px 4px -1px rgba(212, 175, 55, 0.10);
+  --shadow-md: 0px 6px 8px -1px rgba(212, 175, 55, 0.12), 0px 3px 5px -2px rgba(212, 175, 55, 0.12);
+  --shadow-lg: 0px 12px 16px -4px rgba(212, 175, 55, 0.14), 0px 6px 8px -4px rgba(212, 175, 55, 0.12);
+  --shadow-xl: 0px 24px 32px -8px rgba(212, 175, 55, 0.16), 0px 12px 16px -6px rgba(212, 175, 55, 0.14);
+  --shadow-2xl: 0px 32px 48px -12px rgba(212, 175, 55, 0.20);
   
   --tracking-normal: 0em;
   --spacing: 0.25rem;
@@ -135,7 +135,7 @@
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
-/* DARK MODE - Professional Purple Theme */
+/* DARK MODE - Elegant Dark Gold Theme */
 .dark {
   --button-outline: rgba(255,255,255, .10);
   --badge-outline: rgba(255,255,255, .05);
@@ -146,65 +146,65 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 258 30% 8%;  /* Dark purple background */
+  --background: 30 20% 8%;  /* Dark brown-black background */
 
-  --foreground: 270 100% 96%;  /* Light text */
+  --foreground: 45 50% 94%;  /* Light cream text */
 
-  --border: 258 25% 18%;
+  --border: 30 15% 18%;
 
-  --card: 258 30% 10%;  /* Dark card */
+  --card: 30 20% 10%;  /* Dark card */
 
-  --card-foreground: 270 100% 94%;
+  --card-foreground: 45 50% 92%;
 
-  --card-border: 258 25% 15%;
+  --card-border: 30 15% 15%;
 
-  --sidebar: 258 30% 12%;
+  --sidebar: 30 20% 12%;
 
-  --sidebar-foreground: 270 100% 92%;
+  --sidebar-foreground: 45 50% 90%;
 
-  --sidebar-border: 258 25% 18%;
+  --sidebar-border: 30 15% 18%;
 
-  --sidebar-primary: 258 90% 66%;  /* Lighter purple in dark mode #8B5CF6 */
+  --sidebar-primary: 43 74% 58%;  /* Brighter gold in dark mode */
 
-  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-primary-foreground: 30 20% 10%;  /* Dark text on gold */
 
-  --sidebar-accent: 258 25% 18%;
+  --sidebar-accent: 30 15% 18%;
 
-  --sidebar-accent-foreground: 270 100% 90%;
+  --sidebar-accent-foreground: 45 50% 88%;
 
-  --sidebar-ring: 38 92% 50%;
+  --sidebar-ring: 43 74% 58%;
 
-  --popover: 258 30% 12%;
+  --popover: 30 20% 12%;
 
-  --popover-foreground: 270 100% 90%;
+  --popover-foreground: 45 50% 88%;
 
-  --popover-border: 258 25% 20%;
+  --popover-border: 30 15% 20%;
 
-  --primary: 258 90% 66%;  /* Lighter purple primary in dark mode #8B5CF6 */
+  --primary: 43 74% 58%;  /* Brighter gold primary in dark mode */
 
-  --primary-foreground: 0 0% 100%;
+  --primary-foreground: 30 20% 10%;  /* Dark text on gold */
 
-  --secondary: 258 25% 18%;
+  --secondary: 30 15% 18%;
 
-  --secondary-foreground: 270 100% 90%;
+  --secondary-foreground: 45 50% 88%;
 
-  --muted: 258 25% 16%;
+  --muted: 30 15% 16%;
 
-  --muted-foreground: 270 50% 65%;
+  --muted-foreground: 45 30% 60%;
 
-  --accent: 38 92% 50%;  /* Amber accent */
+  --accent: 38 95% 54%;  /* Bright gold accent */
 
-  --accent-foreground: 0 0% 100%;
+  --accent-foreground: 30 20% 10%;
 
   --destructive: 0 84% 60%;
 
   --destructive-foreground: 0 0% 100%;
 
-  --input: 258 25% 28%;
-  --ring: 38 92% 50%;
+  --input: 30 15% 28%;
+  --ring: 43 74% 58%;
   
-  --chart-1: 258 90% 66%;
-  --chart-2: 38 92% 50%;
+  --chart-1: 43 74% 58%;
+  --chart-2: 38 95% 54%;
   --chart-3: 217 91% 60%;
   --chart-4: 173 75% 50%;
   --chart-5: 340 78% 62%;
