@@ -29,7 +29,7 @@
 
 #### Navigation
 - **Sticky Header**: Fixed top navigation with shadow on scroll
-- **Top Bar**: Thin utility bar with "Free Shipping on Orders $50+" and account links
+- **Top Bar**: Thin utility bar with "Free Shipping on Orders $299+" and account links
 - **Main Navigation**: Logo left, centered search bar (prominent, 40% width), cart/wishlist icons right
 - **Category Menu**: Single-level horizontal menu below header (All Printers, Office Printers, Home Printers, Portable, Accessories)
 - **Mobile**: Hamburger menu with slide-out drawer, search icon triggers full-screen search overlay
