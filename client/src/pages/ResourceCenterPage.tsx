@@ -167,22 +167,25 @@ export default function ResourceCenterPage() {
 
             {/* Search Bar */}
             <form onSubmit={handleSearch} className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-muted-foreground" />
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center pointer-events-none">
+                <Search className="w-5 h-5 text-muted-foreground" />
+              </div>
               <Input
                 type="search"
                 placeholder="What do you need help with?"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-14 pr-4 h-14 text-lg bg-background text-foreground"
+                className="pl-12 pr-28 h-14 text-lg bg-background text-foreground"
                 data-testid="input-resource-search"
               />
-              <Button
-                type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2"
-                data-testid="button-resource-search"
-              >
-                Search
-              </Button>
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center">
+                <Button
+                  type="submit"
+                  data-testid="button-resource-search"
+                >
+                  Search
+                </Button>
+              </div>
             </form>
           </div>
         </div>
