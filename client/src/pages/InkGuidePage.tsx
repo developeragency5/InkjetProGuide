@@ -93,9 +93,22 @@ export default function InkGuidePage() {
     if (!blackCartridge || !colorCartridges.length) return null;
 
     const blackCost = (blackPages / blackCartridge.pageYield) * parseFloat(blackCartridge.price);
-    const avgColorPrice = colorCartridges.reduce((sum, c) => sum + parseFloat(c.price), 0) / colorCartridges.length;
-    const avgColorYield = colorCartridges.reduce((sum, c) => sum + c.pageYield, 0) / colorCartridges.length;
-    const colorCost = (colorPages / avgColorYield) * avgColorPrice * 3; // 3 color cartridges
+    
+    // Check if printer uses tri-color or individual CMY cartridges
+    const hasTriColor = colorCartridges.some(c => c.color.toLowerCase() === "tri-color");
+    
+    let colorCost: number;
+    if (hasTriColor) {
+      // Tri-color printer: use single tri-color cartridge cost
+      const triColorCartridge = colorCartridges.find(c => c.color.toLowerCase() === "tri-color")!;
+      colorCost = (colorPages / triColorCartridge.pageYield) * parseFloat(triColorCartridge.price);
+    } else {
+      // Individual CMY cartridges: sum all three color cartridges
+      const avgColorPrice = colorCartridges.reduce((sum, c) => sum + parseFloat(c.price), 0) / colorCartridges.length;
+      const avgColorYield = colorCartridges.reduce((sum, c) => sum + c.pageYield, 0) / colorCartridges.length;
+      // Multiply by the actual number of color cartridges (typically 3 for CMY)
+      colorCost = (colorPages / avgColorYield) * avgColorPrice * colorCartridges.length;
+    }
 
     return {
       monthly: (blackCost + colorCost).toFixed(2),
@@ -330,8 +343,12 @@ export default function InkGuidePage() {
               const xlCartridge = cartridgeGroup.find(c => c.isXL);
 
               return (
-                <Card key={cartridgeNumber}>
-                  <CardHeader className="cursor-pointer" onClick={() => toggleCompatibility(cartridgeNumber)}>
+                <Card key={cartridgeNumber} data-testid={`card-cartridge-group-${cartridgeNumber}`}>
+                  <CardHeader 
+                    className="cursor-pointer" 
+                    onClick={() => toggleCompatibility(cartridgeNumber)}
+                    data-testid={`button-toggle-compatibility-${cartridgeNumber}`}
+                  >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <CardTitle className="text-xl">{cartridgeNumber}</CardTitle>
@@ -629,8 +646,12 @@ export default function InkGuidePage() {
               "Installing Ink Cartridges",
               "Checking Ink Levels",
               "Cleaning Print Heads"
-            ].map((title) => (
-              <Card key={title} className="hover-elevate active-elevate-2 cursor-pointer">
+            ].map((title, index) => (
+              <Card 
+                key={title} 
+                className="hover-elevate active-elevate-2 cursor-pointer"
+                data-testid={`card-video-tutorial-${index}`}
+              >
                 <CardHeader>
                   <div className="aspect-video bg-muted rounded-lg flex items-center justify-center mb-3">
                     <Video className="w-12 h-12 text-muted-foreground" />
