@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useRoute } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -17,9 +17,35 @@ import GuidesPage from "@/pages/GuidesPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import FAQPage from "@/pages/FAQPage";
+import AdminLoginPage from "@/pages/AdminLoginPage";
+import AdminDashboardPage from "@/pages/AdminDashboardPage";
+import AdminProductsPage from "@/pages/AdminProductsPage";
+import AdminOrdersPage from "@/pages/AdminOrdersPage";
+import AdminCustomersPage from "@/pages/AdminCustomersPage";
+import AdminAnalyticsPage from "@/pages/AdminAnalyticsPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
+  // Check if we're on an admin route
+  const [isAdminLogin] = useRoute("/admin");
+  const [isAdminRoute] = useRoute("/admin/:path*");
+
+  // Admin routes don't use the main layout
+  if (isAdminLogin || isAdminRoute) {
+    return (
+      <Switch>
+        <Route path="/admin" component={AdminLoginPage} />
+        <Route path="/admin/dashboard" component={AdminDashboardPage} />
+        <Route path="/admin/products" component={AdminProductsPage} />
+        <Route path="/admin/orders" component={AdminOrdersPage} />
+        <Route path="/admin/customers" component={AdminCustomersPage} />
+        <Route path="/admin/analytics" component={AdminAnalyticsPage} />
+        <Route component={NotFound} />
+      </Switch>
+    );
+  }
+
+  // Regular routes use the main layout
   return (
     <Layout>
       <Switch>
