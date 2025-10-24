@@ -201,8 +201,9 @@ export default function ResourceCenterPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {RESOURCE_CATEGORIES.map((resource) => {
               const Icon = resource.icon;
+              const testId = `link-resource-${resource.title.toLowerCase().replace(/\s+/g, '-')}`;
               return (
-                <Link key={resource.title} href={resource.link}>
+                <Link key={resource.title} href={resource.link} data-testid={testId}>
                   <Card className="hover-elevate active-elevate-2 cursor-pointer h-full">
                     <CardHeader>
                       <div className="flex items-start justify-between mb-2">
@@ -231,8 +232,12 @@ export default function ResourceCenterPage() {
             </div>
 
             <div className="space-y-4">
-              {popularArticles.slice(0, 5).map((article) => (
-                <Link key={article.id} href={`/help/${article.slug}`}>
+              {popularArticles.slice(0, 5).map((article, index) => (
+                <Link 
+                  key={article.id} 
+                  href={`/help/${article.slug}`}
+                  data-testid={`link-popular-article-${index}`}
+                >
                   <Card className="hover-elevate active-elevate-2 cursor-pointer">
                     <CardHeader className="pb-4">
                       <div className="flex items-start justify-between gap-4">
@@ -260,8 +265,12 @@ export default function ResourceCenterPage() {
             </div>
 
             <div className="space-y-4">
-              {latestArticles.map((article) => (
-                <Link key={article.id} href={`/help/${article.slug}`}>
+              {latestArticles.map((article, index) => (
+                <Link 
+                  key={article.id} 
+                  href={`/help/${article.slug}`}
+                  data-testid={`link-latest-article-${index}`}
+                >
                   <Card className="hover-elevate active-elevate-2 cursor-pointer">
                     <CardHeader className="pb-4">
                       <div className="flex items-start justify-between gap-4">
