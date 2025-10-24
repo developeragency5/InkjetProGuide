@@ -525,6 +525,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Comparison routes
+  app.post("/api/comparisons", requireAuth, async (req, res) => {
+    try {
+      const { insertSavedComparisonSchema } = await import("@shared/schema");
+      const validatedData = insertSavedComparisonSchema.parse(req.body);
+      
+      const comparison = await storage.saveComparison(validatedData);
+      res.json(comparison);
+    } catch (error: any) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/comparisons", requireAuth, async (req, res) => {
+    try {
+      const comparisons = await storage.getUserComparisons(req.user!.id);
+      res.json(comparisons);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.delete("/api/comparisons/:id", requireAuth, async (req, res) => {
+    try {
+      await storage.deleteComparison(req.params.id);
+      res.json({ message: "Comparison deleted successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

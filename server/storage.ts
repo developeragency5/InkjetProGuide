@@ -5,6 +5,7 @@ import {
   wishlistItems, 
   orders, 
   orderItems,
+  savedComparisons,
   type User, 
   type InsertUser, 
   type Product,
@@ -15,6 +16,8 @@ import {
   type OrderItem,
   type InsertOrder,
   type InsertOrderItem,
+  type SavedComparison,
+  type InsertSavedComparison,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, sql, desc } from "drizzle-orm";
@@ -56,6 +59,11 @@ export interface IStorage {
   updateOrderStatus(orderId: string, status: string, trackingNumber?: string): Promise<Order>;
   getAllCustomers(): Promise<any[]>;
   getAnalytics(): Promise<any>;
+
+  // Comparison operations
+  saveComparison(data: InsertSavedComparison): Promise<SavedComparison>;
+  getUserComparisons(userId: string): Promise<SavedComparison[]>;
+  deleteComparison(comparisonId: string): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -405,6 +413,29 @@ export class DatabaseStorage implements IStorage {
       recentRevenue: recentRevenue.toFixed(2),
       averageOrderValue: totalOrders > 0 ? (totalRevenue / totalOrders).toFixed(2) : '0.00',
     };
+  }
+
+  // Comparison operations
+  async saveComparison(data: InsertSavedComparison): Promise<SavedComparison> {
+    const [comparison] = await db
+      .insert(savedComparisons)
+      .values(data)
+      .returning();
+    return comparison;
+  }
+
+  async getUserComparisons(userId: string): Promise<SavedComparison[]> {
+    return await db
+      .select()
+      .from(savedComparisons)
+      .where(eq(savedComparisons.userId, userId))
+      .orderBy(desc(savedComparisons.createdAt));
+  }
+
+  async deleteComparison(comparisonId: string): Promise<void> {
+    await db
+      .delete(savedComparisons)
+      .where(eq(savedComparisons.id, comparisonId));
   }
 }
 
