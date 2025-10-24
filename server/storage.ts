@@ -8,6 +8,7 @@ import {
   type User, 
   type InsertUser, 
   type Product,
+  type InsertProduct,
   type CartItem,
   type WishlistItem,
   type Order,
@@ -16,7 +17,7 @@ import {
   type InsertOrderItem,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, and, sql } from "drizzle-orm";
+import { eq, and, sql, desc } from "drizzle-orm";
 
 export interface IStorage {
   // User operations
@@ -29,6 +30,9 @@ export interface IStorage {
   // Product operations
   getAllProducts(): Promise<Product[]>;
   getProduct(id: string): Promise<Product | undefined>;
+  createProduct(product: InsertProduct): Promise<Product>;
+  updateProduct(id: string, product: Partial<InsertProduct>): Promise<Product>;
+  deleteProduct(id: string): Promise<void>;
 
   // Cart operations
   getCartItems(userId: string): Promise<any[]>;
@@ -46,6 +50,12 @@ export interface IStorage {
   createOrder(orderData: InsertOrder, items: InsertOrderItem[]): Promise<Order>;
   getUserOrders(userId: string): Promise<any[]>;
   getOrder(orderId: string): Promise<any>;
+  
+  // Admin operations
+  getAllOrders(): Promise<any[]>;
+  updateOrderStatus(orderId: string, status: string, trackingNumber?: string): Promise<Order>;
+  getAllCustomers(): Promise<any[]>;
+  getAnalytics(): Promise<any>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -89,6 +99,24 @@ export class DatabaseStorage implements IStorage {
   async getProduct(id: string): Promise<Product | undefined> {
     const [product] = await db.select().from(products).where(eq(products.id, id));
     return product || undefined;
+  }
+
+  async createProduct(product: InsertProduct): Promise<Product> {
+    const [newProduct] = await db.insert(products).values(product).returning();
+    return newProduct;
+  }
+
+  async updateProduct(id: string, product: Partial<InsertProduct>): Promise<Product> {
+    const [updatedProduct] = await db
+      .update(products)
+      .set(product)
+      .where(eq(products.id, id))
+      .returning();
+    return updatedProduct;
+  }
+
+  async deleteProduct(id: string): Promise<void> {
+    await db.delete(products).where(eq(products.id, id));
   }
 
   // Cart operations
@@ -244,6 +272,139 @@ export class DatabaseStorage implements IStorage {
     const items = await db.select().from(orderItems).where(eq(orderItems.orderId, orderId));
 
     return { ...order, items };
+  }
+
+  // Admin operations
+  async getAllOrders(): Promise<any[]> {
+    const allOrders = await db
+      .select({
+        id: orders.id,
+        userId: orders.userId,
+        status: orders.status,
+        trackingNumber: orders.trackingNumber,
+        total: orders.total,
+        paymentMethod: orders.paymentMethod,
+        shippingMethod: orders.shippingMethod,
+        email: orders.email,
+        shippingAddress: orders.shippingAddress,
+        shippingCity: orders.shippingCity,
+        shippingState: orders.shippingState,
+        shippingZip: orders.shippingZip,
+        shippingPhone: orders.shippingPhone,
+        createdAt: orders.createdAt,
+        userName: users.name,
+        userEmail: users.email,
+      })
+      .from(orders)
+      .innerJoin(users, eq(orders.userId, users.id))
+      .orderBy(desc(orders.createdAt));
+
+    // Fetch items for each order
+    const ordersWithItems = await Promise.all(
+      allOrders.map(async (order) => {
+        const items = await db
+          .select()
+          .from(orderItems)
+          .where(eq(orderItems.orderId, order.id));
+        
+        return { ...order, items };
+      })
+    );
+
+    return ordersWithItems;
+  }
+
+  async updateOrderStatus(orderId: string, status: string, trackingNumber?: string): Promise<Order> {
+    const updateData: any = { status };
+    if (trackingNumber !== undefined) {
+      updateData.trackingNumber = trackingNumber;
+    }
+
+    const [updatedOrder] = await db
+      .update(orders)
+      .set(updateData)
+      .where(eq(orders.id, orderId))
+      .returning();
+    
+    return updatedOrder;
+  }
+
+  async getAllCustomers(): Promise<any[]> {
+    const customers = await db
+      .select({
+        id: users.id,
+        name: users.name,
+        email: users.email,
+        createdAt: users.createdAt,
+      })
+      .from(users)
+      .orderBy(desc(users.createdAt));
+
+    // Get order count and total spent for each customer
+    const customersWithStats = await Promise.all(
+      customers.map(async (customer) => {
+        const customerOrders = await db
+          .select()
+          .from(orders)
+          .where(eq(orders.userId, customer.id));
+
+        const totalSpent = customerOrders.reduce(
+          (sum, order) => sum + parseFloat(order.total),
+          0
+        );
+
+        return {
+          ...customer,
+          orderCount: customerOrders.length,
+          totalSpent: totalSpent.toFixed(2),
+        };
+      })
+    );
+
+    return customersWithStats;
+  }
+
+  async getAnalytics(): Promise<any> {
+    // Get total orders
+    const allOrders = await db.select().from(orders);
+    const totalOrders = allOrders.length;
+    const totalRevenue = allOrders.reduce((sum, order) => sum + parseFloat(order.total), 0);
+
+    // Get total products
+    const allProducts = await db.select().from(products);
+    const totalProducts = allProducts.length;
+
+    // Get total customers
+    const allUsers = await db.select().from(users);
+    const totalCustomers = allUsers.length;
+
+    // Get orders by status
+    const ordersByStatus = allOrders.reduce((acc: any, order) => {
+      acc[order.status] = (acc[order.status] || 0) + 1;
+      return acc;
+    }, {});
+
+    // Get recent orders (last 30 days)
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+    const recentOrders = allOrders.filter(
+      order => new Date(order.createdAt) >= thirtyDaysAgo
+    );
+    const recentRevenue = recentOrders.reduce(
+      (sum, order) => sum + parseFloat(order.total),
+      0
+    );
+
+    return {
+      totalOrders,
+      totalRevenue: totalRevenue.toFixed(2),
+      totalProducts,
+      totalCustomers,
+      ordersByStatus,
+      recentOrders: recentOrders.length,
+      recentRevenue: recentRevenue.toFixed(2),
+      averageOrderValue: totalOrders > 0 ? (totalRevenue / totalOrders).toFixed(2) : '0.00',
+    };
   }
 }
 

@@ -52,6 +52,7 @@ export const orders = pgTable("orders", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   userId: varchar("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
   status: text("status").notNull().default("pending"),
+  trackingNumber: text("tracking_number"),
   total: decimal("total", { precision: 10, scale: 2 }).notNull(),
   paymentMethod: text("payment_method").notNull(),
   shippingMethod: text("shipping_method").notNull().default("standard"),

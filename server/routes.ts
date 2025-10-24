@@ -22,6 +22,13 @@ declare global {
   }
 }
 
+// Extend session to include admin authentication
+declare module 'express-session' {
+  interface SessionData {
+    adminAuthenticated?: boolean;
+  }
+}
+
 export async function registerRoutes(app: Express): Promise<Server> {
   // Session configuration
   app.use(
@@ -84,6 +91,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   const requireAuth = (req: Request, res: any, next: any) => {
     if (!req.isAuthenticated()) {
       return res.status(401).json({ message: "Not authenticated" });
+    }
+    next();
+  };
+
+  // Middleware to check if admin is authenticated
+  const requireAdmin = (req: Request, res: any, next: any) => {
+    if (!req.session.adminAuthenticated) {
+      return res.status(401).json({ message: "Admin authentication required" });
     }
     next();
   };
@@ -196,6 +211,104 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       await storage.updateUserPassword(req.user!.id, hashedPassword);
       res.json({ message: "Password updated successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Admin authentication routes
+  const ADMIN_PASSWORD = "admin1000$";
+
+  app.post("/api/admin/login", (req, res) => {
+    try {
+      const { password } = req.body;
+      
+      if (password === ADMIN_PASSWORD) {
+        req.session.adminAuthenticated = true;
+        return res.json({ success: true, message: "Admin authenticated successfully" });
+      }
+      
+      res.status(401).json({ message: "Invalid admin password" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.post("/api/admin/logout", (req, res) => {
+    req.session.adminAuthenticated = false;
+    res.json({ message: "Admin logged out successfully" });
+  });
+
+  app.get("/api/admin/check", (req, res) => {
+    if (req.session.adminAuthenticated) {
+      return res.json({ authenticated: true });
+    }
+    res.json({ authenticated: false });
+  });
+
+  // Admin product management routes
+  app.post("/api/admin/products", requireAdmin, async (req, res) => {
+    try {
+      const product = await storage.createProduct(req.body);
+      res.json(product);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.patch("/api/admin/products/:id", requireAdmin, async (req, res) => {
+    try {
+      const product = await storage.updateProduct(req.params.id, req.body);
+      res.json(product);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.delete("/api/admin/products/:id", requireAdmin, async (req, res) => {
+    try {
+      await storage.deleteProduct(req.params.id);
+      res.json({ message: "Product deleted successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Admin order management routes
+  app.get("/api/admin/orders", requireAdmin, async (req, res) => {
+    try {
+      const orders = await storage.getAllOrders();
+      res.json(orders);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.patch("/api/admin/orders/:id", requireAdmin, async (req, res) => {
+    try {
+      const { status, trackingNumber } = req.body;
+      const order = await storage.updateOrderStatus(req.params.id, status, trackingNumber);
+      res.json(order);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Admin customers route
+  app.get("/api/admin/customers", requireAdmin, async (req, res) => {
+    try {
+      const customers = await storage.getAllCustomers();
+      res.json(customers);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Admin analytics route
+  app.get("/api/admin/analytics", requireAdmin, async (req, res) => {
+    try {
+      const analytics = await storage.getAnalytics();
+      res.json(analytics);
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
