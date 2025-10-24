@@ -13,6 +13,7 @@ const guides = [
     color: "bg-blue-500",
     readTime: "8 min read",
     path: "/guides/beginners-guide",
+    available: true,
   },
   {
     id: "home-office",
@@ -22,6 +23,7 @@ const guides = [
     color: "bg-purple-500",
     readTime: "10 min read",
     path: "/guides/home-office",
+    available: false,
   },
   {
     id: "students",
@@ -31,6 +33,7 @@ const guides = [
     color: "bg-green-500",
     readTime: "7 min read",
     path: "/guides/students",
+    available: false,
   },
   {
     id: "photo-printing",
@@ -40,6 +43,7 @@ const guides = [
     color: "bg-pink-500",
     readTime: "12 min read",
     path: "/guides/photo-printing",
+    available: false,
   },
   {
     id: "ink-cost",
@@ -49,6 +53,7 @@ const guides = [
     color: "bg-yellow-500",
     readTime: "9 min read",
     path: "/guides/ink-cost",
+    available: false,
   },
   {
     id: "small-business",
@@ -58,6 +63,7 @@ const guides = [
     color: "bg-orange-500",
     readTime: "11 min read",
     path: "/guides/small-business",
+    available: false,
   },
   {
     id: "wireless-vs-usb",
@@ -67,6 +73,7 @@ const guides = [
     color: "bg-cyan-500",
     readTime: "6 min read",
     path: "/guides/wireless-vs-usb",
+    available: false,
   },
 ];
 
@@ -117,24 +124,37 @@ export default function BuyingGuidesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {guides.map((guide) => {
             const Icon = guide.icon;
-            return (
-              <Link key={guide.id} href={guide.path} data-testid={`link-guide-${guide.id}`}>
-                <Card className="hover-elevate active-elevate-2 cursor-pointer transition-all h-full" data-testid={`card-guide-${guide.id}`}>
-                  <CardHeader>
-                    <div className={`w-12 h-12 ${guide.color} rounded-lg flex items-center justify-center mb-4`}>
+            const cardContent = (
+              <Card className={guide.available ? "hover-elevate active-elevate-2 cursor-pointer transition-all h-full" : "h-full opacity-75"} data-testid={`card-guide-${guide.id}`}>
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`w-12 h-12 ${guide.color} rounded-lg flex items-center justify-center`}>
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl mb-2">{guide.title}</CardTitle>
-                    <CardDescription>{guide.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between">
-                      <Badge variant="secondary">{guide.readTime}</Badge>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                    </div>
-                  </CardContent>
-                </Card>
+                    {!guide.available && (
+                      <Badge variant="secondary" data-testid={`badge-coming-soon-${guide.id}`}>Coming Soon</Badge>
+                    )}
+                  </div>
+                  <CardTitle className="text-xl mb-2">{guide.title}</CardTitle>
+                  <CardDescription>{guide.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between">
+                    <Badge variant="secondary">{guide.readTime}</Badge>
+                    {guide.available && <ChevronRight className="w-5 h-5 text-muted-foreground" />}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+
+            return guide.available ? (
+              <Link key={guide.id} href={guide.path} data-testid={`link-guide-${guide.id}`}>
+                {cardContent}
               </Link>
+            ) : (
+              <div key={guide.id}>
+                {cardContent}
+              </div>
             );
           })}
         </div>

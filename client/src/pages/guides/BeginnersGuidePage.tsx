@@ -310,7 +310,7 @@ export default function BeginnersGuidePage() {
                     <p className="text-muted-foreground mb-3">
                       Consider the long-term cost of ink cartridges, not just the printer price. HP offers several ink options:
                     </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                    <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-status-online flex-shrink-0 mt-0.5" />
                         <span><strong>Standard Cartridges:</strong> Lower upfront cost, fewer pages (~120 pages)</span>
@@ -324,11 +324,6 @@ export default function BeginnersGuidePage() {
                         <span><strong>HP Instant Ink:</strong> Subscription service starting at $0.99/month</span>
                       </li>
                     </ul>
-                    <Button variant="outline" asChild size="sm" data-testid="button-read-ink-cost-guide">
-                      <Link href="/guides/ink-cost">
-                        Read Ink Cost Guide <ChevronRight className="w-4 h-4 ml-1" />
-                      </Link>
-                    </Button>
                   </CardContent>
                 </Card>
               </div>
