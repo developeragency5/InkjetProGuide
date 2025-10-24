@@ -556,6 +556,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Help article routes
+  app.get("/api/help/articles", async (req, res) => {
+    try {
+      const articles = await storage.getAllHelpArticles();
+      res.json(articles);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/help/articles/:slug", async (req, res) => {
+    try {
+      const article = await storage.getHelpArticleBySlug(req.params.slug);
+      if (!article) {
+        return res.status(404).json({ message: "Article not found" });
+      }
+      res.json(article);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/help/category/:category", async (req, res) => {
+    try {
+      const articles = await storage.getHelpArticlesByCategory(req.params.category);
+      res.json(articles);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.post("/api/help/articles/:id/feedback", async (req, res) => {
+    try {
+      const { helpful } = req.body;
+      if (typeof helpful !== 'boolean') {
+        return res.status(400).json({ message: "helpful field must be a boolean" });
+      }
+      await storage.recordHelpArticleFeedback(req.params.id, helpful);
+      res.json({ message: "Feedback recorded successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

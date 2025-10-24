@@ -6,6 +6,7 @@ import {
   orders, 
   orderItems,
   savedComparisons,
+  helpArticles,
   type User, 
   type InsertUser, 
   type Product,
@@ -18,6 +19,8 @@ import {
   type InsertOrderItem,
   type SavedComparison,
   type InsertSavedComparison,
+  type HelpArticle,
+  type InsertHelpArticle,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, sql, desc } from "drizzle-orm";
@@ -64,6 +67,16 @@ export interface IStorage {
   saveComparison(data: InsertSavedComparison): Promise<SavedComparison>;
   getUserComparisons(userId: string): Promise<SavedComparison[]>;
   deleteComparison(comparisonId: string): Promise<void>;
+
+  // Help article operations
+  getAllHelpArticles(): Promise<HelpArticle[]>;
+  getHelpArticle(id: string): Promise<HelpArticle | undefined>;
+  getHelpArticleBySlug(slug: string): Promise<HelpArticle | undefined>;
+  getHelpArticlesByCategory(category: string): Promise<HelpArticle[]>;
+  createHelpArticle(article: InsertHelpArticle): Promise<HelpArticle>;
+  updateHelpArticle(id: string, article: Partial<InsertHelpArticle>): Promise<HelpArticle>;
+  deleteHelpArticle(id: string): Promise<void>;
+  recordHelpArticleFeedback(id: string, helpful: boolean): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -436,6 +449,69 @@ export class DatabaseStorage implements IStorage {
     await db
       .delete(savedComparisons)
       .where(eq(savedComparisons.id, comparisonId));
+  }
+
+  // Help article operations
+  async getAllHelpArticles(): Promise<HelpArticle[]> {
+    return await db
+      .select()
+      .from(helpArticles)
+      .orderBy(desc(helpArticles.updatedAt));
+  }
+
+  async getHelpArticle(id: string): Promise<HelpArticle | undefined> {
+    const [article] = await db
+      .select()
+      .from(helpArticles)
+      .where(eq(helpArticles.id, id));
+    return article || undefined;
+  }
+
+  async getHelpArticleBySlug(slug: string): Promise<HelpArticle | undefined> {
+    const [article] = await db
+      .select()
+      .from(helpArticles)
+      .where(eq(helpArticles.slug, slug));
+    return article || undefined;
+  }
+
+  async getHelpArticlesByCategory(category: string): Promise<HelpArticle[]> {
+    return await db
+      .select()
+      .from(helpArticles)
+      .where(eq(helpArticles.category, category))
+      .orderBy(desc(helpArticles.updatedAt));
+  }
+
+  async createHelpArticle(article: InsertHelpArticle): Promise<HelpArticle> {
+    const [newArticle] = await db
+      .insert(helpArticles)
+      .values(article)
+      .returning();
+    return newArticle;
+  }
+
+  async updateHelpArticle(id: string, article: Partial<InsertHelpArticle>): Promise<HelpArticle> {
+    const [updatedArticle] = await db
+      .update(helpArticles)
+      .set({ ...article, updatedAt: new Date() })
+      .where(eq(helpArticles.id, id))
+      .returning();
+    return updatedArticle;
+  }
+
+  async deleteHelpArticle(id: string): Promise<void> {
+    await db.delete(helpArticles).where(eq(helpArticles.id, id));
+  }
+
+  async recordHelpArticleFeedback(id: string, helpful: boolean): Promise<void> {
+    await db
+      .update(helpArticles)
+      .set(helpful 
+        ? { helpful: sql`${helpArticles.helpful} + 1` }
+        : { notHelpful: sql`${helpArticles.notHelpful} + 1` }
+      )
+      .where(eq(helpArticles.id, id));
   }
 }
 
