@@ -16,6 +16,7 @@ import ProfilePage from "@/pages/ProfilePage";
 import GuidesPage from "@/pages/GuidesPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
+import FAQPage from "@/pages/FAQPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -34,6 +35,7 @@ function Router() {
         <Route path="/guides" component={GuidesPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />
+        <Route path="/faq" component={FAQPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
