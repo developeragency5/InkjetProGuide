@@ -98,6 +98,24 @@ export const savedComparisons = pgTable("saved_comparisons", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+// Help articles table
+export const helpArticles = pgTable("help_articles", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  slug: text("slug").notNull().unique(),
+  title: text("title").notNull(),
+  category: text("category").notNull(),
+  subcategory: text("subcategory"),
+  description: text("description").notNull(),
+  content: text("content").notNull(),
+  image: text("image"),
+  videoUrl: text("video_url"),
+  relatedArticles: text("related_articles").array(),
+  helpful: integer("helpful").notNull().default(0),
+  notHelpful: integer("not_helpful").notNull().default(0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
 // Relations
 export const usersRelations = relations(users, ({ many }) => ({
   cartItems: many(cartItems),
@@ -226,6 +244,18 @@ export const insertSavedComparisonSchema = createInsertSchema(savedComparisons).
   productIds: z.array(z.string()).min(2, "Must compare at least 2 products").max(4, "Maximum 4 products can be compared"),
 });
 
+export const insertHelpArticleSchema = createInsertSchema(helpArticles).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+  helpful: true,
+  notHelpful: true,
+}).extend({
+  title: z.string().min(5, "Title must be at least 5 characters"),
+  slug: z.string().min(3, "Slug must be at least 3 characters"),
+  content: z.string().min(20, "Content must be at least 20 characters"),
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -243,3 +273,5 @@ export type ProductReview = typeof productReviews.$inferSelect;
 export type InsertProductReview = z.infer<typeof insertProductReviewSchema>;
 export type SavedComparison = typeof savedComparisons.$inferSelect;
 export type InsertSavedComparison = z.infer<typeof insertSavedComparisonSchema>;
+export type HelpArticle = typeof helpArticles.$inferSelect;
+export type InsertHelpArticle = z.infer<typeof insertHelpArticleSchema>;
