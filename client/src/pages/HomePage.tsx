@@ -245,7 +245,7 @@ export default function HomePage() {
                 <div className="w-16 h-16 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
                   <Headphones className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-xl mb-3">24/7 USA-Based Support</h3>
+                <h3 className="font-semibold text-xl mb-3">24/7 Support</h3>
                 <p className="text-muted-foreground mb-4">
                   Our team of printer specialists is here to help. Get expert answers 
                   to all your printing questions anytime.
