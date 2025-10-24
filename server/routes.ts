@@ -156,6 +156,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.status(401).json({ message: "Not authenticated" });
   });
 
+  app.patch("/api/user/profile", requireAuth, async (req, res) => {
+    try {
+      const { name, email } = req.body;
+      
+      // Check if email is already used by another user
+      if (email !== req.user!.email) {
+        const existingUser = await storage.getUserByEmail(email);
+        if (existingUser && existingUser.id !== req.user!.id) {
+          return res.status(400).json({ message: "Email already in use" });
+        }
+      }
+
+      const updatedUser = await storage.updateUserProfile(req.user!.id, { name, email });
+      const { password, ...userWithoutPassword } = updatedUser;
+      res.json(userWithoutPassword);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.patch("/api/user/password", requireAuth, async (req, res) => {
+    try {
+      const { currentPassword, newPassword } = req.body;
+      
+      // Verify current password
+      const user = await storage.getUser(req.user!.id);
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      const isMatch = await bcrypt.compare(currentPassword, user.password);
+      if (!isMatch) {
+        return res.status(400).json({ message: "Current password is incorrect" });
+      }
+
+      // Hash new password
+      const hashedPassword = await bcrypt.hash(newPassword, 10);
+      
+      await storage.updateUserPassword(req.user!.id, hashedPassword);
+      res.json({ message: "Password updated successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   // Product routes
   app.get("/api/products", async (req, res) => {
     try {

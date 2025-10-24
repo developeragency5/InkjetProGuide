@@ -12,6 +12,7 @@ import WishlistPage from "@/pages/WishlistPage";
 import CheckoutPage from "@/pages/CheckoutPage";
 import AuthPage from "@/pages/AuthPage";
 import AccountPage from "@/pages/AccountPage";
+import ProfilePage from "@/pages/ProfilePage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
         <Route path="/checkout" component={CheckoutPage} />
         <Route path="/auth" component={AuthPage} />
         <Route path="/account" component={AccountPage} />
+        <Route path="/profile" component={ProfilePage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -21,6 +21,13 @@ export function Layout({ children }: LayoutProps) {
   });
   const cartCount = cartData?.items?.length || 0;
 
+  // Fetch current user
+  const { data: currentUser } = useQuery({
+    queryKey: ["/api/user"],
+    retry: false,
+  });
+  const isLoggedIn = !!currentUser;
+
   const categories = [
     { name: "All Printers", path: "/products" },
     { name: "Office Printers", path: "/products?category=office" },
@@ -36,11 +43,19 @@ export function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
           <p className="font-medium">Free Shipping on Orders $50+</p>
           <div className="flex items-center gap-4">
-            <Link href="/account">
-              <span className="hover-elevate px-2 py-1 rounded-md cursor-pointer" data-testid="link-account">
-                My Account
-              </span>
-            </Link>
+            {isLoggedIn ? (
+              <Link href="/profile">
+                <span className="hover-elevate px-2 py-1 rounded-md cursor-pointer" data-testid="link-account">
+                  My Account
+                </span>
+              </Link>
+            ) : (
+              <Link href="/auth">
+                <span className="hover-elevate px-2 py-1 rounded-md cursor-pointer" data-testid="link-signin">
+                  Sign In / Sign Up
+                </span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -121,15 +136,23 @@ export function Layout({ children }: LayoutProps) {
                 </span>
               </Link>
 
-              <Link href="/auth">
-                <span data-testid="button-user">
-                  <Button size="icon" variant="ghost" asChild>
-                    <span>
-                      <User className="w-5 h-5" />
-                    </span>
+              {isLoggedIn ? (
+                <Link href="/profile">
+                  <span data-testid="button-profile">
+                    <Button size="icon" variant="ghost" asChild>
+                      <span>
+                        <User className="w-5 h-5" />
+                      </span>
+                    </Button>
+                  </span>
+                </Link>
+              ) : (
+                <Link href="/auth">
+                  <Button size="sm" variant="default" data-testid="button-signin">
+                    Sign In
                   </Button>
-                </span>
-              </Link>
+                </Link>
+              )}
 
               <Button
                 size="icon"
