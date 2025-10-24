@@ -55,7 +55,7 @@ export default function FAQPage() {
       faqs: [
         {
           question: "Do you offer free shipping?",
-          answer: "Yes! We offer free standard shipping on all orders over $299. Orders under $299 have a $9.99 shipping fee. We also offer Express (2-3 business days) for $19.99 and Overnight delivery for $39.99."
+          answer: "Yes! We offer free standard shipping on all orders over $50. Orders under $50 have a $9.99 shipping fee. We also offer Express (2-3 business days) for $19.99 and Overnight delivery for $39.99."
         },
         {
           question: "How long does shipping take?",

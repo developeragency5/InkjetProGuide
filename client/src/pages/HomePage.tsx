@@ -79,7 +79,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="font-semibold text-sm mb-0.5">Free Shipping</p>
-                  <p className="text-xs text-primary-foreground/80">Next-day delivery on orders over $299</p>
+                  <p className="text-xs text-primary-foreground/80">On all orders over $50</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
