@@ -54,6 +54,8 @@ export const orders = pgTable("orders", {
   status: text("status").notNull().default("pending"),
   total: decimal("total", { precision: 10, scale: 2 }).notNull(),
   paymentMethod: text("payment_method").notNull(),
+  shippingMethod: text("shipping_method").notNull().default("standard"),
+  email: text("email").notNull(),
   shippingAddress: text("shipping_address").notNull(),
   shippingCity: text("shipping_city").notNull(),
   shippingState: text("shipping_state").notNull(),

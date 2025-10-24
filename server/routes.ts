@@ -291,10 +291,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Stripe payment route for one-time payments
+  app.post("/api/create-payment-intent", requireAuth, async (req, res) => {
+    try {
+      const { amount } = req.body;
+      
+      if (!process.env.STRIPE_SECRET_KEY) {
+        return res.status(400).json({ message: "Stripe is not configured. Please use Cash on Delivery." });
+      }
+
+      const Stripe = (await import("stripe")).default;
+      const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+        apiVersion: "2024-11-20.acacia",
+      });
+
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: Math.round(amount * 100), // Convert to cents
+        currency: "usd",
+        automatic_payment_methods: {
+          enabled: true,
+        },
+      });
+      
+      res.json({ clientSecret: paymentIntent.client_secret });
+    } catch (error: any) {
+      res.status(500).json({ message: "Error creating payment intent: " + error.message });
+    }
+  });
+
   // Order routes
   app.post("/api/orders", requireAuth, async (req, res) => {
     try {
-      const { shippingAddress, shippingCity, shippingState, shippingZip, shippingPhone, paymentMethod } = req.body;
+      const { email, shippingAddress, shippingCity, shippingState, shippingZip, shippingPhone, shippingMethod, paymentMethod } = req.body;
 
       // Get cart items
       const cartItems = await storage.getCartItems(req.user!.id);
@@ -308,7 +336,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
         (sum, item) => sum + parseFloat(item.product.price) * item.quantity,
         0
       );
-      const shipping = subtotal >= 50 ? 0 : 9.99;
+      
+      // Calculate shipping based on method
+      let shipping = 0;
+      if (shippingMethod === "express") {
+        shipping = 19.99;
+      } else if (shippingMethod === "overnight") {
+        shipping = 39.99;
+      }
+      // standard is free (0)
+      
       const tax = subtotal * 0.08;
       const total = subtotal + shipping + tax;
 
@@ -324,9 +361,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const order = await storage.createOrder(
         {
           userId: req.user!.id,
-          status: "pending",
+          status: "in_process",
           total: total.toString(),
           paymentMethod,
+          shippingMethod: shippingMethod || "standard",
+          email,
           shippingAddress,
           shippingCity,
           shippingState,
@@ -338,6 +377,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Clear cart
       await storage.clearCart(req.user!.id);
+
+      // Send confirmation email (simulated - in production use email service)
+      console.log(`[EMAIL] Order confirmation sent to ${email}`);
+      console.log(`  Order #${order.id}`);
+      console.log(`  Total: $${total.toFixed(2)}`);
+      console.log(`  Shipping Method: ${shippingMethod}`);
+      console.log(`  Payment Method: ${paymentMethod}`);
 
       res.json({ order });
     } catch (error: any) {

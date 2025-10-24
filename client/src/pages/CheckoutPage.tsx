@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
-import { Check } from "lucide-react";
+import { Check, Truck, Zap, CreditCard, Banknote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,6 +13,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+// Load Stripe
+const stripePromise = import.meta.env.VITE_STRIPE_PUBLIC_KEY 
+  ? loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
+  : null;
 
 const shippingSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -26,15 +33,93 @@ const shippingSchema = z.object({
 
 type ShippingFormData = z.infer<typeof shippingSchema>;
 
+const shippingOptions = [
+  {
+    id: "standard",
+    name: "Standard Shipping",
+    description: "5-7 business days",
+    price: 0,
+    icon: Truck,
+  },
+  {
+    id: "express",
+    name: "Express Shipping",
+    description: "2-3 business days",
+    price: 19.99,
+    icon: Zap,
+  },
+  {
+    id: "overnight",
+    name: "Overnight Delivery",
+    description: "Next business day",
+    price: 39.99,
+    icon: Zap,
+  },
+];
+
+function StripePaymentForm({ amount, onSuccess }: { amount: number; onSuccess: () => void }) {
+  const stripe = useStripe();
+  const elements = useElements();
+  const { toast } = useToast();
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!stripe || !elements) {
+      return;
+    }
+
+    setIsProcessing(true);
+
+    const { error } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        return_url: `${window.location.origin}/checkout`,
+      },
+      redirect: "if_required",
+    });
+
+    setIsProcessing(false);
+
+    if (error) {
+      toast({
+        title: "Payment Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      onSuccess();
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <PaymentElement />
+      <Button
+        type="submit"
+        size="lg"
+        className="w-full font-semibold"
+        disabled={!stripe || isProcessing}
+        data-testid="button-confirm-payment"
+      >
+        {isProcessing ? "Processing..." : `Pay $${amount.toFixed(2)}`}
+      </Button>
+    </form>
+  );
+}
+
 export default function CheckoutPage() {
   const [, navigate] = useLocation();
   const [step, setStep] = useState(1);
-  const [paymentMethod, setPaymentMethod] = useState("cash");
+  const [shippingMethod, setShippingMethod] = useState("standard");
+  const [paymentMethod, setPaymentMethod] = useState<"card" | "cash">("cash");
   const [shippingData, setShippingData] = useState<ShippingFormData | null>(null);
   const [orderId, setOrderId] = useState<string | null>(null);
+  const [clientSecret, setClientSecret] = useState<string | null>(null);
   const { toast } = useToast();
 
-  const { data: cartData, isLoading: cartLoading } = useQuery({
+  const { data: cartData, isLoading: cartLoading } = useQuery<{ items: any[] }>({
     queryKey: ["/api/cart"],
   });
 
@@ -58,6 +143,10 @@ export default function CheckoutPage() {
       setStep(4);
       queryClient.invalidateQueries({ queryKey: ["/api/cart"] });
       queryClient.invalidateQueries({ queryKey: ["/api/orders"] });
+      toast({
+        title: "Order placed successfully!",
+        description: "A confirmation email has been sent to your email address.",
+      });
     },
     onError: () => {
       toast({
@@ -68,14 +157,34 @@ export default function CheckoutPage() {
     },
   });
 
+  const createPaymentIntentMutation = useMutation({
+    mutationFn: (amount: number) => apiRequest("POST", "/api/create-payment-intent", { amount }),
+    onSuccess: (data: any) => {
+      setClientSecret(data.clientSecret);
+    },
+  });
+
   const cartItems = cartData?.items || [];
   const subtotal = cartItems.reduce(
     (sum: number, item: any) => sum + parseFloat(item.product.price) * item.quantity,
     0
   );
-  const shipping = subtotal >= 50 ? 0 : 9.99;
+  const selectedShipping = shippingOptions.find(opt => opt.id === shippingMethod);
+  const shippingCost = selectedShipping?.price || 0;
   const tax = subtotal * 0.08;
-  const total = subtotal + shipping + tax;
+  const total = subtotal + shippingCost + tax;
+
+  // Reset client secret when shipping method changes
+  useEffect(() => {
+    setClientSecret(null);
+  }, [shippingMethod]);
+
+  // Create payment intent when needed
+  useEffect(() => {
+    if (step === 3 && paymentMethod === "card" && !clientSecret && !createPaymentIntentMutation.isPending) {
+      createPaymentIntentMutation.mutate(total);
+    }
+  }, [step, paymentMethod, total, clientSecret]);
 
   if (cartLoading) {
     return (
@@ -91,28 +200,34 @@ export default function CheckoutPage() {
   }
 
   const steps = [
-    { number: 1, title: "Cart Review" },
-    { number: 2, title: "Shipping" },
+    { number: 1, title: "Shipping" },
+    { number: 2, title: "Delivery" },
     { number: 3, title: "Payment" },
     { number: 4, title: "Confirmation" },
   ];
 
   const handleShippingSubmit = (data: ShippingFormData) => {
     setShippingData(data);
-    setStep(3);
+    setStep(2);
   };
 
   const handlePlaceOrder = () => {
     if (!shippingData) return;
 
     createOrderMutation.mutate({
+      email: shippingData.email,
       shippingAddress: shippingData.address,
       shippingCity: shippingData.city,
       shippingState: shippingData.state,
       shippingZip: shippingData.zip,
       shippingPhone: shippingData.phone,
+      shippingMethod,
       paymentMethod,
     });
+  };
+
+  const handleStripePaymentSuccess = () => {
+    handlePlaceOrder();
   };
 
   return (
@@ -159,42 +274,8 @@ export default function CheckoutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            {/* Step 1: Cart Review */}
+            {/* Step 1: Shipping Information */}
             {step === 1 && (
-              <Card>
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-semibold mb-6">Review Your Cart</h2>
-                  <div className="space-y-4 mb-6">
-                    {cartItems.map((item: any) => (
-                      <div key={item.id} className="flex gap-4 pb-4 border-b" data-testid={`review-item-${item.id}`}>
-                        <div className="w-20 h-20 bg-background rounded-md flex items-center justify-center border flex-shrink-0">
-                          <img
-                            src={item.product.image}
-                            alt={item.product.name}
-                            className="w-full h-full object-contain p-2"
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-medium mb-1">{item.product.name}</h3>
-                          <p className="text-sm text-muted-foreground">Qty: {item.quantity}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-semibold">
-                            ${(parseFloat(item.product.price) * item.quantity).toFixed(2)}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <Button size="lg" className="w-full font-semibold" onClick={() => setStep(2)} data-testid="button-continue-to-shipping">
-                    Continue to Shipping
-                  </Button>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Step 2: Shipping Information */}
-            {step === 2 && (
               <Card>
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-semibold mb-6">Shipping Information</h2>
@@ -207,7 +288,7 @@ export default function CheckoutPage() {
                           <FormItem>
                             <FormLabel>Email *</FormLabel>
                             <FormControl>
-                              <Input {...field} type="email" data-testid="input-email" />
+                              <Input {...field} type="email" placeholder="john@example.com" data-testid="input-email" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -220,7 +301,7 @@ export default function CheckoutPage() {
                           <FormItem>
                             <FormLabel>Full Name *</FormLabel>
                             <FormControl>
-                              <Input {...field} data-testid="input-name" />
+                              <Input {...field} placeholder="John Doe" data-testid="input-name" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -231,9 +312,9 @@ export default function CheckoutPage() {
                         name="address"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Address *</FormLabel>
+                            <FormLabel>Street Address *</FormLabel>
                             <FormControl>
-                              <Input {...field} data-testid="input-address" />
+                              <Input {...field} placeholder="123 Main St" data-testid="input-address" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -247,7 +328,7 @@ export default function CheckoutPage() {
                             <FormItem>
                               <FormLabel>City *</FormLabel>
                               <FormControl>
-                                <Input {...field} data-testid="input-city" />
+                                <Input {...field} placeholder="San Francisco" data-testid="input-city" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -275,7 +356,7 @@ export default function CheckoutPage() {
                             <FormItem>
                               <FormLabel>ZIP Code *</FormLabel>
                               <FormControl>
-                                <Input {...field} placeholder="12345" data-testid="input-zip" />
+                                <Input {...field} placeholder="94102" data-testid="input-zip" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -295,16 +376,60 @@ export default function CheckoutPage() {
                           )}
                         />
                       </div>
-                      <div className="flex gap-3 pt-4">
-                        <Button type="button" variant="outline" onClick={() => setStep(1)} className="flex-1" data-testid="button-back-to-cart">
-                          Back to Cart
-                        </Button>
-                        <Button type="submit" size="lg" className="flex-1 font-semibold" data-testid="button-continue-to-payment">
-                          Continue to Payment
+                      <div className="pt-4">
+                        <Button type="submit" size="lg" className="w-full font-semibold" data-testid="button-continue-to-shipping">
+                          Continue to Shipping Method
                         </Button>
                       </div>
                     </form>
                   </Form>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Step 2: Shipping Method */}
+            {step === 2 && (
+              <Card>
+                <CardContent className="p-8">
+                  <h2 className="text-2xl font-semibold mb-6">Shipping Method</h2>
+                  <RadioGroup value={shippingMethod} onValueChange={setShippingMethod} className="space-y-4 mb-8">
+                    {shippingOptions.map((option) => {
+                      const Icon = option.icon;
+                      return (
+                        <div
+                          key={option.id}
+                          className="flex items-center gap-4 p-4 border rounded-md hover-elevate cursor-pointer"
+                          data-testid={`radio-shipping-${option.id}`}
+                        >
+                          <RadioGroupItem value={option.id} id={option.id} />
+                          <div className="flex items-center gap-4 flex-1">
+                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                              <Icon className="w-5 h-5 text-primary" />
+                            </div>
+                            <div className="flex-1">
+                              <Label htmlFor={option.id} className="font-medium cursor-pointer block">
+                                {option.name}
+                              </Label>
+                              <p className="text-sm text-muted-foreground">{option.description}</p>
+                            </div>
+                            <div className="text-right">
+                              <p className="font-semibold">
+                                {option.price === 0 ? "FREE" : `$${option.price.toFixed(2)}`}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </RadioGroup>
+                  <div className="flex gap-3">
+                    <Button type="button" variant="outline" onClick={() => setStep(1)} className="flex-1" data-testid="button-back-to-info">
+                      Back
+                    </Button>
+                    <Button size="lg" onClick={() => setStep(3)} className="flex-1 font-semibold" data-testid="button-continue-to-payment">
+                      Continue to Payment
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             )}
@@ -314,44 +439,76 @@ export default function CheckoutPage() {
               <Card>
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-semibold mb-6">Payment Method</h2>
-                  <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod} className="space-y-4 mb-8">
-                    <div className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer" data-testid="radio-cash-on-delivery">
+                  
+                  <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as "card" | "cash")} className="space-y-4 mb-6">
+                    {stripePromise && (
+                      <div
+                        className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
+                        data-testid="radio-card-payment"
+                      >
+                        <RadioGroupItem value="card" id="card" />
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <CreditCard className="w-5 h-5 text-primary" />
+                            <Label htmlFor="card" className="font-medium cursor-pointer">
+                              Credit/Debit Card
+                            </Label>
+                          </div>
+                          <p className="text-sm text-muted-foreground">
+                            Secure payment with Stripe
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                    <div
+                      className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
+                      data-testid="radio-cash-on-delivery"
+                    >
                       <RadioGroupItem value="cash" id="cash" />
                       <div className="flex-1">
-                        <Label htmlFor="cash" className="font-medium cursor-pointer">
-                          Cash on Delivery
-                        </Label>
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Banknote className="w-5 h-5 text-primary" />
+                          <Label htmlFor="cash" className="font-medium cursor-pointer">
+                            Cash on Delivery
+                          </Label>
+                        </div>
+                        <p className="text-sm text-muted-foreground">
                           Pay with cash when your order is delivered
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-4 border rounded-md hover-elevate opacity-50">
-                      <RadioGroupItem value="card" id="card" disabled />
-                      <div className="flex-1">
-                        <Label htmlFor="card" className="font-medium">
-                          Credit/Debit Card
-                        </Label>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Payment by card (Currently unavailable)
-                        </p>
-                      </div>
-                    </div>
                   </RadioGroup>
-                  <div className="flex gap-3">
-                    <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1" data-testid="button-back-to-shipping">
-                      Back to Shipping
-                    </Button>
-                    <Button
-                      size="lg"
-                      className="flex-1 font-semibold"
-                      onClick={handlePlaceOrder}
-                      disabled={createOrderMutation.isPending}
-                      data-testid="button-place-order"
-                    >
-                      {createOrderMutation.isPending ? "Processing..." : "Place Order"}
-                    </Button>
-                  </div>
+
+                  {paymentMethod === "card" && clientSecret && stripePromise ? (
+                    <div className="mb-6">
+                      <Elements stripe={stripePromise} options={{ clientSecret }}>
+                        <StripePaymentForm amount={total} onSuccess={handleStripePaymentSuccess} />
+                      </Elements>
+                    </div>
+                  ) : null}
+
+                  {paymentMethod === "cash" && (
+                    <div className="flex gap-3">
+                      <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1" data-testid="button-back-to-shipping">
+                        Back
+                      </Button>
+                      <Button
+                        size="lg"
+                        className="flex-1 font-semibold"
+                        onClick={handlePlaceOrder}
+                        disabled={createOrderMutation.isPending}
+                        data-testid="button-place-order"
+                      >
+                        {createOrderMutation.isPending ? "Processing..." : "Place Order"}
+                      </Button>
+                    </div>
+                  )}
+
+                  {paymentMethod === "card" && !stripePromise && (
+                    <div className="text-center py-6">
+                      <p className="text-muted-foreground">Card payments are currently being configured.</p>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             )}
@@ -365,25 +522,36 @@ export default function CheckoutPage() {
                   </div>
                   <h2 className="text-3xl font-bold mb-3">Order Confirmed!</h2>
                   <p className="text-lg text-muted-foreground mb-2">
-                    Thank you for your order
+                    Thank you for your order, {shippingData?.name}
                   </p>
-                  <p className="text-sm text-muted-foreground mb-8">
-                    Order #{orderId.slice(0, 8)}
+                  <p className="text-sm text-muted-foreground mb-2" data-testid="text-order-number">
+                    Order #{orderId.slice(0, 8).toUpperCase()}
                   </p>
-                  <div className="bg-card p-6 rounded-md border mb-8 text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded-md mb-8">
+                    <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                    <span className="text-sm font-medium">Order In Process</span>
+                  </div>
+                  
+                  <div className="bg-card p-6 rounded-md border mb-6 text-left">
                     <h3 className="font-semibold mb-3">Delivery Information</h3>
                     <p className="text-sm text-muted-foreground mb-1">{shippingData?.name}</p>
                     <p className="text-sm text-muted-foreground mb-1">{shippingData?.address}</p>
                     <p className="text-sm text-muted-foreground mb-1">
                       {shippingData?.city}, {shippingData?.state} {shippingData?.zip}
                     </p>
-                    <p className="text-sm text-muted-foreground">{shippingData?.phone}</p>
+                    <p className="text-sm text-muted-foreground mb-3">{shippingData?.phone}</p>
+                    <div className="pt-3 border-t">
+                      <p className="text-sm font-medium mb-1">Shipping Method:</p>
+                      <p className="text-sm text-muted-foreground">{selectedShipping?.name}</p>
+                    </div>
                   </div>
+
                   <p className="text-muted-foreground mb-8">
                     A confirmation email has been sent to <strong>{shippingData?.email}</strong>
                   </p>
+                  
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Button variant="outline" onClick={() => navigate("/account")} className="flex-1" data-testid="button-view-orders">
+                    <Button variant="outline" onClick={() => navigate("/profile")} className="flex-1" data-testid="button-view-orders">
                       View My Orders
                     </Button>
                     <Button onClick={() => navigate("/")} className="flex-1" data-testid="button-continue-shopping-confirmation">
@@ -404,21 +572,37 @@ export default function CheckoutPage() {
                   <div className="space-y-3 mb-4">
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Subtotal</span>
-                      <span className="font-medium">${subtotal.toFixed(2)}</span>
+                      <span className="font-medium" data-testid="text-subtotal">${subtotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Shipping</span>
-                      <span className="font-medium">{shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`}</span>
+                      <span className="font-medium" data-testid="text-shipping">
+                        {shippingCost === 0 ? "FREE" : `$${shippingCost.toFixed(2)}`}
+                      </span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Tax</span>
-                      <span className="font-medium">${tax.toFixed(2)}</span>
+                      <span className="text-muted-foreground">Tax (8%)</span>
+                      <span className="font-medium" data-testid="text-tax">${tax.toFixed(2)}</span>
                     </div>
                     <div className="border-t pt-3">
                       <div className="flex justify-between">
                         <span className="font-semibold">Total</span>
-                        <span className="font-bold text-xl">${total.toFixed(2)}</span>
+                        <span className="font-bold text-xl" data-testid="text-total">${total.toFixed(2)}</span>
                       </div>
+                    </div>
+                  </div>
+                  <div className="space-y-2 pt-4 border-t text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-primary" />
+                      <span>Secure checkout</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-primary" />
+                      <span>Original OEM warranty</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-primary" />
+                      <span>24/7 Expert support</span>
                     </div>
                   </div>
                 </CardContent>
