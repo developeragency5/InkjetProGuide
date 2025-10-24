@@ -1,4 +1,4 @@
-import { Switch, Route, useRoute } from "wouter";
+import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,27 +25,22 @@ import AdminCustomersPage from "@/pages/AdminCustomersPage";
 import AdminAnalyticsPage from "@/pages/AdminAnalyticsPage";
 import NotFound from "@/pages/not-found";
 
-function Router() {
-  // Check if we're on an admin route
-  const [isAdminLogin] = useRoute("/admin");
-  const [isAdminRoute] = useRoute("/admin/:path*");
+// Admin router (no layout)
+function AdminRouter() {
+  return (
+    <Switch>
+      <Route path="/admin" component={AdminLoginPage} />
+      <Route path="/admin/dashboard" component={AdminDashboardPage} />
+      <Route path="/admin/products" component={AdminProductsPage} />
+      <Route path="/admin/orders" component={AdminOrdersPage} />
+      <Route path="/admin/customers" component={AdminCustomersPage} />
+      <Route path="/admin/analytics" component={AdminAnalyticsPage} />
+    </Switch>
+  );
+}
 
-  // Admin routes don't use the main layout
-  if (isAdminLogin || isAdminRoute) {
-    return (
-      <Switch>
-        <Route path="/admin" component={AdminLoginPage} />
-        <Route path="/admin/dashboard" component={AdminDashboardPage} />
-        <Route path="/admin/products" component={AdminProductsPage} />
-        <Route path="/admin/orders" component={AdminOrdersPage} />
-        <Route path="/admin/customers" component={AdminCustomersPage} />
-        <Route path="/admin/analytics" component={AdminAnalyticsPage} />
-        <Route component={NotFound} />
-      </Switch>
-    );
-  }
-
-  // Regular routes use the main layout
+// Main router (with layout)
+function MainRouter() {
   return (
     <Layout>
       <Switch>
@@ -66,6 +61,13 @@ function Router() {
       </Switch>
     </Layout>
   );
+}
+
+function Router() {
+  const pathname = window.location.pathname;
+  const isAdmin = pathname.startsWith('/admin');
+  
+  return isAdmin ? <AdminRouter /> : <MainRouter />;
 }
 
 function App() {
