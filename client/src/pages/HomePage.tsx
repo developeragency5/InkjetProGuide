@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users } from "lucide-react";
+import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import type { Product } from "@shared/schema";
@@ -54,18 +54,42 @@ export default function HomePage() {
                 </Button>
               </Link>
             </div>
-            <div className="flex flex-wrap gap-6 mt-8">
-              <div className="flex items-center gap-2 text-primary-foreground/95">
-                <Package className="w-5 h-5" />
-                <span className="text-sm font-medium">Free Shipping $50+</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Shield className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm mb-0.5">Original OEM Warranty</p>
+                  <p className="text-xs text-primary-foreground/80">Comprehensive protection on all HP models</p>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-primary-foreground/95">
-                <Shield className="w-5 h-5" />
-                <span className="text-sm font-medium">2-Year Warranty</span>
+              <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Headphones className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm mb-0.5">24/7 Expert Support</p>
+                  <p className="text-xs text-primary-foreground/80">Technical assistance whenever you need it</p>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-primary-foreground/95">
-                <BookOpen className="w-5 h-5" />
-                <span className="text-sm font-medium">Setup Guides Included</span>
+              <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Truck className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm mb-0.5">Free Shipping</p>
+                  <p className="text-xs text-primary-foreground/80">Next-day delivery on orders over $299</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <CreditCard className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm mb-0.5">Flexible Payment</p>
+                  <p className="text-xs text-primary-foreground/80">0% financing available for qualified businesses</p>
+                </div>
               </div>
             </div>
           </div>
