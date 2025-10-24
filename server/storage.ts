@@ -7,6 +7,7 @@ import {
   orderItems,
   savedComparisons,
   helpArticles,
+  faqs,
   type User, 
   type InsertUser, 
   type Product,
@@ -21,6 +22,8 @@ import {
   type InsertSavedComparison,
   type HelpArticle,
   type InsertHelpArticle,
+  type Faq,
+  type InsertFaq,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, sql, desc } from "drizzle-orm";
@@ -77,6 +80,16 @@ export interface IStorage {
   updateHelpArticle(id: string, article: Partial<InsertHelpArticle>): Promise<HelpArticle>;
   deleteHelpArticle(id: string): Promise<void>;
   recordHelpArticleFeedback(id: string, helpful: boolean): Promise<void>;
+
+  // FAQ operations
+  getAllFaqs(): Promise<Faq[]>;
+  getFaqsByCategory(category: string): Promise<Faq[]>;
+  getFaq(id: string): Promise<Faq | undefined>;
+  createFaq(faq: InsertFaq): Promise<Faq>;
+  updateFaq(id: string, faq: Partial<InsertFaq>): Promise<Faq>;
+  deleteFaq(id: string): Promise<void>;
+  recordFaqFeedback(id: string, helpful: boolean): Promise<void>;
+  incrementFaqViews(id: string): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -512,6 +525,65 @@ export class DatabaseStorage implements IStorage {
         : { notHelpful: sql`${helpArticles.notHelpful} + 1` }
       )
       .where(eq(helpArticles.id, id));
+  }
+
+  // FAQ operations
+  async getAllFaqs(): Promise<Faq[]> {
+    return await db
+      .select()
+      .from(faqs)
+      .orderBy(faqs.category, faqs.orderIndex);
+  }
+
+  async getFaqsByCategory(category: string): Promise<Faq[]> {
+    return await db
+      .select()
+      .from(faqs)
+      .where(eq(faqs.category, category))
+      .orderBy(faqs.orderIndex);
+  }
+
+  async getFaq(id: string): Promise<Faq | undefined> {
+    const [faq] = await db.select().from(faqs).where(eq(faqs.id, id));
+    return faq || undefined;
+  }
+
+  async createFaq(faq: InsertFaq): Promise<Faq> {
+    const [newFaq] = await db
+      .insert(faqs)
+      .values(faq)
+      .returning();
+    return newFaq;
+  }
+
+  async updateFaq(id: string, faq: Partial<InsertFaq>): Promise<Faq> {
+    const [updatedFaq] = await db
+      .update(faqs)
+      .set(faq)
+      .where(eq(faqs.id, id))
+      .returning();
+    return updatedFaq;
+  }
+
+  async deleteFaq(id: string): Promise<void> {
+    await db.delete(faqs).where(eq(faqs.id, id));
+  }
+
+  async recordFaqFeedback(id: string, helpful: boolean): Promise<void> {
+    await db
+      .update(faqs)
+      .set(helpful 
+        ? { helpful: sql`${faqs.helpful} + 1` }
+        : { notHelpful: sql`${faqs.notHelpful} + 1` }
+      )
+      .where(eq(faqs.id, id));
+  }
+
+  async incrementFaqViews(id: string): Promise<void> {
+    await db
+      .update(faqs)
+      .set({ views: sql`${faqs.views} + 1` })
+      .where(eq(faqs.id, id));
   }
 }
 

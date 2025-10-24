@@ -600,6 +600,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // FAQ routes
+  app.get("/api/faqs", async (req, res) => {
+    try {
+      const { category } = req.query;
+      let faqs;
+      
+      if (category && typeof category === 'string') {
+        faqs = await storage.getFaqsByCategory(category);
+      } else {
+        faqs = await storage.getAllFaqs();
+      }
+      
+      res.json(faqs);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/faqs/:id", async (req, res) => {
+    try {
+      const faq = await storage.getFaq(req.params.id);
+      if (!faq) {
+        return res.status(404).json({ message: "FAQ not found" });
+      }
+      
+      await storage.incrementFaqViews(req.params.id);
+      res.json(faq);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.post("/api/faqs/:id/feedback", async (req, res) => {
+    try {
+      const { helpful } = req.body;
+      if (typeof helpful !== 'boolean') {
+        return res.status(400).json({ message: "helpful field must be a boolean" });
+      }
+      await storage.recordFaqFeedback(req.params.id, helpful);
+      res.json({ message: "Feedback recorded successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
