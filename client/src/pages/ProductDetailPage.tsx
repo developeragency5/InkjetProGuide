@@ -241,7 +241,7 @@ export default function ProductDetailPage() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Free Shipping</p>
-                  <p className="text-xs text-muted-foreground">On orders $50+</p>
+                  <p className="text-xs text-muted-foreground">On orders $299+</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

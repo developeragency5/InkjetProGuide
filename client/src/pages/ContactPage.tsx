@@ -45,7 +45,7 @@ export default function ContactPage() {
               <p className="text-sm text-muted-foreground mb-2">
                 Call us toll-free
               </p>
-              <p className="font-semibold text-primary">1-800-PRINTER (774-6837)</p>
+              <p className="font-semibold text-primary">(855) 247-4683</p>
             </CardContent>
           </Card>
 
@@ -151,8 +151,8 @@ export default function ContactPage() {
                   <div>
                     <p className="font-semibold mb-1">InjetProGuide Headquarters</p>
                     <p className="text-sm text-muted-foreground">
-                      123 Printer Avenue<br />
-                      San Francisco, CA 94102<br />
+                      2450 Broadway Street, Suite 300<br />
+                      San Francisco, CA 94115<br />
                       United States
                     </p>
                   </div>
@@ -168,7 +168,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">What are your shipping options?</h4>
                   <p className="text-sm text-muted-foreground">
-                    We offer free shipping on all orders over $50. Standard delivery takes 2-3 business days.
+                    We offer free shipping on all orders over $299. Standard delivery takes 2-3 business days.
                   </p>
                 </div>
                 <div>

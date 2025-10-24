@@ -79,7 +79,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="font-semibold text-sm mb-0.5">Free Shipping</p>
-                  <p className="text-xs text-primary-foreground/80">On all orders over $50</p>
+                  <p className="text-xs text-primary-foreground/80">On all orders over $299</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
@@ -243,7 +243,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-semibold text-xl mb-3">Free Shipping</h3>
                 <p className="text-muted-foreground">
-                  Free shipping on all orders over $50. Fast 2-3 day delivery across the USA.
+                  Free shipping on all orders over $299. Fast 2-3 day delivery across the USA.
                 </p>
               </CardContent>
             </Card>

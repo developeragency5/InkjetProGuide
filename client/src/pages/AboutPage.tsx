@@ -103,7 +103,7 @@ export default function AboutPage() {
               <div className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <p>
-                  <strong className="text-foreground">Fast Shipping:</strong> Free shipping on orders over $50 
+                  <strong className="text-foreground">Fast Shipping:</strong> Free shipping on orders over $299 
                   with delivery across the USA in 2-3 business days
                 </p>
               </div>

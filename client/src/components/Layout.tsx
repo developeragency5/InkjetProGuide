@@ -55,7 +55,7 @@ export function Layout({ children }: LayoutProps) {
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
-          <p className="font-medium">Free Shipping on Orders $50+</p>
+          <p className="font-medium">Free Shipping on Orders $299+</p>
           <div className="flex items-center gap-4">
             {isLoggedIn ? (
               <Link href="/profile">

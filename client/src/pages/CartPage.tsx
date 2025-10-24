@@ -37,7 +37,7 @@ export default function CartPage() {
     (sum: number, item: any) => sum + parseFloat(item.product.price) * item.quantity,
     0
   );
-  const shipping = subtotal >= 50 ? 0 : 9.99;
+  const shipping = subtotal >= 299 ? 0 : 9.99;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
 

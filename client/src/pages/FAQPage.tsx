@@ -23,7 +23,7 @@ export default function FAQPage() {
         },
         {
           question: "Can I get help choosing the right printer?",
-          answer: "Absolutely! Our expert team is available 24/7 to help you select the perfect printer. You can contact us via phone at 1-800-PRINTER, email at support@injetproguide.com, or use our live chat feature. We'll ask about your printing needs, budget, and workspace to recommend the best options."
+          answer: "Absolutely! Our expert team is available 24/7 to help you select the perfect printer. You can contact us via phone at (855) 247-4683, email at support@injetproguide.com, or use our live chat feature. We'll ask about your printing needs, budget, and workspace to recommend the best options."
         }
       ]
     },
@@ -55,7 +55,7 @@ export default function FAQPage() {
       faqs: [
         {
           question: "Do you offer free shipping?",
-          answer: "Yes! We offer free standard shipping on all orders over $50. Orders under $50 have a $9.99 shipping fee. We also offer Express (2-3 business days) for $19.99 and Overnight delivery for $39.99."
+          answer: "Yes! We offer free standard shipping on all orders over $299. Orders under $299 have a $9.99 shipping fee. We also offer Express (2-3 business days) for $19.99 and Overnight delivery for $39.99."
         },
         {
           question: "How long does shipping take?",
@@ -103,7 +103,7 @@ export default function FAQPage() {
         },
         {
           question: "How do I return a product?",
-          answer: "Contact our customer service team at support@injetproguide.com or call 1-800-PRINTER to initiate a return. We'll provide you with a Return Authorization (RA) number and return shipping instructions. Pack the printer securely in its original packaging and ship it back within 14 days of receiving your RA number."
+          answer: "Contact our customer service team at support@injetproguide.com or call (855) 247-4683 to initiate a return. We'll provide you with a Return Authorization (RA) number and return shipping instructions. Pack the printer securely in its original packaging and ship it back within 14 days of receiving your RA number."
         },
         {
           question: "What warranty comes with HP printers?",
@@ -129,7 +129,7 @@ export default function FAQPage() {
         },
         {
           question: "What if I have technical problems?",
-          answer: "Our expert support team is available 24/7 to help with technical issues. Contact us via phone (1-800-PRINTER), email (support@injetproguide.com), or live chat. Common issues we can help with include connectivity problems, print quality issues, paper jams, and error messages."
+          answer: "Our expert support team is available 24/7 to help with technical issues. Contact us via phone (855) 247-4683, email (support@injetproguide.com), or live chat. Common issues we can help with include connectivity problems, print quality issues, paper jams, and error messages."
         },
         {
           question: "Do you offer maintenance tips?",
@@ -198,9 +198,9 @@ export default function FAQPage() {
               about HP inkjet printers, orders, or technical support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+18007746837">
+              <a href="tel:+18552474683">
                 <button className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover-elevate min-h-10 px-8">
-                  Call 1-800-PRINTER
+                  Call (855) 247-4683
                 </button>
               </a>
               <a href="mailto:support@injetproguide.com">
