@@ -3,15 +3,18 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import type { Product } from "@shared/schema";
-import heroImage from "@assets/generated_images/HP_printer_hero_image_f29965e7.png";
+import { useLocation } from "wouter";
 
 export default function HomePage() {
   const [email, setEmail] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [, setLocation] = useLocation();
   const { toast } = useToast();
   
   const { data: products, isLoading } = useQuery<Product[]>({
@@ -19,6 +22,7 @@ export default function HomePage() {
   });
 
   const featuredProducts = products?.slice(0, 4) || [];
+  const heroProduct = products?.find(p => p.name.includes("OfficeJet Pro 9730e")) || products?.[0];
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,83 +57,151 @@ export default function HomePage() {
     setEmail("");
   };
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      setLocation(`/products?search=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 z-10" />
-        <img
-          src={heroImage}
-          alt="HP inkjet printer on modern desk"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl">
-            <Badge className="mb-4 bg-primary/20 text-primary-foreground border-primary-foreground/30 backdrop-blur-sm">
-              Your Trusted HP Inkjet Printer Guide
-            </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 tracking-tight leading-tight">
-              Expert Guidance for Every Print
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/95 mb-8 leading-relaxed">
-              Find the perfect HP inkjet printer with comprehensive setup guides, maintenance tips, 
-              and expert support. From home offices to professional printing, we help you choose right.
-            </p>
-            <div className="flex flex-wrap gap-4">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-muted/30 via-background to-muted/20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Content */}
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Best Home Office Printer{" "}
+                <span className="text-primary">& Inkjet Models</span>{" "}
+                2025
+              </h1>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Top rated office printers featuring HP inkjet models and copier printer scanner combos. 
+                Expert support, premium hardware, and <span className="font-semibold">instant troubleshooting for your office printing needs.</span>
+              </p>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-3.5 h-3.5 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium">24/7 Expert Support</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-3.5 h-3.5 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium">Original OEM Warranty</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-3.5 h-3.5 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium">Fast Delivery</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-3.5 h-3.5 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium">Price Match Guarantee</span>
+                </div>
+              </div>
+
+              {/* Search Bar */}
+              <form onSubmit={handleSearch} className="mb-6">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder="Search printers, guides, or get help..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-12 h-12 text-base"
+                    data-testid="input-hero-search"
+                  />
+                </div>
+              </form>
+
+              {/* Browse Button */}
               <Link href="/products">
-                <Button size="lg" className="font-semibold text-lg px-8" data-testid="button-browse-printers">
-                  Browse All Printers
-                </Button>
-              </Link>
-              <Link href="/products">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="font-semibold text-lg px-8 bg-background/10 backdrop-blur-sm border-primary-foreground/30 text-primary-foreground hover:bg-background/20" 
-                  data-testid="button-learn-more"
-                >
-                  Learn More
+                <Button size="lg" className="font-semibold" data-testid="button-browse-printers">
+                  Browse HP Printers
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-              <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Shield className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm mb-0.5">Original OEM Warranty</p>
-                  <p className="text-xs text-primary-foreground/80">Comprehensive protection on all HP models</p>
-                </div>
+
+            {/* Right Side - Featured Product Card */}
+            {heroProduct && (
+              <div className="flex justify-center lg:justify-end">
+                <Card className="w-full max-w-md hover-elevate transition-all">
+                  <CardContent className="p-8">
+                    {/* Printer Icon */}
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Printer className="w-8 h-8 text-primary" />
+                    </div>
+
+                    {/* Bestseller Badge */}
+                    <div className="text-center mb-4">
+                      <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 border-orange-200 dark:bg-orange-900/30 dark:text-orange-400 dark:border-orange-800">
+                        BESTSELLER
+                      </Badge>
+                    </div>
+
+                    {/* Product Name */}
+                    <h3 className="text-2xl font-bold text-center mb-2">
+                      {heroProduct.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground text-center mb-6">
+                      {heroProduct.category}
+                    </p>
+
+                    {/* Price and Rating */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div>
+                        <div className="text-3xl font-bold text-primary">
+                          ${heroProduct.price}
+                        </div>
+                        <div className="text-xs text-muted-foreground">Best Price</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="flex items-center gap-1 justify-end">
+                          <span className="text-2xl font-bold">{heroProduct.rating}</span>
+                          <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                        </div>
+                        <div className="text-xs text-muted-foreground">Rating</div>
+                      </div>
+                    </div>
+
+                    {/* Specs */}
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Print Speed</span>
+                        <span className="font-medium">24 PPM</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Connectivity</span>
+                        <span className="font-medium">WiFi + Ethernet</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Warranty</span>
+                        <span className="font-medium">Original OEM</span>
+                      </div>
+                    </div>
+
+                    {/* Shop Now Button */}
+                    <Link href={`/product/${heroProduct.id}`}>
+                      <Button className="w-full font-semibold" size="lg" data-testid="button-shop-hero-product">
+                        Shop Now
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Headphones className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm mb-0.5">24/7 Expert Support</p>
-                  <p className="text-xs text-primary-foreground/80">Technical assistance whenever you need it</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Truck className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm mb-0.5">Free Shipping</p>
-                  <p className="text-xs text-primary-foreground/80">On all orders over $299</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 text-primary-foreground/95 bg-background/10 backdrop-blur-sm p-4 rounded-lg">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <CreditCard className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm mb-0.5">Flexible Payment</p>
-                  <p className="text-xs text-primary-foreground/80">0% financing available for qualified businesses</p>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
