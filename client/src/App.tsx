@@ -17,6 +17,7 @@ import AccountPage from "@/pages/AccountPage";
 import ProfilePage from "@/pages/ProfilePage";
 import BuyingGuidesPage from "@/pages/BuyingGuidesPage";
 import BeginnersGuidePage from "@/pages/guides/BeginnersGuidePage";
+import GuidePage from "@/pages/GuidePage";
 import HelpCenterPage from "@/pages/HelpCenterPage";
 import HelpArticlePage from "@/pages/HelpArticlePage";
 import ResourceCenterPage from "@/pages/ResourceCenterPage";
@@ -61,6 +62,7 @@ function MainRouter() {
         <Route path="/auth" component={AuthPage} />
         <Route path="/account" component={AccountPage} />
         <Route path="/profile" component={ProfilePage} />
+        <Route path="/guide" component={GuidePage} />
         <Route path="/guides" component={BuyingGuidesPage} />
         <Route path="/guides/beginners-guide" component={BeginnersGuidePage} />
         <Route path="/guides/home-office" component={BeginnersGuidePage} />
