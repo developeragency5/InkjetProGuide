@@ -69,7 +69,7 @@ const RESOURCE_CATEGORIES = [
     title: "Ink Guide",
     description: "Everything about cartridges and supplies",
     icon: Droplet,
-    link: "/help?category=Maintenance",
+    link: "/ink-guide",
     color: "text-pink-500",
   },
   {

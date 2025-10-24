@@ -133,7 +133,7 @@ export const faqs = pgTable("faqs", {
 // Ink Cartridges table
 export const inkCartridges = pgTable("ink_cartridges", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  cartridgeNumber: text("cartridge_number").notNull().unique(), // e.g., "HP 63", "HP 910"
+  cartridgeNumber: text("cartridge_number").notNull(), // e.g., "HP 63", "HP 910"
   cartridgeName: text("cartridge_name").notNull(), // Full name
   color: text("color").notNull(), // Black, Cyan, Magenta, Yellow, Tri-color
   type: text("type").notNull(), // Original HP, Compatible, Remanufactured
