@@ -81,19 +81,28 @@ export function ProductCard({ product }: ProductCardProps) {
   // Determine if product is best seller (high review count)
   const isBestSeller = (product.reviewCount || 0) >= 50;
 
+  // Safe specification parser with error handling
+  const parseSpecifications = () => {
+    try {
+      if (typeof product.specifications === 'string') {
+        return JSON.parse(product.specifications);
+      }
+      return product.specifications || {};
+    } catch (error) {
+      console.warn(`Failed to parse specifications for product ${product.id}:`, error);
+      return {};
+    }
+  };
+
   // Extract model number from specifications or name
   const getModelNumber = () => {
-    const specs = typeof product.specifications === 'string' 
-      ? JSON.parse(product.specifications) 
-      : product.specifications;
+    const specs = parseSpecifications();
     return specs?.model || specs?.Model || product.name.split(' ').slice(-1)[0];
   };
 
   // Get key specifications
   const getKeySpecs = () => {
-    const specs = typeof product.specifications === 'string' 
-      ? JSON.parse(product.specifications) 
-      : product.specifications;
+    const specs = parseSpecifications();
     return {
       printSpeed: specs?.printSpeed || specs?.['Print Speed'] || 'Standard',
       resolution: specs?.resolution || specs?.Resolution || '4800x1200 dpi',
@@ -154,16 +163,16 @@ export function ProductCard({ product }: ProductCardProps) {
           {/* Product Image */}
           <Link href={`/product/${product.id}`}>
             <span className="block cursor-pointer" data-testid={`link-product-${product.id}`}>
-              <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border relative overflow-hidden">
+              <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border relative overflow-hidden group/image">
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
                 
-                {/* Hover overlay with key features */}
+                {/* Hover overlay with key features - desktop only */}
                 <div 
-                  className={`absolute inset-0 bg-background/95 backdrop-blur-sm flex flex-col items-center justify-center p-4 transition-opacity duration-300 ${
+                  className={`hidden md:flex absolute inset-0 bg-background/95 backdrop-blur-sm flex-col items-center justify-center p-4 transition-opacity duration-300 ${
                     isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
                   }`}
                 >
@@ -177,10 +186,14 @@ export function ProductCard({ product }: ProductCardProps) {
                       <span className="font-medium">{keySpecs.resolution}</span>
                     </div>
                   </div>
+                </div>
+                
+                {/* Quick View Button - Always accessible on mobile, hover on desktop */}
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-100 md:opacity-0 md:group-hover/image:opacity-100 transition-opacity duration-300">
                   <Button
                     size="sm"
                     variant="outline"
-                    className="bg-background"
+                    className="bg-background/95 backdrop-blur-sm shadow-lg"
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();

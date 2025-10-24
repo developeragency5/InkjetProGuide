@@ -45,23 +45,15 @@ export default function ProductsPage() {
   const connectivityOptions = ["WiFi", "USB", "Bluetooth", "Ethernet"];
   const technologyOptions = ["Thermal Inkjet", "Piezo Inkjet"];
 
-  // Apply search input to URL
-  const handleSearch = () => {
-    if (searchInput) {
-      window.location.href = `/products?search=${encodeURIComponent(searchInput)}`;
-    } else {
-      window.location.href = "/products";
-    }
-  };
-
   // Filter and sort products
   const filteredProducts = products?.filter((product) => {
     // Category filter
     if (category && product.category !== category) return false;
     
-    // Search filter
-    if (searchQuery && !product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        !product.description.toLowerCase().includes(searchQuery.toLowerCase())) {
+    // Search filter - now uses real-time searchInput instead of URL param
+    const searchTerm = searchInput.toLowerCase();
+    if (searchTerm && !product.name.toLowerCase().includes(searchTerm) &&
+        !product.description.toLowerCase().includes(searchTerm)) {
       return false;
     }
     
@@ -188,24 +180,33 @@ export default function ProductsPage() {
           </p>
         </div>
 
-        {/* Search Bar */}
+        {/* Search Bar - Real-time filtering */}
         <div className="mb-6">
-          <div className="flex gap-2 max-w-md">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <Input
-                type="text"
-                placeholder="Search printers..."
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                className="pl-10"
-                data-testid="input-search"
-              />
-            </div>
-            <Button onClick={handleSearch} data-testid="button-search">
-              Search
-            </Button>
+          <div className="relative max-w-md">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Search printers in real-time..."
+              value={searchInput}
+              onChange={(e) => {
+                setSearchInput(e.target.value);
+                setCurrentPage(1); // Reset to first page when searching
+              }}
+              className="pl-10"
+              data-testid="input-search"
+            />
+            {searchInput && (
+              <button
+                onClick={() => {
+                  setSearchInput("");
+                  setCurrentPage(1);
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                data-testid="button-clear-search"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
           </div>
         </div>
 
