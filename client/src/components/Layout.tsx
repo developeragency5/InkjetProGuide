@@ -279,30 +279,37 @@ export function Layout({ children }: LayoutProps) {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/products">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
                       All Printers
-                    </span>
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/products?category=Photo Printers">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
                       Photo Printers
-                    </span>
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/products?category=Mobile Printers">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
                       Mobile Printers
-                    </span>
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/products?category=Tank Printers">
+                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                      Tank Printers
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/products?category=Wide-Format Printers">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
                       Wide-Format Printers
-                    </span>
+                    </a>
                   </Link>
                 </li>
               </ul>
