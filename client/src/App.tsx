@@ -13,7 +13,8 @@ import CheckoutPage from "@/pages/CheckoutPage";
 import AuthPage from "@/pages/AuthPage";
 import AccountPage from "@/pages/AccountPage";
 import ProfilePage from "@/pages/ProfilePage";
-import GuidesPage from "@/pages/GuidesPage";
+import BuyingGuidesPage from "@/pages/BuyingGuidesPage";
+import BeginnersGuidePage from "@/pages/guides/BeginnersGuidePage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import FAQPage from "@/pages/FAQPage";
@@ -53,7 +54,14 @@ function MainRouter() {
         <Route path="/auth" component={AuthPage} />
         <Route path="/account" component={AccountPage} />
         <Route path="/profile" component={ProfilePage} />
-        <Route path="/guides" component={GuidesPage} />
+        <Route path="/guides" component={BuyingGuidesPage} />
+        <Route path="/guides/beginners-guide" component={BeginnersGuidePage} />
+        <Route path="/guides/home-office" component={BeginnersGuidePage} />
+        <Route path="/guides/students" component={BeginnersGuidePage} />
+        <Route path="/guides/photo-printing" component={BeginnersGuidePage} />
+        <Route path="/guides/ink-cost" component={BeginnersGuidePage} />
+        <Route path="/guides/small-business" component={BeginnersGuidePage} />
+        <Route path="/guides/wireless-vs-usb" component={BeginnersGuidePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />
         <Route path="/faq" component={FAQPage} />
