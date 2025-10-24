@@ -1,135 +1,122 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShoppingCart, Package, Shield, Headphones, TrendingUp } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import type { Product } from "@shared/schema";
-import heroImage from "@assets/generated_images/Home_office_hero_banner_a75ba59e.png";
+import heroImage from "@assets/generated_images/HP_printer_hero_image_f29965e7.png";
 
 export default function HomePage() {
   const { data: products, isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],
   });
 
-  const bestSellers = products?.slice(0, 4) || [];
-  const newArrivals = products?.slice(4, 8) || [];
+  const featuredProducts = products?.slice(0, 4) || [];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 z-10" />
+      <section className="relative h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 z-10" />
         <img
           src={heroImage}
-          alt="Modern home office with HP printer"
+          alt="HP inkjet printer on modern desk"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
-          <div className="max-w-xl">
-            <p className="text-primary-foreground/90 font-medium mb-3 tracking-wide uppercase text-sm">
-              Best Sellers
-            </p>
-            <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6 tracking-tight leading-tight">
-              Premium HP Inkjet Printers
+          <div className="max-w-2xl">
+            <Badge className="mb-4 bg-primary/20 text-primary-foreground border-primary-foreground/30 backdrop-blur-sm">
+              Your Trusted HP Inkjet Printer Guide
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 tracking-tight leading-tight">
+              Expert Guidance for Every Print
             </h1>
-            <p className="text-lg text-primary-foreground/90 mb-8 leading-relaxed">
-              Discover our curated selection of HP's finest inkjet printers. 
-              From home offices to professional workflows, find the perfect printer for your needs.
+            <p className="text-lg md:text-xl text-primary-foreground/95 mb-8 leading-relaxed">
+              Find the perfect HP inkjet printer with comprehensive setup guides, maintenance tips, 
+              and expert support. From home offices to professional printing, we help you choose right.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/products">
-                <Button size="lg" className="font-semibold" data-testid="button-shop-now">
-                  Shop Now
+                <Button size="lg" className="font-semibold text-lg px-8" data-testid="button-browse-printers">
+                  Browse All Printers
                 </Button>
               </Link>
               <Link href="/products">
-                <Button size="lg" variant="outline" className="font-semibold bg-background/10 backdrop-blur-sm border-primary-foreground/20 text-primary-foreground hover:bg-background/20" data-testid="button-learn-more">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="font-semibold text-lg px-8 bg-background/10 backdrop-blur-sm border-primary-foreground/30 text-primary-foreground hover:bg-background/20" 
+                  data-testid="button-learn-more"
+                >
                   Learn More
                 </Button>
               </Link>
             </div>
             <div className="flex flex-wrap gap-6 mt-8">
-              <div className="flex items-center gap-2 text-primary-foreground/90">
+              <div className="flex items-center gap-2 text-primary-foreground/95">
                 <Package className="w-5 h-5" />
-                <span className="text-sm font-medium">Free Shipping</span>
+                <span className="text-sm font-medium">Free Shipping $50+</span>
               </div>
-              <div className="flex items-center gap-2 text-primary-foreground/90">
+              <div className="flex items-center gap-2 text-primary-foreground/95">
                 <Shield className="w-5 h-5" />
                 <span className="text-sm font-medium">2-Year Warranty</span>
               </div>
-              <div className="flex items-center gap-2 text-primary-foreground/90">
-                <Headphones className="w-5 h-5" />
-                <span className="text-sm font-medium">24/7 Support</span>
+              <div className="flex items-center gap-2 text-primary-foreground/95">
+                <BookOpen className="w-5 h-5" />
+                <span className="text-sm font-medium">Setup Guides Included</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Category Grid */}
-      <section className="py-16 bg-background">
+      {/* Trust Badges */}
+      <section className="py-8 bg-card border-b">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-8 text-center">Shop by Category</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/products?category=office">
-              <Card className="hover-elevate active-elevate-2 cursor-pointer transition-all" data-testid="card-category-office">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <ShoppingCart className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">Office Printers</h3>
-                  <p className="text-sm text-muted-foreground">Professional printing solutions</p>
-                </CardContent>
-              </Card>
-            </Link>
-            <Link href="/products?category=home">
-              <Card className="hover-elevate active-elevate-2 cursor-pointer transition-all" data-testid="card-category-home">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Package className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">Home Printers</h3>
-                  <p className="text-sm text-muted-foreground">Perfect for everyday use</p>
-                </CardContent>
-              </Card>
-            </Link>
-            <Link href="/products?category=portable">
-              <Card className="hover-elevate active-elevate-2 cursor-pointer transition-all" data-testid="card-category-portable">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <TrendingUp className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">Portable</h3>
-                  <p className="text-sm text-muted-foreground">Print on the go</p>
-                </CardContent>
-              </Card>
-            </Link>
-            <Link href="/products?category=accessories">
-              <Card className="hover-elevate active-elevate-2 cursor-pointer transition-all" data-testid="card-category-accessories">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Shield className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">Accessories</h3>
-                  <p className="text-sm text-muted-foreground">Ink and supplies</p>
-                </CardContent>
-              </Card>
-            </Link>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 mb-2 rounded-full bg-status-online/10 flex items-center justify-center">
+                <Users className="w-6 h-6 text-status-online" />
+              </div>
+              <p className="text-2xl font-bold">50,000+</p>
+              <p className="text-sm text-muted-foreground">Happy Customers</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <Star className="w-6 h-6 text-primary" />
+              </div>
+              <p className="text-2xl font-bold">4.8/5</p>
+              <p className="text-sm text-muted-foreground">Average Rating</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <Award className="w-6 h-6 text-primary" />
+              </div>
+              <p className="text-2xl font-bold">100%</p>
+              <p className="text-sm text-muted-foreground">Authentic HP</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <Shield className="w-6 h-6 text-primary" />
+              </div>
+              <p className="text-2xl font-bold">USA</p>
+              <p className="text-sm text-muted-foreground">Based Support</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Best Sellers */}
-      <section className="py-16 bg-card">
+      {/* Featured Products */}
+      <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-semibold">Best Sellers</h2>
-            <Link href="/products">
-              <Button variant="outline" data-testid="button-view-all-bestsellers">
-                View All
-              </Button>
-            </Link>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured HP Inkjet Printers</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover our best-selling HP inkjet printers, carefully selected for reliability, 
+              performance, and value
+            </p>
           </div>
           {isLoading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -145,48 +132,152 @@ export default function HomePage() {
             </div>
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {bestSellers.map((product) => (
+              {featuredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
           )}
+          <div className="text-center mt-10">
+            <Link href="/products">
+              <Button size="lg" variant="outline" className="font-semibold" data-testid="button-view-all-products">
+                View All Printers
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Value Propositions */}
+      {/* Benefits Section - Free Guidance */}
+      <section className="py-20 bg-card">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose InjetProGuide?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We don't just sell printers - we provide complete guidance to help you 
+              get the most from your HP inkjet printer
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                  <BookOpen className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-3">Complete Setup Guides</h3>
+                <p className="text-muted-foreground mb-4">
+                  Step-by-step instructions for unboxing, setup, and Wi-Fi connection. 
+                  Get printing in minutes with our easy-to-follow guides.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Detailed installation steps
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Troubleshooting tips
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Video tutorials available
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Shield className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-3">Expert Maintenance Support</h3>
+                <p className="text-muted-foreground mb-4">
+                  Keep your printer running smoothly with our comprehensive maintenance guides 
+                  and ink cartridge information.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Cleaning & care instructions
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Ink replacement guides
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Preventive maintenance tips
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Headphones className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-3">24/7 USA-Based Support</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our team of printer specialists is here to help. Get expert answers 
+                  to all your printing questions anytime.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Phone & email support
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Live chat assistance
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Same-day response guarantee
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Benefits */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
+            <Card className="hover-elevate transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                   <Package className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-xl mb-3">Free Shipping</h3>
                 <p className="text-muted-foreground">
-                  Free shipping on all orders over $50. Fast delivery across the USA.
+                  Free shipping on all orders over $50. Fast 2-3 day delivery across the USA.
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="hover-elevate transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-xl mb-3">2-Year Warranty</h3>
                 <p className="text-muted-foreground">
-                  All printers come with comprehensive 2-year manufacturer warranty.
+                  All HP printers include a comprehensive 2-year manufacturer warranty for peace of mind.
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="hover-elevate transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Headphones className="w-8 h-8 text-primary" />
+                  <TrendingUp className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-xl mb-3">Expert Support</h3>
+                <h3 className="font-semibold text-xl mb-3">Easy Returns</h3>
                 <p className="text-muted-foreground">
-                  24/7 customer support from our printer specialists.
+                  30-day money-back guarantee. Not satisfied? Return it for a full refund, no questions asked.
                 </p>
               </CardContent>
             </Card>
@@ -194,59 +285,111 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* New Arrivals */}
-      <section className="py-16 bg-card">
+      {/* Customer Testimonials */}
+      <section className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-semibold">New Arrivals</h2>
-            <Link href="/products">
-              <Button variant="outline" data-testid="button-view-all-newarrivals">
-                View All
-              </Button>
-            </Link>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Trusted by Thousands of USA Customers
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              See what our customers have to say about their experience
+            </p>
           </div>
-          {isLoading ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[...Array(4)].map((_, i) => (
-                <Card key={i} className="animate-pulse">
-                  <CardContent className="p-4">
-                    <div className="aspect-square bg-muted rounded-md mb-4" />
-                    <div className="h-4 bg-muted rounded mb-2" />
-                    <div className="h-4 bg-muted rounded w-2/3" />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {newArrivals.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 italic">
+                  "The setup guide was incredibly helpful! Had my new HP printer up and running 
+                  in under 10 minutes. The detailed instructions made everything so easy."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-semibold">
+                    SM
+                  </div>
+                  <div>
+                    <p className="font-semibold">Sarah Mitchell</p>
+                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 italic">
+                  "Best customer service I've experienced. They helped me choose the perfect printer 
+                  for my home office and answered all my questions promptly."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-semibold">
+                    JC
+                  </div>
+                  <div>
+                    <p className="font-semibold">John Chen</p>
+                    <p className="text-sm text-muted-foreground">Austin, TX</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 italic">
+                  "The maintenance tips have been a game-changer. My printer runs like new thanks 
+                  to their expert guidance on cleaning and care."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-semibold">
+                    EM
+                  </div>
+                  <div>
+                    <p className="font-semibold">Emily Rodriguez</p>
+                    <p className="text-sm text-muted-foreground">Miami, FL</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Newsletter CTA */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-lg mb-8 text-primary-foreground/90">
-            Subscribe to our newsletter for exclusive deals, new product launches, and expert printing tips.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Informed & Save</h2>
+          <p className="text-lg mb-8 text-primary-foreground/95">
+            Get exclusive deals, expert printing tips, and new product updates delivered to your inbox. 
+            Plus, receive a 10% discount code on your first order!
           </p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter your email address"
               className="flex-1 px-4 py-3 rounded-md text-foreground"
-              data-testid="input-newsletter-cta"
+              data-testid="input-newsletter"
             />
-            <Button size="lg" variant="secondary" className="font-semibold" data-testid="button-subscribe-cta">
-              Subscribe
+            <Button size="lg" variant="secondary" className="font-semibold whitespace-nowrap" data-testid="button-subscribe">
+              Get 10% Off
             </Button>
           </div>
-          <p className="text-sm mt-4 text-primary-foreground/70">
-            Join 50,000+ satisfied customers
+          <p className="text-sm mt-4 text-primary-foreground/80">
+            Join 50,000+ subscribers • No spam, unsubscribe anytime
           </p>
         </div>
       </section>
