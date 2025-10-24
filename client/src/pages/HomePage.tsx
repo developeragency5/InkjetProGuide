@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -5,15 +6,52 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
+import { useToast } from "@/hooks/use-toast";
 import type { Product } from "@shared/schema";
 import heroImage from "@assets/generated_images/HP_printer_hero_image_f29965e7.png";
 
 export default function HomePage() {
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+  
   const { data: products, isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],
   });
 
   const featuredProducts = products?.slice(0, 4) || [];
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address to subscribe.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Show success message
+    toast({
+      title: "Successfully Subscribed! 🎉",
+      description: "Check your inbox for your 10% discount code. Welcome to the InjetProGuide family!",
+    });
+    
+    // Clear the email input
+    setEmail("");
+  };
 
   return (
     <div className="min-h-screen">
@@ -365,17 +403,19 @@ export default function HomePage() {
             Get exclusive deals, expert printing tips, and new product updates delivered to your inbox. 
             Plus, receive a 10% discount code on your first order!
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-md text-foreground"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 px-4 py-3 rounded-md text-foreground border border-input bg-background"
               data-testid="input-newsletter"
             />
-            <Button size="lg" variant="default" className="font-semibold whitespace-nowrap" data-testid="button-subscribe">
+            <Button type="submit" size="lg" variant="default" className="font-semibold whitespace-nowrap" data-testid="button-subscribe">
               Get 10% Off
             </Button>
-          </div>
+          </form>
           <p className="text-sm mt-4 text-muted-foreground">
             Join 50,000+ subscribers • No spam, unsubscribe anytime
           </p>
