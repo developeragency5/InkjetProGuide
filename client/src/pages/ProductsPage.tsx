@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useLocation } from "wouter";
 import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
@@ -24,9 +24,15 @@ const ITEMS_PER_PAGE = 12;
 
 export default function ProductsPage() {
   const [location] = useLocation();
-  const params = new URLSearchParams(window.location.search);
-  const category = params.get("category");
-  const searchQuery = params.get("search");
+  
+  // Recompute URL params whenever location changes
+  const { category, searchQuery } = useMemo(() => {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      category: params.get("category"),
+      searchQuery: params.get("search"),
+    };
+  }, [location]);
 
   // Filter states
   const [priceRange, setPriceRange] = useState([0, 1000]);
@@ -36,6 +42,16 @@ export default function ProductsPage() {
   const [searchInput, setSearchInput] = useState(searchQuery || "");
   const [sortBy, setSortBy] = useState("featured");
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Reset filters when category changes
+  useEffect(() => {
+    setCurrentPage(1);
+    setPriceRange([0, 1000]);
+    setSelectedConnectivity([]);
+    setSelectedTechnology([]);
+    setSelectedColorType("");
+    setSearchInput(searchQuery || "");
+  }, [category, searchQuery]);
 
   const { data: products, isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],
@@ -149,16 +165,12 @@ export default function ProductsPage() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm mb-6" aria-label="Breadcrumb">
-          <Link href="/">
-            <a className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-breadcrumb-home">
-              Home
-            </a>
+          <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-breadcrumb-home">
+            Home
           </Link>
           <BreadcrumbIcon className="w-4 h-4 text-muted-foreground" />
-          <Link href="/products">
-            <a className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-breadcrumb-shop">
-              Shop
-            </a>
+          <Link href="/products" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-breadcrumb-shop">
+            Shop
           </Link>
           <BreadcrumbIcon className="w-4 h-4 text-muted-foreground" />
           <span className="text-foreground font-medium" data-testid="text-breadcrumb-current">
