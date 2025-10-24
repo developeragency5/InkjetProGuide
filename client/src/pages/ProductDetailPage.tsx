@@ -1,20 +1,38 @@
 import { useRoute, Link } from "wouter";
-import { useState } from "react";
-import { Minus, Plus, Heart, ShoppingCart, Star, Package, Shield, Truck, Printer, Wifi, Settings, Wrench, AlertCircle, CheckCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Minus, Plus, Heart, ShoppingCart, Star, Package, Shield, Truck, Printer, Wifi, Settings, Wrench, AlertCircle, CheckCircle, ZoomIn, ChevronLeft, ChevronRight, GitCompare, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { ProductCard } from "@/components/ProductCard";
 import type { Product } from "@shared/schema";
 
 export default function ProductDetailPage() {
   const [, params] = useRoute("/product/:id");
   const productId = params?.id;
   const [quantity, setQuantity] = useState(1);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [showImageZoom, setShowImageZoom] = useState(false);
+  const [reviewFilter, setReviewFilter] = useState("all");
+  const [showStickyCart, setShowStickyCart] = useState(false);
   const { toast } = useToast();
 
   const { data: product, isLoading } = useQuery<Product>({
@@ -27,6 +45,10 @@ export default function ProductDetailPage() {
     enabled: !!productId,
   });
 
+  const { data: allProducts } = useQuery<Product[]>({
+    queryKey: ["/api/products"],
+  });
+
   const { data: wishlistData } = useQuery({
     queryKey: ["/api/wishlist"],
   });
@@ -34,6 +56,15 @@ export default function ProductDetailPage() {
   const isInWishlist = wishlistData?.items?.some(
     (item: any) => item.productId === productId
   );
+
+  // Sticky cart bar on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowStickyCart(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const addToCartMutation = useMutation({
     mutationFn: () => apiRequest("POST", "/api/cart", { productId, quantity }),
@@ -88,7 +119,71 @@ export default function ProductDetailPage() {
     ? Math.round(((parseFloat(product.originalPrice!) - parseFloat(product.price)) / parseFloat(product.originalPrice!)) * 100)
     : 0;
 
-  const specifications = JSON.parse(product.specifications);
+  // Safe specification parsing
+  const parseSpecifications = () => {
+    try {
+      if (typeof product.specifications === 'string') {
+        return JSON.parse(product.specifications);
+      }
+      return product.specifications || {};
+    } catch (error) {
+      console.warn('Failed to parse specifications:', error);
+      return {};
+    }
+  };
+
+  const specifications = parseSpecifications();
+
+  // Multiple product images (using main image and duplicates for demo)
+  const productImages = [
+    product.image,
+    product.image, // In real app, these would be different angles
+    product.image,
+    product.image,
+  ];
+
+  // Related products (same category, excluding current)
+  const relatedProducts = allProducts
+    ?.filter((p) => p.category === product.category && p.id !== product.id)
+    .slice(0, 4) || [];
+
+  // Frequently bought together (random products for demo)
+  const frequentlyBoughtTogether = allProducts?.slice(0, 3) || [];
+
+  // Mock reviews data
+  const mockReviews = [
+    {
+      id: 1,
+      author: "John D.",
+      rating: 5,
+      date: "2 weeks ago",
+      title: "Excellent printer for home office",
+      content: "Great print quality and easy WiFi setup. The HP Smart app makes printing from my phone super convenient.",
+      verified: true,
+    },
+    {
+      id: 2,
+      author: "Sarah M.",
+      rating: 4,
+      date: "1 month ago",
+      title: "Good value for money",
+      content: "Works well for everyday printing. Setup was straightforward. Only wish the paper tray was larger.",
+      verified: true,
+    },
+    {
+      id: 3,
+      author: "Mike R.",
+      rating: 5,
+      date: "1 month ago",
+      title: "Perfect for students",
+      content: "Bought this for my daughter's college dorm. Compact size and wireless printing are perfect. Print quality is excellent.",
+      verified: true,
+    },
+  ];
+
+  const filteredReviews = reviewFilter === "all" 
+    ? mockReviews 
+    : mockReviews.filter(r => r.rating === parseInt(reviewFilter));
 
   return (
     <div className="min-h-screen bg-background">
@@ -96,30 +191,60 @@ export default function ProductDetailPage() {
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-muted-foreground">
           <Link href="/">
-            <span className="hover:text-foreground cursor-pointer">Home</span>
+            <span className="hover:text-foreground cursor-pointer" data-testid="link-breadcrumb-home">Home</span>
           </Link>
           {" / "}
           <Link href="/products">
-            <span className="hover:text-foreground cursor-pointer">Products</span>
+            <span className="hover:text-foreground cursor-pointer" data-testid="link-breadcrumb-products">Products</span>
           </Link>
           {" / "}
           <span className="text-foreground">{product.name}</span>
         </nav>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          {/* Left Column - Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* Left Column - Image Gallery */}
           <div>
-            <Card>
-              <CardContent className="p-8">
-                <div className="aspect-square bg-background rounded-md flex items-center justify-center">
+            <Card className="mb-4">
+              <CardContent className="p-4">
+                <div className="aspect-square bg-background rounded-md flex items-center justify-center relative overflow-hidden group">
                   <img
-                    src={product.image}
+                    src={productImages[selectedImageIndex]}
                     alt={product.name}
                     className="w-full h-full object-contain p-8"
                   />
+                  {/* Zoom button */}
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                    onClick={() => setShowImageZoom(true)}
+                    data-testid="button-zoom-image"
+                  >
+                    <ZoomIn className="w-4 h-4" />
+                  </Button>
                 </div>
               </CardContent>
             </Card>
+
+            {/* Image thumbnails */}
+            <div className="grid grid-cols-4 gap-3">
+              {productImages.map((img, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImageIndex(index)}
+                  className={`aspect-square border-2 rounded-md overflow-hidden hover-elevate transition-all ${
+                    selectedImageIndex === index ? "border-primary" : "border-border"
+                  }`}
+                  data-testid={`button-thumbnail-${index}`}
+                >
+                  <img
+                    src={img}
+                    alt={`${product.name} view ${index + 1}`}
+                    className="w-full h-full object-contain p-2"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Right Column - Info */}
@@ -165,6 +290,11 @@ export default function ProductDetailPage() {
                 )}
               </div>
             </div>
+
+            {/* Short Description */}
+            <p className="text-muted-foreground mb-6">
+              {product.description.substring(0, 150)}...
+            </p>
 
             {/* Stock Status */}
             <div className="mb-8">
@@ -221,22 +351,33 @@ export default function ProductDetailPage() {
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 {addToCartMutation.isPending ? "Adding..." : "Add to Cart"}
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full font-semibold"
-                onClick={() => toggleWishlistMutation.mutate()}
-                data-testid="button-add-to-wishlist"
-              >
-                <Heart className={`w-5 h-5 mr-2 ${isInWishlist ? "fill-current" : ""}`} />
-                {isInWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
-              </Button>
+              <div className="grid grid-cols-2 gap-3">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="font-semibold"
+                  onClick={() => toggleWishlistMutation.mutate()}
+                  data-testid="button-add-to-wishlist"
+                >
+                  <Heart className={`w-5 h-5 mr-2 ${isInWishlist ? "fill-current" : ""}`} />
+                  Wishlist
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="font-semibold"
+                  data-testid="button-compare"
+                >
+                  <GitCompare className="w-5 h-5 mr-2" />
+                  Compare
+                </Button>
+              </div>
             </div>
 
             {/* Shipping Info */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Truck className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -245,7 +386,7 @@ export default function ProductDetailPage() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Package className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -254,7 +395,7 @@ export default function ProductDetailPage() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Shield className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -266,10 +407,47 @@ export default function ProductDetailPage() {
           </div>
         </div>
 
+        {/* Frequently Bought Together */}
+        {frequentlyBoughtTogether.length > 0 && (
+          <Card className="mb-16">
+            <CardHeader>
+              <CardTitle>Frequently Bought Together</CardTitle>
+              <CardDescription>Customers who bought this item also bought</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap items-center gap-6">
+                {frequentlyBoughtTogether.map((item, index) => (
+                  <div key={item.id} className="flex items-center gap-4">
+                    {index > 0 && <Plus className="w-6 h-6 text-muted-foreground" />}
+                    <Link href={`/product/${item.id}`}>
+                      <div className="w-24 h-24 border rounded-md p-2 hover-elevate cursor-pointer transition-all">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+                <div className="ml-auto">
+                  <p className="text-sm text-muted-foreground mb-2">Total Price:</p>
+                  <p className="text-2xl font-bold text-primary mb-3">
+                    ${(parseFloat(product.price) + frequentlyBoughtTogether.reduce((sum, item) => sum + parseFloat(item.price), 0)).toFixed(2)}
+                  </p>
+                  <Button size="sm" data-testid="button-add-bundle-to-cart">
+                    Add All to Cart
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Tabs Section */}
-        <Tabs defaultValue="description" className="mb-16">
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="description" data-testid="tab-description">
+        <Tabs defaultValue="overview" className="mb-16">
+          <TabsList className="grid w-full grid-cols-6">
+            <TabsTrigger value="overview" data-testid="tab-overview">
               <Printer className="w-4 h-4 mr-2" />
               Overview
             </TabsTrigger>
@@ -285,22 +463,27 @@ export default function ProductDetailPage() {
               <CheckCircle className="w-4 h-4 mr-2" />
               Setup Guide
             </TabsTrigger>
-            <TabsTrigger value="maintenance" data-testid="tab-maintenance">
-              <Wrench className="w-4 h-4 mr-2" />
-              Maintenance
+            <TabsTrigger value="troubleshooting" data-testid="tab-troubleshooting">
+              <AlertCircle className="w-4 h-4 mr-2" />
+              Troubleshooting
+            </TabsTrigger>
+            <TabsTrigger value="reviews" data-testid="tab-reviews">
+              <Star className="w-4 h-4 mr-2" />
+              Reviews
             </TabsTrigger>
           </TabsList>
 
           {/* Overview Tab */}
-          <TabsContent value="description" className="mt-6">
+          <TabsContent value="overview" className="mt-6">
             <Card>
               <CardContent className="p-8">
                 <h2 className="text-2xl font-semibold mb-4">Product Description</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   {product.description}
                 </p>
+                
                 <h3 className="text-xl font-semibold mb-3">Key Features</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-8">
                   {product.features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
@@ -308,6 +491,46 @@ export default function ProductDetailPage() {
                     </li>
                   ))}
                 </ul>
+
+                <Separator className="my-6" />
+
+                <h3 className="text-xl font-semibold mb-3">What's in the Box</h3>
+                <ul className="space-y-2 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">HP Inkjet Printer</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">HP 67 Setup Black Ink Cartridge</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">HP 67 Setup Tri-color Ink Cartridge</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Power cord</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Setup poster and quick start guide</span>
+                  </li>
+                </ul>
+
+                <Separator className="my-6" />
+
+                <div className="bg-primary/5 p-6 rounded-lg">
+                  <div className="flex items-start gap-3 mb-3">
+                    <Shield className="w-6 h-6 text-primary flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-2">Warranty Information</h4>
+                      <p className="text-sm text-muted-foreground">
+                        This printer includes a <strong>2-year limited hardware warranty</strong> from the date of purchase. HP will repair or replace defective units during this period. For warranty claims, contact HP Support at 1-800-474-6836 (available 24/7) or visit support.hp.com
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </TabsContent>
@@ -343,6 +566,14 @@ export default function ProductDetailPage() {
                       <dt className="text-sm text-muted-foreground">Monthly Duty Cycle</dt>
                       <dd className="text-sm font-medium">{specifications["Duty Cycle"] || "Up to 1,000 pages"}</dd>
                     </div>
+                    <div className="flex justify-between py-2 border-b">
+                      <dt className="text-sm text-muted-foreground">Print Technology</dt>
+                      <dd className="text-sm font-medium">HP Thermal Inkjet</dd>
+                    </div>
+                    <div className="flex justify-between py-2 border-b">
+                      <dt className="text-sm text-muted-foreground">Number of Print Cartridges</dt>
+                      <dd className="text-sm font-medium">2 (1 black, 1 tri-color)</dd>
+                    </div>
                   </dl>
                 </div>
 
@@ -357,8 +588,8 @@ export default function ProductDetailPage() {
                       <dd className="text-sm font-medium">{specifications["Paper Capacity"] || "60 sheets"}</dd>
                     </div>
                     <div className="flex justify-between py-2 border-b">
-                      <dt className="text-sm text-muted-foreground">Auto Document Feeder</dt>
-                      <dd className="text-sm font-medium">{specifications["ADF"] || "Not included"}</dd>
+                      <dt className="text-sm text-muted-foreground">Output Tray Capacity</dt>
+                      <dd className="text-sm font-medium">25 sheets</dd>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <dt className="text-sm text-muted-foreground">Duplex Printing</dt>
@@ -423,11 +654,53 @@ export default function ProductDetailPage() {
                     </div>
                   </dl>
                 </div>
+
+                <Separator />
+
+                {/* Ink Cartridge Information */}
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Ink Cartridge Information</h3>
+                  <dl className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex justify-between py-2 border-b">
+                      <dt className="text-sm text-muted-foreground">Black Cartridge</dt>
+                      <dd className="text-sm font-medium">HP 67 / HP 67XL</dd>
+                    </div>
+                    <div className="flex justify-between py-2 border-b">
+                      <dt className="text-sm text-muted-foreground">Color Cartridge</dt>
+                      <dd className="text-sm font-medium">HP 67 Tri-color / HP 67XL Tri-color</dd>
+                    </div>
+                    <div className="flex justify-between py-2 border-b">
+                      <dt className="text-sm text-muted-foreground">Standard Yield (Black)</dt>
+                      <dd className="text-sm font-medium">~120 pages</dd>
+                    </div>
+                    <div className="flex justify-between py-2 border-b">
+                      <dt className="text-sm text-muted-foreground">High Yield (Black)</dt>
+                      <dd className="text-sm font-medium">~240 pages</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <Separator />
+
+                {/* Supported Operating Systems */}
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Supported Operating Systems</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-medium mb-2 text-sm">Windows</h4>
+                      <p className="text-sm text-muted-foreground">Windows 11, 10, 8.1 (32-bit and 64-bit)</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2 text-sm">macOS</h4>
+                      <p className="text-sm text-muted-foreground">macOS 14, 13, 12, 11 and later</p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </TabsContent>
 
-          {/* Compatibility Tab */}
+          {/* Compatibility Tab - keeping existing content */}
           <TabsContent value="compatibility" className="mt-6">
             <div className="grid gap-6">
               <Card>
@@ -518,15 +791,20 @@ export default function ProductDetailPage() {
               <Card>
                 <CardHeader>
                   <CardTitle>Supported Paper Sizes & Types</CardTitle>
+                  <CardDescription>Compatible media for all your printing needs</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold mb-3">Standard Paper Sizes</h4>
-                      <ul className="space-y-2 text-sm">
+                      <h4 className="font-semibold mb-3">Paper Sizes</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
                           Letter (8.5 x 11 in)
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-status-online" />
+                          A4 (8.27 x 11.69 in)
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
@@ -534,11 +812,11 @@ export default function ProductDetailPage() {
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
-                          4 x 6 in (Photo)
+                          4 x 6 in photo paper
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
-                          5 x 7 in (Photo)
+                          5 x 7 in photo paper
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
@@ -547,19 +825,23 @@ export default function ProductDetailPage() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-3">Media Types</h4>
-                      <ul className="space-y-2 text-sm">
+                      <h4 className="font-semibold mb-3">Paper Types</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
                           Plain paper
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
-                          HP photo paper
+                          HP premium inkjet paper
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
-                          Brochure paper
+                          HP photo paper (glossy)
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-status-online" />
+                          HP photo paper (matte)
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
@@ -574,10 +856,47 @@ export default function ProductDetailPage() {
                   </div>
                 </CardContent>
               </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Compatible Ink Cartridges</CardTitle>
+                  <CardDescription>Original HP ink cartridges for this printer</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold mb-3">Black Ink Cartridge</h4>
+                      <dl className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <dt className="text-muted-foreground">Standard Yield</dt>
+                          <dd className="font-medium">HP 67 (~120 pages)</dd>
+                        </div>
+                        <div className="flex justify-between">
+                          <dt className="text-muted-foreground">High Yield</dt>
+                          <dd className="font-medium">HP 67XL (~240 pages)</dd>
+                        </div>
+                      </dl>
+                    </div>
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold mb-3">Tri-Color Ink Cartridge</h4>
+                      <dl className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <dt className="text-muted-foreground">Standard Yield</dt>
+                          <dd className="font-medium">HP 67 (~100 pages)</dd>
+                        </div>
+                        <div className="flex justify-between">
+                          <dt className="text-muted-foreground">High Yield</dt>
+                          <dd className="font-medium">HP 67XL (~200 pages)</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </TabsContent>
 
-          {/* Setup Guide Tab */}
+          {/* Setup Guide Tab - continuing from existing... */}
           <TabsContent value="setup" className="mt-6">
             <div className="grid gap-6">
               <Card>
@@ -658,9 +977,12 @@ export default function ProductDetailPage() {
                       </div>
                       <div>
                         <h4 className="font-semibold mb-2">Install Drivers (Desktop/Laptop)</h4>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-muted-foreground mb-3">
                           Visit <strong>123.hp.com</strong> on your computer and enter your printer model. Download and run the installer, then follow the on-screen prompts to complete the setup.
                         </p>
+                        <Button variant="outline" size="sm" data-testid="button-download-drivers">
+                          Download Drivers
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -669,258 +991,341 @@ export default function ProductDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Troubleshooting Common Issues</CardTitle>
+                  <CardTitle>Initial Setup Checklist</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <AlertCircle className="w-5 h-5 text-destructive mt-0.5" />
-                        <h4 className="font-semibold">Printer Not Connecting to Wi-Fi</h4>
-                      </div>
-                      <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                        <li>• Make sure your Wi-Fi router is turned on and working properly</li>
-                        <li>• Check that you're entering the correct Wi-Fi password</li>
-                        <li>• Move the printer closer to your router (within 10-15 feet)</li>
-                        <li>• Restart both the printer and your router</li>
-                        <li>• Try using the HP Smart app's guided setup process</li>
-                      </ul>
-                    </div>
-
-                    <Separator />
-
-                    <div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <AlertCircle className="w-5 h-5 text-destructive mt-0.5" />
-                        <h4 className="font-semibold">Poor Print Quality or Streaky Prints</h4>
-                      </div>
-                      <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                        <li>• Run the printhead cleaning utility from the HP Smart app</li>
-                        <li>• Check ink levels and replace cartridges if low</li>
-                        <li>• Align the printheads using the printer settings menu</li>
-                        <li>• Use HP original ink cartridges for best results</li>
-                        <li>• Make sure you're using the correct paper type setting</li>
-                      </ul>
-                    </div>
-
-                    <Separator />
-
-                    <div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <AlertCircle className="w-5 h-5 text-destructive mt-0.5" />
-                        <h4 className="font-semibold">Paper Jams</h4>
-                      </div>
-                      <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                        <li>• Turn off the printer and unplug the power cable</li>
-                        <li>• Gently pull out any stuck paper in the direction of the paper path</li>
-                        <li>• Check the rear access door for any torn pieces</li>
-                        <li>• Make sure paper is loaded correctly and not overfilled (max 60 sheets)</li>
-                        <li>• Use only standard 20 lb (75 g/m²) paper for best results</li>
-                      </ul>
-                    </div>
-
-                    <Separator />
-
-                    <div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <AlertCircle className="w-5 h-5 text-destructive mt-0.5" />
-                        <h4 className="font-semibold">Printer Offline on Computer</h4>
-                      </div>
-                      <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                        <li>• Make sure the printer is turned on and connected to Wi-Fi</li>
-                        <li>• Check that your computer is on the same Wi-Fi network</li>
-                        <li>• On Windows: Go to Devices & Printers, right-click your printer, and uncheck "Use Printer Offline"</li>
-                        <li>• On Mac: Remove and re-add the printer in System Preferences</li>
-                        <li>• Restart the print spooler service (Windows) or reset the printing system (Mac)</li>
-                      </ul>
-                    </div>
-                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Unpack and remove all protective materials</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Install ink cartridges correctly</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Load paper in tray</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Connect power and turn on</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Connect to Wi-Fi network</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Install drivers on computer</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Print test page to verify setup</span>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
             </div>
           </TabsContent>
 
-          {/* Maintenance Tab */}
-          <TabsContent value="maintenance" className="mt-6">
-            <div className="grid gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Ink Cartridge Information</CardTitle>
-                  <CardDescription>Original HP ink cartridges for optimal performance</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="border rounded-lg p-4">
-                        <h4 className="font-semibold mb-3">Black Ink Cartridge</h4>
-                        <dl className="space-y-2 text-sm">
-                          <div className="flex justify-between">
-                            <dt className="text-muted-foreground">Standard Yield</dt>
-                            <dd className="font-medium">HP 67 (~120 pages)</dd>
-                          </div>
-                          <div className="flex justify-between">
-                            <dt className="text-muted-foreground">High Yield</dt>
-                            <dd className="font-medium">HP 67XL (~240 pages)</dd>
-                          </div>
-                          <div className="flex justify-between">
-                            <dt className="text-muted-foreground">Estimated Cost</dt>
-                            <dd className="font-medium">$15.99 - $29.99</dd>
-                          </div>
-                        </dl>
+          {/* Troubleshooting Tab */}
+          <TabsContent value="troubleshooting" className="mt-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Common Issues and Solutions</CardTitle>
+                <CardDescription>Quick fixes for the most common printer problems</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex items-start gap-3 mb-2">
+                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                      <h4 className="font-semibold">Printer Not Connecting to Wi-Fi</h4>
+                    </div>
+                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                      <li>• Make sure your Wi-Fi router is turned on and working properly</li>
+                      <li>• Check that you're entering the correct Wi-Fi password</li>
+                      <li>• Move the printer closer to your router (within 10-15 feet)</li>
+                      <li>• Restart both the printer and your router</li>
+                      <li>• Try using the HP Smart app's guided setup process</li>
+                    </ul>
+                  </div>
+
+                  <Separator />
+
+                  <div>
+                    <div className="flex items-start gap-3 mb-2">
+                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                      <h4 className="font-semibold">Poor Print Quality or Streaky Prints</h4>
+                    </div>
+                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                      <li>• Run the printhead cleaning utility from the HP Smart app</li>
+                      <li>• Check ink levels and replace cartridges if low</li>
+                      <li>• Align the printheads using the printer settings menu</li>
+                      <li>• Use HP original ink cartridges for best results</li>
+                      <li>• Make sure you're using the correct paper type setting</li>
+                    </ul>
+                  </div>
+
+                  <Separator />
+
+                  <div>
+                    <div className="flex items-start gap-3 mb-2">
+                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                      <h4 className="font-semibold">Paper Jams</h4>
+                    </div>
+                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                      <li>• Turn off the printer and unplug the power cable</li>
+                      <li>• Gently pull out any stuck paper in the direction of the paper path</li>
+                      <li>• Check the rear access door for any torn pieces</li>
+                      <li>• Make sure paper is loaded correctly and not overfilled (max 60 sheets)</li>
+                      <li>• Use only standard 20 lb (75 g/m²) paper for best results</li>
+                    </ul>
+                  </div>
+
+                  <Separator />
+
+                  <div>
+                    <div className="flex items-start gap-3 mb-2">
+                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                      <h4 className="font-semibold">Printer Offline on Computer</h4>
+                    </div>
+                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                      <li>• Make sure the printer is turned on and connected to Wi-Fi</li>
+                      <li>• Check that your computer is on the same Wi-Fi network</li>
+                      <li>• On Windows: Go to Devices & Printers, right-click your printer, and uncheck "Use Printer Offline"</li>
+                      <li>• On Mac: Remove and re-add the printer in System Preferences</li>
+                      <li>• Restart the print spooler service (Windows) or reset the printing system (Mac)</li>
+                    </ul>
+                  </div>
+
+                  <Separator />
+
+                  <div>
+                    <div className="flex items-start gap-3 mb-2">
+                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                      <h4 className="font-semibold">Ink Cartridge Not Recognized</h4>
+                    </div>
+                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                      <li>• Remove the cartridge and check for protective tape on the contacts</li>
+                      <li>• Clean the cartridge contacts with a lint-free cloth</li>
+                      <li>• Reinsert the cartridge firmly until it clicks</li>
+                      <li>• Try the cartridge in the other slot to test if it's detected</li>
+                      <li>• Update printer firmware through HP Smart app</li>
+                    </ul>
+                  </div>
+
+                  <Separator />
+
+                  <div>
+                    <div className="flex items-start gap-3 mb-2">
+                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                      <h4 className="font-semibold">Slow Printing Speed</h4>
+                    </div>
+                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                      <li>• Change print quality setting from "Best" to "Normal" or "Draft"</li>
+                      <li>• Close other programs running on your computer</li>
+                      <li>• Print in grayscale for faster black and white documents</li>
+                      <li>• Check ink levels - low ink can slow printing</li>
+                      <li>• Ensure printer is not in "Quiet Mode" if available</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* Reviews Tab */}
+          <TabsContent value="reviews" className="mt-6">
+            <Card>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle>Customer Reviews</CardTitle>
+                    <CardDescription>{product.reviewCount} total reviews</CardDescription>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Filter className="w-4 h-4 text-muted-foreground" />
+                    <Select value={reviewFilter} onValueChange={setReviewFilter}>
+                      <SelectTrigger className="w-[150px]" data-testid="select-review-filter">
+                        <SelectValue placeholder="Filter reviews" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Reviews</SelectItem>
+                        <SelectItem value="5">5 Stars</SelectItem>
+                        <SelectItem value="4">4 Stars</SelectItem>
+                        <SelectItem value="3">3 Stars</SelectItem>
+                        <SelectItem value="2">2 Stars</SelectItem>
+                        <SelectItem value="1">1 Star</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                {/* Overall Rating Summary */}
+                <div className="mb-8 p-6 bg-muted/50 rounded-lg">
+                  <div className="flex items-center gap-6">
+                    <div className="text-center">
+                      <div className="text-5xl font-bold mb-2">{product.rating}</div>
+                      <div className="flex items-center gap-1 mb-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-5 h-5 ${
+                              i < Math.floor(parseFloat(product.rating || "0"))
+                                ? "fill-yellow-400 text-yellow-400"
+                                : "fill-muted text-muted"
+                            }`}
+                          />
+                        ))}
                       </div>
-
-                      <div className="border rounded-lg p-4">
-                        <h4 className="font-semibold mb-3">Tri-Color Ink Cartridge</h4>
-                        <dl className="space-y-2 text-sm">
-                          <div className="flex justify-between">
-                            <dt className="text-muted-foreground">Standard Yield</dt>
-                            <dd className="font-medium">HP 67 (~100 pages)</dd>
+                      <div className="text-sm text-muted-foreground">Based on {product.reviewCount} reviews</div>
+                    </div>
+                    <Separator orientation="vertical" className="h-24" />
+                    <div className="flex-1">
+                      <div className="space-y-2">
+                        {[5, 4, 3, 2, 1].map((stars) => (
+                          <div key={stars} className="flex items-center gap-2">
+                            <span className="text-sm w-12">{stars} star{stars !== 1 ? 's' : ''}</span>
+                            <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+                              <div 
+                                className="h-full bg-yellow-400" 
+                                style={{ width: `${stars === 5 ? 70 : stars === 4 ? 20 : 10}%` }}
+                              />
+                            </div>
+                            <span className="text-sm text-muted-foreground w-12 text-right">
+                              {stars === 5 ? '70%' : stars === 4 ? '20%' : '10%'}
+                            </span>
                           </div>
-                          <div className="flex justify-between">
-                            <dt className="text-muted-foreground">High Yield</dt>
-                            <dd className="font-medium">HP 67XL (~200 pages)</dd>
-                          </div>
-                          <div className="flex justify-between">
-                            <dt className="text-muted-foreground">Estimated Cost</dt>
-                            <dd className="font-medium">$17.99 - $32.99</dd>
-                          </div>
-                        </dl>
+                        ))}
                       </div>
                     </div>
-
-                    <div className="bg-primary/5 p-4 rounded-lg">
-                      <h4 className="font-semibold mb-2 flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-status-online" />
-                        HP Instant Ink Program
-                      </h4>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Save up to 50% on ink with HP Instant Ink subscription service. Never run out of ink - cartridges are automatically shipped to your door before you run out.
-                      </p>
-                      <ul className="space-y-1 text-sm text-muted-foreground ml-4">
-                        <li>• Plans starting at $0.99/month for 10 pages</li>
-                        <li>• Includes delivery and recycling of used cartridges</li>
-                        <li>• Rollover up to 2x your monthly page limit</li>
-                        <li>• Cancel anytime with no penalties</li>
-                      </ul>
-                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Regular Maintenance Tips</CardTitle>
-                  <CardDescription>Keep your printer running smoothly</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
-                        <Wrench className="w-5 h-5 text-primary" />
-                        Weekly Maintenance
-                      </h4>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Print at least one page per week to prevent ink from drying</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Wipe the exterior with a soft, damp cloth to remove dust</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Check paper tray for any debris or foreign objects</span>
-                        </li>
-                      </ul>
+                {/* Individual Reviews */}
+                <div className="space-y-6">
+                  {filteredReviews.map((review) => (
+                    <div key={review.id} className="border-b pb-6 last:border-0">
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-semibold">{review.author}</span>
+                            {review.verified && (
+                              <Badge variant="secondary" className="text-xs">
+                                <CheckCircle className="w-3 h-3 mr-1" />
+                                Verified Purchase
+                              </Badge>
+                            )}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className="flex">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`w-4 h-4 ${
+                                    i < review.rating
+                                      ? "fill-yellow-400 text-yellow-400"
+                                      : "fill-muted text-muted"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <span className="text-sm text-muted-foreground">{review.date}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <h4 className="font-semibold mb-2">{review.title}</h4>
+                      <p className="text-sm text-muted-foreground">{review.content}</p>
                     </div>
+                  ))}
+                </div>
 
-                    <Separator />
-
-                    <div>
-                      <h4 className="font-semibold mb-3">Monthly Maintenance</h4>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Run the automatic printhead cleaning utility if you notice quality issues</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Check ink levels and order replacements when running low</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Update printer firmware through the HP Smart app for best performance</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Clean the scanner glass with a lint-free cloth and glass cleaner</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <Separator />
-
-                    <div>
-                      <h4 className="font-semibold mb-3">Storage and Environmental Tips</h4>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Keep printer in a dust-free environment with temperatures between 60-86°F (15-30°C)</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Avoid placing printer in direct sunlight or near heat sources</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Store unused paper in its original packaging to prevent moisture absorption</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-status-online mt-0.5 flex-shrink-0" />
-                          <span>Use a surge protector to protect against power fluctuations</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-primary/5 p-4 rounded-lg">
-                      <p className="text-sm text-muted-foreground">
-                        <strong>Note:</strong> Always use genuine HP ink cartridges. Third-party cartridges may cause damage not covered by warranty and can result in poor print quality or printer malfunctions.
-                      </p>
-                    </div>
+                {filteredReviews.length === 0 && (
+                  <div className="text-center py-8 text-muted-foreground">
+                    No reviews match the selected filter.
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Warranty & Support</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold mb-2">Standard Warranty Coverage</h4>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        This printer includes a 2-year limited hardware warranty from the date of purchase. HP will repair or replace defective units during this period.
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        For warranty claims, contact HP Support at <strong>1-800-474-6836</strong> (available 24/7) or visit <strong>support.hp.com</strong>
-                      </p>
-                    </div>
-                    <Separator />
-                    <div>
-                      <h4 className="font-semibold mb-2">Extended Warranty Options</h4>
-                      <p className="text-sm text-muted-foreground">
-                        HP Care Pack services offer extended warranty and support options including next business day exchange, accidental damage protection, and technical phone support. Visit hp.com/carepack for details.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                )}
+              </CardContent>
+            </Card>
           </TabsContent>
         </Tabs>
+
+        {/* Related Products */}
+        {relatedProducts.length > 0 && (
+          <div>
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold">Related Products</h2>
+              <Link href="/products">
+                <Button variant="outline" size="sm" data-testid="button-view-all-products">
+                  View All
+                </Button>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {relatedProducts.map((relatedProduct) => (
+                <ProductCard key={relatedProduct.id} product={relatedProduct} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Sticky Add to Cart Bar (Mobile) */}
+      {showStickyCart && (
+        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t p-4 shadow-lg z-50 animate-in slide-in-from-bottom">
+          <div className="flex items-center gap-3">
+            <div className="flex-1">
+              <p className="font-semibold text-sm">{product.name}</p>
+              <p className="text-lg font-bold text-primary">${parseFloat(product.price).toFixed(2)}</p>
+            </div>
+            <Button
+              size="lg"
+              disabled={!product.inStock || addToCartMutation.isPending}
+              onClick={() => addToCartMutation.mutate()}
+              data-testid="button-sticky-add-to-cart"
+            >
+              <ShoppingCart className="w-5 h-5 mr-2" />
+              Add to Cart
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {/* Image Zoom Modal */}
+      <Dialog open={showImageZoom} onOpenChange={setShowImageZoom}>
+        <DialogContent className="max-w-4xl">
+          <DialogHeader>
+            <DialogTitle>{product.name}</DialogTitle>
+          </DialogHeader>
+          <div className="aspect-square bg-background rounded-md flex items-center justify-center">
+            <img
+              src={productImages[selectedImageIndex]}
+              alt={product.name}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="grid grid-cols-4 gap-3">
+            {productImages.map((img, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedImageIndex(index)}
+                className={`aspect-square border-2 rounded-md overflow-hidden hover-elevate transition-all ${
+                  selectedImageIndex === index ? "border-primary" : "border-border"
+                }`}
+              >
+                <img
+                  src={img}
+                  alt={`${product.name} view ${index + 1}`}
+                  className="w-full h-full object-contain p-2"
+                />
+              </button>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
