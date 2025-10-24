@@ -8,6 +8,7 @@ import {
   savedComparisons,
   helpArticles,
   faqs,
+  inkCartridges,
   type User, 
   type InsertUser, 
   type Product,
@@ -24,6 +25,8 @@ import {
   type InsertHelpArticle,
   type Faq,
   type InsertFaq,
+  type InkCartridge,
+  type InsertInkCartridge,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, sql, desc } from "drizzle-orm";
@@ -90,6 +93,15 @@ export interface IStorage {
   deleteFaq(id: string): Promise<void>;
   recordFaqFeedback(id: string, helpful: boolean): Promise<void>;
   incrementFaqViews(id: string): Promise<void>;
+
+  // Ink cartridge operations
+  getAllInkCartridges(): Promise<InkCartridge[]>;
+  getInkCartridge(id: string): Promise<InkCartridge | undefined>;
+  getInkCartridgeByNumber(cartridgeNumber: string): Promise<InkCartridge | undefined>;
+  getCartridgesByPrinter(printerModel: string): Promise<InkCartridge[]>;
+  createInkCartridge(cartridge: InsertInkCartridge): Promise<InkCartridge>;
+  updateInkCartridge(id: string, cartridge: Partial<InsertInkCartridge>): Promise<InkCartridge>;
+  deleteInkCartridge(id: string): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -584,6 +596,59 @@ export class DatabaseStorage implements IStorage {
       .update(faqs)
       .set({ views: sql`${faqs.views} + 1` })
       .where(eq(faqs.id, id));
+  }
+
+  // Ink cartridge operations
+  async getAllInkCartridges(): Promise<InkCartridge[]> {
+    return await db
+      .select()
+      .from(inkCartridges)
+      .orderBy(inkCartridges.cartridgeNumber);
+  }
+
+  async getInkCartridge(id: string): Promise<InkCartridge | undefined> {
+    const [cartridge] = await db
+      .select()
+      .from(inkCartridges)
+      .where(eq(inkCartridges.id, id));
+    return cartridge || undefined;
+  }
+
+  async getInkCartridgeByNumber(cartridgeNumber: string): Promise<InkCartridge | undefined> {
+    const [cartridge] = await db
+      .select()
+      .from(inkCartridges)
+      .where(eq(inkCartridges.cartridgeNumber, cartridgeNumber));
+    return cartridge || undefined;
+  }
+
+  async getCartridgesByPrinter(printerModel: string): Promise<InkCartridge[]> {
+    return await db
+      .select()
+      .from(inkCartridges)
+      .where(sql`${printerModel} = ANY(${inkCartridges.compatiblePrinters})`)
+      .orderBy(inkCartridges.cartridgeNumber);
+  }
+
+  async createInkCartridge(cartridge: InsertInkCartridge): Promise<InkCartridge> {
+    const [newCartridge] = await db
+      .insert(inkCartridges)
+      .values(cartridge)
+      .returning();
+    return newCartridge;
+  }
+
+  async updateInkCartridge(id: string, cartridge: Partial<InsertInkCartridge>): Promise<InkCartridge> {
+    const [updatedCartridge] = await db
+      .update(inkCartridges)
+      .set(cartridge)
+      .where(eq(inkCartridges.id, id))
+      .returning();
+    return updatedCartridge;
+  }
+
+  async deleteInkCartridge(id: string): Promise<void> {
+    await db.delete(inkCartridges).where(eq(inkCartridges.id, id));
   }
 }
 

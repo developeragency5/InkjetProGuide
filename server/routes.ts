@@ -645,6 +645,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Ink cartridge routes
+  app.get("/api/ink-cartridges", async (req, res) => {
+    try {
+      const cartridges = await storage.getAllInkCartridges();
+      res.json(cartridges);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/ink-cartridges/printer/:printerModel", async (req, res) => {
+    try {
+      const cartridges = await storage.getCartridgesByPrinter(req.params.printerModel);
+      res.json(cartridges);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/ink-cartridges/:id", async (req, res) => {
+    try {
+      const cartridge = await storage.getInkCartridge(req.params.id);
+      if (!cartridge) {
+        return res.status(404).json({ message: "Cartridge not found" });
+      }
+      res.json(cartridge);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

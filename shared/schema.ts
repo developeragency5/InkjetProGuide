@@ -130,6 +130,21 @@ export const faqs = pgTable("faqs", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+// Ink Cartridges table
+export const inkCartridges = pgTable("ink_cartridges", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  cartridgeNumber: text("cartridge_number").notNull().unique(), // e.g., "HP 63", "HP 910"
+  cartridgeName: text("cartridge_name").notNull(), // Full name
+  color: text("color").notNull(), // Black, Cyan, Magenta, Yellow, Tri-color
+  type: text("type").notNull(), // Original HP, Compatible, Remanufactured
+  pageYield: integer("page_yield").notNull(), // Average pages per cartridge
+  price: decimal("price", { precision: 10, scale: 2 }).notNull(),
+  compatiblePrinters: text("compatible_printers").array().notNull(), // Array of printer model names
+  isXL: boolean("is_xl").notNull().default(false), // Standard or XL/High Yield
+  shelfLife: text("shelf_life"), // e.g., "24 months"
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 // Relations
 export const usersRelations = relations(users, ({ many }) => ({
   cartItems: many(cartItems),
@@ -281,6 +296,11 @@ export const insertFaqSchema = createInsertSchema(faqs).omit({
   answer: z.string().min(10, "Answer must be at least 10 characters"),
 });
 
+export const insertInkCartridgeSchema = createInsertSchema(inkCartridges).omit({
+  id: true,
+  createdAt: true,
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -302,3 +322,5 @@ export type HelpArticle = typeof helpArticles.$inferSelect;
 export type InsertHelpArticle = z.infer<typeof insertHelpArticleSchema>;
 export type Faq = typeof faqs.$inferSelect;
 export type InsertFaq = z.infer<typeof insertFaqSchema>;
+export type InkCartridge = typeof inkCartridges.$inferSelect;
+export type InsertInkCartridge = z.infer<typeof insertInkCartridgeSchema>;
