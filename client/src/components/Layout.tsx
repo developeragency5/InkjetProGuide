@@ -278,38 +278,23 @@ export function Layout({ children }: LayoutProps) {
               <h3 className="font-semibold text-lg mb-4">Shop</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/products">
-                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      All Printers
-                    </a>
+                  <Link href="/products" className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    All Printers
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products?category=Photo Printers">
-                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      Photo Printers
-                    </a>
+                  <Link href="/products?category=Photo Printers" className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    Photo Printers
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products?category=Mobile Printers">
-                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      Mobile Printers
-                    </a>
+                  <Link href="/products?category=Mobile Printers" className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    Mobile Printers
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products?category=Tank Printers">
-                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      Tank Printers
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/products?category=Wide-Format Printers">
-                    <a className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      Wide-Format Printers
-                    </a>
+                  <Link href="/products?category=Wide-Format Printers" className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    Wide-Format Printers
                   </Link>
                 </li>
               </ul>
