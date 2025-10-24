@@ -250,81 +250,102 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Footer */}
       <footer className="bg-card border-t mt-auto">
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Company Info */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4">InjetProGuide</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Your trusted source for HP inkjet printers with expert guidance, 
-                setup instructions, and maintenance tips.
+            <div className="lg:col-span-2">
+              <h3 className="font-bold text-xl mb-4 text-primary">InjetProGuide</h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                Your trusted source for HP inkjet printers with comprehensive expert guidance, 
+                detailed setup instructions, and professional maintenance tips. We help you find 
+                the perfect printer for your home or office needs.
               </p>
-              <p className="text-sm text-muted-foreground">
-                © 2024 InjetProGuide. All rights reserved.
-              </p>
+              <div className="space-y-2 text-sm">
+                <p className="text-muted-foreground">
+                  <span className="font-medium text-foreground">Email:</span>{" "}
+                  <a href="mailto:support@injetproguide.com" className="hover:text-primary transition-colors">
+                    support@injetproguide.com
+                  </a>
+                </p>
+                <p className="text-muted-foreground">
+                  <span className="font-medium text-foreground">Phone:</span>{" "}
+                  <a href="tel:+18007746837" className="hover:text-primary transition-colors">
+                    1-800-PRINTER (1-800-774-6837)
+                  </a>
+                </p>
+                <p className="text-muted-foreground">
+                  <span className="font-medium text-foreground">Hours:</span> 24/7 Customer Support
+                </p>
+              </div>
             </div>
 
-            {/* Shop */}
+            {/* Quick Links */}
             <div>
-              <h3 className="font-semibold text-lg mb-4">Shop</h3>
+              <h3 className="font-semibold text-base mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/products">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      All Printers
+                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-shop">
+                      Shop All Printers
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products?category=office">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      Office Printers
+                  <Link href="/guides">
+                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-guides">
+                      Printer Guides
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products?category=home">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      Home Printers
-                    </span>
-                  </Link>
+                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-faqs">
+                    FAQs
+                  </span>
                 </li>
                 <li>
-                  <Link href="/products?category=portable">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      Portable Printers
-                    </span>
-                  </Link>
+                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-shipping">
+                    Shipping Info
+                  </span>
+                </li>
+                <li>
+                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-returns">
+                    Returns Policy
+                  </span>
                 </li>
               </ul>
             </div>
 
             {/* Customer Service */}
             <div>
-              <h3 className="font-semibold text-lg mb-4">Customer Service</h3>
+              <h3 className="font-semibold text-base mb-4">Customer Service</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/contact">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
+                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-contact">
                       Contact Us
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      Printer Guides
+                  <Link href="/about">
+                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-about">
+                      About Us
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                    Shipping Information
+                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors">
+                    Track Order
                   </span>
                 </li>
                 <li>
-                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                    Returns & Warranty
+                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors">
+                    Warranty Info
+                  </span>
+                </li>
+                <li>
+                  <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors">
+                    Support Center
                   </span>
                 </li>
               </ul>
@@ -332,33 +353,45 @@ export function Layout({ children }: LayoutProps) {
 
             {/* Newsletter */}
             <div>
-              <h3 className="font-semibold text-lg mb-4">Newsletter</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Get exclusive deals and expert printing tips delivered to your inbox.
+              <h3 className="font-semibold text-base mb-4">Stay Updated</h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                Subscribe to get exclusive deals, printer tips, and new product updates delivered to your inbox.
               </p>
-              <div className="flex gap-2">
+              <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
                 <Input 
                   type="email" 
-                  placeholder="Your email" 
+                  placeholder="Enter your email" 
                   className="text-sm"
                   data-testid="input-newsletter-footer"
                 />
-                <Button size="sm" data-testid="button-subscribe-footer">
-                  Subscribe
+                <Button size="sm" className="w-full" data-testid="button-subscribe-footer">
+                  Subscribe Now
                 </Button>
-              </div>
+              </form>
+              <p className="text-xs text-muted-foreground mt-3">
+                By subscribing, you agree to our Privacy Policy.
+              </p>
             </div>
           </div>
 
-          <div className="border-t mt-8 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-              <div className="flex flex-wrap gap-4">
-                <span className="hover:text-foreground cursor-pointer">Privacy Policy</span>
-                <span className="hover:text-foreground cursor-pointer">Terms of Service</span>
-                <span className="hover:text-foreground cursor-pointer">Cookie Policy</span>
+          {/* Bottom Bar */}
+          <div className="border-t mt-12 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-sm text-muted-foreground">
+                © 2024 InjetProGuide. All rights reserved.
               </div>
-              <div className="flex gap-4">
-                <span>Made with ❤️ in the USA</span>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+                <span className="hover:text-foreground hover-elevate px-2 py-1 rounded-md cursor-pointer transition-colors" data-testid="link-footer-privacy">
+                  Privacy Policy
+                </span>
+                <span className="text-muted-foreground/40">•</span>
+                <span className="hover:text-foreground hover-elevate px-2 py-1 rounded-md cursor-pointer transition-colors" data-testid="link-footer-terms">
+                  Terms of Service
+                </span>
+                <span className="text-muted-foreground/40">•</span>
+                <span className="hover:text-foreground hover-elevate px-2 py-1 rounded-md cursor-pointer transition-colors" data-testid="link-footer-cookies">
+                  Cookie Policy
+                </span>
               </div>
             </div>
           </div>
