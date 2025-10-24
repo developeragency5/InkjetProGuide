@@ -134,13 +134,10 @@ export default function ProductDetailPage() {
 
   const specifications = parseSpecifications();
 
-  // Multiple product images (using main image and duplicates for demo)
-  const productImages = [
-    product.image,
-    product.image, // In real app, these would be different angles
-    product.image,
-    product.image,
-  ];
+  // Multiple product images - use images array if available, otherwise use main image
+  const productImages = product.images && product.images.length > 0
+    ? product.images
+    : [product.image];
 
   // Related products (same category, excluding current)
   const relatedProducts = allProducts
