@@ -97,7 +97,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Product Image */}
         <Link href={`/product/${product.id}`}>
-          <a className="block" data-testid={`link-product-${product.id}`}>
+          <span className="block cursor-pointer" data-testid={`link-product-${product.id}`}>
             <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border overflow-hidden">
               <img
                 src={product.image}
@@ -105,16 +105,16 @@ export function ProductCard({ product }: ProductCardProps) {
                 className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
               />
             </div>
-          </a>
+          </span>
         </Link>
 
         {/* Product Info */}
         <Link href={`/product/${product.id}`}>
-          <a data-testid={`link-product-name-${product.id}`}>
+          <span className="cursor-pointer" data-testid={`link-product-name-${product.id}`}>
             <h3 className="font-medium text-sm mb-2 line-clamp-2 hover:text-primary transition-colors">
               {product.name}
             </h3>
-          </a>
+          </span>
         </Link>
 
         {/* Rating */}
