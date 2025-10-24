@@ -23,7 +23,7 @@ const guides = [
     color: "bg-purple-500",
     readTime: "10 min read",
     path: "/guides/home-office",
-    available: false,
+    available: true,
   },
   {
     id: "students",
@@ -33,7 +33,7 @@ const guides = [
     color: "bg-green-500",
     readTime: "7 min read",
     path: "/guides/students",
-    available: false,
+    available: true,
   },
   {
     id: "photo-printing",
@@ -43,7 +43,7 @@ const guides = [
     color: "bg-pink-500",
     readTime: "12 min read",
     path: "/guides/photo-printing",
-    available: false,
+    available: true,
   },
   {
     id: "ink-cost",
@@ -53,7 +53,7 @@ const guides = [
     color: "bg-yellow-500",
     readTime: "9 min read",
     path: "/guides/ink-cost",
-    available: false,
+    available: true,
   },
   {
     id: "small-business",
@@ -63,7 +63,7 @@ const guides = [
     color: "bg-orange-500",
     readTime: "11 min read",
     path: "/guides/small-business",
-    available: false,
+    available: true,
   },
   {
     id: "wireless-vs-usb",
@@ -73,7 +73,7 @@ const guides = [
     color: "bg-cyan-500",
     readTime: "6 min read",
     path: "/guides/wireless-vs-usb",
-    available: false,
+    available: true,
   },
 ];
 
