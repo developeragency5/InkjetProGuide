@@ -283,13 +283,6 @@ export function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products?category=All-in-One Printers">
-                    <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
-                      All-in-One Printers
-                    </span>
-                  </Link>
-                </li>
-                <li>
                   <Link href="/products?category=Photo Printers">
                     <span className="text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block">
                       Photo Printers
