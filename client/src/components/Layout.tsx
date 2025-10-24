@@ -38,8 +38,7 @@ export function Layout({ children }: LayoutProps) {
   const navigationLinks = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "/products" },
-    { name: "Printer Guide", path: "/guides" },
-    { name: "Model Guide", path: "/guide" },
+    { name: "Guide", path: "/guide" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];

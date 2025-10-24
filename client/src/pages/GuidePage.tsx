@@ -59,7 +59,7 @@ export default function GuidePage() {
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-6">
               <div className="flex items-center gap-2">
                 <Printer className="w-5 h-5 text-muted-foreground" />
                 <span className="font-semibold">{products?.length || 0} current models</span>
@@ -72,6 +72,16 @@ export default function GuidePage() {
                 <Star className="w-5 h-5 text-primary fill-primary" />
                 <span className="font-semibold">Current lineup</span>
               </div>
+            </div>
+
+            {/* Printer Guides Button */}
+            <div className="mb-8">
+              <Link href="/guides">
+                <Button size="lg" variant="outline" className="font-semibold" data-testid="button-printer-guides">
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  View Printer Setup & Buying Guides
+                </Button>
+              </Link>
             </div>
 
             {/* Search Bar */}
