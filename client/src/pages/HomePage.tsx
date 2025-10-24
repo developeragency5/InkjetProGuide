@@ -358,10 +358,10 @@ export default function HomePage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-20 bg-primary/10">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Informed & Save</h2>
-          <p className="text-lg mb-8 text-primary-foreground/95">
+          <p className="text-lg mb-8 text-muted-foreground">
             Get exclusive deals, expert printing tips, and new product updates delivered to your inbox. 
             Plus, receive a 10% discount code on your first order!
           </p>
@@ -372,11 +372,11 @@ export default function HomePage() {
               className="flex-1 px-4 py-3 rounded-md text-foreground"
               data-testid="input-newsletter"
             />
-            <Button size="lg" variant="secondary" className="font-semibold whitespace-nowrap" data-testid="button-subscribe">
+            <Button size="lg" variant="default" className="font-semibold whitespace-nowrap" data-testid="button-subscribe">
               Get 10% Off
             </Button>
           </div>
-          <p className="text-sm mt-4 text-primary-foreground/80">
+          <p className="text-sm mt-4 text-muted-foreground">
             Join 50,000+ subscribers • No spam, unsubscribe anytime
           </p>
         </div>
