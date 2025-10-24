@@ -116,6 +116,20 @@ export const helpArticles = pgTable("help_articles", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+// FAQs table
+export const faqs = pgTable("faqs", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  category: text("category").notNull(),
+  question: text("question").notNull(),
+  answer: text("answer").notNull(),
+  helpful: integer("helpful").notNull().default(0),
+  notHelpful: integer("not_helpful").notNull().default(0),
+  views: integer("views").notNull().default(0),
+  relatedQuestions: text("related_questions").array(),
+  orderIndex: integer("order_index").notNull().default(0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 // Relations
 export const usersRelations = relations(users, ({ many }) => ({
   cartItems: many(cartItems),
@@ -256,6 +270,17 @@ export const insertHelpArticleSchema = createInsertSchema(helpArticles).omit({
   content: z.string().min(20, "Content must be at least 20 characters"),
 });
 
+export const insertFaqSchema = createInsertSchema(faqs).omit({
+  id: true,
+  createdAt: true,
+  helpful: true,
+  notHelpful: true,
+  views: true,
+}).extend({
+  question: z.string().min(5, "Question must be at least 5 characters"),
+  answer: z.string().min(10, "Answer must be at least 10 characters"),
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -275,3 +300,5 @@ export type SavedComparison = typeof savedComparisons.$inferSelect;
 export type InsertSavedComparison = z.infer<typeof insertSavedComparisonSchema>;
 export type HelpArticle = typeof helpArticles.$inferSelect;
 export type InsertHelpArticle = z.infer<typeof insertHelpArticleSchema>;
+export type Faq = typeof faqs.$inferSelect;
+export type InsertFaq = z.infer<typeof insertFaqSchema>;
