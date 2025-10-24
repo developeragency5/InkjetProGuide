@@ -96,42 +96,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section className="py-8 bg-card border-b">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 mb-2 rounded-full bg-status-online/10 flex items-center justify-center">
-                <Users className="w-6 h-6 text-status-online" />
-              </div>
-              <p className="text-2xl font-bold">50,000+</p>
-              <p className="text-sm text-muted-foreground">Happy Customers</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <Star className="w-6 h-6 text-primary" />
-              </div>
-              <p className="text-2xl font-bold">4.8/5</p>
-              <p className="text-sm text-muted-foreground">Average Rating</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <Award className="w-6 h-6 text-primary" />
-              </div>
-              <p className="text-2xl font-bold">100%</p>
-              <p className="text-sm text-muted-foreground">Authentic HP</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <Shield className="w-6 h-6 text-primary" />
-              </div>
-              <p className="text-2xl font-bold">USA</p>
-              <p className="text-sm text-muted-foreground">Based Support</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Products */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4">
