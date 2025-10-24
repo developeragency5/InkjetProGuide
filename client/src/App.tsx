@@ -19,6 +19,7 @@ import BuyingGuidesPage from "@/pages/BuyingGuidesPage";
 import BeginnersGuidePage from "@/pages/guides/BeginnersGuidePage";
 import HelpCenterPage from "@/pages/HelpCenterPage";
 import HelpArticlePage from "@/pages/HelpArticlePage";
+import ResourceCenterPage from "@/pages/ResourceCenterPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import FAQPage from "@/pages/FAQPage";
@@ -67,6 +68,7 @@ function MainRouter() {
         <Route path="/guides/ink-cost" component={BeginnersGuidePage} />
         <Route path="/guides/small-business" component={BeginnersGuidePage} />
         <Route path="/guides/wireless-vs-usb" component={BeginnersGuidePage} />
+        <Route path="/resources" component={ResourceCenterPage} />
         <Route path="/help" component={HelpCenterPage} />
         <Route path="/help/:slug" component={HelpArticlePage} />
         <Route path="/about" component={AboutPage} />
