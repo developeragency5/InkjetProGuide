@@ -25,10 +25,20 @@ export default function FaqPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Questions");
   const [feedbackGiven, setFeedbackGiven] = useState<Set<string>>(new Set());
+  const [viewedFaqs, setViewedFaqs] = useState<Set<string>>(new Set());
   const { toast } = useToast();
 
   const { data: faqs = [], isLoading } = useQuery<Faq[]>({
     queryKey: ["/api/faqs"],
+  });
+
+  const viewMutation = useMutation({
+    mutationFn: async (faqId: string) => {
+      return fetch(`/api/faqs/${faqId}`).then(res => res.json());
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/faqs"] });
+    },
   });
 
   const feedbackMutation = useMutation({
@@ -87,6 +97,13 @@ export default function FaqPage() {
   const getRelatedFaqs = (faq: Faq): Faq[] => {
     if (!faq.relatedQuestions || faq.relatedQuestions.length === 0) return [];
     return faqs.filter(f => faq.relatedQuestions?.includes(f.id));
+  };
+
+  const handleAccordionChange = (faqId: string) => {
+    if (!viewedFaqs.has(faqId)) {
+      setViewedFaqs(prev => new Set(prev).add(faqId));
+      viewMutation.mutate(faqId);
+    }
   };
 
   if (isLoading) {
@@ -156,7 +173,17 @@ export default function FaqPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion 
+                type="single" 
+                collapsible 
+                className="w-full"
+                onValueChange={(value) => {
+                  if (value) {
+                    const faqId = value.replace('popular-', '');
+                    handleAccordionChange(faqId);
+                  }
+                }}
+              >
                 {popularFaqs.map((faq, index) => (
                   <AccordionItem key={faq.id} value={`popular-${faq.id}`}>
                     <AccordionTrigger
@@ -237,7 +264,16 @@ export default function FaqPage() {
                   <CardTitle className="text-2xl">{category}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Accordion type="single" collapsible className="w-full">
+                  <Accordion 
+                    type="single" 
+                    collapsible 
+                    className="w-full"
+                    onValueChange={(value) => {
+                      if (value) {
+                        handleAccordionChange(value);
+                      }
+                    }}
+                  >
                     {categoryFaqs.map((faq, index) => (
                       <AccordionItem key={faq.id} value={faq.id} id={`faq-${faq.id}`}>
                         <AccordionTrigger
