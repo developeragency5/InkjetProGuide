@@ -18,6 +18,7 @@ import ProfilePage from "@/pages/ProfilePage";
 import BuyingGuidesPage from "@/pages/BuyingGuidesPage";
 import BeginnersGuidePage from "@/pages/guides/BeginnersGuidePage";
 import GuidePage from "@/pages/GuidePage";
+import ProductGuidePage from "@/pages/ProductGuidePage";
 import HelpCenterPage from "@/pages/HelpCenterPage";
 import HelpArticlePage from "@/pages/HelpArticlePage";
 import ResourceCenterPage from "@/pages/ResourceCenterPage";
@@ -63,6 +64,7 @@ function MainRouter() {
         <Route path="/account" component={AccountPage} />
         <Route path="/profile" component={ProfilePage} />
         <Route path="/guide" component={GuidePage} />
+        <Route path="/guide/:id" component={ProductGuidePage} />
         <Route path="/guides" component={BuyingGuidesPage} />
         <Route path="/guides/beginners-guide" component={BeginnersGuidePage} />
         <Route path="/guides/home-office" component={BeginnersGuidePage} />

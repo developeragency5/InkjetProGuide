@@ -186,7 +186,7 @@ export default function GuidePage() {
                         <FileText className="w-4 h-4" />
                         <span>{Math.min(product.features.length, 6)} guides</span>
                       </div>
-                      <Link href={`/product/${product.id}`}>
+                      <Link href={`/guide/${product.id}`}>
                         <Button variant="ghost" size="sm" className="group" data-testid={`button-view-guide-${product.id}`}>
                           View Guide
                           <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
