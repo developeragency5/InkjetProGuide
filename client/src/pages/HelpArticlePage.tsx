@@ -6,8 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import type { HelpArticle } from "@shared/schema";
 
 // Sample article data - in a real app, this would come from the API
 const sampleArticles: Record<string, any> = {
@@ -199,14 +200,24 @@ const relatedArticleTitles: Record<string, string> = {
 export default function HelpArticlePage() {
   const [, params] = useRoute("/help/:slug");
   const slug = params?.slug || "";
-  const article = sampleArticles[slug];
   const [feedbackGiven, setFeedbackGiven] = useState(false);
   const { toast } = useToast();
 
+  // Fetch article from API
+  const { data: article, isLoading, isError } = useQuery<HelpArticle>({
+    queryKey: ["/api/help/articles", slug],
+    queryFn: async () => {
+      const response = await fetch(`/api/help/articles/${slug}`);
+      if (!response.ok) throw new Error("Article not found");
+      return response.json();
+    },
+    enabled: !!slug,
+  });
+
   const feedbackMutation = useMutation({
     mutationFn: async (helpful: boolean) => {
-      // In a real app, this would use the article ID from the API
-      return apiRequest("POST", `/api/help/articles/${slug}/feedback`, { helpful });
+      if (!article) throw new Error("No article to submit feedback for");
+      return apiRequest("POST", `/api/help/articles/${article.id}/feedback`, { helpful });
     },
     onSuccess: () => {
       setFeedbackGiven(true);
@@ -217,7 +228,18 @@ export default function HelpArticlePage() {
     },
   });
 
-  if (!article) {
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <MessageSquare className="w-16 h-16 text-muted-foreground mx-auto mb-4 animate-pulse" />
+          <p className="text-muted-foreground">Loading article...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (isError || !article) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">

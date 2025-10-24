@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useQuery } from "@tanstack/react-query";
+import type { HelpArticle } from "@shared/schema";
 
 const categories = [
   {
@@ -55,16 +57,62 @@ export default function HelpCenterPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const filteredCategories = categories.map(category => ({
-    ...category,
-    articles: category.articles.filter(article =>
-      article.title.toLowerCase().includes(searchQuery.toLowerCase())
-    ),
-  })).filter(category => category.articles.length > 0);
+  // Fetch all help articles from API
+  const { data: articles = [], isLoading } = useQuery<HelpArticle[]>({
+    queryKey: ["/api/help/articles"],
+  });
 
-  const displayCategories = selectedCategory
-    ? filteredCategories.filter(cat => cat.id === selectedCategory)
-    : filteredCategories;
+  // Filter articles by search query and selected category
+  const filteredArticles = articles.filter(article => {
+    const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         article.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = !selectedCategory || article.category.toLowerCase() === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  // Group articles by category
+  const articlesByCategory = filteredArticles.reduce((acc, article) => {
+    const categoryId = article.category.toLowerCase();
+    if (!acc[categoryId]) {
+      acc[categoryId] = [];
+    }
+    acc[categoryId].push(article);
+    return acc;
+  }, {} as Record<string, HelpArticle[]>);
+
+  // Build display categories from actual data
+  const displayCategories = categories
+    .map(category => ({
+      ...category,
+      articles: (articlesByCategory[category.id] || []).map(article => ({
+        title: article.title,
+        slug: article.slug,
+        views: `${article.helpful + article.notHelpful}`
+      })),
+    }))
+    .filter(category => category.articles.length > 0);
+
+  // Get popular articles (most helpful + not helpful = most viewed)
+  const popularArticles = [...articles]
+    .sort((a, b) => (b.helpful + b.notHelpful) - (a.helpful + a.notHelpful))
+    .slice(0, 4)
+    .map(article => ({
+      title: article.title,
+      slug: article.slug,
+      category: article.category,
+      views: `${article.helpful + article.notHelpful}`
+    }));
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <FileText className="w-16 h-16 text-muted-foreground mx-auto mb-4 animate-pulse" />
+          <p className="text-muted-foreground">Loading help articles...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -179,7 +227,7 @@ export default function HelpCenterPage() {
         </div>
 
         {/* No Results */}
-        {filteredCategories.length === 0 && searchQuery && (
+        {displayCategories.length === 0 && searchQuery && (
           <div className="text-center py-12">
             <FileText className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">No articles found</h3>
