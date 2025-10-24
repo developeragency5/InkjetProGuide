@@ -40,6 +40,7 @@ export function Layout({ children }: LayoutProps) {
     { name: "Shop Printers", path: "/products" },
     { name: "Printer Guides", path: "/guides" },
     { name: "Help Center", path: "/help" },
+    { name: "FAQ", path: "/faq" },
     { name: "About Us", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
