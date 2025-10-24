@@ -89,11 +89,21 @@ export const productReviews = pgTable("product_reviews", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+// Saved comparisons table
+export const savedComparisons = pgTable("saved_comparisons", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  name: text("name").notNull(),
+  productIds: text("product_ids").array().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 // Relations
 export const usersRelations = relations(users, ({ many }) => ({
   cartItems: many(cartItems),
   wishlistItems: many(wishlistItems),
   orders: many(orders),
+  savedComparisons: many(savedComparisons),
 }));
 
 export const productsRelations = relations(products, ({ many }) => ({
@@ -155,6 +165,13 @@ export const orderItemsRelations = relations(orderItems, ({ one }) => ({
   }),
 }));
 
+export const savedComparisonsRelations = relations(savedComparisons, ({ one }) => ({
+  user: one(users, {
+    fields: [savedComparisons.userId],
+    references: [users.id],
+  }),
+}));
+
 // Insert schemas
 export const insertUserSchema = createInsertSchema(users).pick({
   email: true,
@@ -201,6 +218,14 @@ export const insertProductReviewSchema = createInsertSchema(productReviews).omit
   comment: z.string().min(20, "Review must be at least 20 characters"),
 });
 
+export const insertSavedComparisonSchema = createInsertSchema(savedComparisons).omit({
+  id: true,
+  createdAt: true,
+}).extend({
+  name: z.string().min(3, "Comparison name must be at least 3 characters"),
+  productIds: z.array(z.string()).min(2, "Must compare at least 2 products").max(4, "Maximum 4 products can be compared"),
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -216,3 +241,5 @@ export type OrderItem = typeof orderItems.$inferSelect;
 export type InsertOrderItem = z.infer<typeof insertOrderItemSchema>;
 export type ProductReview = typeof productReviews.$inferSelect;
 export type InsertProductReview = z.infer<typeof insertProductReviewSchema>;
+export type SavedComparison = typeof savedComparisons.$inferSelect;
+export type InsertSavedComparison = z.infer<typeof insertSavedComparisonSchema>;
