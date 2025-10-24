@@ -15,7 +15,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const { toast } = useToast();
 
-  const { data: wishlistData } = useQuery({
+  const { data: wishlistData } = useQuery<{ items: any[] }>({
     queryKey: ["/api/wishlist"],
   });
 

@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 export default function WishlistPage() {
   const { toast } = useToast();
 
-  const { data: wishlistData, isLoading } = useQuery({
+  const { data: wishlistData, isLoading } = useQuery<{ items: any[] }>({
     queryKey: ["/api/wishlist"],
   });
 

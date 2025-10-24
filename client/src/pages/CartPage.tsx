@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 export default function CartPage() {
   const { toast } = useToast();
 
-  const { data: cartData, isLoading } = useQuery({
+  const { data: cartData, isLoading } = useQuery<{ items: any[] }>({
     queryKey: ["/api/cart"],
   });
 
