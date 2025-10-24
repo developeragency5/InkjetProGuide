@@ -120,27 +120,23 @@ export function ProductCard({ product }: ProductCardProps) {
         onMouseLeave={() => setIsHovered(false)}
       >
         <CardContent className="p-4">
-          {/* Top badges and buttons */}
+          {/* Top badge and buttons */}
           <div className="absolute top-4 left-4 right-4 z-10 flex items-start justify-between gap-2">
-            <div className="flex flex-col gap-2">
-              {/* Discount Badge */}
-              {hasDiscount && (
+            <div>
+              {/* Show only one badge with priority: Discount > Best Seller > New Arrival */}
+              {hasDiscount ? (
                 <Badge className="bg-destructive text-destructive-foreground" data-testid={`badge-discount-${product.id}`}>
                   -{discountPercent}%
                 </Badge>
-              )}
-              {/* New Arrival Badge */}
-              {isNewArrival && (
-                <Badge className="bg-primary text-primary-foreground" data-testid={`badge-new-${product.id}`}>
-                  New
-                </Badge>
-              )}
-              {/* Best Seller Badge */}
-              {isBestSeller && (
+              ) : isBestSeller ? (
                 <Badge className="bg-yellow-500 text-yellow-950" data-testid={`badge-bestseller-${product.id}`}>
                   Best Seller
                 </Badge>
-              )}
+              ) : isNewArrival ? (
+                <Badge className="bg-primary text-primary-foreground" data-testid={`badge-new-${product.id}`}>
+                  New
+                </Badge>
+              ) : null}
             </div>
 
             {/* Action buttons */}
