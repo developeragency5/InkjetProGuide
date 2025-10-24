@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
 import type { Product } from "@shared/schema";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { useComparison } from "@/contexts/ComparisonContext";
 
 interface ProductCardProps {
   product: Product;
@@ -18,6 +20,33 @@ export function ProductCard({ product }: ProductCardProps) {
   const { toast } = useToast();
   const [showQuickView, setShowQuickView] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const { selectedProducts, addToComparison, removeFromComparison, isInComparison } = useComparison();
+  const isComparing = isInComparison(product.id);
+  const isComparisonFull = selectedProducts.length >= 4 && !isComparing;
+
+  const handleCompareChange = (checked: boolean) => {
+    if (checked) {
+      if (isComparisonFull) {
+        toast({
+          title: "Comparison limit reached",
+          description: "You can compare up to 4 products at a time",
+          variant: "destructive",
+        });
+        return;
+      }
+      addToComparison(product.id);
+      toast({
+        title: "Added to comparison",
+        description: `${product.name} added to comparison`,
+      });
+    } else {
+      removeFromComparison(product.id);
+      toast({
+        title: "Removed from comparison",
+        description: `${product.name} removed from comparison`,
+      });
+    }
+  };
 
   const { data: wishlistData } = useQuery<{ items: any[] }>({
     queryKey: ["/api/wishlist"],
@@ -280,6 +309,23 @@ export function ProductCard({ product }: ProductCardProps) {
                   <span>Out of Stock</span>
                 </div>
               )}
+            </div>
+
+            {/* Compare Checkbox */}
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id={`compare-${product.id}`}
+                checked={isComparing}
+                onCheckedChange={handleCompareChange}
+                disabled={isComparisonFull}
+                data-testid={`checkbox-compare-${product.id}`}
+              />
+              <label
+                htmlFor={`compare-${product.id}`}
+                className="text-sm font-medium leading-none cursor-pointer select-none"
+              >
+                Compare
+              </label>
             </div>
 
             {/* Add to Cart Button */}

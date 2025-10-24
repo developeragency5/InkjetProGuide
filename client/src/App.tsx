@@ -4,12 +4,14 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/Layout";
+import { ComparisonProvider } from "@/contexts/ComparisonContext";
 import HomePage from "@/pages/HomePage";
 import ProductsPage from "@/pages/ProductsPage";
 import ProductDetailPage from "@/pages/ProductDetailPage";
 import CartPage from "@/pages/CartPage";
 import WishlistPage from "@/pages/WishlistPage";
 import CheckoutPage from "@/pages/CheckoutPage";
+import ComparisonPage from "@/pages/ComparisonPage";
 import AuthPage from "@/pages/AuthPage";
 import AccountPage from "@/pages/AccountPage";
 import ProfilePage from "@/pages/ProfilePage";
@@ -51,6 +53,7 @@ function MainRouter() {
         <Route path="/cart" component={CartPage} />
         <Route path="/wishlist" component={WishlistPage} />
         <Route path="/checkout" component={CheckoutPage} />
+        <Route path="/compare" component={ComparisonPage} />
         <Route path="/auth" component={AuthPage} />
         <Route path="/account" component={AccountPage} />
         <Route path="/profile" component={ProfilePage} />
@@ -82,8 +85,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Router />
+        <ComparisonProvider>
+          <Toaster />
+          <Router />
+        </ComparisonProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );
