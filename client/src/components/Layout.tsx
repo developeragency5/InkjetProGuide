@@ -106,24 +106,6 @@ export function Layout({ children }: LayoutProps) {
               </form>
             </div>
 
-            {/* Navigation Menu - Desktop */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navigationLinks.map((link) => (
-                <Link key={link.path} href={link.path}>
-                  <span
-                    className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors cursor-pointer inline-block ${
-                      location === link.path
-                        ? "text-primary bg-primary/5"
-                        : "text-foreground"
-                    }`}
-                    data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
-                  >
-                    {link.name}
-                  </span>
-                </Link>
-              ))}
-            </nav>
-
             {/* Icons */}
             <div className="flex items-center gap-2">
               <Link href="/wishlist">
@@ -247,6 +229,26 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </nav>
         )}
+
+        {/* Navigation Bar - Below Header */}
+        <div className="hidden lg:block border-b bg-card">
+          <div className="max-w-7xl mx-auto px-4">
+            <nav className="flex items-center justify-center gap-2 py-3">
+              {navigationLinks.map((link) => (
+                <Link key={link.path} href={link.path}>
+                  <Button
+                    variant={location === link.path ? "default" : "ghost"}
+                    size="sm"
+                    className="font-medium"
+                    data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {link.name}
+                  </Button>
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
       </header>
 
       {/* Main Content */}
