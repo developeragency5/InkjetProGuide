@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE - Modern Professional Theme */
+/* LIGHT MODE - Modern Purple & Amber Theme */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);
@@ -14,68 +14,68 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Professional Slate Gray & Orange Theme */
-  --background: 210 40% 98%;  /* Very light slate background #FAFCFD */
+  /* Sophisticated Purple & Amber Theme */
+  --background: 270 100% 99%;  /* Very light lavender background #FDFCFF */
   
-  --foreground: 217 24% 27%;  /* Slate 700 for text #334155 */
+  --foreground: 258 25% 25%;  /* Deep purple-gray for text */
 
-  --border: 215 20% 88%;  /* Light slate border */
+  --border: 270 40% 90%;  /* Light purple border */
 
   --card: 0 0% 100%;  /* Pure white cards #FFFFFF */
 
-  --card-foreground: 217 24% 27%;  /* Slate 700 text */
+  --card-foreground: 258 25% 25%;  /* Deep purple-gray text */
 
-  --card-border: 215 20% 90%;  /* Subtle card borders */
+  --card-border: 270 40% 92%;  /* Subtle card borders */
 
-  --sidebar: 210 40% 96%;  /* Light slate sidebar #F1F5F9 */
+  --sidebar: 270 100% 97%;  /* Light lavender sidebar #F9F5FF */
 
-  --sidebar-foreground: 217 24% 27%;  /* Slate 700 text */
+  --sidebar-foreground: 258 25% 25%;  /* Deep purple text */
 
-  --sidebar-border: 215 20% 88%;
+  --sidebar-border: 270 40% 90%;
 
-  --sidebar-primary: 215 20% 36%;  /* Slate 600 #475569 */
+  --sidebar-primary: 258 84% 57%;  /* Deep purple #7C3AED */
 
   --sidebar-primary-foreground: 0 0% 100%;  /* White text */
 
-  --sidebar-accent: 210 40% 92%;  /* Lighter slate */
+  --sidebar-accent: 270 100% 95%;  /* Lighter lavender */
 
-  --sidebar-accent-foreground: 217 24% 27%;
+  --sidebar-accent-foreground: 258 25% 25%;
 
-  --sidebar-ring: 27 96% 61%;  /* Orange ring */
+  --sidebar-ring: 38 92% 50%;  /* Amber ring */
 
   --popover: 0 0% 100%;  /* White popover */
 
-  --popover-foreground: 217 24% 27%;
+  --popover-foreground: 258 25% 25%;
 
-  --popover-border: 215 20% 88%;
+  --popover-border: 270 40% 90%;
 
-  --primary: 215 20% 36%;  /* Slate 600 primary #475569 */
+  --primary: 258 84% 57%;  /* Deep purple primary #7C3AED */
 
   --primary-foreground: 0 0% 100%;  /* White text on primary */
 
-  --secondary: 210 40% 96%;  /* Light slate #F1F5F9 */
+  --secondary: 270 100% 96%;  /* Light lavender #F3E8FF */
 
-  --secondary-foreground: 217 24% 27%;  /* Slate 700 text */
+  --secondary-foreground: 258 25% 25%;  /* Deep purple text */
 
-  --muted: 210 40% 94%;  /* Muted slate backgrounds */
+  --muted: 270 100% 95%;  /* Muted lavender backgrounds */
 
-  --muted-foreground: 215 16% 47%;  /* Slate 500 for muted text */
+  --muted-foreground: 258 15% 50%;  /* Purple-gray for muted text */
 
-  --accent: 27 96% 61%;  /* Orange accent #FB923C */
+  --accent: 38 92% 50%;  /* Amber accent #F59E0B */
 
-  --accent-foreground: 0 0% 100%;  /* White text on orange */
+  --accent-foreground: 0 0% 100%;  /* White text on amber */
 
   --destructive: 0 84% 60%;  /* Red for destructive actions */
 
   --destructive-foreground: 0 0% 100%;
 
-  --input: 215 20% 75%;  /* Input border color */
-  --ring: 27 96% 61%;  /* Orange focus ring */
+  --input: 270 40% 85%;  /* Input border color */
+  --ring: 38 92% 50%;  /* Amber focus ring */
   
-  /* Chart colors with orange accent */
-  --chart-1: 27 96% 61%;  /* Orange */
-  --chart-2: 215 20% 36%;  /* Slate */
-  --chart-3: 210 100% 45%;  /* Blue */
+  /* Chart colors with purple and amber accents */
+  --chart-1: 258 84% 57%;  /* Deep purple */
+  --chart-2: 38 92% 50%;  /* Amber */
+  --chart-3: 217 91% 60%;  /* Blue */
   --chart-4: 173 80% 40%;  /* Teal */
   --chart-5: 340 82% 52%;  /* Pink */
 
@@ -88,14 +88,14 @@
   --radius: 0.5rem; /* 8px - perfect for modern look */
   
   /* Subtle shadows for depth */
-  --shadow-2xs: 0px 1px 2px 0px rgba(71, 85, 105, 0.06);
-  --shadow-xs: 0px 1px 2px 0px rgba(71, 85, 105, 0.08);
-  --shadow-sm: 0px 2px 4px 0px rgba(71, 85, 105, 0.08), 0px 1px 2px -1px rgba(71, 85, 105, 0.08);
-  --shadow: 0px 4px 6px 0px rgba(71, 85, 105, 0.08), 0px 2px 4px -1px rgba(71, 85, 105, 0.08);
-  --shadow-md: 0px 6px 8px -1px rgba(71, 85, 105, 0.10), 0px 3px 5px -2px rgba(71, 85, 105, 0.10);
-  --shadow-lg: 0px 12px 16px -4px rgba(71, 85, 105, 0.12), 0px 6px 8px -4px rgba(71, 85, 105, 0.10);
-  --shadow-xl: 0px 24px 32px -8px rgba(71, 85, 105, 0.14), 0px 12px 16px -6px rgba(71, 85, 105, 0.12);
-  --shadow-2xl: 0px 32px 48px -12px rgba(71, 85, 105, 0.18);
+  --shadow-2xs: 0px 1px 2px 0px rgba(124, 58, 237, 0.06);
+  --shadow-xs: 0px 1px 2px 0px rgba(124, 58, 237, 0.08);
+  --shadow-sm: 0px 2px 4px 0px rgba(124, 58, 237, 0.08), 0px 1px 2px -1px rgba(124, 58, 237, 0.08);
+  --shadow: 0px 4px 6px 0px rgba(124, 58, 237, 0.08), 0px 2px 4px -1px rgba(124, 58, 237, 0.08);
+  --shadow-md: 0px 6px 8px -1px rgba(124, 58, 237, 0.10), 0px 3px 5px -2px rgba(124, 58, 237, 0.10);
+  --shadow-lg: 0px 12px 16px -4px rgba(124, 58, 237, 0.12), 0px 6px 8px -4px rgba(124, 58, 237, 0.10);
+  --shadow-xl: 0px 24px 32px -8px rgba(124, 58, 237, 0.14), 0px 12px 16px -6px rgba(124, 58, 237, 0.12);
+  --shadow-2xl: 0px 32px 48px -12px rgba(124, 58, 237, 0.18);
   
   --tracking-normal: 0em;
   --spacing: 0.25rem;
@@ -135,7 +135,7 @@
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
-/* DARK MODE - Professional Slate Theme */
+/* DARK MODE - Professional Purple Theme */
 .dark {
   --button-outline: rgba(255,255,255, .10);
   --badge-outline: rgba(255,255,255, .05);
@@ -146,53 +146,53 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 217 24% 10%;  /* Dark slate background */
+  --background: 258 30% 8%;  /* Dark purple background */
 
-  --foreground: 210 40% 96%;  /* Light text */
+  --foreground: 270 100% 96%;  /* Light text */
 
-  --border: 215 20% 20%;
+  --border: 258 25% 18%;
 
-  --card: 217 24% 12%;  /* Dark card */
+  --card: 258 30% 10%;  /* Dark card */
 
-  --card-foreground: 210 40% 94%;
+  --card-foreground: 270 100% 94%;
 
-  --card-border: 215 20% 18%;
+  --card-border: 258 25% 15%;
 
-  --sidebar: 217 24% 14%;
+  --sidebar: 258 30% 12%;
 
-  --sidebar-foreground: 210 40% 92%;
+  --sidebar-foreground: 270 100% 92%;
 
-  --sidebar-border: 215 20% 20%;
+  --sidebar-border: 258 25% 18%;
 
-  --sidebar-primary: 27 96% 61%;  /* Orange primary in dark mode */
+  --sidebar-primary: 258 90% 66%;  /* Lighter purple in dark mode #8B5CF6 */
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 215 20% 20%;
+  --sidebar-accent: 258 25% 18%;
 
-  --sidebar-accent-foreground: 210 40% 90%;
+  --sidebar-accent-foreground: 270 100% 90%;
 
-  --sidebar-ring: 27 96% 61%;
+  --sidebar-ring: 38 92% 50%;
 
-  --popover: 217 24% 14%;
+  --popover: 258 30% 12%;
 
-  --popover-foreground: 210 40% 90%;
+  --popover-foreground: 270 100% 90%;
 
-  --popover-border: 215 20% 22%;
+  --popover-border: 258 25% 20%;
 
-  --primary: 27 96% 61%;  /* Orange primary in dark mode */
+  --primary: 258 90% 66%;  /* Lighter purple primary in dark mode #8B5CF6 */
 
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 215 20% 20%;
+  --secondary: 258 25% 18%;
 
-  --secondary-foreground: 210 40% 90%;
+  --secondary-foreground: 270 100% 90%;
 
-  --muted: 215 20% 18%;
+  --muted: 258 25% 16%;
 
-  --muted-foreground: 210 20% 65%;
+  --muted-foreground: 270 50% 65%;
 
-  --accent: 27 96% 61%;  /* Orange accent */
+  --accent: 38 92% 50%;  /* Amber accent */
 
   --accent-foreground: 0 0% 100%;
 
@@ -200,12 +200,12 @@
 
   --destructive-foreground: 0 0% 100%;
 
-  --input: 215 20% 30%;
-  --ring: 27 96% 61%;
+  --input: 258 25% 28%;
+  --ring: 38 92% 50%;
   
-  --chart-1: 27 96% 61%;
-  --chart-2: 215 20% 50%;
-  --chart-3: 210 100% 55%;
+  --chart-1: 258 90% 66%;
+  --chart-2: 38 92% 50%;
+  --chart-3: 217 91% 60%;
   --chart-4: 173 75% 50%;
   --chart-5: 340 78% 62%;
 
