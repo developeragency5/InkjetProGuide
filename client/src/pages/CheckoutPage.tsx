@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLocation } from "wouter";
 import { Check, Truck, Zap, CreditCard, Banknote } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,13 +12,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-
-// Load Stripe
-const stripePromise = import.meta.env.VITE_STRIPE_PUBLIC_KEY 
-  ? loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
-  : null;
 
 const shippingSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -30,7 +23,15 @@ const shippingSchema = z.object({
   phone: z.string().regex(/^\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})$/, "Invalid phone number"),
 });
 
+const cardPaymentSchema = z.object({
+  cardNumber: z.string().regex(/^\d{16}$/, "Card number must be 16 digits"),
+  cardName: z.string().min(3, "Name on card is required"),
+  expiryDate: z.string().regex(/^(0[1-9]|1[0-2])\/\d{2}$/, "Expiry must be MM/YY format"),
+  cvv: z.string().regex(/^\d{3,4}$/, "CVV must be 3-4 digits"),
+});
+
 type ShippingFormData = z.infer<typeof shippingSchema>;
+type CardPaymentFormData = z.infer<typeof cardPaymentSchema>;
 
 const shippingOptions = [
   {
@@ -56,58 +57,6 @@ const shippingOptions = [
   },
 ];
 
-function StripePaymentForm({ amount, onSuccess }: { amount: number; onSuccess: () => void }) {
-  const stripe = useStripe();
-  const elements = useElements();
-  const { toast } = useToast();
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!stripe || !elements) {
-      return;
-    }
-
-    setIsProcessing(true);
-
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: `${window.location.origin}/checkout`,
-      },
-      redirect: "if_required",
-    });
-
-    setIsProcessing(false);
-
-    if (error) {
-      toast({
-        title: "Payment Failed",
-        description: error.message,
-        variant: "destructive",
-      });
-    } else {
-      onSuccess();
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <PaymentElement />
-      <Button
-        type="submit"
-        size="lg"
-        className="w-full font-semibold"
-        disabled={!stripe || isProcessing}
-        data-testid="button-confirm-payment"
-      >
-        {isProcessing ? "Processing..." : `Pay $${amount.toFixed(2)}`}
-      </Button>
-    </form>
-  );
-}
-
 export default function CheckoutPage() {
   const [, navigate] = useLocation();
   const [step, setStep] = useState(1);
@@ -115,14 +64,14 @@ export default function CheckoutPage() {
   const [paymentMethod, setPaymentMethod] = useState<"card" | "cash">("cash");
   const [shippingData, setShippingData] = useState<ShippingFormData | null>(null);
   const [orderId, setOrderId] = useState<string | null>(null);
-  const [clientSecret, setClientSecret] = useState<string | null>(null);
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const { toast } = useToast();
 
   const { data: cartData, isLoading: cartLoading } = useQuery<{ items: any[] }>({
     queryKey: ["/api/cart"],
   });
 
-  const form = useForm<ShippingFormData>({
+  const shippingForm = useForm<ShippingFormData>({
     resolver: zodResolver(shippingSchema),
     defaultValues: {
       email: "",
@@ -132,6 +81,16 @@ export default function CheckoutPage() {
       state: "",
       zip: "",
       phone: "",
+    },
+  });
+
+  const cardPaymentForm = useForm<CardPaymentFormData>({
+    resolver: zodResolver(cardPaymentSchema),
+    defaultValues: {
+      cardNumber: "",
+      cardName: "",
+      expiryDate: "",
+      cvv: "",
     },
   });
 
@@ -156,20 +115,6 @@ export default function CheckoutPage() {
     },
   });
 
-  const createPaymentIntentMutation = useMutation({
-    mutationFn: (amount: number) => apiRequest("POST", "/api/create-payment-intent", { amount }),
-    onSuccess: (data: any) => {
-      setClientSecret(data.clientSecret);
-    },
-    onError: () => {
-      toast({
-        title: "Payment setup failed",
-        description: "Unable to initialize payment. Please try again or use Cash on Delivery.",
-        variant: "destructive",
-      });
-    },
-  });
-
   const cartItems = cartData?.items || [];
   const subtotal = cartItems.reduce(
     (sum: number, item: any) => sum + parseFloat(item.product.price) * item.quantity,
@@ -179,25 +124,6 @@ export default function CheckoutPage() {
   const shippingCost = selectedShipping?.price || 0;
   const tax = subtotal * 0.08;
   const total = subtotal + shippingCost + tax;
-
-  // Reset client secret when shipping method changes
-  useEffect(() => {
-    setClientSecret(null);
-  }, [shippingMethod]);
-
-  // Create payment intent when card payment is selected
-  useEffect(() => {
-    if (step === 3 && paymentMethod === "card" && !clientSecret && !createPaymentIntentMutation.isPending && stripePromise) {
-      createPaymentIntentMutation.mutate(total);
-    }
-  }, [step, paymentMethod, total, clientSecret]);
-
-  // Auto-select cash if card is not available
-  useEffect(() => {
-    if (!stripePromise && paymentMethod === "card") {
-      setPaymentMethod("cash");
-    }
-  }, [stripePromise, paymentMethod]);
 
   if (cartLoading) {
     return (
@@ -240,7 +166,21 @@ export default function CheckoutPage() {
     });
   };
 
-  const handleStripePaymentSuccess = () => {
+  const handleCardPaymentSubmit = async (data: CardPaymentFormData) => {
+    setIsProcessingPayment(true);
+    
+    // Simulate payment processing
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsProcessingPayment(false);
+    
+    // Mock payment success
+    toast({
+      title: "Payment processed",
+      description: "Your card payment has been processed successfully.",
+    });
+    
+    // Place the order
     handlePlaceOrder();
   };
 
@@ -293,10 +233,10 @@ export default function CheckoutPage() {
               <Card>
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-semibold mb-6">Shipping Information</h2>
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(handleShippingSubmit)} className="space-y-4">
+                  <Form {...shippingForm}>
+                    <form onSubmit={shippingForm.handleSubmit(handleShippingSubmit)} className="space-y-4">
                       <FormField
-                        control={form.control}
+                        control={shippingForm.control}
                         name="email"
                         render={({ field }) => (
                           <FormItem>
@@ -309,7 +249,7 @@ export default function CheckoutPage() {
                         )}
                       />
                       <FormField
-                        control={form.control}
+                        control={shippingForm.control}
                         name="name"
                         render={({ field }) => (
                           <FormItem>
@@ -322,7 +262,7 @@ export default function CheckoutPage() {
                         )}
                       />
                       <FormField
-                        control={form.control}
+                        control={shippingForm.control}
                         name="address"
                         render={({ field }) => (
                           <FormItem>
@@ -336,7 +276,7 @@ export default function CheckoutPage() {
                       />
                       <div className="grid grid-cols-2 gap-4">
                         <FormField
-                          control={form.control}
+                          control={shippingForm.control}
                           name="city"
                           render={({ field }) => (
                             <FormItem>
@@ -349,7 +289,7 @@ export default function CheckoutPage() {
                           )}
                         />
                         <FormField
-                          control={form.control}
+                          control={shippingForm.control}
                           name="state"
                           render={({ field }) => (
                             <FormItem>
@@ -364,7 +304,7 @@ export default function CheckoutPage() {
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <FormField
-                          control={form.control}
+                          control={shippingForm.control}
                           name="zip"
                           render={({ field }) => (
                             <FormItem>
@@ -377,7 +317,7 @@ export default function CheckoutPage() {
                           )}
                         />
                         <FormField
-                          control={form.control}
+                          control={shippingForm.control}
                           name="phone"
                           render={({ field }) => (
                             <FormItem>
@@ -461,19 +401,16 @@ export default function CheckoutPage() {
                       className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
                       data-testid="radio-card-payment"
                     >
-                      <RadioGroupItem value="card" id="card" disabled={!stripePromise} />
+                      <RadioGroupItem value="card" id="card" />
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <CreditCard className="w-5 h-5 text-primary" />
                           <span className="font-medium cursor-pointer">
                             Credit/Debit Card
                           </span>
-                          {!stripePromise && (
-                            <span className="text-xs text-muted-foreground">(Not configured)</span>
-                          )}
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          {stripePromise ? "Secure payment with Stripe" : "Stripe API keys required to enable card payments"}
+                          Pay securely with your credit or debit card
                         </p>
                       </div>
                     </label>
@@ -497,17 +434,112 @@ export default function CheckoutPage() {
                     </label>
                   </RadioGroup>
 
-                  {paymentMethod === "card" && clientSecret && stripePromise ? (
+                  {paymentMethod === "card" && (
                     <div className="mb-6">
-                      <Elements stripe={stripePromise} options={{ clientSecret }}>
-                        <StripePaymentForm amount={total} onSuccess={handleStripePaymentSuccess} />
-                      </Elements>
+                      <Form {...cardPaymentForm}>
+                        <form onSubmit={cardPaymentForm.handleSubmit(handleCardPaymentSubmit)} className="space-y-4">
+                          <FormField
+                            control={cardPaymentForm.control}
+                            name="cardNumber"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Card Number *</FormLabel>
+                                <FormControl>
+                                  <Input 
+                                    {...field} 
+                                    placeholder="1234567890123456" 
+                                    maxLength={16}
+                                    data-testid="input-card-number"
+                                    onChange={(e) => {
+                                      const value = e.target.value.replace(/\D/g, '');
+                                      field.onChange(value);
+                                    }}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={cardPaymentForm.control}
+                            name="cardName"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Name on Card *</FormLabel>
+                                <FormControl>
+                                  <Input {...field} placeholder="John Doe" data-testid="input-card-name" />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <div className="grid grid-cols-2 gap-4">
+                            <FormField
+                              control={cardPaymentForm.control}
+                              name="expiryDate"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Expiry Date *</FormLabel>
+                                  <FormControl>
+                                    <Input 
+                                      {...field} 
+                                      placeholder="MM/YY" 
+                                      maxLength={5}
+                                      data-testid="input-card-expiry"
+                                      onChange={(e) => {
+                                        let value = e.target.value.replace(/\D/g, '');
+                                        if (value.length >= 2) {
+                                          value = value.slice(0, 2) + '/' + value.slice(2, 4);
+                                        }
+                                        field.onChange(value);
+                                      }}
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            <FormField
+                              control={cardPaymentForm.control}
+                              name="cvv"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>CVV *</FormLabel>
+                                  <FormControl>
+                                    <Input 
+                                      {...field} 
+                                      placeholder="123" 
+                                      maxLength={4}
+                                      data-testid="input-card-cvv"
+                                      onChange={(e) => {
+                                        const value = e.target.value.replace(/\D/g, '');
+                                        field.onChange(value);
+                                      }}
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                          <div className="flex gap-3 pt-4">
+                            <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1" data-testid="button-back-to-shipping">
+                              Back
+                            </Button>
+                            <Button
+                              type="submit"
+                              size="lg"
+                              className="flex-1 font-semibold"
+                              disabled={isProcessingPayment || createOrderMutation.isPending}
+                              data-testid="button-pay-now"
+                            >
+                              {isProcessingPayment || createOrderMutation.isPending ? "Processing..." : `Pay $${total.toFixed(2)}`}
+                            </Button>
+                          </div>
+                        </form>
+                      </Form>
                     </div>
-                  ) : paymentMethod === "card" && !stripePromise ? (
-                    <div className="text-center py-6 mb-6">
-                      <p className="text-muted-foreground">Card payments are not configured. Please use Cash on Delivery.</p>
-                    </div>
-                  ) : null}
+                  )}
 
                   {paymentMethod === "cash" && (
                     <div className="flex gap-3">
@@ -522,21 +554,6 @@ export default function CheckoutPage() {
                         data-testid="button-place-order"
                       >
                         {createOrderMutation.isPending ? "Processing..." : "Place Order"}
-                      </Button>
-                    </div>
-                  )}
-
-                  {paymentMethod === "card" && !clientSecret && stripePromise && (
-                    <div className="flex gap-3">
-                      <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1" data-testid="button-back-to-shipping">
-                        Back
-                      </Button>
-                      <Button
-                        size="lg"
-                        className="flex-1 font-semibold"
-                        disabled
-                      >
-                        Loading payment...
                       </Button>
                     </div>
                   )}
