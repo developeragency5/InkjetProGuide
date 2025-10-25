@@ -555,7 +555,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (!order || order.userId !== req.user!.id) {
         return res.status(404).json({ message: "Order not found" });
       }
-      res.json(order);
+      res.json({ order });
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
