@@ -27,6 +27,7 @@ import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import FAQPage from "@/pages/FAQPage";
 import RefundPolicyPage from "@/pages/RefundPolicyPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import AdminLoginPage from "@/pages/AdminLoginPage";
 import AdminDashboardPage from "@/pages/AdminDashboardPage";
 import AdminProductsPage from "@/pages/AdminProductsPage";
@@ -82,6 +83,7 @@ function MainRouter() {
         <Route path="/contact" component={ContactPage} />
         <Route path="/faq" component={FAQPage} />
         <Route path="/refund-policy" component={RefundPolicyPage} />
+        <Route path="/privacy-policy" component={PrivacyPolicyPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
