@@ -353,7 +353,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const userId = req.isAuthenticated() ? req.user!.id : undefined;
       const sessionId = req.session.id;
+      console.log(`[CART] GET - userId: ${userId}, sessionId: ${sessionId}`);
       const items = await storage.getCartItems(userId, sessionId);
+      console.log(`[CART] Retrieved ${items.length} items`);
       res.json({ items });
     } catch (error: any) {
       res.status(500).json({ message: error.message });
@@ -365,7 +367,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { productId, quantity = 1 } = req.body;
       const userId = req.isAuthenticated() ? req.user!.id : undefined;
       const sessionId = req.session.id;
+      console.log(`[CART] POST - Adding product ${productId}, userId: ${userId}, sessionId: ${sessionId}`);
       const item = await storage.addToCart(userId, sessionId, productId, quantity);
+      console.log(`[CART] Added item ${item.id}`);
       res.json(item);
     } catch (error: any) {
       res.status(500).json({ message: error.message });
@@ -461,10 +465,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const userId = req.isAuthenticated() ? req.user!.id : undefined;
       const sessionId = req.session.id;
 
+      console.log(`[ORDER] Creating order - userId: ${userId}, sessionId: ${sessionId}`);
+
       // Get cart items
       const cartItems = await storage.getCartItems(userId, sessionId);
       
+      console.log(`[ORDER] Cart items count: ${cartItems.length}`);
+      
       if (cartItems.length === 0) {
+        console.log(`[ORDER] ERROR: Cart is empty for userId: ${userId}, sessionId: ${sessionId}`);
         return res.status(400).json({ message: "Cart is empty" });
       }
 

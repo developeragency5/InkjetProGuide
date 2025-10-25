@@ -150,8 +150,28 @@ export default function CheckoutPage() {
     setStep(2);
   };
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     if (!shippingData) return;
+
+    // Prevent duplicate submissions
+    if (createOrderMutation.isPending) {
+      return;
+    }
+
+    // Refetch cart to ensure we have the latest data
+    const freshCartData = await queryClient.fetchQuery({ queryKey: ["/api/cart"] }) as any;
+    const freshCartItems = freshCartData?.items || [];
+
+    // Check if cart has items before placing order
+    if (freshCartItems.length === 0) {
+      toast({
+        title: "Cart is empty",
+        description: "Please add items to your cart before placing an order.",
+        variant: "destructive",
+      });
+      navigate("/cart");
+      return;
+    }
 
     createOrderMutation.mutate({
       email: shippingData.email,
@@ -167,6 +187,26 @@ export default function CheckoutPage() {
   };
 
   const handleCardPaymentSubmit = async (data: CardPaymentFormData) => {
+    // Prevent duplicate submissions
+    if (isProcessingPayment || createOrderMutation.isPending) {
+      return;
+    }
+
+    // Refetch cart to ensure we have the latest data
+    const freshCartData = await queryClient.fetchQuery({ queryKey: ["/api/cart"] }) as any;
+    const freshCartItems = freshCartData?.items || [];
+
+    // Check if cart has items before processing payment
+    if (freshCartItems.length === 0) {
+      toast({
+        title: "Cart is empty",
+        description: "Please add items to your cart before placing an order.",
+        variant: "destructive",
+      });
+      navigate("/cart");
+      return;
+    }
+
     setIsProcessingPayment(true);
     
     // Simulate payment processing
@@ -181,7 +221,7 @@ export default function CheckoutPage() {
     });
     
     // Place the order
-    handlePlaceOrder();
+    await handlePlaceOrder();
   };
 
   return (
