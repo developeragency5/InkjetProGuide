@@ -209,6 +209,8 @@ export default function ProductDetailPage() {
                   <img
                     src={productImages[selectedImageIndex]}
                     alt={product.name}
+                    loading="eager"
+                    decoding="async"
                     className="w-full h-full object-contain p-8"
                   />
                   {/* Zoom button */}
@@ -239,6 +241,8 @@ export default function ProductDetailPage() {
                   <img
                     src={img}
                     alt={`${product.name} view ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain p-2"
                   />
                 </button>

@@ -192,6 +192,8 @@ export function ProductCard({ product }: ProductCardProps) {
                 <img
                   src={product.image}
                   alt={product.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
                 
@@ -358,6 +360,8 @@ export function ProductCard({ product }: ProductCardProps) {
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain"
               />
             </div>
