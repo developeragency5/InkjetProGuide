@@ -21,24 +21,70 @@ export default function HomePage() {
     queryKey: ["/api/products"],
   });
 
-  const featuredProducts = products?.slice(0, 4) || [];
   const heroProduct = products?.find(p => p.name.includes("OfficeJet Pro 9730e")) || products?.[0];
   
-  // Best Sellers (top-rated products)
-  const bestSellers = products?.slice().sort((a, b) => {
-    const ratingA = a.rating ? parseFloat(a.rating) : 0;
-    const ratingB = b.rating ? parseFloat(b.rating) : 0;
-    return ratingB - ratingA;
-  }).slice(0, 4) || [];
+  // Track used product IDs to ensure no duplicates across sections
+  const usedProductIds = new Set<string>();
   
-  // New Arrivals (in-stock products)
-  const newArrivals = products?.filter(p => p.inStock).slice(0, 4) || [];
+  // Best Sellers (top-rated products with rating >= 4.5) - First priority
+  const bestSellers = products
+    ?.slice()
+    .filter(p => {
+      const rating = p.rating ? parseFloat(p.rating) : 0;
+      return rating >= 4.5;
+    })
+    .sort((a, b) => {
+      const ratingA = a.rating ? parseFloat(a.rating) : 0;
+      const ratingB = b.rating ? parseFloat(b.rating) : 0;
+      return ratingB - ratingA;
+    })
+    .slice(0, 4) || [];
   
-  // Budget-friendly options (under $300)
-  const budgetFriendly = products?.filter(p => parseFloat(p.price) < 300).slice(0, 4) || [];
+  bestSellers.forEach(p => usedProductIds.add(p.id));
   
-  // Premium options (over $500)
-  const premiumOptions = products?.filter(p => parseFloat(p.price) > 500).slice(0, 4) || [];
+  // New Arrivals (newest in-stock products) - Second priority, exclude used products
+  const newArrivals = products
+    ?.filter(p => p.inStock === true && !usedProductIds.has(p.id))
+    .slice(0, 4) || [];
+  
+  newArrivals.forEach(p => usedProductIds.add(p.id));
+  
+  // Premium options (over $500, sorted by rating) - Third priority
+  const premiumOptions = products
+    ?.filter(p => parseFloat(p.price) > 500 && !usedProductIds.has(p.id))
+    .sort((a, b) => {
+      const ratingA = a.rating ? parseFloat(a.rating) : 0;
+      const ratingB = b.rating ? parseFloat(b.rating) : 0;
+      return ratingB - ratingA;
+    })
+    .slice(0, 4) || [];
+  
+  premiumOptions.forEach(p => usedProductIds.add(p.id));
+  
+  // Budget-friendly options (under $300, sorted by rating) - Fourth priority
+  const budgetFriendly = products
+    ?.filter(p => parseFloat(p.price) < 300 && !usedProductIds.has(p.id))
+    .sort((a, b) => {
+      const ratingA = a.rating ? parseFloat(a.rating) : 0;
+      const ratingB = b.rating ? parseFloat(b.rating) : 0;
+      return ratingB - ratingA;
+    })
+    .slice(0, 4) || [];
+  
+  budgetFriendly.forEach(p => usedProductIds.add(p.id));
+  
+  // Featured Products (mid-range products $300-$500, sorted by rating) - Fifth priority
+  const featuredProducts = products
+    ?.filter(p => {
+      const price = parseFloat(p.price);
+      return price >= 300 && price <= 500 && !usedProductIds.has(p.id);
+    })
+    .sort((a, b) => {
+      const ratingA = a.rating ? parseFloat(a.rating) : 0;
+      const ratingB = b.rating ? parseFloat(b.rating) : 0;
+      return ratingB - ratingA;
+    })
+    .slice(0, 4) || [];
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();

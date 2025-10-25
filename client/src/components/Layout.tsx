@@ -92,7 +92,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-base">
           <p className="font-medium">Free Shipping on Orders $299+</p>
           <div className="flex items-center gap-4">
             {isLoggedIn ? (
@@ -114,12 +114,12 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Main Header - Sticky */}
       <header className="sticky top-0 z-50 bg-background border-b shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 py-5">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <Link href="/">
               <span className="flex items-center gap-2 cursor-pointer" data-testid="link-home">
-                <h1 className="text-2xl font-bold text-primary tracking-tight">
+                <h1 className="text-3xl font-bold text-primary tracking-tight">
                   InjetProGuide
                 </h1>
               </span>
@@ -138,7 +138,7 @@ export function Layout({ children }: LayoutProps) {
                     setShowSuggestions(true);
                   }}
                   onFocus={() => searchQuery && setShowSuggestions(true)}
-                  className="pl-10 pr-4"
+                  className="pl-10 pr-4 h-11"
                   data-testid="input-search"
                 />
                 
@@ -169,9 +169,9 @@ export function Layout({ children }: LayoutProps) {
             <div className="flex items-center gap-2">
               <Link href="/wishlist">
                 <span data-testid="button-wishlist">
-                  <Button size="icon" variant="ghost" className="relative" asChild>
+                  <Button size="icon" variant="ghost" className="relative h-11 w-11" asChild>
                     <span>
-                      <Heart className="w-5 h-5" />
+                      <Heart className="w-6 h-6" />
                       {wishlistCount > 0 && (
                         <Badge 
                           className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
@@ -187,9 +187,9 @@ export function Layout({ children }: LayoutProps) {
 
               <Link href="/cart">
                 <span data-testid="button-cart">
-                  <Button size="icon" variant="ghost" className="relative" asChild>
+                  <Button size="icon" variant="ghost" className="relative h-11 w-11" asChild>
                     <span>
-                      <ShoppingCart className="w-5 h-5" />
+                      <ShoppingCart className="w-6 h-6" />
                       {cartCount > 0 && (
                         <Badge 
                           className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
@@ -206,16 +206,16 @@ export function Layout({ children }: LayoutProps) {
               {isLoggedIn ? (
                 <Link href="/profile">
                   <span data-testid="button-profile">
-                    <Button size="icon" variant="ghost" asChild>
+                    <Button size="icon" variant="ghost" className="h-11 w-11" asChild>
                       <span>
-                        <User className="w-5 h-5" />
+                        <User className="w-6 h-6" />
                       </span>
                     </Button>
                   </span>
                 </Link>
               ) : (
                 <Link href="/auth">
-                  <Button size="sm" variant="default" className="hidden md:flex" data-testid="button-signin">
+                  <Button variant="default" className="hidden md:flex h-11 px-6" data-testid="button-signin">
                     Sign In
                   </Button>
                 </Link>
@@ -224,11 +224,11 @@ export function Layout({ children }: LayoutProps) {
               <Button
                 size="icon"
                 variant="ghost"
-                className="lg:hidden"
+                className="lg:hidden h-11 w-11"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 data-testid="button-menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </Button>
             </div>
           </div>
@@ -258,7 +258,7 @@ export function Layout({ children }: LayoutProps) {
                   <li key={link.path}>
                     <Link href={link.path}>
                       <span
-                        className={`block px-4 py-3 text-sm font-medium hover-elevate rounded-md cursor-pointer ${
+                        className={`block px-4 py-3 text-base font-medium hover-elevate rounded-md cursor-pointer ${
                           location === link.path
                             ? "text-primary bg-primary/5"
                             : "text-foreground"
@@ -292,13 +292,12 @@ export function Layout({ children }: LayoutProps) {
         {/* Navigation Bar - Below Header */}
         <div className="hidden lg:block border-b bg-card">
           <div className="max-w-7xl mx-auto px-4">
-            <nav className="flex items-center justify-center gap-2 py-3">
+            <nav className="flex items-center justify-center gap-3 py-4">
               {navigationLinks.map((link) => (
                 <Link key={link.path} href={link.path}>
                   <Button
                     variant={location === link.path ? "default" : "ghost"}
-                    size="sm"
-                    className="font-medium"
+                    className="font-medium text-base h-11 px-6"
                     data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {link.name}
