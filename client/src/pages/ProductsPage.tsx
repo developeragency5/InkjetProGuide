@@ -25,17 +25,14 @@ const ITEMS_PER_PAGE = 12;
 export default function ProductsPage() {
   const [location] = useLocation();
   
-  // Get current URL params - this will update when location changes
-  const currentSearch = window.location.search;
-  
-  // Recompute URL params whenever location or search params change
+  // Recompute URL params on every render
   const { category, searchQuery } = useMemo(() => {
-    const params = new URLSearchParams(currentSearch);
+    const params = new URLSearchParams(window.location.search);
     return {
       category: params.get("category"),
       searchQuery: params.get("search"),
     };
-  }, [location, currentSearch]);
+  }, [location]);
 
   // Filter states
   const [priceRange, setPriceRange] = useState([0, 1000]);

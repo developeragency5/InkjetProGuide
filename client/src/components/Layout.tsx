@@ -358,32 +358,40 @@ export function Layout({ children }: LayoutProps) {
               <h3 className="font-semibold text-base mb-4 text-foreground">Shop</h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <Link href="/products">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-all-printers">
-                      All Printers
-                    </span>
-                  </Link>
+                  <a 
+                    href="/products" 
+                    className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" 
+                    data-testid="link-footer-all-printers"
+                  >
+                    All Printers
+                  </a>
                 </li>
                 <li>
-                  <Link href="/products?category=Photo Printers">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-photo-printers">
-                      Photo Printers
-                    </span>
-                  </Link>
+                  <a 
+                    href="/products?category=Photo Printers" 
+                    className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" 
+                    data-testid="link-footer-photo-printers"
+                  >
+                    Photo Printers
+                  </a>
                 </li>
                 <li>
-                  <Link href="/products?category=Mobile Printers">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-mobile-printers">
-                      Mobile Printers
-                    </span>
-                  </Link>
+                  <a 
+                    href="/products?category=Mobile Printers" 
+                    className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" 
+                    data-testid="link-footer-mobile-printers"
+                  >
+                    Mobile Printers
+                  </a>
                 </li>
                 <li>
-                  <Link href="/products?category=Wide-Format Printers">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-wide-format-printers">
-                      Wide-Format Printers
-                    </span>
-                  </Link>
+                  <a 
+                    href="/products?category=Wide-Format Printers" 
+                    className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" 
+                    data-testid="link-footer-wide-format-printers"
+                  >
+                    Wide-Format Printers
+                  </a>
                 </li>
                 <li>
                   <Link href="/compare">
