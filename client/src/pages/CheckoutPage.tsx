@@ -192,6 +192,13 @@ export default function CheckoutPage() {
     }
   }, [step, paymentMethod, total, clientSecret]);
 
+  // Auto-select cash if card is not available
+  useEffect(() => {
+    if (!stripePromise && paymentMethod === "card") {
+      setPaymentMethod("cash");
+    }
+  }, [stripePromise, paymentMethod]);
+
   if (cartLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -449,26 +456,27 @@ export default function CheckoutPage() {
                   <h2 className="text-2xl font-semibold mb-6">Payment Method</h2>
                   
                   <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as "card" | "cash")} className="space-y-4 mb-6">
-                    {stripePromise && (
-                      <label
-                        htmlFor="card"
-                        className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
-                        data-testid="radio-card-payment"
-                      >
-                        <RadioGroupItem value="card" id="card" />
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <CreditCard className="w-5 h-5 text-primary" />
-                            <span className="font-medium cursor-pointer">
-                              Credit/Debit Card
-                            </span>
-                          </div>
-                          <p className="text-sm text-muted-foreground">
-                            Secure payment with Stripe
-                          </p>
+                    <label
+                      htmlFor="card"
+                      className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
+                      data-testid="radio-card-payment"
+                    >
+                      <RadioGroupItem value="card" id="card" disabled={!stripePromise} />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <CreditCard className="w-5 h-5 text-primary" />
+                          <span className="font-medium cursor-pointer">
+                            Credit/Debit Card
+                          </span>
+                          {!stripePromise && (
+                            <span className="text-xs text-muted-foreground">(Not configured)</span>
+                          )}
                         </div>
-                      </label>
-                    )}
+                        <p className="text-sm text-muted-foreground">
+                          {stripePromise ? "Secure payment with Stripe" : "Stripe API keys required to enable card payments"}
+                        </p>
+                      </div>
+                    </label>
                     <label
                       htmlFor="cash"
                       className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
