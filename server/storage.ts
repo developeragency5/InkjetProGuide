@@ -52,11 +52,13 @@ export interface IStorage {
   updateCartItem(itemId: string, quantity: number): Promise<void>;
   removeCartItem(itemId: string): Promise<void>;
   clearCart(userId: string | undefined, sessionId: string): Promise<void>;
+  migrateGuestCart(sessionId: string, userId: string): Promise<void>;
 
   // Wishlist operations (support both authenticated and guest users)
   getWishlistItems(userId: string | undefined, sessionId: string): Promise<any[]>;
   addToWishlist(userId: string | undefined, sessionId: string, productId: string): Promise<WishlistItem>;
   removeFromWishlist(userId: string | undefined, sessionId: string, productId: string): Promise<void>;
+  migrateGuestWishlist(sessionId: string, userId: string): Promise<void>;
 
   // Order operations
   createOrder(orderData: InsertOrder, items: InsertOrderItem[]): Promise<Order>;
@@ -285,6 +287,74 @@ export class DatabaseStorage implements IStorage {
     await db
       .delete(wishlistItems)
       .where(condition);
+  }
+
+  async migrateGuestCart(sessionId: string, userId: string): Promise<void> {
+    // Get guest cart items
+    const guestItems = await db
+      .select()
+      .from(cartItems)
+      .where(eq(cartItems.sessionId, sessionId));
+
+    if (guestItems.length === 0) return;
+
+    // For each guest item, merge with user's existing cart
+    for (const guestItem of guestItems) {
+      // Check if user already has this product
+      const [existingItem] = await db
+        .select()
+        .from(cartItems)
+        .where(and(eq(cartItems.userId, userId), eq(cartItems.productId, guestItem.productId)));
+
+      if (existingItem) {
+        // Merge quantities and delete guest item
+        await db
+          .update(cartItems)
+          .set({ quantity: existingItem.quantity + guestItem.quantity })
+          .where(eq(cartItems.id, existingItem.id));
+        
+        await db
+          .delete(cartItems)
+          .where(eq(cartItems.id, guestItem.id));
+      } else {
+        // Transfer ownership to user
+        await db
+          .update(cartItems)
+          .set({ userId, sessionId: null })
+          .where(eq(cartItems.id, guestItem.id));
+      }
+    }
+  }
+
+  async migrateGuestWishlist(sessionId: string, userId: string): Promise<void> {
+    // Get guest wishlist items
+    const guestItems = await db
+      .select()
+      .from(wishlistItems)
+      .where(eq(wishlistItems.sessionId, sessionId));
+
+    if (guestItems.length === 0) return;
+
+    // For each guest item, check if user already has it
+    for (const guestItem of guestItems) {
+      const [existingItem] = await db
+        .select()
+        .from(wishlistItems)
+        .where(and(eq(wishlistItems.userId, userId), eq(wishlistItems.productId, guestItem.productId)));
+
+      if (!existingItem) {
+        // Transfer ownership to user
+        await db
+          .update(wishlistItems)
+          .set({ userId, sessionId: null })
+          .where(eq(wishlistItems.id, guestItem.id));
+      } else {
+        // Item already in user's wishlist, delete guest entry
+        await db
+          .delete(wishlistItems)
+          .where(eq(wishlistItems.id, guestItem.id));
+      }
+    }
   }
 
   // Order operations

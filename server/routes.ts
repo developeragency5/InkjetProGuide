@@ -124,10 +124,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       // Log in the user
-      req.login(user, (err) => {
+      req.login(user, async (err) => {
         if (err) {
           return res.status(500).json({ message: "Error logging in after registration" });
         }
+        
+        // Migrate guest cart and wishlist to new user account
+        const sessionId = req.session.id;
+        await storage.migrateGuestCart(sessionId, user.id);
+        await storage.migrateGuestWishlist(sessionId, user.id);
+        
         const { password, ...userWithoutPassword } = user;
         res.json({ user: userWithoutPassword });
       });
@@ -144,10 +150,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (!user) {
         return res.status(401).json({ message: info?.message || "Invalid credentials" });
       }
-      req.login(user, (loginErr) => {
+      req.login(user, async (loginErr) => {
         if (loginErr) {
           return res.status(500).json({ message: "Error logging in" });
         }
+        
+        // Migrate guest cart and wishlist to authenticated user
+        const sessionId = req.session.id;
+        await storage.migrateGuestCart(sessionId, user.id);
+        await storage.migrateGuestWishlist(sessionId, user.id);
+        
         const { password, ...userWithoutPassword } = user;
         return res.json({ user: userWithoutPassword });
       });
