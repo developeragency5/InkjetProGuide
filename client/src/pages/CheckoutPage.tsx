@@ -116,7 +116,8 @@ export default function CheckoutPage() {
   });
 
   const cartItems = cartData?.items || [];
-  const subtotal = cartItems.reduce(
+  const validCartItems = cartItems.filter((item: any) => item.product);
+  const subtotal = validCartItems.reduce(
     (sum: number, item: any) => sum + parseFloat(item.product.price) * item.quantity,
     0
   );
@@ -638,7 +639,7 @@ export default function CheckoutPage() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Order Summary</h3>
                   <div className="space-y-4 mb-6">
-                    {cartItems.map((item: any) => (
+                    {validCartItems.map((item: any) => (
                       <div key={item.id} className="flex gap-3" data-testid={`summary-item-${item.product.id}`}>
                         <img
                           src={item.product.image}
