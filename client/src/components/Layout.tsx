@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Search, ShoppingCart, Heart, User, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
 import ComparisonBar from "@/components/ComparisonBar";
+import type { Product } from "@shared/schema";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,8 @@ export function Layout({ children }: LayoutProps) {
   const [location, setLocation] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
 
   // Fetch cart count
   const { data: cartData } = useQuery<{ items: any[] }>({
@@ -35,6 +38,32 @@ export function Layout({ children }: LayoutProps) {
   });
   const isLoggedIn = !!currentUser;
 
+  // Fetch products for search suggestions
+  const { data: products } = useQuery<Product[]>({
+    queryKey: ["/api/products"],
+  });
+
+  // Filter products based on search query
+  const searchSuggestions = products?.filter(product => 
+    searchQuery.trim() && (
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  ).slice(0, 5) || [];
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const navigationLinks = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "/products" },
@@ -48,7 +77,14 @@ export function Layout({ children }: LayoutProps) {
     if (searchQuery.trim()) {
       setLocation(`/products?search=${encodeURIComponent(searchQuery)}`);
       setMobileMenuOpen(false);
+      setShowSuggestions(false);
     }
+  };
+
+  const handleSuggestionClick = (productId: string | number) => {
+    setLocation(`/product/${productId}`);
+    setSearchQuery("");
+    setShowSuggestions(false);
   };
 
   return (
@@ -89,17 +125,42 @@ export function Layout({ children }: LayoutProps) {
             </Link>
 
             {/* Search Bar - Desktop */}
-            <div className="hidden lg:flex flex-1 max-w-xl">
+            <div className="hidden lg:flex flex-1 max-w-xl" ref={searchRef}>
               <form onSubmit={handleSearch} className="relative w-full">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <Input
                   type="search"
                   placeholder="Search for HP printers..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowSuggestions(true);
+                  }}
+                  onFocus={() => searchQuery && setShowSuggestions(true)}
                   className="pl-10 pr-4"
                   data-testid="input-search"
                 />
+                
+                {/* Search Suggestions Dropdown */}
+                {showSuggestions && searchSuggestions.length > 0 && (
+                  <div className="absolute top-full mt-2 w-full bg-card border rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
+                    {searchSuggestions.map((product) => (
+                      <button
+                        key={product.id}
+                        type="button"
+                        onClick={() => handleSuggestionClick(product.id)}
+                        className="w-full px-4 py-3 text-left hover-elevate flex items-center gap-3 border-b last:border-b-0"
+                        data-testid={`suggestion-${product.id}`}
+                      >
+                        <div className="flex-1">
+                          <div className="font-medium text-sm">{product.name}</div>
+                          <div className="text-xs text-muted-foreground">{product.category}</div>
+                        </div>
+                        <div className="text-sm font-semibold text-primary">${product.price}</div>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </form>
             </div>
 

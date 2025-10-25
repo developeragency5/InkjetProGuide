@@ -206,6 +206,229 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Featured Categories */}
+      <section className="py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Shop by Category</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Find the perfect HP inkjet printer for your specific needs
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/products?category=All-in-One" data-testid="link-category-allinone">
+              <Card className="hover-elevate transition-all cursor-pointer">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Package className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-xl mb-2">All-in-One</h3>
+                  <p className="text-sm text-muted-foreground">Print, scan, copy & fax in one device</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/products?category=Office" data-testid="link-category-office">
+              <Card className="hover-elevate transition-all cursor-pointer">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Award className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-xl mb-2">Office Printers</h3>
+                  <p className="text-sm text-muted-foreground">High-volume business solutions</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/products?category=Home" data-testid="link-category-home">
+              <Card className="hover-elevate transition-all cursor-pointer">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-xl mb-2">Home Printers</h3>
+                  <p className="text-sm text-muted-foreground">Compact & affordable for home use</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/products?category=Photo" data-testid="link-category-photo">
+              <Card className="hover-elevate transition-all cursor-pointer">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Star className="w-8 h-8 text-primary fill-primary" />
+                  </div>
+                  <h3 className="font-semibold text-xl mb-2">Photo Printers</h3>
+                  <p className="text-sm text-muted-foreground">Professional photo quality prints</p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-card">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-customers">50K+</div>
+              <div className="text-sm text-muted-foreground">Happy Customers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-models">200+</div>
+              <div className="text-sm text-muted-foreground">HP Models Available</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-satisfaction">99.8%</div>
+              <div className="text-sm text-muted-foreground">Customer Satisfaction</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-support">24/7</div>
+              <div className="text-sm text-muted-foreground">Expert Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get your perfect printer in 4 simple steps
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold">
+                1
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Browse & Compare</h3>
+              <p className="text-sm text-muted-foreground">
+                Explore our extensive collection of HP inkjet printers with detailed specs
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold">
+                2
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Read Guides</h3>
+              <p className="text-sm text-muted-foreground">
+                Use our expert buying guides to make an informed decision
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold">
+                3
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Order & Receive</h3>
+              <p className="text-sm text-muted-foreground">
+                Fast, free shipping with secure payment options
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold">
+                4
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Setup & Support</h3>
+              <p className="text-sm text-muted-foreground">
+                Follow our setup guides and get 24/7 support whenever you need it
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Payment & Shipping Options */}
+      <section className="py-16 bg-card">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Convenient Shopping Experience</h2>
+            <p className="text-lg text-muted-foreground">
+              We make it easy and secure to shop for your printer
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Truck className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-3">Fast Shipping</h3>
+                <p className="text-muted-foreground mb-4">
+                  Free shipping on orders over $299. Expedited 2-3 day delivery available.
+                </p>
+                <ul className="space-y-2 text-sm text-left">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Track your order in real-time
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Signature-required delivery
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Secure packaging guarantee
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                  <CreditCard className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-3">Flexible Payment</h3>
+                <p className="text-muted-foreground mb-4">
+                  Multiple payment options including credit cards, Stripe, and Cash on Delivery.
+                </p>
+                <ul className="space-y-2 text-sm text-left">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Secure Stripe payment
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Cash on Delivery option
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    SSL encrypted checkout
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Shield className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-3">Buyer Protection</h3>
+                <p className="text-muted-foreground mb-4">
+                  Shop with confidence with our comprehensive buyer protection program.
+                </p>
+                <ul className="space-y-2 text-sm text-left">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    30-day money-back guarantee
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Price match guarantee
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    2-year manufacturer warranty
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4">
