@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
-import { Check, Truck, Zap, Banknote } from "lucide-react";
+import { Check, Truck, Zap, CreditCard, Banknote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+// Load Stripe
+const stripePromise = import.meta.env.VITE_STRIPE_PUBLIC_KEY 
+  ? loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
+  : null;
 
 const shippingSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -49,12 +56,66 @@ const shippingOptions = [
   },
 ];
 
+function StripePaymentForm({ amount, onSuccess }: { amount: number; onSuccess: () => void }) {
+  const stripe = useStripe();
+  const elements = useElements();
+  const { toast } = useToast();
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!stripe || !elements) {
+      return;
+    }
+
+    setIsProcessing(true);
+
+    const { error } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        return_url: `${window.location.origin}/checkout`,
+      },
+      redirect: "if_required",
+    });
+
+    setIsProcessing(false);
+
+    if (error) {
+      toast({
+        title: "Payment Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      onSuccess();
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <PaymentElement />
+      <Button
+        type="submit"
+        size="lg"
+        className="w-full font-semibold"
+        disabled={!stripe || isProcessing}
+        data-testid="button-confirm-payment"
+      >
+        {isProcessing ? "Processing..." : `Pay $${amount.toFixed(2)}`}
+      </Button>
+    </form>
+  );
+}
+
 export default function CheckoutPage() {
   const [, navigate] = useLocation();
   const [step, setStep] = useState(1);
   const [shippingMethod, setShippingMethod] = useState("standard");
+  const [paymentMethod, setPaymentMethod] = useState<"card" | "cash">("cash");
   const [shippingData, setShippingData] = useState<ShippingFormData | null>(null);
   const [orderId, setOrderId] = useState<string | null>(null);
+  const [clientSecret, setClientSecret] = useState<string | null>(null);
   const { toast } = useToast();
 
   const { data: cartData, isLoading: cartLoading } = useQuery<{ items: any[] }>({
@@ -78,7 +139,7 @@ export default function CheckoutPage() {
     mutationFn: (orderData: any) => apiRequest("POST", "/api/orders", orderData),
     onSuccess: (data: any) => {
       setOrderId(data.order.id);
-      setStep(3);
+      setStep(4);
       queryClient.invalidateQueries({ queryKey: ["/api/cart"] });
       queryClient.invalidateQueries({ queryKey: ["/api/orders"] });
       toast({
@@ -86,10 +147,24 @@ export default function CheckoutPage() {
         description: "A confirmation email has been sent to your email address.",
       });
     },
-    onError: () => {
+    onError: (error: any) => {
       toast({
         title: "Order failed",
-        description: "There was an error processing your order. Please try again.",
+        description: error.message || "There was an error processing your order. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const createPaymentIntentMutation = useMutation({
+    mutationFn: (amount: number) => apiRequest("POST", "/api/create-payment-intent", { amount }),
+    onSuccess: (data: any) => {
+      setClientSecret(data.clientSecret);
+    },
+    onError: () => {
+      toast({
+        title: "Payment setup failed",
+        description: "Unable to initialize payment. Please try again or use Cash on Delivery.",
         variant: "destructive",
       });
     },
@@ -105,6 +180,18 @@ export default function CheckoutPage() {
   const tax = subtotal * 0.08;
   const total = subtotal + shippingCost + tax;
 
+  // Reset client secret when shipping method changes
+  useEffect(() => {
+    setClientSecret(null);
+  }, [shippingMethod]);
+
+  // Create payment intent when card payment is selected
+  useEffect(() => {
+    if (step === 3 && paymentMethod === "card" && !clientSecret && !createPaymentIntentMutation.isPending && stripePromise) {
+      createPaymentIntentMutation.mutate(total);
+    }
+  }, [step, paymentMethod, total, clientSecret]);
+
   if (cartLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -113,15 +200,16 @@ export default function CheckoutPage() {
     );
   }
 
-  if (cartItems.length === 0 && step < 3) {
+  if (cartItems.length === 0 && step < 4) {
     navigate("/cart");
     return null;
   }
 
   const steps = [
     { number: 1, title: "Shipping" },
-    { number: 2, title: "Review" },
-    { number: 3, title: "Confirmation" },
+    { number: 2, title: "Delivery" },
+    { number: 3, title: "Payment" },
+    { number: 4, title: "Confirmation" },
   ];
 
   const handleShippingSubmit = (data: ShippingFormData) => {
@@ -141,8 +229,12 @@ export default function CheckoutPage() {
       shippingZip: shippingData.zip,
       shippingPhone: shippingData.phone,
       shippingMethod,
-      paymentMethod: "cash",
+      paymentMethod,
     });
+  };
+
+  const handleStripePaymentSuccess = () => {
+    handlePlaceOrder();
   };
 
   return (
@@ -292,8 +384,8 @@ export default function CheckoutPage() {
                         />
                       </div>
                       <div className="pt-4">
-                        <Button type="submit" size="lg" className="w-full font-semibold" data-testid="button-continue-to-review">
-                          Continue to Review
+                        <Button type="submit" size="lg" className="w-full font-semibold" data-testid="button-continue-to-shipping">
+                          Continue to Shipping Method
                         </Button>
                       </div>
                     </form>
@@ -302,102 +394,150 @@ export default function CheckoutPage() {
               </Card>
             )}
 
-            {/* Step 2: Review & Place Order */}
+            {/* Step 2: Shipping Method */}
             {step === 2 && (
               <Card>
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-semibold mb-6">Review Your Order</h2>
-                  
-                  {/* Shipping Method Selection */}
-                  <div className="mb-8">
-                    <h3 className="text-lg font-semibold mb-4">Shipping Method</h3>
-                    <RadioGroup value={shippingMethod} onValueChange={setShippingMethod} className="space-y-4">
-                      {shippingOptions.map((option) => {
-                        const Icon = option.icon;
-                        return (
-                          <label
-                            key={option.id}
-                            htmlFor={option.id}
-                            className="flex items-center gap-4 p-4 border rounded-md hover-elevate cursor-pointer"
-                            data-testid={`radio-shipping-${option.id}`}
-                          >
-                            <RadioGroupItem value={option.id} id={option.id} />
-                            <div className="flex items-center gap-4 flex-1">
-                              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                                <Icon className="w-5 h-5 text-primary" />
-                              </div>
-                              <div className="flex-1">
-                                <span className="font-medium cursor-pointer block">
-                                  {option.name}
-                                </span>
-                                <p className="text-sm text-muted-foreground">{option.description}</p>
-                              </div>
-                              <div className="text-right">
-                                <p className="font-semibold">
-                                  {option.price === 0 ? "FREE" : `$${option.price.toFixed(2)}`}
-                                </p>
-                              </div>
+                  <h2 className="text-2xl font-semibold mb-6">Shipping Method</h2>
+                  <RadioGroup value={shippingMethod} onValueChange={setShippingMethod} className="space-y-4 mb-8">
+                    {shippingOptions.map((option) => {
+                      const Icon = option.icon;
+                      return (
+                        <label
+                          key={option.id}
+                          htmlFor={option.id}
+                          className="flex items-center gap-4 p-4 border rounded-md hover-elevate cursor-pointer"
+                          data-testid={`radio-shipping-${option.id}`}
+                        >
+                          <RadioGroupItem value={option.id} id={option.id} />
+                          <div className="flex items-center gap-4 flex-1">
+                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                              <Icon className="w-5 h-5 text-primary" />
                             </div>
-                          </label>
-                        );
-                      })}
-                    </RadioGroup>
-                  </div>
-
-                  {/* Payment Method */}
-                  <div className="mb-8">
-                    <h3 className="text-lg font-semibold mb-4">Payment Method</h3>
-                    <div className="flex items-start gap-3 p-4 border rounded-md bg-muted/30">
-                      <Banknote className="w-5 h-5 text-primary mt-0.5" />
-                      <div className="flex-1">
-                        <div className="font-medium">Cash on Delivery</div>
-                        <p className="text-sm text-muted-foreground">
-                          Pay with cash when your order is delivered
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Shipping Information Summary */}
-                  {shippingData && (
-                    <div className="mb-8">
-                      <h3 className="text-lg font-semibold mb-4">Shipping Address</h3>
-                      <div className="p-4 border rounded-md bg-muted/30">
-                        <p className="font-medium">{shippingData.name}</p>
-                        <p className="text-sm text-muted-foreground">{shippingData.address}</p>
-                        <p className="text-sm text-muted-foreground">
-                          {shippingData.city}, {shippingData.state} {shippingData.zip}
-                        </p>
-                        <p className="text-sm text-muted-foreground mt-2">
-                          Phone: {shippingData.phone}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          Email: {shippingData.email}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
+                            <div className="flex-1">
+                              <span className="font-medium cursor-pointer block">
+                                {option.name}
+                              </span>
+                              <p className="text-sm text-muted-foreground">{option.description}</p>
+                            </div>
+                            <div className="text-right">
+                              <p className="font-semibold">
+                                {option.price === 0 ? "FREE" : `$${option.price.toFixed(2)}`}
+                              </p>
+                            </div>
+                          </div>
+                        </label>
+                      );
+                    })}
+                  </RadioGroup>
                   <div className="flex gap-3">
                     <Button type="button" variant="outline" onClick={() => setStep(1)} className="flex-1" data-testid="button-back-to-info">
                       Back
                     </Button>
-                    <Button
-                      size="lg"
-                      className="flex-1 font-semibold"
-                      onClick={handlePlaceOrder}
-                      disabled={createOrderMutation.isPending}
-                      data-testid="button-place-order"
-                    >
-                      {createOrderMutation.isPending ? "Processing..." : "Place Order"}
+                    <Button size="lg" onClick={() => setStep(3)} className="flex-1 font-semibold" data-testid="button-continue-to-payment">
+                      Continue to Payment
                     </Button>
                   </div>
                 </CardContent>
               </Card>
             )}
 
-            {/* Step 3: Order Confirmation */}
-            {step === 3 && orderId && (
+            {/* Step 3: Payment Method */}
+            {step === 3 && (
+              <Card>
+                <CardContent className="p-8">
+                  <h2 className="text-2xl font-semibold mb-6">Payment Method</h2>
+                  
+                  <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as "card" | "cash")} className="space-y-4 mb-6">
+                    {stripePromise && (
+                      <label
+                        htmlFor="card"
+                        className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
+                        data-testid="radio-card-payment"
+                      >
+                        <RadioGroupItem value="card" id="card" />
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <CreditCard className="w-5 h-5 text-primary" />
+                            <span className="font-medium cursor-pointer">
+                              Credit/Debit Card
+                            </span>
+                          </div>
+                          <p className="text-sm text-muted-foreground">
+                            Secure payment with Stripe
+                          </p>
+                        </div>
+                      </label>
+                    )}
+                    <label
+                      htmlFor="cash"
+                      className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
+                      data-testid="radio-cash-on-delivery"
+                    >
+                      <RadioGroupItem value="cash" id="cash" />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Banknote className="w-5 h-5 text-primary" />
+                          <span className="font-medium cursor-pointer">
+                            Cash on Delivery
+                          </span>
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Pay with cash when your order is delivered
+                        </p>
+                      </div>
+                    </label>
+                  </RadioGroup>
+
+                  {paymentMethod === "card" && clientSecret && stripePromise ? (
+                    <div className="mb-6">
+                      <Elements stripe={stripePromise} options={{ clientSecret }}>
+                        <StripePaymentForm amount={total} onSuccess={handleStripePaymentSuccess} />
+                      </Elements>
+                    </div>
+                  ) : paymentMethod === "card" && !stripePromise ? (
+                    <div className="text-center py-6 mb-6">
+                      <p className="text-muted-foreground">Card payments are not configured. Please use Cash on Delivery.</p>
+                    </div>
+                  ) : null}
+
+                  {paymentMethod === "cash" && (
+                    <div className="flex gap-3">
+                      <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1" data-testid="button-back-to-shipping">
+                        Back
+                      </Button>
+                      <Button
+                        size="lg"
+                        className="flex-1 font-semibold"
+                        onClick={handlePlaceOrder}
+                        disabled={createOrderMutation.isPending}
+                        data-testid="button-place-order"
+                      >
+                        {createOrderMutation.isPending ? "Processing..." : "Place Order"}
+                      </Button>
+                    </div>
+                  )}
+
+                  {paymentMethod === "card" && !clientSecret && stripePromise && (
+                    <div className="flex gap-3">
+                      <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1" data-testid="button-back-to-shipping">
+                        Back
+                      </Button>
+                      <Button
+                        size="lg"
+                        className="flex-1 font-semibold"
+                        disabled
+                      >
+                        Loading payment...
+                      </Button>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Step 4: Order Confirmation */}
+            {step === 4 && orderId && (
               <Card>
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -427,7 +567,7 @@ export default function CheckoutPage() {
           </div>
 
           {/* Order Summary Sidebar */}
-          {step < 3 && (
+          {step < 4 && (
             <div className="lg:col-span-1">
               <Card className="sticky top-4">
                 <CardContent className="p-6">
