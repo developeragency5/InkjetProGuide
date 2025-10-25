@@ -23,6 +23,22 @@ export default function HomePage() {
 
   const featuredProducts = products?.slice(0, 4) || [];
   const heroProduct = products?.find(p => p.name.includes("OfficeJet Pro 9730e")) || products?.[0];
+  
+  // Best Sellers (top-rated products)
+  const bestSellers = products?.slice().sort((a, b) => {
+    const ratingA = a.rating ? parseFloat(a.rating) : 0;
+    const ratingB = b.rating ? parseFloat(b.rating) : 0;
+    return ratingB - ratingA;
+  }).slice(0, 4) || [];
+  
+  // New Arrivals (in-stock products)
+  const newArrivals = products?.filter(p => p.inStock).slice(0, 4) || [];
+  
+  // Budget-friendly options (under $300)
+  const budgetFriendly = products?.filter(p => parseFloat(p.price) < 300).slice(0, 4) || [];
+  
+  // Premium options (over $500)
+  const premiumOptions = products?.filter(p => parseFloat(p.price) > 500).slice(0, 4) || [];
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -429,8 +445,176 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Best Sellers */}
       <section className="py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">Best Sellers</h2>
+              <p className="text-lg text-muted-foreground">
+                Our most popular HP printers, trusted by thousands of customers
+              </p>
+            </div>
+            <Link href="/products?sort=rating">
+              <Button variant="outline" className="hidden md:flex" data-testid="button-view-bestsellers">
+                View All
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+          {isLoading ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[...Array(4)].map((_, i) => (
+                <Card key={i} className="animate-pulse">
+                  <CardContent className="p-4">
+                    <div className="aspect-square bg-muted rounded-md mb-4" />
+                    <div className="h-4 bg-muted rounded mb-2" />
+                    <div className="h-4 bg-muted rounded w-2/3" />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {bestSellers.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* New Arrivals */}
+      <section className="py-16 bg-card">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <h2 className="text-3xl md:text-4xl font-bold">New Arrivals</h2>
+                <Badge className="bg-green-100 text-green-700 hover:bg-green-100 border-green-200 dark:bg-green-900/30 dark:text-green-400 dark:border-green-800">
+                  NEW
+                </Badge>
+              </div>
+              <p className="text-lg text-muted-foreground">
+                Latest HP printer models with cutting-edge features
+              </p>
+            </div>
+            <Link href="/products?inStock=true">
+              <Button variant="outline" className="hidden md:flex" data-testid="button-view-new">
+                View All
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+          {isLoading ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[...Array(4)].map((_, i) => (
+                <Card key={i} className="animate-pulse">
+                  <CardContent className="p-4">
+                    <div className="aspect-square bg-muted rounded-md mb-4" />
+                    <div className="h-4 bg-muted rounded mb-2" />
+                    <div className="h-4 bg-muted rounded w-2/3" />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {newArrivals.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Shop by Price Range */}
+      <section className="py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Shop by Price Range</h2>
+            <p className="text-lg text-muted-foreground">
+              Find the perfect printer that fits your budget
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {/* Budget-Friendly Section */}
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Budget-Friendly</h3>
+                    <p className="text-muted-foreground">Under $300</p>
+                  </div>
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <TrendingUp className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Affordable printers perfect for home use and occasional printing needs
+                </p>
+                <div className="space-y-3 mb-6">
+                  {budgetFriendly.slice(0, 3).map((product) => (
+                    <Link key={product.id} href={`/product/${product.id}`}>
+                      <div className="flex items-center justify-between p-3 rounded-md hover-elevate transition-all cursor-pointer" data-testid={`budget-product-${product.id}`}>
+                        <div className="flex-1">
+                          <div className="font-medium text-sm">{product.name}</div>
+                          <div className="text-xs text-muted-foreground">{product.category}</div>
+                        </div>
+                        <div className="text-lg font-bold text-primary">${product.price}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                <Link href="/products?maxPrice=300">
+                  <Button variant="outline" className="w-full" data-testid="button-view-budget">
+                    View All Budget Options
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Premium Section */}
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Premium Selection</h3>
+                    <p className="text-muted-foreground">$500 and above</p>
+                  </div>
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Award className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Professional-grade printers with advanced features for business use
+                </p>
+                <div className="space-y-3 mb-6">
+                  {premiumOptions.slice(0, 3).map((product) => (
+                    <Link key={product.id} href={`/product/${product.id}`}>
+                      <div className="flex items-center justify-between p-3 rounded-md hover-elevate transition-all cursor-pointer" data-testid={`premium-product-${product.id}`}>
+                        <div className="flex-1">
+                          <div className="font-medium text-sm">{product.name}</div>
+                          <div className="text-xs text-muted-foreground">{product.category}</div>
+                        </div>
+                        <div className="text-lg font-bold text-primary">${product.price}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                <Link href="/products?minPrice=500">
+                  <Button variant="outline" className="w-full" data-testid="button-view-premium">
+                    View All Premium Options
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="py-16 bg-card">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured HP Inkjet Printers</h2>
