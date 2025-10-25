@@ -63,7 +63,7 @@ export default function AboutPage() {
     {
       icon: Zap,
       title: "Setup Assistance",
-      description: "Free setup guides, video tutorials, and step-by-step instructions for all models."
+      description: "Free setup guides and step-by-step instructions for all HP printer models."
     },
   ];
 

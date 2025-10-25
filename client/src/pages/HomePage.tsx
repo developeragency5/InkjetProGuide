@@ -732,7 +732,7 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-status-online" />
-                    Video tutorials available
+                    Step-by-step guides
                   </li>
                 </ul>
               </CardContent>

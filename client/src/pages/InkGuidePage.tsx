@@ -632,37 +632,6 @@ export default function InkGuidePage() {
           </CardContent>
         </Card>
 
-        {/* Video Tutorials */}
-        <section>
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-3">Video Tutorials</h2>
-            <p className="text-muted-foreground text-lg">
-              Step-by-step visual guides
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              "Installing Ink Cartridges",
-              "Checking Ink Levels",
-              "Cleaning Print Heads"
-            ].map((title, index) => (
-              <Card 
-                key={title} 
-                className="hover-elevate active-elevate-2 cursor-pointer"
-                data-testid={`card-video-tutorial-${index}`}
-              >
-                <CardHeader>
-                  <div className="aspect-video bg-muted rounded-lg flex items-center justify-center mb-3">
-                    <Video className="w-12 h-12 text-muted-foreground" />
-                  </div>
-                  <CardTitle className="text-base">{title}</CardTitle>
-                  <CardDescription>Watch this helpful tutorial</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </section>
       </div>
     </div>
   );

@@ -43,9 +43,11 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold mb-2">Phone Support</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Call us toll-free
+                Call us toll-free (24/7 Support)
               </p>
-              <p className="font-semibold text-primary">(855) 247-4683</p>
+              <a href="tel:+18005551234" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
+                1-800-555-1234
+              </a>
             </CardContent>
           </Card>
 
@@ -56,9 +58,11 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold mb-2">Email Us</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Send us an email
+                Response within 24 hours
               </p>
-              <p className="font-semibold text-primary">support@injetproguide.com</p>
+              <a href="mailto:support@injetproguide.com" className="font-semibold text-primary hover:underline" data-testid="link-email-contact">
+                support@injetproguide.com
+              </a>
             </CardContent>
           </Card>
 
