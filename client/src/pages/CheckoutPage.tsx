@@ -396,8 +396,9 @@ export default function CheckoutPage() {
                     {shippingOptions.map((option) => {
                       const Icon = option.icon;
                       return (
-                        <div
+                        <label
                           key={option.id}
+                          htmlFor={option.id}
                           className="flex items-center gap-4 p-4 border rounded-md hover-elevate cursor-pointer"
                           data-testid={`radio-shipping-${option.id}`}
                         >
@@ -407,9 +408,9 @@ export default function CheckoutPage() {
                               <Icon className="w-5 h-5 text-primary" />
                             </div>
                             <div className="flex-1">
-                              <Label htmlFor={option.id} className="font-medium cursor-pointer block">
+                              <span className="font-medium cursor-pointer block">
                                 {option.name}
-                              </Label>
+                              </span>
                               <p className="text-sm text-muted-foreground">{option.description}</p>
                             </div>
                             <div className="text-right">
@@ -418,7 +419,7 @@ export default function CheckoutPage() {
                               </p>
                             </div>
                           </div>
-                        </div>
+                        </label>
                       );
                     })}
                   </RadioGroup>
@@ -442,7 +443,8 @@ export default function CheckoutPage() {
                   
                   <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as "card" | "cash")} className="space-y-4 mb-6">
                     {stripePromise && (
-                      <div
+                      <label
+                        htmlFor="card"
                         className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
                         data-testid="radio-card-payment"
                       >
@@ -450,17 +452,18 @@ export default function CheckoutPage() {
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
                             <CreditCard className="w-5 h-5 text-primary" />
-                            <Label htmlFor="card" className="font-medium cursor-pointer">
+                            <span className="font-medium cursor-pointer">
                               Credit/Debit Card
-                            </Label>
+                            </span>
                           </div>
                           <p className="text-sm text-muted-foreground">
                             Secure payment with Stripe
                           </p>
                         </div>
-                      </div>
+                      </label>
                     )}
-                    <div
+                    <label
+                      htmlFor="cash"
                       className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
                       data-testid="radio-cash-on-delivery"
                     >
@@ -468,15 +471,15 @@ export default function CheckoutPage() {
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <Banknote className="w-5 h-5 text-primary" />
-                          <Label htmlFor="cash" className="font-medium cursor-pointer">
+                          <span className="font-medium cursor-pointer">
                             Cash on Delivery
-                          </Label>
+                          </span>
                         </div>
                         <p className="text-sm text-muted-foreground">
                           Pay with cash when your order is delivered
                         </p>
                       </div>
-                    </div>
+                    </label>
                   </RadioGroup>
 
                   {paymentMethod === "card" && clientSecret && stripePromise ? (
