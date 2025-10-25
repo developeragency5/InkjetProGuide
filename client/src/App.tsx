@@ -29,6 +29,7 @@ import FAQPage from "@/pages/FAQPage";
 import RefundPolicyPage from "@/pages/RefundPolicyPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsConditionsPage from "@/pages/TermsConditionsPage";
+import SitemapPage from "@/pages/SitemapPage";
 import AdminLoginPage from "@/pages/AdminLoginPage";
 import AdminDashboardPage from "@/pages/AdminDashboardPage";
 import AdminProductsPage from "@/pages/AdminProductsPage";
@@ -86,6 +87,7 @@ function MainRouter() {
         <Route path="/refund-policy" component={RefundPolicyPage} />
         <Route path="/privacy-policy" component={PrivacyPolicyPage} />
         <Route path="/terms-conditions" component={TermsConditionsPage} />
+        <Route path="/sitemap" component={SitemapPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
