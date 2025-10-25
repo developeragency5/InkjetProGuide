@@ -43,14 +43,15 @@ export function Layout({ children }: LayoutProps) {
     queryKey: ["/api/products"],
   });
 
-  // Filter products based on search query
-  const searchSuggestions = products?.filter(product => 
-    searchQuery.trim() && (
-      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  ).slice(0, 5) || [];
+  // Filter products based on search query (only search in name and category for relevance)
+  const searchSuggestions = products?.filter(product => {
+    if (!searchQuery.trim()) return false;
+    const query = searchQuery.toLowerCase();
+    return (
+      product.name.toLowerCase().includes(query) ||
+      product.category.toLowerCase().includes(query)
+    );
+  }).slice(0, 5) || [];
 
   // Close suggestions when clicking outside
   useEffect(() => {
