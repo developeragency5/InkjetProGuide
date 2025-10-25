@@ -83,27 +83,31 @@ export default function CartPage() {
                 <CardContent className="p-6">
                   <div className="flex gap-6">
                     {/* Product Image */}
-                    <Link href={`/product/${item.product.id}`}>
-                      <a className="flex-shrink-0" data-testid={`link-cart-product-${item.id}`}>
-                        <div className="w-32 h-32 bg-background rounded-md flex items-center justify-center border">
-                          <img
-                            src={item.product.image}
-                            alt={item.product.name}
-                            loading="lazy"
-                            decoding="async"
-                            className="w-full h-full object-contain p-4"
-                          />
-                        </div>
-                      </a>
+                    <Link 
+                      href={`/product/${item.product.id}`}
+                      className="flex-shrink-0"
+                      data-testid={`link-cart-product-${item.id}`}
+                    >
+                      <div className="w-32 h-32 bg-background rounded-md flex items-center justify-center border">
+                        <img
+                          src={item.product.image}
+                          alt={item.product.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-contain p-4"
+                        />
+                      </div>
                     </Link>
 
                     {/* Product Info */}
                     <div className="flex-1">
                       <div className="flex justify-between gap-4 mb-2">
-                        <Link href={`/product/${item.product.id}`}>
-                          <a className="font-semibold hover:text-primary" data-testid={`text-cart-product-name-${item.id}`}>
-                            {item.product.name}
-                          </a>
+                        <Link 
+                          href={`/product/${item.product.id}`}
+                          className="font-semibold hover:text-primary"
+                          data-testid={`text-cart-product-name-${item.id}`}
+                        >
+                          {item.product.name}
                         </Link>
                         <Button
                           size="icon"
