@@ -127,41 +127,46 @@ export function Layout({ children }: LayoutProps) {
 
             {/* Search Bar - Desktop */}
             <div className="hidden lg:flex flex-1 max-w-xl" ref={searchRef}>
-              <form onSubmit={handleSearch} className="relative w-full">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search for HP printers..."
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                    setShowSuggestions(true);
-                  }}
-                  onFocus={() => searchQuery && setShowSuggestions(true)}
-                  className="pl-10 pr-4 h-11"
-                  data-testid="input-search"
-                />
-                
-                {/* Search Suggestions Dropdown */}
-                {showSuggestions && searchSuggestions.length > 0 && (
-                  <div className="absolute top-full mt-2 w-full bg-card border rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
-                    {searchSuggestions.map((product) => (
-                      <button
-                        key={product.id}
-                        type="button"
-                        onClick={() => handleSuggestionClick(product.id)}
-                        className="w-full px-4 py-3 text-left hover-elevate flex items-center gap-3 border-b last:border-b-0"
-                        data-testid={`suggestion-${product.id}`}
-                      >
-                        <div className="flex-1">
-                          <div className="font-medium text-sm">{product.name}</div>
-                          <div className="text-xs text-muted-foreground">{product.category}</div>
-                        </div>
-                        <div className="text-sm font-semibold text-primary">${product.price}</div>
-                      </button>
-                    ))}
-                  </div>
-                )}
+              <form onSubmit={handleSearch} className="relative w-full flex gap-2">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    type="search"
+                    placeholder="Search for HP printers..."
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setShowSuggestions(true);
+                    }}
+                    onFocus={() => searchQuery && setShowSuggestions(true)}
+                    className="pl-10 pr-4 h-11"
+                    data-testid="input-search"
+                  />
+                  
+                  {/* Search Suggestions Dropdown */}
+                  {showSuggestions && searchSuggestions.length > 0 && (
+                    <div className="absolute top-full mt-2 w-full bg-card border rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
+                      {searchSuggestions.map((product) => (
+                        <button
+                          key={product.id}
+                          type="button"
+                          onClick={() => handleSuggestionClick(product.id)}
+                          className="w-full px-4 py-3 text-left hover-elevate flex items-center gap-3 border-b last:border-b-0"
+                          data-testid={`suggestion-${product.id}`}
+                        >
+                          <div className="flex-1">
+                            <div className="font-medium text-sm">{product.name}</div>
+                            <div className="text-xs text-muted-foreground">{product.category}</div>
+                          </div>
+                          <div className="text-sm font-semibold text-primary">${product.price}</div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <Button type="submit" className="h-11 px-6" data-testid="button-search">
+                  Search
+                </Button>
               </form>
             </div>
 
@@ -235,16 +240,21 @@ export function Layout({ children }: LayoutProps) {
 
           {/* Search Bar - Mobile/Tablet */}
           <div className="lg:hidden mt-3">
-            <form onSubmit={handleSearch} className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Search for HP printers..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 pr-4 text-sm"
-                data-testid="input-search-mobile"
-              />
+            <form onSubmit={handleSearch} className="flex gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Search for HP printers..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-9 pr-4 text-sm"
+                  data-testid="input-search-mobile"
+                />
+              </div>
+              <Button type="submit" size="sm" data-testid="button-search-mobile">
+                Search
+              </Button>
             </form>
           </div>
         </div>
