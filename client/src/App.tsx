@@ -26,6 +26,7 @@ import InkGuidePage from "@/pages/InkGuidePage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import FAQPage from "@/pages/FAQPage";
+import RefundPolicyPage from "@/pages/RefundPolicyPage";
 import AdminLoginPage from "@/pages/AdminLoginPage";
 import AdminDashboardPage from "@/pages/AdminDashboardPage";
 import AdminProductsPage from "@/pages/AdminProductsPage";
@@ -80,6 +81,7 @@ function MainRouter() {
         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />
         <Route path="/faq" component={FAQPage} />
+        <Route path="/refund-policy" component={RefundPolicyPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
