@@ -365,43 +365,25 @@ export function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
-                  <a 
-                    href="/products?category=Photo Printers" 
-                    className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/products?category=Photo Printers';
-                    }}
-                    data-testid="link-footer-photo-printers"
-                  >
-                    Photo Printers
-                  </a>
+                  <Link href="/products?category=Photo Printers">
+                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-photo-printers">
+                      Photo Printers
+                    </span>
+                  </Link>
                 </li>
                 <li>
-                  <a 
-                    href="/products?category=Mobile Printers" 
-                    className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/products?category=Mobile Printers';
-                    }}
-                    data-testid="link-footer-mobile-printers"
-                  >
-                    Mobile Printers
-                  </a>
+                  <Link href="/products?category=Mobile Printers">
+                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-mobile-printers">
+                      Mobile Printers
+                    </span>
+                  </Link>
                 </li>
                 <li>
-                  <a 
-                    href="/products?category=Wide-Format Printers" 
-                    className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/products?category=Wide-Format Printers';
-                    }}
-                    data-testid="link-footer-wide-format-printers"
-                  >
-                    Wide-Format Printers
-                  </a>
+                  <Link href="/products?category=Wide-Format Printers">
+                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-wide-format-printers">
+                      Wide-Format Printers
+                    </span>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/compare">
