@@ -216,6 +216,7 @@ export default function CheckoutPage() {
 
     createOrderMutation.mutate({
       email: shippingData.email,
+      customerName: shippingData.name,
       shippingAddress: shippingData.address,
       shippingCity: shippingData.city,
       shippingState: shippingData.state,
