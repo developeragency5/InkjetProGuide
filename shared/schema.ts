@@ -31,10 +31,11 @@ export const products = pgTable("products", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-// Cart items table
+// Cart items table  
 export const cartItems = pgTable("cart_items", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  userId: varchar("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  userId: varchar("user_id").references(() => users.id, { onDelete: "cascade" }),
+  sessionId: text("session_id"),
   productId: varchar("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
   quantity: integer("quantity").notNull().default(1),
   createdAt: timestamp("created_at").defaultNow().notNull(),
@@ -43,7 +44,8 @@ export const cartItems = pgTable("cart_items", {
 // Wishlist items table
 export const wishlistItems = pgTable("wishlist_items", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  userId: varchar("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  userId: varchar("user_id").references(() => users.id, { onDelete: "cascade" }),
+  sessionId: text("session_id"),
   productId: varchar("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
@@ -51,7 +53,8 @@ export const wishlistItems = pgTable("wishlist_items", {
 // Orders table
 export const orders = pgTable("orders", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  userId: varchar("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  userId: varchar("user_id").references(() => users.id, { onDelete: "cascade" }),
+  sessionId: text("session_id"),
   status: text("status").notNull().default("pending"),
   trackingNumber: text("tracking_number"),
   total: decimal("total", { precision: 10, scale: 2 }).notNull(),
@@ -63,6 +66,7 @@ export const orders = pgTable("orders", {
   shippingState: text("shipping_state").notNull(),
   shippingZip: text("shipping_zip").notNull(),
   shippingPhone: text("shipping_phone").notNull(),
+  customerName: text("customer_name"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 

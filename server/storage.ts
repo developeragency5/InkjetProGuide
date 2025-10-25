@@ -46,17 +46,17 @@ export interface IStorage {
   updateProduct(id: string, product: Partial<InsertProduct>): Promise<Product>;
   deleteProduct(id: string): Promise<void>;
 
-  // Cart operations
-  getCartItems(userId: string): Promise<any[]>;
-  addToCart(userId: string, productId: string, quantity: number): Promise<CartItem>;
+  // Cart operations (support both authenticated and guest users)
+  getCartItems(userId: string | undefined, sessionId: string): Promise<any[]>;
+  addToCart(userId: string | undefined, sessionId: string, productId: string, quantity: number): Promise<CartItem>;
   updateCartItem(itemId: string, quantity: number): Promise<void>;
   removeCartItem(itemId: string): Promise<void>;
-  clearCart(userId: string): Promise<void>;
+  clearCart(userId: string | undefined, sessionId: string): Promise<void>;
 
-  // Wishlist operations
-  getWishlistItems(userId: string): Promise<any[]>;
-  addToWishlist(userId: string, productId: string): Promise<WishlistItem>;
-  removeFromWishlist(userId: string, productId: string): Promise<void>;
+  // Wishlist operations (support both authenticated and guest users)
+  getWishlistItems(userId: string | undefined, sessionId: string): Promise<any[]>;
+  addToWishlist(userId: string | undefined, sessionId: string, productId: string): Promise<WishlistItem>;
+  removeFromWishlist(userId: string | undefined, sessionId: string, productId: string): Promise<void>;
 
   // Order operations
   createOrder(orderData: InsertOrder, items: InsertOrderItem[]): Promise<Order>;
@@ -165,12 +165,17 @@ export class DatabaseStorage implements IStorage {
     await db.delete(products).where(eq(products.id, id));
   }
 
-  // Cart operations
-  async getCartItems(userId: string): Promise<any[]> {
+  // Cart operations (support both authenticated and guest users)
+  async getCartItems(userId: string | undefined, sessionId: string): Promise<any[]> {
+    const condition = userId 
+      ? eq(cartItems.userId, userId)
+      : eq(cartItems.sessionId, sessionId);
+      
     const items = await db
       .select({
         id: cartItems.id,
         userId: cartItems.userId,
+        sessionId: cartItems.sessionId,
         productId: cartItems.productId,
         quantity: cartItems.quantity,
         createdAt: cartItems.createdAt,
@@ -178,17 +183,21 @@ export class DatabaseStorage implements IStorage {
       })
       .from(cartItems)
       .innerJoin(products, eq(cartItems.productId, products.id))
-      .where(eq(cartItems.userId, userId));
+      .where(condition);
     
     return items;
   }
 
-  async addToCart(userId: string, productId: string, quantity: number): Promise<CartItem> {
+  async addToCart(userId: string | undefined, sessionId: string, productId: string, quantity: number): Promise<CartItem> {
     // Check if item already exists in cart
+    const condition = userId
+      ? and(eq(cartItems.userId, userId), eq(cartItems.productId, productId))
+      : and(eq(cartItems.sessionId, sessionId), eq(cartItems.productId, productId));
+      
     const [existingItem] = await db
       .select()
       .from(cartItems)
-      .where(and(eq(cartItems.userId, userId), eq(cartItems.productId, productId)));
+      .where(condition);
 
     if (existingItem) {
       // Update quantity
@@ -203,7 +212,7 @@ export class DatabaseStorage implements IStorage {
     // Add new item
     const [item] = await db
       .insert(cartItems)
-      .values({ userId, productId, quantity })
+      .values({ userId, sessionId, productId, quantity })
       .returning();
     return item;
   }
@@ -216,33 +225,46 @@ export class DatabaseStorage implements IStorage {
     await db.delete(cartItems).where(eq(cartItems.id, itemId));
   }
 
-  async clearCart(userId: string): Promise<void> {
-    await db.delete(cartItems).where(eq(cartItems.userId, userId));
+  async clearCart(userId: string | undefined, sessionId: string): Promise<void> {
+    const condition = userId
+      ? eq(cartItems.userId, userId)
+      : eq(cartItems.sessionId, sessionId);
+      
+    await db.delete(cartItems).where(condition);
   }
 
-  // Wishlist operations
-  async getWishlistItems(userId: string): Promise<any[]> {
+  // Wishlist operations (support both authenticated and guest users)
+  async getWishlistItems(userId: string | undefined, sessionId: string): Promise<any[]> {
+    const condition = userId
+      ? eq(wishlistItems.userId, userId)
+      : eq(wishlistItems.sessionId, sessionId);
+      
     const items = await db
       .select({
         id: wishlistItems.id,
         userId: wishlistItems.userId,
+        sessionId: wishlistItems.sessionId,
         productId: wishlistItems.productId,
         createdAt: wishlistItems.createdAt,
         product: products,
       })
       .from(wishlistItems)
       .innerJoin(products, eq(wishlistItems.productId, products.id))
-      .where(eq(wishlistItems.userId, userId));
+      .where(condition);
     
     return items;
   }
 
-  async addToWishlist(userId: string, productId: string): Promise<WishlistItem> {
+  async addToWishlist(userId: string | undefined, sessionId: string, productId: string): Promise<WishlistItem> {
     // Check if already in wishlist
+    const condition = userId
+      ? and(eq(wishlistItems.userId, userId), eq(wishlistItems.productId, productId))
+      : and(eq(wishlistItems.sessionId, sessionId), eq(wishlistItems.productId, productId));
+      
     const [existing] = await db
       .select()
       .from(wishlistItems)
-      .where(and(eq(wishlistItems.userId, userId), eq(wishlistItems.productId, productId)));
+      .where(condition);
 
     if (existing) {
       return existing;
@@ -250,15 +272,19 @@ export class DatabaseStorage implements IStorage {
 
     const [item] = await db
       .insert(wishlistItems)
-      .values({ userId, productId })
+      .values({ userId, sessionId, productId })
       .returning();
     return item;
   }
 
-  async removeFromWishlist(userId: string, productId: string): Promise<void> {
+  async removeFromWishlist(userId: string | undefined, sessionId: string, productId: string): Promise<void> {
+    const condition = userId
+      ? and(eq(wishlistItems.userId, userId), eq(wishlistItems.productId, productId))
+      : and(eq(wishlistItems.sessionId, sessionId), eq(wishlistItems.productId, productId));
+      
     await db
       .delete(wishlistItems)
-      .where(and(eq(wishlistItems.userId, userId), eq(wishlistItems.productId, productId)));
+      .where(condition);
   }
 
   // Order operations

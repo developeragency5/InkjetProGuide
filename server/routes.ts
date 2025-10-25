@@ -35,7 +35,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     session({
       secret: process.env.SESSION_SECRET || "injetproguide-secret-key-change-in-production",
       resave: false,
-      saveUninitialized: false,
+      saveUninitialized: true, // Allow guest sessions
       store: new MemoryStore({
         checkPeriod: 86400000, // 24 hours
       }),
@@ -336,27 +336,31 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Cart routes
-  app.get("/api/cart", requireAuth, async (req, res) => {
+  // Cart routes (support both authenticated and guest users)
+  app.get("/api/cart", async (req, res) => {
     try {
-      const items = await storage.getCartItems(req.user!.id);
+      const userId = req.isAuthenticated() ? req.user!.id : undefined;
+      const sessionId = req.session.id;
+      const items = await storage.getCartItems(userId, sessionId);
       res.json({ items });
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
   });
 
-  app.post("/api/cart", requireAuth, async (req, res) => {
+  app.post("/api/cart", async (req, res) => {
     try {
       const { productId, quantity = 1 } = req.body;
-      const item = await storage.addToCart(req.user!.id, productId, quantity);
+      const userId = req.isAuthenticated() ? req.user!.id : undefined;
+      const sessionId = req.session.id;
+      const item = await storage.addToCart(userId, sessionId, productId, quantity);
       res.json(item);
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
   });
 
-  app.patch("/api/cart/:id", requireAuth, async (req, res) => {
+  app.patch("/api/cart/:id", async (req, res) => {
     try {
       const { quantity } = req.body;
       await storage.updateCartItem(req.params.id, quantity);
@@ -366,7 +370,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.delete("/api/cart/:id", requireAuth, async (req, res) => {
+  app.delete("/api/cart/:id", async (req, res) => {
     try {
       await storage.removeCartItem(req.params.id);
       res.json({ message: "Item removed" });
@@ -375,37 +379,43 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Wishlist routes
-  app.get("/api/wishlist", requireAuth, async (req, res) => {
+  // Wishlist routes (support both authenticated and guest users)
+  app.get("/api/wishlist", async (req, res) => {
     try {
-      const items = await storage.getWishlistItems(req.user!.id);
+      const userId = req.isAuthenticated() ? req.user!.id : undefined;
+      const sessionId = req.session.id;
+      const items = await storage.getWishlistItems(userId, sessionId);
       res.json({ items });
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
   });
 
-  app.post("/api/wishlist", requireAuth, async (req, res) => {
+  app.post("/api/wishlist", async (req, res) => {
     try {
       const { productId } = req.body;
-      const item = await storage.addToWishlist(req.user!.id, productId);
+      const userId = req.isAuthenticated() ? req.user!.id : undefined;
+      const sessionId = req.session.id;
+      const item = await storage.addToWishlist(userId, sessionId, productId);
       res.json(item);
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
   });
 
-  app.delete("/api/wishlist/:productId", requireAuth, async (req, res) => {
+  app.delete("/api/wishlist/:productId", async (req, res) => {
     try {
-      await storage.removeFromWishlist(req.user!.id, req.params.productId);
+      const userId = req.isAuthenticated() ? req.user!.id : undefined;
+      const sessionId = req.session.id;
+      await storage.removeFromWishlist(userId, sessionId, req.params.productId);
       res.json({ message: "Removed from wishlist" });
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
   });
 
-  // Stripe payment route for one-time payments
-  app.post("/api/create-payment-intent", requireAuth, async (req, res) => {
+  // Stripe payment route for one-time payments (support both authenticated and guest users)
+  app.post("/api/create-payment-intent", async (req, res) => {
     try {
       const { amount } = req.body;
       
@@ -415,7 +425,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const Stripe = (await import("stripe")).default;
       const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-        apiVersion: "2024-11-20.acacia",
+        apiVersion: "2025-09-30.clover",
       });
 
       const paymentIntent = await stripe.paymentIntents.create({
@@ -432,13 +442,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Order routes
-  app.post("/api/orders", requireAuth, async (req, res) => {
+  // Order routes (support both authenticated and guest users)
+  app.post("/api/orders", async (req, res) => {
     try {
-      const { email, shippingAddress, shippingCity, shippingState, shippingZip, shippingPhone, shippingMethod, paymentMethod } = req.body;
+      const { email, customerName, shippingAddress, shippingCity, shippingState, shippingZip, shippingPhone, shippingMethod, paymentMethod } = req.body;
+      const userId = req.isAuthenticated() ? req.user!.id : undefined;
+      const sessionId = req.session.id;
 
       // Get cart items
-      const cartItems = await storage.getCartItems(req.user!.id);
+      const cartItems = await storage.getCartItems(userId, sessionId);
       
       if (cartItems.length === 0) {
         return res.status(400).json({ message: "Cart is empty" });
@@ -473,12 +485,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Create order
       const order = await storage.createOrder(
         {
-          userId: req.user!.id,
+          userId,
+          sessionId,
           status: "in_process",
           total: total.toString(),
           paymentMethod,
           shippingMethod: shippingMethod || "standard",
           email,
+          customerName,
           shippingAddress,
           shippingCity,
           shippingState,
@@ -489,11 +503,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       );
 
       // Clear cart
-      await storage.clearCart(req.user!.id);
+      await storage.clearCart(userId, sessionId);
 
       // Send confirmation email (simulated - in production use email service)
       console.log(`[EMAIL] Order confirmation sent to ${email}`);
       console.log(`  Order #${order.id}`);
+      console.log(`  Customer: ${customerName || 'Guest'}`);
       console.log(`  Total: $${total.toFixed(2)}`);
       console.log(`  Shipping Method: ${shippingMethod}`);
       console.log(`  Payment Method: ${paymentMethod}`);
