@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLocation } from "wouter";
-import { Check, Truck, Zap, CreditCard, Banknote } from "lucide-react";
+import { Check, Truck, Zap, Banknote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
@@ -13,13 +12,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-
-// Load Stripe
-const stripePromise = import.meta.env.VITE_STRIPE_PUBLIC_KEY 
-  ? loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
-  : null;
 
 const shippingSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -57,66 +49,12 @@ const shippingOptions = [
   },
 ];
 
-function StripePaymentForm({ amount, onSuccess }: { amount: number; onSuccess: () => void }) {
-  const stripe = useStripe();
-  const elements = useElements();
-  const { toast } = useToast();
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!stripe || !elements) {
-      return;
-    }
-
-    setIsProcessing(true);
-
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: `${window.location.origin}/checkout`,
-      },
-      redirect: "if_required",
-    });
-
-    setIsProcessing(false);
-
-    if (error) {
-      toast({
-        title: "Payment Failed",
-        description: error.message,
-        variant: "destructive",
-      });
-    } else {
-      onSuccess();
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <PaymentElement />
-      <Button
-        type="submit"
-        size="lg"
-        className="w-full font-semibold"
-        disabled={!stripe || isProcessing}
-        data-testid="button-confirm-payment"
-      >
-        {isProcessing ? "Processing..." : `Pay $${amount.toFixed(2)}`}
-      </Button>
-    </form>
-  );
-}
-
 export default function CheckoutPage() {
   const [, navigate] = useLocation();
   const [step, setStep] = useState(1);
   const [shippingMethod, setShippingMethod] = useState("standard");
-  const [paymentMethod, setPaymentMethod] = useState<"card" | "cash">("cash");
   const [shippingData, setShippingData] = useState<ShippingFormData | null>(null);
   const [orderId, setOrderId] = useState<string | null>(null);
-  const [clientSecret, setClientSecret] = useState<string | null>(null);
   const { toast } = useToast();
 
   const { data: cartData, isLoading: cartLoading } = useQuery<{ items: any[] }>({
@@ -140,7 +78,7 @@ export default function CheckoutPage() {
     mutationFn: (orderData: any) => apiRequest("POST", "/api/orders", orderData),
     onSuccess: (data: any) => {
       setOrderId(data.order.id);
-      setStep(4);
+      setStep(3);
       queryClient.invalidateQueries({ queryKey: ["/api/cart"] });
       queryClient.invalidateQueries({ queryKey: ["/api/orders"] });
       toast({
@@ -157,13 +95,6 @@ export default function CheckoutPage() {
     },
   });
 
-  const createPaymentIntentMutation = useMutation({
-    mutationFn: (amount: number) => apiRequest("POST", "/api/create-payment-intent", { amount }),
-    onSuccess: (data: any) => {
-      setClientSecret(data.clientSecret);
-    },
-  });
-
   const cartItems = cartData?.items || [];
   const subtotal = cartItems.reduce(
     (sum: number, item: any) => sum + parseFloat(item.product.price) * item.quantity,
@@ -174,18 +105,6 @@ export default function CheckoutPage() {
   const tax = subtotal * 0.08;
   const total = subtotal + shippingCost + tax;
 
-  // Reset client secret when shipping method changes
-  useEffect(() => {
-    setClientSecret(null);
-  }, [shippingMethod]);
-
-  // Create payment intent when needed
-  useEffect(() => {
-    if (step === 3 && paymentMethod === "card" && !clientSecret && !createPaymentIntentMutation.isPending) {
-      createPaymentIntentMutation.mutate(total);
-    }
-  }, [step, paymentMethod, total, clientSecret]);
-
   if (cartLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -194,16 +113,15 @@ export default function CheckoutPage() {
     );
   }
 
-  if (cartItems.length === 0 && step < 4) {
+  if (cartItems.length === 0 && step < 3) {
     navigate("/cart");
     return null;
   }
 
   const steps = [
     { number: 1, title: "Shipping" },
-    { number: 2, title: "Delivery" },
-    { number: 3, title: "Payment" },
-    { number: 4, title: "Confirmation" },
+    { number: 2, title: "Review" },
+    { number: 3, title: "Confirmation" },
   ];
 
   const handleShippingSubmit = (data: ShippingFormData) => {
@@ -223,12 +141,8 @@ export default function CheckoutPage() {
       shippingZip: shippingData.zip,
       shippingPhone: shippingData.phone,
       shippingMethod,
-      paymentMethod,
+      paymentMethod: "cash",
     });
-  };
-
-  const handleStripePaymentSuccess = () => {
-    handlePlaceOrder();
   };
 
   return (
@@ -329,7 +243,7 @@ export default function CheckoutPage() {
                             <FormItem>
                               <FormLabel>City *</FormLabel>
                               <FormControl>
-                                <Input {...field} placeholder="San Francisco" data-testid="input-city" />
+                                <Input {...field} placeholder="New York" data-testid="input-city" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -342,7 +256,7 @@ export default function CheckoutPage() {
                             <FormItem>
                               <FormLabel>State *</FormLabel>
                               <FormControl>
-                                <Input {...field} placeholder="CA" data-testid="input-state" />
+                                <Input {...field} placeholder="NY" data-testid="input-state" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -357,7 +271,7 @@ export default function CheckoutPage() {
                             <FormItem>
                               <FormLabel>ZIP Code *</FormLabel>
                               <FormControl>
-                                <Input {...field} placeholder="94102" data-testid="input-zip" />
+                                <Input {...field} placeholder="10001" data-testid="input-zip" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -378,8 +292,8 @@ export default function CheckoutPage() {
                         />
                       </div>
                       <div className="pt-4">
-                        <Button type="submit" size="lg" className="w-full font-semibold" data-testid="button-continue-to-shipping">
-                          Continue to Shipping Method
+                        <Button type="submit" size="lg" className="w-full font-semibold" data-testid="button-continue-to-review">
+                          Continue to Review
                         </Button>
                       </div>
                     </form>
@@ -388,178 +302,123 @@ export default function CheckoutPage() {
               </Card>
             )}
 
-            {/* Step 2: Shipping Method */}
+            {/* Step 2: Review & Place Order */}
             {step === 2 && (
               <Card>
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-semibold mb-6">Shipping Method</h2>
-                  <RadioGroup value={shippingMethod} onValueChange={setShippingMethod} className="space-y-4 mb-8">
-                    {shippingOptions.map((option) => {
-                      const Icon = option.icon;
-                      return (
-                        <label
-                          key={option.id}
-                          htmlFor={option.id}
-                          className="flex items-center gap-4 p-4 border rounded-md hover-elevate cursor-pointer"
-                          data-testid={`radio-shipping-${option.id}`}
-                        >
-                          <RadioGroupItem value={option.id} id={option.id} />
-                          <div className="flex items-center gap-4 flex-1">
-                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                              <Icon className="w-5 h-5 text-primary" />
-                            </div>
-                            <div className="flex-1">
-                              <span className="font-medium cursor-pointer block">
-                                {option.name}
-                              </span>
-                              <p className="text-sm text-muted-foreground">{option.description}</p>
-                            </div>
-                            <div className="text-right">
-                              <p className="font-semibold">
-                                {option.price === 0 ? "FREE" : `$${option.price.toFixed(2)}`}
-                              </p>
-                            </div>
-                          </div>
-                        </label>
-                      );
-                    })}
-                  </RadioGroup>
-                  <div className="flex gap-3">
-                    <Button type="button" variant="outline" onClick={() => setStep(1)} className="flex-1" data-testid="button-back-to-info">
-                      Back
-                    </Button>
-                    <Button size="lg" onClick={() => setStep(3)} className="flex-1 font-semibold" data-testid="button-continue-to-payment">
-                      Continue to Payment
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Step 3: Payment Method */}
-            {step === 3 && (
-              <Card>
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-semibold mb-6">Payment Method</h2>
+                  <h2 className="text-2xl font-semibold mb-6">Review Your Order</h2>
                   
-                  <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as "card" | "cash")} className="space-y-4 mb-6">
-                    {stripePromise && (
-                      <label
-                        htmlFor="card"
-                        className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
-                        data-testid="radio-card-payment"
-                      >
-                        <RadioGroupItem value="card" id="card" />
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <CreditCard className="w-5 h-5 text-primary" />
-                            <span className="font-medium cursor-pointer">
-                              Credit/Debit Card
-                            </span>
-                          </div>
-                          <p className="text-sm text-muted-foreground">
-                            Secure payment with Stripe
-                          </p>
-                        </div>
-                      </label>
-                    )}
-                    <label
-                      htmlFor="cash"
-                      className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
-                      data-testid="radio-cash-on-delivery"
-                    >
-                      <RadioGroupItem value="cash" id="cash" />
+                  {/* Shipping Method Selection */}
+                  <div className="mb-8">
+                    <h3 className="text-lg font-semibold mb-4">Shipping Method</h3>
+                    <RadioGroup value={shippingMethod} onValueChange={setShippingMethod} className="space-y-4">
+                      {shippingOptions.map((option) => {
+                        const Icon = option.icon;
+                        return (
+                          <label
+                            key={option.id}
+                            htmlFor={option.id}
+                            className="flex items-center gap-4 p-4 border rounded-md hover-elevate cursor-pointer"
+                            data-testid={`radio-shipping-${option.id}`}
+                          >
+                            <RadioGroupItem value={option.id} id={option.id} />
+                            <div className="flex items-center gap-4 flex-1">
+                              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                <Icon className="w-5 h-5 text-primary" />
+                              </div>
+                              <div className="flex-1">
+                                <span className="font-medium cursor-pointer block">
+                                  {option.name}
+                                </span>
+                                <p className="text-sm text-muted-foreground">{option.description}</p>
+                              </div>
+                              <div className="text-right">
+                                <p className="font-semibold">
+                                  {option.price === 0 ? "FREE" : `$${option.price.toFixed(2)}`}
+                                </p>
+                              </div>
+                            </div>
+                          </label>
+                        );
+                      })}
+                    </RadioGroup>
+                  </div>
+
+                  {/* Payment Method */}
+                  <div className="mb-8">
+                    <h3 className="text-lg font-semibold mb-4">Payment Method</h3>
+                    <div className="flex items-start gap-3 p-4 border rounded-md bg-muted/30">
+                      <Banknote className="w-5 h-5 text-primary mt-0.5" />
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <Banknote className="w-5 h-5 text-primary" />
-                          <span className="font-medium cursor-pointer">
-                            Cash on Delivery
-                          </span>
-                        </div>
+                        <div className="font-medium">Cash on Delivery</div>
                         <p className="text-sm text-muted-foreground">
                           Pay with cash when your order is delivered
                         </p>
                       </div>
-                    </label>
-                  </RadioGroup>
-
-                  {paymentMethod === "card" && clientSecret && stripePromise ? (
-                    <div className="mb-6">
-                      <Elements stripe={stripePromise} options={{ clientSecret }}>
-                        <StripePaymentForm amount={total} onSuccess={handleStripePaymentSuccess} />
-                      </Elements>
                     </div>
-                  ) : null}
+                  </div>
 
-                  {paymentMethod === "cash" && (
-                    <div className="flex gap-3">
-                      <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1" data-testid="button-back-to-shipping">
-                        Back
-                      </Button>
-                      <Button
-                        size="lg"
-                        className="flex-1 font-semibold"
-                        onClick={handlePlaceOrder}
-                        disabled={createOrderMutation.isPending}
-                        data-testid="button-place-order"
-                      >
-                        {createOrderMutation.isPending ? "Processing..." : "Place Order"}
-                      </Button>
+                  {/* Shipping Information Summary */}
+                  {shippingData && (
+                    <div className="mb-8">
+                      <h3 className="text-lg font-semibold mb-4">Shipping Address</h3>
+                      <div className="p-4 border rounded-md bg-muted/30">
+                        <p className="font-medium">{shippingData.name}</p>
+                        <p className="text-sm text-muted-foreground">{shippingData.address}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {shippingData.city}, {shippingData.state} {shippingData.zip}
+                        </p>
+                        <p className="text-sm text-muted-foreground mt-2">
+                          Phone: {shippingData.phone}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          Email: {shippingData.email}
+                        </p>
+                      </div>
                     </div>
                   )}
 
-                  {paymentMethod === "card" && !stripePromise && (
-                    <div className="text-center py-6">
-                      <p className="text-muted-foreground">Card payments are currently being configured.</p>
-                    </div>
-                  )}
+                  <div className="flex gap-3">
+                    <Button type="button" variant="outline" onClick={() => setStep(1)} className="flex-1" data-testid="button-back-to-info">
+                      Back
+                    </Button>
+                    <Button
+                      size="lg"
+                      className="flex-1 font-semibold"
+                      onClick={handlePlaceOrder}
+                      disabled={createOrderMutation.isPending}
+                      data-testid="button-place-order"
+                    >
+                      {createOrderMutation.isPending ? "Processing..." : "Place Order"}
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             )}
 
-            {/* Step 4: Order Confirmation */}
-            {step === 4 && orderId && (
+            {/* Step 3: Order Confirmation */}
+            {step === 3 && orderId && (
               <Card>
                 <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 rounded-full bg-status-online/10 flex items-center justify-center mx-auto mb-6">
-                    <Check className="w-10 h-10 text-status-online" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Check className="w-8 h-8 text-primary" />
                   </div>
-                  <h2 className="text-3xl font-bold mb-3">Order Confirmed!</h2>
-                  <p className="text-lg text-muted-foreground mb-2">
-                    Thank you for your order, {shippingData?.name}
+                  <h2 className="text-3xl font-bold mb-4">Order Confirmed!</h2>
+                  <p className="text-muted-foreground mb-2">
+                    Thank you for your order. Your order number is:
                   </p>
-                  <p className="text-sm text-muted-foreground mb-2" data-testid="text-order-number">
-                    Order #{orderId.slice(0, 8).toUpperCase()}
+                  <p className="text-2xl font-mono font-semibold text-primary mb-8" data-testid="text-order-id">
+                    #{orderId.slice(0, 8).toUpperCase()}
                   </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded-md mb-8">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                    <span className="text-sm font-medium">Order In Process</span>
-                  </div>
-                  
-                  <div className="bg-card p-6 rounded-md border mb-6 text-left">
-                    <h3 className="font-semibold mb-3">Delivery Information</h3>
-                    <p className="text-sm text-muted-foreground mb-1">{shippingData?.name}</p>
-                    <p className="text-sm text-muted-foreground mb-1">{shippingData?.address}</p>
-                    <p className="text-sm text-muted-foreground mb-1">
-                      {shippingData?.city}, {shippingData?.state} {shippingData?.zip}
-                    </p>
-                    <p className="text-sm text-muted-foreground mb-3">{shippingData?.phone}</p>
-                    <div className="pt-3 border-t">
-                      <p className="text-sm font-medium mb-1">Shipping Method:</p>
-                      <p className="text-sm text-muted-foreground">{selectedShipping?.name}</p>
-                    </div>
-                  </div>
-
                   <p className="text-muted-foreground mb-8">
                     A confirmation email has been sent to <strong>{shippingData?.email}</strong>
                   </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button variant="outline" onClick={() => navigate("/profile")} className="flex-1" data-testid="button-view-orders">
-                      View My Orders
-                    </Button>
-                    <Button onClick={() => navigate("/")} className="flex-1" data-testid="button-continue-shopping-confirmation">
+                  <div className="flex gap-3 justify-center">
+                    <Button variant="outline" onClick={() => navigate("/")} data-testid="button-continue-shopping">
                       Continue Shopping
+                    </Button>
+                    <Button onClick={() => navigate("/orders")} data-testid="button-view-orders">
+                      View Orders
                     </Button>
                   </div>
                 </CardContent>
@@ -567,46 +426,50 @@ export default function CheckoutPage() {
             )}
           </div>
 
-          {/* Order Summary - Sticky */}
-          {step < 4 && (
+          {/* Order Summary Sidebar */}
+          {step < 3 && (
             <div className="lg:col-span-1">
-              <Card className="sticky top-24">
+              <Card className="sticky top-4">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Order Summary</h3>
-                  <div className="space-y-3 mb-4">
+                  <div className="space-y-4 mb-6">
+                    {cartItems.map((item: any) => (
+                      <div key={item.id} className="flex gap-3" data-testid={`summary-item-${item.product.id}`}>
+                        <img
+                          src={item.product.image}
+                          alt={item.product.name}
+                          className="w-16 h-16 object-cover rounded"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-sm truncate">{item.product.name}</p>
+                          <p className="text-sm text-muted-foreground">Qty: {item.quantity}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-semibold text-sm">
+                            ${(parseFloat(item.product.price) * item.quantity).toFixed(2)}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="border-t pt-4 space-y-2">
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Subtotal</span>
-                      <span className="font-medium" data-testid="text-subtotal">${subtotal.toFixed(2)}</span>
+                      <span data-testid="text-subtotal">${subtotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Shipping</span>
-                      <span className="font-medium" data-testid="text-shipping">
+                      <span data-testid="text-shipping">
                         {shippingCost === 0 ? "FREE" : `$${shippingCost.toFixed(2)}`}
                       </span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Tax (8%)</span>
-                      <span className="font-medium" data-testid="text-tax">${tax.toFixed(2)}</span>
+                      <span className="text-muted-foreground">Tax</span>
+                      <span data-testid="text-tax">${tax.toFixed(2)}</span>
                     </div>
-                    <div className="border-t pt-3">
-                      <div className="flex justify-between">
-                        <span className="font-semibold">Total</span>
-                        <span className="font-bold text-xl" data-testid="text-total">${total.toFixed(2)}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-4 border-t text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-primary" />
-                      <span>Secure checkout</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-primary" />
-                      <span>Original OEM warranty</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-primary" />
-                      <span>24/7 Expert support</span>
+                    <div className="border-t pt-2 flex justify-between font-semibold text-lg">
+                      <span>Total</span>
+                      <span data-testid="text-total">${total.toFixed(2)}</span>
                     </div>
                   </div>
                 </CardContent>
