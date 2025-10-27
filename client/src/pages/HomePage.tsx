@@ -73,11 +73,11 @@ export default function HomePage() {
   
   budgetFriendly.forEach(p => usedProductIds.add(p.id));
   
-  // Featured Products (mid-range products $300-$500, sorted by rating) - Fifth priority
-  const featuredProducts = products
+  // Featured Products - Show highly rated products not yet used
+  let featuredProducts = products
     ?.filter(p => {
-      const price = parseFloat(p.price);
-      return price >= 300 && price <= 500 && !usedProductIds.has(p.id);
+      const rating = p.rating ? parseFloat(p.rating) : 0;
+      return rating >= 4.0 && !usedProductIds.has(p.id);
     })
     .sort((a, b) => {
       const ratingA = a.rating ? parseFloat(a.rating) : 0;
@@ -85,6 +85,20 @@ export default function HomePage() {
       return ratingB - ratingA;
     })
     .slice(0, 4) || [];
+  
+  // If we don't have enough featured products, fill with remaining top-rated products
+  if (featuredProducts.length < 4) {
+    const additionalProducts = products
+      ?.filter(p => !usedProductIds.has(p.id))
+      .sort((a, b) => {
+        const ratingA = a.rating ? parseFloat(a.rating) : 0;
+        const ratingB = b.rating ? parseFloat(b.rating) : 0;
+        return ratingB - ratingA;
+      })
+      .slice(0, 4 - featuredProducts.length) || [];
+    
+    featuredProducts = [...featuredProducts, ...additionalProducts];
+  }
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
