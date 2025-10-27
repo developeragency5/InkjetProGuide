@@ -37,7 +37,7 @@ export default function ProductDetailPage() {
   const { toast } = useToast();
   const { selectedProducts, addToComparison, removeFromComparison, isInComparison } = useComparison();
 
-  const { data: product, isLoading, isError } = useQuery<Product>({
+  const { data: product, isLoading } = useQuery<Product>({
     queryKey: ["/api/products", productId],
     queryFn: async () => {
       const response = await fetch(`/api/products/${productId}`);
@@ -45,7 +45,6 @@ export default function ProductDetailPage() {
       return response.json();
     },
     enabled: !!productId,
-    retry: false,
   });
 
   const { data: allProducts } = useQuery<Product[]>({
@@ -62,7 +61,7 @@ export default function ProductDetailPage() {
     enabled: !!productId,
   });
 
-  const { data: wishlistData } = useQuery<{ items: any[] }>({
+  const { data: wishlistData } = useQuery({
     queryKey: ["/api/wishlist"],
   });
 
@@ -187,47 +186,6 @@ export default function ProductDetailPage() {
     if (diffInDays < 60) return "1 month ago";
     if (diffInDays < 365) return `${Math.floor(diffInDays / 30)} months ago`;
     return `${Math.floor(diffInDays / 365)} year${Math.floor(diffInDays / 365) > 1 ? 's' : ''} ago`;
-  }
-
-  // Show error if product not found
-  if (isError || (!isLoading && !product)) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <Card className="max-w-md w-full mx-4">
-          <CardContent className="p-8 text-center">
-            <AlertCircle className="w-16 h-16 text-destructive mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-2">Product Not Found</h2>
-            <p className="text-muted-foreground mb-6">
-              Sorry, the product you're looking for doesn't exist or has been removed.
-            </p>
-            <Link href="/products">
-              <Button data-testid="button-back-to-products">Browse All Products</Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
-  // Show loading state
-  if (isLoading || !product) {
-    return (
-      <div className="min-h-screen bg-background">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="animate-pulse space-y-8">
-            <div className="h-8 bg-muted rounded w-1/3" />
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div className="aspect-square bg-muted rounded" />
-              <div className="space-y-4">
-                <div className="h-12 bg-muted rounded" />
-                <div className="h-8 bg-muted rounded w-2/3" />
-                <div className="h-20 bg-muted rounded" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
   }
 
   return (
