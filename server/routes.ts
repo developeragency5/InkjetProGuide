@@ -5,7 +5,7 @@ import session from "express-session";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcryptjs";
-import { insertUserSchema } from "@shared/schema";
+import { insertUserSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
 import memorystore from "memorystore";
 
 const MemoryStore = memorystore(session);
@@ -707,6 +707,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ message: "Cartridge not found" });
       }
       res.json(cartridge);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Newsletter subscription route
+  app.post("/api/newsletter/subscribe", async (req, res) => {
+    try {
+      const validationResult = insertNewsletterSubscriberSchema.safeParse(req.body);
+      
+      if (!validationResult.success) {
+        return res.status(400).json({ 
+          message: validationResult.error.errors[0]?.message || "Invalid email address"
+        });
+      }
+
+      const { email } = validationResult.data;
+
+      // Check if email is already subscribed
+      const isSubscribed = await storage.isEmailSubscribed(email);
+      if (isSubscribed) {
+        return res.status(400).json({ 
+          message: "This email is already subscribed to our newsletter" 
+        });
+      }
+
+      await storage.subscribeToNewsletter(email);
+      res.json({ 
+        message: "Successfully subscribed to our newsletter! Check your inbox for exclusive deals."
+      });
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
