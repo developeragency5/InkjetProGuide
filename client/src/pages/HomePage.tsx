@@ -278,7 +278,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link href="/products?category=All-in-One" data-testid="link-category-allinone">
+            <Link href="/products?category=All-in-One Printers" data-testid="link-category-allinone">
               <Card className="hover-elevate transition-all cursor-pointer">
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
@@ -289,29 +289,29 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </Link>
-            <Link href="/products?category=Office" data-testid="link-category-office">
+            <Link href="/products?category=Tank Printers" data-testid="link-category-tank">
               <Card className="hover-elevate transition-all cursor-pointer">
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                     <Award className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-xl mb-2">Office Printers</h3>
-                  <p className="text-sm text-muted-foreground">High-volume business solutions</p>
+                  <h3 className="font-semibold text-xl mb-2">Tank Printers</h3>
+                  <p className="text-sm text-muted-foreground">High-volume refillable ink tanks</p>
                 </CardContent>
               </Card>
             </Link>
-            <Link href="/products?category=Home" data-testid="link-category-home">
+            <Link href="/products?category=Mobile Printers" data-testid="link-category-mobile">
               <Card className="hover-elevate transition-all cursor-pointer">
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                     <Users className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-xl mb-2">Home Printers</h3>
-                  <p className="text-sm text-muted-foreground">Compact & affordable for home use</p>
+                  <h3 className="font-semibold text-xl mb-2">Mobile Printers</h3>
+                  <p className="text-sm text-muted-foreground">Compact & portable for on-the-go</p>
                 </CardContent>
               </Card>
             </Link>
-            <Link href="/products?category=Photo" data-testid="link-category-photo">
+            <Link href="/products?category=Photo Printers" data-testid="link-category-photo">
               <Card className="hover-elevate transition-all cursor-pointer">
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
