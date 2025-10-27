@@ -1,5 +1,6 @@
 import { db } from "./db";
-import { products } from "@shared/schema";
+import { products, users, productReviews, orders, orderItems, cartItems, wishlistItems } from "@shared/schema";
+import bcrypt from "bcryptjs";
 
 const sampleProducts = [
   {
@@ -249,17 +250,302 @@ const sampleProducts = [
   },
 ];
 
+// Sample reviewer users
+const sampleUsers = [
+  {
+    email: "john.davis@example.com",
+    password: bcrypt.hashSync("password123", 10),
+    name: "John D.",
+  },
+  {
+    email: "sarah.martinez@example.com",
+    password: bcrypt.hashSync("password123", 10),
+    name: "Sarah M.",
+  },
+  {
+    email: "mike.roberts@example.com",
+    password: bcrypt.hashSync("password123", 10),
+    name: "Mike R.",
+  },
+  {
+    email: "emily.chen@example.com",
+    password: bcrypt.hashSync("password123", 10),
+    name: "Emily C.",
+  },
+  {
+    email: "david.thompson@example.com",
+    password: bcrypt.hashSync("password123", 10),
+    name: "David T.",
+  },
+  {
+    email: "lisa.anderson@example.com",
+    password: bcrypt.hashSync("password123", 10),
+    name: "Lisa A.",
+  },
+  {
+    email: "james.wilson@example.com",
+    password: bcrypt.hashSync("password123", 10),
+    name: "James W.",
+  },
+  {
+    email: "amanda.brown@example.com",
+    password: bcrypt.hashSync("password123", 10),
+    name: "Amanda B.",
+  },
+];
+
 async function seed() {
   console.log("Seeding database...");
   
   try {
-    // Clear existing products
+    // Clear existing data (in proper order due to foreign key constraints)
+    await db.delete(productReviews);
+    await db.delete(orderItems);
+    await db.delete(orders);
+    await db.delete(cartItems);
+    await db.delete(wishlistItems);
     await db.delete(products);
-    console.log("Cleared existing products");
+    await db.delete(users);
+    console.log("Cleared existing data");
+
+    // Insert sample users
+    const insertedUsers = await db.insert(users).values(sampleUsers).returning();
+    console.log(`Inserted ${insertedUsers.length} users`);
 
     // Insert sample products
-    await db.insert(products).values(sampleProducts);
-    console.log(`Inserted ${sampleProducts.length} products`);
+    const insertedProducts = await db.insert(products).values(sampleProducts).returning();
+    console.log(`Inserted ${insertedProducts.length} products`);
+
+    // Create reviews for each product with different users
+    const reviewsData = [];
+    
+    // Reviews for HP OfficeJet Pro 9025e (index 0)
+    reviewsData.push(
+      {
+        productId: insertedProducts[0].id,
+        userId: insertedUsers[0].id,
+        rating: 5,
+        title: "Excellent printer for home office",
+        comment: "Great print quality and easy WiFi setup. The HP Smart app makes printing from my phone super convenient. Automatic duplex printing saves so much time!",
+        helpful: 24,
+      },
+      {
+        productId: insertedProducts[0].id,
+        userId: insertedUsers[1].id,
+        rating: 5,
+        title: "Best investment for my business",
+        comment: "This printer handles our busy office perfectly. Fast, reliable, and the monthly duty cycle is impressive. Love the self-healing WiFi feature.",
+        helpful: 18,
+      },
+      {
+        productId: insertedProducts[0].id,
+        userId: insertedUsers[2].id,
+        rating: 4,
+        title: "Great quality, slightly noisy",
+        comment: "Print quality is fantastic, especially for color documents. My only complaint is it can be a bit loud during high-volume print jobs.",
+        helpful: 12,
+      }
+    );
+
+    // Reviews for HP DeskJet 4155e (index 1)
+    reviewsData.push(
+      {
+        productId: insertedProducts[1].id,
+        userId: insertedUsers[3].id,
+        rating: 4,
+        title: "Good value for money",
+        comment: "Works well for everyday printing. Setup was straightforward. Only wish the paper tray was larger for my needs.",
+        helpful: 31,
+      },
+      {
+        productId: insertedProducts[1].id,
+        userId: insertedUsers[4].id,
+        rating: 5,
+        title: "Perfect for home use",
+        comment: "Compact, affordable, and does everything I need. The wireless printing from my tablet is seamless. Highly recommend for basic home printing!",
+        helpful: 27,
+      },
+      {
+        productId: insertedProducts[1].id,
+        userId: insertedUsers[5].id,
+        rating: 3,
+        title: "Decent but slow",
+        comment: "Print quality is good but it's quite slow compared to my old printer. Good for occasional use but not for high-volume printing.",
+        helpful: 15,
+      }
+    );
+
+    // Reviews for HP OfficeJet 250 Mobile (index 2)
+    reviewsData.push(
+      {
+        productId: insertedProducts[2].id,
+        userId: insertedUsers[6].id,
+        rating: 5,
+        title: "Game changer for remote work",
+        comment: "As a field technician, this portable printer is a lifesaver. The battery lasts all day and print quality is excellent. Worth every penny!",
+        helpful: 42,
+      },
+      {
+        productId: insertedProducts[2].id,
+        userId: insertedUsers[7].id,
+        rating: 4,
+        title: "Portable and reliable",
+        comment: "Great for traveling consultants. Fits in my backpack and prints professional documents on the go. Battery life could be better but still very good.",
+        helpful: 28,
+      },
+      {
+        productId: insertedProducts[2].id,
+        userId: insertedUsers[0].id,
+        rating: 5,
+        title: "Best portable printer I've owned",
+        comment: "Compact design doesn't compromise on quality. The wireless features work flawlessly and it's incredibly convenient for client meetings.",
+        helpful: 35,
+      }
+    );
+
+    // Reviews for HP ENVY Photo 7855 (index 3)
+    reviewsData.push(
+      {
+        productId: insertedProducts[3].id,
+        userId: insertedUsers[1].id,
+        rating: 5,
+        title: "Photo printing perfection",
+        comment: "The six-ink system produces stunning photos that rival professional prints. The dual paper trays are super convenient for switching between photos and documents.",
+        helpful: 45,
+      },
+      {
+        productId: insertedProducts[3].id,
+        userId: insertedUsers[2].id,
+        rating: 5,
+        title: "Amazing for photographers",
+        comment: "Colors are vibrant and accurate. Borderless printing works perfectly. This printer has exceeded all my expectations for home photo printing!",
+        helpful: 38,
+      },
+      {
+        productId: insertedProducts[3].id,
+        userId: insertedUsers[3].id,
+        rating: 4,
+        title: "Great printer, pricey ink",
+        comment: "Print quality is excellent for both photos and documents. The only downside is the cost of replacing all six ink cartridges.",
+        helpful: 22,
+      }
+    );
+
+    // Reviews for HP OfficeJet Pro 8035e (index 4)
+    reviewsData.push(
+      {
+        productId: insertedProducts[4].id,
+        userId: insertedUsers[4].id,
+        rating: 5,
+        title: "Smart features are impressive",
+        comment: "The smart tasks automation has streamlined our workflow significantly. Self-healing WiFi means no more connection issues. Highly recommend for small offices!",
+        helpful: 33,
+      },
+      {
+        productId: insertedProducts[4].id,
+        userId: insertedUsers[5].id,
+        rating: 4,
+        title: "Reliable workhorse",
+        comment: "Handles our daily printing needs without any problems. Setup was easy and the touchscreen is very intuitive. Good value for the features.",
+        helpful: 29,
+      },
+      {
+        productId: insertedProducts[4].id,
+        userId: insertedUsers[6].id,
+        rating: 5,
+        title: "Perfect for my startup",
+        comment: "Fast, efficient, and the security features give me peace of mind. The voice-activated printing is surprisingly useful. Best office printer we've had!",
+        helpful: 19,
+      }
+    );
+
+    // Reviews for HP DeskJet 2755e (index 5)
+    reviewsData.push(
+      {
+        productId: insertedProducts[5].id,
+        userId: insertedUsers[7].id,
+        rating: 4,
+        title: "Great for students",
+        comment: "Bought this for my daughter's college dorm. Compact size and wireless printing are perfect. Print quality is good for the price!",
+        helpful: 52,
+      },
+      {
+        productId: insertedProducts[5].id,
+        userId: insertedUsers[0].id,
+        rating: 5,
+        title: "Simple and affordable",
+        comment: "Does exactly what I need without any fuss. Easy to set up, prints well, and doesn't take up much space. Perfect for basic home use!",
+        helpful: 41,
+      },
+      {
+        productId: insertedProducts[5].id,
+        userId: insertedUsers[1].id,
+        rating: 3,
+        title: "Works but basic",
+        comment: "It's a decent budget printer but don't expect fast speeds or advanced features. Good for occasional printing but that's about it.",
+        helpful: 16,
+      }
+    );
+
+    // Reviews for HP OfficeJet Pro 9015e (index 6)
+    reviewsData.push(
+      {
+        productId: insertedProducts[6].id,
+        userId: insertedUsers[2].id,
+        rating: 5,
+        title: "Enterprise quality for small business",
+        comment: "The speed and security features are outstanding. Handles high-volume printing effortlessly. The smart tasks feature has saved us hours every week!",
+        helpful: 37,
+      },
+      {
+        productId: insertedProducts[6].id,
+        userId: insertedUsers[3].id,
+        rating: 4,
+        title: "Solid performer",
+        comment: "Fast print speeds and excellent color quality. The ADF with scan is very handy. Only minor issue is occasional paper jams with certain paper types.",
+        helpful: 24,
+      },
+      {
+        productId: insertedProducts[6].id,
+        userId: insertedUsers[4].id,
+        rating: 5,
+        title: "Best OfficeJet Pro model",
+        comment: "Upgraded from an older model and the difference is night and day. Faster, smarter, and more reliable. The HP Smart App integration is excellent!",
+        helpful: 31,
+      }
+    );
+
+    // Reviews for HP ENVY Inspire 7955e (index 7)
+    reviewsData.push(
+      {
+        productId: insertedProducts[7].id,
+        userId: insertedUsers[5].id,
+        rating: 5,
+        title: "Perfect for creative projects",
+        comment: "Love the dual paper trays and the print quality is superb for both photos and documents. The touchscreen is responsive and easy to use. Very happy with this purchase!",
+        helpful: 44,
+      },
+      {
+        productId: insertedProducts[7].id,
+        userId: insertedUsers[6].id,
+        rating: 5,
+        title: "Versatile and reliable",
+        comment: "This printer does it all - photos, documents, copies, scans. The automatic duplex printing is a great feature. Quality build and excellent performance!",
+        helpful: 36,
+      },
+      {
+        productId: insertedProducts[7].id,
+        userId: insertedUsers[7].id,
+        rating: 4,
+        title: "Great features, a bit bulky",
+        comment: "Fantastic print quality and love all the features. Takes up more desk space than I expected but worth it for the dual trays and performance.",
+        helpful: 21,
+      }
+    );
+
+    // Insert all reviews
+    await db.insert(productReviews).values(reviewsData);
+    console.log(`Inserted ${reviewsData.length} product reviews`);
 
     console.log("Database seeded successfully!");
     process.exit(0);

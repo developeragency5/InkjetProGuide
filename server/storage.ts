@@ -1,6 +1,7 @@
 import { 
   users, 
   products, 
+  productReviews,
   cartItems, 
   wishlistItems, 
   orders, 
@@ -45,6 +46,7 @@ export interface IStorage {
   createProduct(product: InsertProduct): Promise<Product>;
   updateProduct(id: string, product: Partial<InsertProduct>): Promise<Product>;
   deleteProduct(id: string): Promise<void>;
+  getProductReviews(productId: string): Promise<any[]>;
 
   // Cart operations (support both authenticated and guest users)
   getCartItems(userId: string | undefined, sessionId: string): Promise<any[]>;
@@ -165,6 +167,26 @@ export class DatabaseStorage implements IStorage {
 
   async deleteProduct(id: string): Promise<void> {
     await db.delete(products).where(eq(products.id, id));
+  }
+
+  async getProductReviews(productId: string): Promise<any[]> {
+    const reviews = await db
+      .select({
+        id: productReviews.id,
+        rating: productReviews.rating,
+        title: productReviews.title,
+        comment: productReviews.comment,
+        helpful: productReviews.helpful,
+        createdAt: productReviews.createdAt,
+        author: users.name,
+        userId: users.id,
+      })
+      .from(productReviews)
+      .leftJoin(users, eq(productReviews.userId, users.id))
+      .where(eq(productReviews.productId, productId))
+      .orderBy(desc(productReviews.createdAt));
+    
+    return reviews;
   }
 
   // Cart operations (support both authenticated and guest users)
