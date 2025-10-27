@@ -4,7 +4,9 @@ import { Search, ShoppingCart, Heart, User, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 import ComparisonBar from "@/components/ComparisonBar";
 import type { Product } from "@shared/schema";
 
@@ -17,7 +19,9 @@ export function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
   const searchRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
 
   // Fetch cart count
   const { data: cartData } = useQuery<{ items: any[] }>({
@@ -86,6 +90,35 @@ export function Layout({ children }: LayoutProps) {
     setLocation(`/product/${productId}`);
     setSearchQuery("");
     setShowSuggestions(false);
+  };
+
+  // Newsletter subscription mutation
+  const newsletterMutation = useMutation({
+    mutationFn: async (email: string) => {
+      const res = await apiRequest("POST", "/api/newsletter/subscribe", { email });
+      return res.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Successfully subscribed!",
+        description: "Check your inbox for exclusive deals and printer tips.",
+      });
+      setNewsletterEmail("");
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Subscription failed",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      newsletterMutation.mutate(newsletterEmail);
+    }
   };
 
   return (
@@ -505,17 +538,25 @@ export function Layout({ children }: LayoutProps) {
               <p className="text-sm text-muted-foreground mb-4">
                 Get exclusive deals, expert printing tips, and the latest HP printer releases delivered to your inbox.
               </p>
-              <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
                 <Input 
                   type="email" 
                   placeholder="Enter your email address" 
                   className="text-sm flex-1"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  disabled={newsletterMutation.isPending}
                   data-testid="input-newsletter-footer"
                 />
-                <Button data-testid="button-subscribe-footer" className="sm:w-auto">
-                  Subscribe
+                <Button 
+                  type="submit"
+                  disabled={newsletterMutation.isPending}
+                  data-testid="button-subscribe-footer" 
+                  className="sm:w-auto"
+                >
+                  {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
 
