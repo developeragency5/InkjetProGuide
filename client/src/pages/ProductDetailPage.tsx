@@ -146,9 +146,6 @@ export default function ProductDetailPage() {
     ?.filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4) || [];
 
-  // Frequently bought together (random products for demo)
-  const frequentlyBoughtTogether = allProducts?.slice(0, 3) || [];
-
   // Mock reviews data
   const mockReviews = [
     {
@@ -418,43 +415,6 @@ export default function ProductDetailPage() {
             </div>
           </div>
         </div>
-
-        {/* Frequently Bought Together */}
-        {frequentlyBoughtTogether.length > 0 && (
-          <Card className="mb-16">
-            <CardHeader>
-              <CardTitle>Frequently Bought Together</CardTitle>
-              <CardDescription>Customers who bought this item also bought</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap items-center gap-6">
-                {frequentlyBoughtTogether.map((item, index) => (
-                  <div key={item.id} className="flex items-center gap-4">
-                    {index > 0 && <Plus className="w-6 h-6 text-muted-foreground" />}
-                    <Link href={`/product/${item.id}`}>
-                      <div className="w-24 h-24 border rounded-md p-2 hover-elevate cursor-pointer transition-all">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-                <div className="ml-auto">
-                  <p className="text-sm text-muted-foreground mb-2">Total Price:</p>
-                  <p className="text-2xl font-bold text-primary mb-3">
-                    ${(parseFloat(product.price) + frequentlyBoughtTogether.reduce((sum, item) => sum + parseFloat(item.price), 0)).toFixed(2)}
-                  </p>
-                  <Button size="sm" data-testid="button-add-bundle-to-cart">
-                    Add All to Cart
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
 
         {/* Tabs Section */}
         <Tabs defaultValue="overview" className="mb-16">
