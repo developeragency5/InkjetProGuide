@@ -1,4 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
+import path from "path";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
@@ -45,6 +46,10 @@ app.use((req, res, next) => {
 
   next();
 });
+
+// Serve static files from attached_assets directory BEFORE routes
+const attachedAssetsPath = path.resolve(import.meta.dirname, "..", "attached_assets");
+app.use("/attached_assets", express.static(attachedAssetsPath));
 
 (async () => {
   const server = await registerRoutes(app);
