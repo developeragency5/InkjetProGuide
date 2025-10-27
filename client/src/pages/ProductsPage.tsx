@@ -26,11 +26,13 @@ export default function ProductsPage() {
   const [location] = useLocation();
   
   // Recompute URL params on every render
-  const { category, searchQuery } = useMemo(() => {
+  const { category, searchQuery, urlMinPrice, urlMaxPrice } = useMemo(() => {
     const params = new URLSearchParams(window.location.search);
     return {
       category: params.get("category"),
       searchQuery: params.get("search"),
+      urlMinPrice: params.get("minPrice"),
+      urlMaxPrice: params.get("maxPrice"),
     };
   }, [location]);
 
@@ -43,15 +45,20 @@ export default function ProductsPage() {
   const [sortBy, setSortBy] = useState("featured");
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Reset filters when category changes
+  // Reset filters when category changes or apply URL price filters
   useEffect(() => {
     setCurrentPage(1);
-    setPriceRange([0, 1000]);
+    
+    // Set price range from URL params if present, otherwise reset to default
+    const minPrice = urlMinPrice ? parseInt(urlMinPrice) : 0;
+    const maxPrice = urlMaxPrice ? parseInt(urlMaxPrice) : 1000;
+    setPriceRange([minPrice, maxPrice]);
+    
     setSelectedConnectivity([]);
     setSelectedTechnology([]);
     setSelectedColorType("");
     setSearchInput(searchQuery || "");
-  }, [category, searchQuery]);
+  }, [category, searchQuery, urlMinPrice, urlMaxPrice]);
 
   const { data: products, isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],

@@ -51,7 +51,7 @@ export default function ProductDetailPage() {
     queryKey: ["/api/products"],
   });
 
-  const { data: wishlistData } = useQuery({
+  const { data: wishlistData } = useQuery<{ items: any[] }>({
     queryKey: ["/api/wishlist"],
   });
 
