@@ -128,9 +128,35 @@ export default function ComparisonPage() {
     }
   };
 
+  // Map display keys to actual database specification keys
+  const specKeyMap: Record<string, string> = {
+    model: "Model Number",
+    printSpeed: "Print Speed (Black)",
+    resolution: "Print Resolution",
+    technology: "Print Technology",
+    wifi: "Connectivity",
+    bluetooth: "Connectivity",
+    usb: "Connectivity",
+    ethernet: "Connectivity",
+    mobilePrinting: "Mobile Printing",
+    paperCapacity: "Paper Handling",
+    paperSizes: "Paper Sizes",
+    duplexPrinting: "Two-Sided Printing",
+    inkType: "Compatible Cartridges",
+    pageYield: "Page Yield (Black)",
+    costPerPage: "Cost Per Page",
+    touchscreen: "Display",
+    adf: "Automatic Document Feeder",
+    scanner: "Scan Type",
+    dimensions: "Dimensions",
+    weight: "Weight",
+    noiseLevel: "Noise Level",
+  };
+
   const getSpecValue = (product: Product, key: string): string => {
     const specs = parseSpecs(product.specifications);
-    return specs[key] || "N/A";
+    const dbKey = specKeyMap[key] || key;
+    return specs[dbKey] || "N/A";
   };
 
   const checkDifferences = (key: string): boolean => {
@@ -325,22 +351,42 @@ export default function ComparisonPage() {
                   CONNECTIVITY
                 </td>
               </tr>
-              {["wifi", "bluetooth", "usb", "ethernet", "mobilePrinting"].map((feature) => (
-                <tr key={feature}>
-                  <td className="border p-4 sticky left-0 bg-background z-10 capitalize">
-                    {feature === "mobilePrinting" ? "Mobile Printing" : feature}
-                  </td>
-                  {comparedProducts.map((product) => (
-                    <td key={product.id} className="border p-4 text-center">
-                      {product.features?.includes(feature) || getSpecValue(product, feature) === "Yes" ? (
-                        <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-${feature}-yes-${product.id}`} />
-                      ) : (
-                        <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-${feature}-no-${product.id}`} />
-                      )}
+              {["wifi", "bluetooth", "usb", "ethernet", "mobilePrinting"].map((feature) => {
+                const featureNames: Record<string, string> = {
+                  wifi: "WiFi",
+                  bluetooth: "Bluetooth",
+                  usb: "USB",
+                  ethernet: "Ethernet",
+                  mobilePrinting: "Mobile Printing",
+                };
+                
+                const hasFeature = (product: Product, feature: string): boolean => {
+                  if (feature === "mobilePrinting") {
+                    const mobilePrinting = getSpecValue(product, feature);
+                    return mobilePrinting !== "N/A" && mobilePrinting.length > 0;
+                  }
+                  const connectivity = getSpecValue(product, feature);
+                  return connectivity.toLowerCase().includes(feature.toLowerCase()) || 
+                         connectivity.toLowerCase().includes(featureNames[feature].toLowerCase());
+                };
+                
+                return (
+                  <tr key={feature}>
+                    <td className="border p-4 sticky left-0 bg-background z-10 capitalize">
+                      {featureNames[feature]}
                     </td>
-                  ))}
-                </tr>
-              ))}
+                    {comparedProducts.map((product) => (
+                      <td key={product.id} className="border p-4 text-center">
+                        {hasFeature(product, feature) ? (
+                          <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-${feature}-yes-${product.id}`} />
+                        ) : (
+                          <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-${feature}-no-${product.id}`} />
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
 
               {/* Paper Handling */}
               <tr className="bg-primary/5">
@@ -366,15 +412,19 @@ export default function ComparisonPage() {
               </tr>
               <tr>
                 <td className="border p-4 sticky left-0 bg-background z-10">Automatic Duplex</td>
-                {comparedProducts.map((product) => (
-                  <td key={product.id} className="border p-4 text-center">
-                    {product.features?.includes("duplexPrinting") || getSpecValue(product, "duplexPrinting") === "Yes" ? (
-                      <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-duplex-yes-${product.id}`} />
-                    ) : (
-                      <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-duplex-no-${product.id}`} />
-                    )}
-                  </td>
-                ))}
+                {comparedProducts.map((product) => {
+                  const duplex = getSpecValue(product, "duplexPrinting");
+                  const hasDuplex = duplex !== "N/A" && duplex.toLowerCase().includes("automatic");
+                  return (
+                    <td key={product.id} className="border p-4 text-center">
+                      {hasDuplex ? (
+                        <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-duplex-yes-${product.id}`} />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-duplex-no-${product.id}`} />
+                      )}
+                    </td>
+                  );
+                })}
               </tr>
 
               {/* Ink System */}
@@ -416,39 +466,51 @@ export default function ComparisonPage() {
               </tr>
               <tr>
                 <td className="border p-4 sticky left-0 bg-background z-10">Touchscreen</td>
-                {comparedProducts.map((product) => (
-                  <td key={product.id} className="border p-4 text-center">
-                    {product.features?.includes("touchscreen") || getSpecValue(product, "touchscreen") === "Yes" ? (
-                      <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-touchscreen-yes-${product.id}`} />
-                    ) : (
-                      <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-touchscreen-no-${product.id}`} />
-                    )}
-                  </td>
-                ))}
+                {comparedProducts.map((product) => {
+                  const display = getSpecValue(product, "touchscreen");
+                  const hasTouchscreen = display !== "N/A" && display.toLowerCase().includes("touch");
+                  return (
+                    <td key={product.id} className="border p-4 text-center">
+                      {hasTouchscreen ? (
+                        <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-touchscreen-yes-${product.id}`} />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-touchscreen-no-${product.id}`} />
+                      )}
+                    </td>
+                  );
+                })}
               </tr>
               <tr>
                 <td className="border p-4 sticky left-0 bg-background z-10">Auto Document Feeder</td>
-                {comparedProducts.map((product) => (
-                  <td key={product.id} className="border p-4 text-center">
-                    {product.features?.includes("adf") || getSpecValue(product, "adf") === "Yes" ? (
-                      <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-adf-yes-${product.id}`} />
-                    ) : (
-                      <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-adf-no-${product.id}`} />
-                    )}
-                  </td>
-                ))}
+                {comparedProducts.map((product) => {
+                  const adf = getSpecValue(product, "adf");
+                  const hasAdf = adf !== "N/A" && adf.toLowerCase() !== "no" && adf.trim().length > 0;
+                  return (
+                    <td key={product.id} className="border p-4 text-center">
+                      {hasAdf ? (
+                        <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-adf-yes-${product.id}`} />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-adf-no-${product.id}`} />
+                      )}
+                    </td>
+                  );
+                })}
               </tr>
               <tr>
                 <td className="border p-4 sticky left-0 bg-background z-10">Scanner</td>
-                {comparedProducts.map((product) => (
-                  <td key={product.id} className="border p-4 text-center">
-                    {product.features?.includes("scanner") || getSpecValue(product, "scanner") === "Yes" ? (
-                      <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-scanner-yes-${product.id}`} />
-                    ) : (
-                      <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-scanner-no-${product.id}`} />
-                    )}
-                  </td>
-                ))}
+                {comparedProducts.map((product) => {
+                  const scanner = getSpecValue(product, "scanner");
+                  const hasScanner = scanner !== "N/A" && scanner.trim().length > 0;
+                  return (
+                    <td key={product.id} className="border p-4 text-center">
+                      {hasScanner ? (
+                        <CheckCircle className="w-5 h-5 text-status-online mx-auto" data-testid={`icon-scanner-yes-${product.id}`} />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-muted-foreground mx-auto" data-testid={`icon-scanner-no-${product.id}`} />
+                      )}
+                    </td>
+                  );
+                })}
               </tr>
 
               {/* Physical */}
