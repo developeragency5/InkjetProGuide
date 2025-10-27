@@ -9,6 +9,7 @@ import {
   helpArticles,
   faqs,
   inkCartridges,
+  newsletterSubscribers,
   type User, 
   type InsertUser, 
   type Product,
@@ -27,6 +28,8 @@ import {
   type InsertFaq,
   type InkCartridge,
   type InsertInkCartridge,
+  type NewsletterSubscriber,
+  type InsertNewsletterSubscriber,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, sql, desc } from "drizzle-orm";
@@ -104,6 +107,10 @@ export interface IStorage {
   createInkCartridge(cartridge: InsertInkCartridge): Promise<InkCartridge>;
   updateInkCartridge(id: string, cartridge: Partial<InsertInkCartridge>): Promise<InkCartridge>;
   deleteInkCartridge(id: string): Promise<void>;
+
+  // Newsletter subscription operations
+  subscribeToNewsletter(email: string): Promise<NewsletterSubscriber>;
+  isEmailSubscribed(email: string): Promise<boolean>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -745,6 +752,23 @@ export class DatabaseStorage implements IStorage {
 
   async deleteInkCartridge(id: string): Promise<void> {
     await db.delete(inkCartridges).where(eq(inkCartridges.id, id));
+  }
+
+  // Newsletter subscription operations
+  async subscribeToNewsletter(email: string): Promise<NewsletterSubscriber> {
+    const [subscriber] = await db
+      .insert(newsletterSubscribers)
+      .values({ email })
+      .returning();
+    return subscriber;
+  }
+
+  async isEmailSubscribed(email: string): Promise<boolean> {
+    const [subscriber] = await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.email, email));
+    return !!subscriber;
   }
 }
 
