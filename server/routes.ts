@@ -723,12 +723,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      const { email } = validationResult.data;
+      // Normalize email to lowercase to prevent duplicates
+      const email = validationResult.data.email.toLowerCase().trim();
 
       // Check if email is already subscribed
       const isSubscribed = await storage.isEmailSubscribed(email);
       if (isSubscribed) {
-        return res.status(400).json({ 
+        return res.status(409).json({ 
           message: "This email is already subscribed to our newsletter" 
         });
       }
@@ -738,7 +739,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         message: "Successfully subscribed to our newsletter! Check your inbox for exclusive deals."
       });
     } catch (error: any) {
-      res.status(500).json({ message: error.message });
+      // Handle database constraint violations
+      if (error.code === '23505') {
+        return res.status(409).json({ 
+          message: "This email is already subscribed to our newsletter" 
+        });
+      }
+      res.status(500).json({ message: "An error occurred. Please try again later." });
     }
   });
 

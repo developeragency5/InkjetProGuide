@@ -96,6 +96,10 @@ export function Layout({ children }: LayoutProps) {
   const newsletterMutation = useMutation({
     mutationFn: async (email: string) => {
       const res = await apiRequest("POST", "/api/newsletter/subscribe", { email });
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Failed to subscribe");
+      }
       return res.json();
     },
     onSuccess: () => {

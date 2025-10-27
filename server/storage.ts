@@ -756,18 +756,22 @@ export class DatabaseStorage implements IStorage {
 
   // Newsletter subscription operations
   async subscribeToNewsletter(email: string): Promise<NewsletterSubscriber> {
+    // Normalize email to lowercase
+    const normalizedEmail = email.toLowerCase().trim();
     const [subscriber] = await db
       .insert(newsletterSubscribers)
-      .values({ email })
+      .values({ email: normalizedEmail })
       .returning();
     return subscriber;
   }
 
   async isEmailSubscribed(email: string): Promise<boolean> {
+    // Normalize email to lowercase for case-insensitive comparison
+    const normalizedEmail = email.toLowerCase().trim();
     const [subscriber] = await db
       .select()
       .from(newsletterSubscribers)
-      .where(eq(newsletterSubscribers.email, email));
+      .where(eq(newsletterSubscribers.email, normalizedEmail));
     return !!subscriber;
   }
 }
