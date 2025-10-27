@@ -32,16 +32,6 @@ export default function ComparisonPage() {
   const comparedProducts = products?.filter(p => selectedProducts.includes(p.id)) || [];
 
   const handleAddToCart = async (productId: string) => {
-    if (!user) {
-      toast({
-        title: "Sign in required",
-        description: "Please sign in to add items to cart",
-        variant: "destructive",
-      });
-      setLocation("/login");
-      return;
-    }
-
     try {
       await apiRequest("POST", "/api/cart", { productId, quantity: 1 });
       await queryClient.invalidateQueries({ queryKey: ["/api/cart"] });
