@@ -51,16 +51,6 @@ export default function ProductDetailPage() {
     queryKey: ["/api/products"],
   });
 
-  const { data: reviews = [] } = useQuery<any[]>({
-    queryKey: ["/api/products", productId, "reviews"],
-    queryFn: async () => {
-      const response = await fetch(`/api/products/${productId}/reviews`);
-      if (!response.ok) throw new Error("Failed to fetch reviews");
-      return response.json();
-    },
-    enabled: !!productId,
-  });
-
   const { data: wishlistData } = useQuery({
     queryKey: ["/api/wishlist"],
   });
@@ -159,34 +149,40 @@ export default function ProductDetailPage() {
   // Frequently bought together (random products for demo)
   const frequentlyBoughtTogether = allProducts?.slice(0, 3) || [];
 
-  // Format reviews with relative dates
-  const formattedReviews = reviews.map((review: any) => ({
-    ...review,
-    date: formatDate(review.createdAt),
-    content: review.comment,
-    verified: true, // All reviews are verified since they come from registered users
-  }));
+  // Mock reviews data
+  const mockReviews = [
+    {
+      id: 1,
+      author: "John D.",
+      rating: 5,
+      date: "2 weeks ago",
+      title: "Excellent printer for home office",
+      content: "Great print quality and easy WiFi setup. The HP Smart app makes printing from my phone super convenient.",
+      verified: true,
+    },
+    {
+      id: 2,
+      author: "Sarah M.",
+      rating: 4,
+      date: "1 month ago",
+      title: "Good value for money",
+      content: "Works well for everyday printing. Setup was straightforward. Only wish the paper tray was larger.",
+      verified: true,
+    },
+    {
+      id: 3,
+      author: "Mike R.",
+      rating: 5,
+      date: "1 month ago",
+      title: "Perfect for students",
+      content: "Bought this for my daughter's college dorm. Compact size and wireless printing are perfect. Print quality is excellent.",
+      verified: true,
+    },
+  ];
 
   const filteredReviews = reviewFilter === "all" 
-    ? formattedReviews 
-    : formattedReviews.filter(r => r.rating === parseInt(reviewFilter));
-
-  // Helper function to format dates as relative time
-  function formatDate(dateString: string): string {
-    const date = new Date(dateString);
-    const now = new Date();
-    const diffInMs = now.getTime() - date.getTime();
-    const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-    
-    if (diffInDays === 0) return "Today";
-    if (diffInDays === 1) return "Yesterday";
-    if (diffInDays < 7) return `${diffInDays} days ago`;
-    if (diffInDays < 14) return "1 week ago";
-    if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`;
-    if (diffInDays < 60) return "1 month ago";
-    if (diffInDays < 365) return `${Math.floor(diffInDays / 30)} months ago`;
-    return `${Math.floor(diffInDays / 365)} year${Math.floor(diffInDays / 365) > 1 ? 's' : ''} ago`;
-  }
+    ? mockReviews 
+    : mockReviews.filter(r => r.rating === parseInt(reviewFilter));
 
   return (
     <div className="min-h-screen bg-background">

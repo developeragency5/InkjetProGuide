@@ -348,16 +348,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Product reviews route
-  app.get("/api/products/:id/reviews", async (req, res) => {
-    try {
-      const reviews = await storage.getProductReviews(req.params.id);
-      res.json(reviews);
-    } catch (error: any) {
-      res.status(500).json({ message: error.message });
-    }
-  });
-
   // Cart routes (support both authenticated and guest users)
   app.get("/api/cart", async (req, res) => {
     try {
