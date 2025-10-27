@@ -365,9 +365,12 @@ export default function ComparisonPage() {
                     const mobilePrinting = getSpecValue(product, feature);
                     return mobilePrinting !== "N/A" && mobilePrinting.length > 0;
                   }
+                  
                   const connectivity = getSpecValue(product, feature);
-                  return connectivity.toLowerCase().includes(feature.toLowerCase()) || 
-                         connectivity.toLowerCase().includes(featureNames[feature].toLowerCase());
+                  const normalizedConnectivity = connectivity.toLowerCase().replace(/[-\s®]/g, "");
+                  const normalizedFeature = feature.toLowerCase().replace(/[-\s®]/g, "");
+                  
+                  return normalizedConnectivity.includes(normalizedFeature);
                 };
                 
                 return (
