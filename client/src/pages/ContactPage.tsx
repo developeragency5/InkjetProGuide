@@ -45,8 +45,8 @@ export default function ContactPage() {
               <p className="text-sm text-muted-foreground mb-2">
                 Call us toll-free (24/7 Support)
               </p>
-              <a href="tel:+18005551234" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
-                1-800-555-1234
+              <a href="tel:+18884674377" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
+                1-888-467-4377
               </a>
             </CardContent>
           </Card>

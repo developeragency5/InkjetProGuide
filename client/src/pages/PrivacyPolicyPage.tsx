@@ -284,7 +284,7 @@ export default function PrivacyPolicyPage() {
                 <li data-testid="text-right-6"><strong className="text-foreground">Object to Processing:</strong> Object to our processing of your personal information</li>
               </ul>
               <p className="mt-4" data-testid="text-rights-exercise">
-                To exercise any of these rights, please contact us at <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-rights">support@injetproguide.com</a> or call <a href="tel:+18005551234" className="text-primary hover:underline" data-testid="link-phone-rights">1-800-555-1234</a>. We will respond to your request within 30 days.
+                To exercise any of these rights, please contact us at <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-rights">support@injetproguide.com</a> or call <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-rights">1-888-467-4377</a>. We will respond to your request within 30 days.
               </p>
             </CardContent>
           </Card>
@@ -418,8 +418,8 @@ export default function PrivacyPolicyPage() {
                   <FileText className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1" data-testid="heading-phone-contact">Phone</h3>
-                    <a href="tel:+18005551234" className="text-primary hover:underline" data-testid="link-phone-contact">
-                      1-800-555-1234
+                    <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-contact">
+                      1-888-467-4377
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">Available 24/7</p>
                   </div>

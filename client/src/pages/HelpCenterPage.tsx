@@ -335,8 +335,8 @@ export default function HelpCenterPage() {
                   </div>
                   <h3 className="font-semibold mb-2">Call Us</h3>
                   <p className="text-sm text-muted-foreground mb-2">Available 24/7</p>
-                  <a href="tel:+18005551234" className="text-primary hover:underline font-medium" data-testid="link-phone-support-help">
-                    1-800-555-1234
+                  <a href="tel:+18884674377" className="text-primary hover:underline font-medium" data-testid="link-phone-support-help">
+                    1-888-467-4377
                   </a>
                 </div>
                 <div className="text-center">
