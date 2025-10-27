@@ -574,7 +574,7 @@ export default function ComparisonPage() {
                 {comparedProducts.map((product) => (
                   <td key={product.id} className="border p-4 text-center">
                     <Button variant="outline" asChild className="w-full" data-testid={`button-view-${product.id}`}>
-                      <Link href={`/products/${product.id}`}>View Details</Link>
+                      <Link href={`/product/${product.id}`}>View Details</Link>
                     </Button>
                   </td>
                 ))}
