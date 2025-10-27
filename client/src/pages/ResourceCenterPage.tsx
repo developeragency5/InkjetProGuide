@@ -374,9 +374,11 @@ export default function ResourceCenterPage() {
                   <Mail className="w-5 h-5 mr-2" />
                   Email Support
                 </Button>
-                <Button size="lg" variant="outline" data-testid="button-phone-support">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 1-800-INJET-PRO
+                <Button size="lg" variant="outline" asChild data-testid="button-phone-support">
+                  <a href="tel:+18884674377">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call 1-888-467-4377
+                  </a>
                 </Button>
               </div>
 

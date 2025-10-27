@@ -379,9 +379,11 @@ export default function FaqPage() {
                   <Mail className="w-4 h-4 mr-2" />
                   Email Support
                 </Button>
-                <Button variant="outline" data-testid="button-phone-support">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call: 1-800-INJET-PRO
+                <Button variant="outline" asChild data-testid="button-phone-support">
+                  <a href="tel:+18884674377">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call: 1-888-467-4377
+                  </a>
                 </Button>
               </div>
             </div>
