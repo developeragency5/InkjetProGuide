@@ -149,6 +149,13 @@ export const inkCartridges = pgTable("ink_cartridges", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+// Newsletter subscribers table
+export const newsletterSubscribers = pgTable("newsletter_subscribers", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  email: text("email").notNull().unique(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 // Relations
 export const usersRelations = relations(users, ({ many }) => ({
   cartItems: many(cartItems),
@@ -305,6 +312,13 @@ export const insertInkCartridgeSchema = createInsertSchema(inkCartridges).omit({
   createdAt: true,
 });
 
+export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSubscribers).omit({
+  id: true,
+  createdAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -328,3 +342,5 @@ export type Faq = typeof faqs.$inferSelect;
 export type InsertFaq = z.infer<typeof insertFaqSchema>;
 export type InkCartridge = typeof inkCartridges.$inferSelect;
 export type InsertInkCartridge = z.infer<typeof insertInkCartridgeSchema>;
+export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;
