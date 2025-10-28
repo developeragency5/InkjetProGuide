@@ -287,7 +287,7 @@ export default function HomePage() {
                 <Link href="/contact" className="flex-1 sm:flex-initial">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold px-8 border-2" data-testid="button-get-help">
                     <Headphones className="mr-2 w-4 h-4" />
-                    Get Expert Help
+                    Get Help
                   </Button>
                 </Link>
               </div>
