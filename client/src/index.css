@@ -103,6 +103,10 @@
   /* Status colors */
   --status-online: 142 71% 45%;  /* Green for in stock */
   --status-offline: 0 0% 60%;  /* Gray for out of stock */
+  
+  /* Success color for positive actions */
+  --success: 142 76% 36%;  /* Green for success actions */
+  --success-foreground: 0 0% 100%;  /* White text on success */
 
   /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
 
@@ -133,6 +137,10 @@
   /* Fallback for older browsers */
   --destructive-border: hsl(var(--destructive));
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  
+  /* Fallback for older browsers */
+  --success-border: hsl(var(--success));
+  --success-border: hsl(from hsl(var(--success)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
 /* DARK MODE - Elegant Dark Gold Theme */
@@ -199,6 +207,9 @@
   --destructive: 0 84% 60%;
 
   --destructive-foreground: 0 0% 100%;
+  
+  --success: 142 71% 45%;  /* Brighter green in dark mode */
+  --success-foreground: 0 0% 100%;
 
   --input: 30 15% 28%;
   --ring: 43 74% 58%;
