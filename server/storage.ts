@@ -10,6 +10,8 @@ import {
   faqs,
   inkCartridges,
   newsletterSubscribers,
+  seoSettings,
+  contentPages,
   type User, 
   type InsertUser, 
   type Product,
@@ -30,6 +32,10 @@ import {
   type InsertInkCartridge,
   type NewsletterSubscriber,
   type InsertNewsletterSubscriber,
+  type SeoSetting,
+  type InsertSeoSetting,
+  type ContentPage,
+  type InsertContentPage,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, sql, desc } from "drizzle-orm";
@@ -111,6 +117,21 @@ export interface IStorage {
   // Newsletter subscription operations
   subscribeToNewsletter(email: string): Promise<NewsletterSubscriber>;
   isEmailSubscribed(email: string): Promise<boolean>;
+
+  // SEO settings operations
+  getAllSeoSettings(): Promise<SeoSetting[]>;
+  getSeoSettingByPage(page: string): Promise<SeoSetting | undefined>;
+  createSeoSetting(seoSetting: InsertSeoSetting): Promise<SeoSetting>;
+  updateSeoSetting(id: string, seoSetting: Partial<InsertSeoSetting>): Promise<SeoSetting>;
+  deleteSeoSetting(id: string): Promise<void>;
+
+  // Content pages operations
+  getAllContentPages(): Promise<ContentPage[]>;
+  getContentPage(id: string): Promise<ContentPage | undefined>;
+  getContentPageBySlug(slug: string): Promise<ContentPage | undefined>;
+  createContentPage(contentPage: InsertContentPage): Promise<ContentPage>;
+  updateContentPage(id: string, contentPage: Partial<InsertContentPage>): Promise<ContentPage>;
+  deleteContentPage(id: string): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -773,6 +794,100 @@ export class DatabaseStorage implements IStorage {
       .from(newsletterSubscribers)
       .where(eq(newsletterSubscribers.email, normalizedEmail));
     return !!subscriber;
+  }
+
+  // SEO settings operations
+  async getAllSeoSettings(): Promise<SeoSetting[]> {
+    return await db
+      .select()
+      .from(seoSettings)
+      .orderBy(seoSettings.page);
+  }
+
+  async getSeoSettingByPage(page: string): Promise<SeoSetting | undefined> {
+    const [setting] = await db
+      .select()
+      .from(seoSettings)
+      .where(eq(seoSettings.page, page));
+    return setting || undefined;
+  }
+
+  async createSeoSetting(seoSetting: InsertSeoSetting): Promise<SeoSetting> {
+    const [newSetting] = await db
+      .insert(seoSettings)
+      .values({
+        ...seoSetting,
+        updatedAt: new Date(),
+      })
+      .returning();
+    return newSetting;
+  }
+
+  async updateSeoSetting(id: string, seoSetting: Partial<InsertSeoSetting>): Promise<SeoSetting> {
+    const [updatedSetting] = await db
+      .update(seoSettings)
+      .set({
+        ...seoSetting,
+        updatedAt: new Date(),
+      })
+      .where(eq(seoSettings.id, id))
+      .returning();
+    return updatedSetting;
+  }
+
+  async deleteSeoSetting(id: string): Promise<void> {
+    await db.delete(seoSettings).where(eq(seoSettings.id, id));
+  }
+
+  // Content pages operations
+  async getAllContentPages(): Promise<ContentPage[]> {
+    return await db
+      .select()
+      .from(contentPages)
+      .orderBy(desc(contentPages.updatedAt));
+  }
+
+  async getContentPage(id: string): Promise<ContentPage | undefined> {
+    const [page] = await db
+      .select()
+      .from(contentPages)
+      .where(eq(contentPages.id, id));
+    return page || undefined;
+  }
+
+  async getContentPageBySlug(slug: string): Promise<ContentPage | undefined> {
+    const [page] = await db
+      .select()
+      .from(contentPages)
+      .where(eq(contentPages.slug, slug));
+    return page || undefined;
+  }
+
+  async createContentPage(contentPage: InsertContentPage): Promise<ContentPage> {
+    const [newPage] = await db
+      .insert(contentPages)
+      .values({
+        ...contentPage,
+        updatedAt: new Date(),
+      })
+      .returning();
+    return newPage;
+  }
+
+  async updateContentPage(id: string, contentPage: Partial<InsertContentPage>): Promise<ContentPage> {
+    const [updatedPage] = await db
+      .update(contentPages)
+      .set({
+        ...contentPage,
+        updatedAt: new Date(),
+      })
+      .where(eq(contentPages.id, id))
+      .returning();
+    return updatedPage;
+  }
+
+  async deleteContentPage(id: string): Promise<void> {
+    await db.delete(contentPages).where(eq(contentPages.id, id));
   }
 }
 
