@@ -12,6 +12,8 @@ import {
   newsletterSubscribers,
   seoSettings,
   contentPages,
+  sitemapConfig,
+  robotsTxtConfig,
   type User, 
   type InsertUser, 
   type Product,
@@ -36,6 +38,10 @@ import {
   type InsertSeoSetting,
   type ContentPage,
   type InsertContentPage,
+  type SitemapConfig,
+  type InsertSitemapConfig,
+  type RobotsTxtConfig,
+  type InsertRobotsTxtConfig,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, sql, desc } from "drizzle-orm";
@@ -132,6 +138,14 @@ export interface IStorage {
   createContentPage(contentPage: InsertContentPage): Promise<ContentPage>;
   updateContentPage(id: string, contentPage: Partial<InsertContentPage>): Promise<ContentPage>;
   deleteContentPage(id: string): Promise<void>;
+
+  // Sitemap config operations (singleton pattern)
+  getSitemapConfig(): Promise<SitemapConfig | null>;
+  createOrUpdateSitemapConfig(data: InsertSitemapConfig): Promise<SitemapConfig>;
+
+  // Robots.txt config operations (singleton pattern)
+  getRobotsTxtConfig(): Promise<RobotsTxtConfig | null>;
+  createOrUpdateRobotsTxtConfig(data: InsertRobotsTxtConfig): Promise<RobotsTxtConfig>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -888,6 +902,74 @@ export class DatabaseStorage implements IStorage {
 
   async deleteContentPage(id: string): Promise<void> {
     await db.delete(contentPages).where(eq(contentPages.id, id));
+  }
+
+  // Sitemap config operations (singleton pattern)
+  async getSitemapConfig(): Promise<SitemapConfig | null> {
+    const [config] = await db.select().from(sitemapConfig).limit(1);
+    return config || null;
+  }
+
+  async createOrUpdateSitemapConfig(data: InsertSitemapConfig): Promise<SitemapConfig> {
+    // Check if config already exists
+    const existingConfig = await this.getSitemapConfig();
+
+    if (existingConfig) {
+      // Update existing config
+      const [updatedConfig] = await db
+        .update(sitemapConfig)
+        .set({
+          ...data,
+          updatedAt: new Date(),
+        })
+        .where(eq(sitemapConfig.id, existingConfig.id))
+        .returning();
+      return updatedConfig;
+    } else {
+      // Create new config
+      const [newConfig] = await db
+        .insert(sitemapConfig)
+        .values({
+          ...data,
+          updatedAt: new Date(),
+        })
+        .returning();
+      return newConfig;
+    }
+  }
+
+  // Robots.txt config operations (singleton pattern)
+  async getRobotsTxtConfig(): Promise<RobotsTxtConfig | null> {
+    const [config] = await db.select().from(robotsTxtConfig).limit(1);
+    return config || null;
+  }
+
+  async createOrUpdateRobotsTxtConfig(data: InsertRobotsTxtConfig): Promise<RobotsTxtConfig> {
+    // Check if config already exists
+    const existingConfig = await this.getRobotsTxtConfig();
+
+    if (existingConfig) {
+      // Update existing config
+      const [updatedConfig] = await db
+        .update(robotsTxtConfig)
+        .set({
+          ...data,
+          updatedAt: new Date(),
+        })
+        .where(eq(robotsTxtConfig.id, existingConfig.id))
+        .returning();
+      return updatedConfig;
+    } else {
+      // Create new config
+      const [newConfig] = await db
+        .insert(robotsTxtConfig)
+        .values({
+          ...data,
+          updatedAt: new Date(),
+        })
+        .returning();
+      return newConfig;
+    }
   }
 }
 
