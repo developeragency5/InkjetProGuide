@@ -5,7 +5,12 @@ import session from "express-session";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcryptjs";
-import { insertUserSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
+import { 
+  insertUserSchema, 
+  insertNewsletterSubscriberSchema,
+  insertSitemapConfigSchema,
+  insertRobotsTxtConfigSchema,
+} from "@shared/schema";
 import memorystore from "memorystore";
 
 const MemoryStore = memorystore(session);
@@ -421,6 +426,78 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ message: "Content page deleted successfully" });
     } catch (error: any) {
       res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Admin sitemap configuration routes
+  app.get("/api/admin/sitemap/config", requireAdmin, async (req, res) => {
+    try {
+      let config = await storage.getSitemapConfig();
+      
+      // Create default config if it doesn't exist
+      if (!config) {
+        config = await storage.createOrUpdateSitemapConfig({
+          enabled: true,
+          includeProducts: true,
+          includeCategories: true,
+          includePages: true,
+          changefreq: "weekly",
+          priority: "0.8",
+        });
+      }
+      
+      res.json(config);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.put("/api/admin/sitemap/config", requireAdmin, async (req, res) => {
+    try {
+      const validatedData = insertSitemapConfigSchema.parse(req.body);
+      const config = await storage.createOrUpdateSitemapConfig(validatedData);
+      res.json(config);
+    } catch (error: any) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  // Admin robots.txt configuration routes
+  app.get("/api/admin/robots-txt/config", requireAdmin, async (req, res) => {
+    try {
+      let config = await storage.getRobotsTxtConfig();
+      
+      // Create default config if it doesn't exist
+      if (!config) {
+        const defaultContent = `# Robots.txt configuration for InkjetProGuide
+User-agent: *
+Allow: /
+
+# Disallow admin and API endpoints
+Disallow: /admin
+Disallow: /api
+
+# Sitemap location
+Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
+
+        config = await storage.createOrUpdateRobotsTxtConfig({
+          content: defaultContent,
+        });
+      }
+      
+      res.json(config);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.put("/api/admin/robots-txt/config", requireAdmin, async (req, res) => {
+    try {
+      const validatedData = insertRobotsTxtConfigSchema.parse(req.body);
+      const config = await storage.createOrUpdateRobotsTxtConfig(validatedData);
+      res.json(config);
+    } catch (error: any) {
+      res.status(400).json({ message: error.message });
     }
   });
 
