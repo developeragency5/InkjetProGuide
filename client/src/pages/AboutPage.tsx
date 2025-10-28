@@ -58,7 +58,7 @@ export default function AboutPage() {
     {
       icon: Package,
       title: "Easy Returns",
-      description: "30-day money-back guarantee with hassle-free returns and exchanges."
+      description: "Hassle-free returns and exchanges within 30 days of purchase."
     },
     {
       icon: Zap,
@@ -272,7 +272,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-5">Complete Satisfaction Guarantee</h4>
                     <p className="text-muted-foreground">
-                      30-day money-back guarantee, easy returns, and lifetime support for all your printing needs.
+                      Easy returns within 30 days and lifetime support for all your printing needs.
                     </p>
                   </div>
                 </div>

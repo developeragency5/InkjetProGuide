@@ -33,7 +33,7 @@ export default function RefundPolicyPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-summary-1">
-                <strong className="text-foreground">30-Day Money-Back Guarantee:</strong> Return any HP inkjet printer within 30 days of delivery for a full refund.
+                <strong className="text-foreground">30-Day Return Policy:</strong> Return any HP inkjet printer within 30 days of delivery for a full refund.
               </p>
               <p data-testid="text-summary-2">
                 <strong className="text-foreground">Free Return Shipping:</strong> We provide prepaid return labels for all eligible returns.

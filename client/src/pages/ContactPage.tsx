@@ -184,7 +184,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">Can I return a printer?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Absolutely. We offer a 30-day money-back guarantee on all purchases.
+                    Absolutely. We offer hassle-free returns within 30 days on all purchases.
                   </p>
                 </div>
               </CardContent>

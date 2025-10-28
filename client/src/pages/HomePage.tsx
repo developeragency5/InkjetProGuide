@@ -597,7 +597,7 @@ export default function HomePage() {
                 <ul className="space-y-2 text-sm text-left">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-status-online" />
-                    30-day money-back guarantee
+                    Hassle-free returns
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-status-online" />
@@ -977,7 +977,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-semibold text-xl mb-3">Easy Returns</h3>
                 <p className="text-muted-foreground">
-                  30-day money-back guarantee. Not satisfied? Return it for a full refund, no questions asked.
+                  Hassle-free returns within 30 days. Not satisfied? Return it for a full refund, no questions asked.
                 </p>
               </CardContent>
             </Card>

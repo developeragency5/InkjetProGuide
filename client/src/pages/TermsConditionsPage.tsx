@@ -236,7 +236,7 @@ export default function TermsConditionsPage() {
           <Card className="border-primary/50">
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-returns-intro">
-                We offer a <strong className="text-foreground">30-day money-back guarantee</strong> on all HP inkjet printers purchased through InkjetProGuide. Please review our complete return policy for detailed information.
+                We offer <strong className="text-foreground">hassle-free returns within 30 days</strong> on all HP inkjet printers purchased through InkjetProGuide. Please review our complete return policy for detailed information.
               </p>
               <div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-return-conditions">
