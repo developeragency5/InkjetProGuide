@@ -5,10 +5,10 @@ import { Link } from "wouter";
 
 export default function AboutPage() {
   const stats = [
-    { value: "10,000+", label: "Happy Customers" },
-    { value: "50+", label: "HP Printer Models" },
-    { value: "99.9%", label: "Customer Satisfaction" },
-    { value: "Office Hours", label: "Trusted Support" },
+    { value: "5,000+", label: "Happy Customers" },
+    { value: "25+", label: "HP Printer Models" },
+    { value: "96%", label: "Customer Satisfaction" },
+    { value: "2-3 Days", label: "Fast Delivery" },
   ];
 
   const values = [

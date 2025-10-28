@@ -316,7 +316,7 @@ export default function AuthPage() {
                 </form>
               </Form>
               <p className="text-center text-sm text-muted-foreground mt-4">
-                Join 50,000+ satisfied customers
+                Join 5,000+ satisfied customers
               </p>
             </TabsContent>
           </Tabs>

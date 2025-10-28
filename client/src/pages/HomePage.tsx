@@ -160,7 +160,7 @@ export default function HomePage() {
                 <Users className="w-6 h-6" />
               </div>
               <div>
-                <div className="text-2xl font-bold">50,000+</div>
+                <div className="text-2xl font-bold">5,000+</div>
                 <div className="text-sm text-white/90">Happy Customers</div>
               </div>
             </div>
@@ -220,7 +220,7 @@ export default function HomePage() {
               {/* Top Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
                 <Award className="w-4 h-4 text-primary" />
-                <span className="text-sm font-semibold text-primary">Trusted by 50,000+ Customers</span>
+                <span className="text-sm font-semibold text-primary">Trusted by 5,000+ Customers</span>
               </div>
 
               {/* Main Heading */}
@@ -1091,7 +1091,7 @@ export default function HomePage() {
             </Button>
           </form>
           <p className="text-sm mt-4 text-muted-foreground">
-            Join 50,000+ subscribers • No spam, unsubscribe anytime
+            Join 5,000+ subscribers • No spam, unsubscribe anytime
           </p>
         </div>
       </section>
