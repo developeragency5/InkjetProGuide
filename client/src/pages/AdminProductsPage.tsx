@@ -21,7 +21,7 @@ export default function AdminProductsPage() {
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
 
   // Check admin authentication
-  const { data: authCheck, isLoading: authLoading } = useQuery({
+  const { data: authCheck, isLoading: authLoading } = useQuery<{ authenticated: boolean }>({
     queryKey: ["/api/admin/check"],
   });
 
@@ -186,11 +186,23 @@ export default function AdminProductsPage() {
   );
 }
 
+// Helper function to generate slug from product name
+function generateSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with single hyphen
+    .trim();
+}
+
 // Product Form Component
 function ProductForm({ product, onClose }: { product: Product | null; onClose: () => void }) {
   const { toast } = useToast();
+  const [slugManuallyEdited, setSlugManuallyEdited] = useState(!!product);
   const [formData, setFormData] = useState({
     name: product?.name || "",
+    slug: product?.slug || "",
     description: product?.description || "",
     price: product?.price || "",
     originalPrice: product?.originalPrice || "",
@@ -200,7 +212,20 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
     inStock: product?.inStock ?? true,
     specifications: product?.specifications || "{}",
     features: product?.features?.join("\n") || "",
+    metaTitle: product?.metaTitle || "",
+    metaDescription: product?.metaDescription || "",
+    metaKeywords: product?.metaKeywords?.join(", ") || "",
   });
+  
+  // Auto-generate slug from name when creating new product
+  const handleNameChange = (name: string) => {
+    setFormData(prev => ({
+      ...prev,
+      name,
+      // Only auto-generate slug if creating new product and slug hasn't been manually edited
+      ...(!slugManuallyEdited ? { slug: generateSlug(name) } : {})
+    }));
+  };
 
   const saveMutation = useMutation({
     mutationFn: (data: any) => {
@@ -217,10 +242,16 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
       });
       onClose();
     },
-    onError: () => {
+    onError: (error: any) => {
+      const errorMessage = error?.message || "Failed to save product";
+      const isSlugError = errorMessage.toLowerCase().includes("slug") || 
+                         errorMessage.toLowerCase().includes("unique");
+      
       toast({
         title: "Save failed",
-        description: "Failed to save product",
+        description: isSlugError 
+          ? "A product with this slug already exists. Please use a different slug."
+          : errorMessage,
         variant: "destructive",
       });
     },
@@ -229,8 +260,20 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validate slug format
+    const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+    if (!slugRegex.test(formData.slug)) {
+      toast({
+        title: "Invalid slug",
+        description: "Slug must contain only lowercase letters, numbers, and hyphens",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     const data = {
       name: formData.name,
+      slug: formData.slug,
       description: formData.description,
       price: formData.price,
       originalPrice: formData.originalPrice || null,
@@ -240,6 +283,11 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
       inStock: formData.inStock,
       specifications: formData.specifications,
       features: formData.features.split("\n").filter(f => f.trim()),
+      metaTitle: formData.metaTitle || null,
+      metaDescription: formData.metaDescription || null,
+      metaKeywords: formData.metaKeywords 
+        ? formData.metaKeywords.split(",").map(k => k.trim()).filter(k => k)
+        : null,
     };
 
     saveMutation.mutate(data);
@@ -252,8 +300,9 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <Label htmlFor="name">Product Name</Label>
           <Input
             id="name"
+            data-testid="input-product-name"
             value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            onChange={(e) => handleNameChange(e.target.value)}
             required
           />
         </div>
@@ -261,17 +310,39 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <Label htmlFor="category">Category</Label>
           <Input
             id="category"
+            data-testid="input-product-category"
             value={formData.category}
             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
             required
           />
         </div>
       </div>
+      
+      <div className="space-y-2">
+        <Label htmlFor="slug">
+          SEO Slug <span className="text-destructive">*</span>
+        </Label>
+        <Input
+          id="slug"
+          data-testid="input-product-slug"
+          value={formData.slug}
+          onChange={(e) => {
+            setSlugManuallyEdited(true);
+            setFormData({ ...formData, slug: e.target.value });
+          }}
+          placeholder="hp-deskjet-3755"
+          required
+        />
+        <p className="text-xs text-muted-foreground">
+          SEO-friendly URL slug (lowercase, hyphens only). Example: hp-deskjet-3755
+        </p>
+      </div>
 
       <div className="space-y-2">
         <Label htmlFor="description">Description</Label>
         <Textarea
           id="description"
+          data-testid="input-product-description"
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
           rows={3}
@@ -284,6 +355,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <Label htmlFor="price">Price</Label>
           <Input
             id="price"
+            data-testid="input-product-price"
             type="number"
             step="0.01"
             value={formData.price}
@@ -295,6 +367,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <Label htmlFor="originalPrice">Original Price (optional)</Label>
           <Input
             id="originalPrice"
+            data-testid="input-product-original-price"
             type="number"
             step="0.01"
             value={formData.originalPrice}
@@ -308,6 +381,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <Label htmlFor="stock">Stock Quantity</Label>
           <Input
             id="stock"
+            data-testid="input-product-stock"
             type="number"
             value={formData.stock}
             onChange={(e) => setFormData({ ...formData, stock: e.target.value })}
@@ -318,6 +392,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <Label htmlFor="inStock">In Stock</Label>
           <select
             id="inStock"
+            data-testid="select-product-in-stock"
             value={formData.inStock.toString()}
             onChange={(e) => setFormData({ ...formData, inStock: e.target.value === "true" })}
             className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors"
@@ -332,6 +407,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
         <Label htmlFor="image">Image URL</Label>
         <Input
           id="image"
+          data-testid="input-product-image"
           value={formData.image}
           onChange={(e) => setFormData({ ...formData, image: e.target.value })}
           required
@@ -342,6 +418,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
         <Label htmlFor="features">Features (one per line)</Label>
         <Textarea
           id="features"
+          data-testid="input-product-features"
           value={formData.features}
           onChange={(e) => setFormData({ ...formData, features: e.target.value })}
           rows={4}
@@ -353,11 +430,68 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
         <Label htmlFor="specifications">Specifications (JSON)</Label>
         <Textarea
           id="specifications"
+          data-testid="input-product-specifications"
           value={formData.specifications}
           onChange={(e) => setFormData({ ...formData, specifications: e.target.value })}
           rows={4}
           placeholder='{"key": "value"}'
         />
+      </div>
+
+      {/* SEO Fields Section */}
+      <div className="space-y-4 pt-4 border-t">
+        <h3 className="text-lg font-semibold">SEO Settings</h3>
+        
+        <div className="space-y-2">
+          <Label htmlFor="metaTitle">
+            Meta Title <span className="text-xs text-muted-foreground">(optional)</span>
+          </Label>
+          <Input
+            id="metaTitle"
+            data-testid="input-product-meta-title"
+            value={formData.metaTitle}
+            onChange={(e) => setFormData({ ...formData, metaTitle: e.target.value })}
+            placeholder="Custom meta title for search engines"
+            maxLength={60}
+          />
+          <p className="text-xs text-muted-foreground">
+            {formData.metaTitle.length}/60 characters
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="metaDescription">
+            Meta Description <span className="text-xs text-muted-foreground">(optional)</span>
+          </Label>
+          <Textarea
+            id="metaDescription"
+            data-testid="input-product-meta-description"
+            value={formData.metaDescription}
+            onChange={(e) => setFormData({ ...formData, metaDescription: e.target.value })}
+            placeholder="Brief description for search results"
+            rows={3}
+            maxLength={160}
+          />
+          <p className="text-xs text-muted-foreground">
+            {formData.metaDescription.length}/160 characters
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="metaKeywords">
+            Meta Keywords <span className="text-xs text-muted-foreground">(optional)</span>
+          </Label>
+          <Input
+            id="metaKeywords"
+            data-testid="input-product-meta-keywords"
+            value={formData.metaKeywords}
+            onChange={(e) => setFormData({ ...formData, metaKeywords: e.target.value })}
+            placeholder="hp printer, inkjet, wireless, color"
+          />
+          <p className="text-xs text-muted-foreground">
+            Comma-separated keywords for search engines
+          </p>
+        </div>
       </div>
 
       <div className="flex gap-3">
