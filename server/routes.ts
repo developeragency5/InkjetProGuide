@@ -15,6 +15,8 @@ import {
 } from "@shared/schema";
 import memorystore from "memorystore";
 import { generateSitemap } from "./services/sitemapGenerator";
+import { runSeoAudit } from "./services/seoAuditService";
+import { generateAuditPdf } from "./services/pdfReportGenerator";
 import { eq } from "drizzle-orm";
 
 const MemoryStore = memorystore(session);
@@ -562,6 +564,186 @@ Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
       res.json(config);
     } catch (error: any) {
       res.status(400).json({ message: error.message });
+    }
+  });
+
+  // Admin SEO audit routes
+  app.post("/api/admin/seo-audit/start", requireAdmin, async (req, res) => {
+    try {
+      // Create a new audit job
+      const job = await storage.createSeoAuditJob();
+      
+      // Get base URL from request
+      const baseUrl = `${req.protocol}://${req.get('host')}`;
+      
+      // Run the audit asynchronously (fire and forget)
+      runSeoAudit(storage, baseUrl, job.id).catch((error) => {
+        console.error("SEO audit failed:", error);
+      });
+      
+      // Return the job immediately
+      res.json({
+        jobId: job.id,
+        status: job.status,
+        message: "SEO audit started successfully",
+      });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/admin/seo-audit/jobs", requireAdmin, async (req, res) => {
+    try {
+      const jobs = await storage.getAllSeoAuditJobs();
+      res.json(jobs);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/admin/seo-audit/jobs/:id", requireAdmin, async (req, res) => {
+    try {
+      const job = await storage.getSeoAuditJob(req.params.id);
+      
+      if (!job) {
+        return res.status(404).json({ message: "Audit job not found" });
+      }
+      
+      // If job is completed, include results
+      let results = null;
+      if (job.status === "completed") {
+        results = await storage.getSeoAuditResults(job.id);
+      }
+      
+      res.json({
+        job,
+        results,
+      });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/admin/seo-audit/jobs/:id/results", requireAdmin, async (req, res) => {
+    try {
+      const job = await storage.getSeoAuditJob(req.params.id);
+      
+      if (!job) {
+        return res.status(404).json({ message: "Audit job not found" });
+      }
+      
+      const results = await storage.getSeoAuditResults(job.id);
+      
+      // Calculate summary statistics
+      const summary = {
+        totalPages: job.scannedPages || 0,
+        totalIssues: 0,
+        criticalIssues: 0,
+        warnings: 0,
+        categories: {
+          missingTitles: 0,
+          missingDescriptions: 0,
+          duplicateTitles: 0,
+          duplicateDescriptions: 0,
+          missingH1: 0,
+          multipleH1: 0,
+          imagesWithoutAlt: 0,
+          brokenLinks: 0,
+          notMobileFriendly: 0,
+        },
+      };
+      
+      results.forEach((result) => {
+        // Count issues
+        if (result.hasMissingTitle) {
+          summary.totalIssues++;
+          summary.criticalIssues++;
+          summary.categories.missingTitles++;
+        }
+        if (result.hasMissingDescription) {
+          summary.totalIssues++;
+          summary.criticalIssues++;
+          summary.categories.missingDescriptions++;
+        }
+        if (result.hasDuplicateTitle) {
+          summary.totalIssues++;
+          summary.warnings++;
+          summary.categories.duplicateTitles++;
+        }
+        if (result.hasDuplicateDescription) {
+          summary.totalIssues++;
+          summary.warnings++;
+          summary.categories.duplicateDescriptions++;
+        }
+        if (result.missingH1) {
+          summary.totalIssues++;
+          summary.criticalIssues++;
+          summary.categories.missingH1++;
+        }
+        if (result.multipleH1) {
+          summary.totalIssues++;
+          summary.warnings++;
+          summary.categories.multipleH1++;
+        }
+        if (result.imagesWithoutAlt && result.imagesWithoutAlt > 0) {
+          summary.totalIssues += result.imagesWithoutAlt;
+          summary.warnings += result.imagesWithoutAlt;
+          summary.categories.imagesWithoutAlt += result.imagesWithoutAlt;
+        }
+        if (result.brokenLinkCount && result.brokenLinkCount > 0) {
+          summary.totalIssues += result.brokenLinkCount;
+          summary.criticalIssues += result.brokenLinkCount;
+          summary.categories.brokenLinks += result.brokenLinkCount;
+        }
+        if (!result.isMobileFriendly) {
+          summary.totalIssues++;
+          summary.warnings++;
+          summary.categories.notMobileFriendly++;
+        }
+      });
+      
+      res.json({
+        job,
+        results,
+        summary,
+      });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/admin/seo-audit/jobs/:id/pdf", requireAdmin, async (req, res) => {
+    try {
+      const job = await storage.getSeoAuditJob(req.params.id);
+      
+      if (!job) {
+        return res.status(404).json({ message: "Audit job not found" });
+      }
+      
+      if (job.status !== "completed") {
+        return res.status(400).json({ 
+          message: "Cannot generate PDF for incomplete audit job" 
+        });
+      }
+      
+      const results = await storage.getSeoAuditResults(job.id);
+      
+      // Generate PDF
+      const pdfBuffer = await generateAuditPdf(job, results);
+      
+      // Set response headers
+      res.setHeader("Content-Type", "application/pdf");
+      res.setHeader(
+        "Content-Disposition", 
+        `attachment; filename="seo-audit-report-${job.id}.pdf"`
+      );
+      res.setHeader("Content-Length", pdfBuffer.length);
+      
+      // Send PDF buffer
+      res.send(pdfBuffer);
+    } catch (error: any) {
+      console.error("Error generating PDF:", error);
+      res.status(500).json({ message: "Error generating PDF report: " + error.message });
     }
   });
 

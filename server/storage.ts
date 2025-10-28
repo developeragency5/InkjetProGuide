@@ -14,6 +14,8 @@ import {
   contentPages,
   sitemapConfig,
   robotsTxtConfig,
+  seoAuditJobs,
+  seoAuditResults,
   type User, 
   type InsertUser, 
   type Product,
@@ -42,6 +44,10 @@ import {
   type InsertSitemapConfig,
   type RobotsTxtConfig,
   type InsertRobotsTxtConfig,
+  type SeoAuditJob,
+  type InsertSeoAuditJob,
+  type SeoAuditResult,
+  type InsertSeoAuditResult,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, sql, desc } from "drizzle-orm";
@@ -146,6 +152,19 @@ export interface IStorage {
   // Robots.txt config operations (singleton pattern)
   getRobotsTxtConfig(): Promise<RobotsTxtConfig | null>;
   createOrUpdateRobotsTxtConfig(data: InsertRobotsTxtConfig): Promise<RobotsTxtConfig>;
+
+  // SEO Audit Job operations
+  createSeoAuditJob(): Promise<SeoAuditJob>;
+  getSeoAuditJob(id: string): Promise<SeoAuditJob | null>;
+  getLatestSeoAuditJob(): Promise<SeoAuditJob | null>;
+  updateSeoAuditJob(id: string, data: Partial<SeoAuditJob>): Promise<SeoAuditJob>;
+  getAllSeoAuditJobs(): Promise<SeoAuditJob[]>;
+
+  // SEO Audit Result operations
+  createSeoAuditResult(data: InsertSeoAuditResult): Promise<SeoAuditResult>;
+  getSeoAuditResults(jobId: string): Promise<SeoAuditResult[]>;
+  updateSeoAuditResult(id: string, data: Partial<SeoAuditResult>): Promise<SeoAuditResult>;
+  deleteSeoAuditResults(jobId: string): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -970,6 +989,85 @@ export class DatabaseStorage implements IStorage {
         .returning();
       return newConfig;
     }
+  }
+
+  // SEO Audit Job operations
+  async createSeoAuditJob(): Promise<SeoAuditJob> {
+    const [job] = await db
+      .insert(seoAuditJobs)
+      .values({
+        status: "pending",
+        totalPages: 0,
+        scannedPages: 0,
+        errorCount: 0,
+      })
+      .returning();
+    return job;
+  }
+
+  async getSeoAuditJob(id: string): Promise<SeoAuditJob | null> {
+    const [job] = await db
+      .select()
+      .from(seoAuditJobs)
+      .where(eq(seoAuditJobs.id, id));
+    return job || null;
+  }
+
+  async getLatestSeoAuditJob(): Promise<SeoAuditJob | null> {
+    const [job] = await db
+      .select()
+      .from(seoAuditJobs)
+      .orderBy(desc(seoAuditJobs.createdAt))
+      .limit(1);
+    return job || null;
+  }
+
+  async updateSeoAuditJob(id: string, data: Partial<SeoAuditJob>): Promise<SeoAuditJob> {
+    const [updatedJob] = await db
+      .update(seoAuditJobs)
+      .set(data)
+      .where(eq(seoAuditJobs.id, id))
+      .returning();
+    return updatedJob;
+  }
+
+  async getAllSeoAuditJobs(): Promise<SeoAuditJob[]> {
+    return await db
+      .select()
+      .from(seoAuditJobs)
+      .orderBy(desc(seoAuditJobs.createdAt));
+  }
+
+  // SEO Audit Result operations
+  async createSeoAuditResult(data: InsertSeoAuditResult): Promise<SeoAuditResult> {
+    const [result] = await db
+      .insert(seoAuditResults)
+      .values(data)
+      .returning();
+    return result;
+  }
+
+  async getSeoAuditResults(jobId: string): Promise<SeoAuditResult[]> {
+    return await db
+      .select()
+      .from(seoAuditResults)
+      .where(eq(seoAuditResults.jobId, jobId))
+      .orderBy(seoAuditResults.url);
+  }
+
+  async updateSeoAuditResult(id: string, data: Partial<SeoAuditResult>): Promise<SeoAuditResult> {
+    const [updatedResult] = await db
+      .update(seoAuditResults)
+      .set(data)
+      .where(eq(seoAuditResults.id, id))
+      .returning();
+    return updatedResult;
+  }
+
+  async deleteSeoAuditResults(jobId: string): Promise<void> {
+    await db
+      .delete(seoAuditResults)
+      .where(eq(seoAuditResults.jobId, jobId));
   }
 }
 
