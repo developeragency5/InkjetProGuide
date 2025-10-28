@@ -84,7 +84,7 @@ export default function BuyingGuidesPage() {
       <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-background py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <Badge className="mb-4" data-testid="badge-buying-guides">Expert Advice</Badge>
+            <Badge className="mb-4" data-testid="badge-buying-guides">Professional Advice</Badge>
             <h1 className="text-5xl font-bold mb-6" data-testid="text-hero-title">
               Complete HP Inkjet Printer Buying Guide
             </h1>
@@ -96,7 +96,7 @@ export default function BuyingGuidesPage() {
                 <Link href="/products">Browse All Printers</Link>
               </Button>
               <Button size="lg" variant="outline" asChild data-testid="button-contact-expert">
-                <Link href="/contact">Talk to an Expert</Link>
+                <Link href="/contact">Get Help</Link>
               </Button>
             </div>
           </div>
@@ -165,9 +165,9 @@ export default function BuyingGuidesPage() {
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Book className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Expert Knowledge</h3>
+            <h3 className="text-xl font-semibold mb-2">Professional Knowledge</h3>
             <p className="text-muted-foreground">
-              Our guides are written by printing experts with years of experience in the industry.
+              Our guides are written by printing professionals with years of experience in the industry.
             </p>
           </div>
           <div className="text-center">

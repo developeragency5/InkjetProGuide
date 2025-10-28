@@ -52,7 +52,7 @@ export default function AboutPage() {
     },
     {
       icon: Headphones,
-      title: "Expert Support",
+      title: "Customer Support",
       description: "USA-based support team available during office hours to help with setup, troubleshooting, and maintenance."
     },
     {
@@ -240,7 +240,7 @@ export default function AboutPage() {
                 <div className="flex gap-4 items-start">
                   <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-2">Expert Buying Assistance</h4>
+                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-2">Buying Assistance</h4>
                     <p className="text-muted-foreground">
                       Our team helps you navigate print speeds, ink costs, wireless features, and more to 
                       find the perfect match for your needs.

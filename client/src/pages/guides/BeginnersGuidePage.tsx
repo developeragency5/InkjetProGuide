@@ -179,7 +179,7 @@ export default function BeginnersGuidePage() {
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild data-testid="button-contact-expert">
-                    <Link href="/contact">Contact an Expert</Link>
+                    <Link href="/contact">Contact Us</Link>
                   </Button>
                 </div>
               </CardContent>
