@@ -204,6 +204,50 @@ export const robotsTxtConfig = pgTable("robots_txt_config", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+// SEO Audit Jobs table
+export const seoAuditJobs = pgTable("seo_audit_jobs", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  status: text("status").notNull().default("pending"), // pending, running, completed, failed
+  startedAt: timestamp("started_at"),
+  completedAt: timestamp("completed_at"),
+  totalPages: integer("total_pages").default(0),
+  scannedPages: integer("scanned_pages").default(0),
+  errorCount: integer("error_count").default(0),
+  pdfUrl: text("pdf_url"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// SEO Audit Results table
+export const seoAuditResults = pgTable("seo_audit_results", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  jobId: varchar("job_id").notNull().references(() => seoAuditJobs.id, { onDelete: "cascade" }),
+  url: text("url").notNull(),
+  pageTitle: text("page_title"),
+  // Meta issues
+  hasMissingTitle: boolean("has_missing_title").default(false),
+  hasMissingDescription: boolean("has_missing_description").default(false),
+  hasDuplicateTitle: boolean("has_duplicate_title").default(false),
+  hasDuplicateDescription: boolean("has_duplicate_description").default(false),
+  // Content issues
+  missingH1: boolean("missing_h1").default(false),
+  multipleH1: boolean("multiple_h1").default(false),
+  h1Count: integer("h1_count").default(0),
+  // Image issues
+  imagesWithoutAlt: integer("images_without_alt").default(0),
+  totalImages: integer("total_images").default(0),
+  // Link issues
+  brokenLinks: text("broken_links").array(),
+  brokenLinkCount: integer("broken_link_count").default(0),
+  // Performance
+  loadTime: integer("load_time"), // in milliseconds
+  // Mobile
+  isMobileFriendly: boolean("is_mobile_friendly").default(true),
+  // Raw data
+  metaTitle: text("meta_title"),
+  metaDescription: text("meta_description"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 // Content Pages table - for managing editable content
 export const contentPages = pgTable("content_pages", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
@@ -415,6 +459,22 @@ export const insertRobotsTxtConfigSchema = createInsertSchema(robotsTxtConfig).o
   content: z.string().min(1, "Robots.txt content is required"),
 });
 
+export const insertSeoAuditJobSchema = createInsertSchema(seoAuditJobs).omit({
+  id: true,
+  createdAt: true,
+  startedAt: true,
+  completedAt: true,
+  totalPages: true,
+  scannedPages: true,
+  errorCount: true,
+  pdfUrl: true,
+});
+
+export const insertSeoAuditResultSchema = createInsertSchema(seoAuditResults).omit({
+  id: true,
+  createdAt: true,
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -448,3 +508,7 @@ export type SitemapConfig = typeof sitemapConfig.$inferSelect;
 export type InsertSitemapConfig = z.infer<typeof insertSitemapConfigSchema>;
 export type RobotsTxtConfig = typeof robotsTxtConfig.$inferSelect;
 export type InsertRobotsTxtConfig = z.infer<typeof insertRobotsTxtConfigSchema>;
+export type SeoAuditJob = typeof seoAuditJobs.$inferSelect;
+export type InsertSeoAuditJob = z.infer<typeof insertSeoAuditJobSchema>;
+export type SeoAuditResult = typeof seoAuditResults.$inferSelect;
+export type InsertSeoAuditResult = z.infer<typeof insertSeoAuditResultSchema>;
