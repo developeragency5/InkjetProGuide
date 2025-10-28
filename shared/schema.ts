@@ -156,6 +156,32 @@ export const newsletterSubscribers = pgTable("newsletter_subscribers", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+// SEO Settings table - for managing page-level SEO
+export const seoSettings = pgTable("seo_settings", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  page: text("page").notNull().unique(), // e.g., "home", "products", "about", "contact"
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  keywords: text("keywords").array(),
+  ogTitle: text("og_title"),
+  ogDescription: text("og_description"),
+  ogImage: text("og_image"),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// Content Pages table - for managing editable content
+export const contentPages = pgTable("content_pages", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  slug: text("slug").notNull().unique(), // URL slug
+  title: text("title").notNull(),
+  content: text("content").notNull(), // Rich text/HTML content
+  category: text("category").notNull(), // e.g., "page", "blog", "guide"
+  isPublished: boolean("is_published").notNull().default(true),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 // Relations
 export const usersRelations = relations(users, ({ many }) => ({
   cartItems: many(cartItems),
@@ -319,6 +345,27 @@ export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSub
   email: z.string().email("Please enter a valid email address"),
 });
 
+export const insertSeoSettingSchema = createInsertSchema(seoSettings).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+}).extend({
+  page: z.string().min(1, "Page identifier is required"),
+  title: z.string().min(10, "Title must be at least 10 characters"),
+  description: z.string().min(50, "Description must be at least 50 characters"),
+});
+
+export const insertContentPageSchema = createInsertSchema(contentPages).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+}).extend({
+  slug: z.string().min(1, "Slug is required"),
+  title: z.string().min(5, "Title must be at least 5 characters"),
+  content: z.string().min(20, "Content must be at least 20 characters"),
+  category: z.string().min(1, "Category is required"),
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -344,3 +391,7 @@ export type InkCartridge = typeof inkCartridges.$inferSelect;
 export type InsertInkCartridge = z.infer<typeof insertInkCartridgeSchema>;
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;
+export type SeoSetting = typeof seoSettings.$inferSelect;
+export type InsertSeoSetting = z.infer<typeof insertSeoSettingSchema>;
+export type ContentPage = typeof contentPages.$inferSelect;
+export type InsertContentPage = z.infer<typeof insertContentPageSchema>;
