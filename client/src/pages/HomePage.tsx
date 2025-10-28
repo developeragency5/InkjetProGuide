@@ -423,7 +423,7 @@ export default function HomePage() {
               We make it easy and secure to shop for your printer
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="hover-elevate transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
@@ -496,7 +496,33 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-status-online" />
-                    2-year manufacturer warranty
+                    Original OEM warranty
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Shield className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-3">Original OEM Warranty</h3>
+                <p className="text-muted-foreground mb-4">
+                  Every printer comes with HP's authentic manufacturer warranty for your peace of mind.
+                </p>
+                <ul className="space-y-2 text-sm text-left">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Full HP manufacturer coverage
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Repair or replacement guarantee
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-status-online" />
+                    Direct HP support available
                   </li>
                 </ul>
               </CardContent>

@@ -178,7 +178,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">Do you offer warranty on printers?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Yes! All HP printers come with a comprehensive 2-year manufacturer warranty.
+                    Yes! All HP printers come with a comprehensive Original OEM warranty.
                   </p>
                 </div>
                 <div>

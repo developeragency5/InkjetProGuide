@@ -408,7 +408,7 @@ export default function ProductDetailPage() {
                   <Shield className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">2-Year Warranty</p>
+                  <p className="text-sm font-medium">Original OEM Warranty</p>
                   <p className="text-xs text-muted-foreground">Manufacturer warranty</p>
                 </div>
               </div>
@@ -498,7 +498,7 @@ export default function ProductDetailPage() {
                     <div>
                       <h4 className="font-semibold mb-2">Warranty Information</h4>
                       <p className="text-sm text-muted-foreground">
-                        This printer includes a <strong>2-year limited hardware warranty</strong> from the date of purchase. HP will repair or replace defective units during this period. For warranty claims, contact HP Support at 1-800-474-6836 (available 24/7) or visit support.hp.com
+                        This printer includes the <strong>Original OEM Warranty</strong> from the date of purchase. HP will repair or replace defective units during this period. For warranty claims, contact HP Support at 1-800-474-6836 (available 24/7) or visit support.hp.com
                       </p>
                     </div>
                   </div>

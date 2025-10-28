@@ -243,7 +243,7 @@ export default function CartPage() {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-primary">✓</span>
-                    <span className="text-muted-foreground">2-year warranty included</span>
+                    <span className="text-muted-foreground">Original OEM warranty included</span>
                   </div>
                 </div>
               </CardContent>
