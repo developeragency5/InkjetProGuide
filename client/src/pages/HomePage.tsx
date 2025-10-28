@@ -783,7 +783,7 @@ export default function HomePage() {
                 <div className="w-16 h-16 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-xl mb-3">Expert Maintenance Support</h3>
+                <h3 className="font-semibold text-xl mb-3">Trusted Maintenance Support</h3>
                 <p className="text-muted-foreground mb-4">
                   Keep your printer running smoothly with our comprehensive maintenance guides 
                   and ink cartridge information.
