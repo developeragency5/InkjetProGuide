@@ -90,7 +90,7 @@ export default function AuthPage() {
       queryClient.invalidateQueries({ queryKey: ["/api/user"] });
       toast({
         title: "Account created!",
-        description: "Welcome to InjetProGuide.",
+        description: "Welcome to InkjetProGuide.",
       });
       navigate("/");
     },

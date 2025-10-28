@@ -74,7 +74,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent" data-testid="heading-about-title">
-              About InjetProGuide
+              About InkjetProGuide
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-subtitle">
               Your trusted partner for HP inkjet printers in the USA. We simplify printer shopping 
@@ -121,7 +121,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" data-testid="heading-our-story">Our Story</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p data-testid="text-story-1">
-                InjetProGuide was founded with a simple mission: to make printer shopping easy, transparent, 
+                InkjetProGuide was founded with a simple mission: to make printer shopping easy, transparent, 
                 and stress-free for American consumers and businesses. We recognized that choosing the right 
                 printer can be overwhelming with so many models, specifications, and technical jargon to navigate.
               </p>
@@ -146,7 +146,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" data-testid="heading-our-mission">Our Mission</h2>
               <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p data-testid="text-mission-1">
-                  At InjetProGuide, our mission is to empower customers with knowledge and provide access to 
+                  At InkjetProGuide, our mission is to empower customers with knowledge and provide access to 
                   high-quality HP inkjet printers that meet their specific needs. We believe that an informed 
                   customer is a satisfied customer.
                 </p>
@@ -214,7 +214,7 @@ export default function AboutPage() {
           <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
             <CardContent className="p-8 md:p-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" data-testid="heading-why-choose-us">
-                Why Choose InjetProGuide?
+                Why Choose InkjetProGuide?
               </h2>
               <div className="max-w-3xl mx-auto space-y-5">
                 <div className="flex gap-4 items-start">

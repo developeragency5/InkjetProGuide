@@ -82,7 +82,7 @@ export default function SitemapPage() {
               </h1>
             </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-sitemap-subtitle">
-              Browse all pages and sections of InjetProGuide to find exactly what you're looking for
+              Browse all pages and sections of InkjetProGuide to find exactly what you're looking for
             </p>
           </div>
         </div>
@@ -157,10 +157,10 @@ export default function SitemapPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-about-sitemap-1">
-                This sitemap provides a complete overview of all pages and sections available on InjetProGuide. It's designed to help you quickly navigate to any part of our website.
+                This sitemap provides a complete overview of all pages and sections available on InkjetProGuide. It's designed to help you quickly navigate to any part of our website.
               </p>
               <p data-testid="text-about-sitemap-2">
-                <strong className="text-foreground">InjetProGuide</strong> specializes in HP inkjet printers, offering a comprehensive selection of products, expert buying guides, and dedicated customer support for customers across the United States.
+                <strong className="text-foreground">InkjetProGuide</strong> specializes in HP inkjet printers, offering a comprehensive selection of products, expert buying guides, and dedicated customer support for customers across the United States.
               </p>
               <div className="mt-6 pt-6 border-t">
                 <h3 className="font-semibold mb-3 text-foreground" data-testid="heading-need-help">

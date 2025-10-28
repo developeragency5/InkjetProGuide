@@ -36,7 +36,7 @@ export default function TermsConditionsPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-overview-1">
-                By accessing and using InjetProGuide, you agree to be bound by these Terms & Conditions and all applicable laws and regulations.
+                By accessing and using InkjetProGuide, you agree to be bound by these Terms & Conditions and all applicable laws and regulations.
               </p>
               <p data-testid="text-overview-2">
                 <strong className="text-foreground">Key Points:</strong> You must be 18 or older to make purchases. All sales are subject to product availability. We reserve the right to refuse or cancel orders. Prices are subject to change without notice.
@@ -51,7 +51,7 @@ export default function TermsConditionsPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-acceptance-1">
-                Welcome to InjetProGuide. These Terms and Conditions ("Terms") govern your access to and use of our website, products, and services. By accessing or using InjetProGuide, you agree to comply with and be bound by these Terms.
+                Welcome to InkjetProGuide. These Terms and Conditions ("Terms") govern your access to and use of our website, products, and services. By accessing or using InkjetProGuide, you agree to comply with and be bound by these Terms.
               </p>
               <p data-testid="text-acceptance-2">
                 If you do not agree to these Terms, you must not access or use our website or services. We reserve the right to modify these Terms at any time, and such modifications will be effective immediately upon posting.
@@ -69,14 +69,14 @@ export default function TermsConditionsPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-eligibility-1">
-                You must be at least 18 years old to create an account and make purchases on InjetProGuide. By using our services, you represent and warrant that you meet this age requirement.
+                You must be at least 18 years old to create an account and make purchases on InkjetProGuide. By using our services, you represent and warrant that you meet this age requirement.
               </p>
               <p data-testid="text-eligibility-2">
                 You must provide accurate, current, and complete information during registration and update such information to maintain its accuracy. You are responsible for maintaining the confidentiality of your account credentials.
               </p>
               <div className="p-4 bg-muted/50 rounded-md">
                 <p className="text-sm" data-testid="text-eligibility-note">
-                  <strong className="text-foreground">Note:</strong> InjetProGuide serves customers exclusively within the United States. International orders are not accepted at this time.
+                  <strong className="text-foreground">Note:</strong> InkjetProGuide serves customers exclusively within the United States. International orders are not accepted at this time.
                 </p>
               </div>
             </CardContent>
@@ -130,7 +130,7 @@ export default function TermsConditionsPage() {
                   We strive to provide accurate product descriptions, images, and specifications. However, we do not warrant that product descriptions or other content is accurate, complete, reliable, current, or error-free.
                 </p>
                 <p className="mt-3" data-testid="text-product-info-2">
-                  All HP inkjet printers and accessories sold on InjetProGuide are genuine products sourced from authorized distributors. Product availability is subject to change without notice.
+                  All HP inkjet printers and accessories sold on InkjetProGuide are genuine products sourced from authorized distributors. Product availability is subject to change without notice.
                 </p>
               </div>
 
@@ -170,7 +170,7 @@ export default function TermsConditionsPage() {
                   Order Acceptance and Cancellation
                 </h3>
                 <p data-testid="text-order-acceptance-1">
-                  All orders are subject to acceptance by InjetProGuide. We reserve the right to refuse or cancel any order for any reason, including but not limited to:
+                  All orders are subject to acceptance by InkjetProGuide. We reserve the right to refuse or cancel any order for any reason, including but not limited to:
                 </p>
                 <ul className="space-y-2 ml-6 list-disc mt-3">
                   <li data-testid="text-order-cancel-1">Product unavailability or stock limitations</li>
@@ -236,7 +236,7 @@ export default function TermsConditionsPage() {
           <Card className="border-primary/50">
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-returns-intro">
-                We offer a <strong className="text-foreground">30-day money-back guarantee</strong> on all HP inkjet printers purchased through InjetProGuide. Please review our complete return policy for detailed information.
+                We offer a <strong className="text-foreground">30-day money-back guarantee</strong> on all HP inkjet printers purchased through InkjetProGuide. Please review our complete return policy for detailed information.
               </p>
               <div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-return-conditions">
@@ -265,7 +265,7 @@ export default function TermsConditionsPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-ip-1">
-                All content on InjetProGuide, including but not limited to text, graphics, logos, images, product descriptions, software, and design elements, is the property of InjetProGuide or its licensors and is protected by copyright, trademark, and other intellectual property laws.
+                All content on InkjetProGuide, including but not limited to text, graphics, logos, images, product descriptions, software, and design elements, is the property of InkjetProGuide or its licensors and is protected by copyright, trademark, and other intellectual property laws.
               </p>
               <div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-ip-restrictions">
@@ -282,7 +282,7 @@ export default function TermsConditionsPage() {
                 </ul>
               </div>
               <p className="mt-4" data-testid="text-ip-trademarks">
-                <strong className="text-foreground">Trademarks:</strong> "InjetProGuide" and our logo are trademarks of InjetProGuide. HP and related trademarks are the property of HP Inc. and are used with permission for identification purposes only.
+                <strong className="text-foreground">Trademarks:</strong> "InkjetProGuide" and our logo are trademarks of InkjetProGuide. HP and related trademarks are the property of HP Inc. and are used with permission for identification purposes only.
               </p>
             </CardContent>
           </Card>
@@ -325,7 +325,7 @@ export default function TermsConditionsPage() {
                   Product Warranties
                 </h3>
                 <p data-testid="text-warranty-1">
-                  All HP inkjet printers sold through InjetProGuide are covered by the manufacturer's warranty. Warranty terms, duration, and coverage are determined by HP Inc., not by InjetProGuide.
+                  All HP inkjet printers sold through InkjetProGuide are covered by the manufacturer's warranty. Warranty terms, duration, and coverage are determined by HP Inc., not by InkjetProGuide.
                 </p>
                 <p className="mt-3" data-testid="text-warranty-2">
                   For warranty service, please refer to the warranty documentation included with your product or contact HP support directly. We will assist you with warranty claims when possible.
@@ -362,7 +362,7 @@ export default function TermsConditionsPage() {
                   LIMITATION OF LIABILITY
                 </p>
                 <p data-testid="text-liability-1">
-                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, INJETPROGUIDE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
+                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, INKJETPROGUIDE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
                 </p>
                 <p className="mt-3" data-testid="text-liability-2">
                   OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR YOUR USE OF OUR SERVICES SHALL NOT EXCEED THE AMOUNT YOU PAID TO US IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
@@ -381,7 +381,7 @@ export default function TermsConditionsPage() {
           <Card>
             <CardContent className="p-8 text-muted-foreground">
               <p data-testid="text-indemnification">
-                You agree to indemnify, defend, and hold harmless InjetProGuide, its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or in connection with: (a) your use of our services; (b) your violation of these Terms; (c) your violation of any rights of another party; or (d) any fraudulent or illegal activities.
+                You agree to indemnify, defend, and hold harmless InkjetProGuide, its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or in connection with: (a) your use of our services; (b) your violation of these Terms; (c) your violation of any rights of another party; or (d) any fraudulent or illegal activities.
               </p>
             </CardContent>
           </Card>
@@ -429,7 +429,7 @@ export default function TermsConditionsPage() {
                   In the event of any dispute arising out of or relating to these Terms:
                 </p>
                 <ol className="space-y-2 ml-6 list-decimal">
-                  <li data-testid="text-dispute-1">You agree to first attempt to resolve the dispute informally by contacting us at <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-dispute">support@injetproguide.com</a></li>
+                  <li data-testid="text-dispute-1">You agree to first attempt to resolve the dispute informally by contacting us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-dispute">support@inkjetproguide.com</a></li>
                   <li data-testid="text-dispute-2">If the dispute cannot be resolved within 30 days, either party may initiate binding arbitration</li>
                   <li data-testid="text-dispute-3">Arbitration shall be conducted in accordance with the rules of the American Arbitration Association</li>
                   <li data-testid="text-dispute-4">The arbitration shall take place in Delaware, United States</li>
@@ -460,7 +460,7 @@ export default function TermsConditionsPage() {
                 Upon termination, your right to use our services will immediately cease. All provisions of these Terms that by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
               </p>
               <p data-testid="text-termination-3">
-                You may terminate your account at any time by contacting us at <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-termination">support@injetproguide.com</a>.
+                You may terminate your account at any time by contacting us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-termination">support@inkjetproguide.com</a>.
               </p>
             </CardContent>
           </Card>
@@ -517,7 +517,7 @@ export default function TermsConditionsPage() {
           <Card>
             <CardContent className="p-8 text-muted-foreground">
               <p data-testid="text-entire-agreement">
-                These Terms, together with our Privacy Policy and Refund & Return Policy, constitute the entire agreement between you and InjetProGuide regarding the use of our services and supersede all prior agreements and understandings, whether written or oral, relating to such subject matter.
+                These Terms, together with our Privacy Policy and Refund & Return Policy, constitute the entire agreement between you and InkjetProGuide regarding the use of our services and supersede all prior agreements and understandings, whether written or oral, relating to such subject matter.
               </p>
             </CardContent>
           </Card>
@@ -536,8 +536,8 @@ export default function TermsConditionsPage() {
                   <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1" data-testid="heading-email-contact">Email</h3>
-                    <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-contact">
-                      support@injetproguide.com
+                    <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-contact">
+                      support@inkjetproguide.com
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">Legal inquiries welcome</p>
                   </div>
@@ -554,7 +554,7 @@ export default function TermsConditionsPage() {
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t">
-                <h3 className="font-semibold mb-2" data-testid="heading-business-info">InjetProGuide</h3>
+                <h3 className="font-semibold mb-2" data-testid="heading-business-info">InkjetProGuide</h3>
                 <p className="text-sm text-muted-foreground" data-testid="text-business-info">
                   HP Inkjet Printer Specialists<br />
                   Serving customers across the United States

@@ -60,8 +60,8 @@ export default function ContactPage() {
               <p className="text-sm text-muted-foreground mb-2">
                 Response within 24 hours
               </p>
-              <a href="mailto:support@injetproguide.com" className="font-semibold text-primary hover:underline" data-testid="link-email-contact">
-                support@injetproguide.com
+              <a href="mailto:support@inkjetproguide.com" className="font-semibold text-primary hover:underline" data-testid="link-email-contact">
+                support@inkjetproguide.com
               </a>
             </CardContent>
           </Card>
@@ -153,7 +153,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3 mb-4">
                   <MapPin className="w-5 h-5 text-primary mt-1" />
                   <div>
-                    <p className="font-semibold mb-1">InjetProGuide Headquarters</p>
+                    <p className="font-semibold mb-1">InkjetProGuide Headquarters</p>
                     <p className="text-sm text-muted-foreground">
                       2450 Broadway Street, Suite 300<br />
                       San Francisco, CA 94115<br />

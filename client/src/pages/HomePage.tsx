@@ -126,7 +126,7 @@ export default function HomePage() {
     // Show success message
     toast({
       title: "Successfully Subscribed! 🎉",
-      description: "Check your inbox for your 10% discount code. Welcome to the InjetProGuide family!",
+      description: "Check your inbox for your 10% discount code. Welcome to the InkjetProGuide family!",
     });
     
     // Clear the email input
@@ -717,7 +717,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose InjetProGuide?
+              Why Choose InkjetProGuide?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We don't just sell printers - we provide complete guidance to help you 

@@ -157,7 +157,7 @@ export function Layout({ children }: LayoutProps) {
             <Link href="/">
               <span className="flex items-center gap-2 cursor-pointer" data-testid="link-home">
                 <h1 className="text-3xl font-bold text-primary tracking-tight">
-                  InjetProGuide
+                  InkjetProGuide
                 </h1>
               </span>
             </Link>
@@ -373,7 +373,7 @@ export function Layout({ children }: LayoutProps) {
                 <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
                   <span className="text-white font-bold text-xl">I</span>
                 </div>
-                <h3 className="font-bold text-xl">InjetProGuide</h3>
+                <h3 className="font-bold text-xl">InkjetProGuide</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                 Your trusted source for HP inkjet printers across the USA. We provide expert guidance, 
@@ -385,8 +385,8 @@ export function Layout({ children }: LayoutProps) {
                   <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <a href="mailto:support@injetproguide.com" className="hover:text-primary transition-colors" data-testid="link-footer-email">
-                    support@injetproguide.com
+                  <a href="mailto:support@inkjetproguide.com" className="hover:text-primary transition-colors" data-testid="link-footer-email">
+                    support@inkjetproguide.com
                   </a>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
@@ -567,7 +567,7 @@ export function Layout({ children }: LayoutProps) {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
             <div className="text-muted-foreground text-center md:text-left">
-              © 2024 InjetProGuide. All rights reserved. Made with care in the USA.
+              © 2024 InkjetProGuide. All rights reserved. Made with care in the USA.
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-muted-foreground">

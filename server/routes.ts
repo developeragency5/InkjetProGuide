@@ -33,7 +33,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Session configuration
   app.use(
     session({
-      secret: process.env.SESSION_SECRET || "injetproguide-secret-key-change-in-production",
+      secret: process.env.SESSION_SECRET || "inkjetproguide-secret-key-change-in-production",
       resave: false,
       saveUninitialized: true, // Allow guest sessions
       store: new MemoryStore({

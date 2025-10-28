@@ -1,4 +1,4 @@
-# InjetProGuide - E-Commerce Design Guidelines
+# InkjetProGuide - E-Commerce Design Guidelines
 
 ## Design Approach
 **Reference-Based Approach**: Drawing inspiration from leading e-commerce platforms specializing in electronics (Best Buy, B&H Photo, Newegg) combined with modern e-commerce patterns from Shopify and Amazon. This approach prioritizes product visibility, trust-building, and streamlined purchasing flows essential for electronics retail.

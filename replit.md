@@ -1,8 +1,8 @@
-# InjetProGuide - E-Commerce Platform
+# InkjetProGuide - E-Commerce Platform
 
 ## Overview
 
-InjetProGuide is a full-stack e-commerce web application specializing in HP inkjet printers. The platform provides a complete online shopping experience with product browsing, cart management, wishlist functionality, user authentication, and order processing. Built with modern web technologies, it features a responsive design inspired by leading electronics retailers like Best Buy and B&H Photo.
+InkjetProGuide is a full-stack e-commerce web application specializing in HP inkjet printers. The platform provides a complete online shopping experience with product browsing, cart management, wishlist functionality, user authentication, and order processing. Built with modern web technologies, it features a responsive design inspired by leading electronics retailers like Best Buy and B&H Photo.
 
 ## User Preferences
 

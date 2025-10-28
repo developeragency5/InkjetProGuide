@@ -57,13 +57,13 @@ export default function PrivacyPolicyPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-intro-1">
-                Welcome to InjetProGuide. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+                Welcome to InkjetProGuide. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
               </p>
               <p data-testid="text-intro-2">
-                By using InjetProGuide, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our website or services.
+                By using InkjetProGuide, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our website or services.
               </p>
               <p data-testid="text-intro-3">
-                <strong className="text-foreground">InjetProGuide</strong> is an e-commerce platform specializing in HP inkjet printers, serving customers exclusively within the United States.
+                <strong className="text-foreground">InkjetProGuide</strong> is an e-commerce platform specializing in HP inkjet printers, serving customers exclusively within the United States.
               </p>
             </CardContent>
           </Card>
@@ -284,7 +284,7 @@ export default function PrivacyPolicyPage() {
                 <li data-testid="text-right-6"><strong className="text-foreground">Object to Processing:</strong> Object to our processing of your personal information</li>
               </ul>
               <p className="mt-4" data-testid="text-rights-exercise">
-                To exercise any of these rights, please contact us at <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-rights">support@injetproguide.com</a> or call <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-rights">1-888-467-4377</a>. We will respond to your request within 30 days.
+                To exercise any of these rights, please contact us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-rights">support@inkjetproguide.com</a> or call <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-rights">1-888-467-4377</a>. We will respond to your request within 30 days.
               </p>
             </CardContent>
           </Card>
@@ -352,7 +352,7 @@ export default function PrivacyPolicyPage() {
                 <li data-testid="text-california-4">Right to non-discrimination for exercising your privacy rights</li>
               </ul>
               <p className="mt-4" data-testid="text-california-contact">
-                To exercise these rights, contact us at <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-california">support@injetproguide.com</a>.
+                To exercise these rights, contact us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-california">support@inkjetproguide.com</a>.
               </p>
             </CardContent>
           </Card>
@@ -367,7 +367,7 @@ export default function PrivacyPolicyPage() {
                 <Globe className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p data-testid="text-international-policy">
-                    InjetProGuide operates exclusively within the United States and serves US customers only. Our services, website, and data storage are based in the United States. By using our services, you consent to the transfer and processing of your information in the United States in accordance with this Privacy Policy and US law.
+                    InkjetProGuide operates exclusively within the United States and serves US customers only. Our services, website, and data storage are based in the United States. By using our services, you consent to the transfer and processing of your information in the United States in accordance with this Privacy Policy and US law.
                   </p>
                 </div>
               </div>
@@ -408,8 +408,8 @@ export default function PrivacyPolicyPage() {
                   <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1" data-testid="heading-email-contact">Email</h3>
-                    <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-contact">
-                      support@injetproguide.com
+                    <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-contact">
+                      support@inkjetproguide.com
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">For privacy-related inquiries</p>
                   </div>
@@ -426,7 +426,7 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t">
-                <h3 className="font-semibold mb-2" data-testid="heading-business-info">InjetProGuide</h3>
+                <h3 className="font-semibold mb-2" data-testid="heading-business-info">InkjetProGuide</h3>
                 <p className="text-sm text-muted-foreground" data-testid="text-business-info">
                   HP Inkjet Printer Specialists<br />
                   Serving customers across the United States

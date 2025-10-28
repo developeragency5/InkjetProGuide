@@ -92,7 +92,7 @@ export default function RefundPolicyPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-1">Contact Our Support Team</h3>
                     <p className="text-muted-foreground" data-testid="text-step-1">
-                      Email us at <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-support-step1">support@injetproguide.com</a> or call <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-support-step1">1-888-467-4377</a> with your order number to initiate a return.
+                      Email us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-support-step1">support@inkjetproguide.com</a> or call <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-support-step1">1-888-467-4377</a> with your order number to initiate a return.
                     </p>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function RefundPolicyPage() {
                 <li data-testid="text-exchange-step-3">Once we receive your return, we'll process your refund as usual</li>
               </ol>
               <p className="mt-4" data-testid="text-exchange-note">
-                <strong className="text-foreground">Note:</strong> For direct exchanges, please contact our support team at <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-exchange">support@injetproguide.com</a> and we'll arrange a personalized exchange process for you.
+                <strong className="text-foreground">Note:</strong> For direct exchanges, please contact our support team at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-exchange">support@inkjetproguide.com</a> and we'll arrange a personalized exchange process for you.
               </p>
             </CardContent>
           </Card>
@@ -268,7 +268,7 @@ export default function RefundPolicyPage() {
           <Card>
             <CardContent className="p-8 text-muted-foreground">
               <p data-testid="text-international-policy">
-                InjetProGuide currently serves customers within the United States only. All orders are shipped to US addresses, and our return policy applies to US customers. We do not currently accept international returns or ship outside the USA.
+                InkjetProGuide currently serves customers within the United States only. All orders are shipped to US addresses, and our return policy applies to US customers. We do not currently accept international returns or ship outside the USA.
               </p>
             </CardContent>
           </Card>
@@ -287,8 +287,8 @@ export default function RefundPolicyPage() {
                   <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1" data-testid="heading-email-support">Email Support</h3>
-                    <a href="mailto:support@injetproguide.com" className="text-primary hover:underline" data-testid="link-email-support">
-                      support@injetproguide.com
+                    <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-support">
+                      support@inkjetproguide.com
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">Response within 24 hours</p>
                   </div>

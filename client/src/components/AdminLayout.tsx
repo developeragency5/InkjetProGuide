@@ -48,7 +48,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
       <aside className="w-64 bg-card border-r flex flex-col">
         <div className="p-6 border-b">
           <h2 className="text-2xl font-bold text-primary">Admin Panel</h2>
-          <p className="text-sm text-muted-foreground mt-1">InjetProGuide</p>
+          <p className="text-sm text-muted-foreground mt-1">InkjetProGuide</p>
         </div>
         
         <nav className="flex-1 p-4 space-y-2">
