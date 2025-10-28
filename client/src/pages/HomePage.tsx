@@ -152,7 +152,7 @@ export default function HomePage() {
           }}></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 py-6">
+        <div className="relative max-w-7xl mx-auto px-4 py-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4">
             {/* Stat 1 - Happy Customers */}
             <div className="flex items-center justify-center gap-3 text-white" data-testid="stat-customers">
