@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight } from "lucide-react";
+import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3 } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -445,6 +445,107 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Modern Technology Features Section */}
+      <section className="py-20 bg-gradient-to-b from-background via-primary/5 to-background">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4">Latest HP Technology</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Advanced Features for Modern Printing
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Experience cutting-edge technology designed for efficiency, quality, and convenience
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Feature 1 */}
+            <Card className="hover-elevate active-elevate-2 group relative overflow-hidden border-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+              <CardContent className="p-8 relative">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/10 to-blue-600/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Wifi className="w-7 h-7 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Smart Wireless Printing</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Print from anywhere with WiFi, Bluetooth, and cloud connectivity. Compatible with all your devices.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 2 */}
+            <Card className="hover-elevate active-elevate-2 group relative overflow-hidden border-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+              <CardContent className="p-8 relative">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500/10 to-green-600/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Zap className="w-7 h-7 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Instant Ink Ready</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Never run out of ink with HP Instant Ink. Automatic delivery saves you up to 50% on ink costs.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 3 */}
+            <Card className="hover-elevate active-elevate-2 group relative overflow-hidden border-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+              <CardContent className="p-8 relative">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-600/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Globe className="w-7 h-7 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">HP Smart App</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Control your printer from your phone. Scan, print, and manage settings with ease.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 4 */}
+            <Card className="hover-elevate active-elevate-2 group relative overflow-hidden border-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+              <CardContent className="p-8 relative">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500/10 to-orange-600/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <BarChart3 className="w-7 h-7 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">High-Speed Performance</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Print up to 24 pages per minute. Perfect for busy offices and high-volume printing needs.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 5 */}
+            <Card className="hover-elevate active-elevate-2 group relative overflow-hidden border-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+              <CardContent className="p-8 relative">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500/10 to-pink-600/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <CheckCircle2 className="w-7 h-7 text-pink-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Professional Quality</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Crisp text and vibrant photos with HP's advanced ink technology and print resolution.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 6 */}
+            <Card className="hover-elevate active-elevate-2 group relative overflow-hidden border-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+              <CardContent className="p-8 relative">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500/10 to-teal-600/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Box className="w-7 h-7 text-teal-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Space-Saving Design</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Compact and sleek designs that fit perfectly in any home office or workspace.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -981,6 +1082,124 @@ export default function HomePage() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* HP Authorized Partner Section */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-primary/5">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4">Official HP Partner</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Trusted HP Technology Partner
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We're an authorized HP dealer committed to bringing you authentic products and reliable service
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {/* Badge 1 */}
+            <div className="flex flex-col items-center justify-center p-6 bg-background rounded-xl border-2 hover-elevate">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <BadgeCheck className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">Authorized Dealer</h3>
+              <p className="text-sm text-muted-foreground text-center">
+                Official HP partner with verified authenticity
+              </p>
+            </div>
+
+            {/* Badge 2 */}
+            <div className="flex flex-col items-center justify-center p-6 bg-background rounded-xl border-2 hover-elevate">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Shield className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">100% Genuine</h3>
+              <p className="text-sm text-muted-foreground text-center">
+                All products come with OEM warranty
+              </p>
+            </div>
+
+            {/* Badge 3 */}
+            <div className="flex flex-col items-center justify-center p-6 bg-background rounded-xl border-2 hover-elevate">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Clock className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">Fast Delivery</h3>
+              <p className="text-sm text-muted-foreground text-center">
+                2-3 business days shipping nationwide
+              </p>
+            </div>
+
+            {/* Badge 4 */}
+            <div className="flex flex-col items-center justify-center p-6 bg-background rounded-xl border-2 hover-elevate">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Award className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">Top Rated</h3>
+              <p className="text-sm text-muted-foreground text-center">
+                96% customer satisfaction rating
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Money-Back Guarantee Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-background border-2 border-primary/20">
+            {/* Decorative Elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+            
+            <div className="relative p-12 md:p-16">
+              <div className="text-center max-w-3xl mx-auto">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 mb-6">
+                  <Shield className="w-10 h-10 text-primary" />
+                </div>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                  30-Day Money-Back Guarantee
+                </h2>
+                <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+                  Try your new HP printer risk-free for 30 days. If you're not completely satisfied, 
+                  return it for a full refund—no questions asked.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                      <CheckCircle2 className="w-6 h-6 text-primary" />
+                    </div>
+                    <p className="font-semibold">Easy Returns</p>
+                    <p className="text-sm text-muted-foreground">Hassle-free process</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                      <CheckCircle2 className="w-6 h-6 text-primary" />
+                    </div>
+                    <p className="font-semibold">Full Refund</p>
+                    <p className="text-sm text-muted-foreground">100% money back</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                      <CheckCircle2 className="w-6 h-6 text-primary" />
+                    </div>
+                    <p className="font-semibold">No Questions</p>
+                    <p className="text-sm text-muted-foreground">Simple & quick</p>
+                  </div>
+                </div>
+
+                <Link href="/products">
+                  <Button size="lg" className="font-semibold px-8 shadow-lg" data-testid="button-shop-guarantee">
+                    Shop Risk-Free Now
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
