@@ -38,6 +38,7 @@ import AdminProductsPage from "@/pages/AdminProductsPage";
 import AdminOrdersPage from "@/pages/AdminOrdersPage";
 import AdminCustomersPage from "@/pages/AdminCustomersPage";
 import AdminAnalyticsPage from "@/pages/AdminAnalyticsPage";
+import AdminSEOPage from "@/pages/AdminSEOPage";
 import NotFound from "@/pages/not-found";
 
 // Admin router (no layout)
@@ -50,6 +51,7 @@ function AdminRouter() {
       <Route path="/admin/orders" component={AdminOrdersPage} />
       <Route path="/admin/customers" component={AdminCustomersPage} />
       <Route path="/admin/analytics" component={AdminAnalyticsPage} />
+      <Route path="/admin/seo" component={AdminSEOPage} />
     </Switch>
   );
 }
