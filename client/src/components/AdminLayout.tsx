@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { LayoutDashboard, Package, ShoppingCart, Users, LogOut, BarChart } from "lucide-react";
+import { LayoutDashboard, Package, ShoppingCart, Users, LogOut, BarChart, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
@@ -20,6 +20,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     { name: "Orders", path: "/admin/orders", icon: ShoppingCart },
     { name: "Customers", path: "/admin/customers", icon: Users },
     { name: "Analytics", path: "/admin/analytics", icon: BarChart },
+    { name: "SEO & Content", path: "/admin/seo", icon: Globe },
   ];
 
   const handleLogout = async () => {
