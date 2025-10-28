@@ -454,20 +454,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-customers">50K+</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-customers">5,000+</div>
               <div className="text-sm text-muted-foreground">Happy Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-models">200+</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-models">25+</div>
               <div className="text-sm text-muted-foreground">HP Models Available</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-satisfaction">99.8%</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-satisfaction">96%</div>
               <div className="text-sm text-muted-foreground">Customer Satisfaction</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-support">Office Hours</div>
-              <div className="text-sm text-muted-foreground">Trusted Support</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-support">2-3 Days</div>
+              <div className="text-sm text-muted-foreground">Fast Delivery</div>
             </div>
           </div>
         </div>
