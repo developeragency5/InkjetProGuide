@@ -142,6 +142,68 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
+      {/* Premium Trust Banner */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-primary/95 via-primary to-primary/95">
+        {/* Decorative Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '32px 32px'
+          }}></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4">
+            {/* Stat 1 - Happy Customers */}
+            <div className="flex items-center justify-center gap-3 text-white" data-testid="stat-customers">
+              <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                <Users className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold">50,000+</div>
+                <div className="text-sm text-white/90">Happy Customers</div>
+              </div>
+            </div>
+
+            {/* Stat 2 - Free Shipping */}
+            <div className="flex items-center justify-center gap-3 text-white" data-testid="stat-shipping">
+              <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                <Truck className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold">Free Ship</div>
+                <div className="text-sm text-white/90">Orders Over $299</div>
+              </div>
+            </div>
+
+            {/* Stat 3 - Warranty */}
+            <div className="flex items-center justify-center gap-3 text-white" data-testid="stat-warranty">
+              <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                <Shield className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold">OEM</div>
+                <div className="text-sm text-white/90">Original Warranty</div>
+              </div>
+            </div>
+
+            {/* Stat 4 - Support */}
+            <div className="flex items-center justify-center gap-3 text-white" data-testid="stat-support">
+              <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                <Headphones className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold">Mon-Fri</div>
+                <div className="text-sm text-white/90">9AM-6PM Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Decorative Wave */}
+        <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-b from-transparent to-background/5"></div>
+      </section>
+
       {/* Hero Section */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-muted/30 via-background to-muted/20">
         <div className="max-w-7xl mx-auto px-4">
