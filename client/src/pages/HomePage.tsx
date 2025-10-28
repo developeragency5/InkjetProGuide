@@ -855,9 +855,9 @@ export default function HomePage() {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-xl mb-3">2-Year Warranty</h3>
+                <h3 className="font-semibold text-xl mb-3">Original OEM Warranty</h3>
                 <p className="text-muted-foreground">
-                  All HP printers include a comprehensive 2-year manufacturer warranty for peace of mind.
+                  All HP printers include a comprehensive Original OEM Warranty for peace of mind.
                 </p>
               </CardContent>
             </Card>
