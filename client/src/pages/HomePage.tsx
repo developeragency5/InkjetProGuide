@@ -295,13 +295,13 @@ export default function HomePage() {
 
             {/* Right Side - Enhanced Featured Product Card */}
             {heroProduct && (
-              <div className="flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-md">
+              <div className="flex justify-center lg:justify-end" style={{ perspective: '1000px' }}>
+                <div className="relative w-full max-w-lg">
                   {/* Glow Effect */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 rounded-2xl blur-xl opacity-75"></div>
                   
-                  <Card className="relative hover-elevate transition-all border-2 border-primary/10">
-                    <CardContent className="p-8">
+                  <Card className="relative hover-elevate transition-all border-2 border-primary/10 shadow-2xl" style={{ transformStyle: 'preserve-3d', transform: 'rotateY(-2deg) rotateX(2deg)' }}>
+                    <CardContent className="p-10">
                       {/* Bestseller Badge - Floating */}
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                         <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-1.5 text-xs font-bold shadow-lg border-0">
