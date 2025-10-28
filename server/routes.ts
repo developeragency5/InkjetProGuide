@@ -1,6 +1,8 @@
 import type { Express, Request } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { db } from "./db";
+import { sitemapConfig } from "@shared/schema";
 import session from "express-session";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
@@ -12,6 +14,8 @@ import {
   insertRobotsTxtConfigSchema,
 } from "@shared/schema";
 import memorystore from "memorystore";
+import { generateSitemap } from "./services/sitemapGenerator";
+import { eq } from "drizzle-orm";
 
 const MemoryStore = memorystore(session);
 
@@ -459,6 +463,66 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(config);
     } catch (error: any) {
       res.status(400).json({ message: error.message });
+    }
+  });
+
+  // Admin sitemap generation routes
+  app.get("/api/admin/sitemap/preview", requireAdmin, async (req, res) => {
+    try {
+      let config = await storage.getSitemapConfig();
+      
+      if (!config) {
+        config = await storage.createOrUpdateSitemapConfig({
+          enabled: true,
+          includeProducts: true,
+          includeCategories: true,
+          includePages: true,
+          changefreq: "weekly",
+          priority: "0.8",
+        });
+      }
+
+      const baseUrl = `${req.protocol}://${req.get('host')}`;
+      const xml = await generateSitemap(config, storage, baseUrl);
+      
+      res.json({ xml });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/admin/sitemap/generate", requireAdmin, async (req, res) => {
+    try {
+      let config = await storage.getSitemapConfig();
+      
+      if (!config) {
+        config = await storage.createOrUpdateSitemapConfig({
+          enabled: true,
+          includeProducts: true,
+          includeCategories: true,
+          includePages: true,
+          changefreq: "weekly",
+          priority: "0.8",
+        });
+      }
+
+      const baseUrl = `${req.protocol}://${req.get('host')}`;
+      await generateSitemap(config, storage, baseUrl);
+      
+      // Update lastGenerated timestamp
+      const now = new Date();
+      await db
+        .update(sitemapConfig)
+        .set({ lastGenerated: now, updatedAt: now })
+        .where(eq(sitemapConfig.id, config.id));
+      
+      res.json({ 
+        success: true, 
+        message: "Sitemap generated successfully",
+        lastGenerated: now.toISOString(),
+      });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
     }
   });
 
@@ -921,6 +985,28 @@ Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
         });
       }
       res.status(500).json({ message: "An error occurred. Please try again later." });
+    }
+  });
+
+  // Public sitemap.xml route
+  app.get("/sitemap.xml", async (req, res) => {
+    try {
+      let config = await storage.getSitemapConfig();
+      
+      // Check if sitemap is enabled
+      if (!config || !config.enabled) {
+        return res.status(404).send("Sitemap not available");
+      }
+
+      const baseUrl = `${req.protocol}://${req.get('host')}`;
+      const xml = await generateSitemap(config, storage, baseUrl);
+      
+      // Set proper content-type for XML
+      res.set('Content-Type', 'text/xml');
+      res.send(xml);
+    } catch (error: any) {
+      console.error("Error generating sitemap:", error);
+      res.status(500).send("Error generating sitemap");
     }
   });
 
