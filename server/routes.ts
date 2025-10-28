@@ -326,6 +326,104 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin SEO settings routes
+  app.get("/api/admin/seo-settings", requireAdmin, async (req, res) => {
+    try {
+      const settings = await storage.getAllSeoSettings();
+      res.json(settings);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/admin/seo-settings/:id", requireAdmin, async (req, res) => {
+    try {
+      const setting = await storage.getSeoSettingByPage(req.params.id);
+      if (!setting) {
+        return res.status(404).json({ message: "SEO setting not found" });
+      }
+      res.json(setting);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.post("/api/admin/seo-settings", requireAdmin, async (req, res) => {
+    try {
+      const setting = await storage.createSeoSetting(req.body);
+      res.json(setting);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.patch("/api/admin/seo-settings/:id", requireAdmin, async (req, res) => {
+    try {
+      const setting = await storage.updateSeoSetting(req.params.id, req.body);
+      res.json(setting);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.delete("/api/admin/seo-settings/:id", requireAdmin, async (req, res) => {
+    try {
+      await storage.deleteSeoSetting(req.params.id);
+      res.json({ message: "SEO setting deleted successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Admin content pages routes
+  app.get("/api/admin/content-pages", requireAdmin, async (req, res) => {
+    try {
+      const pages = await storage.getAllContentPages();
+      res.json(pages);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.get("/api/admin/content-pages/:id", requireAdmin, async (req, res) => {
+    try {
+      const page = await storage.getContentPage(req.params.id);
+      if (!page) {
+        return res.status(404).json({ message: "Content page not found" });
+      }
+      res.json(page);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.post("/api/admin/content-pages", requireAdmin, async (req, res) => {
+    try {
+      const page = await storage.createContentPage(req.body);
+      res.json(page);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.patch("/api/admin/content-pages/:id", requireAdmin, async (req, res) => {
+    try {
+      const page = await storage.updateContentPage(req.params.id, req.body);
+      res.json(page);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.delete("/api/admin/content-pages/:id", requireAdmin, async (req, res) => {
+    try {
+      await storage.deleteContentPage(req.params.id);
+      res.json({ message: "Content page deleted successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   // Product routes
   app.get("/api/products", async (req, res) => {
     try {
