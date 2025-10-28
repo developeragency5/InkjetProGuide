@@ -16,6 +16,7 @@ export const users = pgTable("users", {
 export const products = pgTable("products", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
+  slug: text("slug").notNull().unique(), // SEO-friendly URL slug
   description: text("description").notNull(),
   price: decimal("price", { precision: 10, scale: 2 }).notNull(),
   originalPrice: decimal("original_price", { precision: 10, scale: 2 }),
@@ -28,6 +29,10 @@ export const products = pgTable("products", {
   specifications: text("specifications").notNull(),
   features: text("features").array().notNull(),
   inStock: boolean("in_stock").notNull().default(true),
+  // SEO fields
+  metaTitle: text("meta_title"),
+  metaDescription: text("meta_description"),
+  metaKeywords: text("meta_keywords").array(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -163,9 +168,38 @@ export const seoSettings = pgTable("seo_settings", {
   title: text("title").notNull(),
   description: text("description").notNull(),
   keywords: text("keywords").array(),
+  canonicalUrl: text("canonical_url"),
+  robotsIndex: boolean("robots_index").notNull().default(true), // index/noindex
+  robotsFollow: boolean("robots_follow").notNull().default(true), // follow/nofollow
   ogTitle: text("og_title"),
   ogDescription: text("og_description"),
   ogImage: text("og_image"),
+  twitterCard: text("twitter_card").default("summary_large_image"), // summary, summary_large_image, app, player
+  twitterTitle: text("twitter_title"),
+  twitterDescription: text("twitter_description"),
+  twitterImage: text("twitter_image"),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// Sitemap Configuration table
+export const sitemapConfig = pgTable("sitemap_config", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  enabled: boolean("enabled").notNull().default(true),
+  includeProducts: boolean("include_products").notNull().default(true),
+  includeCategories: boolean("include_categories").notNull().default(true),
+  includePages: boolean("include_pages").notNull().default(true),
+  changefreq: text("changefreq").notNull().default("weekly"), // always, hourly, daily, weekly, monthly, yearly, never
+  priority: decimal("priority", { precision: 2, scale: 1 }).notNull().default("0.8"),
+  lastGenerated: timestamp("last_generated"),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// Robots.txt Configuration table
+export const robotsTxtConfig = pgTable("robots_txt_config", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  content: text("content").notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
@@ -351,8 +385,8 @@ export const insertSeoSettingSchema = createInsertSchema(seoSettings).omit({
   updatedAt: true,
 }).extend({
   page: z.string().min(1, "Page identifier is required"),
-  title: z.string().min(10, "Title must be at least 10 characters"),
-  description: z.string().min(50, "Description must be at least 50 characters"),
+  title: z.string().min(10, "Title must be at least 10 characters").max(60, "Title should not exceed 60 characters"),
+  description: z.string().min(50, "Description must be at least 50 characters").max(160, "Description should not exceed 160 characters"),
 });
 
 export const insertContentPageSchema = createInsertSchema(contentPages).omit({
@@ -364,6 +398,21 @@ export const insertContentPageSchema = createInsertSchema(contentPages).omit({
   title: z.string().min(5, "Title must be at least 5 characters"),
   content: z.string().min(20, "Content must be at least 20 characters"),
   category: z.string().min(1, "Category is required"),
+});
+
+export const insertSitemapConfigSchema = createInsertSchema(sitemapConfig).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+  lastGenerated: true,
+});
+
+export const insertRobotsTxtConfigSchema = createInsertSchema(robotsTxtConfig).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+}).extend({
+  content: z.string().min(1, "Robots.txt content is required"),
 });
 
 // Types
@@ -395,3 +444,7 @@ export type SeoSetting = typeof seoSettings.$inferSelect;
 export type InsertSeoSetting = z.infer<typeof insertSeoSettingSchema>;
 export type ContentPage = typeof contentPages.$inferSelect;
 export type InsertContentPage = z.infer<typeof insertContentPageSchema>;
+export type SitemapConfig = typeof sitemapConfig.$inferSelect;
+export type InsertSitemapConfig = z.infer<typeof insertSitemapConfigSchema>;
+export type RobotsTxtConfig = typeof robotsTxtConfig.$inferSelect;
+export type InsertRobotsTxtConfig = z.infer<typeof insertRobotsTxtConfigSchema>;
