@@ -164,7 +164,7 @@ export default function HomePage() {
                   <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-3.5 h-3.5 text-primary" />
                   </div>
-                  <span className="text-sm font-medium">24/7 Expert Support</span>
+                  <span className="text-sm font-medium">Trusted Support with Office Hours</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -357,8 +357,8 @@ export default function HomePage() {
               <div className="text-sm text-muted-foreground">Customer Satisfaction</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-support">24/7</div>
-              <div className="text-sm text-muted-foreground">Expert Support</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-support">Office Hours</div>
+              <div className="text-sm text-muted-foreground">Trusted Support</div>
             </div>
           </div>
         </div>
@@ -407,7 +407,7 @@ export default function HomePage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Setup & Support</h3>
               <p className="text-sm text-muted-foreground">
-                Follow our setup guides and get 24/7 support whenever you need it
+                Follow our setup guides and get trusted support with office hours whenever you need it
               </p>
             </div>
           </div>
@@ -784,10 +784,10 @@ export default function HomePage() {
                 <div className="w-16 h-16 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
                   <Headphones className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-xl mb-3">24/7 Support</h3>
+                <h3 className="font-semibold text-xl mb-3">Trusted Support with Office Hours</h3>
                 <p className="text-muted-foreground mb-4">
                   Our team of printer specialists is here to help. Get expert answers 
-                  to all your printing questions anytime.
+                  to all your printing questions during office hours.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">

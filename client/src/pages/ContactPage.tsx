@@ -43,7 +43,7 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold mb-2">Phone Support</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Call us toll-free (24/7 Support)
+                Call us toll-free (Office Hours Support)
               </p>
               <a href="tel:+18884674377" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
                 1-888-467-4377
@@ -73,9 +73,9 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold mb-2">Business Hours</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                We're available 24/7
+                We're available during office hours
               </p>
-              <p className="font-semibold text-primary">Mon - Sun: All Day</p>
+              <p className="font-semibold text-primary">Mon - Fri: 9AM - 6PM ET</p>
             </CardContent>
           </Card>
         </div>

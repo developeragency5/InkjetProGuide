@@ -549,7 +549,7 @@ export default function TermsConditionsPage() {
                     <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-contact">
                       1-888-467-4377
                     </a>
-                    <p className="text-sm text-muted-foreground mt-1">Available 24/7</p>
+                    <p className="text-sm text-muted-foreground mt-1">Available during office hours</p>
                   </div>
                 </div>
               </div>

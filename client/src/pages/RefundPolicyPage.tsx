@@ -280,7 +280,7 @@ export default function RefundPolicyPage() {
           <Card className="bg-primary/5">
             <CardContent className="p-8">
               <p className="text-muted-foreground mb-6" data-testid="text-contact-intro">
-                Our customer service team is here to help with any questions about returns, refunds, or exchanges. We're available 24/7 to assist you.
+                Our customer service team is here to help with any questions about returns, refunds, or exchanges. We're available during office hours to assist you.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-3">
@@ -300,7 +300,7 @@ export default function RefundPolicyPage() {
                     <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-support">
                       1-888-467-4377
                     </a>
-                    <p className="text-sm text-muted-foreground mt-1">Available 24/7</p>
+                    <p className="text-sm text-muted-foreground mt-1">Available during office hours</p>
                   </div>
                 </div>
               </div>

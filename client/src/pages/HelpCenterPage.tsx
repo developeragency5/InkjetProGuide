@@ -325,7 +325,7 @@ export default function HelpCenterPage() {
                 Still Need Help?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Can't find what you're looking for? Our USA-based support team is available 24/7 
+                Can't find what you're looking for? Our USA-based support team is available during office hours 
                 to help you with any questions about your HP inkjet printer.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -334,7 +334,7 @@ export default function HelpCenterPage() {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-2">Call Us</h3>
-                  <p className="text-sm text-muted-foreground mb-2">Available 24/7</p>
+                  <p className="text-sm text-muted-foreground mb-2">Available during office hours</p>
                   <a href="tel:+18884674377" className="text-primary hover:underline font-medium" data-testid="link-phone-support-help">
                     1-888-467-4377
                   </a>

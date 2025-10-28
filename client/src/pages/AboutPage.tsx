@@ -8,7 +8,7 @@ export default function AboutPage() {
     { value: "10,000+", label: "Happy Customers" },
     { value: "50+", label: "HP Printer Models" },
     { value: "99.9%", label: "Customer Satisfaction" },
-    { value: "24/7", label: "Expert Support" },
+    { value: "Office Hours", label: "Trusted Support" },
   ];
 
   const values = [
@@ -53,7 +53,7 @@ export default function AboutPage() {
     {
       icon: Headphones,
       title: "Expert Support",
-      description: "USA-based support team available 24/7 to help with setup, troubleshooting, and maintenance."
+      description: "USA-based support team available during office hours to help with setup, troubleshooting, and maintenance."
     },
     {
       icon: Package,
