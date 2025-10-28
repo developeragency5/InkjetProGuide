@@ -9,10 +9,12 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { Plus, Edit, Trash2, Package } from "lucide-react";
+import { Plus, Edit, Trash2, Package, Upload, Image as ImageIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import type { Product } from "@shared/schema";
+import { ObjectUploader } from "@/components/ObjectUploader";
+import type { UploadResult } from "@uppy/core";
 
 export default function AdminProductsPage() {
   const [, setLocation] = useLocation();
@@ -200,6 +202,7 @@ function generateSlug(name: string): string {
 function ProductForm({ product, onClose }: { product: Product | null; onClose: () => void }) {
   const { toast } = useToast();
   const [slugManuallyEdited, setSlugManuallyEdited] = useState(!!product);
+  const [uploading, setUploading] = useState(false);
   const [formData, setFormData] = useState({
     name: product?.name || "",
     slug: product?.slug || "",
@@ -225,6 +228,57 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
       // Only auto-generate slug if creating new product and slug hasn't been manually edited
       ...(!slugManuallyEdited ? { slug: generateSlug(name) } : {})
     }));
+  };
+
+  // Handle getting upload parameters
+  const handleGetUploadParameters = async () => {
+    try {
+      const response = await apiRequest("POST", "/api/admin/products/upload", {}) as unknown as { uploadURL: string };
+      return {
+        method: "PUT" as const,
+        url: response.uploadURL,
+      };
+    } catch (error) {
+      toast({
+        title: "Upload failed",
+        description: "Failed to get upload URL",
+        variant: "destructive",
+      });
+      throw error;
+    }
+  };
+
+  // Handle upload completion
+  const handleUploadComplete = async (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
+    if (result.successful && result.successful.length > 0) {
+      setUploading(true);
+      try {
+        const uploadedFile = result.successful[0];
+        const imageURL = uploadedFile.uploadURL;
+        
+        // Set ACL policy and get normalized path
+        const response = await apiRequest("PUT", "/api/admin/products/images", { imageURL }) as unknown as { objectPath: string };
+        
+        // Update form data with the normalized path
+        setFormData(prev => ({
+          ...prev,
+          image: response.objectPath,
+        }));
+        
+        toast({
+          title: "Upload successful",
+          description: "Product image uploaded successfully",
+        });
+      } catch (error) {
+        toast({
+          title: "Upload failed",
+          description: "Failed to process uploaded image",
+          variant: "destructive",
+        });
+      } finally {
+        setUploading(false);
+      }
+    }
   };
 
   const saveMutation = useMutation({
@@ -404,14 +458,49 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="image">Image URL</Label>
-        <Input
-          id="image"
-          data-testid="input-product-image"
-          value={formData.image}
-          onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-          required
-        />
+        <Label htmlFor="image">Product Image</Label>
+        <div className="flex gap-4 items-start">
+          <div className="flex-1 space-y-2">
+            <ObjectUploader
+              maxNumberOfFiles={1}
+              maxFileSize={10485760}
+              onGetUploadParameters={handleGetUploadParameters}
+              onComplete={handleUploadComplete}
+              variant="outline"
+              testId="button-upload-product-image"
+            >
+              <Upload className="w-4 h-4 mr-2" />
+              {uploading ? "Processing..." : "Upload Image"}
+            </ObjectUploader>
+            <Input
+              id="image"
+              data-testid="input-product-image"
+              value={formData.image}
+              onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+              placeholder="Or enter image URL directly"
+            />
+            <p className="text-xs text-muted-foreground">
+              Upload an image or enter a URL directly (for backward compatibility)
+            </p>
+          </div>
+          {formData.image && (
+            <div className="w-32 h-32 border rounded-lg overflow-hidden flex-shrink-0" data-testid="preview-product-image">
+              <img
+                src={formData.image}
+                alt="Product preview"
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = '<div class="w-full h-full flex items-center justify-center bg-muted"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>';
+                  }
+                }}
+              />
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="space-y-2">
