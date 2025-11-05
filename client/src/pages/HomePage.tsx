@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3 } from "lucide-react";
+import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -125,7 +125,7 @@ export default function HomePage() {
 
     // Show success message
     toast({
-      title: "Successfully Subscribed! 🎉",
+      title: "Successfully Subscribed!",
       description: "Check your inbox for your 10% discount code. Welcome to the InkjetProGuide family!",
     });
     
@@ -142,190 +142,226 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      {/* Modern Hero with Product Showcase */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-primary/10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(201,169,97,0.15),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(201,169,97,0.1),transparent_50%)]"></div>
+      {/* Ultra-Modern Dark Hero */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background">
+        {/* Geometric Pattern Background */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(to right, currentColor 1px, transparent 1px),
+              linear-gradient(to bottom, currentColor 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }}></div>
+        </div>
+
+        {/* Animated Mesh Gradient */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-primary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
         
-        {/* Floating Decorative Elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        
-        {/* Main Hero Content - Split Layout */}
-        <div className="relative max-w-7xl mx-auto px-4 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Content */}
-            <div className="space-y-8 z-20">
-              {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20">
-                <Award className="w-5 h-5 text-primary" />
-                <span className="text-sm font-semibold text-primary">Trusted by 5,000+ Customers</span>
+        {/* Main Content */}
+        <div className="relative max-w-7xl mx-auto px-4 w-full py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content - 7 columns */}
+            <div className="lg:col-span-7 space-y-8">
+              {/* Animated Badge */}
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 border-primary/30 bg-primary/5 backdrop-blur-sm hover-elevate">
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                </div>
+                <span className="text-sm font-bold tracking-wide">5,000+ TRUSTED CUSTOMERS</span>
               </div>
 
-              {/* Main Heading */}
-              <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-[1.05]">
-                  Best Home Office<br/>
-                  <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
-                    Printer & Inkjet
-                  </span><br/>
-                  Models 2025
+              {/* Ultra Large Heading */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight">
+                  Best HP Printers<br/>
+                  <span className="relative inline-block">
+                    <span className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 blur-lg opacity-50"></span>
+                    <span className="relative bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
+                      For 2025
+                    </span>
+                  </span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                  Top rated office printers featuring HP inkjet models and copier printer scanner combos. 
-                  Expert support, premium hardware, and <span className="font-semibold text-foreground">instant troubleshooting</span> for your needs.
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light max-w-2xl">
+                  Premium HP inkjet printers with <span className="font-semibold text-foreground">expert support</span>, instant troubleshooting, and professional-grade performance for your office.
                 </p>
               </div>
 
-              {/* Enhanced Search Bar */}
-              <form onSubmit={handleSearch}>
+              {/* Modern Search */}
+              <form onSubmit={handleSearch} className="max-w-2xl">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/20 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
-                  <div className="relative flex items-center backdrop-blur-sm bg-background/80 border-2 border-primary/20 rounded-2xl shadow-2xl">
-                    <Search className="absolute left-6 w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 rounded-2xl opacity-20 blur group-hover:opacity-30 transition-opacity"></div>
+                  <div className="relative bg-card border-2 border-border rounded-2xl flex items-center overflow-hidden hover-elevate transition-all">
+                    <div className="pl-6 pr-4">
+                      <Search className="w-6 h-6 text-muted-foreground" />
+                    </div>
                     <Input
                       type="text"
-                      placeholder="Search printers, guides, or get help..."
+                      placeholder="Search printers by model, feature, or price..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-16 pr-6 h-16 text-lg border-0 bg-transparent focus-visible:ring-0"
+                      className="border-0 bg-transparent h-16 text-lg focus-visible:ring-0 flex-1"
                       data-testid="input-hero-search"
                     />
+                    <div className="pr-3">
+                      <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-0">
+                        <Zap className="w-3 h-3 mr-1" />
+                        Fast
+                      </Badge>
+                    </div>
                   </div>
                 </div>
               </form>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-4">
                 <Link href="/products">
-                  <Button size="lg" className="w-full sm:w-auto font-semibold shadow-2xl hover:shadow-primary/50 transition-all" data-testid="button-browse-printers">
-                    Browse HP Printers
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                  <Button size="lg" className="font-bold text-base shadow-xl hover:shadow-2xl" data-testid="button-browse-printers">
+                    <ShoppingCart className="mr-2 w-5 h-5" />
+                    Browse All Printers
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold border-2 backdrop-blur-sm bg-background/50" data-testid="button-get-help">
+                  <Button size="lg" variant="outline" className="font-bold text-base border-2" data-testid="button-get-help">
                     <Headphones className="mr-2 w-5 h-5" />
-                    Get Expert Help
+                    Expert Consultation
                   </Button>
                 </Link>
               </div>
 
-              {/* Feature Pills */}
-              <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="backdrop-blur-sm bg-card/80">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Trusted Support
-                </Badge>
-                <Badge variant="secondary" className="backdrop-blur-sm bg-card/80">
-                  <Shield className="w-4 h-4 mr-2" />
-                  OEM Warranty
-                </Badge>
-                <Badge variant="secondary" className="backdrop-blur-sm bg-card/80">
-                  <Truck className="w-4 h-4 mr-2" />
-                  Fast Delivery
-                </Badge>
-                <Badge variant="secondary" className="backdrop-blur-sm bg-card/80">
-                  <TrendingUp className="w-4 h-4 mr-2" />
-                  Price Match
-                </Badge>
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap gap-6 pt-4">
+                <div className="flex items-center gap-2 text-sm">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="font-medium">OEM Warranty</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Truck className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="font-medium">Free Shipping</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Clock className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="font-medium">24/7 Support</span>
+                </div>
               </div>
             </div>
 
-            {/* Right Side - Featured Product Showcase */}
+            {/* Right Product Card - 5 columns */}
             {heroProduct && (
-              <div className="flex justify-center lg:justify-end z-20" style={{ perspective: '1000px' }}>
-                <div className="relative w-full max-w-lg">
-                  {/* Glow Effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 via-primary/40 to-primary/30 rounded-3xl blur-2xl opacity-75"></div>
+              <div className="lg:col-span-5 flex justify-center lg:justify-end">
+                <div className="relative w-full max-w-md">
+                  {/* Outer Glow Ring */}
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-primary/30 via-primary/20 to-transparent rounded-[2.5rem] blur-2xl"></div>
                   
-                  <Card className="relative hover-elevate transition-all border-2 border-primary/20 shadow-2xl backdrop-blur-sm bg-card/90" style={{ transformStyle: 'preserve-3d' }}>
-                    <CardContent className="p-10">
-                      {/* Bestseller Badge */}
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                        <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 text-xs font-bold shadow-lg border-0">
-                          ⭐ FEATURED BESTSELLER
-                        </Badge>
+                  {/* Main Product Card */}
+                  <div className="relative">
+                    {/* Top Badge */}
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                      <div className="px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-black text-xs shadow-2xl flex items-center gap-1.5">
+                        <Flame className="w-3.5 h-3.5" />
+                        TOP SELLER
                       </div>
+                    </div>
 
-                      {/* Printer Icon */}
-                      <div className="relative w-20 h-20 mx-auto mb-6 mt-2">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary/40 rounded-full blur"></div>
-                        <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
-                          <Printer className="w-10 h-10 text-primary" />
-                        </div>
-                      </div>
-
-                      {/* Product Name */}
-                      <h3 className="text-2xl font-bold text-center mb-2 leading-tight">
-                        {heroProduct.name}
-                      </h3>
-                      <p className="text-sm text-muted-foreground text-center mb-6">
-                        {heroProduct.category}
-                      </p>
-
-                      {/* Price and Rating */}
-                      <div className="grid grid-cols-2 gap-4 mb-6">
-                        <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/20">
-                          <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                            ${heroProduct.price}
-                          </div>
-                          <div className="text-xs text-muted-foreground mt-1 font-medium">Best Price</div>
-                        </div>
-                        <div className="text-center p-4 rounded-xl bg-card border">
-                          <div className="flex items-center gap-1 justify-center">
-                            <span className="text-3xl font-bold">{heroProduct.rating}</span>
-                            <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                          </div>
-                          <div className="text-xs text-muted-foreground mt-1 font-medium">Rating</div>
-                        </div>
-                      </div>
-
-                      {/* Specs */}
-                      <div className="space-y-3 mb-6 p-4 rounded-xl bg-muted/30">
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-muted-foreground flex items-center gap-2">
-                            <TrendingUp className="w-4 h-4" />
-                            Print Speed
-                          </span>
-                          <span className="font-semibold">24 PPM</span>
-                        </div>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-muted-foreground flex items-center gap-2">
-                            <Package className="w-4 h-4" />
-                            Connectivity
-                          </span>
-                          <span className="font-semibold">WiFi + Ethernet</span>
-                        </div>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-muted-foreground flex items-center gap-2">
-                            <Shield className="w-4 h-4" />
-                            Warranty
-                          </span>
-                          <span className="font-semibold">Original OEM</span>
-                        </div>
-                      </div>
-
-                      {/* Shop Now Button */}
-                      <Link href={`/product/${heroProduct.id}`}>
-                        <Button className="w-full font-semibold shadow-lg hover:shadow-xl transition-all" size="lg" data-testid="button-shop-hero-product">
-                          Shop Now
-                          <ShoppingCart className="ml-2 w-4 h-4" />
-                        </Button>
-                      </Link>
+                    <Card className="relative overflow-hidden border-2 border-primary/20 bg-card/95 backdrop-blur-md shadow-2xl hover-elevate transition-all">
+                      {/* Corner Accent */}
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-[100px]"></div>
                       
-                      {/* Stock Indicator */}
-                      <div className="text-center mt-4">
-                        <p className="text-xs text-muted-foreground">
-                          <span className="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                          In Stock • Ships within 2-3 business days
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      <CardContent className="p-8 relative">
+                        {/* Huge Printer Icon */}
+                        <div className="relative mb-6 mt-6">
+                          <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+                          <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-12 flex items-center justify-center">
+                            <Printer className="w-24 h-24 text-primary" />
+                          </div>
+                        </div>
+
+                        {/* Product Info */}
+                        <div className="space-y-4">
+                          <div>
+                            <h3 className="text-2xl font-black leading-tight mb-1">
+                              {heroProduct.name}
+                            </h3>
+                            <p className="text-sm text-muted-foreground font-medium">
+                              {heroProduct.category}
+                            </p>
+                          </div>
+
+                          {/* Price & Rating Row */}
+                          <div className="flex items-center justify-between py-4 border-y border-border">
+                            <div>
+                              <div className="text-4xl font-black text-primary">
+                                ${heroProduct.price}
+                              </div>
+                              <div className="text-xs text-muted-foreground font-medium">Best Price Guarantee</div>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
+                              <Star className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                              <span className="text-2xl font-bold">{heroProduct.rating}</span>
+                            </div>
+                          </div>
+
+                          {/* Quick Specs */}
+                          <div className="grid grid-cols-2 gap-3">
+                            <div className="p-3 rounded-xl bg-muted/50 border border-border">
+                              <div className="text-xs text-muted-foreground mb-1">Speed</div>
+                              <div className="font-bold">24 PPM</div>
+                            </div>
+                            <div className="p-3 rounded-xl bg-muted/50 border border-border">
+                              <div className="text-xs text-muted-foreground mb-1">Connect</div>
+                              <div className="font-bold">WiFi</div>
+                            </div>
+                            <div className="p-3 rounded-xl bg-muted/50 border border-border">
+                              <div className="text-xs text-muted-foreground mb-1">Warranty</div>
+                              <div className="font-bold">1 Year</div>
+                            </div>
+                            <div className="p-3 rounded-xl bg-muted/50 border border-border">
+                              <div className="text-xs text-muted-foreground mb-1">Stock</div>
+                              <div className="font-bold text-green-600 flex items-center gap-1">
+                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                Ready
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* CTA */}
+                          <Link href={`/product/${heroProduct.id}`}>
+                            <Button className="w-full font-bold text-base shadow-lg" size="lg" data-testid="button-shop-hero-product">
+                              View Full Details
+                              <ArrowRight className="ml-2 w-5 h-5" />
+                            </Button>
+                          </Link>
+
+                          {/* Trust Footer */}
+                          <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground pt-2">
+                            <div className="flex items-center gap-1">
+                              <Shield className="w-3 h-3" />
+                              <span>Secure</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Truck className="w-3 h-3" />
+                              <span>2-3 Days</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <BadgeCheck className="w-3 h-3" />
+                              <span>Verified</span>
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
               </div>
             )}
