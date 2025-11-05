@@ -170,7 +170,7 @@ export default function HomePage() {
                 </h1>
                 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                  Expert support, authentic HP products, and professional service for all your printing needs.
+                  Trusted support, authentic HP products, and professional service for all your printing needs.
                 </p>
               </div>
 
@@ -213,14 +213,14 @@ export default function HomePage() {
             <div className="lg:col-span-3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
-                {/* Service Card 1 - Expert Support */}
-                <Card className="relative hover-elevate transition-all" data-testid="service-expert-support">
+                {/* Service Card 1 - Trusted Support */}
+                <Card className="relative hover-elevate transition-all" data-testid="service-trusted-support">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
                   <CardContent className="p-6 space-y-3 relative">
                     <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                       <Headphones className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold">Expert Support</h3>
+                    <h3 className="text-lg font-bold">Trusted Support</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Professional troubleshooting and technical assistance from certified HP specialists.
                     </p>
@@ -434,7 +434,7 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-warranty-period">1 Year</div>
-              <div className="text-sm text-muted-foreground">Warranty Included</div>
+              <div className="text-sm text-muted-foreground">OEM Warranty</div>
             </div>
           </div>
         </div>
@@ -635,40 +635,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Premium Options */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-purple-500/10 text-purple-700 hover:bg-purple-500/20 border-purple-500/20">
-              <Award className="w-4 h-4 mr-2" />
-              Premium Selection
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Premium Options</h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              High-performance printers for demanding workflows
-            </p>
-          </div>
-          
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[...Array(4)].map((_, i) => (
-                <Card key={i} className="h-96 animate-pulse">
-                  <CardContent className="p-6">
-                    <div className="bg-muted h-full rounded"></div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {premiumOptions.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
       {/* Budget-Friendly */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4">
@@ -774,9 +740,9 @@ export default function HomePage() {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
                   <Headphones className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-bold text-2xl mb-4">24/7 Support</h3>
+                <h3 className="font-bold text-2xl mb-4">Mon-Fri 9AM-6PM Support</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our dedicated support team is available round the clock to help with any questions or technical issues you encounter.
+                  Our dedicated support team is available during business hours to help with any questions or technical issues you encounter.
                 </p>
               </CardContent>
             </Card>

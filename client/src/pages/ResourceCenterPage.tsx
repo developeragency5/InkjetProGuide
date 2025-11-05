@@ -362,7 +362,7 @@ export default function ResourceCenterPage() {
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold mb-4">Need Personalized Help?</h2>
               <p className="text-muted-foreground mb-6 text-lg">
-                Our expert support team is ready to assist you with any questions or concerns
+                Our trusted support team is ready to assist you with any questions or concerns
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
