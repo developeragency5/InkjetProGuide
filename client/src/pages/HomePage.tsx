@@ -340,8 +340,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bento Grid Categories */}
+      {/* New Arrivals */}
       <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-green-500/10 text-green-700 hover:bg-green-500/20 border-green-500/20">
+              <Zap className="w-4 h-4 mr-2" />
+              Just Arrived
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">New Arrivals</h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Latest HP printer models with cutting-edge features
+            </p>
+          </div>
+          
+          {isLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[...Array(4)].map((_, i) => (
+                <Card key={i} className="h-96 animate-pulse">
+                  <CardContent className="p-6">
+                    <div className="bg-muted h-full rounded"></div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {newArrivals.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Bento Grid Categories */}
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Shop by Category</h2>
@@ -598,40 +632,6 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* New Arrivals */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-green-500/10 text-green-700 hover:bg-green-500/20 border-green-500/20">
-              <Zap className="w-4 h-4 mr-2" />
-              Just Arrived
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">New Arrivals</h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Latest HP printer models with cutting-edge features
-            </p>
-          </div>
-          
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[...Array(4)].map((_, i) => (
-                <Card key={i} className="h-96 animate-pulse">
-                  <CardContent className="p-6">
-                    <div className="bg-muted h-full rounded"></div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {newArrivals.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
