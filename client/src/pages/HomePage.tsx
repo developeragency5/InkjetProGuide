@@ -202,7 +202,7 @@ export default function HomePage() {
                 </Link>
                 <Link href="/contact">
                   <Button size="lg" variant="outline" className="font-semibold h-12 px-6" data-testid="button-get-help">
-                    Get Expert Help
+                    Get Trusted Help
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
@@ -240,11 +240,11 @@ export default function HomePage() {
                     </div>
                     <h3 className="text-lg font-bold">Free Shipping</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Complimentary shipping on all orders across the United States with fast delivery.
+                      Complimentary shipping on orders over $299 across the United States with fast delivery.
                     </p>
                     <div className="flex items-center gap-2 text-xs text-primary font-medium">
                       <CheckCircle2 className="w-4 h-4" />
-                      <span>Ships same business day</span>
+                      <span>Ships within 24 hours</span>
                     </div>
                   </CardContent>
                 </Card>
