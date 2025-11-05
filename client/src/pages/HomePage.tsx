@@ -800,11 +800,11 @@ export default function HomePage() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Need Help Choosing?</h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Access our comprehensive knowledge base with setup guides, troubleshooting tips, and expert recommendations to help you make the right decision.
+            Access our comprehensive resource center with setup guides, troubleshooting tips, and trusted recommendations to help you make the right decision.
           </p>
-          <Link href="/knowledge-base">
+          <Link href="/resources">
             <Button size="lg" className="font-semibold shadow-xl" data-testid="button-knowledge-base">
-              Browse Knowledge Base
+              Browse Resources
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
