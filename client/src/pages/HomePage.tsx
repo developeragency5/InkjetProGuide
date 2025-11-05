@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame } from "lucide-react";
+import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame, Wrench } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -143,230 +143,169 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      {/* E-Commerce Hero Section */}
-      <section className="relative h-[60vh] min-h-[600px] bg-gradient-to-b from-muted/30 to-background">
-        <div className="max-w-7xl mx-auto px-4 h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 h-full items-center py-8">
+      {/* Services-Focused Hero Section */}
+      <section className="relative h-[60vh] min-h-[600px] overflow-hidden">
+        {/* Modern Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             
             {/* Left Content - 40% */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-8">
+              {/* Trust Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border shadow-sm" data-testid="hero-trust-badge">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium">Serving 5,000+ Businesses Since 2020</span>
+              </div>
+
               {/* Main Headline */}
               <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-md">
-                  <Star className="w-4 h-4 text-primary fill-primary" />
-                  <span className="text-sm font-medium text-primary">Trusted by 5,000+ Businesses</span>
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  Professional HP<br/>
-                  Inkjet Printers
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                  Your Complete<br/>
+                  <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+                    Printer Solution
+                  </span>
                 </h1>
                 
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Authentic HP printers with expert support, genuine OEM warranty, and free shipping on all orders.
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+                  Expert support, authentic HP products, and professional service for all your printing needs.
                 </p>
               </div>
 
               {/* Search Bar */}
-              <form onSubmit={handleSearch} className="max-w-md">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <Input
-                    type="text"
-                    placeholder="Search for HP printers..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-12 h-12"
-                    data-testid="input-hero-search"
-                  />
+              <form onSubmit={handleSearch}>
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 rounded-lg opacity-25 group-hover:opacity-40 blur transition"></div>
+                  <div className="relative flex items-center bg-card border shadow-sm">
+                    <Search className="absolute left-4 w-5 h-5 text-muted-foreground" />
+                    <Input
+                      type="text"
+                      placeholder="Search for HP printers..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="pl-12 h-14 border-0 bg-transparent focus-visible:ring-0 text-base"
+                      data-testid="input-hero-search"
+                    />
+                  </div>
                 </div>
               </form>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-4">
                 <Link href="/products">
-                  <Button size="lg" className="font-semibold" data-testid="button-browse-printers">
+                  <Button size="lg" className="font-semibold h-12 px-6" data-testid="button-browse-printers">
                     <ShoppingCart className="mr-2 w-5 h-5" />
-                    Browse All Printers
+                    Browse Products
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="font-semibold" data-testid="button-get-help">
-                    Expert Help
+                  <Button size="lg" variant="outline" className="font-semibold h-12 px-6" data-testid="button-get-help">
+                    Get Expert Help
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
               </div>
-
-              {/* Trust Features */}
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Truck className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-sm">Free Shipping</div>
-                    <div className="text-xs text-muted-foreground">All U.S. orders</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-sm">OEM Warranty</div>
-                    <div className="text-xs text-muted-foreground">Full coverage</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Headphones className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-sm">Expert Support</div>
-                    <div className="text-xs text-muted-foreground">Mon-Fri 9AM-6PM</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-sm">In Stock</div>
-                    <div className="text-xs text-muted-foreground">Ships same day</div>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Right Product Showcase - 60% */}
-            <div className="lg:col-span-3 flex items-center justify-center">
-              {isLoading ? (
-                <Card className="w-full max-w-lg">
-                  <CardContent className="p-8">
-                    <div className="space-y-6 animate-pulse">
-                      <div className="w-full aspect-square bg-muted"></div>
-                      <div className="space-y-3">
-                        <div className="h-6 bg-muted w-3/4"></div>
-                        <div className="h-4 bg-muted w-1/2"></div>
-                        <div className="flex gap-3 pt-2">
-                          <div className="h-10 bg-muted flex-1"></div>
-                          <div className="h-10 bg-muted flex-1"></div>
-                        </div>
-                      </div>
+            {/* Right Services Showcase - 60% */}
+            <div className="lg:col-span-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                {/* Service Card 1 - Expert Support */}
+                <Card className="relative hover-elevate transition-all" data-testid="service-expert-support">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+                  <CardContent className="p-6 space-y-3 relative">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                      <Headphones className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold">Expert Support</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Professional troubleshooting and technical assistance from certified HP specialists.
+                    </p>
+                    <div className="flex items-center gap-2 text-xs text-primary font-medium">
+                      <CheckCircle2 className="w-4 h-4" />
+                      <span>Mon-Fri 9AM-6PM EST</span>
                     </div>
                   </CardContent>
                 </Card>
-              ) : heroProduct ? (
-                <Card className="w-full max-w-lg hover-elevate transition-all">
-                  <CardContent className="p-0">
-                    {/* Product Image */}
-                    <div className="relative w-full aspect-square bg-muted/20 flex items-center justify-center overflow-hidden group">
-                      <img 
-                        src={heroProduct.image || defaultHeroImage} 
-                        alt={heroProduct.name}
-                        className="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-105"
-                      />
-                      
-                      {/* Floating Badge */}
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 shadow-lg">
-                          <Star className="w-3 h-3 mr-1 fill-white" />
-                          Top Rated
-                        </Badge>
-                      </div>
 
-                      {/* Rating Badge */}
-                      {heroProduct.rating && (
-                        <div className="absolute top-4 right-4">
-                          <Badge variant="secondary" className="shadow-lg">
-                            <Star className="w-3 h-3 mr-1 fill-yellow-500 text-yellow-500" />
-                            {heroProduct.rating}
-                          </Badge>
-                        </div>
-                      )}
+                {/* Service Card 2 - Free Shipping */}
+                <Card className="relative hover-elevate transition-all" data-testid="service-free-shipping">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+                  <CardContent className="p-6 space-y-3 relative">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                      <Truck className="w-6 h-6 text-primary" />
                     </div>
-
-                    {/* Product Info */}
-                    <div className="p-6 space-y-4">
-                      <div>
-                        <h2 className="text-2xl font-bold leading-tight mb-1">
-                          {heroProduct.name}
-                        </h2>
-                        <p className="text-sm text-muted-foreground">
-                          {heroProduct.category}
-                        </p>
-                      </div>
-
-                      {/* Price and Stock */}
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="text-3xl font-bold text-primary">
-                            ${heroProduct.price}
-                          </div>
-                          <div className="text-xs text-muted-foreground">Free shipping included</div>
-                        </div>
-                        {heroProduct.inStock && (
-                          <Badge variant="outline" className="text-green-600 border-green-600">
-                            <CheckCircle2 className="w-3 h-3 mr-1" />
-                            In Stock
-                          </Badge>
-                        )}
-                        {!heroProduct.inStock && (
-                          <Badge variant="outline" className="text-muted-foreground border-muted-foreground">
-                            Out of Stock
-                          </Badge>
-                        )}
-                      </div>
-
-                      {/* Quick Specs */}
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div className="flex items-center gap-2 p-2 bg-muted/50">
-                          <TrendingUp className="w-4 h-4 text-primary" />
-                          <span className="font-medium">24 PPM Speed</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-muted/50">
-                          <Wifi className="w-4 h-4 text-primary" />
-                          <span className="font-medium">WiFi Enabled</span>
-                        </div>
-                      </div>
-
-                      {/* CTA */}
-                      <Link href={`/product/${heroProduct.id}`}>
-                        <Button className="w-full font-semibold" size="lg" data-testid="button-shop-hero-product">
-                          View Details & Buy Now
-                          <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
-                      </Link>
+                    <h3 className="text-lg font-bold">Free Shipping</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Complimentary shipping on all orders across the United States with fast delivery.
+                    </p>
+                    <div className="flex items-center gap-2 text-xs text-primary font-medium">
+                      <CheckCircle2 className="w-4 h-4" />
+                      <span>Ships same business day</span>
                     </div>
                   </CardContent>
                 </Card>
-              ) : (
-                <Card className="w-full max-w-lg">
-                  <CardContent className="p-8 text-center space-y-4">
-                    <div className="w-full aspect-square bg-muted/20 flex items-center justify-center">
-                      <img 
-                        src={defaultHeroImage} 
-                        alt="HP OfficeJet Pro Printer"
-                        className="w-full h-full object-contain p-8"
-                      />
+
+                {/* Service Card 3 - OEM Warranty */}
+                <Card className="relative hover-elevate transition-all" data-testid="service-oem-warranty">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+                  <CardContent className="p-6 space-y-3 relative">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                      <Shield className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
-                      <h2 className="text-2xl font-bold mb-2">
-                        Discover Our HP Printer Collection
-                      </h2>
-                      <p className="text-muted-foreground mb-4">
-                        Browse our selection of professional HP inkjet printers
+                    <h3 className="text-lg font-bold">OEM Warranty</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Full manufacturer warranty coverage on all HP printers with guaranteed authenticity.
+                    </p>
+                    <div className="flex items-center gap-2 text-xs text-primary font-medium">
+                      <CheckCircle2 className="w-4 h-4" />
+                      <span>100% Authentic Products</span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Service Card 4 - Installation Help */}
+                <Card className="relative hover-elevate transition-all" data-testid="service-setup-assistance">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+                  <CardContent className="p-6 space-y-3 relative">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                      <Wrench className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold">Setup Assistance</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Step-by-step installation guides and remote setup support for all HP printer models.
+                    </p>
+                    <div className="flex items-center gap-2 text-xs text-primary font-medium">
+                      <CheckCircle2 className="w-4 h-4" />
+                      <span>Remote & phone support</span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+              </div>
+
+              {/* Bottom CTA Card */}
+              <Card className="mt-4 bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20" data-testid="service-help-cta">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-1">Need help choosing?</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Our printer specialists are ready to assist you
                       </p>
-                      <Link href="/products">
-                        <Button size="lg" className="font-semibold" data-testid="button-shop-hero-product">
-                          Shop All Printers
-                        </Button>
-                      </Link>
                     </div>
-                  </CardContent>
-                </Card>
-              )}
+                    <Link href="/contact">
+                      <Button variant="secondary" className="font-semibold" data-testid="button-shop-hero-product">
+                        Contact Us
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
