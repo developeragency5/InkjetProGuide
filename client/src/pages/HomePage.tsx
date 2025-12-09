@@ -780,7 +780,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-2xl mb-4">Easy Returns</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Hassle-free returns within 30 days. Not satisfied? Return it for a full refund, no questions asked.
+                  Hassle-free returns within 30 days. Not satisfied? Return unopened items for a full refund, or opened items in like-new condition.
                 </p>
               </CardContent>
             </Card>

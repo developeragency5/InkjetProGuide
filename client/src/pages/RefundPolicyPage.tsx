@@ -33,7 +33,7 @@ export default function RefundPolicyPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-summary-1">
-                <strong className="text-foreground">30-Day Return Policy:</strong> Return any HP inkjet printer within 30 days of delivery for a full refund.
+                <strong className="text-foreground">30-Day Return Policy:</strong> Return any HP inkjet printer within 30 days of delivery. Full refund on unopened items; opened items in like-new condition may incur a 15% restocking fee if used.
               </p>
               <p data-testid="text-summary-2">
                 <strong className="text-foreground">Free Return Shipping:</strong> We provide prepaid return labels for all eligible returns.
@@ -51,7 +51,7 @@ export default function RefundPolicyPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-return-intro">
-                We want you to be completely satisfied with your HP inkjet printer purchase. If you're not happy for any reason, you can return your printer within <strong className="text-foreground">30 days from the date of delivery</strong> for a full refund.
+                We want you to be completely satisfied with your HP inkjet printer purchase. If you're not happy for any reason, you can return your printer within <strong className="text-foreground">30 days from the date of delivery</strong>. Unopened items receive a full refund; opened items in like-new condition are also eligible (a 15% restocking fee may apply to items showing signs of use).
               </p>
               
               <div className="mt-6">
