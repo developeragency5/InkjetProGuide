@@ -503,6 +503,183 @@ export default function ProductDetailPage() {
                     </div>
                   </div>
                 </div>
+
+                <Separator className="my-6" />
+
+                {/* Who Is This For? - Use Cases */}
+                <h3 className="text-xl font-semibold mb-4">Who Is This Printer For?</h3>
+                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                  <div className="p-4 bg-muted/30 rounded-lg">
+                    <h4 className="font-semibold mb-2 text-primary">Home Users</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Perfect for families who need to print school assignments, photos, recipes, and occasional documents. 
+                      The wireless connectivity makes it easy for everyone in the household to print from their devices.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted/30 rounded-lg">
+                    <h4 className="font-semibold mb-2 text-primary">Students</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Ideal for college students in dorms or apartments. Compact size saves space, and mobile printing 
+                      lets you print essays and projects directly from your laptop or smartphone.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted/30 rounded-lg">
+                    <h4 className="font-semibold mb-2 text-primary">Home Office Workers</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Great for remote workers who need reliable printing for contracts, invoices, and business documents. 
+                      Scanning and copying features add extra productivity value.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted/30 rounded-lg">
+                    <h4 className="font-semibold mb-2 text-primary">Small Businesses</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Suitable for small offices with moderate print volumes. Professional-quality output for client-facing 
+                      materials and internal documents at an affordable cost.
+                    </p>
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+
+                {/* Pros & Cons */}
+                <h3 className="text-xl font-semibold mb-4">Benefits & Considerations</h3>
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <h4 className="font-semibold mb-3 flex items-center gap-2 text-green-600 dark:text-green-400">
+                      <CheckCircle className="w-5 h-5" />
+                      Benefits
+                    </h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span>Easy wireless setup with HP Smart app guidance</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span>Excellent print quality for photos and documents</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span>Mobile printing from any device via WiFi</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span>Compact design fits in small spaces</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span>Energy Star certified for lower power consumption</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-3 flex items-center gap-2 text-amber-600 dark:text-amber-400">
+                      <AlertCircle className="w-5 h-5" />
+                      Considerations
+                    </h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                        <span>Best suited for low to moderate print volumes</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                        <span>Paper tray capacity may require frequent refills for heavy use</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                        <span>Standard cartridges have lower page yields than XL options</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                        <span>Manual duplex printing (no automatic two-sided on basic models)</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+
+                {/* Safety & Maintenance Tips */}
+                <h3 className="text-xl font-semibold mb-4">Safety & Maintenance Tips</h3>
+                <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-6 mb-8">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-semibold mb-2">Safe Operation</h4>
+                      <ul className="space-y-1 text-sm text-muted-foreground">
+                        <li>Keep the printer on a flat, stable surface</li>
+                        <li>Use only HP-recommended paper types</li>
+                        <li>Never reach inside while printing</li>
+                        <li>Keep away from water and humid areas</li>
+                        <li>Unplug before cleaning or maintenance</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Maintenance Best Practices</h4>
+                      <ul className="space-y-1 text-sm text-muted-foreground">
+                        <li>Print at least once weekly to prevent ink drying</li>
+                        <li>Run printhead cleaning if quality degrades</li>
+                        <li>Use genuine HP ink cartridges for best results</li>
+                        <li>Keep firmware updated via HP Smart app</li>
+                        <li>Store unused cartridges in cool, dry place</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+
+                {/* How It Compares */}
+                <h3 className="text-xl font-semibold mb-4">How This Model Compares</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-3 px-2 font-semibold">Feature</th>
+                        <th className="text-center py-3 px-2 font-semibold bg-primary/5">This Model</th>
+                        <th className="text-center py-3 px-2 font-semibold">Entry-Level</th>
+                        <th className="text-center py-3 px-2 font-semibold">Pro Series</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-muted-foreground">
+                      <tr className="border-b">
+                        <td className="py-2 px-2">Print Speed</td>
+                        <td className="text-center py-2 px-2 bg-primary/5 font-medium">Up to 22 ppm</td>
+                        <td className="text-center py-2 px-2">Up to 7 ppm</td>
+                        <td className="text-center py-2 px-2">Up to 25 ppm</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 px-2">WiFi Connectivity</td>
+                        <td className="text-center py-2 px-2 bg-primary/5"><CheckCircle className="w-4 h-4 text-green-500 mx-auto" /></td>
+                        <td className="text-center py-2 px-2"><CheckCircle className="w-4 h-4 text-green-500 mx-auto" /></td>
+                        <td className="text-center py-2 px-2"><CheckCircle className="w-4 h-4 text-green-500 mx-auto" /></td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 px-2">Auto Duplex</td>
+                        <td className="text-center py-2 px-2 bg-primary/5">Manual</td>
+                        <td className="text-center py-2 px-2">Manual</td>
+                        <td className="text-center py-2 px-2"><CheckCircle className="w-4 h-4 text-green-500 mx-auto" /></td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 px-2">Scanner/Copier</td>
+                        <td className="text-center py-2 px-2 bg-primary/5"><CheckCircle className="w-4 h-4 text-green-500 mx-auto" /></td>
+                        <td className="text-center py-2 px-2">Print Only</td>
+                        <td className="text-center py-2 px-2"><CheckCircle className="w-4 h-4 text-green-500 mx-auto" /></td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 px-2">Best For</td>
+                        <td className="text-center py-2 px-2 bg-primary/5 font-medium">Home/Students</td>
+                        <td className="text-center py-2 px-2">Occasional Use</td>
+                        <td className="text-center py-2 px-2">Small Business</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-sm text-muted-foreground mt-4">
+                  This printer offers the ideal balance of features and value for home users and students who need 
+                  reliable printing without the higher cost of professional-grade models. For higher volume needs, 
+                  consider our OfficeJet Pro series.
+                </p>
               </CardContent>
             </Card>
           </TabsContent>

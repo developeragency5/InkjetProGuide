@@ -199,6 +199,69 @@ export default function ProductsPage() {
           </p>
         </div>
 
+        {/* Category Introduction - Detailed SEO Content */}
+        {!searchQuery && (
+          <Card className="mb-8">
+            <CardContent className="p-6">
+              <div className="prose prose-sm max-w-none text-muted-foreground">
+                <h2 className="text-xl font-semibold text-foreground mb-4">
+                  {category 
+                    ? `About ${category.charAt(0).toUpperCase() + category.slice(1)} HP Inkjet Printers`
+                    : "Your Complete Guide to HP Inkjet Printers"}
+                </h2>
+                
+                <p className="mb-4">
+                  HP inkjet printers have been the trusted choice for home users, students, and small businesses for decades. 
+                  Whether you need to print vibrant photos, professional documents, or everyday schoolwork, HP's inkjet 
+                  technology delivers exceptional quality at an affordable price. At InkjetProGuide, we specialize exclusively 
+                  in HP inkjet printers, ensuring you get expert guidance and authentic products shipped directly to your door 
+                  anywhere in the United States.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6 my-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Why Choose HP Inkjet?</h3>
+                    <ul className="space-y-1 text-sm">
+                      <li>Industry-leading print quality with HP Thermal Inkjet technology</li>
+                      <li>Easy wireless setup and mobile printing capabilities</li>
+                      <li>Reliable performance backed by HP's warranty support</li>
+                      <li>Energy-efficient designs that save on electricity costs</li>
+                      <li>Wide range of models for every budget and need</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Choosing the Right Model</h3>
+                    <ul className="space-y-1 text-sm">
+                      <li><strong>DeskJet:</strong> Perfect for basic home printing needs</li>
+                      <li><strong>ENVY:</strong> Ideal for photo printing and creative projects</li>
+                      <li><strong>OfficeJet:</strong> Built for home office productivity</li>
+                      <li><strong>OfficeJet Pro:</strong> Professional-grade for small businesses</li>
+                      <li><strong>Smart Tank:</strong> High-volume printing with refillable ink</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <p className="mb-4">
+                  Every printer we sell comes with the original HP manufacturer warranty, ensuring you receive genuine 
+                  products with full support. Our team is available Monday through Friday, 9 AM to 6 PM ET, to help you 
+                  find the perfect printer for your needs. We offer free shipping on orders over $299 and hassle-free 
+                  returns within 30 days of purchase.
+                </p>
+
+                <div className="bg-muted/30 p-4 rounded-lg">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Need Help Choosing?</h3>
+                  <p className="text-sm mb-2">
+                    Not sure which HP inkjet printer is right for you? Use our filters on the left to narrow down by 
+                    price, connectivity options, and print technology. You can also compare up to 4 printers side-by-side 
+                    to see detailed specifications and features. For personalized recommendations, contact us at 
+                    <strong> inkjetproguide@outlook.com</strong> or call <strong>1-325-400-8874</strong>.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Search Bar - Real-time filtering */}
         <div className="mb-6">
           <div className="relative max-w-md">
