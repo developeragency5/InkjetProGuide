@@ -201,8 +201,8 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="font-semibold h-12 px-6" data-testid="button-get-help">
-                    Get Trusted Help
+                  <Button size="lg" variant="outline" className="font-semibold h-12 px-6" data-testid="button-contact-us">
+                    Contact Us
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
