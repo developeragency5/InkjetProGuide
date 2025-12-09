@@ -380,9 +380,9 @@ export default function FaqPage() {
                   Email Us
                 </Button>
                 <Button variant="outline" asChild data-testid="button-phone-support">
-                  <a href="tel:+18884674377">
+                  <a href="tel:+13254008874">
                     <Phone className="w-4 h-4 mr-2" />
-                    Call: 1-888-467-4377
+                    Call: 1-325-400-8874
                   </a>
                 </Button>
               </div>

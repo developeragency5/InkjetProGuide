@@ -45,8 +45,8 @@ export default function ContactPage() {
               <p className="text-sm text-muted-foreground mb-2">
                 Call us toll-free (Office Hours Support)
               </p>
-              <a href="tel:+18884674377" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
-                1-888-467-4377
+              <a href="tel:+13254008874" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
+                1-325-400-8874
               </a>
             </CardContent>
           </Card>
@@ -155,8 +155,8 @@ export default function ContactPage() {
                   <div>
                     <p className="font-semibold mb-1">InkjetProGuide Headquarters</p>
                     <p className="text-sm text-muted-foreground">
-                      2450 Broadway Street, Suite 300<br />
-                      San Francisco, CA 94115<br />
+                      2704 Handley Ederville Rd<br />
+                      Fort Worth, TX 76118<br />
                       United States
                     </p>
                   </div>

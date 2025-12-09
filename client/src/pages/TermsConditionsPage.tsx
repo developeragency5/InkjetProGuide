@@ -546,8 +546,8 @@ export default function TermsConditionsPage() {
                   <FileText className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1" data-testid="heading-phone-contact">Phone</h3>
-                    <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-contact">
-                      1-888-467-4377
+                    <a href="tel:+13254008874" className="text-primary hover:underline" data-testid="link-phone-contact">
+                      1-325-400-8874
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">Available during office hours</p>
                   </div>

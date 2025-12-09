@@ -92,7 +92,7 @@ export default function RefundPolicyPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-1">Contact Us</h3>
                     <p className="text-muted-foreground" data-testid="text-step-1">
-                      Email us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-support-step1">support@inkjetproguide.com</a> or call <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-support-step1">1-888-467-4377</a> with your order number to initiate a return.
+                      Email us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-support-step1">support@inkjetproguide.com</a> or call <a href="tel:+13254008874" className="text-primary hover:underline" data-testid="link-phone-support-step1">1-325-400-8874</a> with your order number to initiate a return.
                     </p>
                   </div>
                 </div>
@@ -297,8 +297,8 @@ export default function RefundPolicyPage() {
                   <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1" data-testid="heading-call-us">Call Us</h3>
-                    <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-support">
-                      1-888-467-4377
+                    <a href="tel:+13254008874" className="text-primary hover:underline" data-testid="link-phone-support">
+                      1-325-400-8874
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">Available during office hours</p>
                   </div>
