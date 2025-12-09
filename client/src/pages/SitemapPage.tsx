@@ -194,7 +194,7 @@ export default function SitemapPage() {
 
         {/* Last Updated */}
         <div className="mt-6 text-center text-sm text-muted-foreground" data-testid="text-last-updated">
-          Last Updated: January 2024
+          Last Updated: December 2025
         </div>
       </div>
     </div>

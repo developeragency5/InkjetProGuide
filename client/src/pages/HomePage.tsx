@@ -744,7 +744,7 @@ export default function HomePage() {
               <div className="text-sm text-muted-foreground">HP Models Available</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-satisfaction">96%</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-satisfaction">95%</div>
               <div className="text-sm text-muted-foreground">Customer Satisfaction</div>
             </div>
             <div className="text-center">
