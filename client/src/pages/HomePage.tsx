@@ -144,32 +144,32 @@ export default function HomePage() {
   return (
     <div className="min-h-screen overflow-hidden">
       {/* Services-Focused Hero Section */}
-      <section className="relative h-[60vh] min-h-[600px] overflow-hidden">
+      <section className="relative py-8 sm:py-12 lg:py-0 lg:min-h-[600px] overflow-hidden">
         {/* Modern Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 lg:h-full flex items-center py-6 lg:py-12">
+          <div className="w-full grid grid-cols-1 xl:grid-cols-5 gap-8 lg:gap-12 items-start lg:items-center">
             
             {/* Left Content - 40% */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="xl:col-span-2 space-y-4 sm:space-y-6 lg:space-y-8">
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border shadow-sm" data-testid="hero-trust-badge">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-card border shadow-sm" data-testid="hero-trust-badge">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">Trusted HP Printer Experts Since 2020</span>
+                <span className="text-xs sm:text-sm font-medium">Trusted HP Printer Experts Since 2020</span>
               </div>
 
               {/* Main Headline */}
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <div className="space-y-3 sm:space-y-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-balance">
                   Your Complete<br/>
                   <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
                     Printer Solution
                   </span>
                 </h1>
                 
-                <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg">
                   Authentic HP products, comprehensive resources, and professional service for all your printing needs.
                 </p>
               </div>
@@ -179,13 +179,13 @@ export default function HomePage() {
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 rounded-lg opacity-25 group-hover:opacity-40 blur transition"></div>
                   <div className="relative flex items-center bg-card border shadow-sm">
-                    <Search className="absolute left-4 w-5 h-5 text-muted-foreground" />
+                    <Search className="absolute left-3 sm:left-4 w-4 sm:w-5 h-4 sm:h-5 text-muted-foreground" />
                     <Input
                       type="text"
                       placeholder="Search for HP printers..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-12 h-14 border-0 bg-transparent focus-visible:ring-0 text-base"
+                      className="pl-10 sm:pl-12 h-11 sm:h-14 border-0 bg-transparent focus-visible:ring-0 text-sm sm:text-base"
                       data-testid="input-hero-search"
                     />
                   </div>
@@ -193,40 +193,40 @@ export default function HomePage() {
               </form>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4">
-                <Link href="/products">
-                  <Button size="lg" className="font-semibold h-12 px-6" data-testid="button-browse-printers">
-                    <ShoppingCart className="mr-2 w-5 h-5" />
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                <Link href="/products" className="w-full sm:w-auto">
+                  <Button size="default" className="w-full sm:w-auto font-semibold sm:h-12 sm:px-6" data-testid="button-browse-printers">
+                    <ShoppingCart className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />
                     Browse Products
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="font-semibold h-12 px-6" data-testid="button-contact-us">
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button size="default" variant="outline" className="w-full sm:w-auto font-semibold sm:h-12 sm:px-6" data-testid="button-contact-us">
                     Contact Us
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5" />
                   </Button>
                 </Link>
               </div>
             </div>
 
             {/* Right Services Showcase - 60% */}
-            <div className="lg:col-span-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="xl:col-span-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 
                 {/* Service Card 1 - Contact Us */}
                 <Link href="/contact">
-                  <Card className="relative hover-elevate transition-all cursor-pointer" data-testid="service-contact-us">
+                  <Card className="relative hover-elevate transition-all cursor-pointer h-full" data-testid="service-contact-us">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
-                    <CardContent className="p-6 space-y-3 relative">
-                      <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                        <Mail className="w-6 h-6 text-primary" />
+                    <CardContent className="p-4 sm:p-6 space-y-2 sm:space-y-3 relative">
+                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/10 flex items-center justify-center">
+                        <Mail className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
                       </div>
-                      <h3 className="text-lg font-bold">Contact Us</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-base sm:text-lg font-bold">Contact Us</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                         Have questions? Reach out to our team and we'll help you find the right printer.
                       </p>
                       <div className="flex items-center gap-2 text-xs text-primary font-medium">
-                        <CheckCircle2 className="w-4 h-4" />
+                        <CheckCircle2 className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                         <span>Mon-Fri 9AM-6PM EST</span>
                       </div>
                     </CardContent>
@@ -234,54 +234,54 @@ export default function HomePage() {
                 </Link>
 
                 {/* Service Card 2 - Free Shipping */}
-                <Card className="relative hover-elevate transition-all" data-testid="service-free-shipping">
+                <Card className="relative hover-elevate transition-all h-full" data-testid="service-free-shipping">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
-                  <CardContent className="p-6 space-y-3 relative">
-                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                      <Truck className="w-6 h-6 text-primary" />
+                  <CardContent className="p-4 sm:p-6 space-y-2 sm:space-y-3 relative">
+                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/10 flex items-center justify-center">
+                      <Truck className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold">Free Shipping</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h3 className="text-base sm:text-lg font-bold">Free Shipping</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       Complimentary shipping on orders over $299 across the United States with fast delivery.
                     </p>
                     <div className="flex items-center gap-2 text-xs text-primary font-medium">
-                      <CheckCircle2 className="w-4 h-4" />
+                      <CheckCircle2 className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                       <span>Ships within 24 hours</span>
                     </div>
                   </CardContent>
                 </Card>
 
                 {/* Service Card 3 - OEM Warranty */}
-                <Card className="relative hover-elevate transition-all" data-testid="service-oem-warranty">
+                <Card className="relative hover-elevate transition-all h-full" data-testid="service-oem-warranty">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
-                  <CardContent className="p-6 space-y-3 relative">
-                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-primary" />
+                  <CardContent className="p-4 sm:p-6 space-y-2 sm:space-y-3 relative">
+                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/10 flex items-center justify-center">
+                      <Shield className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold">OEM Warranty</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h3 className="text-base sm:text-lg font-bold">OEM Warranty</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       Full manufacturer warranty coverage on all HP printers with guaranteed authenticity.
                     </p>
                     <div className="flex items-center gap-2 text-xs text-primary font-medium">
-                      <CheckCircle2 className="w-4 h-4" />
+                      <CheckCircle2 className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                       <span>100% Authentic Products</span>
                     </div>
                   </CardContent>
                 </Card>
 
                 {/* Service Card 4 - Installation Help */}
-                <Card className="relative hover-elevate transition-all" data-testid="service-setup-assistance">
+                <Card className="relative hover-elevate transition-all h-full" data-testid="service-setup-assistance">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
-                  <CardContent className="p-6 space-y-3 relative">
-                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                      <Wrench className="w-6 h-6 text-primary" />
+                  <CardContent className="p-4 sm:p-6 space-y-2 sm:space-y-3 relative">
+                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/10 flex items-center justify-center">
+                      <Wrench className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold">Setup Assistance</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h3 className="text-base sm:text-lg font-bold">Setup Assistance</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       Step-by-step installation guides and remote setup support for all HP printer models.
                     </p>
                     <div className="flex items-center gap-2 text-xs text-primary font-medium">
-                      <CheckCircle2 className="w-4 h-4" />
+                      <CheckCircle2 className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                       <span>Remote & phone support</span>
                     </div>
                   </CardContent>
@@ -290,17 +290,17 @@ export default function HomePage() {
               </div>
 
               {/* Bottom CTA Card */}
-              <Card className="mt-4 bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20" data-testid="service-help-cta">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between gap-4">
+              <Card className="mt-3 sm:mt-4 bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20" data-testid="service-help-cta">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-1">Need help choosing?</h3>
-                      <p className="text-sm text-muted-foreground">
+                      <h3 className="font-bold text-base sm:text-lg mb-1">Need help choosing?</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         Our printer specialists are ready to assist you
                       </p>
                     </div>
-                    <Link href="/contact">
-                      <Button variant="secondary" className="font-semibold" data-testid="button-shop-hero-product">
+                    <Link href="/contact" className="w-full sm:w-auto">
+                      <Button variant="secondary" className="w-full sm:w-auto font-semibold" data-testid="button-shop-hero-product">
                         Contact Us
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
@@ -314,29 +314,29 @@ export default function HomePage() {
       </section>
 
       {/* Stats Banner with Glassmorphism - SINGLE LOCATION */}
-      <section className="relative py-16 overflow-hidden">
+      <section className="relative py-8 sm:py-12 lg:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10"></div>
         <div className="relative max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center backdrop-blur-sm bg-card/50 rounded-2xl p-8 hover-elevate" data-testid="stat-customers">
-              <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">1,000+</div>
-              <div className="text-sm text-muted-foreground font-medium">Happy Customers</div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-customers">
+              <Users className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">1,000+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Happy Customers</div>
             </div>
-            <div className="text-center backdrop-blur-sm bg-card/50 rounded-2xl p-8 hover-elevate" data-testid="stat-shipping">
-              <Truck className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">Free Ship</div>
-              <div className="text-sm text-muted-foreground font-medium">Orders Over $299</div>
+            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-shipping">
+              <Truck className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">Free</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Orders Over $299</div>
             </div>
-            <div className="text-center backdrop-blur-sm bg-card/50 rounded-2xl p-8 hover-elevate" data-testid="stat-warranty">
-              <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">OEM</div>
-              <div className="text-sm text-muted-foreground font-medium">Original Warranty</div>
+            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-warranty">
+              <Shield className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">OEM</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Original Warranty</div>
             </div>
-            <div className="text-center backdrop-blur-sm bg-card/50 rounded-2xl p-8 hover-elevate" data-testid="stat-contact">
-              <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">Contact</div>
-              <div className="text-sm text-muted-foreground font-medium">Get In Touch</div>
+            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-contact">
+              <Mail className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">Contact</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Get In Touch</div>
             </div>
           </div>
         </div>
