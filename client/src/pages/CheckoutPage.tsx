@@ -616,18 +616,29 @@ export default function CheckoutPage() {
                   <p className="text-muted-foreground mb-2">
                     Thank you for your order. Your order number is:
                   </p>
-                  <p className="text-2xl font-mono font-semibold text-primary mb-8" data-testid="text-order-id">
+                  <p className="text-2xl font-mono font-semibold text-primary mb-4" data-testid="text-order-id">
                     #{orderId.slice(0, 8).toUpperCase()}
                   </p>
-                  <p className="text-muted-foreground mb-8">
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Full Order ID: <span className="font-mono">{orderId}</span>
+                  </p>
+                  <p className="text-muted-foreground mb-6">
                     A confirmation email has been sent to <strong>{shippingData?.email}</strong>
                   </p>
-                  <div className="flex gap-3 justify-center">
+                  <div className="bg-muted/50 rounded-lg p-4 mb-6">
+                    <p className="text-sm text-muted-foreground">
+                      Save your order ID to track your order status. You can check your order anytime at{" "}
+                      <a href="/order-lookup" className="text-primary hover:underline font-medium" data-testid="link-order-lookup">
+                        Order Lookup
+                      </a>
+                    </p>
+                  </div>
+                  <div className="flex gap-3 justify-center flex-wrap">
                     <Button variant="outline" onClick={() => navigate("/")} data-testid="button-continue-shopping">
                       Continue Shopping
                     </Button>
-                    <Button onClick={() => navigate("/orders")} data-testid="button-view-orders">
-                      View Orders
+                    <Button variant="outline" onClick={() => navigate("/order-lookup")} data-testid="button-track-order">
+                      Track Order
                     </Button>
                   </div>
                 </CardContent>

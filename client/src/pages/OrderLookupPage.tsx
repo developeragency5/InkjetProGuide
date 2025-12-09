@@ -34,8 +34,14 @@ export default function OrderLookupPage() {
   });
 
   const lookupMutation = useMutation({
-    mutationFn: (data: OrderLookupFormData) => 
-      apiRequest("POST", "/api/orders/lookup", data),
+    mutationFn: async (data: OrderLookupFormData) => {
+      const res = await apiRequest("POST", "/api/orders/lookup", data);
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.message || "Order not found");
+      }
+      return await res.json();
+    },
     onSuccess: (response: any) => {
       setOrder(response.order);
     },

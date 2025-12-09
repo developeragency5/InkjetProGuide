@@ -511,6 +511,13 @@ export function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/order-lookup">
+                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-order-lookup">
+                      Track Order
+                    </span>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/about">
                     <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-about">
                       About Us
