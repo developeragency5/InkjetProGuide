@@ -342,6 +342,183 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* About InkjetProGuide - Intro Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="mb-4">
+                <Printer className="w-4 h-4 mr-2" />
+                About Us
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Your Complete Guide to HP Inkjet Printers
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Welcome to <strong className="text-foreground">InkjetProGuide</strong>, your trusted destination for HP inkjet printers in the United States. Whether you're a home user looking for an affordable everyday printer, a small business owner seeking reliable multifunction solutions, or a photography enthusiast demanding professional-quality prints, we're here to help you find the perfect HP printer for your needs.
+                </p>
+                <p>
+                  Our mission is simple: to make printer shopping easy, informative, and stress-free. We understand that choosing the right printer can be overwhelming with so many models, features, and specifications to consider. That's why we've curated a carefully selected collection of HP's best inkjet printers, from compact home models to high-volume office workhorses, and paired them with comprehensive buying guides, setup tutorials, and maintenance tips.
+                </p>
+                <p>
+                  At InkjetProGuide, we specialize exclusively in HP inkjet technology because we believe in offering expertise over breadth. Our team stays up-to-date with the latest HP releases, including Smart Tank printers for cost-conscious printing, OfficeJet Pro models for business productivity, ENVY printers for photo quality, and portable solutions for on-the-go professionals. Every product we sell comes with the original HP manufacturer warranty and our commitment to customer satisfaction.
+                </p>
+                <p>
+                  We serve customers across all 50 states with free shipping on orders over $299, fast 2-3 day delivery, and hassle-free returns within 30 days. Our USA-based team is available Monday through Friday to answer your questions, help you compare models, and ensure you get the right printer the first time. From first-time buyers to IT managers upgrading their fleet, InkjetProGuide is your partner in printing excellence.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href="/about">
+                  <Button variant="outline" data-testid="button-learn-more-about">
+                    Learn More About Us
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+                <Link href="/products">
+                  <Button data-testid="button-explore-printers">
+                    Explore Our Printers
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <Card className="hover-elevate">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Home Users</h3>
+                  <p className="text-sm text-muted-foreground">Affordable printers for everyday documents, school projects, and family photos.</p>
+                </CardContent>
+              </Card>
+              <Card className="hover-elevate">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <BarChart3 className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Small Business</h3>
+                  <p className="text-sm text-muted-foreground">High-volume, fast, and reliable printers for office productivity.</p>
+                </CardContent>
+              </Card>
+              <Card className="hover-elevate">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Star className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Photo Enthusiasts</h3>
+                  <p className="text-sm text-muted-foreground">Professional-quality photo printers with vibrant color accuracy.</p>
+                </CardContent>
+              </Card>
+              <Card className="hover-elevate">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Globe className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Remote Workers</h3>
+                  <p className="text-sm text-muted-foreground">Compact, wireless printers perfect for home offices and mobile setups.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Guides Section */}
+      <section className="py-20 bg-muted/20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4">
+              <BookOpen className="w-4 h-4 mr-2" />
+              Resources
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Guides & Popular Topics</h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Expert resources to help you choose, set up, and maintain your HP printer
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <Link href="/guide">
+              <Card className="h-full hover-elevate cursor-pointer group">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 mb-4 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <BookOpen className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Printer Buying Guide</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Complete guide to choosing the right HP inkjet printer for your needs, budget, and printing volume.
+                  </p>
+                  <span className="text-primary text-sm font-medium flex items-center gap-1">
+                    Read Guide <ArrowRight className="w-4 h-4" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            <Link href="/ink-guide">
+              <Card className="h-full hover-elevate cursor-pointer group">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 mb-4 rounded-full bg-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Box className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Ink & Cartridge Guide</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Everything you need to know about HP ink cartridges, tank systems, and cost-per-page calculations.
+                  </p>
+                  <span className="text-primary text-sm font-medium flex items-center gap-1">
+                    Learn More <ArrowRight className="w-4 h-4" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            <Link href="/help">
+              <Card className="h-full hover-elevate cursor-pointer group">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 mb-4 rounded-full bg-orange-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Wrench className="w-6 h-6 text-orange-600" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Setup & Troubleshooting</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Step-by-step setup instructions, common issue fixes, and maintenance tips for all HP models.
+                  </p>
+                  <span className="text-primary text-sm font-medium flex items-center gap-1">
+                    Get Help <ArrowRight className="w-4 h-4" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            <Link href="/faq">
+              <Card className="h-full hover-elevate cursor-pointer group">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 mb-4 rounded-full bg-green-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <CheckCircle className="w-6 h-6 text-green-600" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">FAQ & Common Questions</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Answers to frequently asked questions about ordering, shipping, warranties, and printer features.
+                  </p>
+                  <span className="text-primary text-sm font-medium flex items-center gap-1">
+                    View FAQ <ArrowRight className="w-4 h-4" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+
+          <div className="text-center">
+            <Link href="/resources">
+              <Button variant="outline" size="lg" data-testid="button-view-all-resources">
+                View All Resources
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* New Arrivals */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4">
