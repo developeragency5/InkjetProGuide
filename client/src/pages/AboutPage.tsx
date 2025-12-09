@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Award, Users, Headphones, Shield, Package, Zap, Target, Heart, TrendingUp, CheckCircle, Truck, DollarSign } from "lucide-react";
+import { Award, Users, Headphones, Shield, Package, Zap, Target, Heart, TrendingUp, CheckCircle, Truck, DollarSign, MapPin, Mail, Phone } from "lucide-react";
 import { Link } from "wouter";
 
 export default function AboutPage() {
@@ -115,6 +115,83 @@ export default function AboutPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-16">
+        {/* Who We Are - Trust Building Section */}
+        <div className="mb-20">
+          <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-background">
+            <CardContent className="p-8 md:p-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" data-testid="heading-who-we-are">Who We Are</h2>
+              <div className="grid md:grid-cols-2 gap-12">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                      <Users className="w-5 h-5 text-primary" />
+                      About Our Team
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      InkjetProGuide is operated by a small, dedicated team of printing professionals based in 
+                      Fort Worth, Texas. Our team brings together years of experience in printer retail, customer 
+                      service, and e-commerce to provide you with the best possible shopping experience. We're 
+                      real people who genuinely care about helping you find the right printer for your needs.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                      <Target className="w-5 h-5 text-primary" />
+                      What We Do
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We are an online retailer specializing exclusively in HP inkjet printers for homes, offices, 
+                      and small businesses across the United States. Our website offers a curated selection of 
+                      genuine HP printers, detailed product guides, buying recommendations, and educational resources 
+                      to help you make informed purchasing decisions. We handle product sourcing, order fulfillment, 
+                      shipping, and customer support all under one roof.
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                      <MapPin className="w-5 h-5 text-primary" />
+                      Our Location
+                    </h3>
+                    <div className="text-muted-foreground leading-relaxed space-y-2">
+                      <p>
+                        InkjetProGuide is proudly based in Fort Worth, Texas. While we operate primarily online, 
+                        we serve customers nationwide with fast shipping across all 50 states.
+                      </p>
+                      <div className="mt-4 p-4 bg-background rounded-lg border">
+                        <p className="font-medium text-foreground">InkjetProGuide</p>
+                        <p>2704 Handley Ederville Rd</p>
+                        <p>Fort Worth, TX 76118</p>
+                        <p className="mt-2">United States</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                      <Headphones className="w-5 h-5 text-primary" />
+                      Contact Information
+                    </h3>
+                    <div className="text-muted-foreground space-y-2">
+                      <p className="flex items-center gap-2">
+                        <Phone className="w-4 h-4" />
+                        <span>1-325-400-8874</span>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Mail className="w-4 h-4" />
+                        <span>inkjetproguide@outlook.com</span>
+                      </p>
+                      <p className="text-sm mt-2">
+                        Hours: Monday - Friday, 9:00 AM - 6:00 PM ET
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Our Story */}
         <div className="mb-20">
           <div className="max-w-4xl mx-auto">
