@@ -320,7 +320,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center backdrop-blur-sm bg-card/50 rounded-2xl p-8 hover-elevate" data-testid="stat-customers">
               <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">5,000+</div>
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">1,000+</div>
               <div className="text-sm text-muted-foreground font-medium">Happy Customers</div>
             </div>
             <div className="text-center backdrop-blur-sm bg-card/50 rounded-2xl p-8 hover-elevate" data-testid="stat-shipping">
@@ -1217,7 +1217,7 @@ export default function HomePage() {
             </Button>
           </form>
           <p className="text-sm text-muted-foreground">
-            Join 5,000+ subscribers • No spam, unsubscribe anytime
+            Join 1,000+ subscribers - No spam, unsubscribe anytime
           </p>
         </div>
       </section>

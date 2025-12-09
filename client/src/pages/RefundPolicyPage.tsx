@@ -17,7 +17,7 @@ export default function RefundPolicyPage() {
               Your satisfaction is our priority. Learn about our hassle-free return process.
             </p>
             <p className="text-sm text-muted-foreground mt-4" data-testid="text-last-updated">
-              Last Updated: December 9, 2024
+              Last Updated: December 9, 2025
             </p>
           </div>
         </div>

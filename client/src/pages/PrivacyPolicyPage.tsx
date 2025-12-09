@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
               Your privacy is important to us. Learn how we collect, use, and protect your personal information.
             </p>
             <p className="text-sm text-muted-foreground mt-4" data-testid="text-last-updated">
-              Last Updated: December 9, 2024
+              Last Updated: December 9, 2025
             </p>
           </div>
         </div>

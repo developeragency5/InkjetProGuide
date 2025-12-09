@@ -5,9 +5,9 @@ import { Link } from "wouter";
 
 export default function AboutPage() {
   const stats = [
-    { value: "5,000+", label: "Happy Customers" },
+    { value: "1,000+", label: "Happy Customers" },
     { value: "25+", label: "HP Printer Models" },
-    { value: "96%", label: "Customer Satisfaction" },
+    { value: "95%", label: "Customer Satisfaction" },
     { value: "2-3 Days", label: "Fast Delivery" },
   ];
 
