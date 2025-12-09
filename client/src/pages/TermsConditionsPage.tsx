@@ -20,7 +20,7 @@ export default function TermsConditionsPage() {
               Please read these terms carefully before using our services
             </p>
             <p className="text-sm text-muted-foreground mt-4" data-testid="text-last-updated">
-              Last Updated: January 2024
+              Last Updated: December 9, 2024
             </p>
           </div>
         </div>
@@ -59,6 +59,15 @@ export default function TermsConditionsPage() {
               <p data-testid="text-acceptance-3">
                 <strong className="text-foreground">Continued use of our services after changes constitutes acceptance of the modified Terms.</strong>
               </p>
+              <div className="mt-4 p-4 bg-muted/50 rounded-md">
+                <p className="text-sm" data-testid="text-business-info">
+                  <strong className="text-foreground">Business Information:</strong><br />
+                  InkjetProGuide<br />
+                  2704 Handley Ederville Rd, Fort Worth, TX 76118, United States<br />
+                  Email: inkjetproguide@outlook.com | Phone: 1-325-400-8874<br />
+                  Hours: Monday - Friday, 9:00 AM - 6:00 PM ET
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>

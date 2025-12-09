@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
               Your privacy is important to us. Learn how we collect, use, and protect your personal information.
             </p>
             <p className="text-sm text-muted-foreground mt-4" data-testid="text-last-updated">
-              Last Updated: January 2024
+              Last Updated: December 9, 2024
             </p>
           </div>
         </div>
@@ -65,6 +65,14 @@ export default function PrivacyPolicyPage() {
               <p data-testid="text-intro-3">
                 <strong className="text-foreground">InkjetProGuide</strong> is an e-commerce platform specializing in HP inkjet printers, serving customers exclusively within the United States.
               </p>
+              <div className="mt-4 p-4 bg-muted/50 rounded-md">
+                <p className="text-sm" data-testid="text-business-info">
+                  <strong className="text-foreground">Business Information:</strong><br />
+                  InkjetProGuide<br />
+                  2704 Handley Ederville Rd, Fort Worth, TX 76118<br />
+                  Email: inkjetproguide@outlook.com | Phone: 1-325-400-8874
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>

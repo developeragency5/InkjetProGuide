@@ -17,7 +17,7 @@ export default function RefundPolicyPage() {
               Your satisfaction is our priority. Learn about our hassle-free return process.
             </p>
             <p className="text-sm text-muted-foreground mt-4" data-testid="text-last-updated">
-              Last Updated: January 2024
+              Last Updated: December 9, 2024
             </p>
           </div>
         </div>
@@ -41,6 +41,12 @@ export default function RefundPolicyPage() {
               <p data-testid="text-summary-3">
                 <strong className="text-foreground">Fast Refunds:</strong> Refunds processed within 5-7 business days of receiving your return.
               </p>
+              <div className="mt-4 p-4 bg-muted/50 rounded-md">
+                <p className="text-sm" data-testid="text-business-info">
+                  <strong className="text-foreground">InkjetProGuide</strong> - 2704 Handley Ederville Rd, Fort Worth, TX 76118<br />
+                  Email: inkjetproguide@outlook.com | Phone: 1-325-400-8874
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>
