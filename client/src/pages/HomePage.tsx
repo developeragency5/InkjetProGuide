@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { ShoppingCart, Package, Shield, Mail, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame, Wrench } from "lucide-react";
+import { ShoppingCart, Package, Shield, Mail, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame, Wrench, Sparkles, Target, RefreshCw, Phone } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -343,80 +343,186 @@ export default function HomePage() {
       </section>
 
       {/* About InkjetProGuide - Intro Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4">
-                <Printer className="w-4 h-4 mr-2" />
-                About Us
-              </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Your Complete Guide to HP Inkjet Printers
-              </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Welcome to <strong className="text-foreground">InkjetProGuide</strong>, your trusted destination for HP inkjet printers in the United States. Whether you're a home user looking for an affordable everyday printer, a small business owner seeking reliable multifunction solutions, or a photography enthusiast demanding professional-quality prints, we're here to help you find the perfect HP printer for your needs.
-                </p>
-                <p>
-                  Our mission is simple: to make printer shopping easy, informative, and stress-free. We understand that choosing the right printer can be overwhelming with so many models, features, and specifications to consider. That's why we've curated a carefully selected collection of HP's best inkjet printers, from compact home models to high-volume office workhorses, and paired them with comprehensive buying guides, setup tutorials, and maintenance tips.
-                </p>
-                <p>
-                  At InkjetProGuide, we specialize exclusively in HP inkjet technology because we believe in offering expertise over breadth. Our team stays up-to-date with the latest HP releases, including Smart Tank printers for cost-conscious printing, OfficeJet Pro models for business productivity, ENVY printers for photo quality, and portable solutions for on-the-go professionals. Every product we sell comes with the original HP manufacturer warranty and our commitment to customer satisfaction.
-                </p>
-                <p>
-                  We serve customers across all 50 states with free shipping on orders over $299, fast 2-3 day delivery, and hassle-free returns within 30 days. Our USA-based team is available Monday through Friday to answer your questions, help you compare models, and ensure you get the right printer the first time. From first-time buyers to IT managers upgrading their fleet, InkjetProGuide is your partner in printing excellence.
-                </p>
+      <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 relative">
+          {/* Section Header - Centered */}
+          <div className="text-center mb-16">
+            <Badge className="mb-4 px-4 py-2">
+              <Printer className="w-4 h-4 mr-2" />
+              About InkjetProGuide
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text">
+              Your Complete Guide to HP Inkjet Printers
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Trusted by thousands of customers across the United States for expert guidance and authentic HP products
+            </p>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-5 gap-8 items-start">
+            {/* Left Content - 3 columns */}
+            <div className="lg:col-span-3 space-y-6">
+              {/* Welcome Card */}
+              <Card className="overflow-hidden border-primary/20">
+                <div className="h-1 bg-gradient-to-r from-primary via-primary/70 to-primary/40" />
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">Welcome to InkjetProGuide</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Your trusted destination for HP inkjet printers in the United States. Whether you're a home user looking for an affordable everyday printer, a small business owner seeking reliable multifunction solutions, or a photography enthusiast demanding professional-quality prints, we're here to help you find the perfect HP printer for your needs.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Mission Card */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                      <Target className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">Our Mission</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        To make printer shopping easy, informative, and stress-free. We understand that choosing the right printer can be overwhelming with so many models, features, and specifications to consider. That's why we've curated a carefully selected collection of HP's best inkjet printers, from compact home models to high-volume office workhorses.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Expertise Card */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                      <Award className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">HP Inkjet Specialists</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        We specialize exclusively in HP inkjet technology because we believe in offering expertise over breadth. Our team stays up-to-date with the latest HP releases, including Smart Tank printers, OfficeJet Pro models, ENVY printers, and portable solutions. Every product comes with the original HP manufacturer warranty.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Service Highlights */}
+              <div className="grid sm:grid-cols-3 gap-4">
+                <div className="p-4 rounded-xl bg-green-500/5 border border-green-500/20">
+                  <Truck className="w-8 h-8 text-green-600 mb-3" />
+                  <h4 className="font-semibold mb-1">Free Shipping</h4>
+                  <p className="text-sm text-muted-foreground">On orders over $299 to all 50 states</p>
+                </div>
+                <div className="p-4 rounded-xl bg-blue-500/5 border border-blue-500/20">
+                  <Clock className="w-8 h-8 text-blue-600 mb-3" />
+                  <h4 className="font-semibold mb-1">Fast Delivery</h4>
+                  <p className="text-sm text-muted-foreground">2-3 business day shipping</p>
+                </div>
+                <div className="p-4 rounded-xl bg-amber-500/5 border border-amber-500/20">
+                  <RefreshCw className="w-8 h-8 text-amber-600 mb-3" />
+                  <h4 className="font-semibold mb-1">Easy Returns</h4>
+                  <p className="text-sm text-muted-foreground">30-day hassle-free returns</p>
+                </div>
               </div>
-              <div className="mt-8 flex flex-wrap gap-4">
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 pt-4">
                 <Link href="/about">
-                  <Button variant="outline" data-testid="button-learn-more-about">
+                  <Button variant="outline" size="lg" data-testid="button-learn-more-about">
                     Learn More About Us
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>
                 <Link href="/products">
-                  <Button data-testid="button-explore-printers">
+                  <Button size="lg" data-testid="button-explore-printers">
+                    <Printer className="mr-2 w-4 h-4" />
                     Explore Our Printers
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="hover-elevate">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Users className="w-6 h-6 text-primary" />
+
+            {/* Right Side - User Type Cards - 2 columns */}
+            <div className="lg:col-span-2">
+              <h3 className="font-semibold text-lg mb-4 text-center lg:text-left">Who We Serve</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <Card className="hover-elevate group">
+                  <CardContent className="p-5 text-center">
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Users className="w-7 h-7 text-blue-600" />
+                    </div>
+                    <h3 className="font-bold text-base mb-2">Home Users</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">Affordable printers for everyday documents, school projects, and family photos.</p>
+                  </CardContent>
+                </Card>
+                <Card className="hover-elevate group">
+                  <CardContent className="p-5 text-center">
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <BarChart3 className="w-7 h-7 text-green-600" />
+                    </div>
+                    <h3 className="font-bold text-base mb-2">Small Business</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">High-volume, fast, and reliable printers for office productivity.</p>
+                  </CardContent>
+                </Card>
+                <Card className="hover-elevate group">
+                  <CardContent className="p-5 text-center">
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Star className="w-7 h-7 text-purple-600" />
+                    </div>
+                    <h3 className="font-bold text-base mb-2">Photo Enthusiasts</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">Professional-quality photo printers with vibrant color accuracy.</p>
+                  </CardContent>
+                </Card>
+                <Card className="hover-elevate group">
+                  <CardContent className="p-5 text-center">
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Globe className="w-7 h-7 text-amber-600" />
+                    </div>
+                    <h3 className="font-bold text-base mb-2">Remote Workers</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">Compact, wireless printers perfect for home offices and mobile setups.</p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Contact Info Card */}
+              <Card className="mt-4 bg-primary/5 border-primary/20">
+                <CardContent className="p-5">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2">
+                    <Phone className="w-4 h-4 text-primary" />
+                    Need Help Choosing?
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Our USA-based team is here to help you find the perfect printer.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <p className="flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-primary" />
+                      <span className="font-medium">1-325-400-8874</span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Mail className="w-4 h-4 text-primary" />
+                      <span className="font-medium">inkjetproguide@outlook.com</span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-muted-foreground" />
+                      <span className="text-muted-foreground">Mon-Fri, 9AM-6PM ET</span>
+                    </p>
                   </div>
-                  <h3 className="font-bold text-lg mb-2">Home Users</h3>
-                  <p className="text-sm text-muted-foreground">Affordable printers for everyday documents, school projects, and family photos.</p>
-                </CardContent>
-              </Card>
-              <Card className="hover-elevate">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">Small Business</h3>
-                  <p className="text-sm text-muted-foreground">High-volume, fast, and reliable printers for office productivity.</p>
-                </CardContent>
-              </Card>
-              <Card className="hover-elevate">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Star className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">Photo Enthusiasts</h3>
-                  <p className="text-sm text-muted-foreground">Professional-quality photo printers with vibrant color accuracy.</p>
-                </CardContent>
-              </Card>
-              <Card className="hover-elevate">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Globe className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">Remote Workers</h3>
-                  <p className="text-sm text-muted-foreground">Compact, wireless printers perfect for home offices and mobile setups.</p>
                 </CardContent>
               </Card>
             </div>
