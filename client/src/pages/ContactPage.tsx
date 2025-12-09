@@ -30,8 +30,16 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions? We're here to help. Reach out to our support team anytime.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
+            Have questions about HP inkjet printers, orders, or technical support? Our dedicated team at InkjetProGuide 
+            is here to help you find the perfect printing solution. We pride ourselves on providing exceptional 
+            customer service and expert guidance for all your printing needs.
+          </p>
+          <p className="text-base text-muted-foreground max-w-3xl mx-auto">
+            Whether you need help choosing the right printer for your home office, require assistance with an existing order, 
+            or have technical questions about printer setup and maintenance, our knowledgeable support staff is ready to assist. 
+            We typically respond to all inquiries within 24 hours during business days, and we are committed to ensuring 
+            your complete satisfaction with every interaction.
           </p>
         </div>
 
@@ -172,21 +180,50 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">What are your shipping options?</h4>
                   <p className="text-sm text-muted-foreground">
-                    We offer free shipping on all orders over $299. Standard delivery takes 2-3 business days.
+                    We offer free shipping on all orders over $299. Standard delivery takes 2-3 business days, 
+                    with express shipping available for urgent orders. All shipments include tracking information 
+                    sent directly to your email.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Do you offer warranty on printers?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Yes! All HP printers come with a comprehensive Original OEM warranty.
+                    Yes! All HP printers come with a comprehensive Original OEM warranty. This covers manufacturer 
+                    defects and ensures your investment is protected. Extended warranty options are also available 
+                    for additional peace of mind.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Can I return a printer?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Absolutely. We offer hassle-free returns within 30 days on all purchases.
+                    Absolutely. We offer hassle-free returns within 30 days on all purchases. Items must be in 
+                    original condition with all accessories included. Contact our support team to initiate a return 
+                    and receive your prepaid shipping label.
                   </p>
                 </div>
+                <div>
+                  <h4 className="font-semibold mb-1">How can I get technical support?</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Our technical support team is available during business hours to help with printer setup, 
+                    troubleshooting, and maintenance questions. You can reach us by phone, email, or through 
+                    the contact form on this page. We also provide comprehensive guides and resources in our 
+                    Help Center.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-primary/5 border-primary/20">
+              <CardContent className="p-6">
+                <h3 className="font-semibold text-lg mb-3">Why Choose InkjetProGuide?</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Based in Fort Worth, Texas, InkjetProGuide has been serving customers across the United States 
+                  since 2020. We specialize exclusively in HP inkjet printers, providing authentic products with 
+                  original manufacturer warranties. Our commitment to customer satisfaction means we go above and 
+                  beyond to ensure you receive the best possible service, from product selection through post-purchase 
+                  support. Every printer we sell comes with free access to our comprehensive setup guides and 
+                  maintenance resources, helping you get the most out of your investment.
+                </p>
               </CardContent>
             </Card>
           </div>

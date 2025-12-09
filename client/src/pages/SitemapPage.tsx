@@ -81,8 +81,14 @@ export default function SitemapPage() {
                 Sitemap
               </h1>
             </div>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-sitemap-subtitle">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6" data-testid="text-sitemap-subtitle">
               Browse all pages and sections of InkjetProGuide to find exactly what you're looking for
+            </p>
+            <p className="text-base text-muted-foreground max-w-3xl mx-auto">
+              This comprehensive sitemap provides quick access to every section of our website. Whether you are 
+              looking for HP inkjet printers, buying guides, technical resources, or company information, 
+              you can navigate directly to any page from here. Our site is organized into logical categories 
+              to help you find products, resources, and support quickly and efficiently.
             </p>
           </div>
         </div>

@@ -567,7 +567,7 @@ export function Layout({ children }: LayoutProps) {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
             <div className="text-muted-foreground text-center md:text-left">
-              © 2024 InkjetProGuide. All rights reserved. Made with care in the USA.
+              © 2025 InkjetProGuide. All rights reserved. Made with care in the USA.
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-muted-foreground">

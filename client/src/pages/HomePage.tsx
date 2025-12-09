@@ -157,7 +157,7 @@ export default function HomePage() {
               {/* Trust Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border shadow-sm" data-testid="hero-trust-badge">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">Serving 5,000+ Businesses Since 2020</span>
+                <span className="text-sm font-medium">Trusted HP Printer Experts Since 2020</span>
               </div>
 
               {/* Main Headline */}
