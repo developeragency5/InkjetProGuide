@@ -836,14 +836,17 @@ export default function HomePage() {
                   "The setup guide was incredibly helpful! Had my new HP printer up and running 
                   in under 10 minutes. The detailed instructions made everything so easy."
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
-                    SM
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
+                      SM
+                    </div>
+                    <div>
+                      <p className="font-bold text-lg">Sarah Mitchell</p>
+                      <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-lg">Sarah Mitchell</p>
-                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
-                  </div>
+                  <p className="text-xs text-muted-foreground">Nov 15, 2024</p>
                 </div>
               </CardContent>
             </Card>
@@ -859,14 +862,17 @@ export default function HomePage() {
                   "Best customer service I've experienced. They helped me choose the perfect printer 
                   for my home office and answered all my questions promptly."
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
-                    JC
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
+                      JC
+                    </div>
+                    <div>
+                      <p className="font-bold text-lg">John Chen</p>
+                      <p className="text-sm text-muted-foreground">Austin, TX</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-lg">John Chen</p>
-                    <p className="text-sm text-muted-foreground">Austin, TX</p>
-                  </div>
+                  <p className="text-xs text-muted-foreground">Oct 28, 2024</p>
                 </div>
               </CardContent>
             </Card>
@@ -882,14 +888,17 @@ export default function HomePage() {
                   "The maintenance tips have been a game-changer. My printer runs like new thanks 
                   to their expert guidance on cleaning and care."
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
-                    EM
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
+                      EM
+                    </div>
+                    <div>
+                      <p className="font-bold text-lg">Emily Rodriguez</p>
+                      <p className="text-sm text-muted-foreground">Miami, FL</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-lg">Emily Rodriguez</p>
-                    <p className="text-sm text-muted-foreground">Miami, FL</p>
-                  </div>
+                  <p className="text-xs text-muted-foreground">Sep 12, 2024</p>
                 </div>
               </CardContent>
             </Card>
