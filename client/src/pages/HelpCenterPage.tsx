@@ -78,7 +78,7 @@ const categories = [
 const quickLinks = [
   { title: "Track My Order", href: "/profile", icon: Package },
   { title: "Return a Product", href: "/refund-policy", icon: Shield },
-  { title: "Contact Support", href: "/contact", icon: Phone },
+  { title: "Contact Us", href: "/contact", icon: Phone },
   { title: "FAQs", href: "/faq", icon: MessageSquare },
 ];
 
@@ -310,7 +310,7 @@ export default function HelpCenterPage() {
               </Button>
               <Link href="/contact">
                 <Button variant="outline" data-testid="button-contact-from-search">
-                  Contact Support
+                  Contact Us
                 </Button>
               </Link>
             </div>
@@ -325,7 +325,7 @@ export default function HelpCenterPage() {
                 Still Need Help?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Can't find what you're looking for? Our USA-based support team is available during office hours 
+                Can't find what you're looking for? Our USA-based team is available during office hours 
                 to help you with any questions about your HP inkjet printer.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -364,8 +364,8 @@ export default function HelpCenterPage() {
               </div>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link href="/contact">
-                  <Button size="lg" className="h-12 px-8" data-testid="button-contact-support">
-                    Contact Support
+                  <Button size="lg" className="h-12 px-8" data-testid="button-contact-us">
+                    Contact Us
                   </Button>
                 </Link>
                 <Link href="/faq">

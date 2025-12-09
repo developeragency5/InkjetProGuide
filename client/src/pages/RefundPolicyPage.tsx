@@ -90,7 +90,7 @@ export default function RefundPolicyPage() {
                     1
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-1">Contact Our Support Team</h3>
+                    <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-1">Contact Us</h3>
                     <p className="text-muted-foreground" data-testid="text-step-1">
                       Email us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-support-step1">support@inkjetproguide.com</a> or call <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-support-step1">1-888-467-4377</a> with your order number to initiate a return.
                     </p>
@@ -286,7 +286,7 @@ export default function RefundPolicyPage() {
                 <div className="flex items-start gap-3">
                   <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1" data-testid="heading-email-support">Email Support</h3>
+                    <h3 className="font-semibold mb-1" data-testid="heading-email-us">Email Us</h3>
                     <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-support">
                       support@inkjetproguide.com
                     </a>
@@ -296,7 +296,7 @@ export default function RefundPolicyPage() {
                 <div className="flex items-start gap-3">
                   <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1" data-testid="heading-phone-support">Phone Support</h3>
+                    <h3 className="font-semibold mb-1" data-testid="heading-call-us">Call Us</h3>
                     <a href="tel:+18884674377" className="text-primary hover:underline" data-testid="link-phone-support">
                       1-888-467-4377
                     </a>
@@ -345,8 +345,8 @@ export default function RefundPolicyPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/contact">
-              <Button size="lg" className="h-12 px-8" data-testid="button-contact-support">
-                Contact Support
+              <Button size="lg" className="h-12 px-8" data-testid="button-contact-us">
+                Contact Us
               </Button>
             </Link>
             <Link href="/faq">

@@ -34,7 +34,7 @@ export default function SitemapPage() {
       ]
     },
     {
-      title: "Help & Support",
+      title: "Help Center",
       icon: HelpCircle,
       links: [
         { name: "Help Center", path: "/help", icon: HelpCircle },

@@ -69,11 +69,11 @@ export default function GuidesPage() {
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold mb-4">Need More Help?</h2>
               <p className="text-muted-foreground mb-6">
-                Can't find what you're looking for? Our support team is here to help.
+                Can't find what you're looking for? Our team is here to help.
               </p>
               <Link href="/contact">
-                <span className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-md font-semibold hover-elevate cursor-pointer">
-                  Contact Support
+                <span className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-md font-semibold hover-elevate cursor-pointer" data-testid="button-contact-us">
+                  Contact Us
                 </span>
               </Link>
             </CardContent>

@@ -14,7 +14,7 @@ import type { Faq } from "@shared/schema";
 const FAQ_CATEGORIES = [
   "All Questions",
   "Buying Questions",
-  "Technical Support",
+  "Contact Us",
   "Shipping & Returns",
   "Ink & Supplies",
   "Warranty & Service",
@@ -368,16 +368,16 @@ export default function FaqPage() {
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold mb-4">Still need help?</h2>
               <p className="text-muted-foreground mb-6">
-                Our support team is here to assist you with any questions or concerns
+                Our team is here to assist you with any questions or concerns
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="default" data-testid="button-chat-support">
                   <MessageSquare className="w-4 h-4 mr-2" />
                   Chat with us
                 </Button>
-                <Button variant="outline" data-testid="button-email-support">
+                <Button variant="outline" data-testid="button-email-us">
                   <Mail className="w-4 h-4 mr-2" />
-                  Email Support
+                  Email Us
                 </Button>
                 <Button variant="outline" asChild data-testid="button-phone-support">
                   <a href="tel:+18884674377">

@@ -377,23 +377,23 @@ export default function HelpArticlePage() {
               </Card>
             )}
 
-            {/* Contact Support */}
+            {/* Contact Us */}
             <Card className="bg-primary text-primary-foreground">
               <CardHeader>
                 <CardTitle className="text-lg">Still Need Help?</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm opacity-90">
-                  Our support team is ready to assist you with any questions.
+                  Our team is ready to assist you with any questions.
                 </p>
                 <Link href="/contact">
                   <Button
                     variant="secondary"
                     className="w-full"
-                    data-testid="button-contact-support-sidebar"
+                    data-testid="button-contact-us-sidebar"
                   >
                     <MessageSquare className="w-4 h-4 mr-2" />
-                    Contact Support
+                    Contact Us
                   </Button>
                 </Link>
                 <div className="pt-3 border-t border-primary-foreground/20 space-y-2">

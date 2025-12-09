@@ -244,13 +244,13 @@ export default function GuidePage() {
               <BookOpen className="w-16 h-16 mx-auto mb-6 text-primary" />
               <h2 className="text-3xl font-bold mb-4">Can't Find Your Model?</h2>
               <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                We're constantly adding new printer guides. Contact our support team for help with your specific model,
+                We're constantly adding new printer guides. Contact us for help with your specific model,
                 or browse our general setup and troubleshooting resources.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link href="/contact">
-                  <Button size="lg" data-testid="button-contact-support">
-                    Contact Support
+                  <Button size="lg" data-testid="button-contact-us">
+                    Contact Us
                   </Button>
                 </Link>
                 <Link href="/guides">
