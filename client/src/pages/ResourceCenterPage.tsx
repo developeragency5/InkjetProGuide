@@ -356,36 +356,28 @@ export default function ResourceCenterPage() {
           </CardContent>
         </Card>
 
-        {/* Contact Support CTA */}
+        {/* Contact Us CTA */}
         <Card className="border-2 border-primary">
           <CardContent className="py-8">
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold mb-4">Need Personalized Help?</h2>
               <p className="text-muted-foreground mb-6 text-lg">
-                Our trusted support team is ready to assist you with any questions or concerns
+                Our team is ready to assist you with any questions or concerns
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg" data-testid="button-live-chat">
-                  <MessageSquare className="w-5 h-5 mr-2" />
-                  Start Live Chat
-                </Button>
-                <Button size="lg" variant="outline" data-testid="button-email-support">
-                  <Mail className="w-5 h-5 mr-2" />
-                  Email Support
-                </Button>
-                <Button size="lg" variant="outline" asChild data-testid="button-phone-support">
-                  <a href="tel:+18884674377">
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call 1-888-467-4377
-                  </a>
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" data-testid="button-contact-us">
+                    <Mail className="w-5 h-5 mr-2" />
+                    Contact Us
+                  </Button>
+                </Link>
               </div>
 
               <div className="mt-6 pt-6 border-t">
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span>Average response time: Under 2 hours</span>
+                  <span>Mon-Fri 9AM-6PM EST</span>
                 </div>
               </div>
             </div>

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { ShoppingCart, Package, Shield, Headphones, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame, Wrench } from "lucide-react";
+import { ShoppingCart, Package, Shield, Mail, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame, Wrench } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -170,7 +170,7 @@ export default function HomePage() {
                 </h1>
                 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                  Trusted support, authentic HP products, and professional service for all your printing needs.
+                  Authentic HP products, comprehensive resources, and professional service for all your printing needs.
                 </p>
               </div>
 
@@ -213,23 +213,25 @@ export default function HomePage() {
             <div className="lg:col-span-3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
-                {/* Service Card 1 - Trusted Support */}
-                <Card className="relative hover-elevate transition-all" data-testid="service-trusted-support">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
-                  <CardContent className="p-6 space-y-3 relative">
-                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                      <Headphones className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-bold">Trusted Support</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Professional troubleshooting and technical assistance from certified HP specialists.
-                    </p>
-                    <div className="flex items-center gap-2 text-xs text-primary font-medium">
-                      <CheckCircle2 className="w-4 h-4" />
-                      <span>Mon-Fri 9AM-6PM EST</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                {/* Service Card 1 - Contact Us */}
+                <Link href="/contact">
+                  <Card className="relative hover-elevate transition-all cursor-pointer" data-testid="service-contact-us">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+                    <CardContent className="p-6 space-y-3 relative">
+                      <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                        <Mail className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-bold">Contact Us</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Have questions? Reach out to our team and we'll help you find the right printer.
+                      </p>
+                      <div className="flex items-center gap-2 text-xs text-primary font-medium">
+                        <CheckCircle2 className="w-4 h-4" />
+                        <span>Mon-Fri 9AM-6PM EST</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
 
                 {/* Service Card 2 - Free Shipping */}
                 <Card className="relative hover-elevate transition-all" data-testid="service-free-shipping">
@@ -331,10 +333,10 @@ export default function HomePage() {
               <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">OEM</div>
               <div className="text-sm text-muted-foreground font-medium">Original Warranty</div>
             </div>
-            <div className="text-center backdrop-blur-sm bg-card/50 rounded-2xl p-8 hover-elevate" data-testid="stat-support">
-              <Headphones className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">Mon-Fri</div>
-              <div className="text-sm text-muted-foreground font-medium">9AM-6PM Support</div>
+            <div className="text-center backdrop-blur-sm bg-card/50 rounded-2xl p-8 hover-elevate" data-testid="stat-contact">
+              <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">Contact</div>
+              <div className="text-sm text-muted-foreground font-medium">Get In Touch</div>
             </div>
           </div>
         </div>
@@ -738,11 +740,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all">
               <CardContent className="p-10">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                  <Headphones className="w-8 h-8 text-primary" />
+                  <Mail className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-bold text-2xl mb-4">Mon-Fri 9AM-6PM Support</h3>
+                <h3 className="font-bold text-2xl mb-4">Contact Us</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our dedicated support team is available during business hours to help with any questions or technical issues you encounter.
+                  Have questions? Reach out through our contact form and our team will respond during business hours Mon-Fri 9AM-6PM EST.
                 </p>
               </CardContent>
             </Card>
