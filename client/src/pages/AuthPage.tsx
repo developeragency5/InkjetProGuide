@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
@@ -320,6 +321,29 @@ export default function AuthPage() {
               </p>
             </TabsContent>
           </Tabs>
+
+          {/* Guest Checkout Option */}
+          <div className="mt-6">
+            <div className="relative">
+              <Separator />
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-card px-2 text-sm text-muted-foreground">
+                or
+              </span>
+            </div>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full mt-6 font-medium"
+              onClick={() => navigate("/checkout")}
+              data-testid="button-continue-guest"
+            >
+              <User className="w-4 h-4 mr-2" />
+              Continue as Guest
+            </Button>
+            <p className="text-center text-xs text-muted-foreground mt-3">
+              No account needed. You can track your order using your email and order number.
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>
