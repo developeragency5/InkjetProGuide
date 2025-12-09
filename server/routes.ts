@@ -1035,6 +1035,27 @@ Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
     }
   });
 
+  // Guest order lookup endpoint
+  app.post("/api/orders/lookup", async (req, res) => {
+    try {
+      const { email, orderId } = req.body;
+      
+      if (!email || !orderId) {
+        return res.status(400).json({ message: "Email and order ID are required" });
+      }
+      
+      const order = await storage.getOrderByEmailAndId(email.toLowerCase().trim(), orderId.trim());
+      
+      if (!order) {
+        return res.status(404).json({ message: "Order not found. Please check your email and order number." });
+      }
+      
+      res.json({ order });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   // Comparison routes
   app.post("/api/comparisons", requireAuth, async (req, res) => {
     try {

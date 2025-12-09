@@ -17,6 +17,7 @@ import AccountPage from "@/pages/AccountPage";
 import ProfilePage from "@/pages/ProfilePage";
 import OrdersPage from "@/pages/OrdersPage";
 import OrderDetailPage from "@/pages/OrderDetailPage";
+import OrderLookupPage from "@/pages/OrderLookupPage";
 import BuyingGuidesPage from "@/pages/BuyingGuidesPage";
 import BeginnersGuidePage from "@/pages/guides/BeginnersGuidePage";
 import GuidePage from "@/pages/GuidePage";
@@ -73,6 +74,7 @@ function MainRouter() {
         <Route path="/profile" component={ProfilePage} />
         <Route path="/orders" component={OrdersPage} />
         <Route path="/order/:id" component={OrderDetailPage} />
+        <Route path="/order-lookup" component={OrderLookupPage} />
         <Route path="/guide" component={GuidePage} />
         <Route path="/guide/:id" component={ProductGuidePage} />
         <Route path="/guides" component={BuyingGuidesPage} />

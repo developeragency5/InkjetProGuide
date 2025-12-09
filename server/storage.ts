@@ -85,6 +85,7 @@ export interface IStorage {
   createOrder(orderData: InsertOrder, items: InsertOrderItem[]): Promise<Order>;
   getUserOrders(userId: string): Promise<any[]>;
   getOrder(orderId: string): Promise<any>;
+  getOrderByEmailAndId(email: string, orderId: string): Promise<any>;
   
   // Admin operations
   getAllOrders(): Promise<any[]>;
@@ -469,6 +470,18 @@ export class DatabaseStorage implements IStorage {
 
   async getOrder(orderId: string): Promise<any> {
     const [order] = await db.select().from(orders).where(eq(orders.id, orderId));
+    
+    if (!order) return undefined;
+
+    const items = await db.select().from(orderItems).where(eq(orderItems.orderId, orderId));
+
+    return { ...order, items };
+  }
+
+  async getOrderByEmailAndId(email: string, orderId: string): Promise<any> {
+    const [order] = await db.select().from(orders).where(
+      and(eq(orders.id, orderId), eq(orders.email, email))
+    );
     
     if (!order) return undefined;
 
