@@ -13,6 +13,10 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { format } from "date-fns";
 
+interface AuthCheckResponse {
+  authenticated: boolean;
+}
+
 export default function AdminOrdersPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
@@ -20,7 +24,7 @@ export default function AdminOrdersPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   // Check admin authentication
-  const { data: authCheck, isLoading: authLoading } = useQuery({
+  const { data: authCheck, isLoading: authLoading } = useQuery<AuthCheckResponse>({
     queryKey: ["/api/admin/check"],
   });
 

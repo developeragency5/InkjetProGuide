@@ -13,17 +13,28 @@ import { User, Package, Clock, LogOut } from "lucide-react";
 import { useLocation } from "wouter";
 import { format } from "date-fns";
 
+interface UserData {
+  id: string;
+  name: string;
+  email: string;
+  createdAt: string;
+}
+
+interface OrdersResponse {
+  orders: any[];
+}
+
 export default function ProfilePage() {
   const { toast } = useToast();
   const [, setLocation] = useLocation();
 
   // Fetch current user
-  const { data: user, isLoading: userLoading } = useQuery({
+  const { data: user, isLoading: userLoading } = useQuery<UserData>({
     queryKey: ["/api/user"],
   });
 
   // Fetch orders
-  const { data: ordersResponse, isLoading: ordersLoading } = useQuery({
+  const { data: ordersResponse, isLoading: ordersLoading } = useQuery<OrdersResponse>({
     queryKey: ["/api/orders"],
   });
   const ordersData = ordersResponse?.orders || [];

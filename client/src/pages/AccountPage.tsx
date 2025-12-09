@@ -8,18 +8,33 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
+interface UserData {
+  id: string;
+  name: string;
+  email: string;
+  createdAt: string;
+}
+
+interface OrdersResponse {
+  orders: any[];
+}
+
+interface WishlistResponse {
+  items: any[];
+}
+
 export default function AccountPage() {
   const { toast } = useToast();
 
-  const { data: user } = useQuery({
+  const { data: user } = useQuery<UserData>({
     queryKey: ["/api/user"],
   });
 
-  const { data: ordersData, isLoading: ordersLoading } = useQuery({
+  const { data: ordersData, isLoading: ordersLoading } = useQuery<OrdersResponse>({
     queryKey: ["/api/orders"],
   });
 
-  const { data: wishlistData, isLoading: wishlistLoading } = useQuery({
+  const { data: wishlistData, isLoading: wishlistLoading } = useQuery<WishlistResponse>({
     queryKey: ["/api/wishlist"],
   });
 

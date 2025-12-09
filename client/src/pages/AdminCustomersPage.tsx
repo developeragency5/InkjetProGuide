@@ -7,11 +7,15 @@ import { Badge } from "@/components/ui/badge";
 import { Users } from "lucide-react";
 import { format } from "date-fns";
 
+interface AuthCheckResponse {
+  authenticated: boolean;
+}
+
 export default function AdminCustomersPage() {
   const [, setLocation] = useLocation();
 
   // Check admin authentication
-  const { data: authCheck, isLoading: authLoading } = useQuery({
+  const { data: authCheck, isLoading: authLoading } = useQuery<AuthCheckResponse>({
     queryKey: ["/api/admin/check"],
   });
 

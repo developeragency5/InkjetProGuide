@@ -6,11 +6,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DollarSign, TrendingUp } from "lucide-react";
 
+interface AuthCheckResponse {
+  authenticated: boolean;
+}
+
+interface AnalyticsData {
+  totalRevenue: string;
+  averageOrderValue: string;
+  totalOrders: number;
+  recentRevenue: string;
+  recentOrders: number;
+  ordersByStatus: Record<string, number>;
+  totalProducts: number;
+  totalCustomers: number;
+}
+
 export default function AdminAnalyticsPage() {
   const [, setLocation] = useLocation();
 
   // Check admin authentication
-  const { data: authCheck, isLoading: authLoading } = useQuery({
+  const { data: authCheck, isLoading: authLoading } = useQuery<AuthCheckResponse>({
     queryKey: ["/api/admin/check"],
   });
 
@@ -21,7 +36,7 @@ export default function AdminAnalyticsPage() {
   }, [authCheck, authLoading, setLocation]);
 
   // Fetch analytics
-  const { data: analytics, isLoading } = useQuery({
+  const { data: analytics, isLoading } = useQuery<AnalyticsData>({
     queryKey: ["/api/admin/analytics"],
   });
 

@@ -4,6 +4,7 @@ import { products } from "@shared/schema";
 const sampleProducts = [
   {
     name: "HP OfficeJet Pro 9025e All-in-One Wireless Color Printer",
+    slug: "hp-officejet-pro-9025e",
     description: "The HP OfficeJet Pro 9025e delivers professional-quality color printing with fast speeds up to 24 ppm. Features automatic two-sided printing, scanning, copying, and faxing. Perfect for small offices and home businesses with high-volume printing needs.",
     price: "329.99",
     originalPrice: "399.99",
@@ -35,6 +36,7 @@ const sampleProducts = [
   },
   {
     name: "HP DeskJet 4155e All-in-One Wireless Color Printer",
+    slug: "hp-deskjet-4155e",
     description: "Affordable and reliable, the HP DeskJet 4155e is perfect for home use. Print, scan, and copy with ease using wireless connectivity. Compact design fits anywhere, and HP+ delivers ongoing value with smart features and instant ink enrollment.",
     price: "129.99",
     originalPrice: null,
@@ -65,6 +67,7 @@ const sampleProducts = [
   },
   {
     name: "HP OfficeJet 250 Mobile All-in-One Portable Printer",
+    slug: "hp-officejet-250-mobile",
     description: "Print, scan, and copy from anywhere with the ultra-portable HP OfficeJet 250. Battery-powered for true mobility, this printer delivers professional results on the go. Perfect for remote workers and traveling professionals.",
     price: "399.99",
     originalPrice: "449.99",
@@ -95,6 +98,7 @@ const sampleProducts = [
   },
   {
     name: "HP ENVY Photo 7855 All-in-One Wireless Photo Printer",
+    slug: "hp-envy-photo-7855",
     description: "Create stunning photos and professional documents with the HP ENVY Photo 7855. Six-ink color system produces lab-quality photos. Features dual paper trays and borderless printing up to 8.5 x 11 inches for versatile printing options.",
     price: "249.99",
     originalPrice: "299.99",
@@ -126,6 +130,7 @@ const sampleProducts = [
   },
   {
     name: "HP OfficeJet Pro 8035e All-in-One Wireless Color Printer",
+    slug: "hp-officejet-pro-8035e",
     description: "Smart, efficient, and reliable - the HP OfficeJet Pro 8035e handles all your office needs. Self-healing WiFi ensures consistent connectivity, while smart tasks automate routine work. Ideal for productive small offices.",
     price: "279.99",
     originalPrice: null,
@@ -157,6 +162,7 @@ const sampleProducts = [
   },
   {
     name: "HP DeskJet 2755e Wireless All-in-One Color Printer",
+    slug: "hp-deskjet-2755e",
     description: "Simple, affordable, and compact - the HP DeskJet 2755e is perfect for basic home printing needs. Easy wireless setup and smartphone printing make it ideal for students and light home use.",
     price: "89.99",
     originalPrice: null,
@@ -187,6 +193,7 @@ const sampleProducts = [
   },
   {
     name: "HP OfficeJet Pro 9015e All-in-One Wireless Color Printer",
+    slug: "hp-officejet-pro-9015e",
     description: "Professional color printing with enterprise-level features. The HP OfficeJet Pro 9015e offers fast speeds, robust security, and reliable performance for demanding office environments.",
     price: "299.99",
     originalPrice: "349.99",
@@ -218,6 +225,7 @@ const sampleProducts = [
   },
   {
     name: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer",
+    slug: "hp-envy-inspire-7955e",
     description: "Versatile all-in-one printer designed for creative home users. Print stunning photos and professional documents with ease. Features dual paper trays and intuitive touchscreen controls.",
     price: "199.99",
     originalPrice: "249.99",
