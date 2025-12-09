@@ -284,7 +284,7 @@ export default function PrivacyPolicyPage() {
                 <li data-testid="text-right-6"><strong className="text-foreground">Object to Processing:</strong> Object to our processing of your personal information</li>
               </ul>
               <p className="mt-4" data-testid="text-rights-exercise">
-                To exercise any of these rights, please contact us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-rights">support@inkjetproguide.com</a> or call <a href="tel:+13254008874" className="text-primary hover:underline" data-testid="link-phone-rights">1-325-400-8874</a>. We will respond to your request within 30 days.
+                To exercise any of these rights, please contact us at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-rights">inkjetproguide@outlook.com</a> or call <a href="tel:+13254008874" className="text-primary hover:underline" data-testid="link-phone-rights">1-325-400-8874</a>. We will respond to your request within 30 days.
               </p>
             </CardContent>
           </Card>
@@ -352,7 +352,7 @@ export default function PrivacyPolicyPage() {
                 <li data-testid="text-california-4">Right to non-discrimination for exercising your privacy rights</li>
               </ul>
               <p className="mt-4" data-testid="text-california-contact">
-                To exercise these rights, contact us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-california">support@inkjetproguide.com</a>.
+                To exercise these rights, contact us at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-california">inkjetproguide@outlook.com</a>.
               </p>
             </CardContent>
           </Card>
@@ -408,8 +408,8 @@ export default function PrivacyPolicyPage() {
                   <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1" data-testid="heading-email-contact">Email</h3>
-                    <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-contact">
-                      support@inkjetproguide.com
+                    <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-contact">
+                      inkjetproguide@outlook.com
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">For privacy-related inquiries</p>
                   </div>

@@ -345,8 +345,8 @@ export default function HelpCenterPage() {
                   </div>
                   <h3 className="font-semibold mb-2">Email Us</h3>
                   <p className="text-sm text-muted-foreground mb-2">Response in 24 hours</p>
-                  <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline font-medium" data-testid="link-email-support-help">
-                    support@inkjetproguide.com
+                  <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline font-medium" data-testid="link-email-support-help">
+                    inkjetproguide@outlook.com
                   </a>
                 </div>
                 <div className="text-center">

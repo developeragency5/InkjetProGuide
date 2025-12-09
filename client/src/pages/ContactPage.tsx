@@ -60,8 +60,8 @@ export default function ContactPage() {
               <p className="text-sm text-muted-foreground mb-2">
                 Response within 24 hours
               </p>
-              <a href="mailto:support@inkjetproguide.com" className="font-semibold text-primary hover:underline" data-testid="link-email-contact">
-                support@inkjetproguide.com
+              <a href="mailto:inkjetproguide@outlook.com" className="font-semibold text-primary hover:underline" data-testid="link-email-contact">
+                inkjetproguide@outlook.com
               </a>
             </CardContent>
           </Card>

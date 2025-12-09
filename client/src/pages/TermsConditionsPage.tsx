@@ -429,7 +429,7 @@ export default function TermsConditionsPage() {
                   In the event of any dispute arising out of or relating to these Terms:
                 </p>
                 <ol className="space-y-2 ml-6 list-decimal">
-                  <li data-testid="text-dispute-1">You agree to first attempt to resolve the dispute informally by contacting us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-dispute">support@inkjetproguide.com</a></li>
+                  <li data-testid="text-dispute-1">You agree to first attempt to resolve the dispute informally by contacting us at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-dispute">inkjetproguide@outlook.com</a></li>
                   <li data-testid="text-dispute-2">If the dispute cannot be resolved within 30 days, either party may initiate binding arbitration</li>
                   <li data-testid="text-dispute-3">Arbitration shall be conducted in accordance with the rules of the American Arbitration Association</li>
                   <li data-testid="text-dispute-4">The arbitration shall take place in Delaware, United States</li>
@@ -460,7 +460,7 @@ export default function TermsConditionsPage() {
                 Upon termination, your right to use our services will immediately cease. All provisions of these Terms that by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
               </p>
               <p data-testid="text-termination-3">
-                You may terminate your account at any time by contacting us at <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-termination">support@inkjetproguide.com</a>.
+                You may terminate your account at any time by contacting us at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-termination">inkjetproguide@outlook.com</a>.
               </p>
             </CardContent>
           </Card>
@@ -536,8 +536,8 @@ export default function TermsConditionsPage() {
                   <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1" data-testid="heading-email-contact">Email</h3>
-                    <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline" data-testid="link-email-contact">
-                      support@inkjetproguide.com
+                    <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-contact">
+                      inkjetproguide@outlook.com
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">Legal inquiries welcome</p>
                   </div>
