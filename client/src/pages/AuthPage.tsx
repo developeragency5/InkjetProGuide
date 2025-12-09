@@ -113,17 +113,17 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center py-12 px-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center pb-4">
-          <h1 className="text-3xl font-bold mb-2">Welcome</h1>
-          <p className="text-muted-foreground">Sign in to your account or create a new one</p>
+    <div className="min-h-screen bg-background flex items-center justify-center py-6 sm:py-12 px-4">
+      <Card className="w-full max-w-[95%] sm:max-w-md">
+        <CardHeader className="text-center pb-2 sm:pb-4 px-4 sm:px-6">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Welcome</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">Sign in to your account or create a new one</p>
         </CardHeader>
-        <CardContent>
+        <CardContent className="px-4 sm:px-6">
           <Tabs defaultValue="signin" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-6">
-              <TabsTrigger value="signin" data-testid="tab-signin">Sign In</TabsTrigger>
-              <TabsTrigger value="signup" data-testid="tab-signup">Sign Up</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 mb-4 sm:mb-6">
+              <TabsTrigger value="signin" className="text-sm sm:text-base" data-testid="tab-signin">Sign In</TabsTrigger>
+              <TabsTrigger value="signup" className="text-sm sm:text-base" data-testid="tab-signup">Sign Up</TabsTrigger>
             </TabsList>
 
             {/* Sign In Tab */}
@@ -323,25 +323,24 @@ export default function AuthPage() {
           </Tabs>
 
           {/* Guest Checkout Option */}
-          <div className="mt-6">
+          <div className="mt-4 sm:mt-6">
             <div className="relative">
               <Separator />
-              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-card px-2 text-sm text-muted-foreground">
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-card px-2 text-xs sm:text-sm text-muted-foreground">
                 or
               </span>
             </div>
             <Button
               variant="outline"
-              size="lg"
-              className="w-full mt-6 font-medium"
+              className="w-full mt-4 sm:mt-6 font-medium text-sm sm:text-base"
               onClick={() => navigate("/checkout")}
               data-testid="button-continue-guest"
             >
               <User className="w-4 h-4 mr-2" />
               Continue as Guest
             </Button>
-            <p className="text-center text-xs text-muted-foreground mt-3">
-              No account needed. You can track your order using your email and order number.
+            <p className="text-center text-xs text-muted-foreground mt-2 sm:mt-3">
+              No account needed. Track your order with email and order number.
             </p>
           </div>
         </CardContent>
