@@ -80,13 +80,7 @@ function MainRouter() {
         <Route path="/guide" component={GuidePage} />
         <Route path="/guide/:id" component={ProductGuidePage} />
         <Route path="/guides" component={BuyingGuidesPage} />
-        <Route path="/guides/beginners-guide" component={BeginnersGuidePage} />
-        <Route path="/guides/home-office" component={BeginnersGuidePage} />
-        <Route path="/guides/students" component={BeginnersGuidePage} />
-        <Route path="/guides/photo-printing" component={BeginnersGuidePage} />
-        <Route path="/guides/ink-cost" component={BeginnersGuidePage} />
-        <Route path="/guides/small-business" component={BeginnersGuidePage} />
-        <Route path="/guides/wireless-vs-usb" component={BeginnersGuidePage} />
+        <Route path="/guides/:guideId" component={BeginnersGuidePage} />
         <Route path="/resources" component={ResourceCenterPage} />
         <Route path="/ink-guide" component={InkGuidePage} />
         <Route path="/help" component={HelpCenterPage} />

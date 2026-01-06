@@ -1,4 +1,4 @@
-import { Link, useLocation } from "wouter";
+import { Link, useParams } from "wouter";
 import { useState, useEffect } from "react";
 import { CheckCircle, ChevronRight, ShoppingCart } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,11 +8,11 @@ import { Separator } from "@/components/ui/separator";
 import { getGuideContent } from "@/data/guidesContent";
 
 export default function BeginnersGuidePage() {
-  const [location] = useLocation();
+  const params = useParams<{ guideId: string }>();
   const [activeSection, setActiveSection] = useState("");
   
-  // Extract guide ID from URL
-  const guideId = location.split('/guides/')[1] || 'beginners-guide';
+  // Extract guide ID from route params
+  const guideId = params.guideId || 'beginners-guide';
   const guideData = getGuideContent(guideId);
 
   // Redirect to guides page if guide not found

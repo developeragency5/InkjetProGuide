@@ -1947,6 +1947,29 @@ export const guidesContent: Record<string, GuideContent> = {
   }
 };
 
+const idMapping: Record<string, string> = {
+  "choosing-hp-inkjet-printer": "choosing-right-printer",
+  "best-inkjet-home-use": "best-home-printers",
+  "best-inkjet-business": "best-business-printers",
+  "inkjet-technology-explained": "how-inkjet-works",
+  "printhead-maintenance-cleaning": "printhead-maintenance",
+  "ink-page-yield-cost": "ink-page-yield",
+  "calculate-cost-per-page": "cost-per-page",
+  "secure-private-printing": "secure-printing",
+  "firmware-updates-guide": "firmware-updates",
+  "choosing-paper-inkjet": "choosing-paper",
+  "extend-ink-cartridge-life": "extend-ink-life",
+  "store-recycle-ink-cartridges": "ink-storage-recycling",
+  "all-in-one-vs-print-only": "allinone-vs-printonly",
+  "upgrading-accessories-add-ons": "upgrading-accessories",
+  "duplex-printing-efficiency": "duplex-printing",
+  "environmental-factors-performance": "environmental-factors",
+  "hp-instant-ink-explained": "hp-instant-ink",
+  "iso-page-yield-explained": "iso-page-yield",
+  "optimize-inkjet-settings": "optimize-settings",
+};
+
 export function getGuideContent(guideId: string): GuideContent | undefined {
-  return guidesContent[guideId];
+  const mappedId = idMapping[guideId] || guideId;
+  return guidesContent[mappedId];
 }
