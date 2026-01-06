@@ -173,6 +173,33 @@ export default function HelpCenterPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* Introduction Section */}
+        {!searchQuery && !selectedCategory && (
+          <section className="mb-12">
+            <Card className="bg-muted/30 border-muted">
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold mb-4" data-testid="heading-help-intro">
+                  Get Expert Help with Your HP Inkjet Printer
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p data-testid="text-help-intro-1">
+                    Welcome to the InkjetProGuide Help Center, your comprehensive support resource for HP inkjet printers. We understand that getting the most out of your printer sometimes requires guidance, whether you are setting up a new device, troubleshooting an issue, or learning about advanced features.
+                  </p>
+                  <p data-testid="text-help-intro-2">
+                    Our help articles cover a wide range of topics organized into easy-to-navigate categories. Find step-by-step setup guides for wireless configuration, driver installation, and mobile printing. Access troubleshooting solutions for common issues including paper jams, print quality problems, and connectivity errors. Learn maintenance best practices to keep your HP printer running smoothly for years.
+                  </p>
+                  <p data-testid="text-help-intro-3">
+                    We also provide detailed information about ordering, shipping, returns, and payment options. Each article is written in clear, straightforward language with practical solutions you can implement immediately. Our content is regularly reviewed and updated to ensure accuracy with the latest HP printer models and software.
+                  </p>
+                  <p data-testid="text-help-intro-4">
+                    If you cannot find the answer to your question, our customer support team based in Fort Worth, Texas is ready to assist you during business hours. Use the search bar above to find specific topics, browse by category, or contact us directly for personalized help.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+        )}
+
         {/* Quick Links */}
         {!searchQuery && !selectedCategory && (
           <div className="mb-12">

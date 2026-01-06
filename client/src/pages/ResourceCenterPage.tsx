@@ -192,6 +192,31 @@ export default function ResourceCenterPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* Introduction Section */}
+        <section className="mb-12">
+          <Card className="bg-muted/30 border-muted">
+            <CardContent className="p-8">
+              <h2 className="text-2xl font-bold mb-4" data-testid="heading-resource-intro">
+                Your Complete HP Inkjet Printer Resource Library
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p data-testid="text-resource-intro-1">
+                  Welcome to the InkjetProGuide Resource Center, your comprehensive destination for everything related to HP inkjet printers. Whether you are setting up a new printer, troubleshooting an issue, or looking to maximize your printing efficiency, our resource library has the information you need to get the most out of your HP printer.
+                </p>
+                <p data-testid="text-resource-intro-2">
+                  Our resource center includes detailed buying guides written by printing professionals to help you choose the right HP printer for your specific needs. You will find step-by-step setup tutorials covering wireless connectivity, driver installation, and mobile printing configuration. Our troubleshooting section addresses common issues like paper jams, print quality problems, and connectivity errors with clear, actionable solutions.
+                </p>
+                <p data-testid="text-resource-intro-3">
+                  We also provide comprehensive information about HP ink cartridges, including compatibility guides, cost-per-page calculations, and tips for extending cartridge life. Our FAQ section answers the most common questions about ordering, shipping, warranties, and product features. All resources are regularly updated to reflect the latest HP printer models and technologies.
+                </p>
+                <p data-testid="text-resource-intro-4">
+                  If you cannot find the information you need, our USA-based customer support team is available during business hours to provide personalized assistance via email or phone. Browse our resources below or use the search bar above to find specific topics.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Quick Access Cards */}
         <section className="mb-16">
           <div className="text-center mb-8">

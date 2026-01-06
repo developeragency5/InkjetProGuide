@@ -114,6 +114,29 @@ export default function BuyingGuidesPage() {
           <span className="text-foreground">Buying Guides</span>
         </nav>
 
+        {/* Introduction Section */}
+        <Card className="mb-12 bg-muted/30 border-muted">
+          <CardContent className="p-8">
+            <h2 className="text-2xl font-bold mb-4" data-testid="heading-guides-intro">
+              Expert Guidance for Choosing the Right HP Printer
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p data-testid="text-guides-intro-1">
+                Choosing the right printer can be overwhelming with so many models, features, and price points available. Our buying guides are designed to simplify your decision by providing clear, expert recommendations tailored to specific use cases and budgets. Each guide is written by professionals with hands-on experience in the printing industry.
+              </p>
+              <p data-testid="text-guides-intro-2">
+                Whether you are a student looking for an affordable printer for assignments, a home office worker needing reliable multifunction capabilities, a photography enthusiast seeking professional-quality prints, or a small business owner requiring high-volume output, we have a guide that addresses your specific needs.
+              </p>
+              <p data-testid="text-guides-intro-3">
+                Our guides cover essential topics including print quality and resolution, speed and paper handling, connectivity options like WiFi and mobile printing, ink costs and page yields, and total cost of ownership. We provide honest assessments based on real-world testing, helping you understand which features matter most for your situation and which you can skip to save money.
+              </p>
+              <p data-testid="text-guides-intro-4">
+                Browse our collection of buying guides below. Each guide includes detailed recommendations for specific HP printer models that excel in their category. If you need personalized advice, our support team is available to help you find the perfect printer for your needs.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-4">Explore Our Buying Guides</h2>
           <p className="text-muted-foreground text-lg">

@@ -40,6 +40,7 @@ export default function SitemapPage() {
         { name: "Help Center", path: "/help", icon: HelpCircle },
         { name: "FAQ", path: "/faq", icon: HelpCircle },
         { name: "Contact Us", path: "/contact", icon: Mail },
+        { name: "Track Order", path: "/order-lookup", icon: Package },
       ]
     },
     {
@@ -56,6 +57,8 @@ export default function SitemapPage() {
         { name: "Privacy Policy", path: "/privacy-policy", icon: Shield },
         { name: "Terms & Conditions", path: "/terms-conditions", icon: Scale },
         { name: "Refund & Return Policy", path: "/refund-policy", icon: FileText },
+        { name: "Shipping Policy", path: "/shipping-policy", icon: Package },
+        { name: "Disclaimer", path: "/disclaimer", icon: FileText },
       ]
     },
     {
@@ -194,7 +197,7 @@ export default function SitemapPage() {
 
         {/* Last Updated */}
         <div className="mt-6 text-center text-sm text-muted-foreground" data-testid="text-last-updated">
-          Last Updated: December 2025
+          Last Updated: January 2025
         </div>
       </div>
     </div>
