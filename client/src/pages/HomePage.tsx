@@ -306,6 +306,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Site Introduction Section */}
+      <section className="py-16 bg-background border-b" data-testid="section-site-introduction">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <h2 className="text-3xl font-bold mb-6 text-foreground" data-testid="heading-site-intro">
+              Welcome to InkjetProGuide: Your Trusted Source for HP Inkjet Printers
+            </h2>
+            
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p data-testid="text-intro-1">
+                <strong className="text-foreground">InkjetProGuide</strong> is a specialized online retailer dedicated exclusively to HP inkjet printers, serving customers throughout the United States. We believe that finding the right printer should not be complicated. That is why we have built a platform focused solely on HP's trusted inkjet technology, offering carefully curated products, expert guidance, and responsive customer service to help you make confident purchasing decisions.
+              </p>
+              
+              <p data-testid="text-intro-2">
+                <strong className="text-foreground">What We Offer:</strong> Our product selection includes the complete range of HP inkjet printers, from affordable home models perfect for occasional printing to high-performance office machines designed for demanding workloads. We carry HP Smart Tank printers with refillable ink systems for high-volume printing at a low cost per page, OfficeJet Pro multifunction printers with print, scan, copy, and fax capabilities, ENVY printers known for stunning photo quality, and compact portable printers for professionals on the go. Every printer we sell is brand new, factory sealed, and backed by HP's original manufacturer warranty.
+              </p>
+              
+              <p data-testid="text-intro-3">
+                <strong className="text-foreground">Who We Serve:</strong> InkjetProGuide caters to a diverse range of customers. Home users appreciate our selection of budget-friendly printers for school projects, family photos, and everyday documents. Small business owners rely on our OfficeJet Pro and Smart Tank models for reliable, high-volume printing. Creative professionals and photography enthusiasts trust our photo-focused printers for gallery-quality prints. Remote workers and students value our compact wireless printers that fit seamlessly into home office setups.
+              </p>
+              
+              <p data-testid="text-intro-4">
+                <strong className="text-foreground">Why Choose InkjetProGuide:</strong> We differentiate ourselves through specialization and service. Unlike big-box retailers that carry thousands of products across many categories, we focus exclusively on HP inkjet printers. This allows us to develop deep expertise, provide informed recommendations, and stock the models that matter most. We offer free shipping on orders over $299, fast 2-3 business day delivery, a 30-day return policy, and dedicated customer support via email and phone. Our team is based in Fort Worth, Texas, and we take pride in helping customers find exactly what they need.
+              </p>
+              
+              <p data-testid="text-intro-5">
+                Whether you are replacing an aging printer, setting up a new home office, or expanding your business printing capabilities, InkjetProGuide provides the products, resources, and support to make your purchase simple and satisfying. Browse our collection, compare models using our buying guides, or contact our team for personalized recommendations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About InkjetProGuide - Intro Section */}
       <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
         {/* Decorative Background Elements */}
