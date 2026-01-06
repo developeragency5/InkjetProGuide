@@ -542,6 +542,13 @@ export function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/shipping-policy">
+                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-shipping-policy">
+                      Shipping Policy
+                    </span>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/sitemap">
                     <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-sitemap">
                       Sitemap
@@ -588,6 +595,12 @@ export function Layout({ children }: LayoutProps) {
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-muted-foreground">
+              <Link href="/disclaimer">
+                <span className="hover:text-primary cursor-pointer transition-colors" data-testid="link-footer-disclaimer">
+                  Disclaimer
+                </span>
+              </Link>
+              <span className="text-muted-foreground/50">•</span>
               <Link href="/privacy-policy">
                 <span className="hover:text-primary cursor-pointer transition-colors" data-testid="link-footer-privacy">
                   Privacy Policy

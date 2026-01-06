@@ -30,8 +30,10 @@ import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import FAQPage from "@/pages/FAQPage";
 import RefundPolicyPage from "@/pages/RefundPolicyPage";
+import ShippingPolicyPage from "@/pages/ShippingPolicyPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsConditionsPage from "@/pages/TermsConditionsPage";
+import DisclaimerPage from "@/pages/DisclaimerPage";
 import SitemapPage from "@/pages/SitemapPage";
 import AdminLoginPage from "@/pages/AdminLoginPage";
 import AdminDashboardPage from "@/pages/AdminDashboardPage";
@@ -93,8 +95,10 @@ function MainRouter() {
         <Route path="/contact" component={ContactPage} />
         <Route path="/faq" component={FAQPage} />
         <Route path="/refund-policy" component={RefundPolicyPage} />
+        <Route path="/shipping-policy" component={ShippingPolicyPage} />
         <Route path="/privacy-policy" component={PrivacyPolicyPage} />
         <Route path="/terms-conditions" component={TermsConditionsPage} />
+        <Route path="/disclaimer" component={DisclaimerPage} />
         <Route path="/sitemap" component={SitemapPage} />
         <Route component={NotFound} />
       </Switch>

@@ -231,6 +231,63 @@ export default function PrivacyPolicyPage() {
                   Most web browsers allow you to control cookies through their settings. However, disabling cookies may limit your ability to use certain features of our website, such as the shopping cart and user account.
                 </p>
               </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-analytics-tools">
+                  Analytics Tools
+                </h3>
+                <p data-testid="text-analytics-tools">
+                  We may use third-party analytics services to help us understand how visitors use our website. These tools collect information such as page views, session duration, and navigation patterns. This data helps us improve our website and user experience.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-advertising-tracking">
+                  Advertising & Tracking Tools
+                </h3>
+                <p data-testid="text-advertising-tracking">
+                  We may use advertising platforms such as Microsoft Advertising and Google Ads to display relevant advertisements. These platforms may use cookies and tracking pixels to measure ad performance and show you personalized ads based on your browsing activity. You can opt out of personalized advertising through your browser settings or by visiting the Digital Advertising Alliance's opt-out page at <a href="https://optout.aboutads.info" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">optout.aboutads.info</a>.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Email Marketing */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold mb-4" data-testid="heading-email-marketing">Email Marketing & Opt-Out Rights</h2>
+          <Card>
+            <CardContent className="p-8 space-y-4 text-muted-foreground">
+              <p data-testid="text-email-intro">
+                With your consent, we may send you promotional emails about new products, special offers, and updates related to HP inkjet printers.
+              </p>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-email-types">
+                  Types of Email Communications
+                </h3>
+                <ul className="space-y-2 ml-6 list-disc">
+                  <li data-testid="text-email-type-1"><strong className="text-foreground">Transactional Emails:</strong> Order confirmations, shipping updates, and account notifications (cannot be opted out as they are essential for service delivery)</li>
+                  <li data-testid="text-email-type-2"><strong className="text-foreground">Marketing Emails:</strong> Promotional offers, product announcements, newsletters, and special deals (you can opt out at any time)</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-opt-out">
+                  How to Opt Out
+                </h3>
+                <p data-testid="text-opt-out-intro" className="mb-3">
+                  You have the right to opt out of marketing emails at any time. To unsubscribe:
+                </p>
+                <ul className="space-y-2 ml-6 list-disc">
+                  <li data-testid="text-opt-out-1"><strong className="text-foreground">Unsubscribe Link:</strong> Click the "Unsubscribe" link at the bottom of any marketing email</li>
+                  <li data-testid="text-opt-out-2"><strong className="text-foreground">Email Request:</strong> Send an email to <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a> with "Unsubscribe" in the subject line</li>
+                  <li data-testid="text-opt-out-3"><strong className="text-foreground">Account Settings:</strong> Update your email preferences in your account settings (if you have an account)</li>
+                </ul>
+                <p className="mt-4" data-testid="text-opt-out-timing">
+                  We will process your opt-out request within 10 business days. Please note that even after opting out of marketing emails, you will still receive transactional emails related to your orders and account.
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>
