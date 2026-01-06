@@ -197,9 +197,9 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">Can I return a printer?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Absolutely. We offer hassle-free returns within 30 days on all purchases. Items must be in 
+                    Absolutely. We offer 30-day returns with a FREE prepaid return shipping label. Items must be in 
                     original condition with all accessories included. Contact our support team to initiate a return 
-                    and receive your prepaid shipping label.
+                    and we'll email you a prepaid UPS/FedEx label at no cost.
                   </p>
                 </div>
                 <div>

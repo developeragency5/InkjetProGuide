@@ -224,7 +224,7 @@ export default function HomePage() {
                     </div>
                     <h3 className="text-base sm:text-lg font-bold">Easy Returns</h3>
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      Hassle-free 30-day returns for unopened items. Your satisfaction is our priority.
+                      30-day returns with FREE prepaid return shipping. Your satisfaction is our priority.
                     </p>
                     <div className="flex items-center gap-2 text-xs text-primary font-medium">
                       <CheckCircle2 className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
@@ -1060,7 +1060,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-2xl mb-4">Easy Returns</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Hassle-free returns within 30 days. Not satisfied? Return unopened items for a full refund, or opened items in like-new condition.
+                  30-day returns with FREE prepaid shipping label. Return unopened items for a full refund. Opened items showing use may incur up to 15% restocking fee.
                 </p>
               </CardContent>
             </Card>

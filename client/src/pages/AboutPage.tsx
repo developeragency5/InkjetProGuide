@@ -58,7 +58,7 @@ export default function AboutPage() {
     {
       icon: Package,
       title: "Easy Returns",
-      description: "Hassle-free returns and exchanges within 30 days of purchase."
+      description: "30-day returns with FREE prepaid return shipping label included."
     },
     {
       icon: Zap,

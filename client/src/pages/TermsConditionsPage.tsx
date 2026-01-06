@@ -245,7 +245,7 @@ export default function TermsConditionsPage() {
           <Card className="border-primary/50">
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-returns-intro">
-                We offer <strong className="text-foreground">hassle-free returns within 30 days</strong> on all HP inkjet printers purchased through InkjetProGuide. Please review our complete return policy for detailed information.
+                We offer <strong className="text-foreground">30-day returns with FREE prepaid return shipping</strong> on all HP inkjet printers purchased through InkjetProGuide. Please review our complete return policy for detailed information.
               </p>
               <div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-return-conditions">
@@ -254,9 +254,9 @@ export default function TermsConditionsPage() {
                 <ul className="space-y-2 ml-6 list-disc">
                   <li data-testid="text-return-1">Products must be returned within 30 days of delivery</li>
                   <li data-testid="text-return-2">Items must be in original condition with all accessories and packaging</li>
-                  <li data-testid="text-return-3">A Return Merchandise Authorization (RMA) is required for all returns</li>
+                  <li data-testid="text-return-3">A Return Merchandise Authorization (RMA) is required - we provide a FREE prepaid return label</li>
                   <li data-testid="text-return-4">Refunds are processed within 5-7 business days after inspection</li>
-                  <li data-testid="text-return-5">A 15% restocking fee may apply to opened items showing signs of use</li>
+                  <li data-testid="text-return-5">Up to 15% restocking fee may apply to opened items showing signs of use</li>
                 </ul>
               </div>
               <div className="mt-4 pt-4 border-t">

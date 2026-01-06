@@ -445,7 +445,7 @@ export default function HelpCenterPage() {
                 <Shield className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Return Policy</h3>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Hassle-free returns within 30 days of delivery
+                  30-day returns with FREE prepaid return label
                 </p>
                 <div className="text-primary text-sm font-medium flex items-center gap-1">
                   Learn More

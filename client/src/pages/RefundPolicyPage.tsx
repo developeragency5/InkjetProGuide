@@ -33,10 +33,10 @@ export default function RefundPolicyPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-summary-1">
-                <strong className="text-foreground">30-Day Return Policy:</strong> Return any HP inkjet printer within 30 days of delivery. Full refund on unopened items; opened items in like-new condition may incur a 15% restocking fee if used.
+                <strong className="text-foreground">30-Day Return Policy:</strong> Return any HP inkjet printer within 30 days of delivery. Full refund on unopened items; opened items showing signs of use may incur up to 15% restocking fee.
               </p>
               <p data-testid="text-summary-2">
-                <strong className="text-foreground">Free Return Shipping:</strong> We provide prepaid return labels for all eligible returns.
+                <strong className="text-foreground">FREE Prepaid Return Shipping:</strong> We provide a FREE prepaid UPS/FedEx return label for all eligible returns. You pay nothing to ship your return.
               </p>
               <p data-testid="text-summary-3">
                 <strong className="text-foreground">Fast Refunds:</strong> Refunds processed within 5-7 business days of receiving your return.
@@ -57,8 +57,17 @@ export default function RefundPolicyPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-return-intro">
-                We want you to be completely satisfied with your HP inkjet printer purchase. If you're not happy for any reason, you can return your printer within <strong className="text-foreground">30 days from the date of delivery</strong>. Unopened items receive a full refund; opened items in like-new condition are also eligible (a 15% restocking fee may apply to items showing signs of use).
+                We want you to be completely satisfied with your HP inkjet printer purchase. If you're not happy for any reason, you can return your printer within <strong className="text-foreground">30 days from the date of delivery</strong>.
               </p>
+              
+              <div className="mt-4 p-4 bg-primary/10 rounded-lg border border-primary/20">
+                <h4 className="font-semibold text-foreground mb-2">Restocking Fee Structure:</h4>
+                <ul className="space-y-1 text-sm">
+                  <li data-testid="text-fee-tier-1"><strong>Unopened, factory-sealed items:</strong> No restocking fee - Full 100% refund</li>
+                  <li data-testid="text-fee-tier-2"><strong>Opened, unused, like-new condition:</strong> No restocking fee - Full 100% refund</li>
+                  <li data-testid="text-fee-tier-3"><strong>Opened items with signs of use:</strong> Up to 15% restocking fee (based on condition)</li>
+                </ul>
+              </div>
               
               <div className="mt-6">
                 <h3 className="text-xl font-semibold mb-3 text-foreground" data-testid="heading-eligible-returns">
@@ -78,7 +87,17 @@ export default function RefundPolicyPage() {
                   Opened Products
                 </h3>
                 <p data-testid="text-opened-policy">
-                  We understand you may need to open the box to inspect your printer. Opened products are eligible for return as long as the printer is unused, in like-new condition, and all original packaging, accessories, and documentation are included. A restocking fee of 15% may apply to opened items that show signs of use.
+                  We understand you may need to open the box to inspect your printer. Opened products are eligible for return as long as the printer is unused, in like-new condition, and all original packaging, accessories, and documentation are included. If the item shows signs of use (test prints, ink usage, etc.), a restocking fee of up to 15% may apply based on condition assessment.
+                </p>
+              </div>
+
+              <div className="mt-6 p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                <h3 className="text-xl font-semibold mb-3 text-foreground flex items-center gap-2" data-testid="heading-rma-shipping">
+                  <Package className="w-5 h-5 text-green-600" />
+                  RMA Return Shipping - FREE Prepaid Label
+                </h3>
+                <p data-testid="text-rma-shipping">
+                  <strong className="text-foreground">We cover return shipping costs.</strong> Once your return is approved, we will email you a FREE prepaid UPS or FedEx shipping label. Simply print the label, attach it to your package, and drop it off at any UPS or FedEx location. <strong>You pay $0 for return shipping.</strong>
                 </p>
               </div>
             </CardContent>
@@ -183,11 +202,22 @@ export default function RefundPolicyPage() {
 
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground" data-testid="heading-shipping-refund">
-                  Shipping Costs
+                  Shipping Cost Breakdown
                 </h3>
-                <p data-testid="text-shipping-refund">
-                  Original shipping costs are refundable if the return is due to our error (wrong item shipped, defective product, etc.). For standard returns, original shipping charges are non-refundable. Return shipping is always free with our prepaid label.
-                </p>
+                <div className="space-y-3">
+                  <div className="p-3 bg-muted/50 rounded-md">
+                    <p className="font-medium text-foreground mb-1">Return Shipping (You to Us):</p>
+                    <p className="text-sm" data-testid="text-return-shipping-cost">
+                      <strong className="text-green-600 dark:text-green-400">FREE</strong> - We provide a prepaid UPS/FedEx label at no cost to you.
+                    </p>
+                  </div>
+                  <div className="p-3 bg-muted/50 rounded-md">
+                    <p className="font-medium text-foreground mb-1">Original Shipping (Us to You):</p>
+                    <p className="text-sm" data-testid="text-original-shipping-refund">
+                      <strong>Refundable</strong> if return is due to our error (wrong item, defective product). <strong>Non-refundable</strong> for standard change-of-mind returns.
+                    </p>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
