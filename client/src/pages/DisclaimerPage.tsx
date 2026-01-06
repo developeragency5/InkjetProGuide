@@ -94,7 +94,7 @@ export default function DisclaimerPage() {
                 All other trademarks, service marks, and trade names referenced on this Website are the property of their respective owners. The use of these marks does not imply any affiliation with or endorsement by their owners.
               </p>
               <p data-testid="text-trademark-3">
-                InkjetProGuide sells genuine HP products sourced through authorized distribution channels. All HP printers sold through our Website come with original manufacturer warranties provided by HP Inc.
+                InkjetProGuide is an independent online retailer specializing in HP inkjet printers. Product warranties are provided according to the manufacturer's terms and conditions. Please refer to HP Inc.'s warranty documentation included with each product for specific coverage details.
               </p>
             </CardContent>
           </Card>

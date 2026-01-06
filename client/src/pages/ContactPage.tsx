@@ -187,11 +187,11 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">Do you offer warranty on printers?</h4>
+                  <h4 className="font-semibold mb-1">What about product warranties?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Yes! All HP printers come with a comprehensive Original OEM warranty. This covers manufacturer 
-                    defects and ensures your investment is protected. Extended warranty options are also available 
-                    for additional peace of mind.
+                    HP printers typically include manufacturer warranty coverage. For specific warranty terms, 
+                    refer to the documentation included with your product. We recommend contacting HP Support 
+                    directly for warranty claims.
                   </p>
                 </div>
                 <div>
@@ -218,12 +218,12 @@ export default function ContactPage() {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-3">Why Choose InkjetProGuide?</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Based in Fort Worth, Texas, InkjetProGuide has been serving customers across the United States 
-                  since 2020. We specialize exclusively in HP inkjet printers, providing authentic products with 
-                  original manufacturer warranties. Our commitment to customer satisfaction means we go above and 
+                  Based in Fort Worth, Texas, InkjetProGuide serves customers across the United States. 
+                  We specialize exclusively in HP inkjet printers, providing focused expertise and a carefully 
+                  curated product selection. Our commitment to customer satisfaction means we go above and 
                   beyond to ensure you receive the best possible service, from product selection through post-purchase 
                   support. Every printer we sell comes with free access to our comprehensive setup guides and 
-                  maintenance resources, helping you get the most out of your investment.
+                  maintenance resources, helping you get the most out of your purchase.
                 </p>
               </CardContent>
             </Card>

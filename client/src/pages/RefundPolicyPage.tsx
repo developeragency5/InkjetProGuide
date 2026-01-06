@@ -241,7 +241,7 @@ export default function RefundPolicyPage() {
               </div>
 
               <p className="mt-4" data-testid="text-damaged-warranty">
-                All HP printers come with manufacturer warranties. For warranty service after the 30-day return window, please refer to your HP warranty documentation or contact HP support directly. We're happy to assist you with warranty claims.
+                HP printers typically include manufacturer warranty coverage. For warranty service after the 30-day return window, please refer to the HP warranty documentation included with your product or contact HP support directly. We're happy to assist you with the process.
               </p>
             </CardContent>
           </Card>

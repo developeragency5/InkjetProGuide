@@ -139,7 +139,7 @@ export default function TermsConditionsPage() {
                   We strive to provide accurate product descriptions, images, and specifications. However, we do not warrant that product descriptions or other content is accurate, complete, reliable, current, or error-free.
                 </p>
                 <p className="mt-3" data-testid="text-product-info-2">
-                  All HP inkjet printers and accessories sold on InkjetProGuide are genuine products sourced from authorized distributors. Product availability is subject to change without notice.
+                  InkjetProGuide is an independent online retailer specializing in HP inkjet printers. Product availability is subject to change without notice.
                 </p>
               </div>
 

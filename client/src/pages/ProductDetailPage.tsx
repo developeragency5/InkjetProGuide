@@ -356,8 +356,8 @@ export default function ProductDetailPage() {
                   <Shield className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Original OEM Warranty</p>
-                  <p className="text-xs text-muted-foreground">Manufacturer warranty</p>
+                  <p className="text-sm font-medium">Easy Returns</p>
+                  <p className="text-xs text-muted-foreground">30-day return policy</p>
                 </div>
               </div>
             </div>
@@ -446,7 +446,7 @@ export default function ProductDetailPage() {
                     <div>
                       <h4 className="font-semibold mb-2">Warranty Information</h4>
                       <p className="text-sm text-muted-foreground">
-                        This printer includes the <strong>Original OEM Warranty</strong> from the date of purchase. HP will repair or replace defective units during this period. For warranty claims, contact HP Support at 1-800-474-6836 (available 24/7) or visit support.hp.com
+                        HP printers typically include manufacturer warranty coverage. For specific warranty terms, refer to the documentation included with your product. For warranty support, contact HP Support at 1-800-474-6836 (available 24/7) or visit support.hp.com
                       </p>
                     </div>
                   </div>
@@ -567,7 +567,7 @@ export default function ProductDetailPage() {
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li>Print at least once weekly to prevent ink drying</li>
                         <li>Run printhead cleaning if quality degrades</li>
-                        <li>Use genuine HP ink cartridges for best results</li>
+                        <li>Use HP-recommended ink cartridges for best results</li>
                         <li>Keep firmware updated via HP Smart app</li>
                         <li>Store unused cartridges in cool, dry place</li>
                       </ul>

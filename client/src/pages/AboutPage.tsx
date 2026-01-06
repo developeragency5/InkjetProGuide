@@ -8,7 +8,7 @@ export default function AboutPage() {
     { value: "25+", label: "HP Printer Models" },
     { value: "$299+", label: "Free Shipping Threshold" },
     { value: "2-3 Days", label: "Fast Delivery" },
-    { value: "1 Year", label: "OEM Warranty" },
+    { value: "30 Days", label: "Easy Returns" },
   ];
 
   const values = [
@@ -19,8 +19,8 @@ export default function AboutPage() {
     },
     {
       icon: Award,
-      title: "Quality Assurance",
-      description: "We partner exclusively with HP to ensure every printer meets the highest standards of quality, reliability, and performance."
+      title: "Quality Selection",
+      description: "We carefully curate our selection of HP inkjet printers to bring you reliable models known for quality and performance."
     },
     {
       icon: Heart,
@@ -37,8 +37,8 @@ export default function AboutPage() {
   const benefits = [
     {
       icon: Shield,
-      title: "Authentic HP Products",
-      description: "100% genuine HP inkjet printers with full manufacturer warranties and support."
+      title: "HP Inkjet Specialists",
+      description: "We specialize exclusively in HP inkjet printers, providing focused expertise and product knowledge."
     },
     {
       icon: Truck,
@@ -77,8 +77,8 @@ export default function AboutPage() {
               About InkjetProGuide
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-subtitle">
-              Your trusted partner for HP inkjet printers in the USA. We simplify printer shopping 
-              with expert guidance, authentic products, and exceptional customer service.
+              Your source for HP inkjet printers in the USA. We simplify printer shopping 
+              with expert guidance, curated selection, and exceptional customer service.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/products">
@@ -142,7 +142,7 @@ export default function AboutPage() {
                     <p className="text-muted-foreground leading-relaxed">
                       We are an online retailer specializing exclusively in HP inkjet printers for homes, offices, 
                       and small businesses across the United States. Our website offers a curated selection of 
-                      genuine HP printers, detailed product guides, buying recommendations, and educational resources 
+                      HP printers, detailed product guides, buying recommendations, and educational resources 
                       to help you make informed purchasing decisions. We handle product sourcing, order fulfillment, 
                       shipping, and customer support all under one roof.
                     </p>
@@ -204,9 +204,9 @@ export default function AboutPage() {
                 printer can be overwhelming with so many models, specifications, and technical jargon to navigate.
               </p>
               <p data-testid="text-story-2">
-                As an authorized HP dealer, we specialize exclusively in HP inkjet printers because we believe 
-                in their quality, innovation, and reliability. Our team of printing experts has helped thousands 
-                of customers find the perfect printer for their homes, offices, and businesses across the United States.
+                As a dedicated HP inkjet printer retailer, we specialize exclusively in HP inkjet printers because we believe 
+                in their quality, innovation, and reliability. Our team of printing specialists is committed to helping 
+                customers find the perfect printer for their homes, offices, and businesses across the United States.
               </p>
               <p data-testid="text-story-3">
                 Today, we're proud to be one of the leading online destinations for HP inkjet printers, offering 
@@ -308,10 +308,10 @@ export default function AboutPage() {
                 <div className="flex gap-4 items-start">
                   <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-1">Only Authorized HP Products</h4>
+                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-1">HP Inkjet Specialists</h4>
                     <p className="text-muted-foreground">
-                      We sell exclusively genuine HP inkjet printers backed by full manufacturer warranties 
-                      and official HP support.
+                      We focus exclusively on HP inkjet printers, providing specialized expertise and 
+                      a carefully curated product selection.
                     </p>
                   </div>
                 </div>

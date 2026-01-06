@@ -213,7 +213,7 @@ export default function ProductsPage() {
                   HP inkjet printers have been the trusted choice for home users, students, and small businesses for decades. 
                   Whether you need to print vibrant photos, professional documents, or everyday schoolwork, HP's inkjet 
                   technology delivers exceptional quality at an affordable price. At InkjetProGuide, we specialize exclusively 
-                  in HP inkjet printers, ensuring you get expert guidance and authentic products shipped directly to your door 
+                  in HP inkjet printers, ensuring you get expert guidance and a curated selection shipped directly to your door 
                   anywhere in the United States.
                 </p>
 
@@ -241,8 +241,8 @@ export default function ProductsPage() {
                 </div>
 
                 <p className="mb-4">
-                  Every printer we sell comes with the original HP manufacturer warranty, ensuring you receive genuine 
-                  products with full support. Our team is available Monday through Friday, 9 AM to 6 PM ET, to help you 
+                  HP printers typically include manufacturer warranty coverage - refer to HP documentation for specific terms. 
+                  Our team is available Monday through Friday, 9 AM to 6 PM ET, to help you 
                   find the perfect printer for your needs. We offer free shipping on orders over $299 and hassle-free 
                   returns within 30 days of purchase.
                 </p>

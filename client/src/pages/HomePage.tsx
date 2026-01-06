@@ -134,7 +134,7 @@ export default function HomePage() {
                 </h1>
                 
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg">
-                  Authentic HP products, comprehensive resources, and professional service for all your printing needs.
+                  HP inkjet printers, comprehensive resources, and professional service for all your printing needs.
                 </p>
               </div>
 
@@ -215,20 +215,20 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
 
-                {/* Service Card 3 - OEM Warranty */}
-                <Card className="relative hover-elevate transition-all h-full" data-testid="service-oem-warranty">
+                {/* Service Card 3 - Easy Returns */}
+                <Card className="relative hover-elevate transition-all h-full" data-testid="service-easy-returns">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
                   <CardContent className="p-4 sm:p-6 space-y-2 sm:space-y-3 relative">
                     <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/10 flex items-center justify-center">
                       <Shield className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold">OEM Warranty</h3>
+                    <h3 className="text-base sm:text-lg font-bold">Easy Returns</h3>
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      Full manufacturer warranty coverage on all HP printers with guaranteed authenticity.
+                      Hassle-free 30-day returns for unopened items. Your satisfaction is our priority.
                     </p>
                     <div className="flex items-center gap-2 text-xs text-primary font-medium">
                       <CheckCircle2 className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
-                      <span>100% Authentic Products</span>
+                      <span>30-Day Return Policy</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -282,20 +282,20 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10"></div>
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-authentic">
+            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-returns">
               <Shield className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">OEM</div>
-              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Authentic Products</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">30</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Day Easy Returns</div>
             </div>
             <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-shipping">
               <Truck className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
               <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">Free</div>
               <div className="text-xs sm:text-sm text-muted-foreground font-medium">Orders Over $299</div>
             </div>
-            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-warranty">
+            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-support">
               <Award className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">1 Year</div>
-              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Manufacturer Warranty</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">USA</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Based Support</div>
             </div>
             <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-contact">
               <Mail className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
@@ -320,7 +320,7 @@ export default function HomePage() {
               </p>
               
               <p data-testid="text-intro-2">
-                <strong className="text-foreground">What We Offer:</strong> Our product selection includes the complete range of HP inkjet printers, from affordable home models perfect for occasional printing to high-performance office machines designed for demanding workloads. We carry HP Smart Tank printers with refillable ink systems for high-volume printing at a low cost per page, OfficeJet Pro multifunction printers with print, scan, copy, and fax capabilities, ENVY printers known for stunning photo quality, and compact portable printers for professionals on the go. Every printer we sell is brand new, factory sealed, and backed by HP's original manufacturer warranty.
+                <strong className="text-foreground">What We Offer:</strong> Our product selection includes a curated range of HP inkjet printers, from affordable home models perfect for occasional printing to high-performance office machines designed for demanding workloads. We carry HP Smart Tank printers with refillable ink systems for high-volume printing at a low cost per page, OfficeJet Pro multifunction printers with print, scan, copy, and fax capabilities, ENVY printers known for stunning photo quality, and compact portable printers for professionals on the go. All products are shipped brand new and factory sealed.
               </p>
               
               <p data-testid="text-intro-3">
@@ -358,7 +358,7 @@ export default function HomePage() {
               Your Complete Guide to HP Inkjet Printers
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Expert guidance and authentic HP products for customers across the United States
+              Expert guidance and HP inkjet printers for customers across the United States
             </p>
           </div>
 
@@ -411,7 +411,7 @@ export default function HomePage() {
                     <div>
                       <h3 className="font-bold text-lg mb-2">HP Inkjet Specialists</h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        We specialize exclusively in HP inkjet technology because we believe in offering expertise over breadth. Our team stays up-to-date with the latest HP releases, including Smart Tank printers, OfficeJet Pro models, ENVY printers, and portable solutions. Every product comes with the original HP manufacturer warranty.
+                        We specialize exclusively in HP inkjet technology because we believe in offering expertise over breadth. Our team stays up-to-date with the latest HP releases, including Smart Tank printers, OfficeJet Pro models, ENVY printers, and portable solutions. We provide comprehensive product information to help you make the right choice.
                       </p>
                     </div>
                   </div>
@@ -749,8 +749,8 @@ export default function HomePage() {
               <div className="text-sm text-muted-foreground">Fast Delivery</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-warranty-period">1 Year</div>
-              <div className="text-sm text-muted-foreground">OEM Warranty</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-return-period">30 Days</div>
+              <div className="text-sm text-muted-foreground">Easy Returns</div>
             </div>
           </div>
         </div>
@@ -1010,9 +1010,9 @@ export default function HomePage() {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-bold text-2xl mb-4">Genuine Products</h3>
+                <h3 className="font-bold text-2xl mb-4">HP Specialists</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  All our printers are 100% authentic with original manufacturer warranty. No refurbished or counterfeit products ever.
+                  We focus exclusively on HP inkjet printers, providing specialized product knowledge and expert recommendations.
                 </p>
               </CardContent>
             </Card>
@@ -1110,10 +1110,10 @@ export default function HomePage() {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-4">Authentic HP Products</h3>
+                <h3 className="text-xl font-bold mb-4">HP Inkjet Specialists</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Every printer we sell is genuine HP merchandise with full manufacturer warranty. 
-                  No refurbished or third-party products - only authentic HP inkjet printers.
+                  We specialize exclusively in HP inkjet printers, providing focused expertise 
+                  and a carefully curated selection of products for your printing needs.
                 </p>
               </CardContent>
             </Card>

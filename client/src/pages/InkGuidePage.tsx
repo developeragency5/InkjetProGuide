@@ -432,7 +432,7 @@ export default function InkGuidePage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Full manufacturer warranty protection</span>
+                    <span>Designed for optimal printer performance</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
