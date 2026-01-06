@@ -109,9 +109,8 @@ export default function ProductsPage() {
   }).sort((a, b) => {
     if (sortBy === "price-low") return parseFloat(a.price) - parseFloat(b.price);
     if (sortBy === "price-high") return parseFloat(b.price) - parseFloat(a.price);
-    if (sortBy === "rating") return parseFloat(b.rating || "0") - parseFloat(a.rating || "0");
-    if (sortBy === "newest") return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-    if (sortBy === "best-selling") return (b.reviewCount || 0) - (a.reviewCount || 0);
+    if (sortBy === "name-az") return a.name.localeCompare(b.name);
+    if (sortBy === "name-za") return b.name.localeCompare(a.name);
     return 0;
   }) || [];
 
@@ -458,11 +457,10 @@ export default function ProductsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="featured">Featured</SelectItem>
-                  <SelectItem value="best-selling">Best Selling</SelectItem>
                   <SelectItem value="price-low">Price: Low to High</SelectItem>
                   <SelectItem value="price-high">Price: High to Low</SelectItem>
-                  <SelectItem value="newest">Newest</SelectItem>
-                  <SelectItem value="rating">Highest Rating</SelectItem>
+                  <SelectItem value="name-az">Name: A to Z</SelectItem>
+                  <SelectItem value="name-za">Name: Z to A</SelectItem>
                 </SelectContent>
               </Select>
             </div>

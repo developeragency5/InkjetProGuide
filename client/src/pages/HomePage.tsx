@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { ShoppingCart, Package, Shield, Mail, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame, Wrench, Sparkles, Target, RefreshCw, Phone } from "lucide-react";
+import { ShoppingCart, Package, Shield, Mail, BookOpen, Star, CheckCircle, Award, TrendingUp, Users, Truck, CreditCard, Search, Printer, ArrowRight, Zap, Clock, Globe, Wifi, CheckCircle2, Box, BadgeCheck, BarChart3, Flame, Wrench, Sparkles, Target, RefreshCw, Phone, Headphones } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -27,79 +27,43 @@ export default function HomePage() {
   // Track used product IDs to ensure no duplicates across sections
   const usedProductIds = new Set<string>();
   
-  // Best Sellers (top-rated products with rating >= 4.5) - First priority
-  const bestSellers = products
+  // Featured Products (office category, sorted by price descending) - First priority
+  const featuredProducts = products
     ?.slice()
-    .filter(p => {
-      const rating = p.rating ? parseFloat(p.rating) : 0;
-      return rating >= 4.5;
-    })
-    .sort((a, b) => {
-      const ratingA = a.rating ? parseFloat(a.rating) : 0;
-      const ratingB = b.rating ? parseFloat(b.rating) : 0;
-      return ratingB - ratingA;
-    })
+    .filter(p => p.category === "office" && p.inStock)
+    .sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
     .slice(0, 4) || [];
   
-  bestSellers.forEach(p => usedProductIds.add(p.id));
+  featuredProducts.forEach(p => usedProductIds.add(p.id));
   
-  // New Arrivals (newest in-stock products) - Second priority, exclude used products
+  // New Arrivals (in-stock products not yet used) - Second priority
   const newArrivals = products
     ?.filter(p => p.inStock === true && !usedProductIds.has(p.id))
     .slice(0, 4) || [];
   
   newArrivals.forEach(p => usedProductIds.add(p.id));
   
-  // Premium options (over $500, sorted by rating) - Third priority
+  // Premium options (over $400, sorted by price descending) - Third priority
   const premiumOptions = products
-    ?.filter(p => parseFloat(p.price) > 500 && !usedProductIds.has(p.id))
-    .sort((a, b) => {
-      const ratingA = a.rating ? parseFloat(a.rating) : 0;
-      const ratingB = b.rating ? parseFloat(b.rating) : 0;
-      return ratingB - ratingA;
-    })
+    ?.filter(p => parseFloat(p.price) > 400 && !usedProductIds.has(p.id))
+    .sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
     .slice(0, 4) || [];
   
   premiumOptions.forEach(p => usedProductIds.add(p.id));
   
-  // Budget-friendly options (under $300, sorted by rating) - Fourth priority
+  // Budget-friendly options (under $300, sorted by price ascending) - Fourth priority
   const budgetFriendly = products
     ?.filter(p => parseFloat(p.price) < 300 && !usedProductIds.has(p.id))
-    .sort((a, b) => {
-      const ratingA = a.rating ? parseFloat(a.rating) : 0;
-      const ratingB = b.rating ? parseFloat(b.rating) : 0;
-      return ratingB - ratingA;
-    })
+    .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
     .slice(0, 4) || [];
   
   budgetFriendly.forEach(p => usedProductIds.add(p.id));
   
-  // Featured Products - Show highly rated products not yet used
-  let featuredProducts = products
-    ?.filter(p => {
-      const rating = p.rating ? parseFloat(p.rating) : 0;
-      return rating >= 4.0 && !usedProductIds.has(p.id);
-    })
-    .sort((a, b) => {
-      const ratingA = a.rating ? parseFloat(a.rating) : 0;
-      const ratingB = b.rating ? parseFloat(b.rating) : 0;
-      return ratingB - ratingA;
-    })
+  // Popular Choices - Show remaining products sorted by price
+  const popularChoices = products
+    ?.filter(p => !usedProductIds.has(p.id) && p.inStock)
+    .sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
     .slice(0, 4) || [];
-  
-  // If we don't have enough featured products, fill with remaining top-rated products
-  if (featuredProducts.length < 4) {
-    const additionalProducts = products
-      ?.filter(p => !usedProductIds.has(p.id))
-      .sort((a, b) => {
-        const ratingA = a.rating ? parseFloat(a.rating) : 0;
-        const ratingB = b.rating ? parseFloat(b.rating) : 0;
-        return ratingB - ratingA;
-      })
-      .slice(0, 4 - featuredProducts.length) || [];
-    
-    featuredProducts = [...featuredProducts, ...additionalProducts];
-  }
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -157,7 +121,7 @@ export default function HomePage() {
               {/* Trust Badge */}
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-card border shadow-sm" data-testid="hero-trust-badge">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-xs sm:text-sm font-medium">Trusted HP Printer Experts Since 2020</span>
+                <span className="text-xs sm:text-sm font-medium">Your HP Inkjet Printer Specialists</span>
               </div>
 
               {/* Main Headline */}
@@ -313,15 +277,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Banner with Glassmorphism - SINGLE LOCATION */}
+      {/* Features Banner with Glassmorphism - SINGLE LOCATION */}
       <section className="relative py-8 sm:py-12 lg:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10"></div>
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-customers">
-              <Users className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">1,000+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Happy Customers</div>
+            <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-authentic">
+              <Shield className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">OEM</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Authentic Products</div>
             </div>
             <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-shipping">
               <Truck className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
@@ -329,9 +293,9 @@ export default function HomePage() {
               <div className="text-xs sm:text-sm text-muted-foreground font-medium">Orders Over $299</div>
             </div>
             <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-warranty">
-              <Shield className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">OEM</div>
-              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Original Warranty</div>
+              <Award className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-1 sm:mb-2">1 Year</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">Manufacturer Warranty</div>
             </div>
             <div className="text-center backdrop-blur-sm bg-card/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover-elevate" data-testid="stat-contact">
               <Mail className="w-6 sm:w-8 h-6 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
@@ -361,7 +325,7 @@ export default function HomePage() {
               Your Complete Guide to HP Inkjet Printers
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Trusted by thousands of customers across the United States for expert guidance and authentic HP products
+              Expert guidance and authentic HP products for customers across the United States
             </p>
           </div>
 
@@ -735,7 +699,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Additional Stats Section */}
+      {/* Features Section */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -744,8 +708,8 @@ export default function HomePage() {
               <div className="text-sm text-muted-foreground">HP Models Available</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-satisfaction">95%</div>
-              <div className="text-sm text-muted-foreground">Customer Satisfaction</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-shipping-free">$299+</div>
+              <div className="text-sm text-muted-foreground">Free Shipping Threshold</div>
             </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="stat-delivery">2-3 Days</div>
@@ -877,17 +841,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Best Sellers */}
+      {/* Popular Choices */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4">
               <Star className="w-4 h-4 mr-2 fill-current" />
-              Top Rated
+              Featured
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Best Sellers</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Popular Choices</h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our most popular HP printers trusted by thousands
+              Explore our selection of quality HP printers
             </p>
           </div>
           
@@ -903,7 +867,7 @@ export default function HomePage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {bestSellers.map((product) => (
+              {popularChoices.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
@@ -911,8 +875,8 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <Link href="/products">
-              <Button size="lg" variant="outline" className="font-semibold" data-testid="button-view-all-bestsellers">
-                View All Best Sellers
+              <Button size="lg" variant="outline" className="font-semibold" data-testid="button-view-all-products">
+                View All Products
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
@@ -1096,93 +1060,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Customer Testimonials */}
+      {/* Why Choose InkjetProGuide */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Trusted by Thousands of Customers
+              Why Choose InkjetProGuide
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground">
-              See what our customers have to say about their experience
+              What sets us apart as your HP printer destination
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="hover-elevate transition-all border-2 border-primary/10">
               <CardContent className="p-10">
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                  ))}
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Shield className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-muted-foreground mb-8 italic text-lg leading-relaxed">
-                  "The setup guide was incredibly helpful! Had my new HP printer up and running 
-                  in under 10 minutes. The detailed instructions made everything so easy."
+                <h3 className="text-xl font-bold mb-4">Authentic HP Products</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Every printer we sell is genuine HP merchandise with full manufacturer warranty. 
+                  No refurbished or third-party products - only authentic HP inkjet printers.
                 </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
-                      SM
-                    </div>
-                    <div>
-                      <p className="font-bold text-lg">Sarah Mitchell</p>
-                      <p className="text-sm text-muted-foreground">San Francisco, CA</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-muted-foreground">Nov 15, 2024</p>
-                </div>
               </CardContent>
             </Card>
 
             <Card className="hover-elevate transition-all border-2 border-primary/10">
               <CardContent className="p-10">
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                  ))}
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <BookOpen className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-muted-foreground mb-8 italic text-lg leading-relaxed">
-                  "Best customer service I've experienced. They helped me choose the perfect printer 
-                  for my home office and answered all my questions promptly."
+                <h3 className="text-xl font-bold mb-4">Expert Resources</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Access comprehensive setup guides, troubleshooting tips, and buying recommendations 
+                  to help you make informed decisions and get the most from your printer.
                 </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
-                      JC
-                    </div>
-                    <div>
-                      <p className="font-bold text-lg">John Chen</p>
-                      <p className="text-sm text-muted-foreground">Austin, TX</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-muted-foreground">Oct 28, 2024</p>
-                </div>
               </CardContent>
             </Card>
 
             <Card className="hover-elevate transition-all border-2 border-primary/10">
               <CardContent className="p-10">
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                  ))}
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Headphones className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-muted-foreground mb-8 italic text-lg leading-relaxed">
-                  "The maintenance tips have been a game-changer. My printer runs like new thanks 
-                  to their expert guidance on cleaning and care."
+                <h3 className="text-xl font-bold mb-4">Dedicated Support</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Our Fort Worth, TX-based team is ready to assist you with product selection, 
+                  setup questions, and any issues that may arise with your HP printer.
                 </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-lg">
-                      EM
-                    </div>
-                    <div>
-                      <p className="font-bold text-lg">Emily Rodriguez</p>
-                      <p className="text-sm text-muted-foreground">Miami, FL</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-muted-foreground">Sep 12, 2024</p>
-                </div>
               </CardContent>
             </Card>
           </div>
@@ -1217,7 +1142,7 @@ export default function HomePage() {
             </Button>
           </form>
           <p className="text-sm text-muted-foreground">
-            Join 1,000+ subscribers - No spam, unsubscribe anytime
+            No spam, unsubscribe anytime
           </p>
         </div>
       </section>

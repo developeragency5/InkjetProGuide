@@ -295,15 +295,6 @@ export default function ComparisonPage() {
                   </td>
                 ))}
               </tr>
-              <tr>
-                <td className="border p-4 sticky left-0 bg-background z-10">Customer Rating</td>
-                {comparedProducts.map((product) => (
-                  <td key={product.id} className="border p-4 text-center" data-testid={`text-rating-${product.id}`}>
-                    {product.rating ? `${product.rating}★ (${product.reviewCount} reviews)` : "No reviews"}
-                  </td>
-                ))}
-              </tr>
-
               {/* Print Specifications */}
               <tr className="bg-primary/5">
                 <td className="border p-4 font-semibold sticky left-0 bg-primary/5 z-10" colSpan={comparedProducts.length + 1}>

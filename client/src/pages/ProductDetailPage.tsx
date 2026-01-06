@@ -1,6 +1,6 @@
 import { useRoute, Link } from "wouter";
 import { useState, useEffect } from "react";
-import { Minus, Plus, Heart, ShoppingCart, Star, Package, Shield, Truck, Printer, Wifi, Settings, Wrench, AlertCircle, CheckCircle, ZoomIn, ChevronLeft, ChevronRight, GitCompare, Filter } from "lucide-react";
+import { Minus, Plus, Heart, ShoppingCart, Star, Package, Shield, Truck, Printer, Wifi, Settings, Wrench, AlertCircle, CheckCircle, ZoomIn, ChevronLeft, ChevronRight, GitCompare, Filter, MessageSquare, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -146,40 +146,7 @@ export default function ProductDetailPage() {
     ?.filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4) || [];
 
-  // Mock reviews data
-  const mockReviews = [
-    {
-      id: 1,
-      author: "John D.",
-      rating: 5,
-      date: "2 weeks ago",
-      title: "Excellent printer for home office",
-      content: "Great print quality and easy WiFi setup. The HP Smart app makes printing from my phone super convenient.",
-      verified: true,
-    },
-    {
-      id: 2,
-      author: "Sarah M.",
-      rating: 4,
-      date: "1 month ago",
-      title: "Good value for money",
-      content: "Works well for everyday printing. Setup was straightforward. Only wish the paper tray was larger.",
-      verified: true,
-    },
-    {
-      id: 3,
-      author: "Mike R.",
-      rating: 5,
-      date: "1 month ago",
-      title: "Perfect for students",
-      content: "Bought this for my daughter's college dorm. Compact size and wireless printing are perfect. Print quality is excellent.",
-      verified: true,
-    },
-  ];
-
-  const filteredReviews = reviewFilter === "all" 
-    ? mockReviews 
-    : mockReviews.filter(r => r.rating === parseInt(reviewFilter));
+  // Reviews are not available - will be implemented when real customer reviews are collected
 
   return (
     <div className="min-h-screen bg-background">
@@ -252,25 +219,6 @@ export default function ProductDetailPage() {
             <h1 className="text-4xl font-bold mb-4" data-testid="text-product-name">
               {product.name}
             </h1>
-
-            {/* Rating */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-5 h-5 ${
-                      i < Math.floor(parseFloat(product.rating || "0"))
-                        ? "fill-yellow-400 text-yellow-400"
-                        : "fill-muted text-muted"
-                    }`}
-                  />
-                ))}
-              </div>
-              <span className="text-sm text-muted-foreground" data-testid="text-review-count">
-                {product.reviewCount} reviews
-              </span>
-            </div>
 
             {/* Price */}
             <div className="mb-6">
@@ -1289,114 +1237,26 @@ export default function ProductDetailPage() {
           <TabsContent value="reviews" className="mt-6">
             <Card>
               <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <CardTitle>Customer Reviews</CardTitle>
-                    <CardDescription>{product.reviewCount} total reviews</CardDescription>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Filter className="w-4 h-4 text-muted-foreground" />
-                    <Select value={reviewFilter} onValueChange={setReviewFilter}>
-                      <SelectTrigger className="w-[150px]" data-testid="select-review-filter">
-                        <SelectValue placeholder="Filter reviews" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">All Reviews</SelectItem>
-                        <SelectItem value="5">5 Stars</SelectItem>
-                        <SelectItem value="4">4 Stars</SelectItem>
-                        <SelectItem value="3">3 Stars</SelectItem>
-                        <SelectItem value="2">2 Stars</SelectItem>
-                        <SelectItem value="1">1 Star</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
+                <CardTitle>Customer Reviews</CardTitle>
+                <CardDescription>Share your experience with this product</CardDescription>
               </CardHeader>
               <CardContent>
-                {/* Overall Rating Summary */}
-                <div className="mb-8 p-6 bg-muted/50 rounded-lg">
-                  <div className="flex items-center gap-6">
-                    <div className="text-center">
-                      <div className="text-5xl font-bold mb-2">{product.rating}</div>
-                      <div className="flex items-center gap-1 mb-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-5 h-5 ${
-                              i < Math.floor(parseFloat(product.rating || "0"))
-                                ? "fill-yellow-400 text-yellow-400"
-                                : "fill-muted text-muted"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <div className="text-sm text-muted-foreground">Based on {product.reviewCount} reviews</div>
-                    </div>
-                    <Separator orientation="vertical" className="h-24" />
-                    <div className="flex-1">
-                      <div className="space-y-2">
-                        {[5, 4, 3, 2, 1].map((stars) => (
-                          <div key={stars} className="flex items-center gap-2">
-                            <span className="text-sm w-12">{stars} star{stars !== 1 ? 's' : ''}</span>
-                            <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-yellow-400" 
-                                style={{ width: `${stars === 5 ? 70 : stars === 4 ? 20 : 10}%` }}
-                              />
-                            </div>
-                            <span className="text-sm text-muted-foreground w-12 text-right">
-                              {stars === 5 ? '70%' : stars === 4 ? '20%' : '10%'}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
+                    <MessageSquare className="w-8 h-8 text-muted-foreground" />
                   </div>
+                  <h3 className="text-lg font-semibold mb-2">No Reviews Yet</h3>
+                  <p className="text-muted-foreground max-w-md mx-auto mb-6">
+                    Be the first to share your experience with this printer. 
+                    Contact us after your purchase to leave a review.
+                  </p>
+                  <Link href="/contact">
+                    <Button variant="outline" data-testid="button-contact-review">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Contact Us
+                    </Button>
+                  </Link>
                 </div>
-
-                {/* Individual Reviews */}
-                <div className="space-y-6">
-                  {filteredReviews.map((review) => (
-                    <div key={review.id} className="border-b pb-6 last:border-0">
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="font-semibold">{review.author}</span>
-                            {review.verified && (
-                              <Badge variant="secondary" className="text-xs">
-                                <CheckCircle className="w-3 h-3 mr-1" />
-                                Verified Purchase
-                              </Badge>
-                            )}
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <div className="flex">
-                              {[...Array(5)].map((_, i) => (
-                                <Star
-                                  key={i}
-                                  className={`w-4 h-4 ${
-                                    i < review.rating
-                                      ? "fill-yellow-400 text-yellow-400"
-                                      : "fill-muted text-muted"
-                                  }`}
-                                />
-                              ))}
-                            </div>
-                            <span className="text-sm text-muted-foreground">{review.date}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <h4 className="font-semibold mb-2">{review.title}</h4>
-                      <p className="text-sm text-muted-foreground">{review.content}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {filteredReviews.length === 0 && (
-                  <div className="text-center py-8 text-muted-foreground">
-                    No reviews match the selected filter.
-                  </div>
-                )}
               </CardContent>
             </Card>
           </TabsContent>

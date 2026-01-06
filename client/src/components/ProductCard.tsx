@@ -265,25 +265,6 @@ export function ProductCard({ product }: ProductCardProps) {
               </span>
             </div>
 
-            {/* Rating */}
-            <div className="flex items-center gap-1">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-3.5 h-3.5 ${
-                      i < Math.floor(parseFloat(product.rating || "0"))
-                        ? "fill-yellow-400 text-yellow-400"
-                        : "fill-muted text-muted"
-                    }`}
-                  />
-                ))}
-              </div>
-              <span className="text-xs text-muted-foreground" data-testid={`text-reviews-${product.id}`}>
-                ({product.reviewCount})
-              </span>
-            </div>
-
             {/* Price */}
             <div>
               <div className="flex items-baseline gap-2">
@@ -375,25 +356,6 @@ export function ProductCard({ product }: ProductCardProps) {
                   {isBestSeller && <Badge className="bg-yellow-500 text-yellow-950">Best Seller</Badge>}
                   {hasDiscount && <Badge variant="destructive">-{discountPercent}%</Badge>}
                 </div>
-              </div>
-
-              {/* Rating */}
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-4 h-4 ${
-                        i < Math.floor(parseFloat(product.rating || "0"))
-                          ? "fill-yellow-400 text-yellow-400"
-                          : "fill-muted text-muted"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className="text-sm text-muted-foreground">
-                  ({product.reviewCount} reviews)
-                </span>
               </div>
 
               {/* Price */}
