@@ -29,6 +29,7 @@ export const products = pgTable("products", {
   specifications: text("specifications").notNull(),
   features: text("features").array().notNull(),
   inStock: boolean("in_stock").notNull().default(true),
+  mpn: text("mpn"), // Manufacturer Part Number (HP Product Number) - for printers only
   // SEO fields
   metaTitle: text("meta_title"),
   metaDescription: text("meta_description"),

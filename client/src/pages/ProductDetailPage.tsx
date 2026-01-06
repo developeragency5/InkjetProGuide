@@ -216,9 +216,16 @@ export default function ProductDetailPage() {
 
           {/* Right Column - Info */}
           <div>
-            <h1 className="text-4xl font-bold mb-4" data-testid="text-product-name">
+            <h1 className="text-4xl font-bold mb-2" data-testid="text-product-name">
               {product.name}
             </h1>
+
+            {/* MPN - Manufacturer Part Number (only for printers, not supplies) */}
+            {product.mpn && !product.category.toLowerCase().includes('ink') && !product.category.toLowerCase().includes('cartridge') && !product.category.toLowerCase().includes('supplies') && (
+              <p className="text-sm text-muted-foreground mb-4" data-testid="text-mpn">
+                MPN: {product.mpn}
+              </p>
+            )}
 
             {/* Price */}
             <div className="mb-6">
@@ -636,7 +643,16 @@ export default function ProductDetailPage() {
           <TabsContent value="specifications" className="mt-6">
             <Card>
               <CardHeader>
-                <CardTitle>Complete Technical Specifications</CardTitle>
+                <CardTitle className="flex items-center justify-between flex-wrap gap-2">
+                  <span>Complete Technical Specifications</span>
+                  {/* OEM Warranty Included badge - only for printers, not supplies */}
+                  {!product.category.toLowerCase().includes('ink') && !product.category.toLowerCase().includes('cartridge') && !product.category.toLowerCase().includes('supplies') && (
+                    <Badge variant="outline" className="border-primary text-primary" data-testid="badge-oem-warranty">
+                      <Shield className="w-3 h-3 mr-1" />
+                      OEM Warranty Included
+                    </Badge>
+                  )}
+                </CardTitle>
                 <CardDescription>Detailed specifications for {product.name}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
