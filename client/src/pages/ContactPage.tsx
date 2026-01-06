@@ -161,7 +161,8 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3 mb-4">
                   <MapPin className="w-5 h-5 text-primary mt-1" />
                   <div>
-                    <p className="font-semibold mb-1">InkjetProGuide Headquarters</p>
+                    <p className="font-semibold mb-1">InkjetProGuide</p>
+                    <p className="text-xs text-muted-foreground/70 mb-1">Corporate Mailing Address</p>
                     <p className="text-sm text-muted-foreground">
                       2704 Handley Ederville Rd<br />
                       Fort Worth, TX 76118<br />

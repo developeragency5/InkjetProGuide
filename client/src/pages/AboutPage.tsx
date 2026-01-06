@@ -161,6 +161,7 @@ export default function AboutPage() {
                       </p>
                       <div className="mt-4 p-4 bg-background rounded-lg border">
                         <p className="font-medium text-foreground">InkjetProGuide</p>
+                        <p className="text-xs text-muted-foreground/70 mb-1">Corporate Mailing Address</p>
                         <p>2704 Handley Ederville Rd</p>
                         <p>Fort Worth, TX 76118</p>
                         <p className="mt-2">United States</p>
