@@ -1175,7 +1175,8 @@ export default function HomePage() {
             </Button>
           </form>
           <p className="text-sm text-muted-foreground">
-            No spam, unsubscribe anytime
+            By subscribing, you agree to receive promotional emails. You can unsubscribe anytime. 
+            <a href="/privacy-policy" className="text-primary hover:underline ml-1">Privacy Policy</a>
           </p>
         </div>
       </section>

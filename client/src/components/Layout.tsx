@@ -586,6 +586,10 @@ export function Layout({ children }: LayoutProps) {
                   {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
                 </Button>
               </form>
+              <p className="text-xs text-muted-foreground mt-3">
+                By subscribing, you agree to receive promotional emails. You can unsubscribe anytime. 
+                <Link href="/privacy-policy" className="text-primary hover:underline ml-1">Privacy Policy</Link>
+              </p>
             </div>
           </div>
 

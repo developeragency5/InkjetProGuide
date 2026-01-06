@@ -375,7 +375,8 @@ export default function ResourceCenterPage() {
               </form>
 
               <p className="text-xs text-muted-foreground mt-3">
-                We respect your privacy. Unsubscribe anytime.
+                By subscribing, you agree to receive promotional emails. You can unsubscribe anytime. 
+                <a href="/privacy-policy" className="text-primary hover:underline ml-1">Privacy Policy</a>
               </p>
             </div>
           </CardContent>
