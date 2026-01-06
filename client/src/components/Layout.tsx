@@ -1,6 +1,7 @@
 import { ReactNode, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Search, ShoppingCart, Heart, User, Menu, X } from "lucide-react";
+import { Search, ShoppingCart, Heart, User, Menu, X, Shield, Lock, Truck } from "lucide-react";
+import { SiVisa, SiMastercard, SiAmericanexpress, SiDiscover, SiStripe } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -585,6 +586,80 @@ export function Layout({ children }: LayoutProps) {
                   {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
                 </Button>
               </form>
+            </div>
+          </div>
+
+          {/* Trust Signals Section */}
+          <div className="border-b py-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Payment Methods */}
+              <div className="text-center">
+                <h4 className="text-sm font-semibold mb-3 flex items-center justify-center gap-2">
+                  <Lock className="w-4 h-4 text-primary" />
+                  Secure Payment
+                </h4>
+                <div className="flex justify-center items-center gap-3 flex-wrap">
+                  <div className="bg-background border rounded-md px-2 py-1.5" title="Visa">
+                    <SiVisa className="w-8 h-5 text-[#1A1F71]" />
+                  </div>
+                  <div className="bg-background border rounded-md px-2 py-1.5" title="Mastercard">
+                    <SiMastercard className="w-8 h-5 text-[#EB001B]" />
+                  </div>
+                  <div className="bg-background border rounded-md px-2 py-1.5" title="American Express">
+                    <SiAmericanexpress className="w-8 h-5 text-[#006FCF]" />
+                  </div>
+                  <div className="bg-background border rounded-md px-2 py-1.5" title="Discover">
+                    <SiDiscover className="w-8 h-5 text-[#FF6000]" />
+                  </div>
+                </div>
+                <div className="flex justify-center items-center gap-2 mt-3">
+                  <SiStripe className="w-10 h-4 text-[#635BFF]" />
+                  <span className="text-xs text-muted-foreground">Powered by Stripe</span>
+                </div>
+              </div>
+
+              {/* Security Badges */}
+              <div className="text-center">
+                <h4 className="text-sm font-semibold mb-3 flex items-center justify-center gap-2">
+                  <Shield className="w-4 h-4 text-primary" />
+                  Security & Trust
+                </h4>
+                <div className="flex justify-center items-center gap-3 flex-wrap">
+                  <div className="flex items-center gap-1.5 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-md px-3 py-1.5">
+                    <Lock className="w-4 h-4 text-green-600" />
+                    <span className="text-xs font-medium text-green-700 dark:text-green-400">SSL Secured</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-md px-3 py-1.5">
+                    <Shield className="w-4 h-4 text-blue-600" />
+                    <span className="text-xs font-medium text-blue-700 dark:text-blue-400">256-bit Encryption</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Your data is protected with industry-standard encryption
+                </p>
+              </div>
+
+              {/* Shipping Partners */}
+              <div className="text-center">
+                <h4 className="text-sm font-semibold mb-3 flex items-center justify-center gap-2">
+                  <Truck className="w-4 h-4 text-primary" />
+                  Shipping Partners
+                </h4>
+                <div className="flex justify-center items-center gap-3 flex-wrap">
+                  <div className="bg-[#351C15] text-white rounded-md px-3 py-1.5" title="UPS">
+                    <span className="text-sm font-bold tracking-wide">UPS</span>
+                  </div>
+                  <div className="bg-[#4D148C] text-white rounded-md px-3 py-1.5" title="FedEx">
+                    <span className="text-sm font-bold">Fed<span className="text-[#FF6200]">Ex</span></span>
+                  </div>
+                  <div className="bg-[#004B87] text-white rounded-md px-3 py-1.5" title="USPS">
+                    <span className="text-sm font-bold tracking-wide">USPS</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Free shipping on orders over $299
+                </p>
+              </div>
             </div>
           </div>
 
