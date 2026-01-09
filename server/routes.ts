@@ -1035,19 +1035,19 @@ Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
     }
   });
 
-  // Guest order lookup endpoint
+  // Guest order lookup endpoint - lookup by order ID only
   app.post("/api/orders/lookup", async (req, res) => {
     try {
-      const { email, orderId } = req.body;
+      const { orderId } = req.body;
       
-      if (!email || !orderId) {
-        return res.status(400).json({ message: "Email and order ID are required" });
+      if (!orderId) {
+        return res.status(400).json({ message: "Order ID is required" });
       }
       
-      const order = await storage.getOrderByEmailAndId(email.toLowerCase().trim(), orderId.trim());
+      const order = await storage.getOrder(orderId.trim());
       
       if (!order) {
-        return res.status(404).json({ message: "Order not found. Please check your email and order number." });
+        return res.status(404).json({ message: "Order not found. Please check your order ID and try again." });
       }
       
       res.json({ order });

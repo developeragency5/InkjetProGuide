@@ -14,7 +14,6 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
 const orderLookupSchema = z.object({
-  email: z.string().email("Please enter a valid email address"),
   orderId: z.string().min(1, "Order ID is required"),
 });
 
@@ -28,7 +27,6 @@ export default function OrderLookupPage() {
   const form = useForm<OrderLookupFormData>({
     resolver: zodResolver(orderLookupSchema),
     defaultValues: {
-      email: "",
       orderId: "",
     },
   });
@@ -48,7 +46,7 @@ export default function OrderLookupPage() {
     onError: (error: any) => {
       toast({
         title: "Order not found",
-        description: error.message || "Please check your email and order number and try again.",
+        description: error.message || "Please check your order ID and try again.",
         variant: "destructive",
       });
       setOrder(null);
@@ -219,33 +217,14 @@ export default function OrderLookupPage() {
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
             <Search className="w-8 h-8 text-primary" />
           </div>
-          <h1 className="text-3xl font-bold mb-2">Order Lookup</h1>
+          <h1 className="text-3xl font-bold mb-2">Track Your Order</h1>
           <p className="text-muted-foreground">
-            Enter your email and order ID to view your order status
+            Enter your order ID to view your order status
           </p>
         </CardHeader>
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email Address</FormLabel>
-                    <FormControl>
-                      <Input 
-                        type="email" 
-                        placeholder="Enter the email used for your order"
-                        data-testid="input-email"
-                        {...field} 
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
               <FormField
                 control={form.control}
                 name="orderId"
@@ -255,7 +234,7 @@ export default function OrderLookupPage() {
                     <FormControl>
                       <Input 
                         type="text" 
-                        placeholder="Enter your order ID"
+                        placeholder="Enter your order ID (e.g., abc12345-...)"
                         data-testid="input-order-id"
                         {...field} 
                       />
