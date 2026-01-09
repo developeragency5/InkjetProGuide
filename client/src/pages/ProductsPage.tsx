@@ -414,31 +414,6 @@ export default function ProductsPage() {
                   </div>
                 </div>
 
-                {/* Print Technology */}
-                <div className="mb-8">
-                  <Label className="text-sm font-semibold mb-4 block">
-                    Print Technology
-                  </Label>
-                  <div className="space-y-3">
-                    {technologyOptions.map((tech) => (
-                      <div key={tech} className="flex items-center gap-2">
-                        <Checkbox
-                          id={`tech-${tech}`}
-                          checked={selectedTechnology.includes(tech)}
-                          onCheckedChange={() => toggleOption(tech, setSelectedTechnology)}
-                          data-testid={`checkbox-technology-${tech}`}
-                        />
-                        <Label
-                          htmlFor={`tech-${tech}`}
-                          className="text-sm cursor-pointer"
-                        >
-                          {tech}
-                        </Label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Connectivity */}
                 <div className="mb-8">
                   <Label className="text-sm font-semibold mb-4 block">
