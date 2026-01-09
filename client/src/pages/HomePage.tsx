@@ -103,7 +103,7 @@ export default function HomePage() {
                 </h1>
                 
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg" data-testid="hero-subtext">
-                  Professional guides meet curated shopping. Comprehensive educational resources on inkjet printing technology, ink economics, and best practices—then help you purchase the perfect inkjet printer.
+                  Professional guides meet curated shopping. Comprehensive educational resources on inkjet printing technology, ink economics, and best practices—so you can purchase the perfect inkjet printer.
                 </p>
               </div>
 
@@ -187,7 +187,7 @@ export default function HomePage() {
               What We Cover
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our comprehensive resource library covers every aspect of inkjet printing, from understanding basic technology to advanced cost optimization strategies. Whether you are new to printing or looking to maximize your investment, our expert-written guides provide actionable insights backed by real-world testing and industry experience. We focus exclusively on inkjet technology, allowing us to provide deeper, more specialized knowledge than general printer retailers.
+              Our comprehensive resource library covers every aspect of inkjet printing, from understanding basic technology to advanced cost optimization strategies. Whether you are new to printing or looking to maximize your investment, our comprehensive guides provide actionable insights backed by real-world testing and industry experience. We focus exclusively on inkjet technology, allowing us to provide deeper, more specialized knowledge than general printer retailers.
             </p>
           </div>
 
@@ -199,7 +199,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Buying Advice</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Understanding your print volume needs is essential for selecting the right inkjet printer. Our buying guides help you navigate the differences between entry-level, office, and photo inkjet printer series. We analyze monthly duty cycles, paper handling capabilities, and feature sets to match you with the ideal printer for your specific requirements, whether you print ten pages a month or ten thousand.
+                  Understanding your print volume needs is essential for selecting the right inkjet printer. Our buying guides cover the differences between entry-level, office, and photo inkjet printer series. We analyze monthly duty cycles, paper handling capabilities, and feature sets to match you with the ideal printer for your specific requirements, whether you print ten pages a month or ten thousand.
                 </p>
               </CardContent>
             </Card>
@@ -317,7 +317,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Small Business Owners</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Business owners must balance printing performance with budget constraints. Our small business guides analyze total cost of ownership, monthly duty cycle ratings, and productivity features like automatic document feeders and duplex printing. We help you identify inkjet printers that deliver business-class reliability while keeping per-page costs competitive with larger commercial solutions.
+                  Business owners must balance printing performance with budget constraints. Our small business guides analyze total cost of ownership, monthly duty cycle ratings, and productivity features like automatic document feeders and duplex printing. Our guides cover inkjet printers that deliver business-class reliability while keeping per-page costs competitive with larger commercial solutions.
                 </p>
               </CardContent>
             </Card>
@@ -349,7 +349,7 @@ export default function HomePage() {
               How It Works
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Finding and purchasing the right inkjet printer should be straightforward and stress-free. Our three-step process guides you from initial research through confident purchase, with expert resources and transparent information at every stage. No sales pressure, no hidden fees—just honest guidance and curated products from a trusted inkjet specialist.
+              Finding and purchasing the right inkjet printer should be straightforward and stress-free. Our three-step process guides you from initial research through confident purchase, with educational resources and transparent information at every stage. No sales pressure, no hidden fees—just honest guidance and curated products from a trusted inkjet retailer.
             </p>
           </div>
 
@@ -384,7 +384,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Compare Options</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Use our comparison tools and buying guides to evaluate printers side-by-side. Filter by features that matter most to you—print speed, paper capacity, connectivity options, or cost per page. Our educational content helps you understand which specifications actually impact your daily use and which are marketing fluff. Make informed decisions based on data, not advertising.
+                  Use our comparison tools and buying guides to evaluate printers side-by-side. Filter by features that matter most to you—print speed, paper capacity, connectivity options, or cost per page. Our educational content covers which specifications actually impact your daily use and which are marketing fluff. Make informed decisions based on data, not advertising.
                 </p>
               </div>
               <div className="hidden md:block absolute top-10 right-0 w-16 h-0.5 bg-gradient-to-r from-primary/50 to-transparent translate-x-8"></div>
@@ -888,7 +888,7 @@ export default function HomePage() {
             Stay Informed & Save
           </h2>
           <p className="text-lg md:text-xl mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Join thousands of inkjet printer owners who receive our weekly newsletter. Get exclusive deals, expert printing tips, new product announcements, and maintenance reminders delivered directly to your inbox. 
+            Join thousands of inkjet printer owners who receive our weekly newsletter. Get exclusive deals, practical printing tips, new product announcements, and maintenance reminders delivered directly to your inbox. 
             Plus, receive a <span className="font-bold text-primary">10% discount code</span> on your first order as a welcome gift!
           </p>
           <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto mb-6">

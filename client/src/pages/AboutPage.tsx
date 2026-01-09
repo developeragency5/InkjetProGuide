@@ -15,7 +15,7 @@ export default function AboutPage() {
     {
       icon: Target,
       title: "Customer-Centric",
-      description: "Every decision we make starts with you. We're committed to providing personalized service and solutions tailored to your unique printing needs."
+      description: "Every decision we make starts with you. We're committed to providing quality products and clear information to simplify your printer shopping experience."
     },
     {
       icon: Award,
@@ -37,8 +37,8 @@ export default function AboutPage() {
   const benefits = [
     {
       icon: Shield,
-      title: "Inkjet Specialists",
-      description: "We specialize exclusively in inkjet printers, providing focused expertise and product knowledge."
+      title: "Inkjet Focus",
+      description: "We specialize exclusively in inkjet printers, offering a carefully curated selection and in-depth product guides."
     },
     {
       icon: Truck,
@@ -52,8 +52,8 @@ export default function AboutPage() {
     },
     {
       icon: Package,
-      title: "Order Support",
-      description: "Questions about orders, shipping, and returns? Our team is available during office hours to assist."
+      title: "Order Inquiries",
+      description: "Questions about orders, shipping, and returns? Contact us during office hours for order-related inquiries."
     },
     {
       icon: Package,
@@ -78,7 +78,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-subtitle">
               Your source for inkjet printers in the USA. We simplify printer shopping 
-              with expert guidance, curated selection, and helpful resources.
+              with comprehensive guides, curated selection, and educational resources.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/products">
@@ -129,9 +129,9 @@ export default function AboutPage() {
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
                       InkjetProGuide is operated by a small, dedicated team of printing professionals based in 
-                      Fort Worth, Texas. Our team brings together years of experience in printer retail, customer 
-                      service, and e-commerce to provide you with the best possible shopping experience. We're 
-                      real people who genuinely care about helping you find the right printer for your needs.
+                      Fort Worth, Texas. Our team brings together years of experience in printer retail 
+                      and e-commerce to provide you with the best possible shopping experience. We're 
+                      real people who genuinely care about delivering quality products and useful information.
                     </p>
                   </div>
                   <div>
@@ -143,7 +143,7 @@ export default function AboutPage() {
                       We are an online retailer specializing exclusively in inkjet printers for homes, offices, 
                       and small businesses across the United States. Our website offers a curated selection of 
                       printers, detailed product guides, buying recommendations, and educational resources 
-                      to help you make informed purchasing decisions. We handle product sourcing, order fulfillment, 
+                      for informed purchasing decisions. We handle product sourcing, order fulfillment, 
                       and shipping all under one roof.
                     </p>
                   </div>
@@ -205,12 +205,12 @@ export default function AboutPage() {
               </p>
               <p data-testid="text-story-2">
                 As a dedicated inkjet printer retailer, we specialize exclusively in inkjet printers because we believe 
-                in their quality, innovation, and reliability. Our team of printing specialists is committed to helping 
-                customers find the perfect printer for their homes, offices, and businesses across the United States.
+                in their quality, innovation, and reliability. Our comprehensive buying guides and product information 
+                are designed to make it easy to find the perfect printer for homes, offices, and businesses across the United States.
               </p>
               <p data-testid="text-story-3">
                 Today, we're proud to be one of the leading online destinations for inkjet printers, offering 
-                not just products, but comprehensive guides, educational resources, and helpful resources to ensure 
+                not just products, but comprehensive guides and educational resources to ensure 
                 you get the most value from your purchase.
               </p>
             </div>
@@ -308,20 +308,20 @@ export default function AboutPage() {
                 <div className="flex gap-4 items-start">
                   <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-1">Inkjet Specialists</h4>
+                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-1">Inkjet Focus</h4>
                     <p className="text-muted-foreground">
-                      We focus exclusively on inkjet printers, providing specialized expertise and 
-                      a carefully curated product selection.
+                      We focus exclusively on inkjet printers, offering in-depth product guides and 
+                      a carefully curated selection.
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
                   <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-2">Buying Assistance</h4>
+                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-2">Buying Guides</h4>
                     <p className="text-muted-foreground">
-                      Our team helps you navigate print speeds, ink costs, wireless features, and more to 
-                      find the perfect match for your needs.
+                      Our detailed guides cover print speeds, ink costs, wireless features, and more to 
+                      make finding the perfect match easy.
                     </p>
                   </div>
                 </div>
@@ -350,7 +350,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-5">Complete Satisfaction Guarantee</h4>
                     <p className="text-muted-foreground">
-                      Easy returns within 30 days and helpful resources for all your printing questions.
+                      Easy returns within 30 days and comprehensive educational resources in our Resource Center.
                     </p>
                   </div>
                 </div>
@@ -384,10 +384,10 @@ export default function AboutPage() {
                   Commitment to Service
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  We're committed to making your shopping experience smooth and hassle-free. Our team is available to help with order questions, shipping inquiries, and returns.
+                  We're committed to making your shopping experience smooth and hassle-free. Contact us for order questions, shipping inquiries, and return requests.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  For printer setup and usage, explore our comprehensive Resource Center with detailed guides, tutorials, and FAQs designed to help you get the most from your purchase.
+                  For printer setup and usage, explore our comprehensive Resource Center with detailed guides, tutorials, and FAQs designed for getting the most from your purchase.
                 </p>
               </CardContent>
             </Card>

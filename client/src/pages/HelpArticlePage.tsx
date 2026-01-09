@@ -114,7 +114,7 @@ Check these areas:
 2. Plug in and power on the printer
 3. Print a test page
 
-## When to Contact Support
+## When to Seek Further Information
 - Frequent jams (more than once per week)
 - Torn rollers or damaged parts
 - Strange noises during printing
@@ -223,7 +223,7 @@ export default function HelpArticlePage() {
       setFeedbackGiven(true);
       toast({
         title: "Thank you for your feedback!",
-        description: "Your input helps us improve our support content.",
+        description: "Your input helps us improve our guides.",
       });
     },
   });
@@ -384,7 +384,7 @@ export default function HelpArticlePage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm opacity-90">
-                  Our team is ready to assist you with any questions.
+                  For order-related questions, contact us during business hours.
                 </p>
                 <Link href="/contact">
                   <Button

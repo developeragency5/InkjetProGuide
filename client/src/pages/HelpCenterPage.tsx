@@ -179,7 +179,7 @@ export default function HelpCenterPage() {
             <Card className="bg-muted/30 border-muted">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold mb-4" data-testid="heading-help-intro">
-                  Get Expert Help with Your Inkjet Printer
+                  Inkjet Printer Resource Library
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p data-testid="text-help-intro-1">
@@ -344,7 +344,7 @@ export default function HelpCenterPage() {
           </div>
         )}
 
-        {/* Contact Support Section */}
+        {/* Contact Section */}
         <Card className="mt-16 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
           <CardContent className="p-8 md:p-12">
             <div className="max-w-3xl mx-auto text-center">
@@ -352,8 +352,8 @@ export default function HelpCenterPage() {
                 Still Need Help?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Can't find what you're looking for? Our USA-based team is available during office hours 
-                to help you with any questions about your inkjet printer.
+                Browse our comprehensive guides and articles. For order-related inquiries, 
+                contact us during business hours.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
@@ -380,11 +380,11 @@ export default function HelpCenterPage() {
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
                     <MessageSquare className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold mb-2">Live Chat</h3>
-                  <p className="text-sm text-muted-foreground mb-2">Chat with an expert</p>
-                  <Link href="/contact">
-                    <span className="text-primary hover:underline font-medium cursor-pointer" data-testid="link-start-chat">
-                      Start Chat
+                  <h3 className="font-semibold mb-2">FAQs</h3>
+                  <p className="text-sm text-muted-foreground mb-2">Common questions answered</p>
+                  <Link href="/faq">
+                    <span className="text-primary hover:underline font-medium cursor-pointer" data-testid="link-browse-faq">
+                      Browse FAQs
                     </span>
                   </Link>
                 </div>
@@ -413,7 +413,7 @@ export default function HelpCenterPage() {
                 <Book className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Buying Guides</h3>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Expert guides to help you choose the perfect printer for your needs
+                  Comprehensive guides to help you choose the perfect printer for your needs
                 </p>
                 <div className="text-primary text-sm font-medium flex items-center gap-1">
                   Browse Guides

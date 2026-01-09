@@ -31,15 +31,18 @@ export default function ContactPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
-            Have questions about inkjet printers, orders, or technical support? Our dedicated team at InkjetProGuide 
-            is here to help you find the perfect printing solution. We pride ourselves on providing exceptional 
-            customer service and expert guidance for all your printing needs.
+            Have questions about your order? Our dedicated team at InkjetProGuide 
+            is here for order-related inquiries including shipping, returns, and order status. We pride ourselves on providing 
+            exceptional customer service for all your purchasing needs.
           </p>
-          <p className="text-base text-muted-foreground max-w-3xl mx-auto">
-            Whether you need help choosing the right printer for your home office, require assistance with an existing order, 
-            or have technical questions about printer setup and maintenance, our knowledgeable support staff is ready to assist. 
-            We typically respond to all inquiries within 24 hours during business days, and we are committed to ensuring 
-            your complete satisfaction with every interaction.
+          <p className="text-base text-muted-foreground max-w-3xl mx-auto mb-4">
+            This contact page is for order-related questions only. If you need information about an existing order, 
+            shipping updates, returns, or payment inquiries, our team is ready to respond. 
+            We typically respond to all inquiries within 24 hours during business days.
+          </p>
+          <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
+            <strong>Looking for product information?</strong> Visit our <a href="/guides" className="text-primary hover:underline">Guides & Resources</a> section 
+            for detailed printer information, specifications, and buying guides.
           </p>
         </div>
 
@@ -49,9 +52,9 @@ export default function ContactPage() {
               <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                 <Phone className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-semibold mb-2">Phone Support</h3>
+              <h3 className="font-semibold mb-2">Phone Inquiries</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Call us toll-free (Office Hours Support)
+                Call us toll-free (Office Hours)
               </p>
               <a href="tel:+13254008874" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
                 1-325-400-8874
@@ -187,28 +190,27 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">What about product warranties?</h4>
+                  <h4 className="font-semibold mb-1">How can I check my order status?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Our printers typically include manufacturer warranty coverage. For specific warranty terms, 
-                    refer to the documentation included with your product. We recommend contacting the manufacturer 
-                    directly for warranty claims.
+                    You can check your order status by logging into your account or using our Order Lookup feature. 
+                    Once your order ships, you'll receive a tracking number via email. You can also contact us 
+                    during business hours for order status updates.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Can I return a printer?</h4>
                   <p className="text-sm text-muted-foreground">
                     Absolutely. We offer 30-day returns with a FREE prepaid return shipping label. Items must be in 
-                    original condition with all accessories included. Contact our support team to initiate a return 
+                    original condition with all accessories included. Contact us to initiate a return 
                     and we'll email you a prepaid UPS/FedEx label at no cost.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">How can I get help with my order?</h4>
+                  <h4 className="font-semibold mb-1">What payment methods do you accept?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Our team is available during business hours to help with order, 
-                    shipping, and return questions. You can reach us by phone, email, or through 
-                    the contact form on this page. We also provide comprehensive guides and resources in our 
-                    Help Center.
+                    We accept all major credit cards (Visa, Mastercard, American Express) as well as Cash on Delivery 
+                    for qualifying orders. Payment is processed securely at checkout. If you have questions about 
+                    a payment on your order, contact us during business hours.
                   </p>
                 </div>
               </CardContent>
@@ -216,14 +218,13 @@ export default function ContactPage() {
 
             <Card className="bg-primary/5 border-primary/20">
               <CardContent className="p-6">
-                <h3 className="font-semibold text-lg mb-3">Why Choose InkjetProGuide?</h3>
+                <h3 className="font-semibold text-lg mb-3">Order Inquiries Only</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Based in Fort Worth, Texas, InkjetProGuide serves customers across the United States. 
-                  We specialize exclusively in inkjet printers, providing focused expertise and a carefully 
-                  curated product selection. Our commitment to customer satisfaction means we go above and 
-                  beyond to ensure you receive the best possible service, from product selection through post-purchase 
-                  support. Every printer we sell comes with free access to our comprehensive setup guides and 
-                  maintenance resources, helping you get the most out of your purchase.
+                  This contact page is specifically for order-related questions including shipping inquiries, 
+                  return requests, order status updates, and payment questions. Based in Fort Worth, Texas, 
+                  InkjetProGuide serves customers across the United States with a commitment to responsive 
+                  order handling. For product information, specifications, and buying guidance, please visit 
+                  our <a href="/guides" className="text-primary hover:underline">Guides & Resources</a> section.
                 </p>
               </CardContent>
             </Card>
