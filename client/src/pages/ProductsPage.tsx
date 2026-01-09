@@ -39,7 +39,6 @@ export default function ProductsPage() {
   // Filter states
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [selectedConnectivity, setSelectedConnectivity] = useState<string[]>([]);
-  const [selectedTechnology, setSelectedTechnology] = useState<string[]>([]);
   const [selectedColorType, setSelectedColorType] = useState<string>("");
   const [searchInput, setSearchInput] = useState(searchQuery || "");
   const [sortBy, setSortBy] = useState("featured");
@@ -55,7 +54,6 @@ export default function ProductsPage() {
     setPriceRange([minPrice, maxPrice]);
     
     setSelectedConnectivity([]);
-    setSelectedTechnology([]);
     setSelectedColorType("");
     setSearchInput(searchQuery || "");
   }, [category, searchQuery, urlMinPrice, urlMaxPrice]);
@@ -66,7 +64,6 @@ export default function ProductsPage() {
 
   // Connectivity options
   const connectivityOptions = ["WiFi", "USB", "Bluetooth", "Ethernet"];
-  const technologyOptions = ["Thermal Inkjet", "Piezo Inkjet"];
 
   // Filter and sort products
   const filteredProducts = products?.filter((product) => {
@@ -84,21 +81,20 @@ export default function ProductsPage() {
     const price = parseFloat(product.price);
     if (price < priceRange[0] || price > priceRange[1]) return false;
     
-    // Connectivity filter
+    // Connectivity filter - handle variations like Wi-Fi/WiFi/Wireless
     if (selectedConnectivity.length > 0) {
-      const hasConnectivity = selectedConnectivity.some(conn =>
-        product.features.some(f => f.toLowerCase().includes(conn.toLowerCase()))
-      );
+      const hasConnectivity = selectedConnectivity.some(conn => {
+        const connLower = conn.toLowerCase();
+        return product.features.some(f => {
+          const featureLower = f.toLowerCase();
+          // Handle WiFi variations
+          if (connLower === "wifi") {
+            return featureLower.includes("wifi") || featureLower.includes("wi-fi") || featureLower.includes("wireless");
+          }
+          return featureLower.includes(connLower);
+        });
+      });
       if (!hasConnectivity) return false;
-    }
-    
-    // Technology filter
-    if (selectedTechnology.length > 0) {
-      const hasTechnology = selectedTechnology.some(tech =>
-        product.features.some(f => f.toLowerCase().includes(tech.toLowerCase())) ||
-        product.description.toLowerCase().includes(tech.toLowerCase())
-      );
-      if (!hasTechnology) return false;
     }
     
     // Color type filter
@@ -134,13 +130,6 @@ export default function ProductsPage() {
     activeFilters.push({
       label: `Connectivity: ${conn}`,
       onRemove: () => setSelectedConnectivity(prev => prev.filter(c => c !== conn)),
-    });
-  });
-  
-  selectedTechnology.forEach((tech) => {
-    activeFilters.push({
-      label: `Technology: ${tech}`,
-      onRemove: () => setSelectedTechnology(prev => prev.filter(t => t !== tech)),
     });
   });
   
