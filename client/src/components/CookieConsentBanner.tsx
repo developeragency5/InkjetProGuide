@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Cookie, Settings, Shield, X } from "lucide-react";
+import { Cookie, Settings, Shield } from "lucide-react";
 import {
   Dialog,
   DialogContent,
