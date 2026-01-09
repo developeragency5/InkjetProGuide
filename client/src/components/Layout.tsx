@@ -704,7 +704,7 @@ export function Layout({ children }: LayoutProps) {
               <strong className="text-foreground">Affiliate Disclosure:</strong> InkjetProGuide may earn a commission on purchases made through links on this site at no additional cost to you. This helps support our educational content and product recommendations.
             </p>
             <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-2" data-testid="text-footer-hp-disclaimer">
-              <strong className="text-foreground">Trademark Notice:</strong> HP and all HP printer model names are registered trademarks of HP Inc. InkjetProGuide is an independent retailer and is <strong>not affiliated with, endorsed by, or sponsored by HP Inc.</strong> Product warranties are provided by the manufacturer according to HP's terms and conditions.
+              <strong className="text-foreground">Trademark Notice:</strong> Product names, logos, and brands are property of their respective owners. InkjetProGuide is an independent retailer and is <strong>not affiliated with, endorsed by, or sponsored by any printer manufacturer.</strong> Product warranties are provided by the manufacturer according to their terms and conditions.
             </p>
             <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-2" data-testid="text-footer-price-disclaimer">
               Prices, specifications, and availability are subject to change without notice. Please verify all information before making a purchase decision.{" "}

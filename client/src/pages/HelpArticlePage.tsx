@@ -15,11 +15,11 @@ const sampleArticles: Record<string, any> = {
   "wifi-setup": {
     title: "WiFi Connection Setup",
     category: "Setup",
-    description: "Step-by-step guide to connect your HP printer to your wireless network",
+    description: "Step-by-step guide to connect your printer to your wireless network",
     content: `
 # WiFi Connection Setup
 
-Follow these simple steps to connect your HP printer to your wireless network.
+Follow these simple steps to connect your printer to your wireless network.
 
 ## Before You Begin
 - Ensure your WiFi router is powered on and working
@@ -53,7 +53,7 @@ Follow these simple steps to connect your HP printer to your wireless network.
 - **Still Having Issues**: Try restarting both printer and router
 
 ## Next Steps
-After successful connection, install the HP Smart app on your mobile device for easy wireless printing.
+After successful connection, install the Smart app on your mobile device for easy wireless printing.
     `,
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     image: null,
@@ -127,11 +127,11 @@ Check these areas:
   "driver-installation": {
     title: "Driver Installation (Windows & Mac)",
     category: "Setup",
-    description: "Complete guide to installing HP printer drivers on Windows and Mac",
+    description: "Complete guide to installing printer drivers on Windows and Mac",
     content: `
 # Driver Installation Guide
 
-Install the correct drivers to ensure your HP printer works perfectly with your computer.
+Install the correct drivers to ensure your printer works perfectly with your computer.
 
 ## Windows Installation
 
@@ -150,10 +150,10 @@ Install the correct drivers to ensure your HP printer works perfectly with your 
 
 ## Mac Installation
 
-### From HP Software Update
+### From Software Update
 1. Open **System Preferences** > **Printers & Scanners**
 2. Click the **+** button to add a printer
-3. Select your HP printer from the list
+3. Select your printer from the list
 4. macOS will download and install the driver automatically
 
 ### Manual Download
@@ -165,7 +165,7 @@ Install the correct drivers to ensure your HP printer works perfectly with your 
 
 ## Verification Steps
 1. Open a document and select **Print**
-2. Ensure your HP printer appears in the printer list
+2. Ensure your printer appears in the printer list
 3. Check that all features are available (duplex, color, etc.)
 4. Print a test page
 
@@ -176,7 +176,7 @@ Install the correct drivers to ensure your HP printer works perfectly with your 
 - **Old Driver**: Uninstall completely before reinstalling
 
 ## Keeping Drivers Updated
-- Enable automatic updates in HP Smart app
+- Enable automatic updates in Smart app
 - Check for updates monthly
 - Update before major OS upgrades
     `,
@@ -399,7 +399,7 @@ export default function HelpArticlePage() {
                 <div className="pt-3 border-t border-primary-foreground/20 space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <Phone className="w-4 h-4" />
-                    <span>1-800-HP-PRINT</span>
+                    <span>1-325-400-8874</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Mail className="w-4 h-4" />

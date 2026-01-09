@@ -31,7 +31,7 @@ export default function ContactPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
-            Have questions about HP inkjet printers, orders, or technical support? Our dedicated team at InkjetProGuide 
+            Have questions about inkjet printers, orders, or technical support? Our dedicated team at InkjetProGuide 
             is here to help you find the perfect printing solution. We pride ourselves on providing exceptional 
             customer service and expert guidance for all your printing needs.
           </p>
@@ -189,8 +189,8 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">What about product warranties?</h4>
                   <p className="text-sm text-muted-foreground">
-                    HP printers typically include manufacturer warranty coverage. For specific warranty terms, 
-                    refer to the documentation included with your product. We recommend contacting HP Support 
+                    Our printers typically include manufacturer warranty coverage. For specific warranty terms, 
+                    refer to the documentation included with your product. We recommend contacting the manufacturer 
                     directly for warranty claims.
                   </p>
                 </div>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-lg mb-3">Why Choose InkjetProGuide?</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Based in Fort Worth, Texas, InkjetProGuide serves customers across the United States. 
-                  We specialize exclusively in HP inkjet printers, providing focused expertise and a carefully 
+                  We specialize exclusively in inkjet printers, providing focused expertise and a carefully 
                   curated product selection. Our commitment to customer satisfaction means we go above and 
                   beyond to ensure you receive the best possible service, from product selection through post-purchase 
                   support. Every printer we sell comes with free access to our comprehensive setup guides and 

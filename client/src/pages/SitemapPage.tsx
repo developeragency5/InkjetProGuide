@@ -89,7 +89,7 @@ export default function SitemapPage() {
             </p>
             <p className="text-base text-muted-foreground max-w-3xl mx-auto">
               This comprehensive sitemap provides quick access to every section of our website. Whether you are 
-              looking for HP inkjet printers, buying guides, technical resources, or company information, 
+              looking for inkjet printers, buying guides, technical resources, or company information, 
               you can navigate directly to any page from here. Our site is organized into logical categories 
               to help you find products, resources, and support quickly and efficiently.
             </p>
@@ -169,7 +169,7 @@ export default function SitemapPage() {
                 This sitemap provides a complete overview of all pages and sections available on InkjetProGuide. It's designed to help you quickly navigate to any part of our website.
               </p>
               <p data-testid="text-about-sitemap-2">
-                <strong className="text-foreground">InkjetProGuide</strong> specializes in HP inkjet printers, offering a comprehensive selection of products, expert buying guides, and dedicated customer support for customers across the United States.
+                <strong className="text-foreground">InkjetProGuide</strong> specializes in inkjet printers, offering a comprehensive selection of products, expert buying guides, and dedicated customer support for customers across the United States.
               </p>
               <div className="mt-6 pt-6 border-t">
                 <h3 className="font-semibold mb-3 text-foreground" data-testid="heading-need-help">

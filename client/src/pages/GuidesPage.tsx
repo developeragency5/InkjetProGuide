@@ -9,7 +9,7 @@ export default function GuidesPage() {
     {
       icon: BookOpen,
       title: "Setup & Installation",
-      description: "Step-by-step guides for unboxing, setting up, and installing your HP inkjet printer",
+      description: "Step-by-step guides for unboxing, setting up, and installing your inkjet printer",
       topics: ["Unboxing your printer", "Installing ink cartridges", "Loading paper", "Connecting to Wi-Fi", "Installing drivers"],
       link: "/help?category=setup"
     },
@@ -38,12 +38,12 @@ export default function GuidesPage() {
 
   const popularGuides = [
     {
-      title: "How to Set Up Your HP Printer for the First Time",
+      title: "How to Set Up Your Printer for the First Time",
       description: "Complete walkthrough from unboxing to your first print",
       readTime: "10 min"
     },
     {
-      title: "Connecting Your HP Printer to WiFi",
+      title: "Connecting Your Printer to WiFi",
       description: "Step-by-step wireless network setup instructions",
       readTime: "5 min"
     },
@@ -70,10 +70,10 @@ export default function GuidesPage() {
               Resource Library
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6" data-testid="heading-guides-title">
-              HP Inkjet Printer Guides
+              Inkjet Printer Guides
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Comprehensive guides and tutorials to help you get the most out of your HP inkjet printer. 
+              Comprehensive guides and tutorials to help you get the most out of your inkjet printer. 
               From initial setup to advanced troubleshooting, we've got you covered.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -100,19 +100,19 @@ export default function GuidesPage() {
             <h2 className="text-3xl font-bold mb-6 text-center">Why Use Our Printer Guides?</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
               <p>
-                At InkjetProGuide, we understand that getting the most out of your HP inkjet printer requires more 
+                At InkjetProGuide, we understand that getting the most out of your inkjet printer requires more 
                 than just plugging it in. Whether you're a first-time printer owner or an experienced user looking 
                 to optimize your workflow, our comprehensive guide library provides everything you need to succeed.
               </p>
               <p>
-                Our guides are written by printing professionals with years of hands-on experience with HP products. 
+                Our guides are written by printing professionals with years of hands-on experience with our products. 
                 We break down complex technical processes into simple, easy-to-follow steps that anyone can understand. 
                 From the moment you unbox your new printer to troubleshooting issues years down the road, our resources 
                 are designed to save you time, reduce frustration, and help you achieve professional-quality results.
               </p>
               <p>
                 Each guide includes detailed instructions, helpful tips, and common pitfalls to avoid. We regularly 
-                update our content to reflect the latest HP printer models, software updates, and industry best practices. 
+                update our content to reflect the latest printer models, software updates, and industry best practices. 
                 Whether you need to connect your printer to WiFi, replace ink cartridges, fix print quality issues, 
                 or configure advanced settings, you'll find clear answers in our guide collection.
               </p>
@@ -129,7 +129,7 @@ export default function GuidesPage() {
                   <Printer className="w-6 h-6 text-blue-500" />
                 </div>
                 <h3 className="font-semibold mb-2">Model-Specific</h3>
-                <p className="text-sm text-muted-foreground">Tailored instructions for your exact HP printer model</p>
+                <p className="text-sm text-muted-foreground">Tailored instructions for your exact printer model</p>
               </CardContent>
             </Card>
             <Card className="text-center">
@@ -147,7 +147,7 @@ export default function GuidesPage() {
                   <Users className="w-6 h-6 text-purple-500" />
                 </div>
                 <h3 className="font-semibold mb-2">Expert Written</h3>
-                <p className="text-sm text-muted-foreground">Created by professionals with years of HP experience</p>
+                <p className="text-sm text-muted-foreground">Created by professionals with years of printing experience</p>
               </CardContent>
             </Card>
             <Card className="text-center">
@@ -232,7 +232,7 @@ export default function GuidesPage() {
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span>How to properly unbox and assemble your HP printer</span>
+                  <span>How to properly unbox and assemble your printer</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />

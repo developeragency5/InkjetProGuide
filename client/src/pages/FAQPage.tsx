@@ -127,7 +127,7 @@ export default function FaqPage() {
               Frequently Asked Questions
             </h1>
             <p className="text-lg text-primary-foreground/90 mb-8">
-              Find answers to common questions about our HP inkjet printers, shipping, and support
+              Find answers to common questions about our inkjet printers, shipping, and support
             </p>
 
             {/* Search Bar */}

@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
                 By using InkjetProGuide, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our website or services.
               </p>
               <p data-testid="text-intro-3">
-                <strong className="text-foreground">InkjetProGuide</strong> is an e-commerce platform specializing in HP inkjet printers, serving customers exclusively within the United States.
+                <strong className="text-foreground">InkjetProGuide</strong> is an e-commerce platform specializing in inkjet printers, serving customers exclusively within the United States.
               </p>
               <div className="mt-4 p-4 bg-muted/50 rounded-md">
                 <p className="text-sm" data-testid="text-business-info">
@@ -259,7 +259,7 @@ export default function PrivacyPolicyPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-email-intro">
-                With your consent, we may send you promotional emails about new products, special offers, and updates related to HP inkjet printers.
+                With your consent, we may send you promotional emails about new products, special offers, and updates related to inkjet printers.
               </p>
 
               <div>
@@ -493,7 +493,7 @@ export default function PrivacyPolicyPage() {
               <div className="mt-6 pt-6 border-t">
                 <h3 className="font-semibold mb-2" data-testid="heading-business-info">InkjetProGuide</h3>
                 <p className="text-sm text-muted-foreground" data-testid="text-business-info">
-                  HP Inkjet Printer Specialists<br />
+                  Inkjet Printer Specialists<br />
                   Serving customers across the United States
                 </p>
               </div>

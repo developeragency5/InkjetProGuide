@@ -5,7 +5,7 @@ import { Link } from "wouter";
 
 export default function AboutPage() {
   const stats = [
-    { value: "25+", label: "HP Printer Models" },
+    { value: "25+", label: "Printer Models" },
     { value: "$299+", label: "Free Shipping Threshold" },
     { value: "2-3 Days", label: "Fast Delivery" },
     { value: "30 Days", label: "Easy Returns" },
@@ -20,7 +20,7 @@ export default function AboutPage() {
     {
       icon: Award,
       title: "Quality Selection",
-      description: "We carefully curate our selection of HP inkjet printers to bring you reliable models known for quality and performance."
+      description: "We carefully curate our selection of inkjet printers to bring you reliable models known for quality and performance."
     },
     {
       icon: Heart,
@@ -30,15 +30,15 @@ export default function AboutPage() {
     {
       icon: TrendingUp,
       title: "Innovation",
-      description: "We stay ahead of industry trends to bring you the latest HP inkjet technology and best-in-class printing solutions."
+      description: "We stay ahead of industry trends to bring you the latest inkjet technology and best-in-class printing solutions."
     },
   ];
 
   const benefits = [
     {
       icon: Shield,
-      title: "HP Inkjet Specialists",
-      description: "We specialize exclusively in HP inkjet printers, providing focused expertise and product knowledge."
+      title: "Inkjet Specialists",
+      description: "We specialize exclusively in inkjet printers, providing focused expertise and product knowledge."
     },
     {
       icon: Truck,
@@ -48,7 +48,7 @@ export default function AboutPage() {
     {
       icon: DollarSign,
       title: "Best Price Guarantee",
-      description: "Competitive pricing with exclusive deals and promotions on HP printers."
+      description: "Competitive pricing with exclusive deals and promotions on printers."
     },
     {
       icon: Headphones,
@@ -63,7 +63,7 @@ export default function AboutPage() {
     {
       icon: Zap,
       title: "Setup Assistance",
-      description: "Free setup guides and step-by-step instructions for all HP printer models."
+      description: "Free setup guides and step-by-step instructions for all printer models."
     },
   ];
 
@@ -77,7 +77,7 @@ export default function AboutPage() {
               About InkjetProGuide
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-subtitle">
-              Your source for HP inkjet printers in the USA. We simplify printer shopping 
+              Your source for inkjet printers in the USA. We simplify printer shopping 
               with expert guidance, curated selection, and exceptional customer service.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -140,9 +140,9 @@ export default function AboutPage() {
                       What We Do
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      We are an online retailer specializing exclusively in HP inkjet printers for homes, offices, 
+                      We are an online retailer specializing exclusively in inkjet printers for homes, offices, 
                       and small businesses across the United States. Our website offers a curated selection of 
-                      HP printers, detailed product guides, buying recommendations, and educational resources 
+                      printers, detailed product guides, buying recommendations, and educational resources 
                       to help you make informed purchasing decisions. We handle product sourcing, order fulfillment, 
                       shipping, and customer support all under one roof.
                     </p>
@@ -204,12 +204,12 @@ export default function AboutPage() {
                 printer can be overwhelming with so many models, specifications, and technical jargon to navigate.
               </p>
               <p data-testid="text-story-2">
-                As a dedicated HP inkjet printer retailer, we specialize exclusively in HP inkjet printers because we believe 
+                As a dedicated inkjet printer retailer, we specialize exclusively in inkjet printers because we believe 
                 in their quality, innovation, and reliability. Our team of printing specialists is committed to helping 
                 customers find the perfect printer for their homes, offices, and businesses across the United States.
               </p>
               <p data-testid="text-story-3">
-                Today, we're proud to be one of the leading online destinations for HP inkjet printers, offering 
+                Today, we're proud to be one of the leading online destinations for inkjet printers, offering 
                 not just products, but comprehensive guides, educational resources, and ongoing support to ensure 
                 you get the most value from your purchase.
               </p>
@@ -225,7 +225,7 @@ export default function AboutPage() {
               <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p data-testid="text-mission-1">
                   At InkjetProGuide, our mission is to empower customers with knowledge and provide access to 
-                  high-quality HP inkjet printers that meet their specific needs. We believe that an informed 
+                  high-quality inkjet printers that meet their specific needs. We believe that an informed 
                   customer is a satisfied customer.
                 </p>
                 <p data-testid="text-mission-2">
@@ -301,16 +301,16 @@ export default function AboutPage() {
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-0">Comprehensive Product Guides</h4>
                     <p className="text-muted-foreground">
                       Detailed setup instructions, maintenance tips, troubleshooting help, and model comparisons 
-                      for every HP inkjet printer we sell.
+                      for every inkjet printer we sell.
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
                   <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-1">HP Inkjet Specialists</h4>
+                    <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-1">Inkjet Specialists</h4>
                     <p className="text-muted-foreground">
-                      We focus exclusively on HP inkjet printers, providing specialized expertise and 
+                      We focus exclusively on inkjet printers, providing specialized expertise and 
                       a carefully curated product selection.
                     </p>
                   </div>
@@ -368,11 +368,11 @@ export default function AboutPage() {
                   Commitment to Quality
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Every HP inkjet printer we sell undergoes rigorous quality checks. We ensure that each 
-                  product meets HP's manufacturing standards and arrives at your doorstep in perfect condition.
+                  Every inkjet printer we sell undergoes rigorous quality checks. We ensure that each 
+                  product meets manufacturing standards and arrives at your doorstep in perfect condition.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our partnership with HP allows us to offer the latest models, exclusive features, and 
+                  We offer the latest models, exclusive features, and 
                   cutting-edge printing technology to keep you ahead of the curve.
                 </p>
               </CardContent>
@@ -384,7 +384,7 @@ export default function AboutPage() {
                   Commitment to Service
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Our USA-based customer service team is trained extensively on HP products and dedicated 
+                  Our USA-based customer service team is trained extensively on our products and dedicated 
                   to providing fast, friendly, and knowledgeable support whenever you need it.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
@@ -404,7 +404,7 @@ export default function AboutPage() {
                 Ready to Find Your Perfect Printer?
               </h2>
               <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-                Explore our curated selection of HP inkjet printers, compare features, 
+                Explore our curated selection of inkjet printers, compare features, 
                 read our guides, and make an informed decision with confidence.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">

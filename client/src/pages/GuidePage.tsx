@@ -49,12 +49,12 @@ export default function GuidePage() {
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              HP Inkjet <span className="text-primary">Models</span>
+              Inkjet <span className="text-primary">Models</span>
             </h1>
 
             {/* Description */}
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              Select your HP Inkjet printer model to access specific setup guides, troubleshooting
+              Select your inkjet printer model to access specific setup guides, troubleshooting
               tips, and detailed instructions tailored for your exact printer.
             </p>
 
@@ -108,7 +108,7 @@ export default function GuidePage() {
           {/* Section Header */}
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold">
-              Current HP Inkjet Models
+              Current Inkjet Models
             </h2>
             <Badge variant="secondary" className="text-base px-4 py-2">
               {filteredProducts.length} models

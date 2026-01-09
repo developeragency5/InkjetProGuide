@@ -58,7 +58,7 @@ export default function CartPage() {
           </div>
           <h1 className="text-3xl font-bold mb-3">Your cart is empty</h1>
           <p className="text-muted-foreground mb-8">
-            Start adding some amazing HP printers to your cart!
+            Start adding some amazing printers to your cart!
           </p>
           <Link href="/products">
             <Button size="lg" data-testid="button-start-shopping">

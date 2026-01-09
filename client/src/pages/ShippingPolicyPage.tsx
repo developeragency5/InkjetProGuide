@@ -85,7 +85,7 @@ export default function ShippingPolicyPage() {
                   Handling Period
                 </h3>
                 <p data-testid="text-handling">
-                  Our standard handling period is 1-2 business days. This includes order verification, quality inspection of your HP printer, secure packaging, and handoff to our shipping carrier. You will receive a shipping confirmation email with tracking information once your order has shipped.
+                  Our standard handling period is 1-2 business days. This includes order verification, quality inspection of your printer, secure packaging, and handoff to our shipping carrier. You will receive a shipping confirmation email with tracking information once your order has shipped.
                 </p>
               </div>
             </CardContent>
@@ -97,7 +97,7 @@ export default function ShippingPolicyPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-carriers-intro">
-                We partner with trusted national carriers to ensure safe and timely delivery of your HP printers:
+                We partner with trusted national carriers to ensure safe and timely delivery of your printers:
               </p>
               
               <div>
@@ -172,7 +172,7 @@ export default function ShippingPolicyPage() {
                   PO Boxes & APO/FPO Addresses
                 </h3>
                 <p data-testid="text-po-boxes">
-                  Due to the size and weight of HP printers, we are unable to ship to PO Boxes. We do ship to APO/FPO addresses for military personnel, though delivery times may be extended.
+                  Due to the size and weight of printers, we are unable to ship to PO Boxes. We do ship to APO/FPO addresses for military personnel, though delivery times may be extended.
                 </p>
               </div>
 

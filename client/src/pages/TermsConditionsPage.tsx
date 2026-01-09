@@ -139,7 +139,7 @@ export default function TermsConditionsPage() {
                   We strive to provide accurate product descriptions, images, and specifications. However, we do not warrant that product descriptions or other content is accurate, complete, reliable, current, or error-free.
                 </p>
                 <p className="mt-3" data-testid="text-product-info-2">
-                  InkjetProGuide is an independent online retailer specializing in HP inkjet printers. Product availability is subject to change without notice.
+                  InkjetProGuide is an independent online retailer specializing in inkjet printers. Product availability is subject to change without notice.
                 </p>
               </div>
 
@@ -245,7 +245,7 @@ export default function TermsConditionsPage() {
           <Card className="border-primary/50">
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-returns-intro">
-                We offer <strong className="text-foreground">30-day returns with FREE prepaid return shipping</strong> on all HP inkjet printers purchased through InkjetProGuide. Please review our complete return policy for detailed information.
+                We offer <strong className="text-foreground">30-day returns with FREE prepaid return shipping</strong> on all inkjet printers purchased through InkjetProGuide. Please review our complete return policy for detailed information.
               </p>
               <div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-return-conditions">
@@ -291,7 +291,7 @@ export default function TermsConditionsPage() {
                 </ul>
               </div>
               <p className="mt-4" data-testid="text-ip-trademarks">
-                <strong className="text-foreground">Trademarks:</strong> "InkjetProGuide" and our logo are trademarks of InkjetProGuide. HP and related trademarks are the property of HP Inc. and are used with permission for identification purposes only.
+                <strong className="text-foreground">Trademarks:</strong> "InkjetProGuide" and our logo are trademarks of InkjetProGuide. Third-party brand names and trademarks are the property of their respective owners and are used for identification purposes only.
               </p>
             </CardContent>
           </Card>
@@ -334,10 +334,10 @@ export default function TermsConditionsPage() {
                   Product Warranties
                 </h3>
                 <p data-testid="text-warranty-1">
-                  All HP inkjet printers sold through InkjetProGuide are covered by the manufacturer's warranty. Warranty terms, duration, and coverage are determined by HP Inc., not by InkjetProGuide.
+                  All inkjet printers sold through InkjetProGuide are covered by the manufacturer's warranty. Warranty terms, duration, and coverage are determined by the manufacturer, not by InkjetProGuide.
                 </p>
                 <p className="mt-3" data-testid="text-warranty-2">
-                  For warranty service, please refer to the warranty documentation included with your product or contact HP support directly. We will assist you with warranty claims when possible.
+                  For warranty service, please refer to the warranty documentation included with your product or contact the manufacturer's support directly. We will assist you with warranty claims when possible.
                 </p>
               </div>
 
@@ -565,7 +565,7 @@ export default function TermsConditionsPage() {
               <div className="mt-6 pt-6 border-t">
                 <h3 className="font-semibold mb-2" data-testid="heading-business-info">InkjetProGuide</h3>
                 <p className="text-sm text-muted-foreground" data-testid="text-business-info">
-                  HP Inkjet Printer Specialists<br />
+                  Inkjet Printer Specialists<br />
                   Serving customers across the United States
                 </p>
               </div>

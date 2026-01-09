@@ -27,8 +27,8 @@ import { Badge } from "@/components/ui/badge";
 const guides = [
   {
     id: "choosing-hp-inkjet-printer",
-    title: "How to Choose the Right HP Inkjet Printer: Complete Buying Guide",
-    description: "A comprehensive guide to selecting the perfect HP inkjet printer based on your printing needs, budget, and usage patterns.",
+    title: "How to Choose the Right Inkjet Printer: Complete Buying Guide",
+    description: "A comprehensive guide to selecting the perfect inkjet printer based on your printing needs, budget, and usage patterns.",
     icon: Book,
     color: "bg-blue-500",
     readTime: "8 min read",
@@ -40,7 +40,7 @@ const guides = [
   {
     id: "deskjet-vs-officejet-vs-envy",
     title: "DeskJet vs OfficeJet vs ENVY: Which Series Should You Choose",
-    description: "Compare HP's three main inkjet printer lines to understand their strengths, ideal use cases, and which one fits your needs.",
+    description: "Compare the three main inkjet printer lines to understand their strengths, ideal use cases, and which one fits your needs.",
     icon: Scale,
     color: "bg-purple-500",
     readTime: "7 min read",
@@ -51,7 +51,7 @@ const guides = [
   },
   {
     id: "officejet-pro-vs-basic",
-    title: "HP OfficeJet Pro vs Basic Models: Key Differences Explained",
+    title: "OfficeJet Pro vs Basic Models: Key Differences Explained",
     description: "Understand what sets OfficeJet Pro apart from standard models and whether the upgrade is worth it for your workflow.",
     icon: Scale,
     color: "bg-purple-500",
@@ -63,8 +63,8 @@ const guides = [
   },
   {
     id: "best-inkjet-home-use",
-    title: "Best HP Inkjet Printers for Home Use",
-    description: "Discover the top HP inkjet printers designed for home environments, balancing quality, cost, and ease of use.",
+    title: "Best Inkjet Printers for Home Use",
+    description: "Discover the top inkjet printers designed for home environments, balancing quality, cost, and ease of use.",
     icon: Home,
     color: "bg-green-500",
     readTime: "7 min read",
@@ -75,8 +75,8 @@ const guides = [
   },
   {
     id: "best-inkjet-business",
-    title: "Best HP Inkjet Printers for Small & Medium Business",
-    description: "Find the ideal HP inkjet printer for your business with features that boost productivity and reduce operational costs.",
+    title: "Best Inkjet Printers for Small & Medium Business",
+    description: "Find the ideal inkjet printer for your business with features that boost productivity and reduce operational costs.",
     icon: Building2,
     color: "bg-orange-500",
     readTime: "8 min read",
@@ -87,8 +87,8 @@ const guides = [
   },
   {
     id: "inkjet-technology-explained",
-    title: "How HP Inkjet Technology Works: Printhead & Ink System Explained",
-    description: "Learn the technical fundamentals of HP inkjet printing, including thermal inkjet technology and how printheads work.",
+    title: "How Inkjet Technology Works: Printhead & Ink System Explained",
+    description: "Learn the technical fundamentals of inkjet printing, including thermal inkjet technology and how printheads work.",
     icon: Cpu,
     color: "bg-cyan-500",
     readTime: "7 min read",
@@ -99,8 +99,8 @@ const guides = [
   },
   {
     id: "printhead-maintenance-cleaning",
-    title: "HP Inkjet Printhead Maintenance & Cleaning Guide",
-    description: "Step-by-step instructions for maintaining and cleaning your HP inkjet printhead to ensure optimal print quality.",
+    title: "Inkjet Printhead Maintenance & Cleaning Guide",
+    description: "Step-by-step instructions for maintaining and cleaning your inkjet printhead to ensure optimal print quality.",
     icon: Wrench,
     color: "bg-slate-500",
     readTime: "6 min read",
@@ -111,7 +111,7 @@ const guides = [
   },
   {
     id: "ink-page-yield-cost",
-    title: "Understanding HP Ink Page Yield and How It Affects Cost",
+    title: "Understanding Ink Page Yield and How It Affects Cost",
     description: "Decode ink cartridge page yield ratings and learn how they impact your overall printing costs.",
     icon: DollarSign,
     color: "bg-yellow-500",
@@ -123,8 +123,8 @@ const guides = [
   },
   {
     id: "oem-vs-third-party-ink",
-    title: "OEM vs Third-Party HP Ink Cartridges: Pros, Risks & Cost",
-    description: "Weigh the benefits and risks of using original HP ink versus third-party alternatives for your printer.",
+    title: "OEM vs Third-Party Ink Cartridges: Pros, Risks & Cost",
+    description: "Weigh the benefits and risks of using original ink versus third-party alternatives for your printer.",
     icon: Package,
     color: "bg-amber-500",
     readTime: "6 min read",
@@ -135,7 +135,7 @@ const guides = [
   },
   {
     id: "calculate-cost-per-page",
-    title: "How to Calculate the True Cost Per Page for HP Inkjet Printers",
+    title: "How to Calculate the True Cost Per Page for Inkjet Printers",
     description: "Master the formula for calculating your real printing costs including ink, paper, and maintenance expenses.",
     icon: DollarSign,
     color: "bg-yellow-500",
@@ -159,8 +159,8 @@ const guides = [
   },
   {
     id: "energy-efficiency-tco",
-    title: "Energy Efficiency & Total Cost of Ownership for HP Inkjets",
-    description: "Calculate the complete cost of owning an HP inkjet printer including energy consumption and long-term expenses.",
+    title: "Energy Efficiency & Total Cost of Ownership for Inkjets",
+    description: "Calculate the complete cost of owning an inkjet printer including energy consumption and long-term expenses.",
     icon: DollarSign,
     color: "bg-yellow-500",
     readTime: "7 min read",
@@ -171,8 +171,8 @@ const guides = [
   },
   {
     id: "secure-private-printing",
-    title: "Secure and Private Printing on HP Inkjet Printers",
-    description: "Learn how to configure security settings and protect sensitive documents when printing on HP inkjet printers.",
+    title: "Secure and Private Printing on Inkjet Printers",
+    description: "Learn how to configure security settings and protect sensitive documents when printing on inkjet printers.",
     icon: Shield,
     color: "bg-red-500",
     readTime: "6 min read",
@@ -183,8 +183,8 @@ const guides = [
   },
   {
     id: "firmware-updates-guide",
-    title: "Firmware Updates for HP Inkjet Printers: Benefits & Risks",
-    description: "Understand when and how to update your HP printer firmware, plus potential considerations to keep in mind.",
+    title: "Firmware Updates for Inkjet Printers: Benefits & Risks",
+    description: "Understand when and how to update your printer firmware, plus potential considerations to keep in mind.",
     icon: Wrench,
     color: "bg-slate-500",
     readTime: "5 min read",
@@ -195,8 +195,8 @@ const guides = [
   },
   {
     id: "mobile-cloud-printing",
-    title: "Mobile & Cloud Printing with HP Inkjet Printers",
-    description: "Set up and optimize mobile printing from smartphones, tablets, and cloud services with your HP inkjet.",
+    title: "Mobile & Cloud Printing with Inkjet Printers",
+    description: "Set up and optimize mobile printing from smartphones, tablets, and cloud services with your inkjet.",
     icon: Smartphone,
     color: "bg-blue-600",
     readTime: "6 min read",
@@ -219,7 +219,7 @@ const guides = [
   },
   {
     id: "extend-ink-cartridge-life",
-    title: "How to Extend the Life of HP Ink Cartridges Through Smart Usage",
+    title: "How to Extend the Life of Ink Cartridges Through Smart Usage",
     description: "Practical tips and techniques to maximize your ink cartridge lifespan and reduce printing costs.",
     icon: Coins,
     color: "bg-emerald-500",
@@ -231,8 +231,8 @@ const guides = [
   },
   {
     id: "high-volume-printing",
-    title: "High-Volume Printing with HP Inkjets: Best Practices",
-    description: "Optimize your HP inkjet printer for high-volume printing with tips for reliability and efficiency.",
+    title: "High-Volume Printing with Inkjets: Best Practices",
+    description: "Optimize your inkjet printer for high-volume printing with tips for reliability and efficiency.",
     icon: Building2,
     color: "bg-orange-500",
     readTime: "7 min read",
@@ -243,7 +243,7 @@ const guides = [
   },
   {
     id: "store-recycle-ink-cartridges",
-    title: "How to Store & Recycle HP Ink Cartridges Responsibly",
+    title: "How to Store & Recycle Ink Cartridges Responsibly",
     description: "Proper storage techniques for unused cartridges and environmentally responsible recycling options.",
     icon: Leaf,
     color: "bg-green-600",
@@ -255,7 +255,7 @@ const guides = [
   },
   {
     id: "all-in-one-vs-print-only",
-    title: "All-in-One vs Print-Only HP Inkjets: Which Is Better for You",
+    title: "All-in-One vs Print-Only Inkjets: Which Is Better for You",
     description: "Compare multifunction printers with dedicated print-only models to find the right fit for your needs.",
     icon: Scale,
     color: "bg-purple-500",
@@ -267,7 +267,7 @@ const guides = [
   },
   {
     id: "upgrading-accessories-add-ons",
-    title: "Upgrading Your HP Inkjet: Extra Trays, Accessories & Add-Ons",
+    title: "Upgrading Your Inkjet: Extra Trays, Accessories & Add-Ons",
     description: "Expand your printer's capabilities with additional paper trays, accessories, and compatible add-ons.",
     icon: ArrowUpCircle,
     color: "bg-teal-500",
@@ -279,7 +279,7 @@ const guides = [
   },
   {
     id: "duplex-printing-efficiency",
-    title: "Using Duplex (Double-Sided) Printing Efficiently on HP Inkjets",
+    title: "Using Duplex (Double-Sided) Printing Efficiently on Inkjets",
     description: "Master automatic duplex printing to save paper, reduce costs, and improve your environmental footprint.",
     icon: Zap,
     color: "bg-violet-500",
@@ -291,7 +291,7 @@ const guides = [
   },
   {
     id: "environmental-factors-performance",
-    title: "Environmental Factors That Impact HP Inkjet Performance",
+    title: "Environmental Factors That Impact Inkjet Performance",
     description: "Understand how temperature, humidity, and placement affect your printer's performance and longevity.",
     icon: Leaf,
     color: "bg-green-600",
@@ -303,7 +303,7 @@ const guides = [
   },
   {
     id: "print-speed-vs-quality",
-    title: "Understanding Print Speed (PPM) vs Print Quality on HP Inkjets",
+    title: "Understanding Print Speed (PPM) vs Print Quality on Inkjets",
     description: "Learn how pages per minute ratings work and their relationship to actual print quality output.",
     icon: Cpu,
     color: "bg-cyan-500",
@@ -315,8 +315,8 @@ const guides = [
   },
   {
     id: "hp-instant-ink-explained",
-    title: "HP Instant Ink Explained: How It Works & Is It Worth It",
-    description: "A complete breakdown of HP's Instant Ink subscription service, its pricing tiers, and who benefits most.",
+    title: "Instant Ink Explained: How It Works & Is It Worth It",
+    description: "A complete breakdown of the Instant Ink subscription service, its pricing tiers, and who benefits most.",
     icon: DollarSign,
     color: "bg-yellow-500",
     readTime: "6 min read",
@@ -327,7 +327,7 @@ const guides = [
   },
   {
     id: "iso-page-yield-explained",
-    title: "What ISO Page Yield Means for HP Ink & Why It Matters",
+    title: "What ISO Page Yield Means for Ink & Why It Matters",
     description: "Decode the ISO/IEC 24711 standard for ink cartridge testing and what page yield numbers really mean.",
     icon: Cpu,
     color: "bg-cyan-500",
@@ -339,7 +339,7 @@ const guides = [
   },
   {
     id: "standard-vs-xl-cartridges",
-    title: "Standard vs XL/High-Yield HP Ink Cartridges: Which to Choose",
+    title: "Standard vs XL/High-Yield Ink Cartridges: Which to Choose",
     description: "Compare standard and high-yield cartridge options to determine the most cost-effective choice for your usage.",
     icon: Coins,
     color: "bg-emerald-500",
@@ -351,8 +351,8 @@ const guides = [
   },
   {
     id: "optimize-inkjet-settings",
-    title: "How to Optimize HP Inkjet Settings for Cost-Saving & Efficiency",
-    description: "Configure your HP inkjet printer settings to maximize efficiency, reduce waste, and lower printing costs.",
+    title: "How to Optimize Inkjet Settings for Cost-Saving & Efficiency",
+    description: "Configure your inkjet printer settings to maximize efficiency, reduce waste, and lower printing costs.",
     icon: Settings,
     color: "bg-gray-500",
     readTime: "7 min read",
@@ -395,10 +395,10 @@ export default function BuyingGuidesPage() {
               </Badge>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4" data-testid="text-hero-title">
-              HP Inkjet Printer Guide Library
+              Inkjet Printer Guide Library
             </h1>
             <p className="text-xl text-muted-foreground mb-6">
-              Your complete resource for HP inkjet printer buying decisions, maintenance tips, cost optimization, and technical knowledge.
+              Your complete resource for inkjet printer buying decisions, maintenance tips, cost optimization, and technical knowledge.
             </p>
             
             {/* Stats Row */}
@@ -460,7 +460,7 @@ export default function BuyingGuidesPage() {
         <Card className="mb-12 bg-muted/30 border-muted">
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-guides-intro">
-              Expert Guidance for Choosing the Right HP Inkjet Printer
+              Expert Guidance for Choosing the Right Inkjet Printer
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p data-testid="text-guides-intro-1">
@@ -473,7 +473,7 @@ export default function BuyingGuidesPage() {
                 Our guides cover essential topics including print quality and resolution, speed and paper handling, connectivity options like WiFi and mobile printing, ink costs and page yields, and total cost of ownership. We provide honest assessments based on real-world testing, helping you understand which features matter most for your situation and which you can skip to save money.
               </p>
               <p data-testid="text-guides-intro-4">
-                Browse our collection of {guides.length} comprehensive buying guides below. Each guide includes detailed recommendations for specific HP printer models that excel in their category. If you need personalized advice, our support team is available to help you find the perfect printer for your needs.
+                Browse our collection of {guides.length} comprehensive buying guides below. Each guide includes detailed recommendations for specific printer models that excel in their category. If you need personalized advice, our support team is available to help you find the perfect printer for your needs.
               </p>
             </div>
           </CardContent>
@@ -566,7 +566,7 @@ export default function BuyingGuidesPage() {
         <div className="mt-16 bg-primary/5 rounded-lg p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Find Your Perfect Printer?</h2>
           <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
-            Browse our selection of HP inkjet printers or use our product finder to get personalized recommendations.
+            Browse our selection of inkjet printers or use our product finder to get personalized recommendations.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" asChild data-testid="button-shop-now">

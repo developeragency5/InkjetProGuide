@@ -425,7 +425,7 @@ export default function ProductDetailPage() {
                 <ul className="space-y-2 mb-8">
                   <li className="flex items-start gap-2">
                     <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">HP Inkjet Printer</span>
+                    <span className="text-muted-foreground">Inkjet Printer</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -453,7 +453,7 @@ export default function ProductDetailPage() {
                     <div>
                       <h4 className="font-semibold mb-2">Warranty Information</h4>
                       <p className="text-sm text-muted-foreground">
-                        HP printers typically include manufacturer warranty coverage. For specific warranty terms, refer to the documentation included with your product. For warranty support, contact HP Support at 1-800-474-6836 (available 24/7) or visit support.hp.com
+                        Printers typically include manufacturer warranty coverage. For specific warranty terms, refer to the documentation included with your product. For warranty support, contact Support at 1-800-474-6836 (available 24/7) or visit support.hp.com
                       </p>
                     </div>
                   </div>
@@ -507,7 +507,7 @@ export default function ProductDetailPage() {
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>Easy wireless setup with HP Smart app guidance</span>
+                        <span>Easy wireless setup with Smart App guidance</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -563,7 +563,7 @@ export default function ProductDetailPage() {
                       <h4 className="font-semibold mb-2">Safe Operation</h4>
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li>Keep the printer on a flat, stable surface</li>
-                        <li>Use only HP-recommended paper types</li>
+                        <li>Use only recommended paper types</li>
                         <li>Never reach inside while printing</li>
                         <li>Keep away from water and humid areas</li>
                         <li>Unplug before cleaning or maintenance</li>
@@ -574,8 +574,8 @@ export default function ProductDetailPage() {
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li>Print at least once weekly to prevent ink drying</li>
                         <li>Run printhead cleaning if quality degrades</li>
-                        <li>Use HP-recommended ink cartridges for best results</li>
-                        <li>Keep firmware updated via HP Smart app</li>
+                        <li>Use recommended ink cartridges for best results</li>
+                        <li>Keep firmware updated via Smart App</li>
                         <li>Store unused cartridges in cool, dry place</li>
                       </ul>
                     </div>
@@ -681,7 +681,7 @@ export default function ProductDetailPage() {
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <dt className="text-sm text-muted-foreground">Print Technology</dt>
-                      <dd className="text-sm font-medium">HP Thermal Inkjet</dd>
+                      <dd className="text-sm font-medium">Thermal Inkjet</dd>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <dt className="text-sm text-muted-foreground">Number of Print Cartridges</dt>
@@ -734,7 +734,7 @@ export default function ProductDetailPage() {
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <dt className="text-sm text-muted-foreground">Mobile Printing</dt>
-                      <dd className="text-sm font-medium">HP Smart app, AirPrint, Mopria</dd>
+                      <dd className="text-sm font-medium">Smart App, AirPrint, Mopria</dd>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <dt className="text-sm text-muted-foreground">Bluetooth</dt>
@@ -873,9 +873,9 @@ export default function ProductDetailPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2">HP Smart App</h4>
+                      <h4 className="font-semibold mb-2">Smart App</h4>
                       <p className="text-sm text-muted-foreground mb-3">
-                        Download the free HP Smart app for iOS and Android to print, scan, and manage your printer from anywhere.
+                        Download the free Smart App for iOS and Android to print, scan, and manage your printer from anywhere.
                       </p>
                       <div className="flex gap-2">
                         <Badge>iOS 14.0+</Badge>
@@ -946,15 +946,15 @@ export default function ProductDetailPage() {
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
-                          HP premium inkjet paper
+                          Premium inkjet paper
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
-                          HP photo paper (glossy)
+                          Photo paper (glossy)
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
-                          HP photo paper (matte)
+                          Photo paper (matte)
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-status-online" />
@@ -973,7 +973,7 @@ export default function ProductDetailPage() {
               <Card>
                 <CardHeader>
                   <CardTitle>Compatible Ink Cartridges</CardTitle>
-                  <CardDescription>Original HP ink cartridges for this printer</CardDescription>
+                  <CardDescription>Original ink cartridges for this printer</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1074,7 +1074,7 @@ export default function ProductDetailPage() {
                       <div>
                         <h4 className="font-semibold mb-2">Connect to Wi-Fi</h4>
                         <p className="text-sm text-muted-foreground mb-3">
-                          Download the HP Smart app on your smartphone or tablet. Open the app and tap "Add Printer." Follow the on-screen instructions to connect your printer to your Wi-Fi network.
+                          Download the Smart App on your smartphone or tablet. Open the app and tap "Add Printer." Follow the on-screen instructions to connect your printer to your Wi-Fi network.
                         </p>
                         <div className="bg-primary/5 p-3 rounded-md">
                           <p className="text-xs text-muted-foreground">
@@ -1161,7 +1161,7 @@ export default function ProductDetailPage() {
                       <li>• Check that you're entering the correct Wi-Fi password</li>
                       <li>• Move the printer closer to your router (within 10-15 feet)</li>
                       <li>• Restart both the printer and your router</li>
-                      <li>• Try using the HP Smart app's guided setup process</li>
+                      <li>• Try using the Smart App's guided setup process</li>
                     </ul>
                   </div>
 
@@ -1173,10 +1173,10 @@ export default function ProductDetailPage() {
                       <h4 className="font-semibold">Poor Print Quality or Streaky Prints</h4>
                     </div>
                     <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                      <li>• Run the printhead cleaning utility from the HP Smart app</li>
+                      <li>• Run the printhead cleaning utility from the Smart App</li>
                       <li>• Check ink levels and replace cartridges if low</li>
                       <li>• Align the printheads using the printer settings menu</li>
-                      <li>• Use HP original ink cartridges for best results</li>
+                      <li>• Use original ink cartridges for best results</li>
                       <li>• Make sure you're using the correct paper type setting</li>
                     </ul>
                   </div>
@@ -1225,7 +1225,7 @@ export default function ProductDetailPage() {
                       <li>• Clean the cartridge contacts with a lint-free cloth</li>
                       <li>• Reinsert the cartridge firmly until it clicks</li>
                       <li>• Try the cartridge in the other slot to test if it's detected</li>
-                      <li>• Update printer firmware through HP Smart app</li>
+                      <li>• Update printer firmware through Smart App</li>
                     </ul>
                   </div>
 

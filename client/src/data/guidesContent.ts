@@ -23,8 +23,8 @@ export interface GuideContent {
 export const guidesContent: Record<string, GuideContent> = {
   "beginners-guide": {
     id: "beginners-guide",
-    title: "Beginner's Guide to HP Inkjet Printers",
-    description: "Everything you need to know about HP inkjet printers - from basic features to choosing your first printer.",
+    title: "Beginner's Guide to Inkjet Printers",
+    description: "Everything you need to know about inkjet printers - from basic features to choosing your first printer.",
     icon: Book,
     color: "bg-blue-500",
     readTime: "8 min read",
@@ -32,17 +32,17 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Welcome to our comprehensive beginner's guide to HP inkjet printers. Whether you're buying your first printer or looking to upgrade, this guide will help you understand the basics and make an informed decision."
+        content: "Welcome to our comprehensive beginner's guide to inkjet printers. Whether you're buying your first printer or looking to upgrade, this guide will help you understand the basics and make an informed decision."
       },
       {
         id: "what-is-inkjet",
         title: "What is an Inkjet Printer?",
-        content: "An inkjet printer works by spraying microscopic droplets of liquid ink onto paper to create text and images. HP inkjet printers are known for their high-quality color output, versatility, and affordability, making them perfect for home and small office use."
+        content: "An inkjet printer works by spraying microscopic droplets of liquid ink onto paper to create text and images. Inkjet printers are known for their high-quality color output, versatility, and affordability, making them perfect for home and small office use."
       },
       {
         id: "key-features",
         title: "Key Features to Consider",
-        content: "When choosing an inkjet printer, consider: print quality (DPI), print speed (PPM), connectivity options (WiFi, USB, mobile), paper handling capacity, and cost per page. HP printers offer features like wireless printing, automatic two-sided printing, and mobile app support."
+        content: "When choosing an inkjet printer, consider: print quality (DPI), print speed (PPM), connectivity options (WiFi, USB, mobile), paper handling capacity, and cost per page. Modern printers offer features like wireless printing, automatic two-sided printing, and mobile app support."
       }
     ],
     keyPoints: [
@@ -55,13 +55,13 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Budget-Friendly Option",
-        description: "HP DeskJet 2755e - Perfect for basic home printing needs",
-        product: "HP DeskJet 2755e Wireless All-in-One Color Printer"
+        description: "DeskJet 2755e - Perfect for basic home printing needs",
+        product: "DeskJet 2755e Wireless All-in-One Color Printer"
       },
       {
         title: "Best for Photos",
-        description: "HP ENVY Photo 7855 - Exceptional photo quality and color accuracy",
-        product: "HP ENVY Photo 7855 All-in-One Wireless Photo Printer"
+        description: "ENVY Photo 7855 - Exceptional photo quality and color accuracy",
+        product: "ENVY Photo 7855 All-in-One Wireless Photo Printer"
       }
     ]
   },
@@ -77,17 +77,17 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Working from home requires reliable printing equipment. This guide will help you choose the perfect HP inkjet printer for your home office, balancing performance, features, and cost-effectiveness."
+        content: "Working from home requires reliable printing equipment. This guide will help you choose the perfect inkjet printer for your home office, balancing performance, features, and cost-effectiveness."
       },
       {
         id: "essential-features",
         title: "Essential Features for Home Office",
-        content: "Home office printers should offer fast print speeds (15+ PPM), automatic document feeders for scanning multiple pages, wireless connectivity for multiple devices, and low operating costs. HP OfficeJet Pro models are specifically designed for home office productivity."
+        content: "Home office printers should offer fast print speeds (15+ PPM), automatic document feeders for scanning multiple pages, wireless connectivity for multiple devices, and low operating costs. OfficeJet Pro models are specifically designed for home office productivity."
       },
       {
         id: "connectivity",
         title: "Connectivity Options",
-        content: "Modern home offices require flexible connectivity. Look for printers with WiFi, Ethernet, USB, and mobile printing support (AirPrint, Google Cloud Print). HP Smart app enables printing, scanning, and printer management from anywhere."
+        content: "Modern home offices require flexible connectivity. Look for printers with WiFi, Ethernet, USB, and mobile printing support (AirPrint, Google Cloud Print). The Smart app enables printing, scanning, and printer management from anywhere."
       }
     ],
     keyPoints: [
@@ -100,13 +100,13 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Overall",
-        description: "HP OfficeJet Pro 9025e - Fast, reliable, and cost-effective",
-        product: "HP OfficeJet Pro 9025e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9025e - Fast, reliable, and cost-effective",
+        product: "OfficeJet Pro 9025e All-in-One Wireless Color Printer"
       },
       {
         title: "Compact Option",
-        description: "HP OfficeJet Pro 8035e - Perfect for small home offices",
-        product: "HP OfficeJet Pro 8035e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 8035e - Perfect for small home offices",
+        product: "OfficeJet Pro 8035e All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -127,7 +127,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "budget-considerations",
         title: "Budget Considerations",
-        content: "Students should consider both upfront costs and long-term operating expenses. Look for printers with affordable ink options, or consider HP Instant Ink subscription service which can save up to 50% on ink costs. Compact size is also important for dorm rooms."
+        content: "Students should consider both upfront costs and long-term operating expenses. Look for printers with affordable ink options, or consider Instant Ink subscription service which can save up to 50% on ink costs. Compact size is also important for dorm rooms."
       },
       {
         id: "must-have-features",
@@ -145,13 +145,13 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Value",
-        description: "HP DeskJet 2755e - Affordable and perfect for students",
-        product: "HP DeskJet 2755e Wireless All-in-One Color Printer"
+        description: "DeskJet 2755e - Affordable and perfect for students",
+        product: "DeskJet 2755e Wireless All-in-One Color Printer"
       },
       {
         title: "Feature-Rich Option",
-        description: "HP DeskJet 4155e - More features at a great price",
-        product: "HP DeskJet 4155e All-in-One Wireless Color Printer"
+        description: "DeskJet 4155e - More features at a great price",
+        product: "DeskJet 4155e All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -167,17 +167,17 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Printing photos at home gives you creative control and saves money compared to professional labs. This guide covers everything you need to know about HP inkjet printers for stunning photo prints."
+        content: "Printing photos at home gives you creative control and saves money compared to professional labs. This guide covers everything you need to know about inkjet printers for stunning photo prints."
       },
       {
         id: "print-quality",
         title: "Understanding Print Quality",
-        content: "Photo printing requires high resolution (minimum 4800 x 1200 DPI) and dedicated photo ink cartridges. HP photo printers use up to 6 individual ink colors for accurate color reproduction. Look for models that support borderless printing in various sizes."
+        content: "Photo printing requires high resolution (minimum 4800 x 1200 DPI) and dedicated photo ink cartridges. Photo printers use up to 6 individual ink colors for accurate color reproduction. Look for models that support borderless printing in various sizes."
       },
       {
         id: "paper-selection",
         title: "Choosing the Right Paper",
-        content: "Paper quality dramatically affects photo results. Use HP Premium Plus Photo Paper for best results. Glossy paper provides vibrant colors, while matte paper offers a professional finish. Different paper weights are available for various applications."
+        content: "Paper quality dramatically affects photo results. Use Premium Plus Photo Paper for best results. Glossy paper provides vibrant colors, while matte paper offers a professional finish. Different paper weights are available for various applications."
       }
     ],
     keyPoints: [
@@ -190,13 +190,13 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for Photos",
-        description: "HP ENVY Photo 7855 - Exceptional photo quality",
-        product: "HP ENVY Photo 7855 All-in-One Wireless Photo Printer"
+        description: "ENVY Photo 7855 - Exceptional photo quality",
+        product: "ENVY Photo 7855 All-in-One Wireless Photo Printer"
       },
       {
         title: "Premium Option",
-        description: "HP ENVY Inspire 7955e - Advanced photo features",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Advanced photo features",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -222,26 +222,26 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "saving-strategies",
         title: "Money-Saving Strategies",
-        content: "Use HP Instant Ink subscription service for automatic deliveries and potential savings. Choose XL cartridges for regular printing. Print in draft mode for internal documents. Use grayscale printing when color isn't necessary. Bundle cartridges can offer discounts."
+        content: "Use Instant Ink subscription service for automatic deliveries and potential savings. Choose XL cartridges for regular printing. Print in draft mode for internal documents. Use grayscale printing when color isn't necessary. Bundle cartridges can offer discounts."
       }
     ],
     keyPoints: [
       "Calculate cost per page, not just cartridge price",
       "XL cartridges provide better long-term value",
-      "HP Instant Ink can save up to 50% on ink costs",
+      "Instant Ink can save up to 50% on ink costs",
       "Draft mode uses less ink for everyday documents",
       "Individual color cartridges prevent waste"
     ],
     recommendations: [
       {
         title: "Lowest Cost Per Page",
-        description: "HP OfficeJet Pro 9025e with Instant Ink",
-        product: "HP OfficeJet Pro 9025e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9025e with Instant Ink",
+        product: "OfficeJet Pro 9025e All-in-One Wireless Color Printer"
       },
       {
         title: "Best for High Volume",
-        description: "HP OfficeJet Pro 9015e - Efficient ink usage",
-        product: "HP OfficeJet Pro 9015e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9015e - Efficient ink usage",
+        product: "OfficeJet Pro 9015e All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -257,12 +257,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Small businesses need printers that balance performance, reliability, and cost-effectiveness. This guide helps you choose HP inkjet printers that meet your business needs and grow with your company."
+        content: "Small businesses need printers that balance performance, reliability, and cost-effectiveness. This guide helps you choose inkjet printers that meet your business needs and grow with your company."
       },
       {
         id: "business-requirements",
         title: "Business Requirements",
-        content: "Business printers should handle high monthly volumes (500+ pages), offer professional-quality output, include security features, and provide low operating costs. HP OfficeJet Pro series is designed specifically for small business needs with fast speeds and efficient ink usage."
+        content: "Business printers should handle high monthly volumes (500+ pages), offer professional-quality output, include security features, and provide low operating costs. The OfficeJet Pro series is designed specifically for small business needs with fast speeds and efficient ink usage."
       },
       {
         id: "productivity-features",
@@ -280,13 +280,13 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for Small Business",
-        description: "HP OfficeJet Pro 9025e - Perfect balance of features and cost",
-        product: "HP OfficeJet Pro 9025e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9025e - Perfect balance of features and cost",
+        product: "OfficeJet Pro 9025e All-in-One Wireless Color Printer"
       },
       {
         title: "Budget Business Option",
-        description: "HP OfficeJet Pro 8035e - Reliable and affordable",
-        product: "HP OfficeJet Pro 8035e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 8035e - Reliable and affordable",
+        product: "OfficeJet Pro 8035e All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -318,28 +318,28 @@ export const guidesContent: Record<string, GuideContent> = {
     keyPoints: [
       "Wireless offers flexibility and mobile printing",
       "USB provides stable, reliable connections",
-      "Most modern HP printers support both options",
+      "Most modern printers support both options",
       "Wireless enables multi-user environments easily",
       "USB is simpler for single-computer setups"
     ],
     recommendations: [
       {
         title: "Best Wireless Printer",
-        description: "HP ENVY Inspire 7955e - Advanced wireless features",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Advanced wireless features",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
         title: "Dual Connectivity",
-        description: "HP OfficeJet Pro 9015e - Both wireless and USB",
-        product: "HP OfficeJet Pro 9015e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9015e - Both wireless and USB",
+        product: "OfficeJet Pro 9015e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "choosing-right-printer": {
     id: "choosing-right-printer",
-    title: "How to Choose the Right HP Inkjet Printer",
-    description: "A comprehensive guide to help you identify your printing needs and select the perfect HP inkjet printer.",
+    title: "How to Choose the Right Inkjet Printer",
+    description: "A comprehensive guide to help you identify your printing needs and select the perfect inkjet printer.",
     icon: Scale,
     color: "bg-indigo-500",
     readTime: "10 min read",
@@ -347,7 +347,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Selecting the right HP inkjet printer can feel overwhelming with so many options available. This guide walks you through the essential considerations to help you make an informed decision. Whether you need a printer for occasional home use, daily office work, or specialized photo printing, understanding your requirements is the first step toward finding your perfect match."
+        content: "Selecting the right inkjet printer can feel overwhelming with so many options available. This guide walks you through the essential considerations to help you make an informed decision. Whether you need a printer for occasional home use, daily office work, or specialized photo printing, understanding your requirements is the first step toward finding your perfect match."
       },
       {
         id: "understanding-needs",
@@ -362,12 +362,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "feature-priorities",
         title: "Feature Priorities",
-        content: "Prioritize features based on your workflow. Essential features include wireless connectivity for flexibility, automatic two-sided printing for paper savings, and mobile printing via HP Smart app. Advanced features like automatic document feeders speed up scanning, while large paper trays reduce reload frequency. Photo enthusiasts should prioritize high DPI resolution and support for various photo paper sizes and borderless printing capabilities."
+        content: "Prioritize features based on your workflow. Essential features include wireless connectivity for flexibility, automatic two-sided printing for paper savings, and mobile printing via the Smart app. Advanced features like automatic document feeders speed up scanning, while large paper trays reduce reload frequency. Photo enthusiasts should prioritize high DPI resolution and support for various photo paper sizes and borderless printing capabilities."
       },
       {
         id: "budget",
         title: "Budget Considerations",
-        content: "Consider both initial purchase price and ongoing costs. Entry-level printers cost less upfront but may have higher ink costs per page. Premium models often include more efficient ink systems, saving money over time. Factor in HP Instant Ink subscription plans which can reduce ink costs by up to 50%. Calculate your estimated monthly printing cost to understand true ownership expenses before purchasing."
+        content: "Consider both initial purchase price and ongoing costs. Entry-level printers cost less upfront but may have higher ink costs per page. Premium models often include more efficient ink systems, saving money over time. Factor in Instant Ink subscription plans which can reduce ink costs by up to 50%. Calculate your estimated monthly printing cost to understand true ownership expenses before purchasing."
       }
     ],
     keyPoints: [
@@ -380,18 +380,18 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for Light Users",
-        description: "HP DeskJet 4255e - Affordable all-in-one for occasional printing",
-        product: "HP DeskJet 4255e All-in-One Wireless Color Printer"
+        description: "DeskJet 4255e - Affordable all-in-one for occasional printing",
+        product: "DeskJet 4255e All-in-One Wireless Color Printer"
       },
       {
         title: "Best for Heavy Users",
-        description: "HP OfficeJet Pro 9135e - High-capacity for demanding workloads",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9135e - High-capacity for demanding workloads",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Best All-Around",
-        description: "HP ENVY Inspire 7955e - Perfect balance of features and value",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Perfect balance of features and value",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -399,7 +399,7 @@ export const guidesContent: Record<string, GuideContent> = {
   "deskjet-vs-officejet-vs-envy": {
     id: "deskjet-vs-officejet-vs-envy",
     title: "DeskJet vs OfficeJet vs ENVY Comparison",
-    description: "Compare HP's three main inkjet printer series to find which one best suits your printing needs.",
+    description: "Compare the three main inkjet printer series to find which one best suits your printing needs.",
     icon: Scale,
     color: "bg-violet-500",
     readTime: "12 min read",
@@ -407,12 +407,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "HP offers three distinct inkjet printer series: DeskJet, OfficeJet, and ENVY. Each series targets different users and use cases. Understanding the differences helps you choose the right printer for your needs. This comprehensive comparison examines features, performance, costs, and ideal use cases for each series to guide your decision."
+        content: "There are three distinct inkjet printer series: DeskJet, OfficeJet, and ENVY. Each series targets different users and use cases. Understanding the differences helps you choose the right printer for your needs. This comprehensive comparison examines features, performance, costs, and ideal use cases for each series to guide your decision."
       },
       {
         id: "deskjet-overview",
         title: "DeskJet Series Overview",
-        content: "The DeskJet series represents HP's entry-level inkjet lineup, designed for budget-conscious home users. These compact, affordable printers handle basic printing, scanning, and copying needs. DeskJet printers are perfect for students, light home use, and anyone who prints occasionally. They feature wireless connectivity, mobile printing support, and simple setup. While print speeds are modest (7-8 PPM), quality is excellent for everyday documents and casual photo printing."
+        content: "The DeskJet series represents the entry-level inkjet lineup, designed for budget-conscious home users. These compact, affordable printers handle basic printing, scanning, and copying needs. DeskJet printers are perfect for students, light home use, and anyone who prints occasionally. They feature wireless connectivity, mobile printing support, and simple setup. While print speeds are modest (7-8 PPM), quality is excellent for everyday documents and casual photo printing."
       },
       {
         id: "officejet-overview",
@@ -440,26 +440,26 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best DeskJet",
-        description: "HP DeskJet 4255e - Feature-rich entry-level choice",
-        product: "HP DeskJet 4255e All-in-One Wireless Color Printer"
+        description: "DeskJet 4255e - Feature-rich entry-level choice",
+        product: "DeskJet 4255e All-in-One Wireless Color Printer"
       },
       {
         title: "Best OfficeJet",
-        description: "HP OfficeJet Pro 9125e - Ultimate productivity machine",
-        product: "HP OfficeJet Pro 9125e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9125e - Ultimate productivity machine",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Best ENVY",
-        description: "HP ENVY Inspire 7955e - Premium photo and everyday printing",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Premium photo and everyday printing",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "officejet-pro-vs-basic": {
     id: "officejet-pro-vs-basic",
-    title: "HP OfficeJet Pro vs Basic Models",
-    description: "Understand the key differences between HP OfficeJet Pro and basic OfficeJet models to make the right choice.",
+    title: "OfficeJet Pro vs Basic Models",
+    description: "Understand the key differences between OfficeJet Pro and basic OfficeJet models to make the right choice.",
     icon: Scale,
     color: "bg-emerald-500",
     readTime: "9 min read",
@@ -467,12 +467,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "HP's OfficeJet lineup includes both standard OfficeJet and premium OfficeJet Pro models. While they share the same productivity focus, significant differences in speed, features, and long-term costs separate these tiers. This guide helps you understand whether the Pro upgrade justifies its higher price point based on your specific printing requirements and usage patterns."
+        content: "The OfficeJet lineup includes both standard OfficeJet and premium OfficeJet Pro models. While they share the same productivity focus, significant differences in speed, features, and long-term costs separate these tiers. This guide helps you understand whether the Pro upgrade justifies its higher price point based on your specific printing requirements and usage patterns."
       },
       {
         id: "basic-features",
         title: "Basic Model Features",
-        content: "Standard OfficeJet models provide solid all-in-one functionality including printing, scanning, copying, and sometimes faxing. They offer wireless connectivity, mobile printing via HP Smart app, and decent print speeds around 10-15 PPM. Paper capacity typically ranges from 100-225 sheets. These models handle moderate monthly volumes of 200-400 pages effectively. Basic OfficeJet printers suit home offices with lighter printing demands and tighter budgets."
+        content: "Standard OfficeJet models provide solid all-in-one functionality including printing, scanning, copying, and sometimes faxing. They offer wireless connectivity, mobile printing via the Smart app, and decent print speeds around 10-15 PPM. Paper capacity typically ranges from 100-225 sheets. These models handle moderate monthly volumes of 200-400 pages effectively. Basic OfficeJet printers suit home offices with lighter printing demands and tighter budgets."
       },
       {
         id: "pro-advantages",
@@ -500,26 +500,26 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Basic Model",
-        description: "HP OfficeJet 250 Mobile - Portable and reliable for light use",
-        product: "HP OfficeJet 250 Mobile All-in-One Printer"
+        description: "OfficeJet 250 Mobile - Portable and reliable for light use",
+        product: "OfficeJet 250 Mobile All-in-One Printer"
       },
       {
         title: "Best Pro Value",
-        description: "HP OfficeJet Pro 8135e - Excellent features at competitive price",
-        product: "HP OfficeJet Pro 8135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 8135e - Excellent features at competitive price",
+        product: "OfficeJet Pro 8135e All-in-One Wireless Color Printer"
       },
       {
         title: "Best Pro Premium",
-        description: "HP OfficeJet Pro 9135e - Maximum performance and efficiency",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9135e - Maximum performance and efficiency",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "best-home-printers": {
     id: "best-home-printers",
-    title: "Best HP Inkjet Printers for Home Use",
-    description: "Discover the top HP inkjet printers for home use across different budgets and requirements.",
+    title: "Best Inkjet Printers for Home Use",
+    description: "Discover the top inkjet printers for home use across different budgets and requirements.",
     icon: Home,
     color: "bg-teal-500",
     readTime: "11 min read",
@@ -527,451 +527,351 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Finding the perfect home printer requires balancing features, quality, and cost. HP offers excellent options for every household, from occasional document printing to high-quality photo output. This guide presents our top recommendations across budget categories, helping you find a printer that fits your home's unique needs without overspending on features you won't use."
-      },
-      {
-        id: "good-home-printer",
-        title: "What Makes a Good Home Printer",
-        content: "Home printers should be compact, quiet, and easy to use. Wireless connectivity is essential for printing from multiple devices throughout your home. All-in-one functionality covers scanning homework, copying documents, and printing photos. Look for mobile printing support via HP Smart app for convenient smartphone printing. Energy efficiency reduces electricity costs, while simple ink replacement minimizes maintenance hassles for busy families."
+        content: "Home printing needs vary widely, from occasional document printing to regular photo production. Finding the right inkjet printer for your home requires balancing print quality, features, operating costs, and budget. This guide presents top picks across categories to help you find the perfect home printer regardless of your specific requirements."
       },
       {
         id: "budget-picks",
-        title: "Top Budget Picks",
-        content: "For homes with light printing needs under 100 pages monthly, budget-friendly options deliver excellent value. The HP DeskJet 2827e offers basic all-in-one functionality at an affordable price with HP+ benefits. The HP DeskJet 2855e adds improved print quality and faster speeds. Both models support wireless printing, mobile apps, and optional HP Instant Ink subscriptions. These printers are perfect for printing school assignments, recipes, and occasional photos without breaking the bank."
+        title: "Budget-Friendly Picks",
+        content: "For homes with basic printing needs, entry-level printers deliver excellent value. The DeskJet series offers affordable all-in-one functionality with printing, scanning, and copying. Compact designs fit anywhere without dominating your space. Wireless connectivity enables printing from phones, tablets, and computers. While ink costs per page are higher than premium models, low upfront prices make these ideal for occasional users printing under 100 pages monthly."
       },
       {
-        id: "midrange-options",
-        title: "Best Mid-Range Options",
-        content: "Mid-range printers suit active households printing 100-300 pages monthly. The HP DeskJet 4255e delivers enhanced features including faster print speeds and larger paper capacity. The HP ENVY 6155e steps up photo quality while maintaining document versatility. These models include automatic two-sided printing for paper savings and improved scanning capabilities. Mid-range printers balance performance, features, and cost for typical family printing needs."
+        id: "mid-range",
+        title: "Mid-Range Excellence",
+        content: "Families and home workers benefit from mid-range models balancing features and value. The ENVY series excels here, offering enhanced photo printing, faster speeds, and better paper handling than budget models. Automatic two-sided printing saves paper costs. Larger ink cartridges reduce cost-per-page. These printers handle 100-300 pages monthly efficiently while producing photos rivaling professional prints. Consider these for households with diverse printing needs."
       },
       {
-        id: "premium-choices",
-        title: "Premium Home Choices",
-        content: "Premium home printers suit enthusiasts and heavy users printing 300+ pages monthly. The HP ENVY Inspire 7955e delivers exceptional photo quality with a stylish design that complements home décor. For home offices, the HP OfficeJet Pro 8139e provides business-grade performance with low running costs. Premium models feature larger paper capacities, faster speeds, advanced connectivity options, and superior ink efficiency for demanding households."
+        id: "premium-home",
+        title: "Premium Home Printing",
+        content: "Power users and home offices deserve premium capabilities. OfficeJet Pro models bring professional features home: fast print speeds (20+ PPM), automatic document feeders, large paper trays, and the lowest ink costs per page. Smart Tank models offer ultra-low running costs for high-volume users with refillable ink tanks. Premium models handle 500+ pages monthly reliably while delivering professional-quality output for any document type."
+      },
+      {
+        id: "photo-focus",
+        title: "Photo-Focused Options",
+        content: "Photography enthusiasts need printers optimized for image reproduction. ENVY Photo and ENVY Inspire models use 6-ink systems with dedicated photo colors for accurate, vibrant prints. Support for various photo paper sizes and types enables creative expression. Borderless printing produces edge-to-edge images matching professional lab quality. Photo-focused models also handle documents well, making them versatile choices for creative households."
       }
     ],
     keyPoints: [
-      "Wireless connectivity is essential for modern home printing",
-      "All-in-one models offer best versatility for families",
-      "Match printer capacity to your monthly print volume",
-      "Budget printers work great for light, occasional use",
-      "Premium models save money long-term for heavy users"
+      "Match printer tier to your monthly print volume",
+      "All-in-one functionality suits most home users best",
+      "Photo-focused models use 6-ink systems for color accuracy",
+      "Premium models offer lowest long-term operating costs",
+      "Wireless connectivity enables whole-family printing access"
     ],
     recommendations: [
       {
         title: "Best Budget",
-        description: "HP DeskJet 2855e - Reliable basics at excellent value",
-        product: "HP DeskJet 2855e All-in-One Wireless Color Printer"
+        description: "DeskJet 4255e - Great features at entry-level price",
+        product: "DeskJet 4255e All-in-One Wireless Color Printer"
       },
       {
         title: "Best Mid-Range",
-        description: "HP ENVY 6555e - Perfect balance for active households",
-        product: "HP ENVY 6555e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Excellent photo and document quality",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
         title: "Best Premium",
-        description: "HP ENVY Inspire 7955e - Stunning photos and stylish design",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "Smart Tank 7602 - Ultra-low cost for high volume",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
       }
     ]
   },
 
-  "best-business-printers": {
-    id: "best-business-printers",
-    title: "Best HP Inkjet Printers for Small & Medium Business",
-    description: "Professional-grade HP inkjet printers that deliver productivity, reliability, and cost efficiency for businesses.",
-    icon: Building2,
-    color: "bg-slate-600",
-    readTime: "13 min read",
-    sections: [
-      {
-        id: "introduction",
-        title: "Introduction",
-        content: "Business printing demands reliability, speed, and professional quality that consumer printers can't match. HP's business-focused inkjet lineup delivers enterprise-grade features in accessible packages for small and medium businesses. This guide examines the best options for various business sizes and printing requirements, helping you select printers that enhance productivity while controlling costs."
-      },
-      {
-        id: "business-requirements",
-        title: "Business Printing Requirements",
-        content: "Business printers must handle high monthly volumes reliably—typically 500-2000+ pages. Fast print speeds (20+ PPM) maintain workflow efficiency. Security features protect sensitive documents and prevent unauthorized access. Network connectivity allows multiple employees to share resources. Automatic document feeders speed up contract scanning and document digitization. Professional print quality ensures client-facing materials reflect your brand positively."
-      },
-      {
-        id: "recommended-models",
-        title: "Recommended Models",
-        content: "For small businesses, the HP OfficeJet Pro 8139e offers excellent all-around performance with speeds up to 20 PPM and 225-sheet capacity. Growing businesses benefit from the HP OfficeJet Pro 9125e featuring 25 PPM speeds, 250-sheet input, and 50-sheet ADF. The HP OfficeJet Pro 9135e adds enhanced security and higher duty cycles. For wide-format needs, the HP OfficeJet Pro 9720e handles up to 11x17 inch documents for presentations and marketing materials."
-      },
-      {
-        id: "fleet-management",
-        title: "Fleet Management",
-        content: "Businesses with multiple printers benefit from centralized fleet management through HP Smart app and HP Wolf Security. Monitor ink levels, usage statistics, and security status across all devices from one dashboard. Remote management enables IT teams to update firmware, configure settings, and troubleshoot issues without physical access. Consistent printer models simplify maintenance, supply ordering, and user training across your organization."
-      },
-      {
-        id: "total-cost",
-        title: "Total Cost Analysis",
-        content: "Evaluate total cost of ownership beyond purchase price. Calculate monthly ink costs based on your volume and cartridge yields—OfficeJet Pro models achieve 2-4 cents per page versus 6-10 cents for consumer printers. Factor in energy consumption, maintenance requirements, and potential downtime costs. HP Instant Ink for Business offers predictable monthly pricing with automatic supply delivery. Leasing options spread capital expenses across the printer lifecycle."
-      }
-    ],
-    keyPoints: [
-      "OfficeJet Pro series delivers enterprise features at SMB prices",
-      "High-yield ink cartridges minimize cost-per-page",
-      "Security features protect confidential business documents",
-      "Fleet management simplifies multi-printer environments",
-      "Consider total cost of ownership, not just purchase price"
-    ],
-    recommendations: [
-      {
-        title: "Best for Small Business",
-        description: "HP OfficeJet Pro 8139e - Reliable workhorse for small teams",
-        product: "HP OfficeJet Pro 8139e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "Best for Growing Business",
-        description: "HP OfficeJet Pro 9135e - Scalable performance and security",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "Best for Wide Format",
-        description: "HP OfficeJet Pro 9720e - Professional large-format printing",
-        product: "HP OfficeJet Pro 9720e Wide Format All-in-One Printer"
-      }
-    ]
-  },
-
-  "how-inkjet-works": {
-    id: "how-inkjet-works",
-    title: "How HP Inkjet Technology Works",
-    description: "Understand the technology behind HP inkjet printers and how they create high-quality prints.",
-    icon: Cpu,
-    color: "bg-blue-600",
+  "smart-tank-guide": {
+    id: "smart-tank-guide",
+    title: "Smart Tank Printer Guide",
+    description: "Everything you need to know about Smart Tank printers with refillable ink tanks.",
+    icon: Package,
+    color: "bg-cyan-500",
     readTime: "10 min read",
     sections: [
       {
         id: "introduction",
         title: "Introduction",
-        content: "HP inkjet technology represents decades of innovation in precision printing. Understanding how your printer works helps you maintain it properly, troubleshoot issues, and appreciate the engineering behind every page. This guide explains the fundamental technology that makes HP inkjet printers reliable and capable of producing everything from crisp documents to gallery-quality photographs."
+        content: "Smart Tank printers represent a revolutionary approach to inkjet printing, replacing traditional cartridges with refillable ink tanks. This design dramatically reduces printing costs while maintaining high quality output. If you print frequently, Smart Tank technology could transform your printing economics. This guide explains how these printers work and who benefits most from them."
       },
       {
-        id: "thermal-inkjet",
-        title: "Thermal Inkjet Technology",
-        content: "HP pioneered thermal inkjet technology, using heat to propel ink droplets onto paper. Tiny resistors in the printhead heat ink to over 300°C in microseconds, creating vapor bubbles that force ink through microscopic nozzles. As bubbles collapse, fresh ink flows in, ready for the next droplet. This happens thousands of times per second across hundreds of nozzles simultaneously, enabling fast, precise printing. Thermal inkjet offers exceptional reliability and consistent quality."
+        id: "how-it-works",
+        title: "How Smart Tank Works",
+        content: "Instead of replacing entire cartridges, Smart Tank printers use built-in ink reservoirs that you refill from bottles. Each bottle contains enough ink for thousands of pages—up to 6,000 black or 8,000 color pages from included starter bottles. When ink runs low, simply squeeze in more from affordable refill bottles. The continuous ink system eliminates dried-out cartridges common with occasional printing and dramatically reduces cost-per-page to fractions of a cent."
       },
       {
-        id: "printhead-design",
-        title: "Printhead Design",
-        content: "HP printheads contain thousands of microscopic nozzles, each smaller than a human hair. Modern printheads feature nozzles as small as 21 microns, producing droplets weighing just 1.3 picoliters. This precision enables resolution up to 4800 x 1200 DPI or higher. Some HP printers use integrated printheads built into cartridges, replaced with each ink change. Others feature permanent printheads designed to last the printer's lifetime, reducing cost-per-page but requiring proper maintenance."
+        id: "cost-benefits",
+        title: "Cost Benefits",
+        content: "Smart Tank printing costs approximately 0.2 cents per black page versus 5-10 cents for traditional cartridges—a 95%+ savings. Color printing drops to roughly 0.5 cents per page. Most Smart Tank printers include enough ink in the box for 2-3 years of typical printing. Replacement ink bottles cost $15-20 each and last thousands of pages. High-volume users printing 500+ pages monthly can save hundreds of dollars annually compared to cartridge-based printers."
       },
       {
-        id: "ink-delivery",
-        title: "Ink Delivery System",
-        content: "Ink travels from cartridges through channels to the printhead, maintained at precise pressure and temperature. HP's pigment-based inks resist water and fading, ideal for documents. Dye-based inks produce vibrant colors for photos. Some printers use separate cartridges for each color, replacing only depleted colors. HP's PageWide technology uses a stationary printhead spanning the page width, eliminating carriage movement for dramatically faster printing."
+        id: "ideal-users",
+        title: "Ideal Users",
+        content: "Smart Tank printers benefit high-volume printers most dramatically. Families printing homework, photos, and documents regularly see major savings. Small businesses with substantial print volumes reduce operating costs significantly. Creative professionals printing portfolios, marketing materials, or photos find exceptional value. Even moderate users benefit from never worrying about expensive cartridge replacements. Light users may not recover the higher upfront cost, making traditional printers better for occasional printing."
       },
       {
-        id: "quality-factors",
-        title: "Print Quality Factors",
-        content: "Print quality depends on multiple factors: resolution (DPI) determines detail sharpness, while droplet size affects color gradients and smoothness. The number of ink colors influences color accuracy—standard 4-color (CMYK) suffices for documents, while photo printers use 6 or more colors for richer output. Paper quality interacts with ink absorption and color reproduction. HP's proprietary ColorSmart algorithms optimize each print for best results based on content and paper type."
+        id: "model-comparison",
+        title: "Model Comparison",
+        content: "The Smart Tank lineup offers options for different needs. Entry models like Smart Tank 5101 provide essential features at lower prices. Mid-range models add automatic two-sided printing and faster speeds. Premium models like Smart Tank 7602 include automatic document feeders, larger paper capacity, and enhanced photo printing capabilities. All models share the ultra-low-cost refillable ink system; choose based on speed, features, and paper handling requirements."
       }
     ],
     keyPoints: [
-      "Thermal inkjet uses heat to fire microscopic ink droplets",
-      "Modern printheads contain thousands of precision nozzles",
-      "Droplet size as small as 1.3 picoliters enables fine detail",
-      "Pigment inks resist water; dye inks produce vibrant photos",
-      "Resolution and ink colors determine maximum print quality"
+      "Refillable tanks reduce cost-per-page by up to 95%",
+      "Included ink prints thousands of pages before refilling",
+      "Ideal for users printing 200+ pages monthly",
+      "Eliminates dried-out cartridge waste from occasional use",
+      "Higher upfront cost offset by dramatic supply savings"
     ],
     recommendations: [
       {
-        title: "Best Technology Showcase",
-        description: "HP ENVY Photo 7975 - Advanced 6-color ink system",
-        product: "HP ENVY Photo 7975 All-in-One Wireless Photo Printer"
+        title: "Best Entry Smart Tank",
+        description: "Smart Tank 5101 - Affordable refillable printing",
+        product: "Smart Tank 5101 All-in-One Printer"
       },
       {
-        title: "Fastest Technology",
-        description: "HP OfficeJet Pro 9730e - Wide-format PageWide printing",
-        product: "HP OfficeJet Pro 9730e Wide Format All-in-One Printer"
+        title: "Best Overall Smart Tank",
+        description: "Smart Tank 7602 - Full features with ultra-low costs",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
+      },
+      {
+        title: "Best Value Smart Tank",
+        description: "Smart Tank 6001 - Great balance of features and price",
+        product: "Smart Tank 6001 All-in-One Wireless Color Printer"
       }
     ]
   },
 
-  "printhead-maintenance": {
-    id: "printhead-maintenance",
-    title: "HP Inkjet Printhead Maintenance Guide",
-    description: "Keep your HP printer performing optimally with proper printhead care and maintenance techniques.",
+  "instant-ink": {
+    id: "instant-ink",
+    title: "Understanding Instant Ink Subscription",
+    description: "Learn how Instant Ink works, its benefits, and whether it's right for your printing habits.",
+    icon: Package,
+    color: "bg-blue-600",
+    readTime: "9 min read",
+    sections: [
+      {
+        id: "introduction",
+        title: "Introduction",
+        content: "Instant Ink is a subscription service that automatically delivers ink cartridges before you run out, based on your printer's ink levels. Rather than paying for cartridges, you pay a monthly fee for a set number of pages. This model can save money while eliminating the hassle of buying ink. This guide explains how it works and helps you decide if it fits your printing patterns."
+      },
+      {
+        id: "how-it-works",
+        title: "How Instant Ink Works",
+        content: "Your printer monitors ink levels and automatically orders replacements when running low—cartridges arrive before you run out. You choose a monthly plan based on pages printed: from 15 pages for occasional users to 700+ pages for heavy printers. Unused pages roll over to the next month (up to the plan's limit). If you exceed your plan, additional pages cost a small fee. Plans are flexible—upgrade, downgrade, or cancel anytime based on your current needs."
+      },
+      {
+        id: "pricing-plans",
+        title: "Pricing and Plans",
+        content: "Instant Ink offers tiered plans starting at around $1.49 for 15 pages monthly, scaling to approximately $24.99 for 700 pages. Cost per page decreases at higher tiers—the 700-page plan works out to roughly 3.5 cents per page including color. Compare this to standard cartridge costs of 5-15 cents per page. Plans include both black and color printing; even full-page photos count as one page. Shipping is free, and recycling prepaid envelopes are included for empty cartridges."
+      },
+      {
+        id: "benefits",
+        title: "Benefits of Subscribing",
+        content: "Never run out of ink—automatic delivery ensures you always have supplies. Predictable monthly costs simplify budgeting. Color printing costs the same as black-and-white per page. Rollover pages prevent waste from lighter months. XL cartridges included at no extra cost last longer and reduce delivery frequency. Free recycling makes disposal easy and environmentally responsible. Enrolled printers may receive extended warranty benefits and priority support access."
+      },
+      {
+        id: "considerations",
+        title: "Important Considerations",
+        content: "Instant Ink cartridges only work while subscribed—they disable if you cancel, requiring standard cartridge purchases. Overages cost extra if you consistently exceed your plan tier. Light users may find traditional cartridges cheaper if printing very infrequently. Monthly fees continue even in months you don't print, though rollover mitigates this. Evaluate your typical monthly volume honestly before subscribing to choose the right tier and maximize savings."
+      }
+    ],
+    keyPoints: [
+      "Automatic ink delivery prevents running out",
+      "Page-based pricing includes both black and color",
+      "Unused pages roll over to the next month",
+      "Significant savings compared to retail cartridge prices",
+      "Flexibility to change plans based on current needs"
+    ],
+    recommendations: [
+      {
+        title: "Best for Instant Ink",
+        description: "OfficeJet Pro 9125e - Optimized for subscription printing",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
+      },
+      {
+        title: "Great Value with Subscription",
+        description: "ENVY Inspire 7955e - Excellent with Instant Ink plans",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
+      },
+      {
+        title: "Budget-Friendly Subscription",
+        description: "DeskJet 4255e - Affordable entry to Instant Ink benefits",
+        product: "DeskJet 4255e All-in-One Wireless Color Printer"
+      }
+    ]
+  },
+
+  "printer-troubleshooting": {
+    id: "printer-troubleshooting",
+    title: "Inkjet Printer Troubleshooting Guide",
+    description: "Solve common inkjet printer problems with our step-by-step troubleshooting guide.",
     icon: Wrench,
-    color: "bg-amber-600",
+    color: "bg-red-500",
+    readTime: "12 min read",
+    sections: [
+      {
+        id: "introduction",
+        title: "Introduction",
+        content: "Even the most reliable printers occasionally encounter issues. Before calling support or considering replacement, many common problems have simple solutions you can perform at home. This troubleshooting guide covers the most frequent inkjet printer issues with step-by-step solutions to get you printing again quickly."
+      },
+      {
+        id: "paper-jams",
+        title: "Paper Jam Solutions",
+        content: "Paper jams are the most common printer issue. First, turn off the printer and unplug it. Open all access doors and gently remove any visible paper, pulling in the direction of paper travel to avoid tearing. Check for small torn pieces that might remain inside. Inspect paper for wrinkles, curls, or damage before reloading. Fan the paper stack to prevent static and load with proper alignment. If jams persist, clean the rollers with a lint-free cloth dampened with water."
+      },
+      {
+        id: "print-quality",
+        title: "Print Quality Issues",
+        content: "Streaky, faded, or missing colors indicate printhead problems. Run the automatic printhead cleaning utility from your printer's control panel or the Smart app—this clears dried ink from nozzles. Print a test page after cleaning to check improvement. If issues persist, run the cleaning cycle again (up to 3 times). For stubborn clogs, let the printer sit overnight to allow ink to soften dried residue. Check ink levels; low ink causes faded output. Replace empty cartridges promptly."
+      },
+      {
+        id: "connectivity",
+        title: "Connectivity Problems",
+        content: "Wireless printing failures often stem from network issues. Restart your printer and router; this resolves most connection problems. Ensure your printer and device are on the same WiFi network. Check that your router hasn't blocked the printer's connection. Use the printer's network setup wizard to reconnect if needed. For USB issues, try a different USB port or cable. The Smart app can diagnose and repair many connectivity issues automatically."
+      },
+      {
+        id: "cartridge-issues",
+        title: "Cartridge Problems",
+        content: "Cartridge errors prevent printing until resolved. Remove and reinstall cartridges, ensuring they click firmly into place. Check that protective tape has been removed from new cartridges. Clean the cartridge contacts and printhead contacts with a dry lint-free cloth. Verify cartridges are compatible with your specific printer model. Genuine cartridges ensure best compatibility and results. If a cartridge is defective, replacement is necessary even if recently purchased."
+      },
+      {
+        id: "software-issues",
+        title: "Software Issues",
+        content: "Driver and software problems cause various symptoms. Update your printer drivers from the support website or through the Smart app. Uninstall and reinstall printer software if problems persist. Check that print jobs aren't stuck in the queue—clear pending jobs before trying again. Restart your computer after driver updates. For Mac users, remove and re-add the printer in System Preferences. Ensure your operating system is current with latest updates."
+      }
+    ],
+    keyPoints: [
+      "Paper jams usually result from damaged paper or dirty rollers",
+      "Printhead cleaning resolves most print quality problems",
+      "Restart printer and router to fix wireless issues",
+      "Always remove protective tape from new cartridges",
+      "Keep drivers updated for best compatibility"
+    ],
+    recommendations: [
+      {
+        title: "Easy Troubleshooting",
+        description: "OfficeJet Pro 9125e - Smart diagnostics and easy maintenance",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
+      },
+      {
+        title: "Reliable Operation",
+        description: "Smart Tank 7602 - Fewer cartridge-related issues",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
+      }
+    ]
+  },
+
+  "printer-maintenance": {
+    id: "printer-maintenance",
+    title: "Inkjet Printer Maintenance Tips",
+    description: "Keep your inkjet printer running smoothly with regular maintenance and care guidelines.",
+    icon: Settings,
+    color: "bg-gray-600",
     readTime: "8 min read",
     sections: [
       {
         id: "introduction",
         title: "Introduction",
-        content: "The printhead is your HP inkjet printer's most critical component, responsible for transferring ink to paper with precision. Proper maintenance ensures consistent print quality, prevents costly problems, and extends your printer's life. This guide covers recognizing printhead issues, cleaning procedures, preventive care, and knowing when replacement becomes necessary."
+        content: "Regular maintenance extends your printer's lifespan, prevents problems, and ensures consistent print quality. Inkjet printers require minimal but important care to perform their best. This guide outlines essential maintenance tasks and schedules to keep your printer running smoothly for years."
       },
       {
-        id: "problem-signs",
-        title: "Signs of Printhead Problems",
-        content: "Watch for warning signs indicating printhead issues: streaks or lines across printed pages, missing colors or faded output, blotchy or uneven ink coverage, and blank sections despite full cartridges. Banding—horizontal lines across prints—suggests clogged nozzles. Inconsistent color reproduction indicates ink flow problems. Print a test page from your printer's maintenance menu to diagnose issues. Address problems promptly before permanent damage occurs."
+        id: "printhead-care",
+        title: "Printhead Care",
+        content: "Printheads are the most critical component for print quality. Print at least one page weekly to prevent ink from drying in the nozzles—even a simple text page maintains ink flow. If you print infrequently, run the automatic cleaning cycle monthly. Avoid touching the printhead or its contacts. Never leave the printer open longer than necessary, as exposure to air dries ink faster. If storing the printer for extended periods, print a test page and run cleaning before storage."
       },
       {
-        id: "cleaning-methods",
-        title: "Cleaning Methods",
-        content: "Start with HP's built-in cleaning utility, accessible through the printer menu or HP Smart app. Run the standard cleaning cycle first—it uses minimal ink while clearing minor clogs. If problems persist, run the deep cleaning cycle which uses more ink but addresses stubborn blockages. For severe clogs, remove cartridges and gently wipe the printhead contacts with a lint-free cloth dampened with distilled water. Never use tap water or harsh chemicals."
+        id: "physical-cleaning",
+        title: "Physical Cleaning",
+        content: "Dust and debris accumulate over time, affecting performance. Monthly, wipe the exterior with a dry, lint-free cloth. Clean the paper tray and remove any debris. Inspect paper feed rollers for dust buildup—clean with a slightly damp lint-free cloth if needed. Never use aerosol sprays, ammonia-based cleaners, or alcohol inside the printer. Keep the area around your printer clean and free of dust sources. Cover the printer when not in use for extended periods."
       },
       {
-        id: "prevention",
-        title: "Prevention Tips",
-        content: "Prevent printhead problems with regular use—print at least weekly to keep ink flowing and nozzles clear. Use genuine HP ink cartridges designed to work optimally with your printhead. Store spare cartridges properly in sealed packaging. Keep your printer in a temperature-controlled environment; extreme heat or cold affects ink viscosity. When not printing regularly, run a test page weekly to maintain nozzle health and prevent dried ink buildup."
+        id: "paper-handling",
+        title: "Paper Handling Best Practices",
+        content: "Proper paper handling prevents jams and ensures consistent results. Store paper in its original packaging away from humidity until use. Fan the paper stack before loading to prevent static and sticking. Never overfill paper trays beyond their marked capacity. Use paper appropriate for your printer and print job—check specifications for supported weights and sizes. Remove printed pages promptly to prevent ink transfer. Don't mix paper types or sizes in the same tray."
       },
       {
-        id: "replacement",
-        title: "When to Replace",
-        content: "If multiple deep cleaning cycles fail to resolve issues, printhead replacement may be necessary. Printers with integrated printhead cartridges solve this automatically with each cartridge change. Printers with permanent printheads require component replacement—consult HP support for options. Sometimes, replacement costs approach new printer prices, making upgrade more economical. Consider your printer's age, total page count, and remaining useful life when deciding."
+        id: "software-updates",
+        title: "Software and Firmware",
+        content: "Keep printer software current for best performance and security. Enable automatic firmware updates when available. The Smart app notifies you of updates and simplifies installation. Updated firmware fixes bugs, improves reliability, and adds features. Check for driver updates when upgrading your computer's operating system. Periodically verify your printer appears in the Smart app and is functioning correctly in its diagnostic tools."
       }
     ],
     keyPoints: [
-      "Print regularly to prevent ink from drying in nozzles",
-      "Use built-in cleaning utilities before manual intervention",
-      "Genuine HP cartridges protect printhead health",
-      "Store printers in stable temperature environments",
-      "Deep cleaning uses significant ink—use sparingly"
+      "Print weekly to prevent printhead clogs",
+      "Clean exterior monthly with dry, lint-free cloth",
+      "Store paper properly to prevent humidity damage",
+      "Enable automatic firmware updates for best performance",
+      "Run cleaning cycles if print quality declines"
     ],
     recommendations: [
+      {
+        title: "Low Maintenance",
+        description: "Smart Tank 7602 - Sealed ink system requires minimal care",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
+      },
       {
         title: "Easy Maintenance",
-        description: "HP DeskJet 4255e - Integrated printhead in cartridges",
-        product: "HP DeskJet 4255e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "Professional Maintenance",
-        description: "HP OfficeJet Pro 9125e - Advanced printhead with long life",
-        product: "HP OfficeJet Pro 9125e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - User-friendly maintenance access",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
   },
 
-  "ink-page-yield": {
-    id: "ink-page-yield",
-    title: "Understanding HP Ink Page Yield",
-    description: "Learn how page yield is measured, what affects it, and how to maximize your ink cartridge efficiency.",
-    icon: Package,
-    color: "bg-rose-500",
-    readTime: "9 min read",
-    sections: [
-      {
-        id: "introduction",
-        title: "Introduction",
-        content: "Page yield tells you how many pages a cartridge prints before running empty—crucial information for calculating printing costs and comparing cartridges. However, understanding how manufacturers measure yield and what affects real-world results helps you set accurate expectations. This guide demystifies page yield ratings and helps you maximize value from every cartridge."
-      },
-      {
-        id: "what-is-yield",
-        title: "What is Page Yield",
-        content: "Page yield indicates the estimated number of pages a cartridge produces under standardized testing conditions. HP and other manufacturers follow ISO/IEC 24711 standards for color cartridges and ISO/IEC 24712 for black cartridges. Tests use specific test pages with defined coverage percentages—typically 5% for black and 20% for color (5% each CMYK). Yields represent averages from multiple cartridges under controlled conditions."
-      },
-      {
-        id: "factors-affecting",
-        title: "Factors Affecting Yield",
-        content: "Real-world yields vary based on what you print. Text documents with 5% coverage match standard test conditions. Graphics-heavy documents, photos, and presentations use significantly more ink, reducing effective yields. Print settings matter: draft mode extends cartridge life while high-quality modes consume more ink. Frequency of use affects yield—infrequent printing triggers more cleaning cycles that consume ink. Color balance in your documents impacts individual cartridge consumption."
-      },
-      {
-        id: "reading-specs",
-        title: "Reading HP Specifications",
-        content: "HP publishes yield ratings on packaging and product pages. Standard cartridges typically yield 100-200 pages for black, 100-165 for color. XL (high-yield) cartridges print 400-1000+ pages, offering better value per page. XXL cartridges in some models maximize capacity. Compare cartridge prices to yields: divide price by pages to calculate cost-per-page. Always compare same-category yields—XL to XL—for accurate comparisons between models."
-      },
-      {
-        id: "maximizing-yield",
-        title: "Maximizing Your Yield",
-        content: "Extend cartridge life with smart habits. Use draft mode for internal documents and proofs. Print in grayscale when color isn't necessary to preserve color cartridges. Preview documents before printing to avoid wasted pages. Avoid unnecessary cleaning cycles—run them only when print quality degrades. Choose appropriate quality settings: standard mode suffices for most documents. Consider HP Instant Ink for predictable costs regardless of coverage."
-      }
-    ],
-    keyPoints: [
-      "Page yield is measured under standardized 5% coverage conditions",
-      "XL cartridges offer 2-3x capacity at better per-page value",
-      "Actual yield varies based on what and how you print",
-      "Draft mode significantly extends cartridge life",
-      "Compare cost-per-page, not cartridge price alone"
-    ],
-    recommendations: [
-      {
-        title: "Best Yield Value",
-        description: "HP Smart Tank 7602 - Ultra-high-yield tank system",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
-      },
-      {
-        title: "High-Yield Cartridges",
-        description: "HP OfficeJet Pro 9135e - Supports XXL cartridges",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
-      }
-    ]
-  },
-
-  "oem-vs-third-party-ink": {
-    id: "oem-vs-third-party-ink",
-    title: "OEM vs Third-Party HP Ink",
-    description: "Compare genuine HP ink cartridges with third-party alternatives to make an informed purchasing decision.",
-    icon: Package,
-    color: "bg-red-600",
-    readTime: "10 min read",
-    sections: [
-      {
-        id: "introduction",
-        title: "Introduction",
-        content: "The ink market offers choices beyond genuine HP cartridges: third-party compatible cartridges, refilled cartridges, and refill kits promise significant savings. But lower prices often come with trade-offs in quality, reliability, and long-term costs. This guide objectively examines both options to help you make decisions aligned with your priorities and printing requirements."
-      },
-      {
-        id: "oem-benefits",
-        title: "Benefits of OEM Ink",
-        content: "Genuine HP ink cartridges are engineered specifically for your printer, ensuring optimal performance and quality. HP's proprietary ink formulations resist fading, water damage, and smearing, producing archival-quality documents and photos. OEM cartridges integrate seamlessly with your printer's monitoring systems, providing accurate ink level readings. Using genuine supplies maintains your HP warranty protection and ensures access to HP support. Consistent quality eliminates printing failures and waste."
-      },
-      {
-        id: "third-party-options",
-        title: "Third-Party Options",
-        content: "Third-party alternatives include compatible cartridges (new cartridges made by other companies), remanufactured cartridges (genuine empties refurbished and refilled), and refill kits for DIY refilling. Prices typically run 30-70% lower than OEM cartridges. Quality varies dramatically between manufacturers—some produce acceptable results while others cause print quality issues, clogs, or leaks. Established brands like LD Products and InkOwl offer better consistency than generic options."
-      },
-      {
-        id: "risks-considerations",
-        title: "Risks and Considerations",
-        content: "Third-party ink carries inherent risks. Inferior ink formulations may clog printheads, potentially causing permanent damage requiring costly repairs. Inconsistent page yields and color accuracy frustrate users expecting OEM-level results. Using non-HP supplies may void warranty coverage if resulting damage occurs. Cartridge chips may not communicate properly with your printer, showing incorrect levels or preventing use. Leaked ink can damage internal components beyond the printhead."
-      },
-      {
-        id: "recommendation",
-        title: "Our Recommendation",
-        content: "For critical printing—business documents, client materials, photographs—use genuine HP ink for guaranteed quality and reliability. The peace of mind and consistent results justify the premium. For draft documents, internal use, or extremely price-sensitive situations, quality third-party brands offer acceptable results at lower cost. Consider HP Instant Ink for the best of both worlds: genuine HP ink at competitive prices with convenient automatic delivery and recycling."
-      }
-    ],
-    keyPoints: [
-      "OEM cartridges guarantee quality and printer compatibility",
-      "Third-party savings range from 30-70% but quality varies",
-      "Inferior ink can permanently damage printheads",
-      "Non-HP supplies may affect warranty coverage",
-      "HP Instant Ink offers genuine ink at competitive prices"
-    ],
-    recommendations: [
-      {
-        title: "Best with Instant Ink",
-        description: "HP ENVY Inspire 7255e - Optimized for HP+ and Instant Ink",
-        product: "HP ENVY Inspire 7255e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "Lowest OEM Cost",
-        description: "HP Smart Tank 6001 - Refillable tank eliminates cartridges",
-        product: "HP Smart Tank 6001 All-in-One Wireless Color Printer"
-      }
-    ]
-  },
-
-  "cost-per-page": {
-    id: "cost-per-page",
-    title: "How to Calculate True Cost Per Page",
-    description: "Master the cost-per-page calculation to compare printers accurately and minimize your printing expenses.",
-    icon: Calculator,
+  "warranty-protection": {
+    id: "warranty-protection",
+    title: "Warranty & Extended Protection Plans",
+    description: "Understand warranty coverage and extended protection options for your inkjet printer.",
+    icon: Shield,
     color: "bg-green-600",
-    readTime: "9 min read",
+    readTime: "7 min read",
     sections: [
       {
         id: "introduction",
         title: "Introduction",
-        content: "Cost per page is the most important metric for comparing printer economics. A cheaper printer may cost more over time if its supplies are expensive. Understanding true cost-per-page helps you make smarter purchasing decisions, budget accurately for printing expenses, and identify opportunities to reduce costs. This guide teaches you to calculate and compare costs like a professional."
+        content: "Understanding your printer's warranty coverage helps you make informed decisions about protection and repairs. This guide explains standard warranty terms, what's covered and excluded, and how extended protection plans can provide additional peace of mind for your investment."
       },
       {
-        id: "formula",
-        title: "Cost Per Page Formula",
-        content: "The basic formula is simple: divide cartridge price by rated page yield. For example, a $25 black cartridge rated at 500 pages costs $0.05 per page. For color printing, add all four cartridge costs and divide by the lower of black or color yields. If you print mixed color and black pages, weight the calculation accordingly. Online calculators and HP's product pages often provide cost-per-page estimates for convenience."
+        id: "standard-warranty",
+        title: "Standard Warranty Coverage",
+        content: "Most inkjet printers include a one-year limited warranty covering manufacturing defects in materials and workmanship. Coverage begins from the purchase date and includes repair or replacement at the manufacturer's discretion. The warranty covers the printer hardware and included printhead. Phone and online technical support are typically included. Keep your purchase receipt as proof of warranty start date—registration helps verify coverage and provides product update notifications."
       },
       {
-        id: "hidden-costs",
-        title: "Hidden Costs",
-        content: "True cost-per-page includes factors beyond ink. Paper costs add $0.01-0.05 per page depending on type. Electricity consumption, while small, accumulates over thousands of pages. Maintenance costs—printhead replacements, cleaning supplies—add occasional expenses. Wasted pages from jams, misprints, and alignment tests increase effective costs. Factor in your time managing supplies and troubleshooting. These hidden costs can add 20-50% to basic ink-and-paper calculations."
+        id: "whats-covered",
+        title: "What's Covered",
+        content: "Standard warranties cover defects arising from normal use as intended. This includes hardware failures, electronic component defects, and manufacturer printhead problems. Many printers offer printhead coverage for extended periods, sometimes up to 3 years. Firmware-related issues are typically addressed through updates. Warranties cover printers used with genuine ink cartridges as specified. Coverage includes parts and labor for authorized repairs or replacement with equivalent units if repair isn't feasible."
       },
       {
-        id: "comparing-models",
-        title: "Comparing Models",
-        content: "When comparing printers, standardize your calculations. Use XL cartridge prices for fair comparison if both models support them. Factor in printer purchase price amortized over expected lifetime pages. Compare same print modes—draft, normal, or best quality. Consider bundle pricing and subscription options. Create a spreadsheet comparing total 3-year cost including printer, ink, paper, and electricity for your expected monthly volume."
+        id: "exclusions",
+        title: "What's Excluded",
+        content: "Warranties don't cover consumables like ink cartridges and paper. Physical damage from drops, spills, or improper handling isn't covered. Issues arising from non-genuine ink cartridges may void warranty protection. Damage from power surges, unless using recommended surge protection, is excluded. Normal wear items like paper feed rollers may have limited coverage. Modifications, unauthorized repairs, or commercial use of consumer models may void coverage. Software issues unrelated to printer firmware are typically excluded."
       },
       {
-        id: "reducing-costs",
-        title: "Reducing Printing Costs",
-        content: "Minimize cost-per-page with strategic choices. Choose printers with efficient ink systems—Smart Tank models achieve under $0.01 per page. Subscribe to HP Instant Ink for predictable costs and savings up to 50%. Use XL cartridges for better per-page value. Print in draft mode for internal documents. Proof documents on screen before printing. Use print preview to avoid wasted pages. Consider duplex printing to halve paper consumption."
+        id: "extended-options",
+        title: "Extended Protection Options",
+        content: "Extended protection plans provide coverage beyond standard warranties. Available from manufacturers and retailers, these plans extend coverage for additional years and may include accidental damage protection. Coverage typically mirrors the standard warranty with longer duration. Some plans include expedited replacement rather than repair. Consider extended protection for premium printers where replacement costs are significant. Weigh plan costs against printer price and your risk tolerance to determine value."
       }
     ],
     keyPoints: [
-      "Divide cartridge price by page yield for basic cost-per-page",
-      "Include paper, electricity, and waste in true cost calculations",
-      "XL cartridges typically offer 30-50% lower cost-per-page",
-      "Smart Tank printers achieve the lowest per-page costs",
-      "HP Instant Ink simplifies budgeting with fixed monthly plans"
+      "Standard warranty typically lasts one year from purchase",
+      "Keep purchase receipt for warranty verification",
+      "Genuine ink cartridge use maintains warranty validity",
+      "Consumables like ink and paper aren't covered",
+      "Extended plans provide longer coverage and peace of mind"
     ],
     recommendations: [
       {
-        title: "Lowest Cost Per Page",
-        description: "HP Smart Tank 7301 - Under 1 cent per page",
-        product: "HP Smart Tank 7301 All-in-One Wireless Color Printer"
+        title: "Reliable with Warranty",
+        description: "OfficeJet Pro 9125e - Comprehensive support and coverage",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
-        title: "Best Subscription Value",
-        description: "HP ENVY 6555e - Optimized for HP Instant Ink",
-        product: "HP ENVY 6555e All-in-One Wireless Color Printer"
+        title: "Dependable Investment",
+        description: "Smart Tank 7602 - Long-lasting with excellent support",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
       }
     ]
   },
 
-  "print-volume-duty-cycle": {
-    id: "print-volume-duty-cycle",
-    title: "Print Volume & Duty Cycle Explained",
-    description: "Understand duty cycle ratings and recommended monthly volume to choose a printer that matches your needs.",
-    icon: Settings,
-    color: "bg-purple-600",
-    readTime: "8 min read",
-    sections: [
-      {
-        id: "introduction",
-        title: "Introduction",
-        content: "Every printer has limits on how much it can print while maintaining performance and longevity. Understanding duty cycle and recommended monthly volume helps you select a printer capable of handling your workload without premature failure. This guide explains these specifications and how to use them when comparing printers."
-      },
-      {
-        id: "duty-cycle",
-        title: "Understanding Duty Cycle",
-        content: "Duty cycle represents the maximum number of pages a printer can produce per month without risking damage. This is an engineering limit, not a recommendation. For example, a 15,000-page duty cycle means the printer can technically handle up to 15,000 pages monthly. However, consistently printing at duty cycle maximum stresses components and shortens printer life. Think of it as a car's top speed—possible, but not sustainable."
-      },
-      {
-        id: "recommended-volume",
-        title: "Recommended Monthly Volume",
-        content: "Recommended monthly volume indicates the optimal printing range for longevity and performance—typically 10-20% of duty cycle. A printer with 15,000-page duty cycle might recommend 750-1,500 pages monthly. Operating within this range ensures reliable performance, minimizes wear, and maximizes printer lifespan. Exceeding recommended volume occasionally is fine; consistently exceeding it accelerates component wear and increases failure risk."
-      },
-      {
-        id: "choosing-by-volume",
-        title: "Choosing Based on Volume",
-        content: "Match your printer to your needs. Home users printing 50-200 pages monthly can choose any entry-level model. Moderate users at 200-500 pages should select mid-range printers with higher duty cycles. Business users printing 500-2000+ pages need OfficeJet Pro or Smart Tank models engineered for sustained workloads. Estimate your volume conservatively—growth happens, and upgrading prematurely wastes money."
-      },
-      {
-        id: "longevity",
-        title: "Longevity Considerations",
-        content: "Printer lifespan depends on usage patterns. A well-matched printer operated within recommended volumes can last 5-10 years. Overworked printers may fail in 2-3 years, requiring replacement that negates initial savings. Heavy users should invest in business-class printers despite higher costs—the longer lifespan and reliability justify the premium. Consider total cost of ownership including potential replacement when selecting your printer."
-      }
-    ],
-    keyPoints: [
-      "Duty cycle is maximum capacity, not recommended usage",
-      "Recommended volume is typically 10-20% of duty cycle",
-      "Consistently exceeding recommendations shortens printer life",
-      "Match printer capacity to your actual printing needs",
-      "Business-class printers offer higher duty cycles for heavy use"
-    ],
-    recommendations: [
-      {
-        title: "Light Use (Under 200 pages)",
-        description: "HP DeskJet 2855e - Perfect for occasional printing",
-        product: "HP DeskJet 2855e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "Heavy Use (500+ pages)",
-        description: "HP OfficeJet Pro 9125e - Built for sustained workloads",
-        product: "HP OfficeJet Pro 9125e All-in-One Wireless Color Printer"
-      }
-    ]
-  },
-
-  "energy-efficiency-tco": {
-    id: "energy-efficiency-tco",
+  "energy-efficiency": {
+    id: "energy-efficiency",
     title: "Energy Efficiency & Total Cost of Ownership",
     description: "Calculate the true cost of printer ownership including energy consumption and long-term expenses.",
-    icon: Zap,
-    color: "bg-yellow-600",
+    icon: Calculator,
+    color: "bg-lime-600",
     readTime: "10 min read",
     sections: [
       {
@@ -992,12 +892,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "energy-star",
         title: "Energy Star Ratings",
-        content: "ENERGY STAR certified printers meet strict efficiency standards, using 25-50% less energy than conventional models. HP achieves ENERGY STAR certification across most of its lineup. Look for the ENERGY STAR label when comparing models. Certified printers feature auto-sleep functions, efficient standby modes, and optimized power management. Beyond cost savings, efficient printers reduce environmental impact and may qualify for utility rebates or green business certifications."
+        content: "ENERGY STAR certified printers meet strict efficiency standards, using 25-50% less energy than conventional models. Look for the ENERGY STAR label when comparing models. Certified printers feature auto-sleep functions, efficient standby modes, and optimized power management. Beyond cost savings, efficient printers reduce environmental impact and may qualify for utility rebates or green business certifications."
       },
       {
         id: "long-term-savings",
         title: "Long-term Savings",
-        content: "Maximize savings with strategic choices. Choose ENERGY STAR certified models for lowest energy costs. Select printers with efficient ink systems—Smart Tank models dramatically reduce supply costs. Enable power management features in printer settings. Consider print less: go paperless where possible. Calculate TCO before purchasing; sometimes higher-priced printers cost less over time. HP Instant Ink subscriptions provide predictable supply costs and include recycling, reducing environmental impact."
+        content: "Maximize savings with strategic choices. Choose ENERGY STAR certified models for lowest energy costs. Select printers with efficient ink systems—Smart Tank models dramatically reduce supply costs. Enable power management features in printer settings. Consider print less: go paperless where possible. Calculate TCO before purchasing; sometimes higher-priced printers cost less over time. Instant Ink subscriptions provide predictable supply costs and include recycling, reducing environmental impact."
       }
     ],
     keyPoints: [
@@ -1010,13 +910,13 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Most Energy Efficient",
-        description: "HP Smart Tank Plus 651 - Minimal energy, minimal ink cost",
-        product: "HP Smart Tank Plus 651 All-in-One Wireless Color Printer"
+        description: "Smart Tank Plus 651 - Minimal energy, minimal ink cost",
+        product: "Smart Tank Plus 651 All-in-One Wireless Color Printer"
       },
       {
         title: "Lowest TCO",
-        description: "HP Smart Tank 7602 - Ultra-low cost per page",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
+        description: "Smart Tank 7602 - Ultra-low cost per page",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -1024,7 +924,7 @@ export const guidesContent: Record<string, GuideContent> = {
   "secure-printing": {
     id: "secure-printing",
     title: "Secure and Private Printing",
-    description: "Protect sensitive documents and maintain privacy with HP's security features and best practices.",
+    description: "Protect sensitive documents and maintain privacy with security features and best practices.",
     icon: Shield,
     color: "bg-red-700",
     readTime: "11 min read",
@@ -1032,7 +932,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Printers are often overlooked in security planning, but they process sensitive documents and connect to networks, making them potential vulnerabilities. From confidential business documents to personal information, your printer handles data that requires protection. This guide covers security threats, HP's protective features, and best practices for maintaining print security and privacy."
+        content: "Printers are often overlooked in security planning, but they process sensitive documents and connect to networks, making them potential vulnerabilities. From confidential business documents to personal information, your printer handles data that requires protection. This guide covers security threats, protective features, and best practices for maintaining print security and privacy."
       },
       {
         id: "threats",
@@ -1041,8 +941,8 @@ export const guidesContent: Record<string, GuideContent> = {
       },
       {
         id: "hp-features",
-        title: "HP Security Features",
-        content: "HP leads the industry in printer security with HP Wolf Security. Features include secure boot that validates firmware integrity, runtime intrusion detection monitoring for anomalies, and automatic self-healing that recovers from attacks. Encrypted print jobs protect data in transit. Secure PIN printing holds documents until the user enters a code at the printer. HP JetAdvantage Security Manager provides enterprise-grade fleet protection and compliance reporting."
+        title: "Security Features",
+        content: "Modern printers include advanced security with Wolf Security. Features include secure boot that validates firmware integrity, runtime intrusion detection monitoring for anomalies, and automatic self-healing that recovers from attacks. Encrypted print jobs protect data in transit. Secure PIN printing holds documents until the user enters a code at the printer. JetAdvantage Security Manager provides enterprise-grade fleet protection and compliance reporting."
       },
       {
         id: "best-practices",
@@ -1057,7 +957,7 @@ export const guidesContent: Record<string, GuideContent> = {
     ],
     keyPoints: [
       "Printers are network devices requiring security attention",
-      "HP Wolf Security provides enterprise-grade protection",
+      "Wolf Security provides enterprise-grade protection",
       "PIN printing prevents unauthorized document access",
       "Always change default passwords and update firmware",
       "Network isolation limits exposure to attacks"
@@ -1065,20 +965,20 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Security Features",
-        description: "HP OfficeJet Pro 9135e - Advanced HP Wolf Security",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9135e - Advanced Wolf Security",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Secure Home Printing",
-        description: "HP ENVY Inspire 7955e - PIN printing and secure wireless",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - PIN printing and secure wireless",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "firmware-updates": {
     id: "firmware-updates",
-    title: "Firmware Updates for HP Inkjet Printers",
+    title: "Firmware Updates for Inkjet Printers",
     description: "Learn why firmware updates matter, how to apply them safely, and best practices for keeping your printer current.",
     icon: RefreshCw,
     color: "bg-sky-600",
@@ -1087,7 +987,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Firmware is the software embedded in your printer that controls its operation. Like computer operating systems, printer firmware requires periodic updates to fix bugs, improve performance, add features, and patch security vulnerabilities. This guide explains the importance of firmware updates and how to apply them safely to your HP inkjet printer."
+        content: "Firmware is the software embedded in your printer that controls its operation. Like computer operating systems, printer firmware requires periodic updates to fix bugs, improve performance, add features, and patch security vulnerabilities. This guide explains the importance of firmware updates and how to apply them safely to your inkjet printer."
       },
       {
         id: "why-update",
@@ -1097,7 +997,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "how-to-update",
         title: "How to Update",
-        content: "HP offers multiple update methods. The HP Smart app automatically checks for and installs updates—the easiest approach for most users. The printer's control panel often includes an update option under settings or maintenance menus. HP's support website provides manual firmware downloads for any model. For automatic updates, enable the feature in printer settings; updates download and install during idle periods. Manual updates require downloading the correct file and following HP's installation instructions."
+        content: "Multiple update methods are available. The Smart app automatically checks for and installs updates—the easiest approach for most users. The printer's control panel often includes an update option under settings or maintenance menus. The support website provides manual firmware downloads for any model. For automatic updates, enable the feature in printer settings; updates download and install during idle periods. Manual updates require downloading the correct file and following the installation instructions."
       },
       {
         id: "risks",
@@ -1107,7 +1007,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "update-best-practices",
         title: "Best Practices",
-        content: "Follow these practices for safe updates. Enable automatic updates for convenience and security—HP tests updates thoroughly before release. Before major updates, note your current firmware version in case rollback is needed. Ensure stable power during updates; consider using a UPS for critical printers. Read update notes to understand changes. If using third-party supplies, research compatibility before updating. Wait a few weeks after new firmware releases if you prefer others to discover issues first."
+        content: "Follow these practices for safe updates. Enable automatic updates for convenience and security—updates are tested thoroughly before release. Before major updates, note your current firmware version in case rollback is needed. Ensure stable power during updates; consider using a UPS for critical printers. Read update notes to understand changes. If using third-party supplies, research compatibility before updating. Wait a few weeks after new firmware releases if you prefer others to discover issues first."
       }
     ],
     keyPoints: [
@@ -1115,26 +1015,26 @@ export const guidesContent: Record<string, GuideContent> = {
       "Enable automatic updates for easiest maintenance",
       "Never interrupt firmware updates in progress",
       "Updates may affect third-party cartridge compatibility",
-      "HP Smart app simplifies update management"
+      "The Smart app simplifies update management"
     ],
     recommendations: [
       {
         title: "Auto-Update Enabled",
-        description: "HP OfficeJet Pro 9125e - Seamless automatic updates",
-        product: "HP OfficeJet Pro 9125e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9125e - Seamless automatic updates",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
-        title: "Easy HP Smart Updates",
-        description: "HP ENVY 6155e - Simple app-based firmware management",
-        product: "HP ENVY 6155e All-in-One Wireless Color Printer"
+        title: "Easy Smart Updates",
+        description: "ENVY 6155e - Simple app-based firmware management",
+        product: "ENVY 6155e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "mobile-cloud-printing": {
     id: "mobile-cloud-printing",
-    title: "Mobile & Cloud Printing with HP Inkjet",
-    description: "Learn how to print from smartphones, tablets, and cloud services with your HP inkjet printer.",
+    title: "Mobile & Cloud Printing with Inkjet",
+    description: "Learn how to print from smartphones, tablets, and cloud services with your inkjet printer.",
     icon: Smartphone,
     color: "bg-sky-500",
     readTime: "9 min read",
@@ -1142,51 +1042,51 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Modern printing extends far beyond your desktop computer. With HP's mobile and cloud printing capabilities, you can print documents and photos from virtually any device, anywhere in the world. This guide explores the various methods for wireless printing from smartphones, tablets, and cloud services, helping you maximize the convenience of your HP inkjet printer."
+        content: "Modern printing extends far beyond your desktop computer. With mobile and cloud printing capabilities, you can print documents and photos from virtually any device, anywhere in the world. This guide explores the various methods for wireless printing from smartphones, tablets, and cloud services, helping you maximize the convenience of your inkjet printer."
       },
       {
         id: "hp-smart-app",
-        title: "HP Smart App",
-        content: "The HP Smart app is your central hub for mobile printing. Available for iOS, Android, Windows, and macOS, it enables printing, scanning, copying, and printer management from any device. The app automatically detects compatible HP printers on your network, making setup effortless. You can print photos directly from your phone's gallery, documents from cloud storage, and even scan documents using your phone's camera when away from your printer."
+        title: "Smart App",
+        content: "The Smart app is your central hub for mobile printing. Available for iOS, Android, Windows, and macOS, it enables printing, scanning, copying, and printer management from any device. The app automatically detects compatible printers on your network, making setup effortless. You can print photos directly from your phone's gallery, documents from cloud storage, and even scan documents using your phone's camera when away from your printer."
       },
       {
         id: "airprint-setup",
         title: "AirPrint Setup",
-        content: "Apple AirPrint allows seamless printing from iPhones, iPads, and Macs without installing additional software. Most modern HP inkjet printers support AirPrint natively. Simply connect your printer and Apple device to the same WiFi network, then select Print from any app. Your HP printer appears automatically in the printer list. AirPrint works with Safari, Photos, Mail, and most third-party apps supporting the iOS print function."
+        content: "Apple AirPrint allows seamless printing from iPhones, iPads, and Macs without installing additional software. Most modern inkjet printers support AirPrint natively. Simply connect your printer and Apple device to the same WiFi network, then select Print from any app. Your printer appears automatically in the printer list. AirPrint works with Safari, Photos, Mail, and most third-party apps supporting the iOS print function."
       },
       {
         id: "google-alternatives",
         title: "Google Cloud Print Alternatives",
-        content: "While Google Cloud Print was discontinued in 2021, several alternatives exist for Android and Chrome users. HP's own ePrint service allows printing via email—simply send documents to your printer's unique email address. Mopria Print Service provides universal Android printing without manufacturer-specific apps. WiFi Direct enables direct device-to-printer connections without a network router, useful for guest printing or network-free environments."
+        content: "While Google Cloud Print was discontinued in 2021, several alternatives exist for Android and Chrome users. ePrint service allows printing via email—simply send documents to your printer's unique email address. Mopria Print Service provides universal Android printing without manufacturer-specific apps. WiFi Direct enables direct device-to-printer connections without a network router, useful for guest printing or network-free environments."
       },
       {
         id: "printing-anywhere",
         title: "Printing from Anywhere",
-        content: "HP's remote printing features let you print from anywhere with internet access. Using HP Smart app or HP ePrint, send jobs to your home or office printer while traveling. Cloud storage integration with Google Drive, Dropbox, and Microsoft OneDrive enables printing files without downloading them first. For businesses, HP's cloud services support secure remote printing with user authentication and job tracking across distributed teams."
+        content: "Remote printing features let you print from anywhere with internet access. Using the Smart app or ePrint, send jobs to your home or office printer while traveling. Cloud storage integration with Google Drive, Dropbox, and Microsoft OneDrive enables printing files without downloading them first. For businesses, cloud services support secure remote printing with user authentication and job tracking across distributed teams."
       }
     ],
     keyPoints: [
-      "HP Smart app enables printing from any device on any platform",
+      "The Smart app enables printing from any device on any platform",
       "AirPrint provides seamless printing for Apple devices",
-      "HP ePrint allows printing via email from anywhere in the world",
+      "ePrint allows printing via email from anywhere in the world",
       "WiFi Direct enables network-free device-to-printer connections",
       "Cloud storage integration simplifies document printing workflows"
     ],
     recommendations: [
       {
         title: "Best Mobile Printing",
-        description: "HP OfficeJet Pro 9125e - Full mobile and cloud integration",
-        product: "HP OfficeJet Pro 9125e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9125e - Full mobile and cloud integration",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Portable Solution",
-        description: "HP OfficeJet 250 Mobile - Print anywhere with battery power",
-        product: "HP OfficeJet 250 Mobile All-in-One Printer"
+        description: "OfficeJet 250 Mobile - Print anywhere with battery power",
+        product: "OfficeJet 250 Mobile All-in-One Printer"
       },
       {
         title: "Home Mobile Printing",
-        description: "HP ENVY Inspire 7955e - Excellent app integration for families",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Excellent app integration for families",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -1217,7 +1117,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "specialty-papers",
         title: "Specialty Papers",
-        content: "Beyond standard options, specialty papers enable creative projects. Transfer papers allow printing on fabrics. Sticker and label papers come in various adhesive strengths and die-cut shapes. Canvas papers create art reproduction effects. Transparency films work for overhead presentations. Magnetic papers create refrigerator-worthy prints. HP offers premium photo papers optimized for their ink chemistry, ensuring color accuracy, fade resistance, and longevity exceeding 100 years for archival prints."
+        content: "Beyond standard options, specialty papers enable creative projects. Transfer papers allow printing on fabrics. Sticker and label papers come in various adhesive strengths and die-cut shapes. Canvas papers create art reproduction effects. Transparency films work for overhead presentations. Magnetic papers create refrigerator-worthy prints. Premium photo papers optimized for inkjet ink chemistry ensure color accuracy, fade resistance, and longevity exceeding 100 years for archival prints."
       },
       {
         id: "matching-paper",
@@ -1229,26 +1129,26 @@ export const guidesContent: Record<string, GuideContent> = {
       "Paper weight (GSM) affects durability and printer compatibility",
       "Matte papers dry faster and resist fingerprints",
       "Glossy papers produce vibrant photo-quality output",
-      "HP premium papers are optimized for HP ink chemistry",
+      "Premium papers are optimized for ink chemistry",
       "Always match printer settings to your paper type"
     ],
     recommendations: [
       {
         title: "Best Photo Quality",
-        description: "HP ENVY Inspire 7955e - Optimized for HP photo papers",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Optimized for photo papers",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
         title: "Versatile Paper Handling",
-        description: "HP OfficeJet Pro 9135e - Handles wide range of paper types",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9135e - Handles wide range of paper types",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "extend-ink-life": {
     id: "extend-ink-life",
-    title: "How to Extend HP Ink Cartridge Life",
+    title: "How to Extend Ink Cartridge Life",
     description: "Practical tips and settings to maximize your ink cartridge lifespan and reduce printing costs.",
     icon: Coins,
     color: "bg-lime-500",
@@ -1290,26 +1190,26 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Ink Efficiency",
-        description: "HP Smart Tank 7602 - Refillable tanks with extremely low cost",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
+        description: "Smart Tank 7602 - Refillable tanks with extremely low cost",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
       },
       {
         title: "Great Draft Mode",
-        description: "HP OfficeJet Pro 8135e - Quality draft output for business",
-        product: "HP OfficeJet Pro 8135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 8135e - Quality draft output for business",
+        product: "OfficeJet Pro 8135e All-in-One Wireless Color Printer"
       },
       {
         title: "Budget-Conscious Choice",
-        description: "HP DeskJet 4255e - Affordable with XL cartridge options",
-        product: "HP DeskJet 4255e All-in-One Wireless Color Printer"
+        description: "DeskJet 4255e - Affordable with XL cartridge options",
+        product: "DeskJet 4255e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "high-volume-printing": {
     id: "high-volume-printing",
-    title: "High-Volume Printing with HP Inkjets",
-    description: "Optimize your HP inkjet for demanding workloads with proper equipment selection and maintenance.",
+    title: "High-Volume Printing with Inkjets",
+    description: "Optimize your inkjet for demanding workloads with proper equipment selection and maintenance.",
     icon: Building2,
     color: "bg-rose-500",
     readTime: "11 min read",
@@ -1317,22 +1217,22 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "High-volume printing demands printers engineered for sustained performance. While inkjets were once considered unsuitable for heavy workloads, modern HP OfficeJet Pro and Smart Tank models handle thousands of pages monthly with reliability matching laser printers. This guide helps high-volume users select appropriate equipment, optimize workflows, and maintain printers for maximum uptime."
+        content: "High-volume printing demands printers engineered for sustained performance. While inkjets were once considered unsuitable for heavy workloads, modern OfficeJet Pro and Smart Tank models handle thousands of pages monthly with reliability matching laser printers. This guide helps high-volume users select appropriate equipment, optimize workflows, and maintain printers for maximum uptime."
       },
       {
         id: "high-capacity-models",
         title: "Choosing High-Capacity Models",
-        content: "For volumes exceeding 500 pages monthly, select printers rated for your workload. Check the monthly duty cycle—the maximum pages a printer can handle without damage. HP OfficeJet Pro 9000 series handles 25,000+ pages monthly. Smart Tank models excel at ultra-high volumes with refillable ink systems printing 6,000+ black pages per refill. Large paper trays (250-500 sheets) reduce reload interruptions. Automatic document feeders with 50+ sheet capacity streamline scanning workflows."
+        content: "For volumes exceeding 500 pages monthly, select printers rated for your workload. Check the monthly duty cycle—the maximum pages a printer can handle without damage. The OfficeJet Pro 9000 series handles 25,000+ pages monthly. Smart Tank models excel at ultra-high volumes with refillable ink systems printing 6,000+ black pages per refill. Large paper trays (250-500 sheets) reduce reload interruptions. Automatic document feeders with 50+ sheet capacity streamline scanning workflows."
       },
       {
         id: "workflow-optimization",
         title: "Workflow Optimization",
-        content: "Efficient workflows maximize productivity. Use print queuing to batch similar jobs—all black documents first, then color. Network printing enables multiple workstations to share one high-capacity printer. HP's Job Storage feature holds print jobs until you're ready, preventing output pile-ups. Schedule large print runs during off-hours using delay printing. Duplex printing halves paper consumption. Create printing policies defining when draft mode, duplex, and grayscale should be used."
+        content: "Efficient workflows maximize productivity. Use print queuing to batch similar jobs—all black documents first, then color. Network printing enables multiple workstations to share one high-capacity printer. Job Storage features hold print jobs until you're ready, preventing output pile-ups. Schedule large print runs during off-hours using delay printing. Duplex printing halves paper consumption. Create printing policies defining when draft mode, duplex, and grayscale should be used."
       },
       {
         id: "supply-management",
         title: "Supply Management",
-        content: "Running out of supplies disrupts productivity. HP Instant Ink subscribers receive automatic cartridge shipments before running out. For non-subscription users, monitor ink levels via HP Smart app and maintain backup cartridges. XL and XXL cartridges reduce replacement frequency—XXL black cartridges print up to 2,000 pages. Smart Tank users should keep ink bottles on hand. Stock appropriate paper quantities; bulk purchasing reduces per-page paper costs significantly."
+        content: "Running out of supplies disrupts productivity. Instant Ink subscribers receive automatic cartridge shipments before running out. For non-subscription users, monitor ink levels via the Smart app and maintain backup cartridges. XL and XXL cartridges reduce replacement frequency—XXL black cartridges print up to 2,000 pages. Smart Tank users should keep ink bottles on hand. Stock appropriate paper quantities; bulk purchasing reduces per-page paper costs significantly."
       },
       {
         id: "maintenance-heavy-use",
@@ -1350,26 +1250,26 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for High Volume",
-        description: "HP OfficeJet Pro 9135e - Built for demanding workloads",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9135e - Built for demanding workloads",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Lowest Cost Per Page",
-        description: "HP Smart Tank 7602 - Ultra-low cost for extreme volumes",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
+        description: "Smart Tank 7602 - Ultra-low cost for extreme volumes",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
       },
       {
         title: "Wide Format Volume",
-        description: "HP OfficeJet Pro 9720e - High volume with wide format capability",
-        product: "HP OfficeJet Pro 9720e Wide-format All-in-One Printer"
+        description: "OfficeJet Pro 9720e - High volume with wide format capability",
+        product: "OfficeJet Pro 9720e Wide-format All-in-One Printer"
       }
     ]
   },
 
   "ink-storage-recycling": {
     id: "ink-storage-recycling",
-    title: "Storing & Recycling HP Ink Cartridges",
-    description: "Proper storage techniques and responsible recycling options for HP ink cartridges.",
+    title: "Storing & Recycling Ink Cartridges",
+    description: "Proper storage techniques and responsible recycling options for ink cartridges.",
     icon: Leaf,
     color: "bg-green-500",
     readTime: "7 min read",
@@ -1377,7 +1277,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Proper cartridge storage preserves ink quality and prevents waste, while responsible recycling reduces environmental impact. HP has pioneered cartridge recycling with their Planet Partners program, recovering materials from used cartridges since 1991. This guide covers best practices for storing spare cartridges and explains how to recycle used cartridges responsibly."
+        content: "Proper cartridge storage preserves ink quality and prevents waste, while responsible recycling reduces environmental impact. The Planet Partners program has been recovering materials from used cartridges since 1991. This guide covers best practices for storing spare cartridges and explains how to recycle used cartridges responsibly."
       },
       {
         id: "storage-conditions",
@@ -1387,43 +1287,43 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "shelf-life",
         title: "Shelf Life Information",
-        content: "HP ink cartridges have expiration dates printed on packaging, typically 18-24 months from manufacture. Expired cartridges may still work but print quality and reliability decline. Ink chemistry changes over time—dried ink can clog printheads. Installed cartridges last best with regular use; print at least weekly to keep ink flowing. Once opened, use cartridges within six months for best results. Check expiration dates when purchasing—avoid old stock sitting on shelves."
+        content: "Ink cartridges have expiration dates printed on packaging, typically 18-24 months from manufacture. Expired cartridges may still work but print quality and reliability decline. Ink chemistry changes over time—dried ink can clog printheads. Installed cartridges last best with regular use; print at least weekly to keep ink flowing. Once opened, use cartridges within six months for best results. Check expiration dates when purchasing—avoid old stock sitting on shelves."
       },
       {
         id: "planet-partners",
-        title: "HP Planet Partners",
-        content: "HP Planet Partners is a free cartridge recycling program available in 50+ countries. Drop off used cartridges at participating retailers including Staples, Office Depot, and Best Buy. Request free shipping labels through HP's website for mail-in recycling. HP recycling processes recover plastics, metals, and even residual ink. Closed-loop recycling incorporates recycled materials into new cartridges—many HP cartridges contain 45-70% recycled content. Never throw cartridges in regular trash."
+        title: "Planet Partners",
+        content: "Planet Partners is a free cartridge recycling program available in 50+ countries. Drop off used cartridges at participating retailers including Staples, Office Depot, and Best Buy. Request free shipping labels through the website for mail-in recycling. The recycling process recovers plastics, metals, and even residual ink. Closed-loop recycling incorporates recycled materials into new cartridges—many cartridges contain 45-70% recycled content. Never throw cartridges in regular trash."
       },
       {
         id: "environmental-impact",
         title: "Environmental Impact",
-        content: "Cartridge recycling makes significant environmental difference. Each recycled cartridge saves roughly 2.5 pounds of materials from landfills. HP has recovered over 900 million cartridges since 1991, preventing millions of pounds of plastic waste. Using recycled cartridges reduces carbon footprint compared to virgin materials. Smart Tank printers further reduce environmental impact by eliminating cartridge waste entirely—refillable tanks mean less plastic consumed. Consider total environmental impact when choosing printers and supplies."
+        content: "Cartridge recycling makes significant environmental difference. Each recycled cartridge saves roughly 2.5 pounds of materials from landfills. Over 900 million cartridges have been recovered since 1991, preventing millions of pounds of plastic waste. Using recycled cartridges reduces carbon footprint compared to virgin materials. Smart Tank printers further reduce environmental impact by eliminating cartridge waste entirely—refillable tanks mean less plastic consumed. Consider total environmental impact when choosing printers and supplies."
       }
     ],
     keyPoints: [
       "Store cartridges sealed at room temperature away from sunlight",
       "Use cartridges before expiration date for best quality",
-      "HP Planet Partners offers free cartridge recycling worldwide",
-      "Recycled materials are used in new HP cartridges",
+      "Planet Partners offers free cartridge recycling worldwide",
+      "Recycled materials are used in new cartridges",
       "Smart Tank printers eliminate cartridge waste entirely"
     ],
     recommendations: [
       {
         title: "Zero Cartridge Waste",
-        description: "HP Smart Tank 7602 - Refillable tanks eliminate cartridge disposal",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
+        description: "Smart Tank 7602 - Refillable tanks eliminate cartridge disposal",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
       },
       {
         title: "Recycled Content Cartridges",
-        description: "HP OfficeJet Pro 9125e - Uses cartridges with recycled materials",
-        product: "HP OfficeJet Pro 9125e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9125e - Uses cartridges with recycled materials",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "allinone-vs-printonly": {
     id: "allinone-vs-printonly",
-    title: "All-in-One vs Print-Only HP Inkjets",
+    title: "All-in-One vs Print-Only Inkjets",
     description: "Compare multifunction and single-function printers to determine which best fits your needs.",
     icon: Scale,
     color: "bg-fuchsia-500",
@@ -1437,7 +1337,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "allinone-benefits",
         title: "All-in-One Benefits",
-        content: "All-in-one printers offer significant advantages for most users. Integrated scanning eliminates the need for a separate scanner—scan documents, photos, and receipts directly. Copying without a computer is convenient for quick duplicates. Many include fax capabilities for business needs. Single device means one power outlet, one space footprint, and one setup process. Scanning features enable workflows like scan-to-email, scan-to-cloud, and scan-to-mobile through HP Smart app."
+        content: "All-in-one printers offer significant advantages for most users. Integrated scanning eliminates the need for a separate scanner—scan documents, photos, and receipts directly. Copying without a computer is convenient for quick duplicates. Many include fax capabilities for business needs. Single device means one power outlet, one space footprint, and one setup process. Scanning features enable workflows like scan-to-email, scan-to-cloud, and scan-to-mobile through the Smart app."
       },
       {
         id: "printonly-sense",
@@ -1465,26 +1365,26 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best All-in-One Value",
-        description: "HP DeskJet 4255e - Affordable multifunction for home use",
-        product: "HP DeskJet 4255e All-in-One Wireless Color Printer"
+        description: "DeskJet 4255e - Affordable multifunction for home use",
+        product: "DeskJet 4255e All-in-One Wireless Color Printer"
       },
       {
         title: "Premium All-in-One",
-        description: "HP OfficeJet Pro 9135e - Full-featured for home office",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9135e - Full-featured for home office",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Photo-Focused All-in-One",
-        description: "HP ENVY Inspire 7955e - Excellent scanning and photo printing",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Excellent scanning and photo printing",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
   },
 
   "upgrading-accessories": {
     id: "upgrading-accessories",
-    title: "Upgrading Your HP Inkjet: Trays & Accessories",
-    description: "Enhance your HP inkjet printer capabilities with compatible trays, accessories, and upgrades.",
+    title: "Upgrading Your Inkjet: Trays & Accessories",
+    description: "Enhance your inkjet printer capabilities with compatible trays, accessories, and upgrades.",
     icon: ArrowUpCircle,
     color: "bg-orange-500",
     readTime: "8 min read",
@@ -1492,22 +1392,22 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Your HP inkjet printer may offer more capability than you realize. Optional accessories and upgrades can expand paper capacity, add functionality, and extend your printer's useful life. This guide explores available options to enhance your printing experience without replacing your entire printer."
+        content: "Your inkjet printer may offer more capability than you realize. Optional accessories and upgrades can expand paper capacity, add functionality, and extend your printer's useful life. This guide explores available options to enhance your printing experience without replacing your entire printer."
       },
       {
         id: "paper-tray-options",
         title: "Paper Tray Options",
-        content: "Additional paper trays dramatically improve productivity. Second tray options allow loading different paper types—keep letterhead in one tray and plain paper in another. Higher-capacity trays reduce reload frequency for high-volume users. Some HP OfficeJet Pro models support trays holding 250-550 sheets. Specialty trays handle envelopes, photo paper, or card stock without switching main tray contents. Check your model's compatibility for available tray accessories."
+        content: "Additional paper trays dramatically improve productivity. Second tray options allow loading different paper types—keep letterhead in one tray and plain paper in another. Higher-capacity trays reduce reload frequency for high-volume users. Some OfficeJet Pro models support trays holding 250-550 sheets. Specialty trays handle envelopes, photo paper, or card stock without switching main tray contents. Check your model's compatibility for available tray accessories."
       },
       {
         id: "connectivity-upgrades",
         title: "Connectivity Upgrades",
-        content: "Expand connectivity options for your printing environment. USB print servers connect USB-only printers to networks. Wireless print servers add WiFi to older Ethernet-only models. For environments with multiple printers, network switches enable centralized print management. While most modern HP inkjets include built-in WiFi and Ethernet, older models can benefit from external connectivity accessories. Consider USB hubs for connecting multiple devices to printers with single USB ports."
+        content: "Expand connectivity options for your printing environment. USB print servers connect USB-only printers to networks. Wireless print servers add WiFi to older Ethernet-only models. For environments with multiple printers, network switches enable centralized print management. While most modern inkjets include built-in WiFi and Ethernet, older models can benefit from external connectivity accessories. Consider USB hubs for connecting multiple devices to printers with single USB ports."
       },
       {
         id: "compatible-accessories",
         title: "Compatible Accessories",
-        content: "Various accessories enhance printer functionality. Printer stands and cabinets provide storage and elevate printers to comfortable heights. Cable management systems organize power and USB cables. Surge protectors safeguard against power spikes—essential for expensive equipment. Dust covers protect printers during extended idle periods. Third-party replacement printheads may be available for some models when HP replacements are discontinued. Always verify compatibility before purchasing accessories."
+        content: "Various accessories enhance printer functionality. Printer stands and cabinets provide storage and elevate printers to comfortable heights. Cable management systems organize power and USB cables. Surge protectors safeguard against power spikes—essential for expensive equipment. Dust covers protect printers during extended idle periods. Third-party replacement printheads may be available for some models when manufacturer replacements are discontinued. Always verify compatibility before purchasing accessories."
       },
       {
         id: "extending-life",
@@ -1525,13 +1425,13 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Most Upgradeable",
-        description: "HP OfficeJet Pro 9135e - Multiple accessory options available",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9135e - Multiple accessory options available",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Large Paper Capacity",
-        description: "HP OfficeJet Pro 9720e - 500-sheet dual tray option",
-        product: "HP OfficeJet Pro 9720e Wide-format All-in-One Printer"
+        description: "OfficeJet Pro 9720e - 500-sheet dual tray option",
+        product: "OfficeJet Pro 9720e Wide-format All-in-One Printer"
       }
     ]
   },
@@ -1547,7 +1447,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Duplex printing—printing on both sides of paper—cuts paper consumption in half while creating professional-looking documents. Most modern HP inkjet printers include automatic duplex capability, though manual duplexing remains an option on basic models. This guide helps you leverage duplex printing effectively for maximum savings and polished output."
+        content: "Duplex printing—printing on both sides of paper—cuts paper consumption in half while creating professional-looking documents. Most modern inkjet printers include automatic duplex capability, though manual duplexing remains an option on basic models. This guide helps you leverage duplex printing effectively for maximum savings and polished output."
       },
       {
         id: "auto-vs-manual",
@@ -1557,7 +1457,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "setting-up-duplex",
         title: "Setting Up Duplex",
-        content: "Enable duplex in printer preferences for automatic use. Access print settings and select 'Print on Both Sides' or similar option. Choose long-edge or short-edge binding based on document orientation—long-edge for portrait documents bound like books, short-edge for landscape documents flipped like notepads. Set duplex as your default to maximize savings without remembering each print job. In HP Smart app, duplex settings persist across devices once configured."
+        content: "Enable duplex in printer preferences for automatic use. Access print settings and select 'Print on Both Sides' or similar option. Choose long-edge or short-edge binding based on document orientation—long-edge for portrait documents bound like books, short-edge for landscape documents flipped like notepads. Set duplex as your default to maximize savings without remembering each print job. In the Smart app, duplex settings persist across devices once configured."
       },
       {
         id: "paper-savings",
@@ -1580,18 +1480,18 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Fast Auto Duplex",
-        description: "HP OfficeJet Pro 9125e - Quick automatic two-sided printing",
-        product: "HP OfficeJet Pro 9125e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9125e - Quick automatic two-sided printing",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Reliable Duplex",
-        description: "HP ENVY Inspire 7955e - Consistent duplex quality",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        description: "ENVY Inspire 7955e - Consistent duplex quality",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
         title: "Budget Duplex",
-        description: "HP DeskJet 4255e - Affordable auto-duplex option",
-        product: "HP DeskJet 4255e All-in-One Wireless Color Printer"
+        description: "DeskJet 4255e - Affordable auto-duplex option",
+        product: "DeskJet 4255e All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -1599,7 +1499,7 @@ export const guidesContent: Record<string, GuideContent> = {
   "environmental-factors": {
     id: "environmental-factors",
     title: "Environmental Factors Affecting Inkjet Performance",
-    description: "Understand how temperature, humidity, and placement affect your HP inkjet printer's performance.",
+    description: "Understand how temperature, humidity, and placement affect your inkjet printer's performance.",
     icon: Leaf,
     color: "bg-cyan-500",
     readTime: "8 min read",
@@ -1607,12 +1507,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Your printer's environment significantly impacts performance, reliability, and print quality. Temperature extremes, humidity fluctuations, dust, and improper placement can cause paper jams, print defects, and premature component wear. Understanding these factors helps you create optimal conditions for consistent, high-quality printing from your HP inkjet."
+        content: "Your printer's environment significantly impacts performance, reliability, and print quality. Temperature extremes, humidity fluctuations, dust, and improper placement can cause paper jams, print defects, and premature component wear. Understanding these factors helps you create optimal conditions for consistent, high-quality printing from your inkjet."
       },
       {
         id: "temperature-effects",
         title: "Temperature Effects",
-        content: "Temperature affects ink viscosity and paper handling. HP recommends operating temperatures between 59-95°F (15-35°C). Cold environments thicken ink, potentially clogging printheads and causing uneven coverage. Heat thins ink, risking bleed-through and smearing. Extreme temperatures stress electronic components, reducing printer lifespan. Store spare cartridges within recommended ranges—frozen or overheated cartridges may fail immediately or produce poor quality. Allow printers brought from cold environments to acclimate before use."
+        content: "Temperature affects ink viscosity and paper handling. Operating temperatures should be between 59-95°F (15-35°C). Cold environments thicken ink, potentially clogging printheads and causing uneven coverage. Heat thins ink, risking bleed-through and smearing. Extreme temperatures stress electronic components, reducing printer lifespan. Store spare cartridges within recommended ranges—frozen or overheated cartridges may fail immediately or produce poor quality. Allow printers brought from cold environments to acclimate before use."
       },
       {
         id: "humidity-considerations",
@@ -1640,13 +1540,13 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Reliable in Varied Conditions",
-        description: "HP OfficeJet Pro 9135e - Robust performance across environments",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        description: "OfficeJet Pro 9135e - Robust performance across environments",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Sealed Ink System",
-        description: "HP Smart Tank 7602 - Closed tanks resist environmental factors",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
+        description: "Smart Tank 7602 - Closed tanks resist environmental factors",
+        product: "Smart Tank 7602 All-in-One Wireless Color Printer"
       }
     ]
   },
@@ -1662,314 +1562,222 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Print speed and quality represent fundamental trade-offs in inkjet printing. Faster printing typically means less ink and lower resolution, while highest quality demands more time and consumables. Understanding these trade-offs helps you select appropriate settings for each print job, balancing productivity against output requirements."
+        content: "Print speed and quality represent a fundamental trade-off in inkjet printing. Faster printing generally means lower quality, while highest quality requires more time. Understanding this relationship helps you optimize settings for each print job, balancing productivity against output requirements."
       },
       {
-        id: "ppm-explained",
-        title: "PPM Explained",
-        content: "Print speed is measured in pages per minute (PPM). Manufacturers report ISO-standardized speeds for consistent comparison, measured with specific test documents at default settings. Real-world speeds vary based on document complexity, quality settings, and color versus black-and-white printing. Color pages print slower than black. Graphics-heavy pages take longer than text. First-page-out time—the delay before printing begins—adds to perceived speed. Advertised maximum speeds represent best-case scenarios rarely achieved in daily use."
+        id: "how-speed-quality-relate",
+        title: "How Speed and Quality Relate",
+        content: "Inkjet printers create images by spraying tiny ink droplets onto paper. Higher quality requires more, smaller droplets precisely placed—this takes time. Draft mode uses fewer, larger droplets placed quickly with less precision. The printhead makes fewer passes over the paper in fast modes. High-quality modes may require the printhead to make multiple passes over each line, dramatically increasing print time but producing smooth gradients and sharp details."
       },
       {
-        id: "quality-settings",
-        title: "Quality Settings",
-        content: "Quality settings control resolution, ink coverage, and print passes. Draft or EconoMode uses less ink with fewer dots per inch, producing lighter but readable output. Normal or standard mode balances quality and speed for everyday documents. Best or photo quality maximizes resolution, ink saturation, and sometimes multiple passes for each line. Higher settings exponentially increase print time—best quality may be 3-5 times slower than draft. DPI specifications (like 4800 x 1200) indicate maximum resolution available at highest settings."
+        id: "quality-modes",
+        title: "Understanding Quality Modes",
+        content: "Most printers offer three to five quality levels. Draft or EconoMode produces fast output suitable for text documents and internal review. Normal or Standard balances speed and quality for everyday printing. Best or High Quality maximizes detail and color accuracy for final documents and photos. Some printers add specialized modes like Max DPI for photos requiring ultimate resolution. Each step up roughly doubles print time while improving output quality."
       },
       {
-        id: "tradeoffs",
-        title: "Speed-Quality Trade-offs",
-        content: "Every quality increase costs speed. Draft mode at 8 PPM might drop to 4 PPM at normal quality and 1-2 PPM at best quality for the same document. Photos at maximum quality may take several minutes per page. Color adds processing time versus grayscale. Borderless printing slows output as the printer carefully handles margins. Understanding these trade-offs helps set expectations: demanding highest quality for a 50-page document means a long wait. Match quality settings to actual requirements rather than defaulting to maximum."
+        id: "when-speed-matters",
+        title: "When Speed Matters",
+        content: "Prioritize speed for internal documents, drafts, emails, and anything temporary. Reference copies, working documents, and materials you'll edit benefit from fast output. High-volume printing—reports, handouts, meeting materials—often warrants speed over quality when content matters more than appearance. Multi-page documents print dramatically faster in draft mode, improving productivity for busy offices."
       },
       {
-        id: "optimizing-needs",
-        title: "Optimizing for Your Needs",
-        content: "Optimize settings based on document purpose. Internal drafts, reference materials, and web printouts suit draft mode—readable with minimal wait. Business correspondence, reports for others, and client materials warrant normal quality—professional appearance without excessive time. Photos, marketing materials, and archival prints justify best quality—visible quality differences merit the time investment. Create printer presets for common scenarios. Consider time-sensitivity: urgent documents may accept lower quality for faster output."
+        id: "when-quality-matters",
+        title: "When Quality Matters",
+        content: "Prioritize quality for final presentations, client materials, and anything representing your brand. Photos require best quality for accurate color and detail. Marketing materials, portfolios, and documents for external distribution deserve higher settings. Legal documents and contracts should look professional. When in doubt, print one page at higher quality before committing to large jobs. The time investment in quality pays dividends when presentation matters."
       }
     ],
     keyPoints: [
-      "PPM ratings represent ideal conditions, not typical use",
-      "Draft mode prints 2-5 times faster than best quality",
-      "Color printing is always slower than black-and-white",
-      "Higher quality settings use more ink and time",
-      "Match quality settings to document purpose for efficiency"
+      "Speed and quality trade off against each other",
+      "Draft mode prints 2-3x faster than best quality",
+      "Match quality setting to document purpose",
+      "Photos and presentations warrant highest quality",
+      "Internal documents benefit from faster draft printing"
     ],
     recommendations: [
       {
-        title: "Fastest Overall",
-        description: "HP OfficeJet Pro 9135e - Up to 25 PPM for quick output",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        title: "Best Balance",
+        description: "OfficeJet Pro 9125e - Fast high-quality printing",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
-        title: "Best Photo Quality",
-        description: "HP ENVY Inspire 7955e - Exceptional quality when time allows",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        title: "Speed Champion",
+        description: "OfficeJet Pro 9135e - 25 PPM for maximum productivity",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
-        title: "Balanced Performance",
-        description: "HP OfficeJet Pro 8135e - Good speed with quality output",
-        product: "HP OfficeJet Pro 8135e All-in-One Wireless Color Printer"
+        title: "Quality Focus",
+        description: "ENVY Inspire 7955e - Exceptional quality when needed",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
   },
 
-  "hp-instant-ink": {
-    id: "hp-instant-ink",
-    title: "HP Instant Ink Explained",
-    description: "Everything you need to know about HP's ink subscription service—how it works, costs, and whether it's right for you.",
-    icon: DollarSign,
-    color: "bg-violet-500",
-    readTime: "10 min read",
-    sections: [
-      {
-        id: "introduction",
-        title: "Introduction",
-        content: "HP Instant Ink is a subscription service that automatically delivers ink cartridges before you run out, potentially saving up to 50% on ink costs. Rather than buying cartridges when empty, you pay a monthly fee for a set number of pages. This guide explains how the service works, compares plan options, and helps you determine if subscription ink makes sense for your printing habits."
-      },
-      {
-        id: "how-it-works",
-        title: "How Instant Ink Works",
-        content: "Instant Ink monitors your printer's ink levels via internet connection. When cartridges run low, HP automatically ships replacements—often before you notice. You pay based on pages printed, not ink used, so color photos cost the same as black text pages. Special high-capacity cartridges are provided; these remain HP property and must be returned when empty or when leaving the service. Unused pages roll over monthly (up to limits), and you can change plans anytime as printing needs evolve."
-      },
-      {
-        id: "plan-options",
-        title: "Plan Options",
-        content: "HP offers several tiers to match printing volumes. Free tier includes 15 pages monthly—suitable for very light users. Light tier ($2.99/month) covers 50 pages. Moderate tier ($5.99/month) includes 100 pages. Frequent tier ($9.99/month) allows 300 pages. Business tiers extend to 700+ pages. Additional pages beyond plan limits cost $1 per 10-25 pages depending on tier. All plans include color and black pages equally, shipping, and recycling. Plans can be upgraded, downgraded, or cancelled online anytime."
-      },
-      {
-        id: "pros-cons",
-        title: "Pros and Cons",
-        content: "Advantages include predictable monthly costs, automatic delivery eliminating emergency store runs, environmental benefits from included recycling, and cost savings for moderate-to-heavy color printers. Disadvantages include requiring internet connectivity, commitment to HP cartridges (supplied cartridges are tracked and disabled if service ends), and potential waste if printing less than plan allows. Users printing mainly black text may find retail cartridges competitive. High-volume users might prefer Smart Tank refillable systems for lowest absolute costs."
-      },
-      {
-        id: "right-for-you",
-        title: "Is It Right for You",
-        content: "Instant Ink suits users printing 50+ pages monthly who value convenience and predictability. Color printers benefit most—color cartridges are expensive at retail, but Instant Ink treats color and black identically. Families printing photos and school projects often save significantly. Infrequent printers may waste money on unused page allowances. Calculate your monthly pages and compare: if 100-page plan costs $5.99 and you'd spend $15+ on equivalent retail cartridges, subscription wins. Try the free tier to evaluate the service risk-free."
-      }
-    ],
-    keyPoints: [
-      "Pay per page printed, not per cartridge used",
-      "Automatic delivery prevents running out of ink",
-      "Color and black pages cost the same under subscription",
-      "Unused pages roll over monthly up to plan limits",
-      "Service requires internet-connected printer"
-    ],
-    recommendations: [
-      {
-        title: "Instant Ink Ready",
-        description: "HP ENVY Inspire 7955e - Seamless Instant Ink integration",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "Business Instant Ink",
-        description: "HP OfficeJet Pro 9135e - High-volume subscription support",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "Alternative: No Subscription",
-        description: "HP Smart Tank 7602 - Refillable tanks, no subscription needed",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
-      }
-    ]
-  },
-
-  "iso-page-yield": {
-    id: "iso-page-yield",
-    title: "What ISO Page Yield Means",
-    description: "Understand ISO cartridge yield standards and how to use them for accurate cost comparisons.",
+  "wide-format-printing": {
+    id: "wide-format-printing",
+    title: "Wide-Format Inkjet Printing Guide",
+    description: "Explore large-format printing capabilities with inkjet printers supporting paper sizes beyond standard letter.",
     icon: FileText,
-    color: "bg-gray-500",
-    readTime: "7 min read",
-    sections: [
-      {
-        id: "introduction",
-        title: "Introduction",
-        content: "When comparing ink cartridges, you'll encounter ISO page yield numbers—standardized measurements indicating how many pages a cartridge prints. Understanding these specifications helps you make accurate cost comparisons between cartridges and calculate true printing costs. This guide explains ISO standards and how to apply them practically."
-      },
-      {
-        id: "iso-standards",
-        title: "ISO Standards Explained",
-        content: "ISO (International Organization for Standardization) developed standards 24711 and 24712 for inkjet cartridge yield testing. Tests use specific test pages with defined coverage patterns—approximately 5% coverage per color for color cartridges. Testing occurs under controlled conditions: specific temperature, humidity, and paper types. Multiple cartridges are tested to ensure statistical reliability. These standards enable fair comparison between brands and cartridge types by ensuring everyone measures the same way."
-      },
-      {
-        id: "reading-specs",
-        title: "Reading Cartridge Specs",
-        content: "Cartridge packaging displays ISO yield numbers—for example, '300 pages' or 'up to 400 pages ISO.' Black cartridge yields are tested separately from color. Tri-color cartridges show single yield applying to the combined unit. Individual color cartridges may show per-color yields. XL and standard cartridges of the same model show different yields proportional to ink volume. Compare cartridges using cost per page: divide cartridge price by ISO yield. A $30 cartridge yielding 500 pages costs $0.06 per page."
-      },
-      {
-        id: "realworld-vs-iso",
-        title: "Real-World vs ISO",
-        content: "ISO yields represent standardized conditions rarely matching actual use. Documents with more graphics, photos, or color use more ink, yielding fewer pages. Draft mode extends yields beyond ISO ratings. Photo printing dramatically reduces yield—full-page photos might yield only 50-100 prints from the same cartridge rated for 300 document pages. Your actual results depend on what you print. Use ISO yields for comparison between cartridges, but expect real-world results to vary based on your specific printing patterns."
-      },
-      {
-        id: "comparing-cartridges",
-        title: "Comparing Cartridges",
-        content: "Use ISO yields to make informed purchasing decisions. Calculate cost per page for each option: standard versus XL, genuine versus compatible. Higher-yield cartridges typically offer lower cost per page despite higher purchase price. Compare across printer models when shopping—some printers have inherently more efficient ink systems. Consider total system cost: printer price plus lifetime ink costs. For heavy color printing, Smart Tank printers offer dramatically lower per-page costs despite higher upfront investment. ISO data enables these calculations."
-      }
-    ],
-    keyPoints: [
-      "ISO standards ensure fair comparison between cartridges",
-      "Yields assume 5% page coverage—typical text documents",
-      "Real-world yields vary based on what you actually print",
-      "Calculate cost per page by dividing price by ISO yield",
-      "XL cartridges typically offer lower cost per page"
-    ],
-    recommendations: [
-      {
-        title: "Best Yield Efficiency",
-        description: "HP OfficeJet Pro 9135e - High-yield XL cartridges available",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "Predictable Yields",
-        description: "HP Smart Tank 7602 - Bottle yields clearly stated",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
-      }
-    ]
-  },
-
-  "standard-vs-xl-cartridges": {
-    id: "standard-vs-xl-cartridges",
-    title: "Standard vs XL Ink Cartridges",
-    description: "Compare standard and high-yield XL cartridges to determine which offers better value for your printing needs.",
-    icon: Coins,
-    color: "bg-yellow-500",
+    color: "bg-indigo-600",
     readTime: "8 min read",
     sections: [
       {
         id: "introduction",
         title: "Introduction",
-        content: "HP offers most ink cartridges in standard and XL (high-yield) versions. XL cartridges contain more ink and print more pages, but cost more upfront. Understanding the math behind these options helps you choose the most economical approach for your printing volume and habits."
+        content: "Wide-format printing expands creative and business possibilities beyond standard letter-size documents. Inkjet printers capable of handling tabloid (11x17 inch) and larger formats enable professional outputs like architectural drawings, marketing posters, and oversized presentations. This guide explores wide-format inkjet options and their applications."
       },
       {
-        id: "capacity-differences",
-        title: "Capacity Differences",
-        content: "XL cartridges typically contain 2-3 times more ink than standard versions. A standard black cartridge might yield 200 pages, while its XL counterpart yields 600 pages. Color cartridge ratios are similar. Some printer lines offer XXL or high-yield options with even greater capacity. The physical cartridge size is usually identical—the difference is ink volume. Both versions install identically and produce the same print quality; only the number of pages differs."
+        id: "format-sizes",
+        title: "Understanding Format Sizes",
+        content: "Standard format refers to letter (8.5x11 inch) and legal (8.5x14 inch) sizes common in everyday printing. Wide format typically starts at tabloid or ledger size (11x17 inch), also called ANSI B. Some desktop inkjets support tabloid, while dedicated wide-format printers handle larger sizes including ANSI C (17x22 inch) and architectural formats. Consider what sizes your projects actually require before investing in wide-format capability."
       },
       {
-        id: "cost-analysis",
-        title: "Cost Per Page Analysis",
-        content: "XL cartridges cost more but offer lower cost per page. Example: Standard black cartridge costs $20 for 200 pages = $0.10/page. XL version costs $35 for 600 pages = $0.058/page—42% savings per page. Similar math applies to color cartridges. Multi-pack bundles combining black and color XL cartridges often offer additional savings. Calculate your specific options: divide cartridge price by ISO page yield to find cost per page, then compare. XL almost always wins on per-page economics."
+        id: "desktop-wide-format",
+        title: "Desktop Wide-Format Options",
+        content: "The OfficeJet Pro 9720e represents capable desktop wide-format printing, handling up to 11x17 inch paper while maintaining all-in-one functionality. These printers fit in office environments while expanding size capabilities. Desktop wide-format models typically cost somewhat more than standard-format equivalents but far less than dedicated large-format plotters. They handle standard sizes equally well, making them versatile choices for varied printing needs."
       },
       {
-        id: "when-choose-xl",
-        title: "When to Choose XL",
-        content: "Choose XL cartridges if you print regularly—monthly volumes above 50-100 pages clearly favor XL economics. Less frequent replacement means fewer store trips or orders. XL makes sense for color printing where per-page costs are higher. Business users benefit from reduced supply management overhead. Choose standard cartridges only for very light printing where cartridges might expire before emptying, or when tight budgets prevent higher upfront costs despite worse long-term value."
+        id: "applications",
+        title: "Wide-Format Applications",
+        content: "Wide-format printing serves diverse needs. Architects and engineers print drawings and blueprints at readable scales. Marketing teams create posters, banners, and signage prototypes. Educators produce large teaching materials and visual aids. Photographers print stunning oversized photos. Financial professionals print spreadsheets at full size without scaling. Creative professionals proof large-format work before professional production. Consider how often you need these capabilities when evaluating wide-format investment."
       },
       {
-        id: "compatibility",
-        title: "Cartridge Compatibility",
-        content: "Standard and XL cartridges are interchangeable within the same printer model. You can use standard black with XL color or vice versa—mix based on your usage patterns. Not all printers offer XL options; check availability for your specific model. When upgrading printers, consider XL cartridge availability as a selection factor. HP Instant Ink subscribers receive special cartridges different from retail standard or XL—capacity varies based on subscription management rather than fixed volumes."
+        id: "considerations",
+        title: "Special Considerations",
+        content: "Wide-format printing involves additional considerations. Paper costs more and requires more storage space. Print times increase with larger formats. Ink consumption rises proportionally to coverage area. Not all paper types come in wide formats. Ensure your scanner or feeder accommodates large originals if copying or scanning wide-format documents. For occasional wide-format needs, print services may prove more cost-effective than dedicated equipment."
       }
     ],
     keyPoints: [
-      "XL cartridges contain 2-3 times more ink than standard",
-      "Cost per page is significantly lower with XL cartridges",
-      "Standard and XL cartridges are interchangeable per printer",
-      "Choose XL for regular printing above 50 pages monthly",
-      "Standard suits very light printers concerned about expiration"
+      "Wide format starts at 11x17 inch (tabloid/ledger)",
+      "Desktop wide-format printers handle standard sizes too",
+      "OfficeJet Pro 9720e offers accessible wide-format capability",
+      "Consider frequency of need before investing in wide-format",
+      "Paper and ink costs increase with larger formats"
     ],
     recommendations: [
       {
-        title: "Great XL Value",
-        description: "HP OfficeJet Pro 8135e - Excellent XL cartridge economics",
-        product: "HP OfficeJet Pro 8135e All-in-One Wireless Color Printer"
+        title: "Best Desktop Wide-Format",
+        description: "OfficeJet Pro 9720e - 11x17 printing with all-in-one features",
+        product: "OfficeJet Pro 9720e Wide-format All-in-One Printer"
       },
       {
-        title: "XXL Available",
-        description: "HP OfficeJet Pro 9135e - Extra high-yield options",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
-      },
-      {
-        title: "No Cartridges Needed",
-        description: "HP Smart Tank 7602 - Refillable tanks bypass cartridge choices",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
+        title: "Best Standard Format",
+        description: "OfficeJet Pro 9135e - Maximum capability in standard sizes",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       }
     ]
   },
 
-  "optimize-settings": {
-    id: "optimize-settings",
-    title: "Optimizing HP Inkjet Settings for Savings",
-    description: "Configure your HP inkjet printer settings to maximize savings without sacrificing quality when it matters.",
-    icon: Settings,
-    color: "bg-indigo-500",
+  "specialty-printing": {
+    id: "specialty-printing",
+    title: "Specialty Printing: Labels, Envelopes & More",
+    description: "Master printing on specialty media including labels, envelopes, cards, and transfers with your inkjet.",
+    icon: Package,
+    color: "bg-pink-600",
     readTime: "9 min read",
     sections: [
       {
         id: "introduction",
         title: "Introduction",
-        content: "Your HP inkjet printer's default settings may not be optimized for efficiency. Simple adjustments to driver settings, HP Smart app preferences, and print defaults can significantly reduce ink and paper consumption without impacting quality for important documents. This guide walks through key settings to configure for maximum savings."
+        content: "Your inkjet printer handles far more than standard paper. From address labels to iron-on transfers, specialty media expands creative and practical printing possibilities. Understanding how to print on different materials ensures professional results while avoiding jams and printer damage. This guide covers common specialty printing applications and techniques."
       },
       {
-        id: "driver-settings",
-        title: "Driver Settings Guide",
-        content: "Access printer preferences through Windows Settings > Printers or macOS System Preferences > Printers. Key settings to optimize: Set default quality to 'Draft' or 'Normal' instead of 'Best.' Enable 'Grayscale' or 'Black Only' as default for text documents. Turn on 'Two-sided printing' for automatic paper savings. Adjust margins to maximize printable area. These defaults apply to all print jobs unless overridden—maximizing savings with minimal daily effort."
+        id: "labels-stickers",
+        title: "Labels and Stickers",
+        content: "Inkjet-compatible label sheets work beautifully for address labels, product labels, organizing stickers, and more. Use sheets specifically designed for inkjet printers—laser labels may melt or jam. Load label sheets with the label side facing up (or as indicated for your printer model). Print on full sheets rather than partially used ones, as exposed adhesive can cause jams. Allow prints to dry briefly before handling to prevent smearing. Waterproof labels require specialty inkjet-compatible materials."
       },
       {
-        id: "hp-smart-optimization",
-        title: "HP Smart App Optimization",
-        content: "HP Smart app provides additional optimization controls. Enable 'Quiet Mode' for reduced noise during off-hours printing—this slightly slows printing but suits evening use. Configure 'Smart Printing' suggestions that recommend settings based on document type. Set up 'Print Anywhere' for remote printing with appropriate quality defaults. Review ink level notifications to anticipate replacement needs. The app's dashboard shows printing statistics helping identify additional optimization opportunities based on your actual usage patterns."
+        id: "envelopes",
+        title: "Envelope Printing",
+        content: "Most inkjet printers accommodate envelopes through manual feed or specialty trays. Use envelopes compatible with inkjet printing—avoid envelopes with plastic windows or heavy embossing. Load envelopes with the flap facing the correct direction for your printer model (check the manual). Configure paper size settings to match your envelope dimensions. For bulk envelope printing, printers with envelope feeders improve efficiency. Allow printed envelopes to dry completely before stacking to prevent ink transfer."
       },
       {
-        id: "economode",
-        title: "EconoMode Explained",
-        content: "EconoMode (also called Draft mode) reduces ink consumption by 30-50%. The printer uses fewer dots per inch, producing lighter but readable output. Text remains clear; graphics appear less vibrant. EconoMode is ideal for internal documents, drafts, email printouts, and web pages. Avoid EconoMode for client materials, photos, or documents others will see. Some printers offer intermediate settings between EconoMode and Normal, providing balance between economy and appearance."
+        id: "card-stock",
+        title: "Card Stock and Greeting Cards",
+        content: "Card stock enables printing invitations, business cards, greeting cards, and postcards. Check your printer's maximum supported paper weight—typically 200-300 GSM for consumer inkjets. Use card stock rated for inkjet to ensure proper ink absorption. Pre-scored card blanks simplify greeting card creation. For photo cards, use glossy card stock designed for inkjet photo printing. Feed card stock from the rear tray or manual feed slot to avoid jamming. Some printers offer borderless printing for edge-to-edge card designs."
       },
       {
-        id: "custom-profiles",
-        title: "Creating Custom Profiles",
-        content: "Create printer presets for common scenarios to streamline optimized printing. Set up 'Draft Documents' profile: grayscale, draft quality, duplex. Create 'Color Presentation' profile: normal quality, color, single-sided. Configure 'Photo Print' profile: best quality, photo paper, borderless. Save these as presets in printer preferences or applications. In HP Smart, favorite settings persist across devices. Quick profile selection makes optimization effortless—the right settings are one click away without navigating menus each time."
+        id: "transfers",
+        title: "Iron-On Transfers",
+        content: "Iron-on transfer paper lets you print designs onto fabric. Use transfer paper specific to your fabric type—light fabrics require different transfers than dark fabrics. Print designs in mirror image (reversed) for most transfer types. Follow heat application instructions precisely—temperature and timing affect transfer quality and durability. Iron-on transfers work best on cotton and cotton blends. Wash transferred items inside-out in cold water to maximize longevity. Test on scrap fabric before committing to final projects."
       }
     ],
     keyPoints: [
-      "Default settings to draft mode saves ink on routine printing",
-      "Automatic duplex cuts paper consumption by 50%",
-      "EconoMode reduces ink usage by 30-50% for drafts",
-      "Grayscale default preserves expensive color ink",
-      "Custom presets make optimal settings easily accessible"
+      "Use media specifically designed for inkjet printing",
+      "Check printer specifications for maximum paper weight",
+      "Allow specialty prints to dry before handling",
+      "Load specialty media correctly to prevent jams",
+      "Configure printer settings for each media type"
     ],
     recommendations: [
       {
-        title: "Most Configurable",
-        description: "HP OfficeJet Pro 9135e - Extensive optimization options",
-        product: "HP OfficeJet Pro 9135e All-in-One Wireless Color Printer"
+        title: "Best Specialty Media Handling",
+        description: "OfficeJet Pro 9135e - Versatile paper handling for varied media",
+        product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
-        title: "Great App Integration",
-        description: "HP ENVY Inspire 7955e - HP Smart optimization features",
-        product: "HP ENVY Inspire 7955e All-in-One Wireless Color Printer"
+        title: "Creative Projects",
+        description: "ENVY Inspire 7955e - Excellent for photo cards and transfers",
+        product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
+      }
+    ]
+  },
+
+  "portable-printing": {
+    id: "portable-printing",
+    title: "Portable and Mobile Printer Guide",
+    description: "Explore portable printing solutions for on-the-go professionals and travelers.",
+    icon: Smartphone,
+    color: "bg-violet-600",
+    readTime: "8 min read",
+    sections: [
+      {
+        id: "introduction",
+        title: "Introduction",
+        content: "Mobile professionals need printing capabilities beyond the office. Portable inkjet printers bring document and photo printing to client sites, trade shows, remote locations, and anywhere work takes you. This guide explores mobile printing options, from compact portable printers to printing from your smartphone while traveling."
       },
       {
-        title: "Inherently Economical",
-        description: "HP Smart Tank 7602 - Low cost regardless of settings",
-        product: "HP Smart Tank 7602 All-in-One Wireless Color Printer"
+        id: "portable-printers",
+        title: "Dedicated Portable Printers",
+        content: "The OfficeJet 250 Mobile represents the pinnacle of portable printing—a full all-in-one printer with print, scan, and copy capabilities that fits in a briefcase. Battery-powered operation enables true mobile use without power outlets. Wireless connectivity allows printing from laptops, tablets, and smartphones. The compact footprint accommodates hotel rooms, client offices, and vehicle operation. While slower than desktop counterparts, portable printers produce professional-quality output anywhere."
+      },
+      {
+        id: "phone-printing",
+        title: "Printing from Phones While Traveling",
+        content: "Even without a portable printer, you can print documents while traveling. The Smart app enables printing to your home or office printer remotely—documents await your return. Many hotels offer business centers with guest printing. Office supply stores provide print services from files on your phone. Cloud printing services accept email submissions and deliver prints to pickup locations. Plan ahead by identifying printing options at your destination."
+      },
+      {
+        id: "use-cases",
+        title: "Mobile Printing Use Cases",
+        content: "Mobile printing serves diverse professional needs. Real estate agents print contracts and disclosures at client locations. Sales professionals produce quotes and proposals during meetings. Healthcare workers print forms and documentation in the field. Trade show exhibitors create handouts and customized materials on-site. Photographers deliver instant prints at events. Inspectors and surveyors document findings immediately. Consider how often you need on-location printing when evaluating portable printer investment."
+      },
+      {
+        id: "choosing-portable",
+        title: "Choosing a Portable Solution",
+        content: "Select portable printing based on your mobility requirements. Occasional travelers may find remote printing or print services sufficient. Frequent mobile professionals benefit from dedicated portable printers. Consider battery life—some portables print 500+ pages per charge. Evaluate size and weight against your carrying preferences. All-in-one portables add scanning for receipts and documents. Wireless compatibility with your devices is essential. Ink cartridge availability on the road matters for extended trips."
+      }
+    ],
+    keyPoints: [
+      "OfficeJet 250 Mobile provides full printing on the go",
+      "Battery power enables printing without outlets",
+      "Remote printing sends jobs to your home/office printer",
+      "Print services offer alternatives while traveling",
+      "Consider frequency of need before investing in portable"
+    ],
+    recommendations: [
+      {
+        title: "Best Portable Printer",
+        description: "OfficeJet 250 Mobile - True mobile all-in-one",
+        product: "OfficeJet 250 Mobile All-in-One Printer"
+      },
+      {
+        title: "Best for Remote Printing",
+        description: "OfficeJet Pro 9125e - Excellent cloud and remote features",
+        product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       }
     ]
   }
 };
 
-const idMapping: Record<string, string> = {
-  "choosing-hp-inkjet-printer": "choosing-right-printer",
-  "best-inkjet-home-use": "best-home-printers",
-  "best-inkjet-business": "best-business-printers",
-  "inkjet-technology-explained": "how-inkjet-works",
-  "printhead-maintenance-cleaning": "printhead-maintenance",
-  "ink-page-yield-cost": "ink-page-yield",
-  "calculate-cost-per-page": "cost-per-page",
-  "secure-private-printing": "secure-printing",
-  "firmware-updates-guide": "firmware-updates",
-  "choosing-paper-inkjet": "choosing-paper",
-  "extend-ink-cartridge-life": "extend-ink-life",
-  "store-recycle-ink-cartridges": "ink-storage-recycling",
-  "all-in-one-vs-print-only": "allinone-vs-printonly",
-  "upgrading-accessories-add-ons": "upgrading-accessories",
-  "duplex-printing-efficiency": "duplex-printing",
-  "environmental-factors-performance": "environmental-factors",
-  "hp-instant-ink-explained": "hp-instant-ink",
-  "iso-page-yield-explained": "iso-page-yield",
-  "optimize-inkjet-settings": "optimize-settings",
-};
-
+// Helper function to get guide content by ID
 export function getGuideContent(guideId: string): GuideContent | undefined {
-  const mappedId = idMapping[guideId] || guideId;
-  return guidesContent[mappedId];
+  return guidesContent[guideId];
 }

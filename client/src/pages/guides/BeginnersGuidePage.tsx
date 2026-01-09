@@ -169,7 +169,7 @@ export default function BeginnersGuidePage() {
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4">Ready to Find Your Perfect Printer?</h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Browse our selection of HP inkjet printers or contact our experts for personalized recommendations.
+                  Browse our selection of inkjet printers or contact our experts for personalized recommendations.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button size="lg" asChild data-testid="button-browse-printers">

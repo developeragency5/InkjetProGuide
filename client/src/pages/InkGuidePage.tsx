@@ -408,23 +408,23 @@ export default function InkGuidePage() {
 
         <Separator className="my-12" />
 
-        {/* HP vs Compatible Guide */}
+        {/* Original vs Compatible Guide */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Original HP vs. Compatible Cartridges</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Original vs. Compatible Cartridges</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="border-primary">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-primary" />
-                  Original HP Cartridges
+                  Original Cartridges
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Guaranteed compatibility with your HP printer</span>
+                    <span>Guaranteed compatibility with your printer</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -440,7 +440,7 @@ export default function InkGuidePage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Optimized ink formulation for HP printheads</span>
+                    <span>Optimized ink formulation for manufacturer printheads</span>
                   </div>
                 </div>
                 <Badge className="w-full justify-center py-2">Recommended for Critical Documents</Badge>
@@ -613,9 +613,9 @@ export default function InkGuidePage() {
           <CardContent className="py-8">
             <div className="text-center max-w-3xl mx-auto">
               <Recycle className="w-12 h-12 text-green-600 mx-auto mb-4" />
-              <h2 className="text-2xl font-bold mb-3">HP Recycling Program</h2>
+              <h2 className="text-2xl font-bold mb-3">Recycling Program</h2>
               <p className="text-muted-foreground mb-6">
-                HP offers free cartridge recycling through their Planet Partners program. Help protect the environment
+                Many manufacturers offer free cartridge recycling through recycling programs. Help protect the environment
                 by returning your used cartridges for responsible recycling.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

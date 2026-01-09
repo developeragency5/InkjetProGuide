@@ -104,7 +104,7 @@ export default function ProductGuidePage() {
               </div>
               <div>
                 <div className="text-sm text-muted-foreground">Technology:</div>
-                <div className="font-medium">HP Thermal Inkjet</div>
+                <div className="font-medium">Thermal Inkjet</div>
               </div>
               <div>
                 <div className="text-sm text-muted-foreground">Print Languages:</div>
@@ -133,7 +133,7 @@ export default function ProductGuidePage() {
               </div>
               <div>
                 <div className="text-sm text-muted-foreground">Media Types:</div>
-                <div className="font-medium text-sm">Plain, HP Matte 90g, HP Soft Gloss 120g, labels, envelopes, transparencies, postcards, cardstock</div>
+                <div className="font-medium text-sm">Plain, Matte 90g, Soft Gloss 120g, labels, envelopes, transparencies, postcards, cardstock</div>
               </div>
             </CardContent>
           </Card>
@@ -150,7 +150,7 @@ export default function ProductGuidePage() {
               </div>
               <div>
                 <div className="text-sm text-muted-foreground">Mobile Printing:</div>
-                <div className="font-medium text-sm">HP Smart app, Apple AirPrint, Mopria Print Service, Wi-Fi Direct</div>
+                <div className="font-medium text-sm">Smart app, Apple AirPrint, Mopria Print Service, Wi-Fi Direct</div>
               </div>
               <div>
                 <div className="text-sm text-muted-foreground">Protocols:</div>

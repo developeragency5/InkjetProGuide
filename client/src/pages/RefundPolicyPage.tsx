@@ -33,7 +33,7 @@ export default function RefundPolicyPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-summary-1">
-                <strong className="text-foreground">30-Day Return Policy:</strong> Return any HP inkjet printer within 30 days of delivery. Full refund on unopened items; opened items showing signs of use may incur up to 15% restocking fee.
+                <strong className="text-foreground">30-Day Return Policy:</strong> Return any inkjet printer within 30 days of delivery. Full refund on unopened items; opened items showing signs of use may incur up to 15% restocking fee.
               </p>
               <p data-testid="text-summary-2">
                 <strong className="text-foreground">FREE Prepaid Return Shipping:</strong> We provide a FREE prepaid UPS/FedEx return label for all eligible returns. You pay nothing to ship your return.
@@ -57,7 +57,7 @@ export default function RefundPolicyPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-return-intro">
-                We want you to be completely satisfied with your HP inkjet printer purchase. If you're not happy for any reason, you can return your printer within <strong className="text-foreground">30 days from the date of delivery</strong>.
+                We want you to be completely satisfied with your inkjet printer purchase. If you're not happy for any reason, you can return your printer within <strong className="text-foreground">30 days from the date of delivery</strong>.
               </p>
               
               <div className="mt-4 p-4 bg-primary/10 rounded-lg border border-primary/20">
@@ -229,7 +229,7 @@ export default function RefundPolicyPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-exchange-intro">
-                If you'd like to exchange your HP printer for a different model, we're happy to help! The fastest way to get your new printer is to:
+                If you'd like to exchange your printer for a different model, we're happy to help! The fastest way to get your new printer is to:
               </p>
               <ol className="space-y-2 ml-6 list-decimal">
                 <li data-testid="text-exchange-step-1">Return your current printer following our standard return process</li>
@@ -271,7 +271,7 @@ export default function RefundPolicyPage() {
               </div>
 
               <p className="mt-4" data-testid="text-damaged-warranty">
-                HP printers typically include manufacturer warranty coverage. For warranty service after the 30-day return window, please refer to the HP warranty documentation included with your product or contact HP support directly. We're happy to assist you with the process.
+                Printers typically include manufacturer warranty coverage. For warranty service after the 30-day return window, please refer to the warranty documentation included with your product or contact the manufacturer's support directly. We're happy to assist you with the process.
               </p>
             </CardContent>
           </Card>

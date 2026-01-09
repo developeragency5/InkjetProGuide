@@ -143,7 +143,6 @@ export default function ProductsPage() {
   const clearAllFilters = () => {
     setPriceRange([0, 1000]);
     setSelectedConnectivity([]);
-    setSelectedTechnology([]);
     setSelectedColorType("");
   };
 

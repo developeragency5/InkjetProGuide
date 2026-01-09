@@ -12,7 +12,7 @@ const categories = [
   {
     id: "setup",
     name: "Setup & Installation",
-    description: "Get your HP printer up and running",
+    description: "Get your printer up and running",
     icon: Book,
     color: "text-blue-600",
     bgColor: "bg-blue-50 dark:bg-blue-950",
@@ -153,7 +153,7 @@ export default function HelpCenterPage() {
               Help Center
             </h1>
             <p className="text-xl opacity-95 mb-10" data-testid="text-help-subtitle">
-              Find answers, setup guides, and troubleshooting solutions for your HP inkjet printer
+              Find answers, setup guides, and troubleshooting solutions for your inkjet printer
             </p>
 
             {/* Search Bar */}
@@ -179,17 +179,17 @@ export default function HelpCenterPage() {
             <Card className="bg-muted/30 border-muted">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold mb-4" data-testid="heading-help-intro">
-                  Get Expert Help with Your HP Inkjet Printer
+                  Get Expert Help with Your Inkjet Printer
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p data-testid="text-help-intro-1">
-                    Welcome to the InkjetProGuide Help Center, your comprehensive support resource for HP inkjet printers. We understand that getting the most out of your printer sometimes requires guidance, whether you are setting up a new device, troubleshooting an issue, or learning about advanced features.
+                    Welcome to the InkjetProGuide Help Center, your comprehensive support resource for inkjet printers. We understand that getting the most out of your printer sometimes requires guidance, whether you are setting up a new device, troubleshooting an issue, or learning about advanced features.
                   </p>
                   <p data-testid="text-help-intro-2">
-                    Our help articles cover a wide range of topics organized into easy-to-navigate categories. Find step-by-step setup guides for wireless configuration, driver installation, and mobile printing. Access troubleshooting solutions for common issues including paper jams, print quality problems, and connectivity errors. Learn maintenance best practices to keep your HP printer running smoothly for years.
+                    Our help articles cover a wide range of topics organized into easy-to-navigate categories. Find step-by-step setup guides for wireless configuration, driver installation, and mobile printing. Access troubleshooting solutions for common issues including paper jams, print quality problems, and connectivity errors. Learn maintenance best practices to keep your printer running smoothly for years.
                   </p>
                   <p data-testid="text-help-intro-3">
-                    We also provide detailed information about ordering, shipping, returns, and payment options. Each article is written in clear, straightforward language with practical solutions you can implement immediately. Our content is regularly reviewed and updated to ensure accuracy with the latest HP printer models and software.
+                    We also provide detailed information about ordering, shipping, returns, and payment options. Each article is written in clear, straightforward language with practical solutions you can implement immediately. Our content is regularly reviewed and updated to ensure accuracy with the latest printer models and software.
                   </p>
                   <p data-testid="text-help-intro-4">
                     If you cannot find the answer to your question, our customer support team based in Fort Worth, Texas is ready to assist you during business hours. Use the search bar above to find specific topics, browse by category, or contact us directly for personalized help.
@@ -353,7 +353,7 @@ export default function HelpCenterPage() {
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Can't find what you're looking for? Our USA-based team is available during office hours 
-                to help you with any questions about your HP inkjet printer.
+                to help you with any questions about your inkjet printer.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
@@ -413,7 +413,7 @@ export default function HelpCenterPage() {
                 <Book className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Buying Guides</h3>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Expert guides to help you choose the perfect HP printer for your needs
+                  Expert guides to help you choose the perfect printer for your needs
                 </p>
                 <div className="text-primary text-sm font-medium flex items-center gap-1">
                   Browse Guides
