@@ -28,7 +28,7 @@ export function Layout({ children }: LayoutProps) {
   const { data: cartData } = useQuery<{ items: any[] }>({
     queryKey: ["/api/cart"],
   });
-  const cartCount = cartData?.items?.length || 0;
+  const cartCount = cartData?.items?.reduce((sum: number, item: any) => sum + (item.quantity || 0), 0) || 0;
 
   // Fetch wishlist count
   const { data: wishlistData } = useQuery<{ items: any[] }>({
