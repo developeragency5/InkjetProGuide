@@ -198,7 +198,7 @@ export function Layout({ children }: LayoutProps) {
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                   <Input
                     type="search"
-                    placeholder="Search for HP printers..."
+                    placeholder="Search for printers..."
                     value={searchQuery}
                     onChange={(e) => {
                       setSearchQuery(e.target.value);
@@ -305,7 +305,7 @@ export function Layout({ children }: LayoutProps) {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
                   type="search"
-                  placeholder="Search for HP printers..."
+                  placeholder="Search for printers..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-9 pr-4 text-sm"
@@ -417,7 +417,7 @@ export function Layout({ children }: LayoutProps) {
                 <h3 className="font-bold text-xl">InkjetProGuide</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                Your trusted source for HP inkjet printers across the USA. We provide expert guidance, 
+                Your trusted source for inkjet printers across the USA. We provide expert guidance, 
                 comprehensive buying guides, and dedicated support to help you find the perfect printer 
                 for your needs.
               </p>
@@ -596,7 +596,7 @@ export function Layout({ children }: LayoutProps) {
             <div className="max-w-2xl mx-auto text-center">
               <h3 className="font-semibold text-lg mb-2">Stay Updated</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Get exclusive deals, expert printing tips, and the latest HP printer releases delivered to your inbox.
+                Get exclusive deals, expert printing tips, and the latest printer releases delivered to your inbox.
               </p>
               <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
                 <Input 

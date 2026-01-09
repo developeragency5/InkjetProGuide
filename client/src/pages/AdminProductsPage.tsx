@@ -575,7 +575,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
             data-testid="input-product-meta-keywords"
             value={formData.metaKeywords}
             onChange={(e) => setFormData({ ...formData, metaKeywords: e.target.value })}
-            placeholder="hp printer, inkjet, wireless, color"
+            placeholder="printer, inkjet, wireless, color"
           />
           <p className="text-xs text-muted-foreground">
             Comma-separated keywords for search engines

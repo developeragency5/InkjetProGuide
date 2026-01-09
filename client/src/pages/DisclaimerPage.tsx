@@ -111,7 +111,7 @@ export default function DisclaimerPage() {
                 <Shield className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p data-testid="text-trademark-1">
-                    HP, the HP logo, and all HP printer model names mentioned on this Website are registered trademarks of HP Inc. InkjetProGuide is an independent retailer and is not affiliated with, endorsed by, or sponsored by HP Inc.
+                    Product names, logos, and brands are property of their respective owners. InkjetProGuide is an independent retailer and is not affiliated with, endorsed by, or sponsored by any printer manufacturer.
                   </p>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function DisclaimerPage() {
                 All other trademarks, service marks, and trade names referenced on this Website are the property of their respective owners. The use of these marks does not imply any affiliation with or endorsement by their owners.
               </p>
               <p data-testid="text-trademark-3">
-                InkjetProGuide is an independent online retailer specializing in HP inkjet printers. Product warranties are provided according to the manufacturer's terms and conditions. Please refer to HP Inc.'s warranty documentation included with each product for specific coverage details.
+                InkjetProGuide is an independent online retailer specializing in inkjet printers. Product warranties are provided according to the manufacturer's terms and conditions. Please refer to the manufacturer's warranty documentation included with each product for specific coverage details.
               </p>
             </CardContent>
           </Card>
@@ -186,7 +186,7 @@ export default function DisclaimerPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-warranty-1">
-                All HP printers sold through InkjetProGuide are covered by the manufacturer's warranty provided by HP Inc. InkjetProGuide does not provide any additional warranty beyond the manufacturer's warranty unless explicitly stated.
+                All printers sold through InkjetProGuide are covered by the manufacturer's warranty. InkjetProGuide does not provide any additional warranty beyond the manufacturer's warranty unless explicitly stated.
               </p>
               <p data-testid="text-warranty-2">
                 THE WEBSITE AND ITS CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
