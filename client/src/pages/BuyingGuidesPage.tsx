@@ -409,7 +409,7 @@ export default function BuyingGuidesPage() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium">Expert Reviewed</span>
+                <span className="text-sm font-medium">Professionally Reviewed</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-primary" />
@@ -437,8 +437,8 @@ export default function BuyingGuidesPage() {
               <Button size="lg" asChild data-testid="button-browse-printers">
                 <Link href="/products">Browse All Printers</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild data-testid="button-contact-expert">
-                <Link href="/contact">Get Expert Help</Link>
+              <Button size="lg" variant="outline" asChild data-testid="button-contact-us">
+                <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
@@ -460,11 +460,11 @@ export default function BuyingGuidesPage() {
         <Card className="mb-12 bg-muted/30 border-muted">
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-guides-intro">
-              Expert Guidance for Choosing the Right Inkjet Printer
+              Comprehensive Guidance for Choosing the Right Inkjet Printer
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p data-testid="text-guides-intro-1">
-                Choosing the right printer can be overwhelming with so many models, features, and price points available. Our buying guides are designed to simplify your decision by providing clear, expert recommendations tailored to specific use cases and budgets. Each guide is written by professionals with hands-on experience in the printing industry.
+                Choosing the right printer can be overwhelming with so many models, features, and price points available. Our buying guides are designed to simplify your decision by providing clear, comprehensive recommendations tailored to specific use cases and budgets. Each guide is written by professionals with hands-on experience in the printing industry.
               </p>
               <p data-testid="text-guides-intro-2">
                 Whether you are a student looking for an affordable printer for assignments, a home office worker needing reliable multifunction capabilities, a photography enthusiast seeking professional-quality prints, or a small business owner requiring high-volume output, we have a guide that addresses your specific needs.
@@ -473,7 +473,7 @@ export default function BuyingGuidesPage() {
                 Our guides cover essential topics including print quality and resolution, speed and paper handling, connectivity options like WiFi and mobile printing, ink costs and page yields, and total cost of ownership. We provide honest assessments based on real-world testing, helping you understand which features matter most for your situation and which you can skip to save money.
               </p>
               <p data-testid="text-guides-intro-4">
-                Browse our collection of {guides.length} comprehensive buying guides below. Each guide includes detailed recommendations for specific printer models that excel in their category. If you need personalized advice, our support team is available to help you find the perfect printer for your needs.
+                Browse our collection of {guides.length} comprehensive buying guides below. Each guide includes detailed recommendations for specific printer models that excel in their category. For order-related questions, please visit our contact page.
               </p>
             </div>
           </CardContent>
@@ -482,7 +482,7 @@ export default function BuyingGuidesPage() {
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-4">Explore Our {guides.length} Buying Guides</h2>
           <p className="text-muted-foreground text-lg">
-            Whether you're a first-time buyer or looking to upgrade, our comprehensive guides will help you make an informed decision.
+            Whether you're a first-time buyer or looking to upgrade, our comprehensive guides provide the information you need to make an informed decision.
           </p>
         </div>
 
@@ -557,7 +557,7 @@ export default function BuyingGuidesPage() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Best Value</h3>
             <p className="text-muted-foreground">
-              We help you find the best printer for your budget without compromising on quality.
+              Our guides cover finding the best printer for your budget without compromising on quality.
             </p>
           </div>
         </div>

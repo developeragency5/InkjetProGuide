@@ -492,7 +492,7 @@ export default function InkGuidePage() {
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-3">Ink Saving Tips</h2>
             <p className="text-muted-foreground text-lg">
-              Reduce your printing costs with these expert tips
+              Reduce your printing costs with these practical tips
             </p>
           </div>
 

@@ -662,7 +662,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "benefits",
         title: "Benefits of Subscribing",
-        content: "Never run out of ink—automatic delivery ensures you always have supplies. Predictable monthly costs simplify budgeting. Color printing costs the same as black-and-white per page. Rollover pages prevent waste from lighter months. XL cartridges included at no extra cost last longer and reduce delivery frequency. Free recycling makes disposal easy and environmentally responsible. Enrolled printers may receive extended warranty benefits and priority support access."
+        content: "Never run out of ink—automatic delivery ensures you always have supplies. Predictable monthly costs simplify budgeting. Color printing costs the same as black-and-white per page. Rollover pages prevent waste from lighter months. XL cartridges included at no extra cost last longer and reduce delivery frequency. Free recycling makes disposal easy and environmentally responsible. Enrolled printers may receive extended warranty benefits."
       },
       {
         id: "considerations",
@@ -707,7 +707,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "Even the most reliable printers occasionally encounter issues. Before calling support or considering replacement, many common problems have simple solutions you can perform at home. This troubleshooting guide covers the most frequent inkjet printer issues with step-by-step solutions to get you printing again quickly."
+        content: "Even the most reliable printers occasionally encounter issues. Before seeking repairs or considering replacement, many common problems have simple solutions you can perform at home. This troubleshooting guide covers the most frequent inkjet printer issues with step-by-step solutions to get you printing again quickly."
       },
       {
         id: "paper-jams",
@@ -732,7 +732,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "software-issues",
         title: "Software Issues",
-        content: "Driver and software problems cause various symptoms. Update your printer drivers from the support website or through the Smart app. Uninstall and reinstall printer software if problems persist. Check that print jobs aren't stuck in the queue—clear pending jobs before trying again. Restart your computer after driver updates. For Mac users, remove and re-add the printer in System Preferences. Ensure your operating system is current with latest updates."
+        content: "Driver and software problems cause various symptoms. Update your printer drivers from the manufacturer's website or through the Smart app. Uninstall and reinstall printer software if problems persist. Check that print jobs aren't stuck in the queue—clear pending jobs before trying again. Restart your computer after driver updates. For Mac users, remove and re-add the printer in System Preferences. Ensure your operating system is current with latest updates."
       }
     ],
     keyPoints: [
@@ -827,7 +827,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "standard-warranty",
         title: "Standard Warranty Coverage",
-        content: "Most inkjet printers include a one-year limited warranty covering manufacturing defects in materials and workmanship. Coverage begins from the purchase date and includes repair or replacement at the manufacturer's discretion. The warranty covers the printer hardware and included printhead. Phone and online technical support are typically included. Keep your purchase receipt as proof of warranty start date—registration helps verify coverage and provides product update notifications."
+        content: "Most inkjet printers include a one-year limited warranty covering manufacturing defects in materials and workmanship. Coverage begins from the purchase date and includes repair or replacement at the manufacturer's discretion. The warranty covers the printer hardware and included printhead. Keep your purchase receipt as proof of warranty start date—registration helps verify coverage and provides product update notifications."
       },
       {
         id: "whats-covered",
@@ -855,12 +855,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Reliable with Warranty",
-        description: "Professional office inkjet - Comprehensive support and coverage",
+        description: "Professional office inkjet - Comprehensive warranty coverage",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Dependable Investment",
-        description: "Smart Tank 7602 - Long-lasting with excellent support",
+        description: "Smart Tank 7602 - Long-lasting and dependable",
         product: "Smart Tank 7602 All-in-One Wireless Color Printer"
       }
     ]
@@ -940,7 +940,7 @@ export const guidesContent: Record<string, GuideContent> = {
         content: "Printers face multiple security threats. Network-connected printers can be entry points for hackers accessing your broader network. Print jobs can be intercepted in transit or retrieved from printer memory. Documents left in output trays expose information to unauthorized viewers. Malicious firmware could turn printers into surveillance devices or spam relays. Old printers may store print job data on internal drives, risking exposure when disposed."
       },
       {
-        id: "hp-features",
+        id: "security-features",
         title: "Security Features",
         content: "Modern printers include advanced security with Wolf Security. Features include secure boot that validates firmware integrity, runtime intrusion detection monitoring for anomalies, and automatic self-healing that recovers from attacks. Encrypted print jobs protect data in transit. Secure PIN printing holds documents until the user enters a code at the printer. JetAdvantage Security Manager provides enterprise-grade fleet protection and compliance reporting."
       },
@@ -997,7 +997,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "how-to-update",
         title: "How to Update",
-        content: "Multiple update methods are available. The Smart app automatically checks for and installs updates—the easiest approach for most users. The printer's control panel often includes an update option under settings or maintenance menus. The support website provides manual firmware downloads for any model. For automatic updates, enable the feature in printer settings; updates download and install during idle periods. Manual updates require downloading the correct file and following the installation instructions."
+        content: "Multiple update methods are available. The Smart app automatically checks for and installs updates—the easiest approach for most users. The printer's control panel often includes an update option under settings or maintenance menus. The manufacturer's website provides manual firmware downloads for any model. For automatic updates, enable the feature in printer settings; updates download and install during idle periods. Manual updates require downloading the correct file and following the installation instructions."
       },
       {
         id: "risks",
@@ -1045,7 +1045,7 @@ export const guidesContent: Record<string, GuideContent> = {
         content: "Modern printing extends far beyond your desktop computer. With mobile and cloud printing capabilities, you can print documents and photos from virtually any device, anywhere in the world. This guide explores the various methods for wireless printing from smartphones, tablets, and cloud services, helping you maximize the convenience of your inkjet printer."
       },
       {
-        id: "hp-smart-app",
+        id: "smart-app",
         title: "Smart App",
         content: "The Smart app is your central hub for mobile printing. Available for iOS, Android, Windows, and macOS, it enables printing, scanning, copying, and printer management from any device. The app automatically detects compatible printers on your network, making setup effortless. You can print photos directly from your phone's gallery, documents from cloud storage, and even scan documents using your phone's camera when away from your printer."
       },

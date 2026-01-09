@@ -238,7 +238,7 @@ export default function AccessibilityPage() {
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-feedback">Accessibility Feedback</h2>
             <p className="text-muted-foreground mb-6" data-testid="text-feedback">
-              We welcome your feedback on the accessibility of InkjetProGuide. If you encounter accessibility barriers, have suggestions for improvement, or need assistance accessing any content on our website, please contact us. We take all feedback seriously and will respond within 5 business days.
+              We welcome your feedback on the accessibility of InkjetProGuide. If you encounter accessibility barriers, have suggestions for improvement, or need help accessing any content on our website, please contact us. We take all feedback seriously and will respond within 5 business days.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild data-testid="button-email-accessibility">

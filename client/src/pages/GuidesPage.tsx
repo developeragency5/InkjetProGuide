@@ -73,7 +73,7 @@ export default function GuidesPage() {
               Inkjet Printer Guides
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Comprehensive guides and tutorials to help you get the most out of your inkjet printer. 
+              Comprehensive guides and tutorials covering everything about inkjet printers. 
               From initial setup to maintenance tips, our guide library has the resources you need.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -108,7 +108,7 @@ export default function GuidesPage() {
                 Our guides are written by printing professionals with years of hands-on experience with our products. 
                 We break down complex technical processes into simple, easy-to-follow steps that anyone can understand. 
                 From the moment you unbox your new printer to troubleshooting issues years down the road, our resources 
-                are designed to save you time, reduce frustration, and help you achieve professional-quality results.
+                are designed to save you time, reduce frustration, and guide you toward professional-quality results.
               </p>
               <p>
                 Each guide includes detailed instructions, helpful tips, and common pitfalls to avoid. We regularly 
@@ -146,7 +146,7 @@ export default function GuidesPage() {
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-purple-500/10 flex items-center justify-center">
                   <Users className="w-6 h-6 text-purple-500" />
                 </div>
-                <h3 className="font-semibold mb-2">Expert Written</h3>
+                <h3 className="font-semibold mb-2">Professionally Written</h3>
                 <p className="text-sm text-muted-foreground">Created by professionals with years of printing experience</p>
               </CardContent>
             </Card>
@@ -276,7 +276,7 @@ export default function GuidesPage() {
         <div className="text-center">
           <Card className="bg-primary/5 border-primary/20">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-4">Need More Help?</h2>
+              <h2 className="text-2xl font-bold mb-4">Looking for More?</h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                 Can't find what you're looking for in our guides? Check our FAQ for common questions
                 or contact us for order-related inquiries.

@@ -384,11 +384,11 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
             setSlugManuallyEdited(true);
             setFormData({ ...formData, slug: e.target.value });
           }}
-          placeholder="hp-deskjet-3755"
+          placeholder="deskjet-3755"
           required
         />
         <p className="text-xs text-muted-foreground">
-          SEO-friendly URL slug (lowercase, hyphens only). Example: hp-deskjet-3755
+          SEO-friendly URL slug (lowercase, hyphens only). Example: deskjet-3755
         </p>
       </div>
 

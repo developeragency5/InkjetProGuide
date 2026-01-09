@@ -237,7 +237,7 @@ export default function RefundPolicyPage() {
                 <li data-testid="text-exchange-step-3">Once we receive your return, we'll process your refund as usual</li>
               </ol>
               <p className="mt-4" data-testid="text-exchange-note">
-                <strong className="text-foreground">Note:</strong> For direct exchanges, please contact our support team at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-exchange">inkjetproguide@outlook.com</a> and we'll arrange a personalized exchange process for you.
+                <strong className="text-foreground">Note:</strong> For direct exchanges, please contact us at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-exchange">inkjetproguide@outlook.com</a> and we'll arrange a personalized exchange process for you.
               </p>
             </CardContent>
           </Card>

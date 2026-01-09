@@ -18,7 +18,7 @@ import type { HelpArticle, Faq } from "@shared/schema";
 const RESOURCE_CATEGORIES = [
   {
     title: "Buying Guides",
-    description: "Expert recommendations to choose the perfect printer",
+    description: "Comprehensive recommendations to choose the perfect printer",
     icon: BookOpen,
     link: "/guides",
     color: "text-blue-500",
@@ -162,7 +162,7 @@ export default function ResourceCenterPage() {
               Everything You Need to Know About Inkjet Printers
             </h1>
             <p className="text-xl text-primary-foreground/90 mb-8">
-              Your complete resource hub for guides, tutorials, troubleshooting, and expert tips
+              Your complete resource hub for guides, tutorials, troubleshooting, and comprehensive tips
             </p>
 
             {/* Search Bar */}
@@ -172,7 +172,7 @@ export default function ResourceCenterPage() {
               </div>
               <Input
                 type="search"
-                placeholder="What do you need help with?"
+                placeholder="Search for guides and resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-12 pr-28 h-14 text-lg bg-background text-foreground"
@@ -204,13 +204,13 @@ export default function ResourceCenterPage() {
                   Welcome to the InkjetProGuide Resource Center, your comprehensive destination for everything related to inkjet printers. Whether you are setting up a new printer, troubleshooting an issue, or looking to maximize your printing efficiency, our resource library has the information you need to get the most out of your printer.
                 </p>
                 <p data-testid="text-resource-intro-2">
-                  Our resource center includes detailed buying guides written by printing professionals to help you choose the right printer for your specific needs. You will find step-by-step setup tutorials covering wireless connectivity, driver installation, and mobile printing configuration. Our troubleshooting section addresses common issues like paper jams, print quality problems, and connectivity errors with clear, actionable solutions.
+                  Our resource center includes detailed buying guides written by printing professionals covering the right printer selection for specific needs. You will find step-by-step setup tutorials covering wireless connectivity, driver installation, and mobile printing configuration. Our troubleshooting section addresses common issues like paper jams, print quality problems, and connectivity errors with clear, actionable solutions.
                 </p>
                 <p data-testid="text-resource-intro-3">
                   We also provide comprehensive information about ink cartridges, including compatibility guides, cost-per-page calculations, and tips for extending cartridge life. Our FAQ section answers the most common questions about ordering, shipping, warranties, and product features. All resources are regularly updated to reflect the latest printer models and technologies.
                 </p>
                 <p data-testid="text-resource-intro-4">
-                  If you cannot find the information you need, our USA-based customer support team is available during business hours to provide personalized assistance via email or phone. Browse our resources below or use the search bar above to find specific topics.
+                  If you cannot find the information you need, you can contact us for order-related inquiries during business hours via email or phone. Browse our resources below or use the search bar above to find specific topics.
                 </p>
               </div>
             </CardContent>
@@ -386,9 +386,9 @@ export default function ResourceCenterPage() {
         <Card className="border-2 border-primary">
           <CardContent className="py-8">
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold mb-4">Need Personalized Help?</h2>
+              <h2 className="text-2xl font-bold mb-4">Have Order Questions?</h2>
               <p className="text-muted-foreground mb-6 text-lg">
-                Our team is ready to assist you with any questions or concerns
+                Contact us for order-related inquiries
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">

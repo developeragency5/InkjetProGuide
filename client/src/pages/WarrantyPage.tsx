@@ -211,7 +211,7 @@ export default function WarrantyPage() {
                 <div className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <p className="text-sm" data-testid="text-our-role-2">
-                    <strong className="text-foreground">30-Day Return Policy:</strong> Remember, if your printer develops issues within 30 days of delivery, our standard return policy may be more convenient than processing a manufacturer warranty claim. Contact us at inkjetproguide@outlook.com for assistance.
+                    <strong className="text-foreground">30-Day Return Policy:</strong> Remember, if your printer develops issues within 30 days of delivery, our standard return policy may be more convenient than processing a manufacturer warranty claim. Contact us at inkjetproguide@outlook.com for more information.
                   </p>
                 </div>
               </div>

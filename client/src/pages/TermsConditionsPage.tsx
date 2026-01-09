@@ -183,7 +183,7 @@ export default function TermsConditionsPage() {
                       <div className="p-4 bg-muted/30 rounded-lg" data-testid="def-site">
                         <h3 className="font-semibold text-foreground mb-2">"Site" or "Website"</h3>
                         <p>
-                          Refers to the InkjetProGuide website, accessible at inkjetproguide.com, including all web pages, subdomains, content, features, services, and functionality provided through this digital platform. The Site encompasses all aspects of our online presence, including but not limited to our product catalog, shopping cart functionality, checkout process, account management features, customer support portals, blog content, educational resources, and any mobile applications or alternative platforms we may develop. The Site is owned and operated by InkjetProGuide and is intended for use by customers and visitors within the United States.
+                          Refers to the InkjetProGuide website, accessible at inkjetproguide.com, including all web pages, subdomains, content, features, services, and functionality provided through this digital platform. The Site encompasses all aspects of our online presence, including but not limited to our product catalog, shopping cart functionality, checkout process, account management features, order inquiry portals, blog content, educational resources, and any mobile applications or alternative platforms we may develop. The Site is owned and operated by InkjetProGuide and is intended for use by customers and visitors within the United States.
                         </p>
                       </div>
                       <div className="p-4 bg-muted/30 rounded-lg" data-testid="def-products">
@@ -258,7 +258,7 @@ export default function TermsConditionsPage() {
                         You are solely responsible for maintaining the confidentiality of your account login credentials, including your username and password. You agree to accept responsibility for all activities that occur under your account, whether or not you authorized such activities. You should take all necessary steps to ensure that your password is kept confidential and secure, and you should notify us immediately if you have any reason to believe that your password has become known to anyone else or if the password is being or is likely to be used in an unauthorized manner.
                       </p>
                       <p>
-                        We recommend using strong, unique passwords that include a combination of uppercase and lowercase letters, numbers, and special characters. You should not use the same password for your InkjetProGuide account that you use for other online services. We will never ask you for your password via email or phone. If you receive such a request, do not respond and contact our customer support immediately. You agree not to share your account with others or allow others to access your account, as you will be held responsible for any actions taken using your credentials.
+                        We recommend using strong, unique passwords that include a combination of uppercase and lowercase letters, numbers, and special characters. You should not use the same password for your InkjetProGuide account that you use for other online services. We will never ask you for your password via email or phone. If you receive such a request, do not respond and contact us immediately. You agree not to share your account with others or allow others to access your account, as you will be held responsible for any actions taken using your credentials.
                       </p>
                     </div>
                   </div>
@@ -387,7 +387,7 @@ export default function TermsConditionsPage() {
                         Delivery estimates provided at checkout and in shipping confirmation emails are estimates only and are not guaranteed. Actual delivery times may vary based on carrier performance, weather conditions, natural disasters, customs delays for certain areas, local delivery conditions, and other factors beyond our control. We make every effort to ship orders promptly and accurately, but we cannot guarantee specific delivery dates or times.
                       </p>
                       <p>
-                        Standard processing time for most orders is one to two business days before shipment. During peak seasons, promotional periods, or high-volume events, processing times may be extended. We will notify you of any significant delays in processing your order. If your order has not arrived within a reasonable time after the estimated delivery date, please contact our customer service team for assistance in tracking your shipment. We are not liable for any damages, losses, or expenses resulting from delayed delivery, including but not limited to lost business opportunities, project delays, or consequential damages.
+                        Standard processing time for most orders is one to two business days before shipment. During peak seasons, promotional periods, or high-volume events, processing times may be extended. We will notify you of any significant delays in processing your order. If your order has not arrived within a reasonable time after the estimated delivery date, please contact us for order inquiries about tracking your shipment. We are not liable for any damages, losses, or expenses resulting from delayed delivery, including but not limited to lost business opportunities, project delays, or consequential damages.
                       </p>
                     </div>
                     <div data-testid="text-shipping-restrictions">
@@ -872,7 +872,7 @@ export default function TermsConditionsPage() {
                         <p>United States</p>
                       </address>
                       <p className="mt-4 text-sm">
-                        Please include your order number (if applicable) and a detailed description of your inquiry in all correspondence to ensure prompt and accurate assistance.
+                        Please include your order number (if applicable) and a detailed description of your inquiry in all correspondence to ensure a prompt and accurate response.
                       </p>
                     </div>
 

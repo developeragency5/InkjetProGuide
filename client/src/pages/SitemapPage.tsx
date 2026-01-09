@@ -91,7 +91,7 @@ export default function SitemapPage() {
               This comprehensive sitemap provides quick access to every section of our website. Whether you are 
               looking for inkjet printers, buying guides, technical resources, or company information, 
               you can navigate directly to any page from here. Our site is organized into logical categories 
-              to help you find products, resources, and support quickly and efficiently.
+              to help you find products, resources, and information quickly and efficiently.
             </p>
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function SitemapPage() {
                       Contact Us
                     </span>
                   </Link>
-                  {" "}for assistance.
+                  {" "}for additional information.
                 </p>
               </div>
             </div>

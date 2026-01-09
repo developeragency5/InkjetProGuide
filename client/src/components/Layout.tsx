@@ -421,9 +421,8 @@ export function Layout({ children }: LayoutProps) {
                 <h3 className="font-bold text-xl">InkjetProGuide</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                Your trusted source for inkjet printers across the USA. We provide expert guidance, 
-                comprehensive buying guides, and dedicated support to help you find the perfect printer 
-                for your needs.
+                Your trusted source for inkjet printers across the USA. We provide comprehensive 
+                buying guides and resources to help you find the perfect printer for your needs.
               </p>
               <div className="space-y-2 text-sm">
                 <div className="flex items-start gap-2 text-muted-foreground">
@@ -614,7 +613,7 @@ export function Layout({ children }: LayoutProps) {
             <div className="max-w-2xl mx-auto text-center">
               <h3 className="font-semibold text-lg mb-2">Stay Updated</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Get exclusive deals, expert printing tips, and the latest printer releases delivered to your inbox.
+                Get exclusive deals, helpful printing tips, and the latest printer releases delivered to your inbox.
               </p>
               <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
                 <Input 
@@ -719,9 +718,9 @@ export function Layout({ children }: LayoutProps) {
           {/* Disclaimer Notice */}
           <div className="border-t border-b py-6 mb-8 text-center">
             <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto" data-testid="text-footer-disclaimer">
-              <strong className="text-foreground">Affiliate Disclosure:</strong> InkjetProGuide may earn a commission on purchases made through links on this site at no additional cost to you. This helps support our educational content and product recommendations.
+              <strong className="text-foreground">Affiliate Disclosure:</strong> InkjetProGuide may earn a commission on purchases made through links on this site at no additional cost to you. This helps fund our educational content and product recommendations.
             </p>
-            <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-2" data-testid="text-footer-hp-disclaimer">
+            <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-2" data-testid="text-footer-trademark-disclaimer">
               <strong className="text-foreground">Trademark Notice:</strong> Product names, logos, and brands are property of their respective owners. InkjetProGuide is an independent retailer and is <strong>not affiliated with, endorsed by, or sponsored by any printer manufacturer.</strong> Product warranties are provided by the manufacturer according to their terms and conditions.
             </p>
             <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-2" data-testid="text-footer-price-disclaimer">

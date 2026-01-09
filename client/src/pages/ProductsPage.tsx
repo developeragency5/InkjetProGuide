@@ -201,7 +201,7 @@ export default function ProductsPage() {
                   Inkjet printers have been the trusted choice for home users, students, and small businesses for decades. 
                   Whether you need to print vibrant photos, professional documents, or everyday schoolwork, inkjet 
                   technology delivers exceptional quality at an affordable price. At InkjetProGuide, we specialize exclusively 
-                  in inkjet printers, ensuring you get expert guidance and a curated selection shipped directly to your door 
+                  in inkjet printers, offering a curated selection shipped directly to your door 
                   anywhere in the United States.
                 </p>
 
@@ -211,7 +211,7 @@ export default function ProductsPage() {
                     <ul className="space-y-1 text-sm">
                       <li>Industry-leading print quality with Thermal Inkjet technology</li>
                       <li>Easy wireless setup and mobile printing capabilities</li>
-                      <li>Reliable performance backed by manufacturer warranty support</li>
+                      <li>Reliable performance backed by manufacturer warranty coverage</li>
                       <li>Energy-efficient designs that save on electricity costs</li>
                       <li>Wide range of models for every budget and need</li>
                     </ul>
@@ -230,8 +230,7 @@ export default function ProductsPage() {
 
                 <p className="mb-4">
                   Printers typically include manufacturer warranty coverage - refer to manufacturer documentation for specific terms. 
-                  Our team is available Monday through Friday, 9 AM to 6 PM ET, to help you 
-                  find the perfect printer for your needs. We offer free shipping on orders over $299 and hassle-free 
+                  Use our buying guides to find the perfect printer for your needs. We offer free shipping on orders over $299 and hassle-free 
                   returns within 30 days of purchase.
                 </p>
 

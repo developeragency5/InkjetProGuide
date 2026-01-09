@@ -208,7 +208,7 @@ export default function PrivacyPolicyPage() {
                         Commercial Information
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-commercial">
-                        We maintain records of your commercial activities on our website, including your complete purchase history, products or services you have considered purchasing, products you have viewed or added to your shopping cart, wishlist contents, and any items you have reviewed or rated. This commercial information includes details such as product names, quantities purchased, prices paid, dates of transactions, order statuses, and return or exchange history. We also track your browsing patterns on our product pages, which products you compare, and how you navigate through our catalog. This information helps us personalize your shopping experience, provide relevant product recommendations, understand customer preferences, improve our inventory management, and ensure we stock the products our customers want. Your purchase history also enables us to provide customer support for past orders and honor warranty claims.
+                        We maintain records of your commercial activities on our website, including your complete purchase history, products or services you have considered purchasing, products you have viewed or added to your shopping cart, wishlist contents, and any items you have reviewed or rated. This commercial information includes details such as product names, quantities purchased, prices paid, dates of transactions, order statuses, and return or exchange history. We also track your browsing patterns on our product pages, which products you compare, and how you navigate through our catalog. This information helps us personalize your shopping experience, provide relevant product recommendations, understand customer preferences, improve our inventory management, and ensure we stock the products our customers want. Your purchase history also enables us to assist with past orders and honor warranty claims.
                       </p>
                     </div>
 
@@ -314,7 +314,7 @@ export default function PrivacyPolicyPage() {
                         Order Fulfillment & Customer Service
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-use-orders">
-                        We use your personal information to process and fulfill your orders, including verifying your identity and payment, arranging shipping and delivery, sending order confirmations and shipping notifications, and handling returns, exchanges, and refunds. Your contact information enables us to communicate about order status, delivery issues, or product-related matters. We use your purchase history to provide informed customer support, answer questions about past orders, and assist with warranty claims or product issues. Our customer service team accesses your account information to resolve inquiries efficiently and provide personalized assistance tailored to your specific situation and order history.
+                        We use your personal information to process and fulfill your orders, including verifying your identity and payment, arranging shipping and delivery, sending order confirmations and shipping notifications, and handling returns, exchanges, and refunds. Your contact information enables us to communicate about order status, delivery issues, or product-related matters. We use your purchase history to answer questions about past orders and assist with warranty claims or product issues. Our team accesses your account information to resolve inquiries efficiently and provide personalized responses tailored to your specific situation and order history.
                       </p>
                     </div>
 
@@ -324,7 +324,7 @@ export default function PrivacyPolicyPage() {
                         Account Management
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-use-account">
-                        Your personal information is essential for creating and managing your customer account. We use your credentials to authenticate your identity when you log in, protect your account from unauthorized access, and maintain the security of your personal information. Your account stores your preferences, addresses, payment methods (securely tokenized), order history, wishlist, and other personalized settings. We use this information to provide a seamless, personalized shopping experience across sessions and devices. Account management also includes sending you important notifications about changes to your account, security alerts, and password reset assistance.
+                        Your personal information is essential for creating and managing your customer account. We use your credentials to authenticate your identity when you log in, protect your account from unauthorized access, and maintain the security of your personal information. Your account stores your preferences, addresses, payment methods (securely tokenized), order history, wishlist, and other personalized settings. We use this information to provide a seamless, personalized shopping experience across sessions and devices. Account management also includes sending you important notifications about changes to your account, security alerts, and password reset information.
                       </p>
                     </div>
 
@@ -465,7 +465,7 @@ export default function PrivacyPolicyPage() {
                         </div>
                       </div>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-retention-orders">
-                        We retain complete order records, including purchase details, transaction history, shipping information, and related communications, for seven (7) years from the date of transaction. This retention period is required to comply with tax laws, accounting standards, and legal requirements for financial record-keeping. Order records help us provide customer support for warranty claims, process returns or exchanges, and respond to legal inquiries. After seven years, order records are securely deleted or fully anonymized for aggregate statistical purposes.
+                        We retain complete order records, including purchase details, transaction history, shipping information, and related communications, for seven (7) years from the date of transaction. This retention period is required to comply with tax laws, accounting standards, and legal requirements for financial record-keeping. Order records help us assist with warranty claims, process returns or exchanges, and respond to legal inquiries. After seven years, order records are securely deleted or fully anonymized for aggregate statistical purposes.
                       </p>
                     </div>
 

@@ -51,7 +51,7 @@ export default function DisclaimerPage() {
                 </div>
               </div>
               <p data-testid="text-affiliate-2">
-                Our affiliate relationships do not influence our product recommendations. We recommend products based on our research, expertise, and genuine belief that they provide value to our customers. We are committed to providing honest, unbiased information to help you make informed purchasing decisions.
+                Our affiliate relationships do not influence our product recommendations. We recommend products based on our research and genuine belief that they provide value to our customers. We are committed to providing honest, unbiased information to help you make informed purchasing decisions.
               </p>
               <p data-testid="text-affiliate-3">
                 Affiliate commissions help support the creation of our free educational content, comprehensive buying guides, and ongoing website maintenance. We appreciate your support through these links.
