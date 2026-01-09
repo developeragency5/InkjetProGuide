@@ -127,7 +127,7 @@ export default function FaqPage() {
               Frequently Asked Questions
             </h1>
             <p className="text-lg text-primary-foreground/90 mb-8">
-              Find answers to common questions about our inkjet printers, shipping, and support
+              Find answers to common questions about our inkjet printers and shipping
             </p>
 
             {/* Search Bar */}
@@ -362,27 +362,25 @@ export default function FaqPage() {
           </Card>
         )}
 
-        {/* Still Need Help CTA */}
+        {/* Resource Center CTA */}
         <Card className="mt-12 bg-primary/5 border-primary/20">
           <CardContent className="py-8">
             <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold mb-4">Still need help?</h2>
+              <h2 className="text-2xl font-bold mb-4">Need more information?</h2>
               <p className="text-muted-foreground mb-6">
-                Our team is here to assist you with any questions or concerns
+                Explore our Resource Center for detailed guides, tutorials, and helpful articles
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="default" data-testid="button-chat-support">
-                  <MessageSquare className="w-4 h-4 mr-2" />
-                  Chat with us
+                <Button variant="default" asChild data-testid="button-view-guides">
+                  <a href="/guides">
+                    <MessageSquare className="w-4 h-4 mr-2" />
+                    View Guides
+                  </a>
                 </Button>
-                <Button variant="outline" data-testid="button-email-us">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Email Us
-                </Button>
-                <Button variant="outline" asChild data-testid="button-phone-support">
-                  <a href="tel:+13254008874">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call: 1-325-400-8874
+                <Button variant="outline" asChild data-testid="button-contact-us">
+                  <a href="/contact">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Contact Us
                   </a>
                 </Button>
               </div>

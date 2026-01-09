@@ -51,9 +51,9 @@ export default function AboutPage() {
       description: "Competitive pricing with exclusive deals and promotions on printers."
     },
     {
-      icon: Headphones,
-      title: "Customer Support",
-      description: "USA-based support team available during office hours to help with setup, troubleshooting, and maintenance."
+      icon: Package,
+      title: "Order Support",
+      description: "Questions about orders, shipping, and returns? Our team is available during office hours to assist."
     },
     {
       icon: Package,
@@ -62,8 +62,8 @@ export default function AboutPage() {
     },
     {
       icon: Zap,
-      title: "Setup Assistance",
-      description: "Free setup guides and step-by-step instructions for all printer models."
+      title: "Setup Guides",
+      description: "Access free setup guides and step-by-step instructions for all printer models on our website."
     },
   ];
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-subtitle">
               Your source for inkjet printers in the USA. We simplify printer shopping 
-              with expert guidance, curated selection, and exceptional customer service.
+              with expert guidance, curated selection, and helpful resources.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/products">
@@ -144,7 +144,7 @@ export default function AboutPage() {
                       and small businesses across the United States. Our website offers a curated selection of 
                       printers, detailed product guides, buying recommendations, and educational resources 
                       to help you make informed purchasing decisions. We handle product sourcing, order fulfillment, 
-                      shipping, and customer support all under one roof.
+                      and shipping all under one roof.
                     </p>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export default function AboutPage() {
               </p>
               <p data-testid="text-story-3">
                 Today, we're proud to be one of the leading online destinations for inkjet printers, offering 
-                not just products, but comprehensive guides, educational resources, and ongoing support to ensure 
+                not just products, but comprehensive guides, educational resources, and helpful resources to ensure 
                 you get the most value from your purchase.
               </p>
             </div>
@@ -230,7 +230,7 @@ export default function AboutPage() {
                 </p>
                 <p data-testid="text-mission-2">
                   We're committed to transparency in pricing, honest product recommendations, and delivering 
-                  exceptional customer service at every touchpoint. Whether you're a student printing assignments, 
+                  helpful resources at every step. Whether you're a student printing assignments, 
                   a photographer creating stunning prints, or a business owner managing high-volume printing, 
                   we're here to guide you to the right solution.
                 </p>
@@ -300,7 +300,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-0">Comprehensive Product Guides</h4>
                     <p className="text-muted-foreground">
-                      Detailed setup instructions, maintenance tips, troubleshooting help, and model comparisons 
+                      Detailed setup instructions, maintenance tips, product comparisons, and model comparisons 
                       for every inkjet printer we sell.
                     </p>
                   </div>
@@ -330,7 +330,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-3">Educational Resources</h4>
                     <p className="text-muted-foreground">
-                      Access our Resource Center with ink guides, maintenance tutorials, printing tips, 
+                      Access our Resource Center with ink guides, printer care guides, printing tips, 
                       and frequently asked questions.
                     </p>
                   </div>
@@ -350,7 +350,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-5">Complete Satisfaction Guarantee</h4>
                     <p className="text-muted-foreground">
-                      Easy returns within 30 days and lifetime support for all your printing needs.
+                      Easy returns within 30 days and helpful resources for all your printing questions.
                     </p>
                   </div>
                 </div>
@@ -384,12 +384,10 @@ export default function AboutPage() {
                   Commitment to Service
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Our USA-based customer service team is trained extensively on our products and dedicated 
-                  to providing fast, friendly, and knowledgeable support whenever you need it.
+                  We're committed to making your shopping experience smooth and hassle-free. Our team is available to help with order questions, shipping inquiries, and returns.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  From pre-purchase questions to post-sale support, troubleshooting, and maintenance advice, 
-                  we're here to ensure your printing experience is smooth and successful.
+                  For printer setup and usage, explore our comprehensive Resource Center with detailed guides, tutorials, and FAQs designed to help you get the most from your purchase.
                 </p>
               </CardContent>
             </Card>

@@ -373,7 +373,7 @@ export default function ProductDetailPage() {
 
         {/* Tabs Section */}
         <Tabs defaultValue="overview" className="mb-16">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="overview" data-testid="tab-overview">
               <Printer className="w-4 h-4 mr-2" />
               Overview
@@ -385,14 +385,6 @@ export default function ProductDetailPage() {
             <TabsTrigger value="compatibility" data-testid="tab-compatibility">
               <Wifi className="w-4 h-4 mr-2" />
               Compatibility
-            </TabsTrigger>
-            <TabsTrigger value="setup" data-testid="tab-setup">
-              <CheckCircle className="w-4 h-4 mr-2" />
-              Setup Guide
-            </TabsTrigger>
-            <TabsTrigger value="troubleshooting" data-testid="tab-troubleshooting">
-              <AlertCircle className="w-4 h-4 mr-2" />
-              Troubleshooting
             </TabsTrigger>
           </TabsList>
 
@@ -440,20 +432,6 @@ export default function ProductDetailPage() {
                     <span className="text-muted-foreground">Setup poster and quick start guide</span>
                   </li>
                 </ul>
-
-                <Separator className="my-6" />
-
-                <div className="bg-primary/5 p-6 rounded-lg">
-                  <div className="flex items-start gap-3 mb-3">
-                    <Shield className="w-6 h-6 text-primary flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-2">Warranty Information</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Printers typically include manufacturer warranty coverage. For specific warranty terms, refer to the documentation included with your product. For warranty support, contact Support at 1-800-474-6836 (available 24/7) or visit support.hp.com
-                      </p>
-                    </div>
-                  </div>
-                </div>
 
                 <Separator className="my-6" />
 
@@ -1005,246 +983,7 @@ export default function ProductDetailPage() {
             </div>
           </TabsContent>
 
-          {/* Setup Guide Tab - continuing from existing... */}
-          <TabsContent value="setup" className="mt-6">
-            <div className="grid gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Quick Setup Instructions</CardTitle>
-                  <CardDescription>Get your printer up and running in minutes</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <div className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                        1
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Unbox and Remove Packing Materials</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Remove all tape, protective films, and packing materials from the printer. Remove the orange protective caps from the ink cartridges.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                        2
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Install Ink Cartridges</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Open the ink cartridge access door. Insert the color cartridge into the left slot and the black cartridge into the right slot until they click into place. Close the door.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                        3
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Load Paper</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Pull out the paper tray, slide the paper width guides to their outermost positions. Load up to 60 sheets of Letter or A4 paper, then adjust the guides until they touch the paper edges.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                        4
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Connect to Power and Turn On</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Connect the power cable to the printer and plug it into a power outlet. Press the power button to turn on the printer. Wait for initialization to complete (about 2-3 minutes).
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                        5
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Connect to Wi-Fi</h4>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          Download the Smart App on your smartphone or tablet. Open the app and tap "Add Printer." Follow the on-screen instructions to connect your printer to your Wi-Fi network.
-                        </p>
-                        <div className="bg-primary/5 p-3 rounded-md">
-                          <p className="text-xs text-muted-foreground">
-                            <strong>Tip:</strong> Make sure your phone is connected to the same Wi-Fi network you want to use for the printer.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
-                        6
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Install Drivers (Desktop/Laptop)</h4>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          Visit <strong>123.hp.com</strong> on your computer and enter your printer model. Download and run the installer, then follow the on-screen prompts to complete the setup.
-                        </p>
-                        <Button variant="outline" size="sm" data-testid="button-download-drivers">
-                          Download Drivers
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Initial Setup Checklist</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Unpack and remove all protective materials</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Install ink cartridges correctly</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Load paper in tray</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Connect power and turn on</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Connect to Wi-Fi network</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Install drivers on computer</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-status-online mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Print test page to verify setup</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* Troubleshooting Tab */}
-          <TabsContent value="troubleshooting" className="mt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Common Issues and Solutions</CardTitle>
-                <CardDescription>Quick fixes for the most common printer problems</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-6">
-                  <div>
-                    <div className="flex items-start gap-3 mb-2">
-                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
-                      <h4 className="font-semibold">Printer Not Connecting to Wi-Fi</h4>
-                    </div>
-                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                      <li>• Make sure your Wi-Fi router is turned on and working properly</li>
-                      <li>• Check that you're entering the correct Wi-Fi password</li>
-                      <li>• Move the printer closer to your router (within 10-15 feet)</li>
-                      <li>• Restart both the printer and your router</li>
-                      <li>• Try using the Smart App's guided setup process</li>
-                    </ul>
-                  </div>
-
-                  <Separator />
-
-                  <div>
-                    <div className="flex items-start gap-3 mb-2">
-                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
-                      <h4 className="font-semibold">Poor Print Quality or Streaky Prints</h4>
-                    </div>
-                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                      <li>• Run the printhead cleaning utility from the Smart App</li>
-                      <li>• Check ink levels and replace cartridges if low</li>
-                      <li>• Align the printheads using the printer settings menu</li>
-                      <li>• Use original ink cartridges for best results</li>
-                      <li>• Make sure you're using the correct paper type setting</li>
-                    </ul>
-                  </div>
-
-                  <Separator />
-
-                  <div>
-                    <div className="flex items-start gap-3 mb-2">
-                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
-                      <h4 className="font-semibold">Paper Jams</h4>
-                    </div>
-                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                      <li>• Turn off the printer and unplug the power cable</li>
-                      <li>• Gently pull out any stuck paper in the direction of the paper path</li>
-                      <li>• Check the rear access door for any torn pieces</li>
-                      <li>• Make sure paper is loaded correctly and not overfilled (max 60 sheets)</li>
-                      <li>• Use only standard 20 lb (75 g/m²) paper for best results</li>
-                    </ul>
-                  </div>
-
-                  <Separator />
-
-                  <div>
-                    <div className="flex items-start gap-3 mb-2">
-                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
-                      <h4 className="font-semibold">Printer Offline on Computer</h4>
-                    </div>
-                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                      <li>• Make sure the printer is turned on and connected to Wi-Fi</li>
-                      <li>• Check that your computer is on the same Wi-Fi network</li>
-                      <li>• On Windows: Go to Devices & Printers, right-click your printer, and uncheck "Use Printer Offline"</li>
-                      <li>• On Mac: Remove and re-add the printer in System Preferences</li>
-                      <li>• Restart the print spooler service (Windows) or reset the printing system (Mac)</li>
-                    </ul>
-                  </div>
-
-                  <Separator />
-
-                  <div>
-                    <div className="flex items-start gap-3 mb-2">
-                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
-                      <h4 className="font-semibold">Ink Cartridge Not Recognized</h4>
-                    </div>
-                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                      <li>• Remove the cartridge and check for protective tape on the contacts</li>
-                      <li>• Clean the cartridge contacts with a lint-free cloth</li>
-                      <li>• Reinsert the cartridge firmly until it clicks</li>
-                      <li>• Try the cartridge in the other slot to test if it's detected</li>
-                      <li>• Update printer firmware through Smart App</li>
-                    </ul>
-                  </div>
-
-                  <Separator />
-
-                  <div>
-                    <div className="flex items-start gap-3 mb-2">
-                      <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
-                      <h4 className="font-semibold">Slow Printing Speed</h4>
-                    </div>
-                    <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                      <li>• Change print quality setting from "Best" to "Normal" or "Draft"</li>
-                      <li>• Close other programs running on your computer</li>
-                      <li>• Print in grayscale for faster black and white documents</li>
-                      <li>• Check ink levels - low ink can slow printing</li>
-                      <li>• Ensure printer is not in "Quiet Mode" if available</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+          </Tabs>
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
