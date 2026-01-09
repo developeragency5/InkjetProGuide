@@ -9,6 +9,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import ComparisonBar from "@/components/ComparisonBar";
+import { CookieConsentBanner } from "@/components/CookieConsentBanner";
 import type { Product } from "@shared/schema";
 
 interface LayoutProps {
@@ -772,6 +773,9 @@ export function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
+
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
     </div>
   );
 }
