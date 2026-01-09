@@ -269,7 +269,7 @@ export function Layout({ children }: LayoutProps) {
                 </span>
               </Link>
 
-              {isLoggedIn ? (
+              {isLoggedIn && (
                 <Link href="/profile">
                   <span data-testid="button-profile">
                     <Button size="icon" variant="ghost" className="h-11 w-11" asChild>
@@ -278,12 +278,6 @@ export function Layout({ children }: LayoutProps) {
                       </span>
                     </Button>
                   </span>
-                </Link>
-              ) : (
-                <Link href="/auth">
-                  <Button variant="default" className="hidden md:flex h-11 px-6" data-testid="button-signin">
-                    Sign In
-                  </Button>
                 </Link>
               )}
 
