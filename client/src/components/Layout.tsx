@@ -693,6 +693,20 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
+          {/* Disclaimer Notice */}
+          <div className="border-t border-b py-6 mb-8 text-center">
+            <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto" data-testid="text-footer-disclaimer">
+              <strong className="text-foreground">Affiliate Disclosure:</strong> InkjetProGuide may earn a commission on purchases made through links on this site at no additional cost to you. This helps support our educational content and product recommendations.
+            </p>
+            <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-2" data-testid="text-footer-hp-disclaimer">
+              <strong className="text-foreground">Trademark Notice:</strong> HP and all HP printer model names are registered trademarks of HP Inc. InkjetProGuide is an independent retailer and is <strong>not affiliated with, endorsed by, or sponsored by HP Inc.</strong> Product warranties are provided by the manufacturer according to HP's terms and conditions.
+            </p>
+            <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-2" data-testid="text-footer-price-disclaimer">
+              Prices, specifications, and availability are subject to change without notice. Please verify all information before making a purchase decision.{" "}
+              <Link href="/disclaimer" className="text-primary hover:underline">Read full disclaimer</Link>.
+            </p>
+          </div>
+
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
             <div className="text-muted-foreground text-center md:text-left">

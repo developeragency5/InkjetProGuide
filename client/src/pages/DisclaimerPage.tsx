@@ -39,6 +39,31 @@ export default function DisclaimerPage() {
         </Card>
 
         <div className="mb-8">
+          <h2 className="text-3xl font-bold mb-4" data-testid="heading-affiliate-disclosure">Affiliate Disclosure</h2>
+          <Card className="border-primary/30 bg-primary/5">
+            <CardContent className="p-8 space-y-4 text-muted-foreground">
+              <div className="flex items-start gap-3">
+                <Shield className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <p data-testid="text-affiliate-1">
+                    InkjetProGuide is a participant in various affiliate programs. This means we may earn a commission when you purchase products through links on our website at no additional cost to you.
+                  </p>
+                </div>
+              </div>
+              <p data-testid="text-affiliate-2">
+                Our affiliate relationships do not influence our product recommendations. We recommend products based on our research, expertise, and genuine belief that they provide value to our customers. We are committed to providing honest, unbiased information to help you make informed purchasing decisions.
+              </p>
+              <p data-testid="text-affiliate-3">
+                Affiliate commissions help support the creation of our free educational content, comprehensive buying guides, and ongoing website maintenance. We appreciate your support through these links.
+              </p>
+              <p className="text-sm" data-testid="text-affiliate-4">
+                <strong className="text-foreground">Federal Trade Commission (FTC) Compliance:</strong> In accordance with the FTC's guidelines on endorsements and testimonials, we disclose that we may receive compensation for products purchased through links on our website.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mb-8">
           <h2 className="text-3xl font-bold mb-4" data-testid="heading-general-disclaimer">General Disclaimer</h2>
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
