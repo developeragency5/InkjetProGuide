@@ -428,29 +428,20 @@ export function Layout({ children }: LayoutProps) {
                 </li>
                 <li>
                   <a 
-                    href="/products?category=Photo Printers" 
+                    href="/products?category=Home+Inkjet+Printers" 
                     className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" 
-                    data-testid="link-footer-photo-printers"
+                    data-testid="link-footer-home-printers"
                   >
-                    Photo Printers
+                    Home Inkjet Printers
                   </a>
                 </li>
                 <li>
                   <a 
-                    href="/products?category=Mobile Printers" 
+                    href="/products?category=Office+Inkjet+Printers" 
                     className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" 
-                    data-testid="link-footer-mobile-printers"
+                    data-testid="link-footer-office-printers"
                   >
-                    Mobile Printers
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/products?category=Wide-Format Printers" 
-                    className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" 
-                    data-testid="link-footer-wide-format-printers"
-                  >
-                    Wide-Format Printers
+                    Office Inkjet Printers
                   </a>
                 </li>
                 <li>
