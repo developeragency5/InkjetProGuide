@@ -24,51 +24,24 @@ export default function HomePage() {
 
   const heroProduct = products?.find(p => p.name.includes("OfficeJet Pro 9730e")) || products?.[0];
   
-  const usedProductIds = new Set<string>();
-  
-  const featuredProducts = products
-    ?.slice()
-    .filter(p => p.category === "office" && p.inStock)
+  // Home Inkjet Printers - for home section
+  const homeProducts = products
+    ?.filter(p => p.category === "Home Inkjet Printers" && p.inStock)
     .sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
     .slice(0, 4) || [];
   
-  featuredProducts.forEach(p => usedProductIds.add(p.id));
-  
-  const newArrivals = products
-    ?.filter(p => p.inStock === true && !usedProductIds.has(p.id))
-    .slice(0, 4) || [];
-  
-  newArrivals.forEach(p => usedProductIds.add(p.id));
-  
-  const premiumOptions = products
-    ?.filter(p => parseFloat(p.price) > 400 && !usedProductIds.has(p.id))
-    .sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
-    .slice(0, 4) || [];
-  
-  premiumOptions.forEach(p => usedProductIds.add(p.id));
-  
-  const budgetFriendly = products
-    ?.filter(p => parseFloat(p.price) < 300 && !usedProductIds.has(p.id))
-    .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
-    .slice(0, 4) || [];
-  
-  budgetFriendly.forEach(p => usedProductIds.add(p.id));
-  
-  const popularChoices = products
-    ?.filter(p => !usedProductIds.has(p.id) && p.inStock)
+  // Office Inkjet Printers - for office section
+  const officeProducts = products
+    ?.filter(p => p.category === "Office Inkjet Printers" && p.inStock)
     .sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
     .slice(0, 4) || [];
 
   const homeOfficeStartingPrice = products
-    ?.filter(p => p.category === "home")
-    .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))[0]?.price || "149";
+    ?.filter(p => p.category === "Home Inkjet Printers")
+    .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))[0]?.price || "79";
   
   const officeStartingPrice = products
-    ?.filter(p => p.category === "office")
-    .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))[0]?.price || "249";
-  
-  const photoStartingPrice = products
-    ?.filter(p => p.category === "photo")
+    ?.filter(p => p.category === "Office Inkjet Printers")
     .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))[0]?.price || "199";
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
