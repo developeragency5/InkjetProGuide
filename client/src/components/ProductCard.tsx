@@ -143,7 +143,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <>
       <Card 
-        className="group relative hover-elevate transition-all overflow-hidden" 
+        className="group relative overflow-hidden" 
         data-testid={`card-product-${product.id}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -194,7 +194,7 @@ export function ProductCard({ product }: ProductCardProps) {
                   alt={product.name}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain"
                 />
                 
                 {/* Hover overlay with key features - desktop only */}
