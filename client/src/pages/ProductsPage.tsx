@@ -330,6 +330,70 @@ export default function ProductsPage() {
               <CardContent className="p-6">
                 <h2 className="font-semibold text-lg mb-6">Filters</h2>
 
+                {/* Category Filter - Only show when not already filtered by category */}
+                {!category && (
+                  <div className="mb-8">
+                    <Label className="text-sm font-semibold mb-4 block">
+                      Category
+                    </Label>
+                    <div className="space-y-2">
+                      <a
+                        href="/products"
+                        className="block px-3 py-2 text-sm rounded-md bg-primary text-primary-foreground font-medium"
+                        data-testid="filter-category-all"
+                      >
+                        Shop All
+                      </a>
+                      <a
+                        href="/products?category=Home+Inkjet+Printers"
+                        className="block px-3 py-2 text-sm rounded-md hover-elevate text-muted-foreground hover:text-foreground"
+                        data-testid="filter-category-home"
+                      >
+                        Home Printers
+                      </a>
+                      <a
+                        href="/products?category=Office+Inkjet+Printers"
+                        className="block px-3 py-2 text-sm rounded-md hover-elevate text-muted-foreground hover:text-foreground"
+                        data-testid="filter-category-office"
+                      >
+                        Office Printers
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {/* Show current category when filtered */}
+                {category && (
+                  <div className="mb-8">
+                    <Label className="text-sm font-semibold mb-4 block">
+                      Category
+                    </Label>
+                    <div className="space-y-2">
+                      <a
+                        href="/products"
+                        className="block px-3 py-2 text-sm rounded-md hover-elevate text-muted-foreground hover:text-foreground"
+                        data-testid="filter-category-all"
+                      >
+                        Shop All
+                      </a>
+                      <a
+                        href="/products?category=Home+Inkjet+Printers"
+                        className={`block px-3 py-2 text-sm rounded-md ${category === "Home Inkjet Printers" ? "bg-primary text-primary-foreground font-medium" : "hover-elevate text-muted-foreground hover:text-foreground"}`}
+                        data-testid="filter-category-home"
+                      >
+                        Home Printers
+                      </a>
+                      <a
+                        href="/products?category=Office+Inkjet+Printers"
+                        className={`block px-3 py-2 text-sm rounded-md ${category === "Office Inkjet Printers" ? "bg-primary text-primary-foreground font-medium" : "hover-elevate text-muted-foreground hover:text-foreground"}`}
+                        data-testid="filter-category-office"
+                      >
+                        Office Printers
+                      </a>
+                    </div>
+                  </div>
+                )}
+
                 {/* Price Range */}
                 <div className="mb-8">
                   <Label className="text-sm font-semibold mb-4 block">
