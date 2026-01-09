@@ -96,14 +96,12 @@ export default function HomePage() {
               <div className="space-y-3 sm:space-y-4">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-balance" data-testid="hero-headline">
                   Find Your Perfect<br/>
-                  <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                    Inkjet Printer
-                  </span><br/>
-                  Wireless, Photo & More
+                  <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">Wireless, Photo &</span><br/>
+                  Inkjet Printer
                 </h1>
                 
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg" data-testid="hero-subtext">
-                  Shop our curated selection of inkjet printers—from wireless printers for seamless connectivity to dedicated photo printers for stunning prints. Compare inkjet printer vs laser printer options and find the right fit for your home or office.
+                  Explore our curated collection of printers. Shop wireless printers that connect effortlessly, photo printers that produce beautiful prints, and compare inkjet printer vs laser printer to find the best fit for your home or office.
                 </p>
               </div>
 
@@ -174,7 +172,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 2: What We Cover - Topics Grid */}
       <section className="py-16 lg:py-20 bg-muted/30" data-testid="section-what-we-cover">
         <div className="max-w-7xl mx-auto px-4">
@@ -184,10 +181,10 @@ export default function HomePage() {
               Printer Categories
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-what-we-cover">
-              Explore Printer Types
+              Examine Printer Types
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Whether you need a wireless printer for flexible home office connectivity, a photo printer for gallery-quality images, or trying to decide between an inkjet printer vs laser printer—our buying guides cover it all. We specialize in inkjet printer technology, helping you understand the advantages of inkjet over laser for your specific needs.
+              Our buying guides cover everything from choosing between an inkjet printer and a laser printer to finding the perfect photo printer for gallery-quality images and wireless printer connectivity for your home office. We specialize in inkjet printer technology, helping you understand the advantages of inkjet over laser for your specific needs.
             </p>
           </div>
 
@@ -199,7 +196,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Wireless Printers</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  A wireless printer offers the flexibility to print from any device in your home or office. Our wireless printer collection features models with WiFi Direct, AirPrint, and mobile app connectivity. Learn which wireless printer features matter most for your setup—from dual-band WiFi for faster speeds to Bluetooth for direct device pairing.
+                  Print from any device in your home or office with a wireless printer. Our wireless printer collection features models with WiFi Direct, AirPrint, and mobile app connectivity. Discover which wireless printer features matter most—dual-band WiFi for faster speeds or Bluetooth for direct device pairing.
                 </p>
               </CardContent>
             </Card>
@@ -211,7 +208,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Photo Printers</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  A dedicated photo printer transforms your digital memories into stunning prints with vibrant colors and sharp detail. Our photo printer selection includes models with 6-ink systems for extended color gamut and borderless printing. Discover which photo printer delivers the best results for portraits, landscapes, and creative projects.
+                  Transform your digital memories into stunning prints with vibrant colors and sharp detail using a dedicated photo printer. Our photo printer selection includes models with 6-ink systems for expanded color gamut and borderless printing. Find which photo printer delivers the best results for portraits, landscapes, and creative projects.
                 </p>
               </CardContent>
             </Card>
@@ -223,7 +220,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Inkjet vs Laser Printer</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Choosing between an inkjet printer and a laser printer? Our comparison guides explain when an inkjet printer outperforms a laser printer—especially for photo printing, color accuracy, and versatile media handling. Learn why inkjet printers are often the better choice for home offices and creative professionals.
+                  Choosing between an inkjet printer and a laser printer? Our comparison guides explain when an inkjet printer outperforms a laser printer—especially for photo printing, color accuracy, and versatile media handling. Discover why creative professionals and home offices frequently prefer inkjet printers.
                 </p>
               </CardContent>
             </Card>
@@ -268,7 +265,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 3: Who We Serve - 4 Persona Cards */}
       <section className="py-16 lg:py-20 bg-background" data-testid="section-who-we-serve">
         <div className="max-w-7xl mx-auto px-4">
@@ -278,10 +274,10 @@ export default function HomePage() {
               Find Your Printer
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-who-we-serve">
-              Printers for Every Need
+              Printers for All Purposes
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Whether you need a wireless printer for flexible connectivity, a photo printer for stunning images, or comparing inkjet printer vs laser printer options—we have the right solution. Our inkjet printer selection serves everyone from first-time buyers to professional photographers.
+              Whether you need a wireless printer for flexible connectivity, a photo printer for stunning images, or a laser printer vs inkjet printer comparison—we have the right solution. Our inkjet printer selection benefits everyone from first-time buyers to professional photographers.
             </p>
           </div>
 
@@ -293,7 +289,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Wireless Printer Seekers</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Looking for a wireless printer that connects seamlessly to all your devices? Our wireless printer selection features models with WiFi, AirPrint, and mobile app connectivity. Shop wireless printers perfect for multi-device households and flexible home offices.
+                  Looking for a wireless printer that works seamlessly with all your devices? Our wireless printer selection features models with WiFi, AirPrint, and mobile app connectivity. Shop wireless printers ideal for multi-device households and flexible home offices.
                 </p>
               </CardContent>
             </Card>
@@ -303,9 +299,9 @@ export default function HomePage() {
                 <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
                   <Sparkles className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="font-bold text-lg mb-3">Photo Printer Enthusiasts</h3>
+                <h3 className="font-bold text-lg mb-3">Photo Printer Fans</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Need a photo printer for gallery-quality prints? Our photo printer collection delivers vibrant colors and sharp detail on photo paper. From compact photo printers for snapshots to professional models for large prints—find the perfect photo printer for your creative vision.
+                  Need a photo printer for gallery-quality prints? Our photo printer collection delivers vibrant colors and sharp detail on photo paper. From compact photo printers for snapshots to professional models for large prints—find the ideal photo printer for your creative vision.
                 </p>
               </CardContent>
             </Card>
@@ -317,7 +313,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Inkjet Printer Buyers</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Why choose an inkjet printer over a laser printer? Our inkjet printer selection offers superior photo quality, lower upfront costs, and versatile media handling. Discover why an inkjet printer is the smart choice for homes and small offices.
+                  Why choose an inkjet printer over a laser printer? Our inkjet printer selection offers superior photo quality, lower upfront costs, and versatile media handling. Learn why an inkjet printer is the best option for homes and small offices.
                 </p>
               </CardContent>
             </Card>
@@ -327,16 +323,15 @@ export default function HomePage() {
                 <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center mx-auto mb-4">
                   <BarChart3 className="w-8 h-8 text-orange-600" />
                 </div>
-                <h3 className="font-bold text-lg mb-3">Inkjet vs Laser Comparers</h3>
+                <h3 className="font-bold text-lg mb-3">Laser vs Inkjet Comparers</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Weighing inkjet printer vs laser printer options? Our guides break down the key differences. Learn when an inkjet printer beats a laser printer for color printing, photo output, and overall value. Make an informed decision with our comparison resources.
+                  Weighing inkjet printer vs laser printer options? Our guides break down the key differences. Find out when color printing, photo output, and overall value outweigh laser printers. Utilize our comparison resources to make an informed decision.
                 </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
-
       {/* SECTION 4: How It Works - 3-Step Journey */}
       <section className="py-16 lg:py-20 bg-gradient-to-b from-muted/30 to-background" data-testid="section-how-it-works">
         <div className="max-w-7xl mx-auto px-4">
@@ -346,10 +341,10 @@ export default function HomePage() {
               Shop Smart
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-how-it-works">
-              How to Choose Your Printer
+              How to Select a Printer
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Finding the right inkjet printer, wireless printer, or photo printer is easy with our three-step process. Compare inkjet printer vs laser printer options, explore wireless printer connectivity features, and find the perfect photo printer for your creative projects—all with transparent pricing.
+              Our three-step process makes selecting the right inkjet printer, wireless printer, or photo printer simple. Compare inkjet printers to laser printers, explore wireless printer connectivity options, and find the best photo printer for your creative projects—all with transparent pricing.
             </p>
           </div>
 
@@ -366,7 +361,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Browse Printer Types</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Explore our curated selection of inkjet printers, wireless printers, and photo printers. Filter by type—whether you need a wireless printer for flexible connectivity, a photo printer for vibrant images, or comparing inkjet printer vs laser printer to make the right choice.
+                  Explore our curated selection of inkjet printers, wireless printers, and photo printers. Sort by type—whether you need a wireless printer for flexible connectivity, a photo printer for vivid images, or comparing inkjet printer vs laser printer to make the right decision.
                 </p>
               </div>
               <div className="hidden md:block absolute top-10 right-0 w-16 h-0.5 bg-gradient-to-r from-primary/50 to-transparent translate-x-8"></div>
@@ -382,9 +377,9 @@ export default function HomePage() {
                     2
                   </div>
                 </div>
-                <h3 className="font-bold text-xl mb-3">Compare Features</h3>
+                <h3 className="font-bold text-xl mb-3">Evaluate Features</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Use our guides to compare inkjet printer models, wireless printer connectivity options, and photo printer specifications. Understand the inkjet printer vs laser printer debate and why inkjet is often better for photo printing and home use.
+                  Compare inkjet printer models, wireless printer connectivity options, and photo printer specifications with our guides. Learn why inkjet printers often outperform laser printers for photo printing and home use.
                 </p>
               </div>
               <div className="hidden md:block absolute top-10 right-0 w-16 h-0.5 bg-gradient-to-r from-primary/50 to-transparent translate-x-8"></div>
@@ -400,7 +395,7 @@ export default function HomePage() {
                     3
                   </div>
                 </div>
-                <h3 className="font-bold text-xl mb-3">Buy Your Perfect Printer</h3>
+                <h3 className="font-bold text-xl mb-3">Purchase Your Perfect Printer</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Purchase your inkjet printer, wireless printer, or photo printer with confidence. Free shipping on orders over $299, 30-day returns, and full warranty coverage on every inkjet printer we sell.
                 </p>
@@ -409,7 +404,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 5: Popular Guides - 6 Guide Cards */}
       <section className="py-16 lg:py-20 bg-background" data-testid="section-popular-guides">
         <div className="max-w-7xl mx-auto px-4">
@@ -422,7 +416,7 @@ export default function HomePage() {
               Printer Buying Guides
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Explore our comprehensive guides on inkjet printers, wireless printers, photo printers, and inkjet printer vs laser printer comparisons. Make informed decisions with detailed specifications and real-world recommendations.
+              Check out our in-depth comparisons of inkjet printers vs laser printers, wireless printers, and photo printers. Make informed decisions with detailed specifications and real-world recommendations.
             </p>
           </div>
 
@@ -437,7 +431,7 @@ export default function HomePage() {
                     <div className="flex-1">
                       <h3 className="font-bold text-lg mb-2">Best Inkjet Printer Buying Guide</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Complete guide to choosing the right inkjet printer for your needs. Compare inkjet printer features, specifications, and find the best inkjet printer for home or office.
+                        Complete guide to selecting the right inkjet printer for your needs. Compare inkjet printer features and specifications to find the best inkjet printer for home or office.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">10 min read</Badge>
@@ -459,7 +453,7 @@ export default function HomePage() {
                     <div className="flex-1">
                       <h3 className="font-bold text-lg mb-2">Best Wireless Printer Guide</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Find the perfect wireless printer for seamless connectivity. Compare wireless printer features including WiFi, AirPrint, and mobile app printing for flexible home and office setups.
+                        Select the ideal wireless printer for seamless connectivity. Compare wireless printer features like WiFi, AirPrint, and mobile app printing for flexible home and office setups.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">8 min read</Badge>
@@ -501,9 +495,9 @@ export default function HomePage() {
                       <Wrench className="w-6 h-6 text-orange-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">Inkjet Printer vs Laser Printer</h3>
+                      <h3 className="font-bold text-lg mb-2">Laser vs Inkjet Printer Guide</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Complete inkjet printer vs laser printer comparison. Learn when an inkjet printer beats a laser printer for photo printing, color output, and home office use.
+                        Complete comparison of laser and inkjet printers. Determine when photo printing, color output, and home office use outweigh laser printers.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">7 min read</Badge>
@@ -523,9 +517,9 @@ export default function HomePage() {
                       <Wifi className="w-6 h-6 text-cyan-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">Wireless Printer Setup & Features</h3>
+                      <h3 className="font-bold text-lg mb-2">Wireless Printer Features & Setup</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Everything you need to know about wireless printer connectivity. AirPrint, WiFi Direct, and mobile app features explained for seamless wireless printer operation.
+                        Everything you need to know about connecting a wireless printer. Detailed explanations of AirPrint, WiFi Direct, and mobile app features for seamless wireless printer operation.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">6 min read</Badge>
@@ -545,9 +539,9 @@ export default function HomePage() {
                       <Target className="w-6 h-6 text-pink-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">Photo Printer vs Inkjet Printer Comparison</h3>
+                      <h3 className="font-bold text-lg mb-2">Inkjet vs Photo Printer Comparison</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Understand the difference between dedicated photo printers and all-purpose inkjet printers. Find whether a specialized photo printer or versatile inkjet printer is right for you.
+                        Know the difference between all-purpose inkjet printers and dedicated photo printers. Determine whether a versatile inkjet printer or specialized photo printer is best for you.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">9 min read</Badge>
@@ -570,7 +564,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 6: Home Inkjet Printers */}
       <section className="py-16 lg:py-20 bg-muted/30" data-testid="section-home-printers">
         <div className="max-w-7xl mx-auto px-4">
@@ -617,7 +610,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 6B: Office Inkjet Printers */}
       <section className="py-16 lg:py-20 bg-background" data-testid="section-office-printers">
         <div className="max-w-7xl mx-auto px-4">
@@ -664,7 +656,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 7: Shop by Category - 2 Category Cards */}
       <section className="py-16 lg:py-20 bg-muted/30" data-testid="section-shop-by-category">
         <div className="max-w-7xl mx-auto px-4">
@@ -720,7 +711,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 8: Why Choose InkjetProGuide - 3 Value Props */}
       <section className="py-16 lg:py-20 bg-muted/30" data-testid="section-why-choose">
         <div className="max-w-7xl mx-auto px-4">
@@ -776,7 +766,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 9: Customer Testimonials - 3 Reviews */}
       <section className="py-16 lg:py-20 bg-background" data-testid="section-testimonials">
         <div className="max-w-7xl mx-auto px-4">
@@ -874,7 +863,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SECTION 10: Newsletter CTA */}
       <section className="relative py-20 lg:py-24 overflow-hidden" data-testid="section-newsletter">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20"></div>
