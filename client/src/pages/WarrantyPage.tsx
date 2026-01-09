@@ -201,7 +201,7 @@ export default function WarrantyPage() {
                 </h3>
                 <ul className="space-y-2 ml-6 list-disc">
                   <li data-testid="text-provide-1"><strong className="text-foreground">Proof of Purchase:</strong> We can provide duplicate receipts or order confirmations if you've lost your original documentation.</li>
-                  <li data-testid="text-provide-2"><strong className="text-foreground">Guidance:</strong> Our customer service team can help guide you through the warranty claim process and direct you to the appropriate manufacturer resources.</li>
+                  <li data-testid="text-provide-2"><strong className="text-foreground">Guidance:</strong> We can provide information about the warranty claim process and direct you to the appropriate manufacturer resources.</li>
                   <li data-testid="text-provide-3"><strong className="text-foreground">Early Defects:</strong> For products that arrive defective or develop issues within 30 days of delivery, contact us first. We may be able to process an exchange or return more quickly than going through manufacturer warranty.</li>
                   <li data-testid="text-provide-4"><strong className="text-foreground">Product Information:</strong> We can provide specifications, model information, and other details that may be helpful for warranty claims.</li>
                 </ul>
@@ -249,7 +249,7 @@ export default function WarrantyPage() {
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-warranty-help">Need Help With a Warranty Issue?</h2>
             <p className="text-muted-foreground mb-6" data-testid="text-warranty-help">
-              Our customer service team is available to help guide you through the warranty process or assist with returns within our 30-day policy.
+              For questions about returns within our 30-day policy, contact us during office hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild data-testid="button-email-support">

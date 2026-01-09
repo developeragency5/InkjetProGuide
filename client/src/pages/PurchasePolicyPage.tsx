@@ -122,7 +122,7 @@ export default function PurchasePolicyPage() {
               </ul>
 
               <p data-testid="text-pricing-6">
-                We are committed to honest pricing practices. If you notice a significant price discrepancy or have concerns about pricing, please contact our customer service team before placing your order.
+                We are committed to honest pricing practices. If you notice a significant price discrepancy or have concerns about pricing, please contact us before placing your order.
               </p>
             </CardContent>
           </Card>
@@ -251,7 +251,7 @@ export default function PurchasePolicyPage() {
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-contact-purchase">Questions About Your Purchase?</h2>
             <p className="text-muted-foreground mb-6" data-testid="text-contact-purchase">
-              Our customer service team is here to help with any questions about orders, payments, or our purchasing policies.
+              For questions about orders, payments, or purchasing policies, contact us during office hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild data-testid="button-email-support">

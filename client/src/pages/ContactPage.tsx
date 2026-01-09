@@ -33,7 +33,7 @@ export default function ContactPage() {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
             Have questions about your order? Our dedicated team at InkjetProGuide 
             is here for order-related inquiries including shipping, returns, and order status. We pride ourselves on providing 
-            exceptional customer service for all your purchasing needs.
+            prompt responses for all your order-related needs.
           </p>
           <p className="text-base text-muted-foreground max-w-3xl mx-auto mb-4">
             This contact page is for order-related questions only. If you need information about an existing order, 

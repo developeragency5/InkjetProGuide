@@ -854,7 +854,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <blockquote className="text-muted-foreground leading-relaxed mb-6">
-                  "I print a lot of photos for my family scrapbooks and wanted something better than the cheap printer we had. The photo printer comparison guide helped me choose the right model. The photo quality from the photo inkjet I purchased is amazing—colors are vibrant and prints look professional. Customer service answered my questions before purchase too. Great experience overall."
+                  "I print a lot of photos for my family scrapbooks and wanted something better than the cheap printer we had. The photo printer comparison guide helped me choose the right model. The photo quality from the photo inkjet I purchased is amazing—colors are vibrant and prints look professional. The buying guides answered all my questions before purchase. Great experience overall."
                 </blockquote>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">

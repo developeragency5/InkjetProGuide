@@ -316,7 +316,7 @@ export default function RefundPolicyPage() {
           <Card className="bg-primary/5">
             <CardContent className="p-8">
               <p className="text-muted-foreground mb-6" data-testid="text-contact-intro">
-                Our customer service team is here to help with any questions about returns, refunds, or exchanges. We're available during office hours to assist you.
+                For questions about returns, refunds, or exchanges, contact us during office hours.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-3">
