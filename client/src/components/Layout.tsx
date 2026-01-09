@@ -70,6 +70,11 @@ export function Layout({ children }: LayoutProps) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const navigationLinks = [
     { name: "Home", path: "/", exact: true },
     { name: "Shop All", path: "/products", exact: true },
