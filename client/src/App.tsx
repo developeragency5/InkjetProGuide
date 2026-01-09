@@ -34,6 +34,9 @@ import ShippingPolicyPage from "@/pages/ShippingPolicyPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsConditionsPage from "@/pages/TermsConditionsPage";
 import DisclaimerPage from "@/pages/DisclaimerPage";
+import PurchasePolicyPage from "@/pages/PurchasePolicyPage";
+import WarrantyPage from "@/pages/WarrantyPage";
+import AccessibilityPage from "@/pages/AccessibilityPage";
 import SitemapPage from "@/pages/SitemapPage";
 import AdminLoginPage from "@/pages/AdminLoginPage";
 import AdminDashboardPage from "@/pages/AdminDashboardPage";
@@ -93,6 +96,9 @@ function MainRouter() {
         <Route path="/privacy-policy" component={PrivacyPolicyPage} />
         <Route path="/terms-conditions" component={TermsConditionsPage} />
         <Route path="/disclaimer" component={DisclaimerPage} />
+        <Route path="/purchase-policy" component={PurchasePolicyPage} />
+        <Route path="/warranty" component={WarrantyPage} />
+        <Route path="/accessibility" component={AccessibilityPage} />
         <Route path="/sitemap" component={SitemapPage} />
         <Route component={NotFound} />
       </Switch>

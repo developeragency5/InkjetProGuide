@@ -581,6 +581,20 @@ export function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/purchase-policy">
+                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-purchase-policy">
+                      Purchase Policy
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/warranty">
+                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-warranty">
+                      Warranty Info
+                    </span>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/sitemap">
                     <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-sitemap">
                       Sitemap
@@ -715,7 +729,7 @@ export function Layout({ children }: LayoutProps) {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
             <div className="text-muted-foreground text-center md:text-left">
-              © 2025 InkjetProGuide. All rights reserved. Made with care in the USA.
+              © 2026 InkjetProGuide. All rights reserved. Made with care in the USA.
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-muted-foreground">
@@ -740,6 +754,18 @@ export function Layout({ children }: LayoutProps) {
               <Link href="/refund-policy">
                 <span className="hover:text-primary cursor-pointer transition-colors" data-testid="link-footer-refund">
                   Return Policy
+                </span>
+              </Link>
+              <span className="text-muted-foreground/50">•</span>
+              <Link href="/accessibility">
+                <span className="hover:text-primary cursor-pointer transition-colors" data-testid="link-footer-accessibility">
+                  Accessibility
+                </span>
+              </Link>
+              <span className="text-muted-foreground/50">•</span>
+              <Link href="/privacy-policy#ccpa-rights">
+                <span className="hover:text-primary cursor-pointer transition-colors" data-testid="link-footer-do-not-sell">
+                  Do Not Sell My Info
                 </span>
               </Link>
             </div>
