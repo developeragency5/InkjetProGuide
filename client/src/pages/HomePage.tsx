@@ -249,7 +249,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Link href="/guides" className="block">
+            <Link href="/products" className="block">
               <Card className="hover-elevate transition-all h-full bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20" data-testid="topic-all-guides">
                 <CardContent className="p-6 flex flex-col h-full justify-center items-center text-center">
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
@@ -396,9 +396,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <h3 className="font-bold text-xl mb-3">Purchase Your Perfect Printer</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Purchase your inkjet printer, wireless printer, or photo printer with confidence. Free shipping on orders over $299, 30-day returns, and full warranty coverage on every inkjet printer we sell.
-                </p>
+                <p className="text-muted-foreground leading-relaxed">Purchase your inkjet printer, wireless printer, or photo printer with confidence. Free shipping on orders over $299, 30-day returns.</p>
               </div>
             </div>
           </div>
@@ -873,10 +871,10 @@ export default function HomePage() {
             Newsletter
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" data-testid="heading-newsletter">
-            Stay Informed & Save
+            Save Money & Stay Informed
           </h2>
           <p className="text-lg md:text-xl mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Join thousands of inkjet printer owners who receive our weekly newsletter. Get exclusive deals, practical printing tips, new product announcements, and maintenance reminders delivered directly to your inbox. 
+            Join thousands of inkjet printer owners who subscribe to our weekly newsletter. Get exclusive deals, new product announcements, and buying guide updates delivered directly to your inbox. 
             Plus, receive a <span className="font-bold text-primary">10% discount code</span> on your first order as a welcome gift!
           </p>
           <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto mb-6">
