@@ -95,30 +95,30 @@ export default function HomePage() {
             <div className="xl:col-span-2 space-y-4 sm:space-y-6 lg:space-y-8">
               <div className="space-y-3 sm:space-y-4">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-balance" data-testid="hero-headline">
-                  Your Complete<br/>
+                  Find Your Perfect<br/>
                   <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
                     Inkjet Printer
                   </span><br/>
-                  Resource & Store
+                  Wireless, Photo & More
                 </h1>
                 
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg" data-testid="hero-subtext">
-                  Professional guides meet curated shopping. Comprehensive educational resources on inkjet printing technology, ink economics, and best practices—so you can purchase the perfect inkjet printer.
+                  Shop our curated selection of inkjet printers—from wireless printers for seamless connectivity to dedicated photo printers for stunning prints. Compare inkjet printer vs laser printer options and find the right fit for your home or office.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 <div className="flex items-center gap-2 px-3 py-2 bg-muted/50 rounded-lg" data-testid="stat-guides">
-                  <BookOpen className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">25+ Pro Guides</span>
+                  <Wifi className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">Wireless Printers</span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-2 bg-muted/50 rounded-lg" data-testid="stat-cost-analysis">
-                  <BarChart3 className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">Cost Analysis</span>
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">Photo Printers</span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-2 bg-muted/50 rounded-lg" data-testid="stat-store">
-                  <ShoppingCart className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">Printer Store</span>
+                  <Printer className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">Inkjet vs Laser Guides</span>
                 </div>
               </div>
 
@@ -181,13 +181,13 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <Badge className="mb-4" data-testid="badge-topics">
               <BookOpen className="w-4 h-4 mr-2" />
-              Educational Topics
+              Printer Categories
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-what-we-cover">
-              What We Cover
+              Explore Printer Types
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our comprehensive resource library covers every aspect of inkjet printing, from understanding basic technology to advanced cost optimization strategies. Whether you are new to printing or looking to maximize your investment, our comprehensive guides provide actionable insights backed by real-world testing and industry experience. We focus exclusively on inkjet technology, allowing us to provide deeper, more specialized knowledge than general printer retailers.
+              Whether you need a wireless printer for flexible home office connectivity, a photo printer for gallery-quality images, or trying to decide between an inkjet printer vs laser printer—our buying guides cover it all. We specialize in inkjet printer technology, helping you understand the advantages of inkjet over laser for your specific needs.
             </p>
           </div>
 
@@ -195,11 +195,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="topic-buying-advice">
               <CardContent className="p-6">
                 <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
-                  <Target className="w-6 h-6 text-blue-600" />
+                  <Wifi className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="font-bold text-xl mb-3">Buying Advice</h3>
+                <h3 className="font-bold text-xl mb-3">Wireless Printers</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Understanding your print volume needs is essential for selecting the right inkjet printer. Our buying guides cover the differences between entry-level, office, and photo inkjet printer series. We analyze monthly duty cycles, paper handling capabilities, and feature sets to match you with the ideal printer for your specific requirements, whether you print ten pages a month or ten thousand.
+                  A wireless printer offers the flexibility to print from any device in your home or office. Our wireless printer collection features models with WiFi Direct, AirPrint, and mobile app connectivity. Learn which wireless printer features matter most for your setup—from dual-band WiFi for faster speeds to Bluetooth for direct device pairing.
                 </p>
               </CardContent>
             </Card>
@@ -207,11 +207,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="topic-ink-economics">
               <CardContent className="p-6">
                 <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-4">
-                  <BarChart3 className="w-6 h-6 text-green-600" />
+                  <Sparkles className="w-6 h-6 text-green-600" />
                 </div>
-                <h3 className="font-bold text-xl mb-3">Ink Economics</h3>
+                <h3 className="font-bold text-xl mb-3">Photo Printers</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Ink costs represent a significant portion of your total printing expense over time. Our in-depth analyses cover cost per page calculations, cartridge yield comparisons, and the economics of Instant Ink subscription versus standard cartridges. Learn how to calculate your true printing costs, identify which cartridge sizes offer the best value, and understand when tank-based systems like Smart Tank make financial sense for high-volume users.
+                  A dedicated photo printer transforms your digital memories into stunning prints with vibrant colors and sharp detail. Our photo printer selection includes models with 6-ink systems for extended color gamut and borderless printing. Discover which photo printer delivers the best results for portraits, landscapes, and creative projects.
                 </p>
               </CardContent>
             </Card>
@@ -219,11 +219,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="topic-maintenance">
               <CardContent className="p-6">
                 <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4">
-                  <Wrench className="w-6 h-6 text-purple-600" />
+                  <BarChart3 className="w-6 h-6 text-purple-600" />
                 </div>
-                <h3 className="font-bold text-xl mb-3">Maintenance</h3>
+                <h3 className="font-bold text-xl mb-3">Inkjet vs Laser Printer</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Proper maintenance extends your inkjet printer life and ensures consistent print quality. Our maintenance guides cover essential topics including printhead cleaning procedures, preventing and resolving ink clogs, proper storage during extended non-use periods, and paper feed troubleshooting. Regular maintenance following recommended practices helps prevent costly repairs and keeps your prints looking professional.
+                  Choosing between an inkjet printer and a laser printer? Our comparison guides explain when an inkjet printer outperforms a laser printer—especially for photo printing, color accuracy, and versatile media handling. Learn why inkjet printers are often the better choice for home offices and creative professionals.
                 </p>
               </CardContent>
             </Card>
@@ -231,11 +231,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="topic-technology">
               <CardContent className="p-6">
                 <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-4">
-                  <Wifi className="w-6 h-6 text-orange-600" />
+                  <Printer className="w-6 h-6 text-orange-600" />
                 </div>
-                <h3 className="font-bold text-xl mb-3">Technology</h3>
+                <h3 className="font-bold text-xl mb-3">Home & Office Inkjet</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Understanding how inkjet printing works helps you make better purchasing and usage decisions. We explain thermal inkjet technology, printhead architecture, and ink formulations in accessible terms. Our technology guides also cover wireless connectivity setup, mobile printing via Smart App, AirPrint and Google Cloud Print integration, and network configuration for shared office environments.
+                  From compact home inkjet printers to high-capacity office models, find the right inkjet printer for your environment. Our collection includes all-in-one wireless printers with scan and copy, plus specialized inkjet printers for business documents and photo printing.
                 </p>
               </CardContent>
             </Card>
@@ -243,11 +243,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="topic-upgrades">
               <CardContent className="p-6">
                 <div className="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center mb-4">
-                  <Sparkles className="w-6 h-6 text-pink-600" />
+                  <Target className="w-6 h-6 text-pink-600" />
                 </div>
-                <h3 className="font-bold text-xl mb-3">Upgrades & Accessories</h3>
+                <h3 className="font-bold text-xl mb-3">Printer Buying Guides</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Maximize your inkjet printer investment with the right accessories and upgrades. Our guides cover additional paper trays for increased capacity, Instant Ink subscription benefits and enrollment, specialty paper recommendations for photos and presentations, and compatible accessories. Learn which upgrades deliver the best value for your printing workflow and how to optimize your setup.
+                  Not sure which printer type is right for you? Our buying guides compare inkjet printer options for every budget and use case. Learn the differences between wireless printer models, photo printer specifications, and understand why inkjet often beats laser printer for home use.
                 </p>
               </CardContent>
             </Card>
@@ -258,9 +258,9 @@ export default function HomePage() {
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
                     <ArrowRight className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-bold text-xl mb-3">Explore All Guides</h3>
+                  <h3 className="font-bold text-xl mb-3">View All Printers</h3>
                   <p className="text-muted-foreground">
-                    Browse our complete library of inkjet printer guides, tutorials, and buying recommendations.
+                    Browse our complete selection of inkjet printers, wireless printers, and photo printers.
                   </p>
                 </CardContent>
               </Card>
@@ -275,13 +275,13 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <Badge className="mb-4" data-testid="badge-personas">
               <Users className="w-4 h-4 mr-2" />
-              Our Audience
+              Find Your Printer
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-who-we-serve">
-              Who We Serve
+              Printers for Every Need
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              InkjetProGuide serves a diverse community of inkjet printer users across the United States. From first-time printer buyers who need clear explanations without technical jargon, to experienced professionals seeking detailed cost analyses and performance benchmarks. Our content is structured to meet you where you are, providing the level of detail appropriate to your experience and goals.
+              Whether you need a wireless printer for flexible connectivity, a photo printer for stunning images, or comparing inkjet printer vs laser printer options—we have the right solution. Our inkjet printer selection serves everyone from first-time buyers to professional photographers.
             </p>
           </div>
 
@@ -289,11 +289,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="persona-beginners">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="w-8 h-8 text-blue-600" />
+                  <Wifi className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="font-bold text-lg mb-3">Beginners</h3>
+                <h3 className="font-bold text-lg mb-3">Wireless Printer Seekers</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  New to inkjet printers? Our beginner-friendly guides explain printing concepts in plain language without overwhelming technical jargon. We walk you through the entire process from understanding basic specifications to setting up your first wireless connection. Clear explanations and step-by-step tutorials ensure you feel confident making your first printer purchase and getting started quickly.
+                  Looking for a wireless printer that connects seamlessly to all your devices? Our wireless printer selection features models with WiFi, AirPrint, and mobile app connectivity. Shop wireless printers perfect for multi-device households and flexible home offices.
                 </p>
               </CardContent>
             </Card>
@@ -301,11 +301,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="persona-home-office">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-                  <Printer className="w-8 h-8 text-green-600" />
+                  <Sparkles className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="font-bold text-lg mb-3">Home Office Workers</h3>
+                <h3 className="font-bold text-lg mb-3">Photo Printer Enthusiasts</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Remote workers and home-based professionals need reliable, cost-effective printing solutions that handle documents, contracts, and presentations professionally. Our guides focus on printers that deliver consistent quality, offer multifunction capabilities for scanning and copying, and feature low operating costs. Find professional office inkjet models that balance professional output with home-friendly pricing.
+                  Need a photo printer for gallery-quality prints? Our photo printer collection delivers vibrant colors and sharp detail on photo paper. From compact photo printers for snapshots to professional models for large prints—find the perfect photo printer for your creative vision.
                 </p>
               </CardContent>
             </Card>
@@ -313,11 +313,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="persona-small-business">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-purple-600" />
+                  <Printer className="w-8 h-8 text-purple-600" />
                 </div>
-                <h3 className="font-bold text-lg mb-3">Small Business Owners</h3>
+                <h3 className="font-bold text-lg mb-3">Inkjet Printer Buyers</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Business owners must balance printing performance with budget constraints. Our small business guides analyze total cost of ownership, monthly duty cycle ratings, and productivity features like automatic document feeders and duplex printing. Our guides cover inkjet printers that deliver business-class reliability while keeping per-page costs competitive with larger commercial solutions.
+                  Why choose an inkjet printer over a laser printer? Our inkjet printer selection offers superior photo quality, lower upfront costs, and versatile media handling. Discover why an inkjet printer is the smart choice for homes and small offices.
                 </p>
               </CardContent>
             </Card>
@@ -325,11 +325,11 @@ export default function HomePage() {
             <Card className="hover-elevate transition-all" data-testid="persona-students-families">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-orange-600" />
+                  <BarChart3 className="w-8 h-8 text-orange-600" />
                 </div>
-                <h3 className="font-bold text-lg mb-3">Students & Families</h3>
+                <h3 className="font-bold text-lg mb-3">Inkjet vs Laser Comparers</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Families and students need affordable everyday printing for homework, school projects, photos, and household documents. Our guides highlight compact, budget-friendly entry-level and photo inkjet printers that fit student budgets and family needs. Learn about ink subscription plans that make printing more affordable for households with variable monthly printing volumes.
+                  Weighing inkjet printer vs laser printer options? Our guides break down the key differences. Learn when an inkjet printer beats a laser printer for color printing, photo output, and overall value. Make an informed decision with our comparison resources.
                 </p>
               </CardContent>
             </Card>
@@ -343,13 +343,13 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <Badge className="mb-4" data-testid="badge-process">
               <Target className="w-4 h-4 mr-2" />
-              Your Journey
+              Shop Smart
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-how-it-works">
-              How It Works
+              How to Choose Your Printer
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Finding and purchasing the right inkjet printer should be straightforward and stress-free. Our three-step process guides you from initial research through confident purchase, with educational resources and transparent information at every stage. No sales pressure, no hidden fees—just honest guidance and curated products from a trusted inkjet retailer.
+              Finding the right inkjet printer, wireless printer, or photo printer is easy with our three-step process. Compare inkjet printer vs laser printer options, explore wireless printer connectivity features, and find the perfect photo printer for your creative projects—all with transparent pricing.
             </p>
           </div>
 
@@ -364,9 +364,9 @@ export default function HomePage() {
                     1
                   </div>
                 </div>
-                <h3 className="font-bold text-xl mb-3">Explore Products</h3>
+                <h3 className="font-bold text-xl mb-3">Browse Printer Types</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Browse our carefully curated catalog of inkjet printers organized by use case, price range, and features. Each product listing includes detailed specifications, key features, and honest assessments of who the printer best serves. Use our category filters to narrow options based on your specific needs—whether home printing, small office productivity, or professional photo output.
+                  Explore our curated selection of inkjet printers, wireless printers, and photo printers. Filter by type—whether you need a wireless printer for flexible connectivity, a photo printer for vibrant images, or comparing inkjet printer vs laser printer to make the right choice.
                 </p>
               </div>
               <div className="hidden md:block absolute top-10 right-0 w-16 h-0.5 bg-gradient-to-r from-primary/50 to-transparent translate-x-8"></div>
@@ -382,9 +382,9 @@ export default function HomePage() {
                     2
                   </div>
                 </div>
-                <h3 className="font-bold text-xl mb-3">Compare Options</h3>
+                <h3 className="font-bold text-xl mb-3">Compare Features</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Use our comparison tools and buying guides to evaluate printers side-by-side. Filter by features that matter most to you—print speed, paper capacity, connectivity options, or cost per page. Our educational content covers which specifications actually impact your daily use and which are marketing fluff. Make informed decisions based on data, not advertising.
+                  Use our guides to compare inkjet printer models, wireless printer connectivity options, and photo printer specifications. Understand the inkjet printer vs laser printer debate and why inkjet is often better for photo printing and home use.
                 </p>
               </div>
               <div className="hidden md:block absolute top-10 right-0 w-16 h-0.5 bg-gradient-to-r from-primary/50 to-transparent translate-x-8"></div>
@@ -400,9 +400,9 @@ export default function HomePage() {
                     3
                   </div>
                 </div>
-                <h3 className="font-bold text-xl mb-3">Purchase with Confidence</h3>
+                <h3 className="font-bold text-xl mb-3">Buy Your Perfect Printer</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Complete your purchase knowing exactly what you are getting. Transparent pricing with no hidden fees, free shipping on orders over $299, and a 30-day return policy give you peace of mind. All printers ship factory-sealed with full warranty coverage. Our team is available for order-related questions about shipping and returns.
+                  Purchase your inkjet printer, wireless printer, or photo printer with confidence. Free shipping on orders over $299, 30-day returns, and full warranty coverage on every inkjet printer we sell.
                 </p>
               </div>
             </div>
@@ -416,13 +416,13 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <Badge className="mb-4" data-testid="badge-popular-guides">
               <BookOpen className="w-4 h-4 mr-2" />
-              Educational Resources
+              Buying Guides
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-popular-guides">
-              Popular Guides
+              Printer Buying Guides
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our most-read guides cover the essential topics every inkjet printer buyer should understand. Written by industry professionals with years of hands-on experience, these comprehensive resources provide actionable insights that save you time and money. Each guide is regularly updated to reflect the latest printer models, ink technologies, and market pricing.
+              Explore our comprehensive guides on inkjet printers, wireless printers, photo printers, and inkjet printer vs laser printer comparisons. Make informed decisions with detailed specifications and real-world recommendations.
             </p>
           </div>
 
@@ -435,13 +435,13 @@ export default function HomePage() {
                       <Printer className="w-6 h-6 text-blue-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">How to Choose the Right Inkjet Printer</h3>
+                      <h3 className="font-bold text-lg mb-2">Best Inkjet Printer Buying Guide</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Comprehensive decision-making framework covering print volume assessment, feature prioritization, budget considerations, and model recommendations for every use case.
+                        Complete guide to choosing the right inkjet printer for your needs. Compare inkjet printer features, specifications, and find the best inkjet printer for home or office.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">10 min read</Badge>
-                        <span className="text-xs text-muted-foreground">Most Popular</span>
+                        <span className="text-xs text-muted-foreground">Inkjet Printer Guide</span>
                       </div>
                     </div>
                   </div>
@@ -457,13 +457,13 @@ export default function HomePage() {
                       <BarChart3 className="w-6 h-6 text-green-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">Understanding Ink Page Yield & Cost</h3>
+                      <h3 className="font-bold text-lg mb-2">Best Wireless Printer Guide</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Learn to calculate true cost per page, compare standard versus XL cartridge economics, and understand how ISO testing standards translate to real-world printing costs.
+                        Find the perfect wireless printer for seamless connectivity. Compare wireless printer features including WiFi, AirPrint, and mobile app printing for flexible home and office setups.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">8 min read</Badge>
-                        <span className="text-xs text-muted-foreground">Cost Analysis</span>
+                        <span className="text-xs text-muted-foreground">Wireless Printer Guide</span>
                       </div>
                     </div>
                   </div>
@@ -479,13 +479,13 @@ export default function HomePage() {
                       <RefreshCw className="w-6 h-6 text-purple-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">Instant Ink vs Standard Cartridges</h3>
+                      <h3 className="font-bold text-lg mb-2">Best Photo Printer Guide</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Detailed comparison of Instant Ink subscription service versus traditional cartridge purchasing, including break-even analysis and optimal use scenarios for each approach.
+                        Discover the best photo printer for stunning prints. Compare photo printer specifications, color accuracy, and find the ideal photo printer for portraits and creative projects.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">12 min read</Badge>
-                        <span className="text-xs text-muted-foreground">Subscription Guide</span>
+                        <span className="text-xs text-muted-foreground">Photo Printer Guide</span>
                       </div>
                     </div>
                   </div>
@@ -501,13 +501,13 @@ export default function HomePage() {
                       <Wrench className="w-6 h-6 text-orange-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">Inkjet Printer Maintenance Guide</h3>
+                      <h3 className="font-bold text-lg mb-2">Inkjet Printer vs Laser Printer</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Essential maintenance routines including printhead cleaning, preventing ink clogs, proper storage during extended non-use, and troubleshooting common print quality issues.
+                        Complete inkjet printer vs laser printer comparison. Learn when an inkjet printer beats a laser printer for photo printing, color output, and home office use.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">7 min read</Badge>
-                        <span className="text-xs text-muted-foreground">Maintenance</span>
+                        <span className="text-xs text-muted-foreground">Inkjet vs Laser</span>
                       </div>
                     </div>
                   </div>
@@ -523,13 +523,13 @@ export default function HomePage() {
                       <Wifi className="w-6 h-6 text-cyan-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">Mobile & Wireless Printing Setup</h3>
+                      <h3 className="font-bold text-lg mb-2">Wireless Printer Setup & Features</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Complete setup instructions for Smart App, AirPrint, Google Cloud Print, and WiFi Direct connections. Print seamlessly from smartphones, tablets, and computers.
+                        Everything you need to know about wireless printer connectivity. AirPrint, WiFi Direct, and mobile app features explained for seamless wireless printer operation.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">6 min read</Badge>
-                        <span className="text-xs text-muted-foreground">Connectivity</span>
+                        <span className="text-xs text-muted-foreground">Wireless Setup</span>
                       </div>
                     </div>
                   </div>
@@ -545,13 +545,13 @@ export default function HomePage() {
                       <Target className="w-6 h-6 text-pink-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">Entry-Level vs Office vs Photo Inkjet Comparison</h3>
+                      <h3 className="font-bold text-lg mb-2">Photo Printer vs Inkjet Printer Comparison</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Side-by-side comparison of inkjet printer series covering target users, feature differences, price positioning, and specific model recommendations within each lineup.
+                        Understand the difference between dedicated photo printers and all-purpose inkjet printers. Find whether a specialized photo printer or versatile inkjet printer is right for you.
                       </p>
                       <div className="flex items-center gap-2 mt-3">
                         <Badge variant="secondary">9 min read</Badge>
-                        <span className="text-xs text-muted-foreground">Comparison</span>
+                        <span className="text-xs text-muted-foreground">Photo vs Inkjet</span>
                       </div>
                     </div>
                   </div>
