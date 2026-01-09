@@ -23,6 +23,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { ProductCard } from "@/components/ProductCard";
+import { SHIPPING, RETURNS } from "@/lib/constants";
 import type { Product } from "@shared/schema";
 import { useComparison } from "@/contexts/ComparisonContext";
 
@@ -345,7 +346,7 @@ export default function ProductDetailPage() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Free Shipping</p>
-                  <p className="text-xs text-muted-foreground">On orders $299+</p>
+                  <p className="text-xs text-muted-foreground">On orders ${SHIPPING.freeShippingThreshold}+</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -354,7 +355,7 @@ export default function ProductDetailPage() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Fast Delivery</p>
-                  <p className="text-xs text-muted-foreground">2-3 business days</p>
+                  <p className="text-xs text-muted-foreground">{SHIPPING.standardDeliveryDays}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -363,7 +364,7 @@ export default function ProductDetailPage() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Easy Returns</p>
-                  <p className="text-xs text-muted-foreground">30-day return policy</p>
+                  <p className="text-xs text-muted-foreground">{RETURNS.returnPeriodDays}-day return policy</p>
                 </div>
               </div>
             </div>

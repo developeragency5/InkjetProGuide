@@ -10,6 +10,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import ComparisonBar from "@/components/ComparisonBar";
 import { CookieConsentBanner } from "@/components/CookieConsentBanner";
+import { MARKETING_COPY, SHIPPING, BUSINESS_INFO } from "@/lib/constants";
 import type { Product } from "@shared/schema";
 
 interface LayoutProps {
@@ -160,7 +161,7 @@ export function Layout({ children }: LayoutProps) {
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-base">
-          <p className="font-medium">Free Shipping on Orders $299+</p>
+          <p className="font-medium">{MARKETING_COPY.freeShippingMessage}</p>
           <div className="flex items-center gap-4">
             {isLoggedIn ? (
               <Link href="/profile">
@@ -241,9 +242,9 @@ export function Layout({ children }: LayoutProps) {
             <div className="flex items-center gap-2">
               <Link href="/wishlist">
                 <span data-testid="button-wishlist">
-                  <Button size="icon" variant="ghost" className="relative h-11 w-11" asChild>
+                  <Button size="icon" variant="ghost" className="relative h-11 w-11" asChild aria-label="View wishlist">
                     <span>
-                      <Heart className="w-6 h-6" />
+                      <Heart className="w-6 h-6" aria-hidden="true" />
                       {wishlistCount > 0 && (
                         <Badge 
                           className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
@@ -259,9 +260,9 @@ export function Layout({ children }: LayoutProps) {
 
               <Link href="/cart">
                 <span data-testid="button-cart">
-                  <Button size="icon" variant="ghost" className="relative h-11 w-11" asChild>
+                  <Button size="icon" variant="ghost" className="relative h-11 w-11" asChild aria-label="View shopping cart">
                     <span>
-                      <ShoppingCart className="w-6 h-6" />
+                      <ShoppingCart className="w-6 h-6" aria-hidden="true" />
                       {cartCount > 0 && (
                         <Badge 
                           className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
@@ -278,9 +279,9 @@ export function Layout({ children }: LayoutProps) {
               {isLoggedIn && (
                 <Link href="/profile">
                   <span data-testid="button-profile">
-                    <Button size="icon" variant="ghost" className="h-11 w-11" asChild>
+                    <Button size="icon" variant="ghost" className="h-11 w-11" asChild aria-label="View profile">
                       <span>
-                        <User className="w-6 h-6" />
+                        <User className="w-6 h-6" aria-hidden="true" />
                       </span>
                     </Button>
                   </span>
@@ -293,6 +294,8 @@ export function Layout({ children }: LayoutProps) {
                 className="lg:hidden h-11 w-11"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 data-testid="button-menu"
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </Button>
@@ -707,7 +710,7 @@ export function Layout({ children }: LayoutProps) {
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
-                  Free shipping on orders over $299
+                  {MARKETING_COPY.freeShippingDescription}
                 </p>
               </div>
             </div>
@@ -730,7 +733,7 @@ export function Layout({ children }: LayoutProps) {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
             <div className="text-muted-foreground text-center md:text-left">
-              © 2026 InkjetProGuide. All rights reserved. Made with care in the USA.
+              © {BUSINESS_INFO.year} {BUSINESS_INFO.name}. All rights reserved. Made with care in the USA.
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-muted-foreground">
