@@ -72,8 +72,10 @@ export function Layout({ children }: LayoutProps) {
 
   const navigationLinks = [
     { name: "Home", path: "/" },
-    { name: "Shop", path: "/products" },
-    { name: "Guide", path: "/guide" },
+    { name: "Shop All", path: "/products" },
+    { name: "Home Printers", path: "/products?category=Home+Inkjet+Printers" },
+    { name: "Office Printers", path: "/products?category=Office+Inkjet+Printers" },
+    { name: "Guides", path: "/guides" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
