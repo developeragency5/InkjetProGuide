@@ -495,42 +495,14 @@ export function Layout({ children }: LayoutProps) {
               </ul>
             </div>
 
-            {/* Resources */}
+            {/* Guide */}
             <div>
-              <h3 className="font-semibold text-base mb-4 text-foreground">Resources</h3>
+              <h3 className="font-semibold text-base mb-4 text-foreground">Guide</h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <Link href="/guides">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-buying-guides">
-                      Buying Guides
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/guide">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-model-guide">
-                      Model Guide
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/ink-guide">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-ink-guide">
-                      Ink & Cartridge Guide
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/resources">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-resource-center">
-                      Resource Center
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/faq">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-faq">
-                      FAQ
+                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-guides">
+                      Printer Buying Guides
                     </span>
                   </Link>
                 </li>
