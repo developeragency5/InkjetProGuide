@@ -197,23 +197,6 @@ export function ProductCard({ product }: ProductCardProps) {
                   className="w-full h-full object-contain"
                 />
                 
-                {/* Hover overlay with key features - desktop only */}
-                <div 
-                  className={`hidden md:flex absolute inset-0 bg-background/95 backdrop-blur-sm flex-col items-center justify-center p-4 transition-opacity duration-300 ${
-                    isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
-                  }`}
-                >
-                  <div className="text-center space-y-2 mb-4">
-                    <div className="flex items-center justify-center gap-2 text-sm">
-                      <Zap className="w-4 h-4 text-primary" />
-                      <span className="font-medium">{keySpecs.printSpeed}</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 text-sm">
-                      <Droplet className="w-4 h-4 text-primary" />
-                      <span className="font-medium">{keySpecs.resolution}</span>
-                    </div>
-                  </div>
-                </div>
                 
                 {/* Quick View Button - Always accessible on mobile, hover on desktop */}
                 <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-100 md:opacity-0 md:group-hover/image:opacity-100 transition-opacity duration-300">
