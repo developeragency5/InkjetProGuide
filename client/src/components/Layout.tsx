@@ -763,7 +763,7 @@ export function Layout({ children }: LayoutProps) {
                 </span>
               </Link>
               <span className="text-muted-foreground/50">•</span>
-              <Link href="/privacy-policy#ccpa-rights">
+              <Link href="/privacy-policy#california-rights">
                 <span className="hover:text-primary cursor-pointer transition-colors" data-testid="link-footer-do-not-sell">
                   Do Not Sell My Info
                 </span>
