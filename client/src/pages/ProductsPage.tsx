@@ -180,10 +180,10 @@ export default function ProductsPage() {
               ? `Search Results for "${searchQuery}"`
               : category
               ? category
-              : "HP Inkjet Printers"}
+              : "Inkjet Printers"}
           </h1>
           <p className="text-muted-foreground">
-            Discover our complete collection of HP inkjet printers
+            Discover our complete collection of inkjet printers
           </p>
         </div>
 
@@ -195,24 +195,24 @@ export default function ProductsPage() {
                 <h2 className="text-xl font-semibold text-foreground mb-4">
                   {category 
                     ? `About ${category}`
-                    : "Your Complete Guide to HP Inkjet Printers"}
+                    : "Your Complete Guide to Inkjet Printers"}
                 </h2>
                 
                 <p className="mb-4">
-                  HP inkjet printers have been the trusted choice for home users, students, and small businesses for decades. 
-                  Whether you need to print vibrant photos, professional documents, or everyday schoolwork, HP's inkjet 
+                  Inkjet printers have been the trusted choice for home users, students, and small businesses for decades. 
+                  Whether you need to print vibrant photos, professional documents, or everyday schoolwork, inkjet 
                   technology delivers exceptional quality at an affordable price. At InkjetProGuide, we specialize exclusively 
-                  in HP inkjet printers, ensuring you get expert guidance and a curated selection shipped directly to your door 
+                  in inkjet printers, ensuring you get expert guidance and a curated selection shipped directly to your door 
                   anywhere in the United States.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 my-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Why Choose HP Inkjet?</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Why Choose Inkjet?</h3>
                     <ul className="space-y-1 text-sm">
-                      <li>Industry-leading print quality with HP Thermal Inkjet technology</li>
+                      <li>Industry-leading print quality with Thermal Inkjet technology</li>
                       <li>Easy wireless setup and mobile printing capabilities</li>
-                      <li>Reliable performance backed by HP's warranty support</li>
+                      <li>Reliable performance backed by manufacturer warranty support</li>
                       <li>Energy-efficient designs that save on electricity costs</li>
                       <li>Wide range of models for every budget and need</li>
                     </ul>
@@ -230,7 +230,7 @@ export default function ProductsPage() {
                 </div>
 
                 <p className="mb-4">
-                  HP printers typically include manufacturer warranty coverage - refer to HP documentation for specific terms. 
+                  Printers typically include manufacturer warranty coverage - refer to manufacturer documentation for specific terms. 
                   Our team is available Monday through Friday, 9 AM to 6 PM ET, to help you 
                   find the perfect printer for your needs. We offer free shipping on orders over $299 and hassle-free 
                   returns within 30 days of purchase.
@@ -239,7 +239,7 @@ export default function ProductsPage() {
                 <div className="bg-muted/30 p-4 rounded-lg">
                   <h3 className="text-lg font-semibold text-foreground mb-2">Need Help Choosing?</h3>
                   <p className="text-sm mb-2">
-                    Not sure which HP inkjet printer is right for you? Use our filters on the left to narrow down by 
+                    Not sure which inkjet printer is right for you? Use our filters on the left to narrow down by 
                     price, connectivity options, and print technology. You can also compare up to 4 printers side-by-side 
                     to see detailed specifications and features. For personalized recommendations, contact us at 
                     <strong> inkjetproguide@outlook.com</strong> or call <strong>1-325-400-8874</strong>.
