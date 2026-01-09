@@ -93,11 +93,6 @@ export default function HomePage() {
             
             {/* Left Content - 40% */}
             <div className="xl:col-span-2 space-y-4 sm:space-y-6 lg:space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-card border shadow-sm" data-testid="hero-trust-badge">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-xs sm:text-sm font-medium">HP Inkjet Printer Resource Hub & Store</span>
-              </div>
-
               <div className="space-y-3 sm:space-y-4">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-balance" data-testid="hero-headline">
                   Your Complete<br/>
