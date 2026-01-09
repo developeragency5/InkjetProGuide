@@ -29,7 +29,7 @@ export const products = pgTable("products", {
   specifications: text("specifications").notNull(),
   features: text("features").array().notNull(),
   inStock: boolean("in_stock").notNull().default(true),
-  mpn: text("mpn"), // Manufacturer Part Number (HP Product Number) - for printers only
+  mpn: text("mpn"), // Manufacturer Part Number (Product Number) - for printers only
   // SEO fields
   metaTitle: text("meta_title"),
   metaDescription: text("meta_description"),
@@ -143,10 +143,10 @@ export const faqs = pgTable("faqs", {
 // Ink Cartridges table
 export const inkCartridges = pgTable("ink_cartridges", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  cartridgeNumber: text("cartridge_number").notNull(), // e.g., "HP 63", "HP 910"
+  cartridgeNumber: text("cartridge_number").notNull(), // e.g., "63", "910"
   cartridgeName: text("cartridge_name").notNull(), // Full name
   color: text("color").notNull(), // Black, Cyan, Magenta, Yellow, Tri-color
-  type: text("type").notNull(), // Original HP, Compatible, Remanufactured
+  type: text("type").notNull(), // Original, Compatible, Remanufactured
   pageYield: integer("page_yield").notNull(), // Average pages per cartridge
   price: decimal("price", { precision: 10, scale: 2 }).notNull(),
   compatiblePrinters: text("compatible_printers").array().notNull(), // Array of printer model names

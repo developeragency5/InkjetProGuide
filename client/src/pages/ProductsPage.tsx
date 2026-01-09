@@ -219,11 +219,11 @@ export default function ProductsPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">Choosing the Right Model</h3>
                     <ul className="space-y-1 text-sm">
-                      <li><strong>DeskJet:</strong> Perfect for basic home printing needs</li>
-                      <li><strong>ENVY:</strong> Ideal for photo printing and creative projects</li>
-                      <li><strong>OfficeJet:</strong> Built for home office productivity</li>
-                      <li><strong>OfficeJet Pro:</strong> Professional-grade for small businesses</li>
-                      <li><strong>Smart Tank:</strong> High-volume printing with refillable ink</li>
+                      <li><strong>Entry-Level Inkjets:</strong> Perfect for basic home printing needs</li>
+                      <li><strong>Photo Inkjets:</strong> Ideal for photo printing and creative projects</li>
+                      <li><strong>Office Inkjets:</strong> Built for home office productivity</li>
+                      <li><strong>Professional Inkjets:</strong> Professional-grade for small businesses</li>
+                      <li><strong>Tank-Based Inkjets:</strong> High-volume printing with refillable ink</li>
                     </ul>
                   </div>
                 </div>

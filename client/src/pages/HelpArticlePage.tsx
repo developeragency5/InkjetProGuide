@@ -142,7 +142,7 @@ Install the correct drivers to ensure your printer works perfectly with your com
 4. Print a test page to confirm
 
 ### Manual Installation
-1. Visit [HP Support Website](https://support.hp.com)
+1. Visit the manufacturer support website
 2. Enter your printer model number
 3. Select your operating system
 4. Download the Full Feature Driver
@@ -157,7 +157,7 @@ Install the correct drivers to ensure your printer works perfectly with your com
 4. macOS will download and install the driver automatically
 
 ### Manual Download
-1. Visit [HP Support Website](https://support.hp.com)
+1. Visit the manufacturer support website
 2. Enter your printer model
 3. Select macOS version
 4. Download the driver package

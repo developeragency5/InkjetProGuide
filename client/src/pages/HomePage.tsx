@@ -22,7 +22,7 @@ export default function HomePage() {
     queryKey: ["/api/products"],
   });
 
-  const heroProduct = products?.find(p => p.name.includes("OfficeJet Pro 9730e")) || products?.[0];
+  const heroProduct = products?.find(p => p.name.includes("9730e")) || products?.[0];
   
   // Home Inkjet Printers - for home section
   const homeProducts = products
@@ -147,7 +147,7 @@ export default function HomePage() {
                     <div className="relative aspect-[4/3] lg:aspect-[16/10]">
                       <img
                         src={defaultHeroImage}
-                        alt="OfficeJet Pro Inkjet Printer - Professional printing solution for home and office"
+                        alt="Professional Inkjet Printer - Quality printing solution for home and office"
                         className="w-full h-full object-contain p-8 bg-gradient-to-br from-muted/30 to-muted/10"
                         data-testid="hero-image"
                       />
@@ -156,7 +156,7 @@ export default function HomePage() {
                           <div className="flex flex-wrap items-center justify-between gap-3">
                             <div>
                               <p className="text-sm text-muted-foreground">Featured Printer</p>
-                              <p className="font-semibold">OfficeJet Pro Series</p>
+                              <p className="font-semibold">Professional Office Series</p>
                             </div>
                             <Link href="/products">
                               <Button size="sm" data-testid="button-view-collection">
@@ -199,7 +199,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Buying Advice</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Understanding your print volume needs is essential for selecting the right inkjet printer. Our buying guides help you navigate the differences between DeskJet, OfficeJet, and ENVY series printers. We analyze monthly duty cycles, paper handling capabilities, and feature sets to match you with the ideal printer for your specific requirements, whether you print ten pages a month or ten thousand.
+                  Understanding your print volume needs is essential for selecting the right inkjet printer. Our buying guides help you navigate the differences between entry-level, office, and photo inkjet printer series. We analyze monthly duty cycles, paper handling capabilities, and feature sets to match you with the ideal printer for your specific requirements, whether you print ten pages a month or ten thousand.
                 </p>
               </CardContent>
             </Card>
@@ -305,7 +305,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Home Office Workers</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Remote workers and home-based professionals need reliable, cost-effective printing solutions that handle documents, contracts, and presentations professionally. Our guides focus on printers that deliver consistent quality, offer multifunction capabilities for scanning and copying, and feature low operating costs. Find OfficeJet Pro models that balance professional output with home-friendly pricing.
+                  Remote workers and home-based professionals need reliable, cost-effective printing solutions that handle documents, contracts, and presentations professionally. Our guides focus on printers that deliver consistent quality, offer multifunction capabilities for scanning and copying, and feature low operating costs. Find professional office inkjet models that balance professional output with home-friendly pricing.
                 </p>
               </CardContent>
             </Card>
@@ -329,7 +329,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Students & Families</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Families and students need affordable everyday printing for homework, school projects, photos, and household documents. Our guides highlight compact, budget-friendly DeskJet and ENVY printers that fit student budgets and family needs. Learn about Instant Ink plans that make printing more affordable for households with variable monthly printing volumes.
+                  Families and students need affordable everyday printing for homework, school projects, photos, and household documents. Our guides highlight compact, budget-friendly entry-level and photo inkjet printers that fit student budgets and family needs. Learn about ink subscription plans that make printing more affordable for households with variable monthly printing volumes.
                 </p>
               </CardContent>
             </Card>
@@ -545,7 +545,7 @@ export default function HomePage() {
                       <Target className="w-6 h-6 text-pink-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2">DeskJet vs OfficeJet vs ENVY Comparison</h3>
+                      <h3 className="font-bold text-lg mb-2">Entry-Level vs Office vs Photo Inkjet Comparison</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         Side-by-side comparison of inkjet printer series covering target users, feature differences, price positioning, and specific model recommendations within each lineup.
                       </p>
@@ -708,7 +708,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="font-bold text-2xl mb-3">Office Inkjet Printers</h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Perfect for teams of 5-15 users who need reliable shared printing. OfficeJet Pro series delivers fast print speeds, automatic document feeders, duplex printing, and network connectivity. Built for higher monthly duty cycles with lower cost per page.
+                    Perfect for teams of 5-15 users who need reliable shared printing. Professional office inkjet models deliver fast print speeds, automatic document feeders, duplex printing, and network connectivity. Built for higher monthly duty cycles with lower cost per page.
                   </p>
                   <div className="flex items-center justify-center gap-2 text-primary font-semibold">
                     <span>Starting from ${parseFloat(officeStartingPrice).toFixed(0)}</span>
@@ -745,7 +745,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-2xl mb-4">Wide Selection</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  We maintain an extensive catalog of inkjet printers covering every major product line—DeskJet for budget-conscious home users, OfficeJet Pro for business productivity, ENVY for photo enthusiasts, and Smart Tank for high-volume printing. Our curated selection includes the latest models alongside proven performers, ensuring you find exactly the right printer for your specific needs and budget.
+                  We maintain an extensive catalog of inkjet printers covering every major product line—entry-level inkjets for budget-conscious home users, professional office inkjets for business productivity, photo inkjets for photo enthusiasts, and tank-based inkjets for high-volume printing. Our curated selection includes the latest models alongside proven performers, ensuring you find exactly the right printer for your specific needs and budget.
                 </p>
               </CardContent>
             </Card>
@@ -769,7 +769,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-2xl mb-4">Best Prices</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Our competitive pricing reflects our commitment to value. We continuously monitor market pricing to ensure InkjetProGuide customers receive fair, transparent pricing without hidden fees or inflated shipping costs. Combined with our free shipping threshold and periodic promotional offers, you get excellent value whether purchasing a budget DeskJet or a premium OfficeJet Pro workstation.
+                  Our competitive pricing reflects our commitment to value. We continuously monitor market pricing to ensure InkjetProGuide customers receive fair, transparent pricing without hidden fees or inflated shipping costs. Combined with our free shipping threshold and periodic promotional offers, you get excellent value whether purchasing a budget entry-level inkjet or a premium professional office inkjet workstation.
                 </p>
               </CardContent>
             </Card>
@@ -802,7 +802,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <blockquote className="text-muted-foreground leading-relaxed mb-6">
-                  "The buying guides on InkjetProGuide helped me understand exactly what I needed for my home office. I was overwhelmed by options at first, but after reading the home office printer guide, I knew the OfficeJet Pro 9125e was perfect for my needs. Fast shipping and the printer arrived in perfect condition. Highly recommend this site for anyone researching printers."
+                  "The buying guides on InkjetProGuide helped me understand exactly what I needed for my home office. I was overwhelmed by options at first, but after reading the home office printer guide, I knew the professional office inkjet was perfect for my needs. Fast shipping and the printer arrived in perfect condition. Highly recommend this site for anyone researching printers."
                 </blockquote>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -854,7 +854,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <blockquote className="text-muted-foreground leading-relaxed mb-6">
-                  "I print a lot of photos for my family scrapbooks and wanted something better than the cheap printer we had. The ENVY Photo comparison guide helped me choose the right model. The photo quality from the ENVY Inspire 7955e is amazing—colors are vibrant and prints look professional. Customer service answered my questions before purchase too. Great experience overall."
+                  "I print a lot of photos for my family scrapbooks and wanted something better than the cheap printer we had. The photo printer comparison guide helped me choose the right model. The photo quality from the photo inkjet I purchased is amazing—colors are vibrant and prints look professional. Customer service answered my questions before purchase too. Great experience overall."
                 </blockquote>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">

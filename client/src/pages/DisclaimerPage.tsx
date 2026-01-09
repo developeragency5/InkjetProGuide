@@ -97,7 +97,7 @@ export default function DisclaimerPage() {
                 <li data-testid="text-product-6">We reserve the right to correct any errors in product information, pricing, or availability</li>
               </ul>
               <p data-testid="text-product-7">
-                For the most accurate and up-to-date product information, please refer to the official HP website or contact our customer support team.
+                For the most accurate and up-to-date product information, please refer to the manufacturer website or contact our customer support team.
               </p>
             </CardContent>
           </Card>
@@ -175,7 +175,7 @@ export default function DisclaimerPage() {
                 The information provided on InkjetProGuide, including product guides, buying recommendations, and technical specifications, is for general informational purposes only and should not be construed as professional advice.
               </p>
               <p data-testid="text-advice-2">
-                We recommend consulting with qualified professionals or directly with HP technical support for specific technical requirements, compatibility questions, or specialized printing needs. InkjetProGuide is not responsible for any decisions made based on the information provided on this Website.
+                We recommend consulting with qualified professionals or directly with manufacturer technical support for specific technical requirements, compatibility questions, or specialized printing needs. InkjetProGuide is not responsible for any decisions made based on the information provided on this Website.
               </p>
             </CardContent>
           </Card>

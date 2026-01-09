@@ -425,11 +425,11 @@ export default function ProductDetailPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">HP 67 Setup Black Ink Cartridge</span>
+                    <span className="text-muted-foreground">Setup Black Ink Cartridge</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">HP 67 Setup Tri-color Ink Cartridge</span>
+                    <span className="text-muted-foreground">Setup Tri-color Ink Cartridge</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Package className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -629,7 +629,7 @@ export default function ProductDetailPage() {
                 <p className="text-sm text-muted-foreground mt-4">
                   This printer offers the ideal balance of features and value for home users and students who need 
                   reliable printing without the higher cost of professional-grade models. For higher volume needs, 
-                  consider our OfficeJet Pro series.
+                  consider our professional office inkjet series.
                 </p>
               </CardContent>
             </Card>
@@ -772,11 +772,11 @@ export default function ProductDetailPage() {
                   <dl className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex justify-between py-2 border-b">
                       <dt className="text-sm text-muted-foreground">Black Cartridge</dt>
-                      <dd className="text-sm font-medium">HP 67 / HP 67XL</dd>
+                      <dd className="text-sm font-medium">Standard / XL Cartridge</dd>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <dt className="text-sm text-muted-foreground">Color Cartridge</dt>
-                      <dd className="text-sm font-medium">HP 67 Tri-color / HP 67XL Tri-color</dd>
+                      <dd className="text-sm font-medium">Standard Tri-color / XL Tri-color</dd>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <dt className="text-sm text-muted-foreground">Standard Yield (Black)</dt>
@@ -978,11 +978,11 @@ export default function ProductDetailPage() {
                       <dl className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <dt className="text-muted-foreground">Standard Yield</dt>
-                          <dd className="font-medium">HP 67 (~120 pages)</dd>
+                          <dd className="font-medium">Standard (~120 pages)</dd>
                         </div>
                         <div className="flex justify-between">
                           <dt className="text-muted-foreground">High Yield</dt>
-                          <dd className="font-medium">HP 67XL (~240 pages)</dd>
+                          <dd className="font-medium">High Yield XL (~240 pages)</dd>
                         </div>
                       </dl>
                     </div>
@@ -991,11 +991,11 @@ export default function ProductDetailPage() {
                       <dl className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <dt className="text-muted-foreground">Standard Yield</dt>
-                          <dd className="font-medium">HP 67 (~100 pages)</dd>
+                          <dd className="font-medium">Standard (~100 pages)</dd>
                         </div>
                         <div className="flex justify-between">
                           <dt className="text-muted-foreground">High Yield</dt>
-                          <dd className="font-medium">HP 67XL (~200 pages)</dd>
+                          <dd className="font-medium">High Yield XL (~200 pages)</dd>
                         </div>
                       </dl>
                     </div>

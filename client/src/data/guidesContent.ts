@@ -55,12 +55,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Budget-Friendly Option",
-        description: "DeskJet 2755e - Perfect for basic home printing needs",
+        description: "Entry-level inkjet - Perfect for basic home printing needs",
         product: "DeskJet 2755e Wireless All-in-One Color Printer"
       },
       {
         title: "Best for Photos",
-        description: "ENVY Photo 7855 - Exceptional photo quality and color accuracy",
+        description: "Photo inkjet - Exceptional photo quality and color accuracy",
         product: "ENVY Photo 7855 All-in-One Wireless Photo Printer"
       }
     ]
@@ -82,7 +82,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "essential-features",
         title: "Essential Features for Home Office",
-        content: "Home office printers should offer fast print speeds (15+ PPM), automatic document feeders for scanning multiple pages, wireless connectivity for multiple devices, and low operating costs. OfficeJet Pro models are specifically designed for home office productivity."
+        content: "Home office printers should offer fast print speeds (15+ PPM), automatic document feeders for scanning multiple pages, wireless connectivity for multiple devices, and low operating costs. Professional office inkjet models are specifically designed for home office productivity."
       },
       {
         id: "connectivity",
@@ -100,12 +100,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Overall",
-        description: "OfficeJet Pro 9025e - Fast, reliable, and cost-effective",
+        description: "Professional office inkjet - Fast, reliable, and cost-effective",
         product: "OfficeJet Pro 9025e All-in-One Wireless Color Printer"
       },
       {
         title: "Compact Option",
-        description: "OfficeJet Pro 8035e - Perfect for small home offices",
+        description: "Professional office inkjet - Perfect for small home offices",
         product: "OfficeJet Pro 8035e All-in-One Wireless Color Printer"
       }
     ]
@@ -145,12 +145,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Value",
-        description: "DeskJet 2755e - Affordable and perfect for students",
+        description: "Entry-level inkjet - Affordable and perfect for students",
         product: "DeskJet 2755e Wireless All-in-One Color Printer"
       },
       {
         title: "Feature-Rich Option",
-        description: "DeskJet 4155e - More features at a great price",
+        description: "Entry-level inkjet - More features at a great price",
         product: "DeskJet 4155e All-in-One Wireless Color Printer"
       }
     ]
@@ -190,12 +190,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for Photos",
-        description: "ENVY Photo 7855 - Exceptional photo quality",
+        description: "Photo inkjet - Exceptional photo quality",
         product: "ENVY Photo 7855 All-in-One Wireless Photo Printer"
       },
       {
         title: "Premium Option",
-        description: "ENVY Inspire 7955e - Advanced photo features",
+        description: "Photo inkjet - Advanced photo features",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -235,12 +235,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Lowest Cost Per Page",
-        description: "OfficeJet Pro 9025e with Instant Ink",
+        description: "Professional office inkjet with ink subscription",
         product: "OfficeJet Pro 9025e All-in-One Wireless Color Printer"
       },
       {
         title: "Best for High Volume",
-        description: "OfficeJet Pro 9015e - Efficient ink usage",
+        description: "Professional office inkjet - Efficient ink usage",
         product: "OfficeJet Pro 9015e All-in-One Wireless Color Printer"
       }
     ]
@@ -262,7 +262,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "business-requirements",
         title: "Business Requirements",
-        content: "Business printers should handle high monthly volumes (500+ pages), offer professional-quality output, include security features, and provide low operating costs. The OfficeJet Pro series is designed specifically for small business needs with fast speeds and efficient ink usage."
+        content: "Business printers should handle high monthly volumes (500+ pages), offer professional-quality output, include security features, and provide low operating costs. Professional office inkjet series are designed specifically for small business needs with fast speeds and efficient ink usage."
       },
       {
         id: "productivity-features",
@@ -280,12 +280,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for Small Business",
-        description: "OfficeJet Pro 9025e - Perfect balance of features and cost",
+        description: "Professional office inkjet - Perfect balance of features and cost",
         product: "OfficeJet Pro 9025e All-in-One Wireless Color Printer"
       },
       {
         title: "Budget Business Option",
-        description: "OfficeJet Pro 8035e - Reliable and affordable",
+        description: "Professional office inkjet - Reliable and affordable",
         product: "OfficeJet Pro 8035e All-in-One Wireless Color Printer"
       }
     ]
@@ -325,12 +325,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Wireless Printer",
-        description: "ENVY Inspire 7955e - Advanced wireless features",
+        description: "Photo inkjet - Advanced wireless features",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
         title: "Dual Connectivity",
-        description: "OfficeJet Pro 9015e - Both wireless and USB",
+        description: "Professional office inkjet - Both wireless and USB",
         product: "OfficeJet Pro 9015e All-in-One Wireless Color Printer"
       }
     ]
@@ -357,7 +357,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "print-volume",
         title: "Print Volume Assessment",
-        content: "Estimating your monthly print volume is crucial for choosing the right printer. Light users printing 50-100 pages monthly should consider entry-level DeskJet models. Moderate users printing 100-500 pages benefit from mid-range ENVY or OfficeJet models. High-volume users printing 500+ pages need OfficeJet Pro models designed for heavier workloads. Matching your printer to your volume ensures optimal performance and prevents premature wear."
+        content: "Estimating your monthly print volume is crucial for choosing the right printer. Light users printing 50-100 pages monthly should consider entry-level inkjet models. Moderate users printing 100-500 pages benefit from mid-range photo or office inkjet models. High-volume users printing 500+ pages need professional office inkjet models designed for heavier workloads. Matching your printer to your volume ensures optimal performance and prevents premature wear."
       },
       {
         id: "feature-priorities",
@@ -380,17 +380,17 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for Light Users",
-        description: "DeskJet 4255e - Affordable all-in-one for occasional printing",
+        description: "Entry-level inkjet - Affordable all-in-one for occasional printing",
         product: "DeskJet 4255e All-in-One Wireless Color Printer"
       },
       {
         title: "Best for Heavy Users",
-        description: "OfficeJet Pro 9135e - High-capacity for demanding workloads",
+        description: "Professional office inkjet - High-capacity for demanding workloads",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Best All-Around",
-        description: "ENVY Inspire 7955e - Perfect balance of features and value",
+        description: "Photo inkjet - Perfect balance of features and value",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -398,7 +398,7 @@ export const guidesContent: Record<string, GuideContent> = {
 
   "deskjet-vs-officejet-vs-envy": {
     id: "deskjet-vs-officejet-vs-envy",
-    title: "DeskJet vs OfficeJet vs ENVY Comparison",
+    title: "Entry-Level vs Office vs Photo Inkjet Comparison",
     description: "Compare the three main inkjet printer series to find which one best suits your printing needs.",
     icon: Scale,
     color: "bg-violet-500",
@@ -407,50 +407,50 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "There are three distinct inkjet printer series: DeskJet, OfficeJet, and ENVY. Each series targets different users and use cases. Understanding the differences helps you choose the right printer for your needs. This comprehensive comparison examines features, performance, costs, and ideal use cases for each series to guide your decision."
+        content: "There are three distinct inkjet printer series: entry-level, office, and photo inkjets. Each series targets different users and use cases. Understanding the differences helps you choose the right printer for your needs. This comprehensive comparison examines features, performance, costs, and ideal use cases for each series to guide your decision."
       },
       {
         id: "deskjet-overview",
-        title: "DeskJet Series Overview",
-        content: "The DeskJet series represents the entry-level inkjet lineup, designed for budget-conscious home users. These compact, affordable printers handle basic printing, scanning, and copying needs. DeskJet printers are perfect for students, light home use, and anyone who prints occasionally. They feature wireless connectivity, mobile printing support, and simple setup. While print speeds are modest (7-8 PPM), quality is excellent for everyday documents and casual photo printing."
+        title: "Entry-Level Series Overview",
+        content: "The entry-level inkjet series represents the affordable lineup, designed for budget-conscious home users. These compact, affordable printers handle basic printing, scanning, and copying needs. Entry-level inkjet printers are perfect for students, light home use, and anyone who prints occasionally. They feature wireless connectivity, mobile printing support, and simple setup. While print speeds are modest (7-8 PPM), quality is excellent for everyday documents and casual photo printing."
       },
       {
         id: "officejet-overview",
-        title: "OfficeJet Series Overview",
-        content: "The OfficeJet series bridges home and office environments, offering enhanced productivity features. OfficeJet and OfficeJet Pro models deliver faster print speeds (15-25 PPM), larger paper capacities, and automatic document feeders for efficient multi-page scanning. These printers handle higher monthly volumes and offer lower cost-per-page than DeskJet models. Security features, Ethernet connectivity, and professional-grade output make OfficeJet ideal for home offices and small businesses."
+        title: "Office Inkjet Series Overview",
+        content: "The office inkjet series bridges home and office environments, offering enhanced productivity features. Office inkjet and professional office inkjet models deliver faster print speeds (15-25 PPM), larger paper capacities, and automatic document feeders for efficient multi-page scanning. These printers handle higher monthly volumes and offer lower cost-per-page than entry-level models. Security features, Ethernet connectivity, and professional-grade output make office inkjets ideal for home offices and small businesses."
       },
       {
         id: "envy-overview",
-        title: "ENVY Series Overview",
-        content: "The ENVY series focuses on photo printing and stylish design without sacrificing versatility. ENVY printers deliver exceptional photo quality with 6-ink systems and high DPI resolution. The sleek, modern design fits contemporary home décor. ENVY Inspire models add advanced features like automatic two-sided printing and larger paper trays. These printers excel at photo printing while handling everyday documents efficiently, making them perfect for creative professionals and photography enthusiasts."
+        title: "Photo Inkjet Series Overview",
+        content: "The photo inkjet series focuses on photo printing and stylish design without sacrificing versatility. Photo inkjet printers deliver exceptional photo quality with 6-ink systems and high DPI resolution. The sleek, modern design fits contemporary home décor. Advanced photo inkjet models add features like automatic two-sided printing and larger paper trays. These printers excel at photo printing while handling everyday documents efficiently, making them perfect for creative professionals and photography enthusiasts."
       },
       {
         id: "which-to-choose",
         title: "Which Series to Choose",
-        content: "Choose DeskJet for budget-friendly basic printing under 100 pages monthly. Select OfficeJet or OfficeJet Pro for productivity-focused printing, higher volumes, and business use requiring professional output and advanced features. Pick ENVY for photo-centric printing with stylish design, especially if you print family photos, creative projects, or need exceptional color accuracy. Consider your primary use case, monthly volume, and budget to make the best choice."
+        content: "Choose entry-level inkjets for budget-friendly basic printing under 100 pages monthly. Select office inkjets or professional office inkjets for productivity-focused printing, higher volumes, and business use requiring professional output and advanced features. Pick photo inkjets for photo-centric printing with stylish design, especially if you print family photos, creative projects, or need exceptional color accuracy. Consider your primary use case, monthly volume, and budget to make the best choice."
       }
     ],
     keyPoints: [
-      "DeskJet offers best value for light, budget-conscious users",
-      "OfficeJet Pro delivers productivity features for business needs",
-      "ENVY excels at photo printing with stylish home design",
-      "OfficeJet has lowest cost-per-page for high-volume printing",
+      "Entry-level inkjets offer best value for light, budget-conscious users",
+      "Professional office inkjets deliver productivity features for business needs",
+      "Photo inkjets excel at photo printing with stylish home design",
+      "Office inkjets have lowest cost-per-page for high-volume printing",
       "All series support wireless and mobile printing features"
     ],
     recommendations: [
       {
-        title: "Best DeskJet",
-        description: "DeskJet 4255e - Feature-rich entry-level choice",
+        title: "Best Entry-Level",
+        description: "Entry-level inkjet - Feature-rich affordable choice",
         product: "DeskJet 4255e All-in-One Wireless Color Printer"
       },
       {
-        title: "Best OfficeJet",
-        description: "OfficeJet Pro 9125e - Ultimate productivity machine",
+        title: "Best Office Inkjet",
+        description: "Professional office inkjet - Ultimate productivity machine",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
-        title: "Best ENVY",
-        description: "ENVY Inspire 7955e - Premium photo and everyday printing",
+        title: "Best Photo Inkjet",
+        description: "Photo inkjet - Premium photo and everyday printing",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -458,8 +458,8 @@ export const guidesContent: Record<string, GuideContent> = {
 
   "officejet-pro-vs-basic": {
     id: "officejet-pro-vs-basic",
-    title: "OfficeJet Pro vs Basic Models",
-    description: "Understand the key differences between OfficeJet Pro and basic OfficeJet models to make the right choice.",
+    title: "Professional vs Basic Office Inkjets",
+    description: "Understand the key differences between professional and basic office inkjet models to make the right choice.",
     icon: Scale,
     color: "bg-emerald-500",
     readTime: "9 min read",
@@ -467,17 +467,17 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "The OfficeJet lineup includes both standard OfficeJet and premium OfficeJet Pro models. While they share the same productivity focus, significant differences in speed, features, and long-term costs separate these tiers. This guide helps you understand whether the Pro upgrade justifies its higher price point based on your specific printing requirements and usage patterns."
+        content: "The office inkjet lineup includes both standard and premium professional models. While they share the same productivity focus, significant differences in speed, features, and long-term costs separate these tiers. This guide helps you understand whether the professional upgrade justifies its higher price point based on your specific printing requirements and usage patterns."
       },
       {
         id: "basic-features",
         title: "Basic Model Features",
-        content: "Standard OfficeJet models provide solid all-in-one functionality including printing, scanning, copying, and sometimes faxing. They offer wireless connectivity, mobile printing via the Smart app, and decent print speeds around 10-15 PPM. Paper capacity typically ranges from 100-225 sheets. These models handle moderate monthly volumes of 200-400 pages effectively. Basic OfficeJet printers suit home offices with lighter printing demands and tighter budgets."
+        content: "Standard office inkjet models provide solid all-in-one functionality including printing, scanning, copying, and sometimes faxing. They offer wireless connectivity, mobile printing via the Smart app, and decent print speeds around 10-15 PPM. Paper capacity typically ranges from 100-225 sheets. These models handle moderate monthly volumes of 200-400 pages effectively. Basic office inkjet printers suit home offices with lighter printing demands and tighter budgets."
       },
       {
         id: "pro-advantages",
         title: "Pro Series Advantages",
-        content: "OfficeJet Pro models deliver significant performance upgrades. Print speeds reach 20-25 PPM, dramatically improving productivity. Paper capacity increases to 250-500 sheets with optional second trays. Pro models feature automatic document feeders holding 35-50 pages for efficient batch scanning. Enhanced ink systems reduce cost-per-page significantly. Advanced security features, Ethernet connectivity, and higher monthly duty cycles make Pro models enterprise-ready while remaining suitable for demanding home offices."
+        content: "Professional office inkjet models deliver significant performance upgrades. Print speeds reach 20-25 PPM, dramatically improving productivity. Paper capacity increases to 250-500 sheets with optional second trays. Professional models feature automatic document feeders holding 35-50 pages for efficient batch scanning. Enhanced ink systems reduce cost-per-page significantly. Advanced security features, Ethernet connectivity, and higher monthly duty cycles make professional models enterprise-ready while remaining suitable for demanding home offices."
       },
       {
         id: "cost-comparison",
@@ -487,7 +487,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "who-should-choose",
         title: "Who Should Choose What",
-        content: "Choose basic OfficeJet if you print under 200 pages monthly, have a limited budget, and don't require advanced features. Select OfficeJet Pro if you print over 300 pages monthly, need faster output, require document feeders for scanning, or want the lowest long-term costs. Business users, remote workers with heavy printing needs, and anyone valuing productivity should invest in Pro models for their superior performance and efficiency."
+        content: "Choose basic office inkjets if you print under 200 pages monthly, have a limited budget, and don't require advanced features. Select professional office inkjets if you print over 300 pages monthly, need faster output, require document feeders for scanning, or want the lowest long-term costs. Business users, remote workers with heavy printing needs, and anyone valuing productivity should invest in professional models for their superior performance and efficiency."
       }
     ],
     keyPoints: [
@@ -500,17 +500,17 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Basic Model",
-        description: "OfficeJet 250 Mobile - Portable and reliable for light use",
+        description: "Mobile inkjet - Portable and reliable for light use",
         product: "OfficeJet 250 Mobile All-in-One Printer"
       },
       {
         title: "Best Pro Value",
-        description: "OfficeJet Pro 8135e - Excellent features at competitive price",
+        description: "Professional office inkjet - Excellent features at competitive price",
         product: "OfficeJet Pro 8135e All-in-One Wireless Color Printer"
       },
       {
         title: "Best Pro Premium",
-        description: "OfficeJet Pro 9135e - Maximum performance and efficiency",
+        description: "Professional office inkjet - Maximum performance and efficiency",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       }
     ]
@@ -532,22 +532,22 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "budget-picks",
         title: "Budget-Friendly Picks",
-        content: "For homes with basic printing needs, entry-level printers deliver excellent value. The DeskJet series offers affordable all-in-one functionality with printing, scanning, and copying. Compact designs fit anywhere without dominating your space. Wireless connectivity enables printing from phones, tablets, and computers. While ink costs per page are higher than premium models, low upfront prices make these ideal for occasional users printing under 100 pages monthly."
+        content: "For homes with basic printing needs, entry-level printers deliver excellent value. The entry-level inkjet series offers affordable all-in-one functionality with printing, scanning, and copying. Compact designs fit anywhere without dominating your space. Wireless connectivity enables printing from phones, tablets, and computers. While ink costs per page are higher than premium models, low upfront prices make these ideal for occasional users printing under 100 pages monthly."
       },
       {
         id: "mid-range",
         title: "Mid-Range Excellence",
-        content: "Families and home workers benefit from mid-range models balancing features and value. The ENVY series excels here, offering enhanced photo printing, faster speeds, and better paper handling than budget models. Automatic two-sided printing saves paper costs. Larger ink cartridges reduce cost-per-page. These printers handle 100-300 pages monthly efficiently while producing photos rivaling professional prints. Consider these for households with diverse printing needs."
+        content: "Families and home workers benefit from mid-range models balancing features and value. The photo inkjet series excels here, offering enhanced photo printing, faster speeds, and better paper handling than budget models. Automatic two-sided printing saves paper costs. Larger ink cartridges reduce cost-per-page. These printers handle 100-300 pages monthly efficiently while producing photos rivaling professional prints. Consider these for households with diverse printing needs."
       },
       {
         id: "premium-home",
         title: "Premium Home Printing",
-        content: "Power users and home offices deserve premium capabilities. OfficeJet Pro models bring professional features home: fast print speeds (20+ PPM), automatic document feeders, large paper trays, and the lowest ink costs per page. Smart Tank models offer ultra-low running costs for high-volume users with refillable ink tanks. Premium models handle 500+ pages monthly reliably while delivering professional-quality output for any document type."
+        content: "Power users and home offices deserve premium capabilities. Professional office inkjet models bring professional features home: fast print speeds (20+ PPM), automatic document feeders, large paper trays, and the lowest ink costs per page. Tank-based inkjet models offer ultra-low running costs for high-volume users with refillable ink tanks. Premium models handle 500+ pages monthly reliably while delivering professional-quality output for any document type."
       },
       {
         id: "photo-focus",
         title: "Photo-Focused Options",
-        content: "Photography enthusiasts need printers optimized for image reproduction. ENVY Photo and ENVY Inspire models use 6-ink systems with dedicated photo colors for accurate, vibrant prints. Support for various photo paper sizes and types enables creative expression. Borderless printing produces edge-to-edge images matching professional lab quality. Photo-focused models also handle documents well, making them versatile choices for creative households."
+        content: "Photography enthusiasts need printers optimized for image reproduction. Photo inkjet and advanced photo inkjet models use 6-ink systems with dedicated photo colors for accurate, vibrant prints. Support for various photo paper sizes and types enables creative expression. Borderless printing produces edge-to-edge images matching professional lab quality. Photo-focused models also handle documents well, making them versatile choices for creative households."
       }
     ],
     keyPoints: [
@@ -560,12 +560,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Budget",
-        description: "DeskJet 4255e - Great features at entry-level price",
+        description: "Entry-level inkjet - Great features at entry-level price",
         product: "DeskJet 4255e All-in-One Wireless Color Printer"
       },
       {
         title: "Best Mid-Range",
-        description: "ENVY Inspire 7955e - Excellent photo and document quality",
+        description: "Photo inkjet - Excellent photo and document quality",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
@@ -680,17 +680,17 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for Instant Ink",
-        description: "OfficeJet Pro 9125e - Optimized for subscription printing",
+        description: "Professional office inkjet - Optimized for subscription printing",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Great Value with Subscription",
-        description: "ENVY Inspire 7955e - Excellent with Instant Ink plans",
+        description: "Photo inkjet - Excellent with ink subscription plans",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
         title: "Budget-Friendly Subscription",
-        description: "DeskJet 4255e - Affordable entry to Instant Ink benefits",
+        description: "Entry-level inkjet - Affordable entry to ink subscription benefits",
         product: "DeskJet 4255e All-in-One Wireless Color Printer"
       }
     ]
@@ -745,7 +745,7 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Easy Troubleshooting",
-        description: "OfficeJet Pro 9125e - Smart diagnostics and easy maintenance",
+        description: "Professional office inkjet - Smart diagnostics and easy maintenance",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
@@ -805,7 +805,7 @@ export const guidesContent: Record<string, GuideContent> = {
       },
       {
         title: "Easy Maintenance",
-        description: "ENVY Inspire 7955e - User-friendly maintenance access",
+        description: "Photo inkjet - User-friendly maintenance access",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -855,7 +855,7 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Reliable with Warranty",
-        description: "OfficeJet Pro 9125e - Comprehensive support and coverage",
+        description: "Professional office inkjet - Comprehensive support and coverage",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
@@ -965,12 +965,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Security Features",
-        description: "OfficeJet Pro 9135e - Advanced Wolf Security",
+        description: "Professional office inkjet - Advanced security features",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Secure Home Printing",
-        description: "ENVY Inspire 7955e - PIN printing and secure wireless",
+        description: "Photo inkjet - PIN printing and secure wireless",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -1020,12 +1020,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Auto-Update Enabled",
-        description: "OfficeJet Pro 9125e - Seamless automatic updates",
+        description: "Professional office inkjet - Seamless automatic updates",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Easy Smart Updates",
-        description: "ENVY 6155e - Simple app-based firmware management",
+        description: "Photo inkjet - Simple app-based firmware management",
         product: "ENVY 6155e All-in-One Wireless Color Printer"
       }
     ]
@@ -1075,17 +1075,17 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Mobile Printing",
-        description: "OfficeJet Pro 9125e - Full mobile and cloud integration",
+        description: "Professional office inkjet - Full mobile and cloud integration",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Portable Solution",
-        description: "OfficeJet 250 Mobile - Print anywhere with battery power",
+        description: "Portable inkjet - Print anywhere with battery power",
         product: "OfficeJet 250 Mobile All-in-One Printer"
       },
       {
         title: "Home Mobile Printing",
-        description: "ENVY Inspire 7955e - Excellent app integration for families",
+        description: "Photo inkjet - Excellent app integration for families",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -1135,12 +1135,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Photo Quality",
-        description: "ENVY Inspire 7955e - Optimized for photo papers",
+        description: "Photo inkjet - Optimized for photo papers",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
         title: "Versatile Paper Handling",
-        description: "OfficeJet Pro 9135e - Handles wide range of paper types",
+        description: "Professional office inkjet - Handles wide range of paper types",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       }
     ]
@@ -1195,12 +1195,12 @@ export const guidesContent: Record<string, GuideContent> = {
       },
       {
         title: "Great Draft Mode",
-        description: "OfficeJet Pro 8135e - Quality draft output for business",
+        description: "Professional office inkjet - Quality draft output for business",
         product: "OfficeJet Pro 8135e All-in-One Wireless Color Printer"
       },
       {
         title: "Budget-Conscious Choice",
-        description: "DeskJet 4255e - Affordable with XL cartridge options",
+        description: "Entry-level inkjet - Affordable with XL cartridge options",
         product: "DeskJet 4255e All-in-One Wireless Color Printer"
       }
     ]
@@ -1217,12 +1217,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "introduction",
         title: "Introduction",
-        content: "High-volume printing demands printers engineered for sustained performance. While inkjets were once considered unsuitable for heavy workloads, modern OfficeJet Pro and Smart Tank models handle thousands of pages monthly with reliability matching laser printers. This guide helps high-volume users select appropriate equipment, optimize workflows, and maintain printers for maximum uptime."
+        content: "High-volume printing demands printers engineered for sustained performance. While inkjets were once considered unsuitable for heavy workloads, modern professional office inkjet and tank-based inkjet models handle thousands of pages monthly with reliability matching laser printers. This guide helps high-volume users select appropriate equipment, optimize workflows, and maintain printers for maximum uptime."
       },
       {
         id: "high-capacity-models",
         title: "Choosing High-Capacity Models",
-        content: "For volumes exceeding 500 pages monthly, select printers rated for your workload. Check the monthly duty cycle—the maximum pages a printer can handle without damage. The OfficeJet Pro 9000 series handles 25,000+ pages monthly. Smart Tank models excel at ultra-high volumes with refillable ink systems printing 6,000+ black pages per refill. Large paper trays (250-500 sheets) reduce reload interruptions. Automatic document feeders with 50+ sheet capacity streamline scanning workflows."
+        content: "For volumes exceeding 500 pages monthly, select printers rated for your workload. Check the monthly duty cycle—the maximum pages a printer can handle without damage. Professional office inkjet 9000 series handles 25,000+ pages monthly. Tank-based inkjet models excel at ultra-high volumes with refillable ink systems printing 6,000+ black pages per refill. Large paper trays (250-500 sheets) reduce reload interruptions. Automatic document feeders with 50+ sheet capacity streamline scanning workflows."
       },
       {
         id: "workflow-optimization",
@@ -1250,7 +1250,7 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best for High Volume",
-        description: "OfficeJet Pro 9135e - Built for demanding workloads",
+        description: "Professional office inkjet - Built for demanding workloads",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
@@ -1260,7 +1260,7 @@ export const guidesContent: Record<string, GuideContent> = {
       },
       {
         title: "Wide Format Volume",
-        description: "OfficeJet Pro 9720e - High volume with wide format capability",
+        description: "Wide-format inkjet - High volume with wide format capability",
         product: "OfficeJet Pro 9720e Wide-format All-in-One Printer"
       }
     ]
@@ -1315,7 +1315,7 @@ export const guidesContent: Record<string, GuideContent> = {
       },
       {
         title: "Recycled Content Cartridges",
-        description: "OfficeJet Pro 9125e - Uses cartridges with recycled materials",
+        description: "Professional office inkjet - Uses cartridges with recycled materials",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       }
     ]
@@ -1365,17 +1365,17 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best All-in-One Value",
-        description: "DeskJet 4255e - Affordable multifunction for home use",
+        description: "Entry-level inkjet - Affordable multifunction for home use",
         product: "DeskJet 4255e All-in-One Wireless Color Printer"
       },
       {
         title: "Premium All-in-One",
-        description: "OfficeJet Pro 9135e - Full-featured for home office",
+        description: "Professional office inkjet - Full-featured for home office",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Photo-Focused All-in-One",
-        description: "ENVY Inspire 7955e - Excellent scanning and photo printing",
+        description: "Photo inkjet - Excellent scanning and photo printing",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -1397,7 +1397,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "paper-tray-options",
         title: "Paper Tray Options",
-        content: "Additional paper trays dramatically improve productivity. Second tray options allow loading different paper types—keep letterhead in one tray and plain paper in another. Higher-capacity trays reduce reload frequency for high-volume users. Some OfficeJet Pro models support trays holding 250-550 sheets. Specialty trays handle envelopes, photo paper, or card stock without switching main tray contents. Check your model's compatibility for available tray accessories."
+        content: "Additional paper trays dramatically improve productivity. Second tray options allow loading different paper types—keep letterhead in one tray and plain paper in another. Higher-capacity trays reduce reload frequency for high-volume users. Some professional office inkjet models support trays holding 250-550 sheets. Specialty trays handle envelopes, photo paper, or card stock without switching main tray contents. Check your model's compatibility for available tray accessories."
       },
       {
         id: "connectivity-upgrades",
@@ -1425,12 +1425,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Most Upgradeable",
-        description: "OfficeJet Pro 9135e - Multiple accessory options available",
+        description: "Professional office inkjet - Multiple accessory options available",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Large Paper Capacity",
-        description: "OfficeJet Pro 9720e - 500-sheet dual tray option",
+        description: "Wide-format inkjet - 500-sheet dual tray option",
         product: "OfficeJet Pro 9720e Wide-format All-in-One Printer"
       }
     ]
@@ -1480,17 +1480,17 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Fast Auto Duplex",
-        description: "OfficeJet Pro 9125e - Quick automatic two-sided printing",
+        description: "Professional office inkjet - Quick automatic two-sided printing",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Reliable Duplex",
-        description: "ENVY Inspire 7955e - Consistent duplex quality",
+        description: "Photo inkjet - Consistent duplex quality",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       },
       {
         title: "Budget Duplex",
-        description: "DeskJet 4255e - Affordable auto-duplex option",
+        description: "Entry-level inkjet - Affordable auto-duplex option",
         product: "DeskJet 4255e All-in-One Wireless Color Printer"
       }
     ]
@@ -1540,7 +1540,7 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Reliable in Varied Conditions",
-        description: "OfficeJet Pro 9135e - Robust performance across environments",
+        description: "Professional office inkjet - Robust performance across environments",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
@@ -1595,17 +1595,17 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Balance",
-        description: "OfficeJet Pro 9125e - Fast high-quality printing",
+        description: "Professional office inkjet - Fast high-quality printing",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       },
       {
         title: "Speed Champion",
-        description: "OfficeJet Pro 9135e - 25 PPM for maximum productivity",
+        description: "Professional office inkjet - 25 PPM for maximum productivity",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Quality Focus",
-        description: "ENVY Inspire 7955e - Exceptional quality when needed",
+        description: "Photo inkjet - Exceptional quality when needed",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -1632,7 +1632,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "desktop-wide-format",
         title: "Desktop Wide-Format Options",
-        content: "The OfficeJet Pro 9720e represents capable desktop wide-format printing, handling up to 11x17 inch paper while maintaining all-in-one functionality. These printers fit in office environments while expanding size capabilities. Desktop wide-format models typically cost somewhat more than standard-format equivalents but far less than dedicated large-format plotters. They handle standard sizes equally well, making them versatile choices for varied printing needs."
+        content: "The professional wide-format inkjet represents capable desktop wide-format printing, handling up to 11x17 inch paper while maintaining all-in-one functionality. These printers fit in office environments while expanding size capabilities. Desktop wide-format models typically cost somewhat more than standard-format equivalents but far less than dedicated large-format plotters. They handle standard sizes equally well, making them versatile choices for varied printing needs."
       },
       {
         id: "applications",
@@ -1655,12 +1655,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Desktop Wide-Format",
-        description: "OfficeJet Pro 9720e - 11x17 printing with all-in-one features",
+        description: "Wide-format inkjet - 11x17 printing with all-in-one features",
         product: "OfficeJet Pro 9720e Wide-format All-in-One Printer"
       },
       {
         title: "Best Standard Format",
-        description: "OfficeJet Pro 9135e - Maximum capability in standard sizes",
+        description: "Professional office inkjet - Maximum capability in standard sizes",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       }
     ]
@@ -1710,12 +1710,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Specialty Media Handling",
-        description: "OfficeJet Pro 9135e - Versatile paper handling for varied media",
+        description: "Professional office inkjet - Versatile paper handling for varied media",
         product: "OfficeJet Pro 9135e All-in-One Wireless Color Printer"
       },
       {
         title: "Creative Projects",
-        description: "ENVY Inspire 7955e - Excellent for photo cards and transfers",
+        description: "Photo inkjet - Excellent for photo cards and transfers",
         product: "ENVY Inspire 7955e All-in-One Wireless Color Printer"
       }
     ]
@@ -1737,7 +1737,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "portable-printers",
         title: "Dedicated Portable Printers",
-        content: "The OfficeJet 250 Mobile represents the pinnacle of portable printing—a full all-in-one printer with print, scan, and copy capabilities that fits in a briefcase. Battery-powered operation enables true mobile use without power outlets. Wireless connectivity allows printing from laptops, tablets, and smartphones. The compact footprint accommodates hotel rooms, client offices, and vehicle operation. While slower than desktop counterparts, portable printers produce professional-quality output anywhere."
+        content: "The mobile inkjet printer represents the pinnacle of portable printing—a full all-in-one printer with print, scan, and copy capabilities that fits in a briefcase. Battery-powered operation enables true mobile use without power outlets. Wireless connectivity allows printing from laptops, tablets, and smartphones. The compact footprint accommodates hotel rooms, client offices, and vehicle operation. While slower than desktop counterparts, portable printers produce professional-quality output anywhere."
       },
       {
         id: "phone-printing",
@@ -1765,12 +1765,12 @@ export const guidesContent: Record<string, GuideContent> = {
     recommendations: [
       {
         title: "Best Portable Printer",
-        description: "OfficeJet 250 Mobile - True mobile all-in-one",
+        description: "Portable inkjet - True mobile all-in-one",
         product: "OfficeJet 250 Mobile All-in-One Printer"
       },
       {
         title: "Best for Remote Printing",
-        description: "OfficeJet Pro 9125e - Excellent cloud and remote features",
+        description: "Professional office inkjet - Excellent cloud and remote features",
         product: "OfficeJet Pro 9125e All-in-One Wireless Color Printer"
       }
     ]

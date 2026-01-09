@@ -115,7 +115,7 @@
 - **Background**: Clean gradient or subtle texture, not solid white
 
 ### Images Section
-1. **Hero Image**: High-quality HP inkjet printer on clean background, professionally lit, show front 3/4 angle. Place on right side of hero section (60% width).
+1. **Hero Image**: High-quality inkjet printer on clean background, professionally lit, show front 3/4 angle. Place on right side of hero section (60% width).
 2. **Product Images**: Clean white background product shots, consistent lighting, show printer from multiple angles. Square format (1:1 ratio) for grid consistency.
 3. **Category Banners**: Lifestyle images showing printers in home/office environments for category pages. Aspect ratio 16:9 or 21:9 for wider banners.
 4. **Feature Icons**: Use Heroicons CDN for UI elements (cart, heart, search, user account, checkmarks, stars).
@@ -154,7 +154,7 @@
 7. Footer
 
 ### Product Listing
-- Filters sidebar (left, 20% width): Price range, brand (HP models), features checkboxes
+- Filters sidebar (left, 20% width): Price range, brand (printer models), features checkboxes
 - Product grid (right, 80% width): 3-4 columns
 - Sort dropdown (top-right): Price, Rating, Newest
 - Pagination at bottom

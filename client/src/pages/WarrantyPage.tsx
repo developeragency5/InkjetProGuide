@@ -37,7 +37,7 @@ export default function WarrantyPage() {
                 <strong className="text-foreground">Manufacturer Warranty:</strong> All inkjet printers sold by InkjetProGuide come with the original manufacturer's limited warranty.
               </p>
               <p data-testid="text-overview-2">
-                <strong className="text-foreground">Warranty Coverage:</strong> Warranty terms and duration vary by product and manufacturer. Most HP inkjet printers include a one-year limited warranty from the date of purchase.
+                <strong className="text-foreground">Warranty Coverage:</strong> Warranty terms and duration vary by product and manufacturer. Most inkjet printers include a one-year limited warranty from the date of purchase.
               </p>
               <p data-testid="text-overview-3">
                 <strong className="text-foreground">Our Commitment:</strong> While InkjetProGuide is an independent retailer, we are committed to helping you navigate the warranty process and ensuring you receive the support you deserve.
@@ -71,7 +71,7 @@ export default function WarrantyPage() {
                   Typical Warranty Coverage
                 </h3>
                 <ul className="space-y-2 ml-6 list-disc">
-                  <li data-testid="text-coverage-1"><strong className="text-foreground">Duration:</strong> Most HP inkjet printers come with a 1-year limited warranty from the original date of purchase. Some professional and business models may include extended coverage.</li>
+                  <li data-testid="text-coverage-1"><strong className="text-foreground">Duration:</strong> Most inkjet printers come with a 1-year limited warranty from the original date of purchase. Some professional and business models may include extended coverage.</li>
                   <li data-testid="text-coverage-2"><strong className="text-foreground">What's Covered:</strong> Manufacturing defects, faulty components, and hardware failures that occur under normal operating conditions.</li>
                   <li data-testid="text-coverage-3"><strong className="text-foreground">Repair or Replace:</strong> The manufacturer will, at their discretion, repair or replace defective products or components at no charge during the warranty period.</li>
                   <li data-testid="text-coverage-4"><strong className="text-foreground">Technical Support:</strong> Phone, chat, and online technical support from the manufacturer is included during the warranty period.</li>
@@ -161,7 +161,7 @@ export default function WarrantyPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-3">Contact the Manufacturer</h3>
                     <p className="text-muted-foreground" data-testid="text-step-3">
-                      Warranty claims are processed directly by the manufacturer. Contact HP Customer Support through their website or phone line. They will diagnose the issue and determine if it's covered under warranty.
+                      Warranty claims are processed directly by the manufacturer. Contact manufacturer support through their website or phone line. They will diagnose the issue and determine if it's covered under warranty.
                     </p>
                   </div>
                 </div>
@@ -233,7 +233,7 @@ export default function WarrantyPage() {
               </div>
               
               <ul className="space-y-2 ml-6 list-disc">
-                <li data-testid="text-extended-2"><strong className="text-foreground">HP Care Pack:</strong> HP offers Care Pack extended warranty services that can extend coverage up to 3 years from the date of purchase. These can be purchased directly from HP.</li>
+                <li data-testid="text-extended-2"><strong className="text-foreground">Extended warranty services:</strong> Manufacturers offer extended warranty services that can extend coverage up to 3 years from the date of purchase. These can be purchased directly from the manufacturer.</li>
                 <li data-testid="text-extended-3"><strong className="text-foreground">Third-Party Coverage:</strong> Various third-party warranty providers offer extended protection plans. InkjetProGuide does not endorse or sell these plans.</li>
                 <li data-testid="text-extended-4"><strong className="text-foreground">Credit Card Protection:</strong> Some credit cards automatically extend manufacturer warranties. Check with your credit card issuer for details on any extended warranty benefits included with your card.</li>
               </ul>

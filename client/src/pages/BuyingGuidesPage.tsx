@@ -39,7 +39,7 @@ const guides = [
   },
   {
     id: "deskjet-vs-officejet-vs-envy",
-    title: "DeskJet vs OfficeJet vs ENVY: Which Series Should You Choose",
+    title: "Entry-Level vs Office vs Photo Inkjets: Which Series Should You Choose",
     description: "Compare the three main inkjet printer lines to understand their strengths, ideal use cases, and which one fits your needs.",
     icon: Scale,
     color: "bg-purple-500",
@@ -51,8 +51,8 @@ const guides = [
   },
   {
     id: "officejet-pro-vs-basic",
-    title: "OfficeJet Pro vs Basic Models: Key Differences Explained",
-    description: "Understand what sets OfficeJet Pro apart from standard models and whether the upgrade is worth it for your workflow.",
+    title: "Professional vs Basic Office Inkjets: Key Differences Explained",
+    description: "Understand what sets professional office inkjets apart from standard models and whether the upgrade is worth it for your workflow.",
     icon: Scale,
     color: "bg-purple-500",
     readTime: "6 min read",
