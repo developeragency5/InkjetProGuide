@@ -32,7 +32,6 @@ export default function ProductDetailPage() {
   const [quantity, setQuantity] = useState(1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showImageZoom, setShowImageZoom] = useState(false);
-  const [reviewFilter, setReviewFilter] = useState("all");
   const [showStickyCart, setShowStickyCart] = useState(false);
   const { toast } = useToast();
   const { selectedProducts, addToComparison, removeFromComparison, isInComparison } = useComparison();
@@ -373,7 +372,7 @@ export default function ProductDetailPage() {
 
         {/* Tabs Section */}
         <Tabs defaultValue="overview" className="mb-16">
-          <TabsList className="grid w-full grid-cols-6">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="overview" data-testid="tab-overview">
               <Printer className="w-4 h-4 mr-2" />
               Overview
@@ -393,10 +392,6 @@ export default function ProductDetailPage() {
             <TabsTrigger value="troubleshooting" data-testid="tab-troubleshooting">
               <AlertCircle className="w-4 h-4 mr-2" />
               Troubleshooting
-            </TabsTrigger>
-            <TabsTrigger value="reviews" data-testid="tab-reviews">
-              <Star className="w-4 h-4 mr-2" />
-              Reviews
             </TabsTrigger>
           </TabsList>
 
@@ -1244,106 +1239,6 @@ export default function ProductDetailPage() {
                       <li>• Ensure printer is not in "Quiet Mode" if available</li>
                     </ul>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* Reviews Tab */}
-          <TabsContent value="reviews" className="mt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Verified Customer Reviews</CardTitle>
-                <CardDescription>
-                  Reviews from verified purchasers who bought this product from InkjetProGuide
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {/* Review Summary */}
-                <div className="flex items-center gap-6 p-4 bg-muted/30 rounded-lg mb-6">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary">0</div>
-                    <div className="text-sm text-muted-foreground">Reviews</div>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-muted-foreground">
-                      All reviews are from verified buyers with confirmed orders. 
-                      Each review includes the purchase date and order reference for authenticity.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Verified Review Format Example (when reviews exist, shown as placeholder) */}
-                <div className="border-b pb-6 mb-6">
-                  <p className="text-sm text-muted-foreground mb-4 italic">
-                    When customers submit reviews, they appear in the following verified format:
-                  </p>
-                  <div className="border rounded-lg p-4 bg-muted/10 opacity-60">
-                    <div className="flex items-start justify-between flex-wrap gap-2 mb-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="font-semibold text-primary">JD</span>
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <span className="font-medium">John D.</span>
-                            <Badge variant="secondary" className="text-xs">
-                              <CheckCircle className="w-3 h-3 mr-1" />
-                              Verified Buyer
-                            </Badge>
-                          </div>
-                          <div className="text-xs text-muted-foreground">
-                            Order #IPG-2025XXXX
-                          </div>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="flex items-center gap-1 text-amber-500">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <Star key={star} className="w-4 h-4 fill-current" />
-                          ))}
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          January 1, 2025
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground italic">
-                      [Review content appears here with customer's feedback about product quality, setup experience, and overall satisfaction...]
-                    </p>
-                  </div>
-                </div>
-
-                {/* No Reviews CTA */}
-                <div className="text-center py-8">
-                  <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
-                    <MessageSquare className="w-8 h-8 text-muted-foreground" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">Be the First to Review</h3>
-                  <p className="text-muted-foreground max-w-md mx-auto mb-6">
-                    Purchased this printer? Share your experience to help other customers. 
-                    Contact us with your order number to submit a verified review.
-                  </p>
-                  <Link href="/contact">
-                    <Button variant="outline" data-testid="button-contact-review">
-                      <Mail className="w-4 h-4 mr-2" />
-                      Submit a Review
-                    </Button>
-                  </Link>
-                </div>
-
-                {/* Review Guidelines */}
-                <div className="bg-primary/5 rounded-lg p-4 mt-6">
-                  <h4 className="font-semibold mb-2 flex items-center gap-2">
-                    <Shield className="w-4 h-4 text-primary" />
-                    Our Verified Review Policy
-                  </h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>All reviews require a valid order number (format: IPG-XXXXXXXX)</li>
-                    <li>Reviews display the reviewer's first name and last initial only</li>
-                    <li>Review date and order reference are shown for transparency</li>
-                    <li>We do not edit or filter negative reviews</li>
-                  </ul>
                 </div>
               </CardContent>
             </Card>
