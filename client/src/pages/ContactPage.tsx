@@ -203,10 +203,10 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">How can I get technical support?</h4>
+                  <h4 className="font-semibold mb-1">How can I get help with my order?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Our technical support team is available during business hours to help with printer setup, 
-                    troubleshooting, and maintenance questions. You can reach us by phone, email, or through 
+                    Our team is available during business hours to help with order, 
+                    shipping, and return questions. You can reach us by phone, email, or through 
                     the contact form on this page. We also provide comprehensive guides and resources in our 
                     Help Center.
                   </p>

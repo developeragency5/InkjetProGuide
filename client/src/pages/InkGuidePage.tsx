@@ -51,7 +51,7 @@ const TROUBLESHOOTING_TIPS = [
   { issue: "Low Ink Warning (New Cartridge)", solution: "Reset the printer or update firmware" },
   { issue: "Streaky Prints", solution: "Clean print heads using printer's maintenance menu" },
   { issue: "Colors Look Wrong", solution: "Align cartridges and run color calibration" },
-  { issue: "Cartridge Leaking", solution: "Store upright, check for damage, contact support if defective" }
+  { issue: "Cartridge Leaking", solution: "Store upright, check for damage, contact manufacturer if defective" }
 ];
 
 export default function InkGuidePage() {

@@ -97,7 +97,7 @@ export default function DisclaimerPage() {
                 <li data-testid="text-product-6">We reserve the right to correct any errors in product information, pricing, or availability</li>
               </ul>
               <p data-testid="text-product-7">
-                For the most accurate and up-to-date product information, please refer to the manufacturer website or contact our customer support team.
+                For the most accurate and up-to-date product information, please refer to the manufacturer website or contact us.
               </p>
             </CardContent>
           </Card>

@@ -566,7 +566,7 @@ export default function BuyingGuidesPage() {
         <div className="mt-16 bg-primary/5 rounded-lg p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Find Your Perfect Printer?</h2>
           <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
-            Browse our selection of inkjet printers or use our product finder to get personalized recommendations.
+            Browse our selection of inkjet printers or use our buying guides to make an informed decision.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" asChild data-testid="button-shop-now">

@@ -133,43 +133,12 @@ export default function BeginnersGuidePage() {
               </div>
             </section>
 
-            <Separator />
-
-            {/* Recommendations */}
-            <section id="recommendations">
-              <h2 className="text-3xl font-bold mb-6">Our Recommendations</h2>
-              <div className="grid gap-6">
-                {guideData.recommendations.map((rec, index) => (
-                  <Card key={index} className="hover-elevate">
-                    <CardHeader>
-                      <CardTitle className="flex items-center justify-between">
-                        <span>{rec.title}</span>
-                        {index === 0 && <Badge>Top Pick</Badge>}
-                      </CardTitle>
-                      <CardDescription className="text-base">{rec.description}</CardDescription>
-                    </CardHeader>
-                    {rec.product && (
-                      <CardContent>
-                        <Button asChild data-testid={`button-view-product-${index}`}>
-                          <Link href="/products">
-                            <ShoppingCart className="w-4 h-4 mr-2" />
-                            View Product
-                            <ChevronRight className="w-4 h-4 ml-2" />
-                          </Link>
-                        </Button>
-                      </CardContent>
-                    )}
-                  </Card>
-                ))}
-              </div>
-            </section>
-
             {/* CTA Section */}
             <Card className="bg-primary/5 border-primary/20">
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4">Ready to Find Your Perfect Printer?</h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Browse our selection of inkjet printers or contact our experts for personalized recommendations.
+                  Browse our selection of inkjet printers and use our buying guides to make an informed decision.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button size="lg" asChild data-testid="button-browse-printers">
@@ -178,8 +147,8 @@ export default function BeginnersGuidePage() {
                       Browse All Printers
                     </Link>
                   </Button>
-                  <Button size="lg" variant="outline" asChild data-testid="button-contact-expert">
-                    <Link href="/contact">Contact Us</Link>
+                  <Button size="lg" variant="outline" asChild data-testid="button-view-guides">
+                    <Link href="/guides">View All Guides</Link>
                   </Button>
                 </div>
               </CardContent>

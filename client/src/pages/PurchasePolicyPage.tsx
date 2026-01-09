@@ -40,7 +40,7 @@ export default function PurchasePolicyPage() {
                 <strong className="text-foreground">Order Confirmation:</strong> You will receive an email confirmation immediately after placing your order with your order details and tracking information once shipped.
               </p>
               <p data-testid="text-overview-3">
-                <strong className="text-foreground">Customer Support:</strong> Our team is available to assist with any questions regarding your purchase.
+                <strong className="text-foreground">Order Questions:</strong> For shipping and return inquiries, contact us during business hours.
               </p>
               <div className="mt-4 p-4 bg-muted/50 rounded-md">
                 <p className="text-sm" data-testid="text-business-info">

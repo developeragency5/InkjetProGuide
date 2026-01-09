@@ -402,7 +402,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Purchase with Confidence</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Complete your purchase knowing exactly what you are getting. Transparent pricing with no hidden fees, free shipping on orders over $299, and a 30-day return policy give you peace of mind. All printers ship factory-sealed with full warranty coverage. Our USA-based customer support team is available to assist with any questions before, during, or after your purchase.
+                  Complete your purchase knowing exactly what you are getting. Transparent pricing with no hidden fees, free shipping on orders over $299, and a 30-day return policy give you peace of mind. All printers ship factory-sealed with full warranty coverage. Our team is available for order-related questions about shipping and returns.
                 </p>
               </div>
             </div>
@@ -733,7 +733,7 @@ export default function HomePage() {
               Why Choose InkjetProGuide
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              InkjetProGuide stands apart as a specialized inkjet printer retailer focused on customer education and satisfaction. Unlike big-box stores that carry thousands of products across dozens of categories, we concentrate exclusively on inkjet printing solutions. This specialization allows us to provide deeper product knowledge, more relevant recommendations, and better customer support than generalist retailers.
+              InkjetProGuide stands apart as a specialized inkjet printer retailer focused on customer education and satisfaction. Unlike big-box stores that carry thousands of products across dozens of categories, we concentrate exclusively on inkjet printing solutions. This specialization allows us to provide deeper product knowledge, more relevant recommendations, and more comprehensive educational resources than generalist retailers.
             </p>
           </div>
 

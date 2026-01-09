@@ -240,7 +240,7 @@ export default function ProductsPage() {
                   <p className="text-sm mb-2">
                     Not sure which inkjet printer is right for you? Use our filters on the left to narrow down by 
                     price, connectivity options, and print technology. You can also compare up to 4 printers side-by-side 
-                    to see detailed specifications and features. For personalized recommendations, contact us at 
+                    to see detailed specifications and features. Use our buying guides to find the right printer for your needs, or contact us at 
                     <strong> inkjetproguide@outlook.com</strong> or call <strong>1-325-400-8874</strong>.
                   </p>
                 </div>

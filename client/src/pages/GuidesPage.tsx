@@ -74,7 +74,7 @@ export default function GuidesPage() {
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Comprehensive guides and tutorials to help you get the most out of your inkjet printer. 
-              From initial setup to advanced troubleshooting, we've got you covered.
+              From initial setup to maintenance tips, our guide library has the resources you need.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/buying-guides">
@@ -278,8 +278,8 @@ export default function GuidesPage() {
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold mb-4">Need More Help?</h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Can't find what you're looking for in our guides? Our team of printer specialists is available 
-                Monday through Friday to answer your questions and provide personalized assistance.
+                Can't find what you're looking for in our guides? Check our FAQ for common questions
+                or contact us for order-related inquiries.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link href="/contact">

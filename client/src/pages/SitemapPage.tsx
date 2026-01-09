@@ -169,7 +169,7 @@ export default function SitemapPage() {
                 This sitemap provides a complete overview of all pages and sections available on InkjetProGuide. It's designed to help you quickly navigate to any part of our website.
               </p>
               <p data-testid="text-about-sitemap-2">
-                <strong className="text-foreground">InkjetProGuide</strong> specializes in inkjet printers, offering a comprehensive selection of products, expert buying guides, and dedicated customer support for customers across the United States.
+                <strong className="text-foreground">InkjetProGuide</strong> specializes in inkjet printers, offering a comprehensive selection of products and helpful buying guides for customers across the United States.
               </p>
               <div className="mt-6 pt-6 border-t">
                 <h3 className="font-semibold mb-3 text-foreground" data-testid="heading-need-help">
