@@ -180,7 +180,7 @@ export default function ProductsPage() {
           </Link>
           <BreadcrumbIcon className="w-4 h-4 text-muted-foreground" />
           <span className="text-foreground font-medium" data-testid="text-breadcrumb-current">
-            HP Inkjet Printers
+            {category || "All Printers"}
           </span>
         </nav>
 
@@ -190,7 +190,7 @@ export default function ProductsPage() {
             {searchQuery
               ? `Search Results for "${searchQuery}"`
               : category
-              ? `${category.charAt(0).toUpperCase() + category.slice(1)} Printers`
+              ? category
               : "HP Inkjet Printers"}
           </h1>
           <p className="text-muted-foreground">
@@ -205,7 +205,7 @@ export default function ProductsPage() {
               <div className="prose prose-sm max-w-none text-muted-foreground">
                 <h2 className="text-xl font-semibold text-foreground mb-4">
                   {category 
-                    ? `About ${category.charAt(0).toUpperCase() + category.slice(1)} HP Inkjet Printers`
+                    ? `About ${category}`
                     : "Your Complete Guide to HP Inkjet Printers"}
                 </h2>
                 
