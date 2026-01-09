@@ -331,8 +331,12 @@ export function Layout({ children }: LayoutProps) {
                       href={link.path}
                       onClick={(e) => {
                         e.preventDefault();
-                        setLocation(link.path);
                         setMobileMenuOpen(false);
+                        if (link.path.includes('?')) {
+                          window.location.href = link.path;
+                        } else {
+                          setLocation(link.path);
+                        }
                       }}
                       className={`block px-4 py-3 text-base font-medium hover-elevate rounded-md cursor-pointer ${
                         isLinkActive(link)
@@ -373,7 +377,11 @@ export function Layout({ children }: LayoutProps) {
                   href={link.path}
                   onClick={(e) => {
                     e.preventDefault();
-                    setLocation(link.path);
+                    if (link.path.includes('?')) {
+                      window.location.href = link.path;
+                    } else {
+                      setLocation(link.path);
+                    }
                   }}
                 >
                   <Button
