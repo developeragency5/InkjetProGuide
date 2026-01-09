@@ -576,19 +576,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 6: Bestsellers - Product Showcase */}
-      <section className="py-16 lg:py-20 bg-muted/30" data-testid="section-bestsellers">
+      {/* SECTION 6: Home Inkjet Printers */}
+      <section className="py-16 lg:py-20 bg-muted/30" data-testid="section-home-printers">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4" data-testid="badge-bestsellers">
-              <Flame className="w-4 h-4 mr-2" />
-              Top Picks
+            <Badge className="mb-4" data-testid="badge-home-printers">
+              <Printer className="w-4 h-4 mr-2" />
+              For Home Use
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-bestsellers">
-              Best HP Inkjet Printers & Top Picks Collection
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-home-printers">
+              Home Inkjet Printers
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our bestselling HP inkjet printers represent the models most frequently purchased by InkjetProGuide customers. These selections combine reliable performance, excellent value, and positive customer feedback. Each printer has been evaluated for build quality, print output, operating costs, and feature set to ensure we recommend only products that meet our quality standards. Updated regularly based on sales data and customer reviews.
+              Compact and efficient HP inkjet printers designed for home-based professionals and remote workers. These printers feature wireless connectivity, mobile printing support, and quiet operation for shared living spaces. Ideal for everyday document printing, school projects, and occasional photo printing with excellent quality.
             </p>
           </div>
 
@@ -606,16 +606,16 @@ export default function HomePage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredProducts.map((product) => (
+              {homeProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
           )}
 
           <div className="text-center mt-8">
-            <Link href="/products">
-              <Button size="lg" data-testid="button-shop-all-printers">
-                Shop All Printers
+            <Link href="/products?category=Home+Inkjet+Printers">
+              <Button size="lg" data-testid="button-shop-home-printers">
+                Shop Home Printers
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -623,8 +623,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7: Shop by Category - 3 Category Cards */}
-      <section className="py-16 lg:py-20 bg-background" data-testid="section-shop-by-category">
+      {/* SECTION 6B: Office Inkjet Printers */}
+      <section className="py-16 lg:py-20 bg-background" data-testid="section-office-printers">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4" data-testid="badge-office-printers">
+              <TrendingUp className="w-4 h-4 mr-2" />
+              For Business Use
+            </Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="heading-office-printers">
+              Office Inkjet Printers
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Professional-grade HP inkjet printers built for small to medium business environments. These printers deliver fast print speeds, automatic document feeders, duplex printing, and robust network connectivity. Designed for higher monthly duty cycles with lower cost per page for maximum productivity.
+            </p>
+          </div>
+
+          {isLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[1, 2, 3, 4].map((i) => (
+                <Card key={i} className="animate-pulse">
+                  <CardContent className="p-6">
+                    <div className="aspect-square bg-muted rounded-lg mb-4"></div>
+                    <div className="h-4 bg-muted rounded w-3/4 mb-2"></div>
+                    <div className="h-4 bg-muted rounded w-1/2"></div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {officeProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
+
+          <div className="text-center mt-8">
+            <Link href="/products?category=Office+Inkjet+Printers">
+              <Button size="lg" data-testid="button-shop-office-printers">
+                Shop Office Printers
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7: Shop by Category - 2 Category Cards */}
+      <section className="py-16 lg:py-20 bg-muted/30" data-testid="section-shop-by-category">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4" data-testid="badge-categories">
@@ -635,18 +682,18 @@ export default function HomePage() {
               Shop by Category
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Find the perfect HP inkjet printer based on your primary use case. We have organized our catalog into three main categories that align with how most customers use their printers. Each category features printers optimized for specific environments, print volumes, and output requirements. Click any category to explore our curated selection with detailed specifications and transparent pricing.
+              Find the perfect HP inkjet printer based on your primary use case. We have organized our catalog into two main categories that align with how most customers use their printers. Each category features printers optimized for specific environments, print volumes, and output requirements. Click any category to explore our curated selection with detailed specifications and transparent pricing.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link href="/products?category=home">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Link href="/products?category=Home+Inkjet+Printers">
               <Card className="hover-elevate transition-all cursor-pointer h-full group" data-testid="category-home-office">
                 <CardContent className="p-8 text-center">
                   <div className="w-20 h-20 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500/20 transition-colors">
                     <Printer className="w-10 h-10 text-blue-600" />
                   </div>
-                  <h3 className="font-bold text-2xl mb-3">Home Office</h3>
+                  <h3 className="font-bold text-2xl mb-3">Home Inkjet Printers</h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     Compact and efficient HP inkjet printers designed for home-based professionals and remote workers. Features include wireless connectivity, mobile printing support, and quiet operation for shared living spaces. Ideal for moderate print volumes with excellent document quality.
                   </p>
@@ -658,36 +705,18 @@ export default function HomePage() {
               </Card>
             </Link>
 
-            <Link href="/products?category=office">
+            <Link href="/products?category=Office+Inkjet+Printers">
               <Card className="hover-elevate transition-all cursor-pointer h-full group" data-testid="category-small-office">
                 <CardContent className="p-8 text-center">
                   <div className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-green-500/20 transition-colors">
                     <TrendingUp className="w-10 h-10 text-green-600" />
                   </div>
-                  <h3 className="font-bold text-2xl mb-3">Small Office</h3>
+                  <h3 className="font-bold text-2xl mb-3">Office Inkjet Printers</h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     Perfect for teams of 5-15 users who need reliable shared printing. HP OfficeJet Pro series delivers fast print speeds, automatic document feeders, duplex printing, and network connectivity. Built for higher monthly duty cycles with lower cost per page.
                   </p>
                   <div className="flex items-center justify-center gap-2 text-primary font-semibold">
                     <span>Starting from ${parseFloat(officeStartingPrice).toFixed(0)}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-
-            <Link href="/products?category=photo">
-              <Card className="hover-elevate transition-all cursor-pointer h-full group" data-testid="category-photo-printing">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-500/20 transition-colors">
-                    <Sparkles className="w-10 h-10 text-purple-600" />
-                  </div>
-                  <h3 className="font-bold text-2xl mb-3">Photo Printing</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    High-quality photo output for photographers, hobbyists, and families who want lab-quality prints at home. HP ENVY Photo series features 6-ink systems for vibrant colors, borderless printing, and support for specialty photo papers up to 8.5x11 inches.
-                  </p>
-                  <div className="flex items-center justify-center gap-2 text-primary font-semibold">
-                    <span>Starting from ${parseFloat(photoStartingPrice).toFixed(0)}</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </CardContent>
