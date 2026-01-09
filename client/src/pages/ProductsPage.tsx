@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useLocation } from "wouter";
 import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
+import { SEOHead } from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -156,6 +157,7 @@ export default function ProductsPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead page="products" fallbackTitle="Shop All Printers | InkjetProGuide" />
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm mb-6" aria-label="Breadcrumb">

@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
+import { SEOHead } from "@/components/SEOHead";
 
 const sections = [
   { id: "introduction", title: "1. Introduction & Acceptance", icon: FileText },
@@ -80,6 +81,7 @@ export default function TermsConditionsPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead page="terms-conditions" fallbackTitle="Terms & Conditions | InkjetProGuide" />
       <div className="bg-gradient-to-br from-primary/10 via-background to-primary/5 border-b">
         <div className="max-w-7xl mx-auto px-4 py-16">
           <div className="text-center">

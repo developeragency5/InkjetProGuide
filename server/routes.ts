@@ -800,6 +800,16 @@ Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
     }
   });
 
+  // Public SEO settings endpoint (for frontend meta tags)
+  app.get("/api/seo-settings", async (req, res) => {
+    try {
+      const settings = await storage.getAllSeoSettings();
+      res.json(settings);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   // Product routes
   app.get("/api/products", async (req, res) => {
     try {

@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -27,6 +28,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead page="contact" fallbackTitle="Contact Us | InkjetProGuide" />
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>

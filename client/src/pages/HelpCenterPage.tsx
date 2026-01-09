@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
 import type { HelpArticle } from "@shared/schema";
+import { SEOHead } from "@/components/SEOHead";
 
 const categories = [
   {
@@ -145,6 +146,7 @@ export default function HelpCenterPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead page="help" fallbackTitle="Help Center | InkjetProGuide" />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-20">
         <div className="max-w-7xl mx-auto px-4">

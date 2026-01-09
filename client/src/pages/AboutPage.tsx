@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Headphones, Shield, Package, Zap, Target, Heart, TrendingUp, CheckCircle, Truck, DollarSign, MapPin, Mail, Phone } from "lucide-react";
 import { Link } from "wouter";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function AboutPage() {
   const stats = [
@@ -69,6 +70,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead page="about" fallbackTitle="About InkjetProGuide" />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-primary/10 via-background to-primary/5 border-b">
         <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">

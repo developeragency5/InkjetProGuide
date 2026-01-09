@@ -35,6 +35,7 @@ import {
   ScrollText
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { SEOHead } from "@/components/SEOHead";
 
 const sections = [
   { id: "introduction", title: "Introduction", icon: FileText },
@@ -88,6 +89,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead page="privacy-policy" fallbackTitle="Privacy Policy | InkjetProGuide" />
       <div className="bg-gradient-to-br from-primary/10 via-background to-primary/5 border-b">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <div className="text-center">

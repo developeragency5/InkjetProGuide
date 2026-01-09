@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Wrench, Settings, HelpCircle, CheckCircle, ArrowRight, Printer, Users, Lightbulb, Clock } from "lucide-react";
 import { Link } from "wouter";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function GuidesPage() {
   const guides = [
@@ -61,6 +62,7 @@ export default function GuidesPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead page="guides" fallbackTitle="Printer Buying Guides | InkjetProGuide" />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-background border-b">
         <div className="max-w-7xl mx-auto px-4 py-16">

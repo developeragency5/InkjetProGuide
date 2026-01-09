@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function WishlistPage() {
   const { toast } = useToast();
@@ -75,6 +76,7 @@ export default function WishlistPage() {
 
   return (
     <div className="min-h-screen bg-background py-12">
+      <SEOHead page="wishlist" fallbackTitle="My Wishlist | InkjetProGuide" />
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-4xl font-bold">My Wishlist</h1>
