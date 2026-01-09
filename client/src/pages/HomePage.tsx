@@ -123,7 +123,7 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-                <Link href="/buying-guides" className="w-full sm:w-auto">
+                <Link href="/guides" className="w-full sm:w-auto">
                   <Button size="default" className="w-full sm:w-auto font-semibold sm:h-12 sm:px-6" data-testid="button-browse-guides">
                     <BookOpen className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />
                     Browse Buying Guides
@@ -252,7 +252,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Link href="/buying-guides" className="block">
+            <Link href="/guides" className="block">
               <Card className="hover-elevate transition-all h-full bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20" data-testid="topic-all-guides">
                 <CardContent className="p-6 flex flex-col h-full justify-center items-center text-center">
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
@@ -427,7 +427,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link href="/buying-guides">
+            <Link href="/guides">
               <Card className="hover-elevate transition-all cursor-pointer h-full" data-testid="guide-choose-printer">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -449,7 +449,7 @@ export default function HomePage() {
               </Card>
             </Link>
 
-            <Link href="/buying-guides">
+            <Link href="/guides">
               <Card className="hover-elevate transition-all cursor-pointer h-full" data-testid="guide-ink-yield">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -471,7 +471,7 @@ export default function HomePage() {
               </Card>
             </Link>
 
-            <Link href="/buying-guides">
+            <Link href="/guides">
               <Card className="hover-elevate transition-all cursor-pointer h-full" data-testid="guide-instant-ink">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -493,7 +493,7 @@ export default function HomePage() {
               </Card>
             </Link>
 
-            <Link href="/buying-guides">
+            <Link href="/guides">
               <Card className="hover-elevate transition-all cursor-pointer h-full" data-testid="guide-maintenance">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -515,7 +515,7 @@ export default function HomePage() {
               </Card>
             </Link>
 
-            <Link href="/buying-guides">
+            <Link href="/guides">
               <Card className="hover-elevate transition-all cursor-pointer h-full" data-testid="guide-wireless">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -537,7 +537,7 @@ export default function HomePage() {
               </Card>
             </Link>
 
-            <Link href="/buying-guides">
+            <Link href="/guides">
               <Card className="hover-elevate transition-all cursor-pointer h-full" data-testid="guide-series-comparison">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -561,7 +561,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-8">
-            <Link href="/buying-guides">
+            <Link href="/guides">
               <Button variant="outline" size="lg" data-testid="button-view-all-guides">
                 View All Buying Guides
                 <ArrowRight className="ml-2 w-5 h-5" />
