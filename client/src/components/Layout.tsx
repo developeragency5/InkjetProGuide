@@ -71,14 +71,35 @@ export function Layout({ children }: LayoutProps) {
   }, []);
 
   const navigationLinks = [
-    { name: "Home", path: "/" },
-    { name: "Shop All", path: "/products" },
-    { name: "Home Printers", path: "/products?category=Home+Inkjet+Printers" },
-    { name: "Office Printers", path: "/products?category=Office+Inkjet+Printers" },
-    { name: "Guides", path: "/guides" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", exact: true },
+    { name: "Shop All", path: "/products", exact: true },
+    { name: "Home Printers", path: "/products?category=Home+Inkjet+Printers", exact: false },
+    { name: "Office Printers", path: "/products?category=Office+Inkjet+Printers", exact: false },
+    { name: "Guides", path: "/guides", exact: false },
+    { name: "About", path: "/about", exact: false },
+    { name: "Contact", path: "/contact", exact: false },
   ];
+
+  // Helper to check if a nav link is active
+  const isLinkActive = (link: typeof navigationLinks[0]) => {
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search;
+    const fullCurrentUrl = currentPath + currentSearch;
+    
+    if (link.exact) {
+      // For exact matches, check if the full URL matches exactly
+      if (link.path.includes('?')) {
+        return fullCurrentUrl === link.path;
+      }
+      return currentPath === link.path && !currentSearch;
+    }
+    
+    // For non-exact matches, check if path starts with link path or full URL matches
+    if (link.path.includes('?')) {
+      return fullCurrentUrl === link.path;
+    }
+    return currentPath.startsWith(link.path);
+  };
 
   const handleSearch = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -306,19 +327,22 @@ export function Layout({ children }: LayoutProps) {
               <ul className="space-y-2">
                 {navigationLinks.map((link) => (
                   <li key={link.path}>
-                    <Link href={link.path}>
-                      <span
-                        className={`block px-4 py-3 text-base font-medium hover-elevate rounded-md cursor-pointer ${
-                          location === link.path
-                            ? "text-primary bg-primary/5"
-                            : "text-foreground"
-                        }`}
-                        onClick={() => setMobileMenuOpen(false)}
-                        data-testid={`link-mobile-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
-                      >
-                        {link.name}
-                      </span>
-                    </Link>
+                    <a
+                      href={link.path}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setLocation(link.path);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`block px-4 py-3 text-base font-medium hover-elevate rounded-md cursor-pointer ${
+                        isLinkActive(link)
+                          ? "text-primary bg-primary/5"
+                          : "text-foreground"
+                      }`}
+                      data-testid={`link-mobile-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    >
+                      {link.name}
+                    </a>
                   </li>
                 ))}
                 {!isLoggedIn && (
@@ -344,15 +368,22 @@ export function Layout({ children }: LayoutProps) {
           <div className="max-w-7xl mx-auto px-4">
             <nav className="flex items-center justify-center gap-3 py-4">
               {navigationLinks.map((link) => (
-                <Link key={link.path} href={link.path}>
+                <a 
+                  key={link.path} 
+                  href={link.path}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setLocation(link.path);
+                  }}
+                >
                   <Button
-                    variant={location === link.path ? "default" : "ghost"}
+                    variant={isLinkActive(link) ? "default" : "ghost"}
                     className="font-medium text-base h-11 px-6"
                     data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {link.name}
                   </Button>
-                </Link>
+                </a>
               ))}
             </nav>
           </div>
