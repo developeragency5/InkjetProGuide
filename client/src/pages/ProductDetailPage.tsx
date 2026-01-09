@@ -368,16 +368,6 @@ export default function ProductDetailPage() {
                 </div>
               </div>
             </div>
-
-            {/* Product Disclaimer */}
-            <div className="mt-6 p-4 bg-muted/30 rounded-lg border border-muted" data-testid="product-disclaimer">
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">Note:</strong> Prices, specifications, and availability are subject to change without notice. 
-                Product images may vary from actual products. HP and all HP printer model names are trademarks of HP Inc. 
-                InkjetProGuide is not affiliated with HP Inc.{" "}
-                <a href="/disclaimer" className="text-primary hover:underline">Full disclaimer</a>.
-              </p>
-            </div>
           </div>
         </div>
 
