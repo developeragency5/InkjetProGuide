@@ -1261,6 +1261,36 @@ Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
     }
   });
 
+  // Public robots.txt route
+  app.get("/robots.txt", async (req, res) => {
+    try {
+      let config = await storage.getRobotsTxtConfig();
+      
+      if (!config) {
+        // Return default robots.txt if no config exists
+        const defaultContent = `User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /api
+
+Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
+        res.set('Content-Type', 'text/plain');
+        return res.send(defaultContent);
+      }
+
+      // Replace any placeholder URLs with the current host
+      let content = config.content;
+      content = content.replace(/Sitemap:\s*https?:\/\/[^\s]+/gi, `Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`);
+      
+      res.set('Content-Type', 'text/plain');
+      res.send(content);
+    } catch (error: any) {
+      console.error("Error serving robots.txt:", error);
+      res.status(500).send("Error serving robots.txt");
+    }
+  });
+
   // Public sitemap.xml route
   app.get("/sitemap.xml", async (req, res) => {
     try {
