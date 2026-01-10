@@ -249,7 +249,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       if (password === ADMIN_PASSWORD) {
         req.session.adminAuthenticated = true;
-        return res.json({ success: true, message: "Admin authenticated successfully" });
+        req.session.save((err) => {
+          if (err) {
+            return res.status(500).json({ message: "Failed to save session" });
+          }
+          return res.json({ success: true, message: "Admin authenticated successfully" });
+        });
+        return;
       }
       
       res.status(401).json({ message: "Invalid admin password" });
