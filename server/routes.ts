@@ -544,7 +544,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      const baseUrl = `${req.protocol}://${req.get('host')}`;
+      const protocol = req.get('x-forwarded-proto') || req.protocol;
+      const baseUrl = `${protocol}://${req.get('host')}`.replace('http://', 'https://');
       const xml = await generateSitemap(config, storage, baseUrl);
       
       res.json({ xml });
@@ -568,7 +569,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      const baseUrl = `${req.protocol}://${req.get('host')}`;
+      const protocol = req.get('x-forwarded-proto') || req.protocol;
+      const baseUrl = `${protocol}://${req.get('host')}`.replace('http://', 'https://');
       await generateSitemap(config, storage, baseUrl);
       
       // Update lastGenerated timestamp
@@ -604,7 +606,7 @@ Disallow: /admin
 Disallow: /api
 
 # Sitemap location
-Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
+Sitemap: https://${req.get('host')}/sitemap.xml`;
 
         config = await storage.createOrUpdateRobotsTxtConfig({
           content: defaultContent,
@@ -1274,7 +1276,7 @@ Allow: /
 Disallow: /admin
 Disallow: /api
 
-Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
+Sitemap: https://${req.get('host')}/sitemap.xml`;
         res.set('Content-Type', 'text/plain');
         return res.send(defaultContent);
       }
