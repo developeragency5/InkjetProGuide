@@ -1,0 +1,27 @@
+# InkjetProGuide
+
+> InkjetProGuide is an e-commerce store specializing in inkjet printers, wireless printers, and photo printers. We offer a curated selection of quality printers with self-service buying guides and educational resources.
+
+InkjetProGuide provides a complete online shopping experience for printer buyers. Our store features detailed product information, comparison resources, and buying guides to help customers make informed purchasing decisions. We focus exclusively on e-commerce sales and self-service educational content.
+
+## Products
+
+- [Shop All Printers](https://inkjetproguide.com/products): Browse our complete collection of inkjet printers, wireless printers, and photo printers
+- [Home Inkjet Printers](https://inkjetproguide.com/products?category=Home+Inkjet+Printers): Compact and affordable printers for home use
+- [Office Inkjet Printers](https://inkjetproguide.com/products?category=Office+Inkjet+Printers): High-capacity printers for business productivity
+
+## Resources
+
+- [Buying Guides](https://inkjetproguide.com/guides): Self-service educational resources including printer comparisons, inkjet vs laser guides, and feature explanations
+- [About Us](https://inkjetproguide.com/about): Learn about InkjetProGuide and our mission
+
+## Policies
+
+- [Privacy Policy](https://inkjetproguide.com/privacy-policy): How we handle your data
+- [Terms and Conditions](https://inkjetproguide.com/terms-conditions): Our terms of service
+- [Contact](https://inkjetproguide.com/contact): Order-related inquiries including shipping, returns, and order status
+
+## Optional
+
+- [Shopping Cart](https://inkjetproguide.com/cart): View and manage cart items
+- [Wishlist](https://inkjetproguide.com/wishlist): Save products for later
