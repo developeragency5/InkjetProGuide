@@ -33,7 +33,7 @@ export default function RefundPolicyPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-summary-1">
-                <strong className="text-foreground">30-Day Return Policy:</strong> Return any inkjet printer within 30 days of delivery. Full refund on unopened items; opened items showing signs of use may incur up to 15% restocking fee.
+                <strong className="text-foreground">30-Day Return Policy:</strong> Return eligible printers within 30 days of delivery. Unopened or opened-but-unused items may qualify for a full refund. Items that show signs of use may incur up to a 15% restocking fee.
               </p>
               <p data-testid="text-summary-2">
                 <strong className="text-foreground">Return Shipping:</strong> Return shipping eligibility and label availability are determined based on your return request. Contact us to initiate a return.
@@ -80,6 +80,9 @@ export default function RefundPolicyPage() {
                   <li data-testid="text-eligible-4">Original purchase receipt or order number required</li>
                   <li data-testid="text-eligible-5">Returns must be initiated within 30 days of delivery date</li>
                 </ul>
+                <p className="mt-3 text-sm" data-testid="text-eligible-exception">
+                  Items returned missing accessories, packaging, or with physical damage may be subject to a partial refund or refusal.
+                </p>
               </div>
 
               <div className="mt-6">
@@ -265,10 +268,10 @@ export default function RefundPolicyPage() {
                   What to Do
                 </h3>
                 <ul className="space-y-2 ml-6 list-disc">
-                  <li data-testid="text-damaged-1">Contact us within 48 hours of delivery</li>
+                  <li data-testid="text-damaged-1">Contact us as soon as possible (preferably within 48 hours) of delivery</li>
                   <li data-testid="text-damaged-2">Provide photos of the damage or describe the defect</li>
                   <li data-testid="text-damaged-3">Keep all original packaging and materials</li>
-                  <li data-testid="text-damaged-4">We'll arrange immediate pickup and send a replacement</li>
+                  <li data-testid="text-damaged-4">We'll arrange a return shipment or pickup where available and issue a replacement or refund at no cost to you</li>
                 </ul>
               </div>
 

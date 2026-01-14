@@ -1,0 +1,91 @@
+TASK: Apply high-priority consistency and fairness improvements to the Return / Refund Policy.
+
+────────────────────────
+FIX 2: Quick Summary vs Restocking Fee consistency
+────────────────────────
+
+ISSUE:
+The Quick Summary wording does not precisely match the detailed Restocking Fee structure.
+
+TEXT TO REMOVE (Quick Summary line):
+“Full refund on unopened items; opened items showing signs of use may incur up to 15% restocking fee.”
+
+APPROVED REPLACEMENT (USE EXACTLY):
+
+30-Day Return Policy: Return eligible printers within 30 days of delivery. Unopened or opened-but-unused items may qualify for a full refund. Items that show signs of use may incur up to a 15% restocking fee.
+
+RULES:
+- Replace the Quick Summary line only.
+- Do NOT change the detailed Restocking Fee Structure section.
+
+────────────────────────
+FIX 3: Damage reporting window (chargeback-safe)
+────────────────────────
+
+ISSUE:
+“Contact us within 48 hours” appears overly strict and can trigger disputes.
+
+TEXT TO REPLACE:
+“Contact us within 48 hours of delivery…”
+
+APPROVED SAFER VERSION (USE EXACTLY):
+
+Contact us as soon as possible (preferably within 48 hours) of delivery…
+
+RULES:
+- Replace wording only.
+- Keep the rest of the paragraph unchanged.
+
+────────────────────────
+FIX 4: Pickup / replacement overpromise
+────────────────────────
+
+ISSUE:
+“Immediate pickup” is not always operationally possible.
+
+TEXT TO REMOVE:
+“We’ll arrange immediate pickup and send a replacement”
+
+APPROVED SAFER REPLACEMENT (USE EXACTLY):
+
+“We’ll arrange a return shipment or pickup where available and issue a replacement or refund at no cost to you.”
+
+RULES:
+- Replace the sentence only.
+- Do NOT add guarantees or timelines.
+
+────────────────────────
+OPTIONAL IMPROVEMENT 5: Return exceptions clarity (recommended)
+────────────────────────
+
+ADD THIS LINE under the “Eligible Returns” section (USE EXACTLY):
+
+Items returned missing accessories, packaging, or with physical damage may be subject to a partial refund or refusal.
+
+RULES:
+- Insert as a single standalone sentence.
+- Do NOT bold or emphasize.
+
+────────────────────────
+OPTIONAL IMPROVEMENT 6: Registration / activation note (ONLY IF ENFORCED)
+────────────────────────
+
+IF you actually enforce this rule, ADD this line under return conditions:
+
+Products that have been registered, activated, or tied to a service subscription may be treated as “used” for return purposes.
+
+IF NOT ENFORCED:
+- Do NOT add this line.
+
+────────────────────────
+ACCEPTANCE CHECK:
+- Quick Summary now matches Restocking Fee rules exactly.
+- “48 hours” language is softened to “preferably within 48 hours”.
+- No “immediate pickup” promises remain.
+- Optional lines (5–6) appear only once and only if applicable.
+- No other Return Policy sections are modified.
+
+GOAL:
+- Reduce chargeback and dispute risk
+- Improve internal policy consistency
+- Maintain customer-friendly but legally fair returns language
