@@ -169,7 +169,7 @@ export default function SitemapPage() {
                 This sitemap provides a complete overview of all pages and sections available on InkjetProGuide. It's designed to help you quickly navigate to any part of our website.
               </p>
               <p data-testid="text-about-sitemap-2">
-                InkjetProGuide is an independent online retailer serving customers in the United States.
+                InkjetProGuide is an independent online retailer serving customers in the United States. We provide informational buying guides and sell printers sourced through independent distribution channels. We are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
               </p>
               <div className="mt-6 pt-6 border-t">
                 <h3 className="font-semibold mb-3 text-foreground" data-testid="heading-need-help">

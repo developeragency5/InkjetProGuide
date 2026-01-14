@@ -1075,9 +1075,7 @@ export default function HomePage() {
               Why Choose InkjetProGuide
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              InkjetProGuide is an independent online retailer serving customers in the United States. 
-              We focus on inkjet printers and provide comprehensive buying guides and educational resources 
-              to help you make informed purchasing decisions.
+              InkjetProGuide is an independent online retailer serving customers in the United States. We provide informational buying guides and sell printers sourced through independent distribution channels. We are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
             </p>
           </div>
 

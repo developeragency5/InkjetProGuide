@@ -79,7 +79,7 @@ export default function AboutPage() {
               About InkjetProGuide
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-subtitle">
-              InkjetProGuide is an independent online retailer serving customers in the United States.
+              InkjetProGuide is an independent online retailer serving customers in the United States. We provide informational buying guides and sell printers sourced through independent distribution channels. We are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a href="/products#!/Inkjet-Printers/c/193859557">
@@ -123,13 +123,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" data-testid="heading-who-we-are">Who We Are</h2>
               <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p data-testid="text-identity-1">
-                  InkjetProGuide is an independent online retailer serving customers in the United States.
-                </p>
-                <p data-testid="text-identity-2">
-                  We operate independently and are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
-                </p>
-                <p data-testid="text-identity-3">
-                  In addition to offering printers for purchase, we publish free educational buying guides to help customers understand printer features, compare technologies, and make informed decisions.
+                  InkjetProGuide is an independent online retailer serving customers in the United States. We provide informational buying guides and sell printers sourced through independent distribution channels. We are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
                 </p>
               </div>
             </CardContent>

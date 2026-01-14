@@ -232,7 +232,7 @@ export function Layout({ children }: LayoutProps) {
                 <h3 className="font-bold text-xl">InkjetProGuide</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                InkjetProGuide is an independent online retailer serving customers in the United States.
+                InkjetProGuide is an independent online retailer serving customers in the United States. We provide informational buying guides and sell printers sourced through independent distribution channels. We are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
               </p>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center gap-2 text-muted-foreground">
