@@ -124,8 +124,22 @@ export function Layout({ children }: LayoutProps) {
 
             {/* Ecwid Login & Cart */}
             <div className="flex items-center gap-4">
-              <div id="ecwid-signin-link" data-testid="ecwid-signin"></div>
-              <div className="ec-cart-widget" data-testid="ecwid-cart-header"></div>
+              <div id="ecwid-signin-link" data-testid="ecwid-signin">
+                <a 
+                  href="/products#!/~/signin" 
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
+                >
+                  Sign In
+                </a>
+              </div>
+              <div className="ec-cart-widget" data-testid="ecwid-cart-header">
+                <a 
+                  href="/products#!/~/cart" 
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
+                >
+                  Cart
+                </a>
+              </div>
               
               <Button
                 size="icon"

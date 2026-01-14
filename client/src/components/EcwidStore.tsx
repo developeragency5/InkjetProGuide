@@ -145,10 +145,19 @@ function renderSignInLink() {
 }
 
 export function initEcwidScript() {
+  const initWidgets = () => {
+    if (window.Ecwid && typeof window.Ecwid.init === 'function') {
+      window.Ecwid.init();
+    }
+    renderSignInLink();
+  };
+
   if (document.getElementById("ecwid-script")) {
-    // If script already exists, just render sign-in link
-    if (window.Ecwid) {
-      renderSignInLink();
+    // If script already exists, wait for API and initialize
+    if (window.Ecwid && window.Ecwid.OnAPILoaded) {
+      window.Ecwid.OnAPILoaded.add(initWidgets);
+    } else if (window.Ecwid) {
+      initWidgets();
     }
     return;
   }
@@ -165,12 +174,7 @@ export function initEcwidScript() {
 
   script.onload = () => {
     if (window.Ecwid && window.Ecwid.OnAPILoaded) {
-      window.Ecwid.OnAPILoaded.add(() => {
-        if (window.Ecwid && typeof window.Ecwid.init === 'function') {
-          window.Ecwid.init();
-        }
-        renderSignInLink();
-      });
+      window.Ecwid.OnAPILoaded.add(initWidgets);
     }
   };
 
