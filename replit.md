@@ -60,15 +60,17 @@ Preferred communication style: Simple, everyday language.
 - Home Printers: `/products#!/Home-Printers/c/193853315`
 - Office Printers: `/products#!/Office-Printers/c/193855066`
 
-**Product ID Mappings**
-- Smart Tank 6001: 716949315
-- Smart Tank 7301: 716949316
-- ENVY Inspire 7900e: 716949317
-- OfficeJet Pro 9130e: 716949318
-- OfficeJet Pro 9730e: 716949319
-- Color LaserJet Pro 3301fdw: 716949320
-- ENVY 6055e: 716949321
-- DeskJet 2855e: 716949322
+**Product ID Mappings (printmegastore.net)**
+- DeskJet 4255e: 806466768
+- Envy 7955e: 806452376
+- Smart Tank 651: 806466866
+- Smart Tank 7602: 806452406
+- OfficeJet 8015e: 806452382
+- OfficeJet 8135e: 806466580
+- OfficeJet 9110: 806466852
+- OfficeJet 9125e: 806466587
+
+**Store URL**: https://www.printmegastore.net/shop
 
 ### SEO Configuration
 

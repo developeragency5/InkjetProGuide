@@ -11,131 +11,138 @@ export interface StaticProduct {
   reviewCount: number;
   inStock: boolean;
   ecwidProductId: string;
+  ecwidUrl: string;
   features: string[];
 }
-
-import smartTank6001Image from "@assets/HP_Smart_Tank_6001_All_in_One_Printer_1768412709925.png";
 
 export const staticProducts: StaticProduct[] = [
   {
     id: "1",
-    name: "Smart Tank 6001",
-    slug: "smart-tank-6001",
-    description: "Wireless all-in-one cartridge-free ink tank printer with up to 2 years of ink included. Perfect for home printing with ultra-low cost per page.",
-    price: "179.99",
-    originalPrice: "229.99",
-    image: smartTank6001Image,
+    name: "DeskJet 4255e Wireless All-in-One",
+    slug: "deskjet-4255e",
+    description: "Wireless all-in-one color inkjet printer with print, scan, and copy capabilities. Perfect for home and student use with reliable everyday printing.",
+    price: "79.99",
+    originalPrice: "109.99",
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501251639.jpg",
     category: "Home Inkjet Printers",
-    rating: "4.5",
-    reviewCount: 245,
+    rating: "4.3",
+    reviewCount: 324,
     inStock: true,
-    ecwidProductId: "716949315",
-    features: ["Wireless Printing", "Ink Tank System", "Mobile Printing", "Auto 2-Sided Printing"]
+    ecwidProductId: "806466768",
+    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-DeskJet-4255e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-&-Copy-for-Home-and-Student-Use/p/806466768",
+    features: ["Wireless Printing", "Print Scan Copy", "Home Use", "Student Friendly"]
   },
   {
     id: "2",
-    name: "Smart Tank 7301",
-    slug: "smart-tank-7301",
-    description: "All-in-one wireless ink tank printer with automatic document feeder. Ideal for small offices and home businesses with high-volume printing needs.",
-    price: "329.99",
-    originalPrice: "379.99",
-    image: "/placeholder-printer.png",
+    name: "Envy 7955e Wireless Photo All-in-One",
+    slug: "envy-7955e",
+    description: "Wireless photo all-in-one color inkjet printer with auto duplex printing. Ideal for printing stunning photos and everyday documents.",
+    price: "149.99",
+    originalPrice: "229.99",
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501350317.jpg",
+    category: "Home Inkjet Printers",
+    rating: "4.5",
+    reviewCount: 289,
+    inStock: true,
+    ecwidProductId: "806452376",
+    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-Envy-7955e-Wireless-Photo-All-in-One-Color-Inkjet-Printer-with-Auto-Duplex-Printing/p/806452376",
+    features: ["Photo Printing", "Auto Duplex", "Wireless", "All-in-One"]
+  },
+  {
+    id: "3",
+    name: "Smart Tank 651 Wireless Ink Tank",
+    slug: "smart-tank-651",
+    description: "Wireless all-in-one ink tank printer designed for high-volume home printing. Ultra-low cost per page with refillable ink tanks.",
+    price: "299.99",
+    originalPrice: "349.99",
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501407019.png",
+    category: "Home Inkjet Printers",
+    rating: "4.6",
+    reviewCount: 412,
+    inStock: true,
+    ecwidProductId: "806466866",
+    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-Smart-Tank-651-Wireless-All-in-One-Ink-Tank-Printer-for-High-Volume-Home-Printing/p/806466866",
+    features: ["Ink Tank System", "High Volume", "Low Cost Per Page", "Wireless"]
+  },
+  {
+    id: "4",
+    name: "Smart Tank 7602 Wireless All-in-One",
+    slug: "smart-tank-7602",
+    description: "Wireless all-in-one ink tank printer built for high-volume office use. Professional quality printing with exceptional value.",
+    price: "379.99",
+    originalPrice: "429.99",
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501407019.png",
+    category: "Home Inkjet Printers",
+    rating: "4.7",
+    reviewCount: 198,
+    inStock: true,
+    ecwidProductId: "806452406",
+    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-Smart-Tank-7602-Wireless-All-in-One-Ink-Tank-Printer-for-High-Volume-Office-Use/p/806452406",
+    features: ["Ink Tank System", "Office Use", "High Volume", "Professional Quality"]
+  },
+  {
+    id: "5",
+    name: "OfficeJet 8015e Wireless All-in-One",
+    slug: "officejet-8015e",
+    description: "Wireless all-in-one color inkjet printer with print, scan, and copy for office use. Reliable performance for small business needs.",
+    price: "159.99",
+    originalPrice: "199.99",
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501374305.png",
+    category: "Office Inkjet Printers",
+    rating: "4.4",
+    reviewCount: 356,
+    inStock: true,
+    ecwidProductId: "806452382",
+    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-OfficeJet-8015e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806452382",
+    features: ["Office Use", "Print Scan Copy", "Wireless", "Small Business"]
+  },
+  {
+    id: "6",
+    name: "OfficeJet 8135e Wireless All-in-One",
+    slug: "officejet-8135e",
+    description: "Wireless all-in-one color inkjet printer with 3 months of ink trial included. Perfect for office productivity and professional documents.",
+    price: "199.99",
+    originalPrice: "239.99",
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501374379.png",
+    category: "Office Inkjet Printers",
+    rating: "4.5",
+    reviewCount: 267,
+    inStock: true,
+    ecwidProductId: "806466580",
+    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-OfficeJet-8135e-Wireless-All-in-One-Color-Inkjet-Printer-with-3-Months-of-Ink-Trial-for-Office-Use/p/806466580",
+    features: ["Ink Trial Included", "Office Use", "Wireless", "Professional Output"]
+  },
+  {
+    id: "7",
+    name: "OfficeJet 9110 Wireless All-in-One",
+    slug: "officejet-9110",
+    description: "Wireless all-in-one color inkjet printer with print, scan, and copy capabilities. Built for demanding office environments.",
+    price: "219.99",
+    originalPrice: "259.99",
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501392306.jpg",
     category: "Office Inkjet Printers",
     rating: "4.6",
     reviewCount: 189,
     inStock: true,
-    ecwidProductId: "716949316",
-    features: ["35-page ADF", "Wireless Printing", "Ink Tank System", "Duplex Printing"]
-  },
-  {
-    id: "3",
-    name: "ENVY Inspire 7900e",
-    slug: "envy-inspire-7900e",
-    description: "All-in-one photo printer designed for creative projects. Print stunning borderless photos and documents with vibrant colors.",
-    price: "229.99",
-    originalPrice: "279.99",
-    image: "/placeholder-printer.png",
-    category: "Home Inkjet Printers",
-    rating: "4.4",
-    reviewCount: 312,
-    inStock: true,
-    ecwidProductId: "716949317",
-    features: ["Photo Printing", "Borderless Printing", "Wireless", "Auto 2-Sided Printing"]
-  },
-  {
-    id: "4",
-    name: "OfficeJet Pro 9130e",
-    slug: "officejet-pro-9130e",
-    description: "Professional all-in-one printer with fast print speeds and automatic document feeder. Built for productive office environments.",
-    price: "299.99",
-    originalPrice: "349.99",
-    image: "/placeholder-printer.png",
-    category: "Office Inkjet Printers",
-    rating: "4.7",
-    reviewCount: 423,
-    inStock: true,
-    ecwidProductId: "716949318",
-    features: ["Fast Print Speed", "35-page ADF", "Wireless Networking", "Duplex Printing"]
-  },
-  {
-    id: "5",
-    name: "OfficeJet Pro 9730e",
-    slug: "officejet-pro-9730e",
-    description: "Wide-format all-in-one printer for printing up to 11x17 inches. Perfect for presentations, spreadsheets, and professional documents.",
-    price: "449.99",
-    originalPrice: "499.99",
-    image: "/placeholder-printer.png",
-    category: "Office Inkjet Printers",
-    rating: "4.8",
-    reviewCount: 156,
-    inStock: true,
-    ecwidProductId: "716949319",
-    features: ["Wide Format 11x17", "Fast Print Speed", "50-page ADF", "Wireless"]
-  },
-  {
-    id: "6",
-    name: "Color LaserJet Pro 3301fdw",
-    slug: "color-laserjet-pro-3301fdw",
-    description: "Fast color laser printer with wireless connectivity. Designed for small to medium workgroups with high-quality output.",
-    price: "379.99",
-    originalPrice: "429.99",
-    image: "/placeholder-printer.png",
-    category: "Office Inkjet Printers",
-    rating: "4.6",
-    reviewCount: 278,
-    inStock: true,
-    ecwidProductId: "716949320",
-    features: ["Laser Printing", "Fast Output", "Wireless", "Auto Duplex"]
-  },
-  {
-    id: "7",
-    name: "ENVY 6055e",
-    slug: "envy-6055e",
-    description: "Compact wireless all-in-one printer for everyday home printing. Easy setup and affordable ink replacement options.",
-    price: "129.99",
-    originalPrice: "149.99",
-    image: "/placeholder-printer.png",
-    category: "Home Inkjet Printers",
-    rating: "4.3",
-    reviewCount: 567,
-    inStock: true,
-    ecwidProductId: "716949321",
-    features: ["Compact Design", "Wireless Printing", "Mobile Printing", "Auto 2-Sided"]
+    ecwidProductId: "806466852",
+    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-OfficeJet-9110-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806466852",
+    features: ["Fast Printing", "Office Use", "Print Scan Copy", "Wireless"]
   },
   {
     id: "8",
-    name: "DeskJet 2855e",
-    slug: "deskjet-2855e",
-    description: "Budget-friendly wireless inkjet printer for basic home printing needs. Simple setup and reliable performance.",
-    price: "79.99",
-    originalPrice: "99.99",
-    image: "/placeholder-printer.png",
-    category: "Home Inkjet Printers",
-    rating: "4.1",
-    reviewCount: 892,
+    name: "OfficeJet 9125e Wireless All-in-One",
+    slug: "officejet-9125e",
+    description: "Wireless all-in-one color inkjet printer with advanced features for office use. High-performance printing for busy workgroups.",
+    price: "209.99",
+    originalPrice: "309.99",
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501384384.png",
+    category: "Office Inkjet Printers",
+    rating: "4.7",
+    reviewCount: 234,
     inStock: true,
-    ecwidProductId: "716949322",
-    features: ["Budget Friendly", "Wireless", "Mobile Printing", "Easy Setup"]
+    ecwidProductId: "806466587",
+    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-OfficeJet-9125e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806466587",
+    features: ["Advanced Features", "High Performance", "Office Use", "Wireless"]
   }
 ];
 
@@ -151,6 +158,6 @@ export const getOfficeProducts = (): StaticProduct[] => {
   return staticProducts.filter(p => p.category === "Office Inkjet Printers");
 };
 
-export const getEcwidProductUrl = (ecwidProductId: string): string => {
-  return `/products#!/~/product/id=${ecwidProductId}`;
+export const getEcwidProductUrl = (product: StaticProduct): string => {
+  return product.ecwidUrl;
 };
