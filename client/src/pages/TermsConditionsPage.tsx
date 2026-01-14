@@ -340,10 +340,13 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-payment-methods">
                       <h3 className="text-lg font-semibold text-foreground mb-3">Payment Methods Accepted</h3>
                       <p className="mb-3">
-                        We accept secure electronic payment methods including major credit and debit cards (Visa, Mastercard, American Express) and other digital payment options shown at checkout. We do not accept cash on delivery, checks, wire transfers, or cryptocurrency. All payments are processed securely through our checkout system.
+                        We accept major credit cards (Visa, Mastercard, American Express, Discover) and debit cards with Visa or Mastercard logos.
+                      </p>
+                      <p className="mb-3">
+                        All payments are processed securely through our third-party payment processor, Stripe, which maintains PCI-DSS Level 1 compliance.
                       </p>
                       <p>
-                        By providing your payment information, you represent and warrant that you are authorized to use the designated payment method and authorize us to charge your payment method for the total amount of your order, including product prices, shipping costs, taxes, and any applicable fees. We reserve the right to modify the payment methods we accept at any time and to decline payment methods at our discretion for security or fraud prevention purposes.
+                        We do not accept cash, checks, or Cash on Delivery (COD). Available payment methods may change at our discretion and will be displayed during checkout.
                       </p>
                     </div>
                     <div data-testid="text-payment-processing">
