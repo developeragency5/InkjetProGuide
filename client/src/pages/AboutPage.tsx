@@ -48,8 +48,8 @@ export default function AboutPage() {
     },
     {
       icon: DollarSign,
-      title: "Best Price Guarantee",
-      description: "Competitive pricing with exclusive deals and promotions on printers."
+      title: "Competitive Pricing",
+      description: "Fair and competitive pricing with periodic promotions and special offers."
     },
     {
       icon: Package,
@@ -258,8 +258,7 @@ export default function AboutPage() {
                   Commitment to Quality
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Every inkjet printer we sell undergoes rigorous quality checks. We ensure that each 
-                  product meets manufacturing standards and arrives at your doorstep in perfect condition.
+                  Every inkjet printer we sell is new, factory-sealed, and sourced through independent distribution channels. Products are covered by the manufacturer's quality standards and warranty terms.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   We offer the latest models, exclusive features, and 

@@ -1121,15 +1121,9 @@ export default function HomePage() {
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                   <CreditCard className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="font-bold text-2xl mb-4">Best Prices</h3>
+                <h3 className="font-bold text-2xl mb-4">Competitive Pricing</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Our competitive pricing reflects our commitment to value. We
-                  continuously monitor market pricing to ensure InkjetProGuide
-                  customers receive fair, transparent pricing without hidden
-                  fees or inflated shipping costs. Combined with periodic 
-                  promotional offers, you get excellent value whether purchasing 
-                  a budget entry-level inkjet or a premium professional office 
-                  inkjet workstation.
+                  Fair and competitive pricing with periodic promotions and special offers.
                 </p>
               </CardContent>
             </Card>
