@@ -850,9 +850,9 @@ export default function HomePage() {
               >
                 <Card className="hover-elevate h-full">
                   <CardContent className="p-6">
-                    <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                    <div className="aspect-[4/3] bg-white rounded-lg mb-4 flex items-center justify-center overflow-hidden border">
                       {product.image ? (
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain p-2" />
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain p-4" />
                       ) : (
                         <Printer className="w-16 h-16 text-muted-foreground" />
                       )}
@@ -930,9 +930,9 @@ export default function HomePage() {
               >
                 <Card className="hover-elevate h-full">
                   <CardContent className="p-6">
-                    <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                    <div className="aspect-[4/3] bg-white rounded-lg mb-4 flex items-center justify-center overflow-hidden border">
                       {product.image ? (
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain p-2" />
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain p-4" />
                       ) : (
                         <Printer className="w-16 h-16 text-muted-foreground" />
                       )}

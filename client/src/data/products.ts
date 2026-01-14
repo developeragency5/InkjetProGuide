@@ -71,7 +71,7 @@ export const staticProducts: StaticProduct[] = [
     description: "Wireless all-in-one ink tank printer built for high-volume office use. Professional quality printing with exceptional value.",
     price: "379.99",
     originalPrice: "429.99",
-    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501407019.png",
+    image: "",
     category: "Home Inkjet Printers",
     rating: "4.7",
     reviewCount: 198,
