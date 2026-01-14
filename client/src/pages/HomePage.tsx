@@ -37,12 +37,10 @@ import {
   Phone,
   Headphones,
 } from "lucide-react";
-import { ProductCard } from "@/components/ProductCard";
-import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
-import type { Product } from "@shared/schema";
 import { useLocation } from "wouter";
 import defaultHeroImage from "@assets/generated_images/HP_OfficeJet_Pro_printer_89015997.png";
+import { staticProducts, getHomeProducts, getOfficeProducts } from "@/data/products";
 
 export default function HomePage() {
   const [email, setEmail] = useState("");
@@ -50,38 +48,15 @@ export default function HomePage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
 
-  const { data: products, isLoading } = useQuery<Product[]>({
-    queryKey: ["/api/products"],
-  });
+  // Use static product data
+  const homeProducts = getHomeProducts().slice(0, 4);
+  const officeProducts = getOfficeProducts().slice(0, 4);
 
-  const heroProduct =
-    products?.find((p) => p.name.includes("9730e")) || products?.[0];
+  const homeOfficeStartingPrice = getHomeProducts()
+    .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))[0]?.price || "79";
 
-  // Home Inkjet Printers - for home section
-  const homeProducts =
-    products
-      ?.filter((p) => p.category === "Home Inkjet Printers" && p.inStock)
-      .sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
-      .slice(0, 4) || [];
-
-  // Office Inkjet Printers - for office section
-  const officeProducts =
-    products
-      ?.filter((p) => p.category === "Office Inkjet Printers" && p.inStock)
-      .sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
-      .slice(0, 4) || [];
-
-  const homeOfficeStartingPrice =
-    products
-      ?.filter((p) => p.category === "Home Inkjet Printers")
-      .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))[0]?.price ||
-    "79";
-
-  const officeStartingPrice =
-    products
-      ?.filter((p) => p.category === "Office Inkjet Printers")
-      .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))[0]?.price ||
-    "199";
+  const officeStartingPrice = getOfficeProducts()
+    .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))[0]?.price || "299";
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -864,25 +839,43 @@ export default function HomePage() {
             </p>
           </div>
 
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <Card key={i} className="animate-pulse">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {homeProducts.map((product) => (
+              <a 
+                key={product.id} 
+                href={`/products#!/~/product/id=${product.ecwidProductId}`}
+                className="block"
+              >
+                <Card className="hover-elevate h-full">
                   <CardContent className="p-6">
-                    <div className="aspect-square bg-muted rounded-lg mb-4"></div>
-                    <div className="h-4 bg-muted rounded w-3/4 mb-2"></div>
-                    <div className="h-4 bg-muted rounded w-1/2"></div>
+                    <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center">
+                      <Printer className="w-16 h-16 text-muted-foreground" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
+                    <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xl font-bold text-primary">${product.price}</span>
+                      {product.originalPrice && (
+                        <span className="text-sm text-muted-foreground line-through">${product.originalPrice}</span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      {Array(5).fill(0).map((_, i) => (
+                        <Star 
+                          key={i} 
+                          className={`w-4 h-4 ${i < Math.floor(parseFloat(product.rating)) ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'}`} 
+                        />
+                      ))}
+                      <span className="text-sm text-muted-foreground ml-1">({product.reviewCount})</span>
+                    </div>
+                    <Button className="w-full mt-4" data-testid={`button-shop-${product.slug}`}>
+                      Shop Now
+                    </Button>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {homeProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          )}
+              </a>
+            ))}
+          </div>
 
           <div className="text-center mt-8">
             <a href="/products#!/Home-Printers/c/193853315">
@@ -920,25 +913,43 @@ export default function HomePage() {
             </p>
           </div>
 
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <Card key={i} className="animate-pulse">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {officeProducts.map((product) => (
+              <a 
+                key={product.id} 
+                href={`/products#!/~/product/id=${product.ecwidProductId}`}
+                className="block"
+              >
+                <Card className="hover-elevate h-full">
                   <CardContent className="p-6">
-                    <div className="aspect-square bg-muted rounded-lg mb-4"></div>
-                    <div className="h-4 bg-muted rounded w-3/4 mb-2"></div>
-                    <div className="h-4 bg-muted rounded w-1/2"></div>
+                    <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center">
+                      <Printer className="w-16 h-16 text-muted-foreground" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
+                    <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xl font-bold text-primary">${product.price}</span>
+                      {product.originalPrice && (
+                        <span className="text-sm text-muted-foreground line-through">${product.originalPrice}</span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      {Array(5).fill(0).map((_, i) => (
+                        <Star 
+                          key={i} 
+                          className={`w-4 h-4 ${i < Math.floor(parseFloat(product.rating)) ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'}`} 
+                        />
+                      ))}
+                      <span className="text-sm text-muted-foreground ml-1">({product.reviewCount})</span>
+                    </div>
+                    <Button className="w-full mt-4" data-testid={`button-shop-${product.slug}`}>
+                      Shop Now
+                    </Button>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {officeProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          )}
+              </a>
+            ))}
+          </div>
 
           <div className="text-center mt-8">
             <a href="/products#!/Office-Printers/c/193855066">
