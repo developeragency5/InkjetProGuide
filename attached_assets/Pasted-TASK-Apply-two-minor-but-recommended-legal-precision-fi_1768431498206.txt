@@ -1,0 +1,63 @@
+TASK: Apply two minor but recommended legal-precision fixes.
+
+────────────────────────
+MINOR ISSUE #1: Liability wording (legal standard alignment)
+────────────────────────
+
+ISSUE:
+The phrase “Under no circumstance” creates absolute liability exclusion risk in some jurisdictions.
+
+TEXT TO REMOVE:
+“Under no circumstance shall InkjetProGuide have any liability to you for any loss or damage…”
+
+APPROVED SAFE REPLACEMENT
+(MUST MATCH EXACTLY — COPY/PASTE, NO EDITS):
+
+To the fullest extent permitted by applicable law, InkjetProGuide shall not be liable to you for any loss or damage…
+
+SCOPE:
+- Apply ONLY where the removed sentence appears (Terms, Disclaimer, or similar legal sections).
+- Replace wording only; do NOT change surrounding clauses or formatting.
+
+RULES:
+- Do NOT add new liability exclusions.
+- Do NOT remove jurisdiction or governing-law language.
+- Keep punctuation and paragraph structure consistent.
+
+GOAL:
+- Align with modern legal drafting standards
+- Avoid unenforceable absolute exclusions
+- Maintain internal document consistency
+
+────────────────────────
+MINOR ISSUE #2: Product availability clarification
+────────────────────────
+
+ISSUE:
+“Product availability is not guaranteed and may vary” is correct but should clarify order-time acceptance.
+
+ADD THIS LINE DIRECTLY UNDER THE EXISTING PRODUCT INFORMATION DISCLAIMER
+(MUST MATCH EXACTLY):
+
+Orders are subject to acceptance and product availability at the time of purchase confirmation.
+
+SCOPE:
+- Apply to Product Information Disclaimer sections
+- Do NOT add to checkout flow or product titles
+
+RULES:
+- Insert as a single standalone sentence.
+- Do NOT bold, italicize, or emphasize.
+- Do NOT add conditions or examples.
+
+────────────────────────
+ACCEPTANCE CHECK:
+- “Under no circumstance” wording no longer exists.
+- Replacement liability sentence appears exactly as written.
+- Product availability section includes the new order-time clarification.
+- No other content is modified.
+
+GOAL:
+- Cleaner legal enforceability
+- Reduced dispute ambiguity
+- Professional, ads-safe documentation

@@ -9,7 +9,7 @@ export default function AboutPage() {
     { value: "25+", label: "Printer Models" },
     { value: "2-3 Days", label: "Fast Delivery" },
     { value: "30 Days", label: "Easy Returns" },
-    { value: "US", label: "Nationwide Shipping" },
+    { value: "US", label: "Shipping Available" },
   ];
 
   const values = [
