@@ -97,13 +97,6 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-center text-base">
-          <p className="font-medium">{MARKETING_COPY.freeShippingMessage}</p>
-        </div>
-      </div>
-
       {/* Main Header - Sticky */}
       <header className="sticky top-0 z-50 bg-background border-b shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-5">
