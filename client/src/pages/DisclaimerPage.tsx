@@ -186,7 +186,7 @@ export default function DisclaimerPage() {
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
               <p data-testid="text-warranty-1">
-                All printers sold through InkjetProGuide are covered by the manufacturer's warranty. InkjetProGuide does not provide any additional warranty beyond the manufacturer's warranty unless explicitly stated.
+                All products sold by InkjetProGuide are covered by the manufacturer's warranty where applicable. InkjetProGuide does not provide manufacturer warranty service, repairs, or technical support.
               </p>
               <p data-testid="text-warranty-2">
                 THE WEBSITE AND ITS CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.

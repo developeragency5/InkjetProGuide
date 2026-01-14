@@ -271,7 +271,7 @@ export default function RefundPolicyPage() {
               </div>
 
               <p className="mt-4" data-testid="text-damaged-warranty">
-                Printers typically include manufacturer warranty coverage. For warranty service after the 30-day return window, please refer to the warranty documentation included with your product or contact the manufacturer's support directly. We're happy to assist you with the process.
+                All products sold by InkjetProGuide are covered by the manufacturer's warranty where applicable. For warranty service after the 30-day return window, please contact the manufacturer directly. InkjetProGuide does not provide manufacturer warranty service, repairs, or technical support.
               </p>
             </CardContent>
           </Card>
