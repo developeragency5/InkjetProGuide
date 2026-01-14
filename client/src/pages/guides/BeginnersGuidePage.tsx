@@ -1,7 +1,7 @@
 import { Link, useParams } from "wouter";
-import { useState, useEffect } from "react";
-import { CheckCircle, ChevronRight, ShoppingCart } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect } from "react";
+import { CheckCircle, ShoppingCart } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -9,7 +9,6 @@ import { getGuideContent } from "@/data/guidesContent";
 
 export default function BeginnersGuidePage() {
   const params = useParams<{ guideId: string }>();
-  const [activeSection, setActiveSection] = useState("");
   
   // Extract guide ID from route params
   const guideId = params.guideId || 'beginners-guide';
@@ -27,14 +26,6 @@ export default function BeginnersGuidePage() {
   }
 
   const Icon = guideData.icon;
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(id);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -69,45 +60,8 @@ export default function BeginnersGuidePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Table of Contents - Sticky Sidebar */}
-          <div className="lg:col-span-1">
-            <Card className="sticky top-4">
-              <CardHeader>
-                <CardTitle className="text-lg">Table of Contents</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                {guideData.sections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => scrollToSection(section.id)}
-                    className="w-full text-left text-sm hover:text-primary transition-colors py-1"
-                    data-testid={`toc-${section.id}`}
-                  >
-                    {section.title}
-                  </button>
-                ))}
-                <button
-                  onClick={() => scrollToSection("key-points")}
-                  className="w-full text-left text-sm hover:text-primary transition-colors py-1"
-                  data-testid="toc-key-points"
-                >
-                  Key Points
-                </button>
-                <button
-                  onClick={() => scrollToSection("recommendations")}
-                  className="w-full text-left text-sm hover:text-primary transition-colors py-1"
-                  data-testid="toc-recommendations"
-                >
-                  Recommendations
-                </button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Main Content */}
-          <div className="lg:col-span-3 space-y-12">
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="space-y-12">
             {/* Dynamic Sections */}
             {guideData.sections.map((section) => (
               <section key={section.id} id={section.id}>
@@ -153,7 +107,6 @@ export default function BeginnersGuidePage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
         </div>
       </div>
     </div>
