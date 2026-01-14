@@ -258,7 +258,7 @@ export default function ProductGuidePage() {
             <Printer className="w-16 h-16 mx-auto mb-4 text-primary" />
             <h3 className="text-2xl font-bold mb-2">Ready to Purchase?</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Get this {product.name} with free shipping on orders over $299 and 30-day easy returns.
+              Get this {product.name} with fast shipping and 30-day easy returns.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={`/product/${product.id}`}>

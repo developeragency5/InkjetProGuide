@@ -573,7 +573,7 @@ export default function HomePage() {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Purchase your inkjet printer, wireless printer, or photo
-                  printer with confidence. Free shipping on orders over $299,
+                  printer with confidence. Fast shipping,
                   30-day returns.
                 </p>
               </div>
@@ -1126,9 +1126,8 @@ export default function HomePage() {
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Most orders ship within 24 hours from our fulfillment centers,
                   with delivery in 2-3 business days to addresses across the
-                  continental United States. Orders over $299 qualify for free
-                  standard shipping. All printers arrive factory-sealed with
-                  full warranty coverage. We use premium packaging to ensure
+                  continental United States. All printers arrive factory-sealed 
+                  with full warranty coverage. We use premium packaging to ensure
                   your printer arrives in perfect condition, ready to set up and
                   use.
                 </p>
@@ -1148,10 +1147,10 @@ export default function HomePage() {
                   Our competitive pricing reflects our commitment to value. We
                   continuously monitor market pricing to ensure InkjetProGuide
                   customers receive fair, transparent pricing without hidden
-                  fees or inflated shipping costs. Combined with our free
-                  shipping threshold and periodic promotional offers, you get
-                  excellent value whether purchasing a budget entry-level inkjet
-                  or a premium professional office inkjet workstation.
+                  fees or inflated shipping costs. Combined with periodic 
+                  promotional offers, you get excellent value whether purchasing 
+                  a budget entry-level inkjet or a premium professional office 
+                  inkjet workstation.
                 </p>
               </CardContent>
             </Card>

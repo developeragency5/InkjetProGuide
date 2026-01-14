@@ -34,7 +34,7 @@ export default function ShippingPolicyPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-overview-1">
-                <strong className="text-foreground">Free Shipping:</strong> Orders over $299 qualify for free standard shipping within the continental United States.
+                <strong className="text-foreground">Shipping:</strong> We offer standard shipping within the continental United States.
               </p>
               <p data-testid="text-overview-2">
                 <strong className="text-foreground">Delivery Time:</strong> Most orders are delivered within 2-3 business days after processing.
@@ -128,7 +128,7 @@ export default function ShippingPolicyPage() {
                       <tr className="border-b">
                         <td className="p-3">Standard Shipping</td>
                         <td className="p-3">2-3 business days</td>
-                        <td className="p-3">Free on orders $299+, otherwise $9.99</td>
+                        <td className="p-3">$9.99</td>
                       </tr>
                       <tr className="border-b">
                         <td className="p-3">Express Shipping</td>

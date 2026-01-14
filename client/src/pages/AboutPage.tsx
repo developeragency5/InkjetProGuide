@@ -7,9 +7,9 @@ import { SEOHead } from "@/components/SEOHead";
 export default function AboutPage() {
   const stats = [
     { value: "25+", label: "Printer Models" },
-    { value: "$299+", label: "Free Shipping Threshold" },
     { value: "2-3 Days", label: "Fast Delivery" },
     { value: "30 Days", label: "Easy Returns" },
+    { value: "USA", label: "Nationwide Shipping" },
   ];
 
   const values = [
@@ -43,8 +43,8 @@ export default function AboutPage() {
     },
     {
       icon: Truck,
-      title: "Fast & Free Shipping",
-      description: "Free shipping on orders over $299 with 2-3 business day delivery across the USA."
+      title: "Fast Shipping",
+      description: "Fast 2-3 business day delivery across the USA."
     },
     {
       icon: DollarSign,

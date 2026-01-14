@@ -199,11 +199,6 @@ export default function CartPage() {
                       {shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`}
                     </span>
                   </div>
-                  {shipping > 0 && (
-                    <p className="text-xs text-muted-foreground">
-                      Add ${(50 - subtotal).toFixed(2)} more for free shipping!
-                    </p>
-                  )}
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Tax (8%)</span>
                     <span className="font-medium" data-testid="text-tax">

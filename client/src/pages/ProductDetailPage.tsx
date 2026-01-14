@@ -345,8 +345,8 @@ export default function ProductDetailPage() {
                   <Truck className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Free Shipping</p>
-                  <p className="text-xs text-muted-foreground">On orders ${SHIPPING.freeShippingThreshold}+</p>
+                  <p className="text-sm font-medium">Fast Shipping</p>
+                  <p className="text-xs text-muted-foreground">Nationwide delivery</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

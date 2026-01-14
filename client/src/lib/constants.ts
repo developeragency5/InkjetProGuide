@@ -7,7 +7,6 @@ export const BUSINESS_INFO = {
 } as const;
 
 export const SHIPPING = {
-  freeShippingThreshold: 299,
   standardShippingCost: 9.99,
   standardDeliveryDays: "2-3 business days",
   processingTime: "24 hours",
@@ -24,8 +23,7 @@ export const WARRANTY = {
 } as const;
 
 export const MARKETING_COPY = {
-  freeShippingMessage: `Free Shipping on Orders $${SHIPPING.freeShippingThreshold}+`,
-  freeShippingDescription: `Free shipping on orders over $${SHIPPING.freeShippingThreshold}`,
   returnPolicyMessage: `${RETURNS.returnPeriodDays}-day return policy`,
   deliveryMessage: `Delivery in ${SHIPPING.standardDeliveryDays}`,
+  shippingDescription: `Fast delivery in ${SHIPPING.standardDeliveryDays}`,
 } as const;

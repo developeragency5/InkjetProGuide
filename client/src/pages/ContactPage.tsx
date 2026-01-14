@@ -186,9 +186,8 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">What are your shipping options?</h4>
                   <p className="text-sm text-muted-foreground">
-                    We offer free shipping on all orders over $299. Standard delivery takes 2-3 business days, 
-                    with express shipping available for urgent orders. All shipments include tracking information 
-                    sent directly to your email.
+                    Standard delivery takes 2-3 business days, with express shipping available for urgent orders. 
+                    All shipments include tracking information sent directly to your email.
                   </p>
                 </div>
                 <div>

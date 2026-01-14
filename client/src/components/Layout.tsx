@@ -493,7 +493,7 @@ export function Layout({ children }: LayoutProps) {
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
-                  {MARKETING_COPY.freeShippingDescription}
+                  {MARKETING_COPY.shippingDescription}
                 </p>
               </div>
             </div>

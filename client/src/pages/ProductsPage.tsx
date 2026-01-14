@@ -232,7 +232,7 @@ export default function ProductsPage() {
 
                 <p className="mb-4">
                   Printers typically include manufacturer warranty coverage - refer to manufacturer documentation for specific terms. 
-                  Use our buying guides to find the perfect printer for your needs. We offer free shipping on orders over $299 and hassle-free 
+                  Use our buying guides to find the perfect printer for your needs. We offer hassle-free 
                   returns within 30 days of purchase.
                 </p>
 
