@@ -19,10 +19,35 @@ interface EcwidStoreProps {
 
 export function EcwidStore({ defaultCategoryId, defaultProductId }: EcwidStoreProps) {
   useEffect(() => {
+    const containerId = `my-store-${STORE_ID}`;
+    
+    const initProductBrowser = () => {
+      if (!window.xProductBrowser) return;
+      
+      const params = [
+        "categoriesPerRow=3",
+        "views=grid(20,3) list(60) table(60)",
+        "categoryView=grid",
+        "searchView=list",
+        `id=${containerId}`,
+      ];
+
+      if (defaultCategoryId) {
+        params.push(`defaultCategoryId=${defaultCategoryId}`);
+      }
+      if (defaultProductId) {
+        params.push(`defaultProductId=${defaultProductId}`);
+      }
+
+      window.xProductBrowser(...params);
+    };
+
     const loadEcwidScript = () => {
       if (document.getElementById("ecwid-script")) {
-        if (window.Ecwid) {
-          window.Ecwid.init();
+        if (window.Ecwid && window.Ecwid.OnAPILoaded) {
+          window.Ecwid.OnAPILoaded.add(initProductBrowser);
+        } else {
+          setTimeout(loadEcwidScript, 100);
         }
         return;
       }
@@ -38,23 +63,8 @@ export function EcwidStore({ defaultCategoryId, defaultProductId }: EcwidStorePr
       script.async = true;
 
       script.onload = () => {
-        if (window.xProductBrowser) {
-          const params = [
-            "categoriesPerRow=3",
-            "views=grid(20,3) list(60) table(60)",
-            "categoryView=grid",
-            "searchView=list",
-            `id=my-store-${STORE_ID}`,
-          ];
-
-          if (defaultCategoryId) {
-            params.push(`defaultCategoryId=${defaultCategoryId}`);
-          }
-          if (defaultProductId) {
-            params.push(`defaultProductId=${defaultProductId}`);
-          }
-
-          window.xProductBrowser(...params);
+        if (window.Ecwid && window.Ecwid.OnAPILoaded) {
+          window.Ecwid.OnAPILoaded.add(initProductBrowser);
         }
       };
 
@@ -62,12 +72,6 @@ export function EcwidStore({ defaultCategoryId, defaultProductId }: EcwidStorePr
     };
 
     loadEcwidScript();
-
-    return () => {
-      if (window.Ecwid && window.Ecwid.destroy) {
-        window.Ecwid.destroy();
-      }
-    };
   }, [defaultCategoryId, defaultProductId]);
 
   return (
@@ -78,21 +82,6 @@ export function EcwidStore({ defaultCategoryId, defaultProductId }: EcwidStorePr
 }
 
 export function EcwidCartWidget() {
-  useEffect(() => {
-    const loadCartWidget = () => {
-      if (!document.getElementById("ecwid-script")) {
-        return;
-      }
-
-      if (window.Ecwid) {
-        window.Ecwid.init();
-      }
-    };
-
-    const timer = setTimeout(loadCartWidget, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div 
       className="ec-cart-widget" 
@@ -102,21 +91,6 @@ export function EcwidCartWidget() {
 }
 
 export function EcwidAccountWidget() {
-  useEffect(() => {
-    const loadAccountWidget = () => {
-      if (!document.getElementById("ecwid-script")) {
-        return;
-      }
-
-      if (window.Ecwid) {
-        window.Ecwid.init();
-      }
-    };
-
-    const timer = setTimeout(loadAccountWidget, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div 
       className="ec-minicart" 
