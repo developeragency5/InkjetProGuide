@@ -1,6 +1,6 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Shield, Lock, Truck } from "lucide-react";
+import { Menu, X, Shield, Lock, Truck, User, ShoppingCart } from "lucide-react";
 import { SiVisa, SiMastercard, SiAmericanexpress, SiDiscover, SiStripe } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -123,23 +123,23 @@ export function Layout({ children }: LayoutProps) {
             </div>
 
             {/* Ecwid Login & Cart */}
-            <div className="flex items-center gap-4">
-              <div id="ecwid-signin-link" data-testid="ecwid-signin">
-                <a 
-                  href="/products#!/~/signin" 
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
-                >
-                  Sign In
-                </a>
-              </div>
-              <div className="ec-cart-widget" data-testid="ecwid-cart-header">
-                <a 
-                  href="/products#!/~/cart" 
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
-                >
-                  Cart
-                </a>
-              </div>
+            <div className="flex items-center gap-6">
+              <a 
+                href="/products#!/~/signin" 
+                className="flex flex-col items-center gap-1 text-foreground hover:text-primary transition-colors cursor-pointer"
+                data-testid="ecwid-signin"
+              >
+                <User className="w-6 h-6" />
+                <span className="text-xs font-medium">Sign In</span>
+              </a>
+              <a 
+                href="/products#!/~/cart" 
+                className="flex flex-col items-center gap-1 text-foreground hover:text-primary transition-colors cursor-pointer"
+                data-testid="ecwid-cart-header"
+              >
+                <ShoppingCart className="w-6 h-6" />
+                <span className="text-xs font-medium">Cart</span>
+              </a>
               
               <Button
                 size="icon"
