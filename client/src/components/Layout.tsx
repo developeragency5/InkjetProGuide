@@ -1,6 +1,6 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Shield, Lock, Truck, User, ShoppingCart } from "lucide-react";
+import { Menu, X, Shield, Lock, User, ShoppingCart } from "lucide-react";
 import { SiVisa, SiMastercard, SiAmericanexpress, SiDiscover, SiStripe } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -236,16 +236,6 @@ export function Layout({ children }: LayoutProps) {
                 InkjetProGuide is an independent online retailer serving customers in the United States.
               </p>
               <div className="space-y-2 text-sm">
-                <div className="flex items-start gap-2 text-muted-foreground">
-                  <svg className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <div data-testid="text-footer-address">
-                    <span className="text-xs text-muted-foreground/70 block">Corporate Mailing Address</span>
-                    2704 Handley Ederville Rd, Fort Worth, TX 76118
-                  </div>
-                </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -474,27 +464,6 @@ export function Layout({ children }: LayoutProps) {
                 </p>
               </div>
 
-              {/* Shipping Partners */}
-              <div className="text-center">
-                <h4 className="text-sm font-semibold mb-3 flex items-center justify-center gap-2">
-                  <Truck className="w-4 h-4 text-primary" />
-                  Shipping Partners
-                </h4>
-                <div className="flex justify-center items-center gap-3 flex-wrap">
-                  <div className="bg-[#351C15] text-white rounded-md px-3 py-1.5" title="UPS">
-                    <span className="text-sm font-bold tracking-wide">UPS</span>
-                  </div>
-                  <div className="bg-[#4D148C] text-white rounded-md px-3 py-1.5" title="FedEx">
-                    <span className="text-sm font-bold">Fed<span className="text-[#FF6200]">Ex</span></span>
-                  </div>
-                  <div className="bg-[#004B87] text-white rounded-md px-3 py-1.5" title="USPS">
-                    <span className="text-sm font-bold tracking-wide">USPS</span>
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground mt-3">
-                  {MARKETING_COPY.shippingDescription}
-                </p>
-              </div>
             </div>
           </div>
 
@@ -512,7 +481,7 @@ export function Layout({ children }: LayoutProps) {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
             <div className="text-muted-foreground text-center md:text-left">
-              © {BUSINESS_INFO.year} {BUSINESS_INFO.name}. All rights reserved. Made with care in the USA.
+              © {BUSINESS_INFO.year} {BUSINESS_INFO.name}. All rights reserved.
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-muted-foreground">
