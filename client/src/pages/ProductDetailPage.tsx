@@ -609,6 +609,14 @@ export default function ProductDetailPage() {
                   reliable printing without the higher cost of professional-grade models. For higher volume needs, 
                   consider our professional office inkjet series.
                 </p>
+
+                <Separator className="my-6" />
+
+                {/* Warranty & Support */}
+                <h3 className="text-xl font-semibold mb-4" data-testid="heading-warranty-support">Warranty & Support</h3>
+                <p className="text-muted-foreground leading-relaxed" data-testid="text-warranty-support">
+                  Manufacturer warranty and technical support are provided by the manufacturer according to their terms. InkjetProGuide does not provide manufacturer warranty service or technical support.
+                </p>
               </CardContent>
             </Card>
           </TabsContent>

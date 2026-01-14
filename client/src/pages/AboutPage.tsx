@@ -116,119 +116,26 @@ export default function AboutPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* Who We Are - Trust Building Section */}
+        {/* Who We Are - Identity Section */}
         <div className="mb-20">
           <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-background">
             <CardContent className="p-8 md:p-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" data-testid="heading-who-we-are">Who We Are</h2>
-              <div className="grid md:grid-cols-2 gap-12">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                      <Users className="w-5 h-5 text-primary" />
-                      About Our Team
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      InkjetProGuide is an independent online retailer serving customers in the United States. 
-                      Our team brings together years of experience in printer retail and e-commerce to provide 
-                      you with the best possible shopping experience.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                      <Target className="w-5 h-5 text-primary" />
-                      What We Do
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We offer a curated selection of inkjet printers, detailed product guides, buying 
-                      recommendations, and educational resources for informed purchasing decisions.
-                    </p>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                      <MapPin className="w-5 h-5 text-primary" />
-                      Our Location
-                    </h3>
-                    <div className="text-muted-foreground leading-relaxed space-y-2">
-                      <div className="p-4 bg-background rounded-lg border">
-                        <p className="font-medium text-foreground">InkjetProGuide</p>
-                        <p className="text-xs text-muted-foreground/70 mb-1">Corporate Mailing Address</p>
-                        <p>2704 Handley Ederville Rd</p>
-                        <p>Fort Worth, TX 76118</p>
-                        <p className="mt-2">United States</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                      <Headphones className="w-5 h-5 text-primary" />
-                      Contact Information
-                    </h3>
-                    <div className="text-muted-foreground space-y-2">
-                      <p className="flex items-center gap-2">
-                        <Phone className="w-4 h-4" />
-                        <span>1-325-400-8874</span>
-                      </p>
-                      <p className="flex items-center gap-2">
-                        <Mail className="w-4 h-4" />
-                        <span>inkjetproguide@outlook.com</span>
-                      </p>
-                      <p className="text-sm mt-2">
-                        Hours: Monday - Friday, 9:00 AM - 6:00 PM ET
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Our Story */}
-        <div className="mb-20">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" data-testid="heading-our-story">Our Story</h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p data-testid="text-story-1">
-                InkjetProGuide was founded with a simple mission: to make printer shopping easy, transparent, 
-                and stress-free for American consumers and businesses. We recognized that choosing the right 
-                printer can be overwhelming with so many models, specifications, and technical jargon to navigate.
-              </p>
-              <p data-testid="text-story-2">
-                InkjetProGuide provides informational buying guides and a curated online store featuring inkjet printers sourced through independent distribution channels.
-              </p>
-              <p data-testid="text-story-3">
-                Today, we're proud to be one of the leading online destinations for inkjet printers, offering 
-                not just products, but comprehensive guides and educational resources to ensure 
-                you get the most value from your purchase.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Our Mission */}
-        <div className="mb-20">
-          <Card>
-            <CardContent className="p-8 md:p-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" data-testid="heading-our-mission">Our Mission</h2>
               <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p data-testid="text-mission-1">
-                  At InkjetProGuide, our mission is to empower customers with knowledge and provide access to 
-                  high-quality inkjet printers that meet their specific needs. We believe that an informed 
-                  customer is a satisfied customer.
+                <p data-testid="text-identity-1">
+                  InkjetProGuide is an independent online retailer serving customers in the United States.
                 </p>
-                <p data-testid="text-mission-2">
-                  We're committed to transparency in pricing, honest product recommendations, and delivering 
-                  helpful resources at every step. Whether you're a student printing assignments, 
-                  a photographer creating stunning prints, or a business owner managing high-volume printing, 
-                  we're here to guide you to the right solution.
+                <p data-testid="text-identity-2">
+                  We operate independently and are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
+                </p>
+                <p data-testid="text-identity-3">
+                  In addition to offering printers for purchase, we publish free educational buying guides to help customers understand printer features, compare technologies, and make informed decisions.
                 </p>
               </div>
             </CardContent>
           </Card>
         </div>
+
 
         {/* Our Values */}
         <div className="mb-20">
