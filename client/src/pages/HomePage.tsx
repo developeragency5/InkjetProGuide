@@ -1298,6 +1298,10 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
+          
+          <p className="text-center text-xs text-muted-foreground mt-8">
+            Customer reviews are submitted by purchasers and reflect individual experiences. Results may vary.
+          </p>
         </div>
       </section>
       {/* SECTION 10: Newsletter CTA */}
