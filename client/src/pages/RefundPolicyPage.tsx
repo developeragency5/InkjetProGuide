@@ -194,10 +194,9 @@ export default function RefundPolicyPage() {
                   <DollarSign className="w-5 h-5 text-primary" />
                   Refund Method
                 </h3>
-                <ul className="space-y-2 ml-6 list-disc">
-                  <li data-testid="text-refund-method-1"><strong className="text-foreground">Credit/Debit Cards (via Stripe):</strong> Refunded to your original card within 5-7 business days. Please allow an additional 3-5 business days for your bank to post the credit.</li>
-                  <li data-testid="text-refund-method-2"><strong className="text-foreground">Cash on Delivery:</strong> Refunded via check or bank transfer within 10-14 business days after inspection.</li>
-                </ul>
+                <p data-testid="text-refund-method-1">
+                  Refunds are processed to your original payment method (credit or debit card) within 5-7 business days. Please allow an additional 3-5 business days for your bank to post the credit to your account.
+                </p>
               </div>
 
               <div>

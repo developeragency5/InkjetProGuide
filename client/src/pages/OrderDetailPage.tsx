@@ -162,7 +162,7 @@ export default function OrderDetailPage() {
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Payment Method</span>
                     <span className="font-medium">
-                      {order.paymentMethod === 'card' ? 'Credit/Debit Card' : 'Cash on Delivery'}
+                      Credit/Debit Card
                     </span>
                   </div>
                   <div className="flex justify-between">
@@ -190,13 +190,6 @@ export default function OrderDetailPage() {
                       ${parseFloat(order.total).toFixed(2)}
                     </span>
                   </div>
-                  {order.paymentMethod === 'cash' && (
-                    <div className="mt-4 p-3 bg-muted rounded-md">
-                      <p className="text-sm text-muted-foreground">
-                        Payment will be collected upon delivery
-                      </p>
-                    </div>
-                  )}
                 </div>
               </CardContent>
             </Card>

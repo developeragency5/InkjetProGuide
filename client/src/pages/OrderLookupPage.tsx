@@ -182,7 +182,7 @@ export default function OrderLookupPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Payment</span>
-                      <span className="capitalize">{order.paymentMethod === 'cod' ? 'Cash on Delivery' : order.paymentMethod}</span>
+                      <span className="capitalize">Credit/Debit Card</span>
                     </div>
                     <div className="border-t pt-3 mt-3">
                       <div className="flex justify-between text-lg font-semibold">

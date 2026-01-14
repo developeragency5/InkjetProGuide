@@ -439,44 +439,27 @@ export default function CheckoutPage() {
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-semibold mb-6">Payment Method</h2>
                   
-                  <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as "card" | "cash")} className="space-y-4 mb-6">
-                    <label
-                      htmlFor="card"
-                      className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
-                      data-testid="radio-card-payment"
+                  <div className="mb-6">
+                    <div
+                      className="flex items-start gap-3 p-4 border rounded-md border-primary bg-primary/5"
+                      data-testid="payment-card-selected"
                     >
-                      <RadioGroupItem value="card" id="card" />
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <CreditCard className="w-5 h-5 text-primary" />
-                          <span className="font-medium cursor-pointer">
+                          <span className="font-medium">
                             Credit/Debit Card
                           </span>
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          Pay securely with your credit or debit card
+                          Pay securely with your credit or debit card (Visa, Mastercard, American Express)
                         </p>
                       </div>
-                    </label>
-                    <label
-                      htmlFor="cash"
-                      className="flex items-start gap-3 p-4 border rounded-md hover-elevate cursor-pointer"
-                      data-testid="radio-cash-on-delivery"
-                    >
-                      <RadioGroupItem value="cash" id="cash" />
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <Banknote className="w-5 h-5 text-primary" />
-                          <span className="font-medium cursor-pointer">
-                            Cash on Delivery
-                          </span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                          Pay with cash when your order is delivered
-                        </p>
-                      </div>
-                    </label>
-                  </RadioGroup>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-3">
+                      We do not accept cash on delivery, checks, wire transfers, or cryptocurrency.
+                    </p>
+                  </div>
 
                   {paymentMethod === "card" && (
                     <div className="mb-6">

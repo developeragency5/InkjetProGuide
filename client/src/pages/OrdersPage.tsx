@@ -123,7 +123,7 @@ export default function OrdersPage() {
                       ${parseFloat(order.total).toFixed(2)}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {order.paymentMethod === 'card' ? 'Paid by Card' : 'Cash on Delivery'}
+                      Paid by Card
                     </p>
                   </div>
                 </div>

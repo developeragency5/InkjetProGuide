@@ -231,8 +231,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-4">Secure Shopping Experience</h4>
                     <p className="text-muted-foreground">
-                      Shop with confidence using our secure checkout, multiple payment options including 
-                      Stripe and Cash on Delivery, and encrypted data protection.
+                      Shop with confidence using our secure checkout with major credit and debit cards, and encrypted data protection.
                     </p>
                   </div>
                 </div>

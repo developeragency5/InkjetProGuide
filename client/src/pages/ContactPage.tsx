@@ -209,9 +209,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">What payment methods do you accept?</h4>
                   <p className="text-sm text-muted-foreground">
-                    We accept all major credit cards (Visa, Mastercard, American Express) as well as Cash on Delivery 
-                    for qualifying orders. Payment is processed securely at checkout. If you have questions about 
-                    a payment on your order, contact us during business hours.
+                    We accept secure electronic payment methods including major credit and debit cards (Visa, Mastercard, American Express) and other digital payment options shown at checkout. We do not accept cash on delivery, checks, wire transfers, or cryptocurrency. All payments are processed securely through our checkout system.
                   </p>
                 </div>
               </CardContent>
