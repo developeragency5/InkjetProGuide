@@ -99,11 +99,8 @@ export function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-base">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-center text-base">
           <p className="font-medium">{MARKETING_COPY.freeShippingMessage}</p>
-          <div className="flex items-center gap-4">
-            <div className="ec-cart-widget" data-testid="ecwid-cart-top"></div>
-          </div>
         </div>
       </div>
 
