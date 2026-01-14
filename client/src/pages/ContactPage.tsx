@@ -56,7 +56,7 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold mb-2">Phone Inquiries</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Call us toll-free (Office Hours)
+                Phone Support (Order Assistance Only)
               </p>
               <a href="tel:+13254008874" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
                 1-325-400-8874
