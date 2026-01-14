@@ -99,8 +99,57 @@ export function EcwidAccountWidget() {
   );
 }
 
+function renderSignInLink() {
+  const signinContainer = document.getElementById('ecwid-signin-link');
+  if (!signinContainer || !window.Ecwid) return;
+  
+  // Clear existing content
+  signinContainer.innerHTML = '';
+  
+  // Check if user is logged in
+  window.Ecwid.OnAPILoaded.add(() => {
+    const updateSignInUI = () => {
+      if (!signinContainer) return;
+      
+      const link = document.createElement('a');
+      link.href = '#';
+      link.className = 'text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer';
+      link.style.cssText = 'white-space: nowrap;';
+      
+      // Check customer logged in status
+      if (window.Ecwid.getCustomer && window.Ecwid.getCustomer()) {
+        link.textContent = 'My Account';
+        link.onclick = (e) => {
+          e.preventDefault();
+          window.Ecwid.openPage('account');
+        };
+      } else {
+        link.textContent = 'Sign In';
+        link.onclick = (e) => {
+          e.preventDefault();
+          window.Ecwid.openPage('signin');
+        };
+      }
+      
+      signinContainer.innerHTML = '';
+      signinContainer.appendChild(link);
+    };
+    
+    updateSignInUI();
+    
+    // Update UI when customer signs in or out
+    if (window.Ecwid.OnCartChanged) {
+      window.Ecwid.OnCartChanged.add(updateSignInUI);
+    }
+  });
+}
+
 export function initEcwidScript() {
   if (document.getElementById("ecwid-script")) {
+    // If script already exists, just render sign-in link
+    if (window.Ecwid) {
+      renderSignInLink();
+    }
     return;
   }
 
@@ -113,6 +162,17 @@ export function initEcwidScript() {
   script.src = `https://app.ecwid.com/script.js?${STORE_ID}&data_platform=code`;
   script.charset = "utf-8";
   script.async = true;
+
+  script.onload = () => {
+    if (window.Ecwid && window.Ecwid.OnAPILoaded) {
+      window.Ecwid.OnAPILoaded.add(() => {
+        if (window.Ecwid && typeof window.Ecwid.init === 'function') {
+          window.Ecwid.init();
+        }
+        renderSignInLink();
+      });
+    }
+  };
 
   document.body.appendChild(script);
 }

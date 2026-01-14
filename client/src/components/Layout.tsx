@@ -125,9 +125,10 @@ export function Layout({ children }: LayoutProps) {
               <div className="ec-search" data-testid="ecwid-search"></div>
             </div>
 
-            {/* Icons */}
-            <div className="flex items-center gap-3">
-              <div className="ec-minicart" data-testid="ecwid-minicart"></div>
+            {/* Ecwid Login & Cart */}
+            <div className="flex items-center gap-4">
+              <div id="ecwid-signin-link" data-testid="ecwid-signin"></div>
+              <div className="ec-cart-widget" data-testid="ecwid-cart-header"></div>
               
               <Button
                 size="icon"
