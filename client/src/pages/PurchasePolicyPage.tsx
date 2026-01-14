@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CreditCard, DollarSign, ShoppingCart, CheckCircle, AlertCircle, Clock, Shield, Mail, Phone } from "lucide-react";
+import { DollarSign, ShoppingCart, CheckCircle, AlertCircle, Clock, Mail, Phone } from "lucide-react";
 import { Link } from "wouter";
 
 export default function PurchasePolicyPage() {
@@ -54,49 +54,15 @@ export default function PurchasePolicyPage() {
         </Card>
 
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-4" data-testid="heading-payment-methods">Accepted Payment Methods</h2>
+          <h2 className="text-3xl font-bold mb-4" data-testid="heading-payment-methods">Payment Methods</h2>
           <Card>
             <CardContent className="p-8 space-y-4 text-muted-foreground">
-              <div className="flex items-start gap-3">
-                <CreditCard className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <p data-testid="text-payment-intro">
-                    InkjetProGuide accepts a variety of secure payment methods to make your shopping experience convenient and safe. All payment processing is handled by Stripe, a PCI DSS Level 1 certified payment processor.
-                  </p>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-credit-cards">
-                  Credit and Debit Cards
-                </h3>
-                <ul className="space-y-2 ml-6 list-disc">
-                  <li data-testid="text-card-1"><strong className="text-foreground">Visa:</strong> All Visa credit and debit cards accepted</li>
-                  <li data-testid="text-card-2"><strong className="text-foreground">Mastercard:</strong> All Mastercard credit and debit cards accepted</li>
-                  <li data-testid="text-card-3"><strong className="text-foreground">American Express:</strong> American Express cards accepted</li>
-                  <li data-testid="text-card-4"><strong className="text-foreground">Discover:</strong> Discover cards accepted</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground" data-testid="heading-digital-wallets">
-                  Digital Wallets
-                </h3>
-                <ul className="space-y-2 ml-6 list-disc">
-                  <li data-testid="text-wallet-1"><strong className="text-foreground">Apple Pay:</strong> Available for Apple device users</li>
-                  <li data-testid="text-wallet-2"><strong className="text-foreground">Google Pay:</strong> Available for Android device users</li>
-                </ul>
-              </div>
-
-              <div className="p-4 bg-primary/10 rounded-lg border border-primary/20">
-                <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                  <Shield className="w-4 h-4" />
-                  Payment Security
-                </h4>
-                <p className="text-sm" data-testid="text-payment-security">
-                  Your payment information is encrypted using industry-standard SSL/TLS encryption. We never store your full credit card number on our servers. All payment processing is handled by Stripe, which maintains the highest level of PCI compliance.
-                </p>
-              </div>
+              <p data-testid="text-payment-1">
+                InkjetProGuide accepts secure electronic payment methods only.
+              </p>
+              <p data-testid="text-payment-2">
+                We do not accept cash on delivery, checks, wire transfers, or cryptocurrency.
+              </p>
             </CardContent>
           </Card>
         </div>
