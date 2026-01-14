@@ -170,9 +170,10 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <div className="bg-muted/50 p-4 rounded-md mt-4">
                     <p className="text-sm text-muted-foreground" data-testid="text-business-info">
-                      <strong className="text-foreground">Business Information:</strong><br />
+                      <strong className="text-foreground">Corporate Mailing Address:</strong><br />
                       InkjetProGuide<br />
-                      Fort Worth, TX 76102<br />
+                      2704 Handley Ederville Rd<br />
+                      Fort Worth, TX 76118<br />
                       United States
                     </p>
                   </div>
@@ -570,7 +571,7 @@ export default function PrivacyPolicyPage() {
                         Right to Opt-Out of Sale or Sharing
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-right-optout">
-                        You have the right to opt out of the "sale" or "sharing" of your personal information as those terms are defined under CCPA/CPRA. While we do not sell personal information for monetary compensation, certain data sharing activities may constitute a "sale" or "sharing" under California law. You can exercise your right to opt out by clicking the "Do Not Sell or Share My Personal Information" link on our website, contacting us at privacy@inkjetproguide.com, or adjusting your cookie preferences to disable non-essential tracking.
+                        You have the right to opt out of the "sale" or "sharing" of your personal information as those terms are defined under CCPA/CPRA. While we do not sell personal information for monetary compensation, certain data sharing activities may constitute a "sale" or "sharing" under California law. You can exercise your right to opt out by clicking the "Do Not Sell or Share My Personal Information" link on our website, contacting us at inkjetproguide@outlook.com, or adjusting your cookie preferences to disable non-essential tracking.
                       </p>
                     </div>
 
@@ -601,7 +602,7 @@ export default function PrivacyPolicyPage() {
                     </h3>
                     <div className="space-y-4 text-muted-foreground text-sm">
                       <p data-testid="text-exercise-email">
-                        <strong className="text-foreground">Email:</strong> Submit your request to <a href="mailto:privacy@inkjetproguide.com" className="text-primary hover:underline">privacy@inkjetproguide.com</a> with the subject line "CCPA Request" and include your full name, email address associated with your account, and a description of your request.
+                        <strong className="text-foreground">Email:</strong> Submit your request to <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a> with the subject line "CCPA Request" and include your full name, email address associated with your account, and a description of your request.
                       </p>
                       <p data-testid="text-exercise-verification">
                         <strong className="text-foreground">Verification Process:</strong> To protect your privacy, we will verify your identity before fulfilling your request. We use a two-step verification process that may include confirming your email address and providing additional information to match your request with our records. If we cannot verify your identity, we may request additional information or deny the request.
@@ -654,7 +655,7 @@ export default function PrivacyPolicyPage() {
                       You can opt out of the sharing of your personal information for cross-context behavioral advertising through the following methods:
                     </p>
                     <ul className="space-y-2 ml-6 list-disc text-muted-foreground">
-                      <li data-testid="text-optout-method-1"><strong className="text-foreground">Email Request:</strong> Send an email to <a href="mailto:privacy@inkjetproguide.com" className="text-primary hover:underline">privacy@inkjetproguide.com</a> with the subject "Do Not Sell or Share My Data" and include your name and email address associated with your account.</li>
+                      <li data-testid="text-optout-method-1"><strong className="text-foreground">Email Request:</strong> Send an email to <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a> with the subject "Do Not Sell or Share My Data" and include your name and email address associated with your account.</li>
                       <li data-testid="text-optout-method-2"><strong className="text-foreground">Cookie Settings:</strong> Adjust your browser settings to reject non-essential cookies, or use our cookie preference center to disable marketing and advertising cookies.</li>
                       <li data-testid="text-optout-method-3"><strong className="text-foreground">Global Privacy Control (GPC):</strong> We honor Global Privacy Control signals sent by your browser. If your browser is configured to send a GPC signal, we will treat this as a valid opt-out request for data sharing.</li>
                       <li data-testid="text-optout-method-4"><strong className="text-foreground">Industry Opt-Out Tools:</strong> Visit the Digital Advertising Alliance's opt-out page at <a href="https://optout.aboutads.info" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">optout.aboutads.info</a> to opt out of personalized advertising from participating companies.</li>
@@ -753,7 +754,7 @@ export default function PrivacyPolicyPage() {
                   </div>
 
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-children-discovery">
-                    If we discover that we have inadvertently collected personal information from a child under 13, we will promptly delete that information from our systems. If you are a parent or guardian and believe that your child under 13 has provided us with personal information without your consent, please contact us immediately at <a href="mailto:privacy@inkjetproguide.com" className="text-primary hover:underline">privacy@inkjetproguide.com</a>. We will take immediate steps to remove the child's information from our records and ensure that no further data is collected. We encourage parents and guardians to monitor their children's online activities and to help enforce this policy by instructing their children never to provide personal information on our website without parental permission.
+                    If we discover that we have inadvertently collected personal information from a child under 13, we will promptly delete that information from our systems. If you are a parent or guardian and believe that your child under 13 has provided us with personal information without your consent, please contact us immediately at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a>. We will take immediate steps to remove the child's information from our records and ensure that no further data is collected. We encourage parents and guardians to monitor their children's online activities and to help enforce this policy by instructing their children never to provide personal information on our website without parental permission.
                   </p>
 
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-children-teens">
@@ -820,7 +821,7 @@ export default function PrivacyPolicyPage() {
 
                   <div className="bg-muted/50 p-4 rounded-md">
                     <p className="text-sm text-muted-foreground" data-testid="text-security-disclaimer">
-                      <strong className="text-foreground">Security Disclaimer:</strong> While we implement robust security measures, no system is completely impenetrable. We cannot guarantee the absolute security of your information transmitted to our website. Any transmission of personal information is at your own risk. We are not responsible for the circumvention of any privacy settings or security measures we implement. If you believe your account has been compromised, please contact us immediately at <a href="mailto:privacy@inkjetproguide.com" className="text-primary hover:underline">privacy@inkjetproguide.com</a>.
+                      <strong className="text-foreground">Security Disclaimer:</strong> While we implement robust security measures, no system is completely impenetrable. We cannot guarantee the absolute security of your information transmitted to our website. Any transmission of personal information is at your own risk. We are not responsible for the circumvention of any privacy settings or security measures we implement. If you believe your account has been compromised, please contact us immediately at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a>.
                     </p>
                   </div>
                 </CardContent>
@@ -859,7 +860,7 @@ export default function PrivacyPolicyPage() {
 
                   <div className="bg-muted/50 p-4 rounded-md">
                     <p className="text-sm text-muted-foreground" data-testid="text-changes-archive">
-                      <strong className="text-foreground">Policy Archive:</strong> We maintain archived versions of previous Privacy Policies. If you would like to request a copy of a previous version of this Privacy Policy, please contact us at <a href="mailto:privacy@inkjetproguide.com" className="text-primary hover:underline">privacy@inkjetproguide.com</a>.
+                      <strong className="text-foreground">Policy Archive:</strong> We maintain archived versions of previous Privacy Policies. If you would like to request a copy of a previous version of this Privacy Policy, please contact us at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a>.
                     </p>
                   </div>
                 </CardContent>
@@ -886,23 +887,24 @@ export default function PrivacyPolicyPage() {
                       </div>
                       <h3 className="font-semibold text-foreground mb-2">Email</h3>
                       <a 
-                        href="mailto:privacy@inkjetproguide.com" 
+                        href="mailto:inkjetproguide@outlook.com" 
                         className="text-primary hover:underline text-sm"
                         data-testid="link-contact-email"
                       >
-                        privacy@inkjetproguide.com
+                        inkjetproguide@outlook.com
                       </a>
-                      <p className="text-xs text-muted-foreground mt-2">For privacy inquiries and CCPA requests</p>
+                      <p className="text-xs text-muted-foreground mt-2">For all inquiries</p>
                     </div>
 
                     <div className="border rounded-lg p-4 text-center">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
                         <MapPin className="w-6 h-6 text-primary" />
                       </div>
-                      <h3 className="font-semibold text-foreground mb-2">Mailing Address</h3>
+                      <h3 className="font-semibold text-foreground mb-2">Corporate Mailing Address</h3>
                       <p className="text-sm text-muted-foreground" data-testid="text-contact-address">
                         InkjetProGuide<br />
-                        Fort Worth, TX 76102<br />
+                        2704 Handley Ederville Rd<br />
+                        Fort Worth, TX 76118<br />
                         United States
                       </p>
                     </div>

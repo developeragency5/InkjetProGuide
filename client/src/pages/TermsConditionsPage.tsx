@@ -648,7 +648,7 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-informal-resolution">
                       <h3 className="text-lg font-semibold text-foreground mb-3">Informal Resolution First (30 Days)</h3>
                       <p className="mb-3">
-                        In the event of any dispute, claim, question, or disagreement arising from or relating to these Terms or your use of the Site ("Dispute"), the parties shall first attempt in good faith to settle such Dispute by providing written notice to the other party describing the facts and circumstances of the Dispute and allowing the receiving party thirty (30) days to respond to or settle the Dispute. Notice shall be sent by email to legal@inkjetproguide.com for disputes initiated by you, or to the email address associated with your account for disputes initiated by InkjetProGuide.
+                        In the event of any dispute, claim, question, or disagreement arising from or relating to these Terms or your use of the Site ("Dispute"), the parties shall first attempt in good faith to settle such Dispute by providing written notice to the other party describing the facts and circumstances of the Dispute and allowing the receiving party thirty (30) days to respond to or settle the Dispute. Notice shall be sent by email to inkjetproguide@outlook.com for disputes initiated by you, or to the email address associated with your account for disputes initiated by InkjetProGuide.
                       </p>
                       <p>
                         During this thirty (30) day period, both parties agree to engage in good faith negotiations to resolve the Dispute without resorting to formal proceedings. This may include phone calls, video conferences, or written correspondence aimed at finding a mutually acceptable resolution. If the Dispute is not resolved within this thirty (30) day period, either party may then proceed with the binding arbitration process described below. The informal resolution period is a mandatory prerequisite to initiating arbitration and must be completed before any arbitration demand may be filed.
@@ -706,7 +706,7 @@ export default function TermsConditionsPage() {
                         You agree that email communication shall constitute valid legal notice for all purposes under these Terms. Notices sent by email shall be deemed given when sent, provided that the sender does not receive an automated delivery failure notification. For notices from you to InkjetProGuide, notice shall be effective upon actual receipt by us at our designated email address. We are not responsible for any failure or delay in receiving notices due to spam filters, technical issues with your email provider, or incorrect email addresses provided by you.
                       </p>
                       <p>
-                        For legal notices, you may contact us at legal@inkjetproguide.com. For all other inquiries, including order inquiries matters, you may reach us at the contact information provided in Section 18 of these Terms. We may also provide legal notices by posting them on the Site, and such notices shall be effective upon posting. It is your responsibility to review the Site periodically for important notices and updates to these Terms.
+                        For legal notices, you may contact us at inkjetproguide@outlook.com. For all other inquiries, including order inquiries matters, you may reach us at the contact information provided in Section 18 of these Terms. We may also provide legal notices by posting them on the Site, and such notices shall be effective upon posting. It is your responsibility to review the Site periodically for important notices and updates to these Terms.
                       </p>
                     </div>
                     <div data-testid="text-electronic-records">
@@ -837,13 +837,9 @@ export default function TermsConditionsPage() {
                           <Mail className="w-6 h-6 text-primary" />
                           <h3 className="font-semibold text-foreground">Email</h3>
                         </div>
-                        <p className="mb-2">For legal matters and Terms-related inquiries:</p>
-                        <a href="mailto:legal@inkjetproguide.com" className="text-primary hover:underline font-medium">
-                          legal@inkjetproguide.com
-                        </a>
-                        <p className="mt-4 mb-2">For order inquiries:</p>
-                        <a href="mailto:support@inkjetproguide.com" className="text-primary hover:underline font-medium">
-                          support@inkjetproguide.com
+                        <p className="mb-2">For all inquiries:</p>
+                        <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline font-medium">
+                          inkjetproguide@outlook.com
                         </a>
                       </div>
                       
@@ -866,11 +862,12 @@ export default function TermsConditionsPage() {
                     <div className="p-6 bg-muted/30 rounded-lg" data-testid="contact-address">
                       <div className="flex items-center gap-3 mb-3">
                         <MapPin className="w-6 h-6 text-primary" />
-                        <h3 className="font-semibold text-foreground">Mailing Address</h3>
+                        <h3 className="font-semibold text-foreground">Corporate Mailing Address</h3>
                       </div>
                       <address className="not-italic">
                         <p className="font-medium text-foreground">InkjetProGuide</p>
-                        <p>Fort Worth, TX 76102</p>
+                        <p>2704 Handley Ederville Rd</p>
+                        <p>Fort Worth, TX 76118</p>
                         <p>United States</p>
                       </address>
                       <p className="mt-4 text-sm">
