@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Heart, ShoppingCart, Star, Eye, Zap, Droplet } from "lucide-react";
+import { Heart, ShoppingCart, Zap, Droplet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import type { Product } from "@shared/schema";
 import { useMutation, useQuery } from "@tanstack/react-query";
@@ -18,7 +17,6 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { toast } = useToast();
-  const [showQuickView, setShowQuickView] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { selectedProducts, addToComparison, removeFromComparison, isInComparison } = useComparison();
   const isComparing = isInComparison(product.id);
@@ -140,13 +138,32 @@ export function ProductCard({ product }: ProductCardProps) {
 
   const keySpecs = getKeySpecs();
 
+  const productUrl = product.ecwidProductId 
+    ? `/products#!/~/product/id=${product.ecwidProductId}` 
+    : `/product/${product.id}`;
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Don't navigate if clicking on interactive elements
+    const target = e.target as HTMLElement;
+    if (
+      target.closest('button') || 
+      target.closest('input') || 
+      target.closest('label') ||
+      target.closest('[role="checkbox"]')
+    ) {
+      return;
+    }
+    window.location.href = productUrl;
+  };
+
   return (
     <>
       <Card 
-        className="group relative overflow-hidden" 
+        className="group relative overflow-visible cursor-pointer hover-elevate transition-all duration-200" 
         data-testid={`card-product-${product.id}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={handleCardClick}
       >
         <CardContent className="p-4">
           {/* Top badge and buttons */}
@@ -186,73 +203,15 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {/* Product Image */}
-          {product.ecwidProductId ? (
-            <a href={`/products#!/~/product/id=${product.ecwidProductId}`}>
-              <span className="block cursor-pointer" data-testid={`link-product-${product.id}`}>
-                <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border relative overflow-hidden group/image">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-contain"
-                  />
-                  
-                  
-                  {/* Quick View Button - Always accessible on mobile, hover on desktop */}
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-100 md:opacity-0 md:group-hover/image:opacity-100 transition-opacity duration-300">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="bg-background/95 backdrop-blur-sm shadow-lg"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setShowQuickView(true);
-                      }}
-                      data-testid={`button-quick-view-${product.id}`}
-                    >
-                      <Eye className="w-4 h-4 mr-2" />
-                      Quick View
-                    </Button>
-                  </div>
-                </div>
-              </span>
-            </a>
-          ) : (
-            <Link href={`/product/${product.id}`}>
-              <span className="block cursor-pointer" data-testid={`link-product-${product.id}`}>
-                <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border relative overflow-hidden group/image">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-contain"
-                  />
-                  
-                  
-                  {/* Quick View Button - Always accessible on mobile, hover on desktop */}
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-100 md:opacity-0 md:group-hover/image:opacity-100 transition-opacity duration-300">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="bg-background/95 backdrop-blur-sm shadow-lg"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setShowQuickView(true);
-                      }}
-                      data-testid={`button-quick-view-${product.id}`}
-                    >
-                      <Eye className="w-4 h-4 mr-2" />
-                      Quick View
-                    </Button>
-                  </div>
-                </div>
-              </span>
-            </Link>
-          )}
+          <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border relative overflow-hidden">
+            <img
+              src={product.image}
+              alt={product.name}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-contain"
+            />
+          </div>
 
           {/* Product Info */}
           <div className="space-y-2">
@@ -262,23 +221,9 @@ export function ProductCard({ product }: ProductCardProps) {
             </p>
 
             {/* Product Name */}
-            {product.ecwidProductId ? (
-              <a href={`/products#!/~/product/id=${product.ecwidProductId}`}>
-                <span className="cursor-pointer" data-testid={`link-product-name-${product.id}`}>
-                  <h3 className="font-medium text-sm mb-1 line-clamp-2 hover:text-primary transition-colors">
-                    {product.name}
-                  </h3>
-                </span>
-              </a>
-            ) : (
-              <Link href={`/product/${product.id}`}>
-                <span className="cursor-pointer" data-testid={`link-product-name-${product.id}`}>
-                  <h3 className="font-medium text-sm mb-1 line-clamp-2 hover:text-primary transition-colors">
-                    {product.name}
-                  </h3>
-                </span>
-              </Link>
-            )}
+            <h3 className="font-medium text-sm mb-1 line-clamp-2" data-testid={`link-product-name-${product.id}`}>
+              {product.name}
+            </h3>
 
             {/* Key Specifications */}
             <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
@@ -339,147 +284,36 @@ export function ProductCard({ product }: ProductCardProps) {
               </label>
             </div>
 
-            {/* Add to Cart Button */}
-            <Button
-              className="w-full font-semibold"
-              size="sm"
-              disabled={!product.inStock || addToCartMutation.isPending}
-              onClick={(e) => {
-                e.preventDefault();
-                addToCartMutation.mutate();
-              }}
-              data-testid={`button-add-to-cart-${product.id}`}
-            >
-              <ShoppingCart className="w-4 h-4 mr-2" />
-              {addToCartMutation.isPending ? "Adding..." : "Add to Cart"}
-            </Button>
+            {/* Shop Now Button */}
+            {product.ecwidProductId ? (
+              <a href={`/products#!/~/product/id=${product.ecwidProductId}`} className="block">
+                <Button
+                  className="w-full font-semibold"
+                  size="sm"
+                  disabled={!product.inStock}
+                  data-testid={`button-shop-now-${product.id}`}
+                >
+                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  Shop Now
+                </Button>
+              </a>
+            ) : (
+              <Link href={`/product/${product.id}`}>
+                <Button
+                  className="w-full font-semibold"
+                  size="sm"
+                  disabled={!product.inStock}
+                  data-testid={`button-shop-now-${product.id}`}
+                >
+                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  Shop Now
+                </Button>
+              </Link>
+            )}
           </div>
         </CardContent>
       </Card>
 
-      {/* Quick View Modal */}
-      <Dialog open={showQuickView} onOpenChange={setShowQuickView}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>{product.name}</DialogTitle>
-          </DialogHeader>
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Image */}
-            <div className="aspect-square bg-background rounded-md flex items-center justify-center p-8 border">
-              <img
-                src={product.image}
-                alt={product.name}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-contain"
-              />
-            </div>
-
-            {/* Details */}
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm text-muted-foreground mb-1">Model: {getModelNumber()}</p>
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {isNewArrival && <Badge variant="default">New Arrival</Badge>}
-                  {isBestSeller && <Badge className="bg-yellow-500 text-yellow-950">Best Seller</Badge>}
-                  {hasDiscount && <Badge variant="destructive">-{discountPercent}%</Badge>}
-                </div>
-              </div>
-
-              {/* Price */}
-              <div>
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-3xl font-bold text-primary">
-                    ${parseFloat(product.price).toFixed(2)}
-                  </span>
-                  {hasDiscount && (
-                    <span className="text-lg text-muted-foreground line-through">
-                      ${parseFloat(product.originalPrice!).toFixed(2)}
-                    </span>
-                  )}
-                </div>
-                {product.inStock ? (
-                  <div className="flex items-center gap-1.5 text-sm text-status-online">
-                    <div className="w-2 h-2 rounded-full bg-status-online" />
-                    <span>In Stock</span>
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                    <div className="w-2 h-2 rounded-full bg-muted-foreground" />
-                    <span>Out of Stock</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Description */}
-              <div>
-                <h4 className="font-semibold mb-2">Description</h4>
-                <p className="text-sm text-muted-foreground">{product.description}</p>
-              </div>
-
-              {/* Key Specifications */}
-              <div>
-                <h4 className="font-semibold mb-2">Key Specifications</h4>
-                <div className="space-y-1 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-primary" />
-                    <span className="text-muted-foreground">Print Speed:</span>
-                    <span className="font-medium">{keySpecs.printSpeed}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Droplet className="w-4 h-4 text-primary" />
-                    <span className="text-muted-foreground">Resolution:</span>
-                    <span className="font-medium">{keySpecs.resolution}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Features */}
-              {product.features && product.features.length > 0 && (
-                <div>
-                  <h4 className="font-semibold mb-2">Features</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {product.features.slice(0, 5).map((feature, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Actions */}
-              <div className="flex gap-3 pt-4">
-                <Button
-                  className="flex-1"
-                  disabled={!product.inStock || addToCartMutation.isPending}
-                  onClick={() => {
-                    addToCartMutation.mutate();
-                    setShowQuickView(false);
-                  }}
-                >
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  {addToCartMutation.isPending ? "Adding..." : "Add to Cart"}
-                </Button>
-                {product.ecwidProductId ? (
-                  <a href={`/products#!/~/product/id=${product.ecwidProductId}`}>
-                    <Button variant="outline" onClick={() => setShowQuickView(false)}>
-                      View Full Details
-                    </Button>
-                  </a>
-                ) : (
-                  <Link href={`/product/${product.id}`}>
-                    <Button variant="outline" onClick={() => setShowQuickView(false)}>
-                      View Full Details
-                    </Button>
-                  </Link>
-                )}
-              </div>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </>
   );
 }
