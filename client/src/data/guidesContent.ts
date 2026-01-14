@@ -249,33 +249,118 @@ export const guidesContent: Record<string, GuideContent> = {
   "small-business": {
     id: "small-business",
     title: "Small Business Printer Guide",
-    description: "Choose the right printer for your small business with features that boost productivity and reduce costs.",
+    description: "A practical guide to choosing the right inkjet printer for a small business that values productivity, cost control, and reliability.",
     icon: Building2,
     color: "bg-orange-500",
-    readTime: "11 min read",
+    readTime: "14 min read",
     sections: [
       {
-        id: "introduction",
-        title: "Introduction",
-        content: "Small businesses need printers that balance performance, reliability, and cost-effectiveness. This guide helps you choose inkjet printers that meet your business needs and grow with your company."
+        id: "why-struggle",
+        title: "Why Small Businesses Struggle With Printers More Than They Should",
+        content: "Most small businesses do not fail because of big decisions. They lose time and money through small, repeated friction. Printers are one of those silent friction points. At first, any printer seems fine. Documents print. Copies scan. Work continues. Then the business grows. Suddenly: Print jobs stack up, ink runs out too often, scanning feels slow, and printing interrupts real work. This guide exists to prevent that moment. It does not tell you which printer is 'best.' It helps you choose a small business printer that keeps up as your business grows, instead of becoming a bottleneck."
       },
       {
-        id: "business-requirements",
-        title: "Business Requirements",
-        content: "Business printers should handle high monthly volumes (500+ pages), offer professional-quality output, include security features, and provide low operating costs. Professional office inkjet series are designed specifically for small business needs with fast speeds and efficient ink usage."
+        id: "home-vs-business",
+        title: "How Small Business Printing Is Different From Home Printing",
+        content: "Many small businesses start with a home printer. That works — briefly. The problem is not print quality. The problem is pressure. Small business printing involves daily use, time-sensitive documents, multiple users, shared responsibility, and real consequences for delays. A printer that works 'most of the time' is acceptable at home. In a business, it becomes a liability."
       },
       {
-        id: "productivity-features",
-        title: "Productivity Features",
-        content: "Look for automatic document feeders (ADF) for scanning multi-page documents, fast print speeds (20+ PPM), large paper capacity (250+ sheets), and automatic two-sided printing. Network connectivity allows multiple employees to share one printer efficiently."
+        id: "printer-role",
+        title: "The Real Role of a Printer in a Small Business",
+        content: "A printer is not just an output device. It is part of your workflow. It supports invoices and billing, contracts and agreements, reports and proposals, shipping and documentation, and scanning and record-keeping. When printing slows down, work slows down. That is why printer choice matters more in small businesses than in large ones — there is no IT team to absorb the impact."
+      },
+      {
+        id: "pages-per-month",
+        title: "Pages Per Month: The First Question You Must Answer",
+        content: "Before anything else, estimate your pages per month. Small businesses typically fall into: 500–1,000 pages per month (early stage), 1,000–3,000 pages per month (growing), and 3,000+ pages per month (established). Once you cross 500 pages per month, entry-level and basic office printers stop making sense. They may still work — but they will not work comfortably."
+      },
+      {
+        id: "office-class",
+        title: "Why Office-Class Inkjet Printers Fit Small Businesses Best",
+        content: "Small businesses need printers designed for consistent repetition, not occasional bursts. Office-class inkjet printers are built around higher monthly duty cycles, faster pages per minute, larger paper capacity, and efficient ink usage. They are designed to stay active without wearing out. This makes them ideal for businesses that print daily but do not need enterprise-scale equipment."
+      },
+      {
+        id: "flow-not-speed",
+        title: "Productivity Is About Flow, Not Speed Numbers",
+        content: "Many buyers focus on print speed alone. Speed matters — but flow matters more. Productivity improves when paper does not need refilling constantly, documents print without pauses, scanning does not require babysitting, and duplex printing works automatically. A printer that prints steadily at a good pace often outperforms one that prints fast but stalls frequently."
+      },
+      {
+        id: "adf-essential",
+        title: "Automatic Document Feeders: A Business Essential",
+        content: "In a business environment, scanning and copying rarely involve single pages. An automatic document feeder (ADF) saves time, reduces manual effort, and encourages better record keeping. Without an ADF, employees delay scanning, paper piles up, and errors increase. For small businesses, an ADF is not a luxury — it is a workflow tool."
+      },
+      {
+        id: "duplex-savings",
+        title: "Duplex Printing: Small Feature, Big Savings",
+        content: "Automatic two-sided printing reduces paper costs, storage space, and manual handling. More importantly, it normalizes efficient behavior. When duplex printing is automatic, people use it. When it is manual, they avoid it. Over time, that difference matters."
+      },
+      {
+        id: "paper-capacity",
+        title: "Paper Capacity and Why It Affects Productivity",
+        content: "Small paper trays create constant interruptions. In business settings, interruptions are expensive. A larger paper capacity reduces refills, keeps work moving, and supports batch printing. This matters especially when multiple employees share one printer."
+      },
+      {
+        id: "ink-costs",
+        title: "Ink Costs: Where Small Businesses Feel the Pain",
+        content: "Ink costs affect small businesses more than large ones. Why? Smaller budgets, fewer bulk discounts, and more sensitivity to recurring expenses. Office-class inkjet printers usually offer better ink efficiency, lower cost per page, and more predictable usage. Over time, these savings often exceed the difference in purchase price."
+      },
+      {
+        id: "total-cost",
+        title: "Why Total Cost of Ownership Matters More Than Price",
+        content: "Purchase price is a one-time event. Ink, paper, and downtime are ongoing. Small businesses should consider cost per page, ink replacement frequency, time lost to maintenance, and printing delays during busy periods. The cheapest printer is rarely the cheapest to own."
+      },
+      {
+        id: "security-features",
+        title: "Security Features: Often Ignored, Often Needed",
+        content: "Small businesses handle client data, financial records, contracts, and internal documents. Even if the business is small, the information is not. Security features help control access, prevent accidental printing, and reduce document mix-ups. These features become more important as teams grow."
+      },
+      {
+        id: "shared-printers",
+        title: "Shared Printers and Team Dynamics",
+        content: "When multiple employees use one printer, reliability matters, clear status messages matter, and recovery from errors matters. Office-class inkjet printers are designed to handle shared use without constant attention. Home-grade printers are not."
+      },
+      {
+        id: "reliability-under-load",
+        title: "Reliability Under Load: The Hidden Business Requirement",
+        content: "A printer that works fine at low volume may struggle under daily use. Signs of underpowered printers in business: Frequent cleaning cycles, slower performance over time, paper feed issues, and increased maintenance. Printers built for higher duty cycles avoid these issues."
+      },
+      {
+        id: "growth-matters",
+        title: "Growth Matters: Buying for the Business You're Becoming",
+        content: "Many small businesses buy printers for today's needs. Six months later, they outgrow them. A smarter approach: Buy for your next stage, leave room for growth, and avoid early replacement. Upgrading printers too often costs more than choosing correctly once."
+      },
+      {
+        id: "ink-tank-business",
+        title: "Ink Tank Systems for Small Businesses",
+        content: "Ink tank inkjet printers can make sense for businesses with predictable print volume, high page counts, and a desire for fewer interruptions. They reduce ink replacement frequency, cost per page, and downtime. However, they require consistent use to perform best."
+      },
+      {
+        id: "noise-space",
+        title: "Noise, Space, and Office Comfort",
+        content: "Small offices often share space. That means noise levels matter, printer size matters, and heat output matters. Office-class inkjets are designed to operate steadily without becoming disruptive."
+      },
+      {
+        id: "common-mistakes",
+        title: "The Most Common Small Business Printer Mistakes",
+        content: "Small businesses often start with home printers, underestimate print volume, focus only on price, and ignore long-term costs. These mistakes are common — and avoidable."
+      },
+      {
+        id: "right-choice",
+        title: "How to Know You Chose the Right Small Business Printer",
+        content: "You made the right choice if printing does not interrupt work, ink costs feel predictable, employees don't complain, scanning and copying feel easy, and the printer fades into the background. A good business printer supports work without demanding attention."
+      },
+      {
+        id: "final-perspective",
+        title: "Final Perspective: Printers Are Infrastructure, Not Accessories",
+        content: "In a small business, printers are infrastructure. They should support productivity, reduce friction, scale with growth, and protect information. Choosing the right inkjet printer is not about features — it is about protecting your time and momentum. When chosen correctly, the printer becomes invisible. And that is exactly what a small business needs."
       }
     ],
     keyPoints: [
-      "High monthly duty cycles support business volumes",
-      "Professional color output enhances brand image",
-      "Fast print speeds improve office productivity",
-      "Low cost per page reduces operating expenses",
-      "Security features protect sensitive documents"
+      "Printers are silent friction points — choose one that keeps up as your business grows",
+      "Once you cross 500 pages per month, entry-level printers stop making sense",
+      "Productivity is about flow, not speed numbers — steady printing beats fast but stalling",
+      "Total cost of ownership matters more than purchase price",
+      "Buy for your next stage, not today's needs — upgrading later costs more"
     ],
     recommendations: [
       {
