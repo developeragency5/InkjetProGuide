@@ -14,6 +14,8 @@ export interface StaticProduct {
   features: string[];
 }
 
+import smartTank6001Image from "@assets/HP_Smart_Tank_6001_All_in_One_Printer_1768412709925.png";
+
 export const staticProducts: StaticProduct[] = [
   {
     id: "1",
@@ -22,7 +24,7 @@ export const staticProducts: StaticProduct[] = [
     description: "Wireless all-in-one cartridge-free ink tank printer with up to 2 years of ink included. Perfect for home printing with ultra-low cost per page.",
     price: "179.99",
     originalPrice: "229.99",
-    image: "/placeholder-printer.png",
+    image: smartTank6001Image,
     category: "Home Inkjet Printers",
     rating: "4.5",
     reviewCount: 245,

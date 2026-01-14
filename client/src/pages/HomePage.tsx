@@ -848,8 +848,12 @@ export default function HomePage() {
               >
                 <Card className="hover-elevate h-full">
                   <CardContent className="p-6">
-                    <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center">
-                      <Printer className="w-16 h-16 text-muted-foreground" />
+                    <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                      {product.image ? (
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain p-2" />
+                      ) : (
+                        <Printer className="w-16 h-16 text-muted-foreground" />
+                      )}
                     </div>
                     <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
                     <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
@@ -922,8 +926,12 @@ export default function HomePage() {
               >
                 <Card className="hover-elevate h-full">
                   <CardContent className="p-6">
-                    <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center">
-                      <Printer className="w-16 h-16 text-muted-foreground" />
+                    <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                      {product.image ? (
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain p-2" />
+                      ) : (
+                        <Printer className="w-16 h-16 text-muted-foreground" />
+                      )}
                     </div>
                     <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
                     <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
