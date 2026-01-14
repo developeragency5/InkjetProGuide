@@ -209,7 +209,7 @@ export default function ProductsPage() {
                     <ul className="space-y-1 text-sm">
                       <li>Industry-leading print quality with Thermal Inkjet technology</li>
                       <li>Easy wireless setup and mobile printing capabilities</li>
-                      <li>Reliable performance backed by manufacturer warranty coverage</li>
+                      <li>Reliable performance backed by manufacturer support when available</li>
                       <li>Energy-efficient designs that save on electricity costs</li>
                       <li>Wide range of models for every budget and need</li>
                     </ul>
@@ -227,7 +227,7 @@ export default function ProductsPage() {
                 </div>
 
                 <p className="mb-4">
-                  Printers typically include manufacturer warranty coverage - refer to manufacturer documentation for specific terms. 
+                  Manufacturer warranty coverage may be available and is provided by the manufacturer according to their terms and conditions. 
                   Use our buying guides to find the perfect printer for your needs. We offer hassle-free 
                   returns within 30 days of purchase.
                 </p>
