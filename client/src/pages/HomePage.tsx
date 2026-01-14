@@ -872,7 +872,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-8">
-            <a href="https://www.printmegastore.net/shop#!/Home-Printers/c/193853315" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.inkjetproguide.com/products#!/Home-Printers/c/193853315" target="_blank" rel="noopener noreferrer">
               <Button size="lg" data-testid="button-shop-home-printers">
                 Shop Home Printers
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -952,7 +952,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-8">
-            <a href="https://www.printmegastore.net/shop#!/Office-Printers/c/193855066" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.inkjetproguide.com/products#!/Office-Printers/c/193855066" target="_blank" rel="noopener noreferrer">
               <Button size="lg" data-testid="button-shop-office-printers">
                 Shop Office Printers
                 <ArrowRight className="ml-2 w-5 h-5" />

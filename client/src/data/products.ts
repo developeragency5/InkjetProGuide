@@ -29,7 +29,7 @@ export const staticProducts: StaticProduct[] = [
     reviewCount: 324,
     inStock: true,
     ecwidProductId: "806466768",
-    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-DeskJet-4255e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-&-Copy-for-Home-and-Student-Use/p/806466768",
+    ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-DeskJet-4255e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-&-Copy-for-Home-and-Student-Use/p/806466768",
     features: ["Wireless Printing", "Print Scan Copy", "Home Use", "Student Friendly"]
   },
   {
@@ -45,7 +45,7 @@ export const staticProducts: StaticProduct[] = [
     reviewCount: 289,
     inStock: true,
     ecwidProductId: "806452376",
-    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-Envy-7955e-Wireless-Photo-All-in-One-Color-Inkjet-Printer-with-Auto-Duplex-Printing/p/806452376",
+    ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-Envy-7955e-Wireless-Photo-All-in-One-Color-Inkjet-Printer-with-Auto-Duplex-Printing/p/806452376",
     features: ["Photo Printing", "Auto Duplex", "Wireless", "All-in-One"]
   },
   {
@@ -61,7 +61,7 @@ export const staticProducts: StaticProduct[] = [
     reviewCount: 412,
     inStock: true,
     ecwidProductId: "806466866",
-    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-Smart-Tank-651-Wireless-All-in-One-Ink-Tank-Printer-for-High-Volume-Home-Printing/p/806466866",
+    ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-Smart-Tank-651-Wireless-All-in-One-Ink-Tank-Printer-for-High-Volume-Home-Printing/p/806466866",
     features: ["Ink Tank System", "High Volume", "Low Cost Per Page", "Wireless"]
   },
   {
@@ -77,7 +77,7 @@ export const staticProducts: StaticProduct[] = [
     reviewCount: 198,
     inStock: true,
     ecwidProductId: "806452406",
-    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-Smart-Tank-7602-Wireless-All-in-One-Ink-Tank-Printer-for-High-Volume-Office-Use/p/806452406",
+    ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-Smart-Tank-7602-Wireless-All-in-One-Ink-Tank-Printer-for-High-Volume-Office-Use/p/806452406",
     features: ["Ink Tank System", "Office Use", "High Volume", "Professional Quality"]
   },
   {
@@ -93,7 +93,7 @@ export const staticProducts: StaticProduct[] = [
     reviewCount: 356,
     inStock: true,
     ecwidProductId: "806452382",
-    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-OfficeJet-8015e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806452382",
+    ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-OfficeJet-8015e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806452382",
     features: ["Office Use", "Print Scan Copy", "Wireless", "Small Business"]
   },
   {
@@ -109,7 +109,7 @@ export const staticProducts: StaticProduct[] = [
     reviewCount: 267,
     inStock: true,
     ecwidProductId: "806466580",
-    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-OfficeJet-8135e-Wireless-All-in-One-Color-Inkjet-Printer-with-3-Months-of-Ink-Trial-for-Office-Use/p/806466580",
+    ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-OfficeJet-8135e-Wireless-All-in-One-Color-Inkjet-Printer-with-3-Months-of-Ink-Trial-for-Office-Use/p/806466580",
     features: ["Ink Trial Included", "Office Use", "Wireless", "Professional Output"]
   },
   {
@@ -125,7 +125,7 @@ export const staticProducts: StaticProduct[] = [
     reviewCount: 189,
     inStock: true,
     ecwidProductId: "806466852",
-    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-OfficeJet-9110-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806466852",
+    ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-OfficeJet-9110-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806466852",
     features: ["Fast Printing", "Office Use", "Print Scan Copy", "Wireless"]
   },
   {
@@ -141,7 +141,7 @@ export const staticProducts: StaticProduct[] = [
     reviewCount: 234,
     inStock: true,
     ecwidProductId: "806466587",
-    ecwidUrl: "https://www.printmegastore.net/shop#!/HP-OfficeJet-9125e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806466587",
+    ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-OfficeJet-9125e-Wireless-All-in-One-Color-Inkjet-Printer-with-Print-Scan-Copy-for-Office-Use/p/806466587",
     features: ["Advanced Features", "High Performance", "Office Use", "Wireless"]
   }
 ];
