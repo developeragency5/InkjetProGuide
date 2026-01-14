@@ -21,7 +21,7 @@ export default function ContactPage() {
     e.preventDefault();
     toast({
       title: "Message sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      description: "Thank you for contacting us. We'll get back to you within 24 business hours.",
     });
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
@@ -40,7 +40,7 @@ export default function ContactPage() {
           <p className="text-base text-muted-foreground max-w-3xl mx-auto mb-4">
             This contact page is for order-related questions only. If you need information about an existing order, 
             shipping updates, returns, or payment inquiries, our team is ready to respond. 
-            We typically respond to all inquiries within 24 hours during business days.
+            We typically respond to all inquiries within 24 business hours.
           </p>
           <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
             <strong>Looking for product information?</strong> Visit our <a href="/guides" className="text-primary hover:underline">Guides & Resources</a> section 
@@ -71,7 +71,7 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold mb-2">Email Us</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Response within 24 hours
+                Response within 24 business hours
               </p>
               <a href="mailto:inkjetproguide@outlook.com" className="font-semibold text-primary hover:underline" data-testid="link-email-contact">
                 inkjetproguide@outlook.com
@@ -98,7 +98,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle>Send Us a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you within 24 hours
+                Fill out the form below and we'll get back to you within 24 business hours
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -172,6 +172,9 @@ export default function ContactPage() {
                       2704 Handley Ederville Rd<br />
                       Fort Worth, TX 76118<br />
                       United States
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      This address is used for mailing and administrative purposes. Product fulfillment is handled by third-party logistics partners.
                     </p>
                   </div>
                 </div>

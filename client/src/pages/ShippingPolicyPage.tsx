@@ -303,7 +303,7 @@ export default function ShippingPolicyPage() {
                     <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-shipping">
                       inkjetproguide@outlook.com
                     </a>
-                    <p className="text-sm text-muted-foreground mt-1">Response within 24 hours</p>
+                    <p className="text-sm text-muted-foreground mt-1">Response within 24 business hours</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

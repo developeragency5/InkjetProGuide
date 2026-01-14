@@ -129,7 +129,7 @@ export default function RefundPolicyPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-2">Receive Return Authorization</h3>
                     <p className="text-muted-foreground" data-testid="text-step-2">
-                      We'll send you a Return Merchandise Authorization (RMA) number and return instructions within 24 hours.
+                      We'll send you a Return Merchandise Authorization (RMA) number and return instructions within 24 business hours.
                     </p>
                   </div>
                 </div>
@@ -325,7 +325,7 @@ export default function RefundPolicyPage() {
                     <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline" data-testid="link-email-support">
                       inkjetproguide@outlook.com
                     </a>
-                    <p className="text-sm text-muted-foreground mt-1">Response within 24 hours</p>
+                    <p className="text-sm text-muted-foreground mt-1">Response within 24 business hours</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
