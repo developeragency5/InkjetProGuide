@@ -1,0 +1,41 @@
+TASK: Remove detailed security over-claims and replace with a safe, accurate security statement.
+
+CRITICAL ISSUE:
+Detailed claims such as AES-256 encryption at rest, bcrypt hashing, role-based access controls, or account lockout policies may be inaccurate or unverifiable in hosted or third-party platforms. False security statements create legal and compliance risk.
+
+SCOPE:
+- Apply ONLY to the Privacy Policy (Security / Data Protection sections).
+- Identify and REMOVE entire subsections or bullet points related to:
+  - Encryption at rest (AES-256)
+  - Password hashing methods (bcrypt or similar)
+  - Account lockout policies
+  - Role-based access controls
+  - Encrypted database connections
+- Do NOT change unrelated privacy sections.
+
+APPROVED SAFE REPLACEMENT TEXT
+(MUST MATCH EXACTLY — COPY/PASTE, NO EDITS):
+
+We use reasonable administrative, technical, and physical safeguards designed to protect personal information. This includes HTTPS (SSL/TLS) for data transmission and access controls to limit who can access personal information.
+Payment information is processed by our payment processor (Stripe) and we do not store full payment card numbers on our servers.
+
+PLACEMENT RULES:
+- Insert this text where the removed security subsections previously appeared.
+- Keep paragraph formatting (two sentences, two lines).
+- Do NOT add headings unless one already exists (e.g., “Security”).
+
+STRICT RULES:
+- Do NOT mention specific encryption standards (AES-256, bcrypt, etc.).
+- Do NOT claim certifications, audits, or compliance (PCI, SOC 2, ISO).
+- Do NOT add guarantees such as “100% secure” or “fully protected”.
+- Do NOT expand beyond the approved text.
+
+ACCEPTANCE CHECK:
+- No detailed or technical security implementation claims remain.
+- The replacement text appears exactly as written.
+- Security language now reflects reasonable safeguards, not guarantees.
+
+GOAL:
+- Eliminate false or unverifiable security claims
+- Align with hosted-platform realities
+- Maintain trust while remaining legally accurate
