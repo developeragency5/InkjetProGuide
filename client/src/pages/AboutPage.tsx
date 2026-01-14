@@ -39,7 +39,7 @@ export default function AboutPage() {
     {
       icon: Shield,
       title: "Inkjet Focus",
-      description: "We specialize exclusively in inkjet printers, offering a carefully curated selection and in-depth product guides."
+      description: "InkjetProGuide provides informational buying guides and a curated online store featuring inkjet printers sourced through independent distribution channels."
     },
     {
       icon: Truck,
@@ -197,9 +197,7 @@ export default function AboutPage() {
                 printer can be overwhelming with so many models, specifications, and technical jargon to navigate.
               </p>
               <p data-testid="text-story-2">
-                As a dedicated inkjet printer retailer, we specialize exclusively in inkjet printers because we believe 
-                in their quality, innovation, and reliability. Our comprehensive buying guides and product information 
-                are designed to make it easy to find the perfect printer for homes, offices, and businesses across the United States.
+                InkjetProGuide provides informational buying guides and a curated online store featuring inkjet printers sourced through independent distribution channels.
               </p>
               <p data-testid="text-story-3">
                 Today, we're proud to be one of the leading online destinations for inkjet printers, offering 
@@ -303,8 +301,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-1">Inkjet Focus</h4>
                     <p className="text-muted-foreground">
-                      We focus exclusively on inkjet printers, offering in-depth product guides and 
-                      a carefully curated selection.
+                      InkjetProGuide provides informational buying guides and a curated online store featuring inkjet printers sourced through independent distribution channels.
                     </p>
                   </div>
                 </div>

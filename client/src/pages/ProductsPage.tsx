@@ -200,11 +200,7 @@ export default function ProductsPage() {
                 </h2>
                 
                 <p className="mb-4">
-                  Inkjet printers have been the trusted choice for home users, students, and small businesses for decades. 
-                  Whether you need to print vibrant photos, professional documents, or everyday schoolwork, inkjet 
-                  technology delivers exceptional quality at an affordable price. At InkjetProGuide, we specialize exclusively 
-                  in inkjet printers, offering a curated selection shipped directly to your door 
-                  anywhere in the United States.
+                  InkjetProGuide provides informational buying guides and a curated online store featuring inkjet printers sourced through independent distribution channels.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 my-6">

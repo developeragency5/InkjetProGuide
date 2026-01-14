@@ -117,9 +117,7 @@ export default function HomePage() {
                   data-testid="hero-headline"
                 >
                   InkjetProGuide —{" "}
-                  <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                    Independent Printer Buying Guides
-                  </span>{" "}
+                  <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">Printer Buying Guides</span>{" "}
                   & Online Store
                 </h1>
 
@@ -243,12 +241,7 @@ export default function HomePage() {
               Examine Printer Types
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our buying guides cover everything from choosing between an inkjet
-              printer and a laser printer to finding the perfect photo printer
-              for gallery-quality images and wireless printer connectivity for
-              your home office. We specialize in inkjet printer technology,
-              helping you understand the advantages of inkjet over laser for
-              your specific needs.
+              InkjetProGuide provides informational buying guides and a curated online store featuring inkjet printers sourced through independent distribution channels.
             </p>
           </div>
 
