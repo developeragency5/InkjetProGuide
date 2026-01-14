@@ -1160,6 +1160,9 @@ export default function HomePage() {
               buyers who found our educational resources and product selection
               helpful in making their purchasing decisions.
             </p>
+            <p className="text-sm text-muted-foreground mt-4">
+              Customer reviews are submitted by purchasers and reflect individual experiences. Results may vary.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
