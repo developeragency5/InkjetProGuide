@@ -878,6 +878,9 @@ export default function HomePage() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </a>
+            <p className="text-xs text-muted-foreground mt-3">
+              Free standard shipping is available on qualifying orders. Shipping terms may vary by product and location.
+            </p>
           </div>
         </div>
       </section>
@@ -958,6 +961,9 @@ export default function HomePage() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </a>
+            <p className="text-xs text-muted-foreground mt-3">
+              Free standard shipping is available on qualifying orders. Shipping terms may vary by product and location.
+            </p>
           </div>
         </div>
       </section>

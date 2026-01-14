@@ -9,7 +9,7 @@ export default function AboutPage() {
     { value: "25+", label: "Printer Models" },
     { value: "2-3 Days", label: "Fast Delivery" },
     { value: "30 Days", label: "Easy Returns" },
-    { value: "USA", label: "Nationwide Shipping" },
+    { value: "US", label: "Nationwide Shipping" },
   ];
 
   const values = [
@@ -44,7 +44,7 @@ export default function AboutPage() {
     {
       icon: Truck,
       title: "Fast Shipping",
-      description: "Fast 2-3 business day delivery across the USA."
+      description: "Fast 2-3 business day delivery across the United States."
     },
     {
       icon: DollarSign,

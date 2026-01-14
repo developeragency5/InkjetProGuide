@@ -240,7 +240,7 @@ export default function CartPage() {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-primary">✓</span>
-                    <span className="text-muted-foreground">USA-based service team</span>
+                    <span className="text-muted-foreground">Serving customers in the United States</span>
                   </div>
                 </div>
               </CardContent>
