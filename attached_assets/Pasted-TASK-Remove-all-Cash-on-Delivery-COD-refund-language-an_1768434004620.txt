@@ -1,0 +1,54 @@
+TASK: Remove all Cash on Delivery (COD) refund language and align the Return Policy with Stripe-only payments.
+
+CRITICAL ISSUE:
+The Return Policy still references refunds for Cash on Delivery (COD), which contradicts:
+- Terms & Conditions
+- Payment Policy
+- Privacy Policy
+- Checkout flow (Stripe-only)
+
+This creates policy inconsistency, ad-review risk, and customer dispute risk.
+
+CONTENT TO REMOVE COMPLETELY:
+Delete any sentence or subsection that mentions:
+- “Cash on Delivery”
+- “COD refunds”
+- “refund via check”
+- “refund via bank transfer”
+- Any offline or non-electronic refund method
+
+APPROVED REPLACEMENT SECTION
+(MUST MATCH EXACTLY — COPY/PASTE, NO EDITS):
+
+Refund Method
+
+Credit/Debit Cards (Stripe): Refunded to the original payment method. We process refunds within 5–7 business days after inspection. Your bank may take an additional 3–5 business days to post the credit.
+
+If a payment fails or a card is closed/expired: We may request an alternative refund method (such as store credit or a replacement card) to complete the refund securely.
+
+SCOPE:
+- Apply ONLY to the Return Policy / Refund Policy page.
+- Replace the entire existing “Refund Method” section.
+- Do NOT change return eligibility, timelines, or inspection language elsewhere.
+
+STRICT RULES:
+- Do NOT mention Cash on Delivery anywhere in the Return Policy.
+- Do NOT add checks, wire transfers, ACH, or cash refunds.
+- Do NOT guarantee refund timing beyond what is written above.
+- Do NOT name any payment processor other than “Stripe” as shown.
+
+FORMAT RULES:
+- Keep the heading “Refund Method”.
+- Use two short paragraphs exactly as shown.
+- No bullets, icons, bolding, or callouts.
+
+ACCEPTANCE CHECK:
+- “Cash on Delivery” no longer exists anywhere in the Return Policy.
+- Refund language matches Terms, Payment Policy, Privacy Policy, and Checkout.
+- Refund expectations are clear, conditional, and processor-safe.
+
+GOAL:
+- Eliminate COD contradictions completely
+- Reduce ad-review and payment-processor risk
+- Prevent refund-method disputes
+- Lock Stripe-only consistency site-wide

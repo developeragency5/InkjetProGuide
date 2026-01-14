@@ -383,7 +383,7 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-title-risk">
                       <h3 className="text-lg font-semibold text-foreground mb-3">Title and Risk of Loss</h3>
                       <p className="mb-3">
-                        Title to Products purchased from InkjetProGuide passes to you upon our delivery of the Products to the shipping carrier at our fulfillment facility. Risk of loss or damage to Products likewise passes to you at the moment of delivery to the carrier. This means that once the carrier has accepted your package from our facility, you bear the risk of loss, damage, or theft during transit. We are not liable for delays, damage, or loss that occurs after the carrier has taken possession of your shipment.
+                        Title to Products purchased from InkjetProGuide passes to you upon our delivery of the Products to the shipping carrier at our fulfillment facility. Risk of loss passes to you upon delivery of the product to the shipping carrier, except where otherwise required by applicable consumer protection laws. This means that once the carrier has accepted your package from our facility, you bear the risk of loss, damage, or theft during transit. We are not liable for delays, damage, or loss that occurs after the carrier has taken possession of your shipment.
                       </p>
                       <p>
                         We strongly recommend that you inspect all packages upon delivery and note any visible damage on the carrier's delivery receipt. If your package arrives damaged, please retain all packaging materials and contact both the carrier and us immediately. While we will assist you in filing claims with the carrier, the ultimate responsibility for pursuing shipping damage claims rests with you as the owner of the goods. For high-value orders, we recommend considering shipping insurance if offered by the carrier at checkout.
@@ -498,9 +498,9 @@ export default function TermsConditionsPage() {
                   </h2>
                   <div className="space-y-4 text-muted-foreground">
                     <div data-testid="text-as-is">
-                      <h3 className="text-lg font-semibold text-foreground mb-3">Products Sold "As Is"</h3>
+                      <h3 className="text-lg font-semibold text-foreground mb-3">Product Warranties</h3>
                       <p className="mb-3">
-                        All products sold through InkjetProGuide are sold "AS IS" with only the manufacturer's warranty, if any, applicable to such products. InkjetProGuide does not manufacture any of the products sold on our Site; we are an independent retailer of products manufactured by third parties. As such, all warranties, representations, and guarantees regarding the products, including any implied warranty of merchantability, implied warranty of fitness for a particular purpose, or implied warranty of non-infringement, are made by the product manufacturers, not by InkjetProGuide.
+                        All products are sold with any applicable manufacturer warranty. InkjetProGuide does not provide additional warranties beyond those offered by the manufacturer, except as required by applicable law. InkjetProGuide does not manufacture any of the products sold on our Site; we are an independent retailer of products manufactured by third parties. As such, all warranties, representations, and guarantees regarding the products, including any implied warranty of merchantability, implied warranty of fitness for a particular purpose, or implied warranty of non-infringement, are made by the product manufacturers, not by InkjetProGuide.
                       </p>
                       <p>
                         We strongly encourage you to review the manufacturer's warranty documentation included with your product or available on the manufacturer's website before making a purchase. Warranty coverage, duration, terms, and exclusions vary by manufacturer and product. InkjetProGuide does not provide any warranty service on behalf of manufacturers; warranty claims must be directed to the manufacturer according to their warranty procedures. We may assist you in obtaining manufacturer contact information but are not responsible for the resolution of warranty claims.
@@ -658,6 +658,12 @@ export default function TermsConditionsPage() {
                       </p>
                       <p>
                         During this thirty (30) day period, both parties agree to engage in good faith negotiations to resolve the Dispute without resorting to formal proceedings. This may include phone calls, video conferences, or written correspondence aimed at finding a mutually acceptable resolution. If the Dispute is not resolved within this thirty (30) day period, either party may then proceed with the binding arbitration process described below. The informal resolution period is a mandatory prerequisite to initiating arbitration and must be completed before any arbitration demand may be filed.
+                      </p>
+                    </div>
+                    <div data-testid="text-arbitration-optout">
+                      <h3 className="text-lg font-semibold text-foreground mb-3">Arbitration Opt-Out</h3>
+                      <p className="mb-3">
+                        You may opt out of this arbitration agreement by sending written notice to inkjetproguide@outlook.com within thirty (30) days of first using the Site or placing your first order. Your notice must include your name, email address, and a clear statement that you wish to opt out of arbitration.
                       </p>
                     </div>
                     <div data-testid="text-binding-arbitration">
