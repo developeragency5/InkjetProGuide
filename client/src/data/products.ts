@@ -71,7 +71,7 @@ export const staticProducts: StaticProduct[] = [
     description: "Wireless all-in-one ink tank printer built for high-volume office use. Professional quality printing with exceptional value.",
     price: "379.99",
     originalPrice: "429.99",
-    image: "",
+    image: "/assets/HP_Smart_Tank_7602_All-in-One_1768426812916.jpg",
     category: "Home Inkjet Printers",
     rating: "4.7",
     reviewCount: 198,
