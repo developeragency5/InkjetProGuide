@@ -116,23 +116,18 @@ export default function HomePage() {
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-balance"
                   data-testid="hero-headline"
                 >
-                  Find Your Perfect
-                  <br />
+                  InkjetProGuide —{" "}
                   <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                    Wireless, Photo &
-                  </span>
-                  <br />
-                  Inkjet Printer
+                    Independent Printer Buying Guides
+                  </span>{" "}
+                  & Online Store
                 </h1>
 
                 <p
                   className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg"
                   data-testid="hero-subtext"
                 >
-                  Explore our curated collection of printers. Shop wireless
-                  printers that connect effortlessly, photo printers that
-                  produce beautiful prints, and compare inkjet printer vs laser
-                  printer to find the best fit for your home or office.
+                  Explore in-depth printer buying guides and shop a curated selection of inkjet printers for home and office use.
                 </p>
               </div>
 
@@ -170,7 +165,7 @@ export default function HomePage() {
                     data-testid="button-browse-guides"
                   >
                     <BookOpen className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />
-                    Browse Buying Guides
+                    Read Buying Guides
                   </Button>
                 </Link>
                 <a href="/products#!/Inkjet-Printers/c/193859557" className="w-full sm:w-auto">
