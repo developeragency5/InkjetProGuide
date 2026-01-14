@@ -1114,10 +1114,11 @@ export default function HomePage() {
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Most orders ship within 24 hours from our fulfillment centers,
                   with delivery in 2-3 business days to addresses across the
-                  continental United States. All printers arrive factory-sealed 
-                  with full warranty coverage. We use premium packaging to ensure
-                  your printer arrives in perfect condition, ready to set up and
-                  use.
+                  continental United States. All printers arrive factory-sealed. 
+                  Manufacturer warranty coverage may be available and is provided 
+                  by the manufacturer according to their terms. We use premium 
+                  packaging to ensure your printer arrives in perfect condition, 
+                  ready to set up and use.
                 </p>
               </CardContent>
             </Card>
