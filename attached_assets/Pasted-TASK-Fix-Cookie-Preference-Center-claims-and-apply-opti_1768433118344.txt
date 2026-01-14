@@ -1,0 +1,79 @@
+TASK: Fix Cookie Preference Center claims and apply optional privacy-policy trust improvements.
+
+────────────────────────
+FIX #4: Cookie Preference Center (accuracy required)
+────────────────────────
+
+ISSUE:
+The Privacy Policy references a “cookie preference center.” This must only be mentioned if it actually exists.
+
+ACTION REQUIRED:
+- Search the Privacy Policy for any sentence that says or implies:
+  - “use our cookie preference center”
+  - “manage cookies through our preference center”
+  - similar wording
+
+IF THE SITE DOES NOT HAVE A REAL COOKIE PREFERENCE CENTER:
+REPLACE those lines with the following text (USE EXACTLY):
+
+“You can manage cookies through your browser settings. Where available, you may also manage cookie preferences using tools provided on our site.”
+
+IF THE SITE DOES HAVE A REAL COOKIE PREFERENCE CENTER:
+- Leave existing wording unchanged.
+
+RULES:
+- Do NOT imply guaranteed availability of a preference center.
+- Do NOT reference third-party CMPs or tools by name.
+
+────────────────────────
+OPTIONAL IMPROVEMENT A: “We don’t sell data” summary (recommended)
+────────────────────────
+
+ADD THIS SHORT SECTION near the top of the Privacy Policy (after Section 1 or introduction):
+
+Quick Summary: We do not sell your personal information. We use information to process orders, provide customer support, improve our site, and (with your consent) send marketing emails. You can opt out of marketing at any time.
+
+RULES:
+- Insert as plain text.
+- Do NOT bold or highlight.
+- Do NOT add legal definitions here.
+
+────────────────────────
+OPTIONAL IMPROVEMENT B: Other U.S. State Privacy Rights
+────────────────────────
+
+ADD THIS NEW SECTION near existing rights sections:
+
+Other U.S. State Privacy Rights
+Residents of certain states may have privacy rights similar to California’s. You can contact us to request access, deletion, or correction of personal information.
+
+RULES:
+- Keep the section short.
+- Do NOT list specific states unless already done elsewhere.
+- Do NOT promise rights beyond applicable law.
+
+────────────────────────
+OPTIONAL IMPROVEMENT C: Historical versions wording
+────────────────────────
+
+ISSUE:
+The phrase “We maintain historical versions” may be inaccurate.
+
+TEXT TO REMOVE OR SOFTEN:
+“We maintain historical versions…”
+
+APPROVED SAFER REPLACEMENT (USE EXACTLY):
+
+“We may retain prior versions for recordkeeping and can provide them upon request where available.”
+
+────────────────────────
+ACCEPTANCE CHECK:
+- No false promise of a cookie preference center exists.
+- Privacy Policy no longer makes unverifiable claims.
+- Optional sections (A–C) are added only once and use exact wording.
+- No other policy content is modified.
+
+GOAL:
+- Eliminate policy mismatches
+- Improve trust with ads platforms and users
+- Keep Privacy Policy accurate, defensible, and audit-safe

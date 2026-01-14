@@ -722,10 +722,13 @@ export default function PrivacyPolicyPage() {
                       Most web browsers allow you to control cookies through their settings. You can configure your browser to block all cookies, accept only certain cookies, or notify you when a cookie is set. However, blocking all cookies may prevent you from accessing certain features of our website, such as the shopping cart and checkout process. Instructions for managing cookies vary by browser; please consult your browser's help documentation for specific guidance.
                     </p>
                     <h3 className="font-semibold text-foreground mb-3" data-testid="heading-dnt">
-                      Do Not Track Signals
+                      Do Not Track & Global Privacy Control (GPC)
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-dnt">
-                      Our website responds to Do Not Track (DNT) signals and Global Privacy Control (GPC) signals. When we detect a DNT or GPC signal from your browser, we will disable non-essential tracking and treat the signal as a valid opt-out request for data sharing under CCPA/CPRA. Please note that some browser extensions and privacy tools may send these signals automatically.
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2" data-testid="text-dnt-1">
+                      Some browsers offer "Do Not Track" settings. Because there is no widely accepted standard for how to interpret these signals, our site may not respond to DNT signals.
+                    </p>
+                    <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-dnt-2">
+                      We do honor Global Privacy Control (GPC) signals where required and treat GPC as a valid request to opt out of "sharing" for cross-context behavioral advertising for California residents.
                     </p>
                   </div>
                 </CardContent>
@@ -774,56 +777,11 @@ export default function PrivacyPolicyPage() {
                 </CardHeader>
                 <CardContent className="space-y-6 pt-6">
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-security-intro">
-                    We take the security of your personal information seriously and implement appropriate technical, administrative, and physical safeguards to protect your data from unauthorized access, alteration, disclosure, or destruction. Our security measures are designed to provide a level of security appropriate to the risk of processing your personal information and to comply with industry standards and best practices. While no method of transmission over the internet or electronic storage is 100% secure, we continuously work to protect your personal information using the following measures:
+                    We use reasonable administrative, technical, and physical safeguards designed to protect personal information. This includes HTTPS (SSL/TLS) for data transmission and access controls to limit who can access personal information.
                   </p>
-
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="border rounded-lg p-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <Server className="w-6 h-6 text-primary" />
-                        <h3 className="font-semibold text-foreground">Encryption</h3>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-security-encryption">
-                        We use SSL/TLS encryption for all data transmission between your browser and our servers. This ensures that your personal information, including payment details and login credentials, is encrypted during transit and cannot be intercepted by unauthorized parties. Our database connections are also encrypted, and sensitive data is encrypted at rest using industry-standard AES-256 encryption algorithms.
-                      </p>
-                    </div>
-
-                    <div className="border rounded-lg p-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <CreditCard className="w-6 h-6 text-primary" />
-                        <h3 className="font-semibold text-foreground">PCI Compliance</h3>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-security-pci">
-                        Payment card processing is handled by our PCI-DSS compliant payment processor. We do not store, process, or have access to your complete credit card numbers on our servers. Payment data is transmitted directly to our payment processor using their secure API, ensuring that your financial information is protected by rigorous security standards.
-                      </p>
-                    </div>
-
-                    <div className="border rounded-lg p-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <Lock className="w-6 h-6 text-primary" />
-                        <h3 className="font-semibold text-foreground">Password Security</h3>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-security-password">
-                        User passwords are hashed using bcrypt, a strong one-way hashing algorithm, before being stored in our database. This means that even if our database were compromised, your actual password would not be exposed. We never store passwords in plain text, and our employees do not have access to your password. We also implement account lockout policies to prevent brute-force attacks.
-                      </p>
-                    </div>
-
-                    <div className="border rounded-lg p-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <ShieldCheck className="w-6 h-6 text-primary" />
-                        <h3 className="font-semibold text-foreground">Access Controls</h3>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-security-access">
-                        Access to personal information is restricted to authorized employees, contractors, and agents who need the information to perform their duties. We maintain role-based access controls and regularly audit access privileges to ensure that only necessary personnel can access sensitive data. All personnel with access to personal information are subject to confidentiality obligations and receive regular privacy and security training.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-muted/50 p-4 rounded-md">
-                    <p className="text-sm text-muted-foreground" data-testid="text-security-disclaimer">
-                      <strong className="text-foreground">Security Disclaimer:</strong> While we implement robust security measures, no system is completely impenetrable. We cannot guarantee the absolute security of your information transmitted to our website. Any transmission of personal information is at your own risk. We are not responsible for the circumvention of any privacy settings or security measures we implement. If you believe your account has been compromised, please contact us immediately at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a>.
-                    </p>
-                  </div>
+                  <p className="text-muted-foreground leading-relaxed" data-testid="text-security-payment">
+                    Payment information is processed by our payment processor (Stripe) and we do not store full payment card numbers on our servers.
+                  </p>
                 </CardContent>
               </Card>
             </section>
