@@ -61,11 +61,11 @@ export default function CartPage() {
           <p className="text-muted-foreground mb-8">
             Start adding some amazing printers to your cart!
           </p>
-          <Link href="/products">
+          <a href="/products#!/Inkjet-Printers/c/193859557">
             <Button size="lg" data-testid="button-start-shopping">
               Start Shopping
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     );
@@ -226,11 +226,11 @@ export default function CartPage() {
                       Proceed to Checkout
                     </Button>
                   </Link>
-                  <Link href="/products">
+                  <a href="/products#!/Inkjet-Printers/c/193859557">
                     <Button size="lg" variant="outline" className="w-full" data-testid="button-continue-shopping">
                       Continue Shopping
                     </Button>
-                  </Link>
+                  </a>
                 </div>
 
                 {/* Trust Badges */}

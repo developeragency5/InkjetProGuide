@@ -20,12 +20,12 @@ export default function NotFound() {
               Go Home
             </Button>
           </Link>
-          <Link href="/products">
+          <a href="/products#!/Inkjet-Printers/c/193859557">
             <Button size="lg" variant="outline" data-testid="button-products">
               <Search className="w-5 h-5 mr-2" />
               Browse Products
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

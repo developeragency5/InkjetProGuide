@@ -435,7 +435,7 @@ export default function BuyingGuidesPage() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" asChild data-testid="button-browse-printers">
-                <Link href="/products">Browse All Printers</Link>
+                <a href="/products#!/Inkjet-Printers/c/193859557">Browse All Printers</a>
               </Button>
               <Button size="lg" variant="outline" asChild data-testid="button-contact-us">
                 <Link href="/contact">Contact Us</Link>
@@ -570,7 +570,7 @@ export default function BuyingGuidesPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" asChild data-testid="button-shop-now">
-              <Link href="/products">Shop All Printers</Link>
+              <a href="/products#!/Inkjet-Printers/c/193859557">Shop All Printers</a>
             </Button>
             <Button size="lg" variant="outline" asChild data-testid="button-contact">
               <Link href="/contact">Contact Us</Link>

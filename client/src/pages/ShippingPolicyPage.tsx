@@ -322,11 +322,11 @@ export default function ShippingPolicyPage() {
         </div>
 
         <div className="flex justify-center gap-4 flex-wrap">
-          <Link href="/products">
+          <a href="/products#!/Inkjet-Printers/c/193859557">
             <Button className="h-11 px-6" data-testid="button-shop-now">
               Shop Printers
             </Button>
-          </Link>
+          </a>
           <Link href="/refund-policy">
             <Button variant="outline" className="h-11 px-6" data-testid="button-view-refund-policy">
               Return Policy

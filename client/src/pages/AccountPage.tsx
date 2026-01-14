@@ -141,9 +141,9 @@ export default function AccountPage() {
                   <p className="text-muted-foreground mb-6">
                     Start shopping to see your orders here!
                   </p>
-                  <Link href="/products">
+                  <a href="/products#!/Inkjet-Printers/c/193859557">
                     <Button data-testid="button-browse-products-orders">Browse Products</Button>
-                  </Link>
+                  </a>
                 </CardContent>
               </Card>
             ) : (
@@ -222,9 +222,9 @@ export default function AccountPage() {
                   <p className="text-muted-foreground mb-6">
                     Save your favorite products for later!
                   </p>
-                  <Link href="/products">
+                  <a href="/products#!/Inkjet-Printers/c/193859557">
                     <Button data-testid="button-browse-products-wishlist">Browse Products</Button>
-                  </Link>
+                  </a>
                 </CardContent>
               </Card>
             ) : (

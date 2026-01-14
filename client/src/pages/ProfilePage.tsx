@@ -305,7 +305,7 @@ export default function ProfilePage() {
                 <div className="text-center py-12">
                   <Package className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
                   <p className="text-muted-foreground mb-4">No orders yet</p>
-                  <Button onClick={() => setLocation("/products")} data-testid="button-shop-now">
+                  <Button onClick={() => window.location.href = "/products#!/Inkjet-Printers/c/193859557"} data-testid="button-shop-now">
                     Start Shopping
                   </Button>
                 </div>
@@ -375,7 +375,7 @@ export default function ProfilePage() {
                 <div className="text-center py-12">
                   <Clock className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
                   <p className="text-muted-foreground mb-4">No orders to track</p>
-                  <Button onClick={() => setLocation("/products")} data-testid="button-shop-now-tracking">
+                  <Button onClick={() => window.location.href = "/products#!/Inkjet-Printers/c/193859557"} data-testid="button-shop-now-tracking">
                     Start Shopping
                   </Button>
                 </div>

@@ -198,7 +198,7 @@ export default function HomePage() {
                     Browse Buying Guides
                   </Button>
                 </Link>
-                <Link href="/products" className="w-full sm:w-auto">
+                <a href="/products#!/Inkjet-Printers/c/193859557" className="w-full sm:w-auto">
                   <Button
                     size="default"
                     variant="outline"
@@ -208,7 +208,7 @@ export default function HomePage() {
                     Shop Printers
                     <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5" />
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -236,14 +236,14 @@ export default function HomePage() {
                                 Professional Office Series
                               </p>
                             </div>
-                            <Link href="/products">
+                            <a href="/products#!/Inkjet-Printers/c/193859557">
                               <Button
                                 size="sm"
                                 data-testid="button-view-collection"
                               >
                                 View Collection
                               </Button>
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -384,7 +384,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Link href="/products" className="block">
+            <a href="/products#!/Inkjet-Printers/c/193859557" className="block">
               <Card
                 className="hover-elevate transition-all h-full bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20"
                 data-testid="topic-all-guides"
@@ -400,7 +400,7 @@ export default function HomePage() {
                   </p>
                 </CardContent>
               </Card>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -885,12 +885,12 @@ export default function HomePage() {
           )}
 
           <div className="text-center mt-8">
-            <Link href="/products?category=Home+Inkjet+Printers">
+            <a href="/products#!/Home-Printers/c/193853315">
               <Button size="lg" data-testid="button-shop-home-printers">
                 Shop Home Printers
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -941,12 +941,12 @@ export default function HomePage() {
           )}
 
           <div className="text-center mt-8">
-            <Link href="/products?category=Office+Inkjet+Printers">
+            <a href="/products#!/Office-Printers/c/193855066">
               <Button size="lg" data-testid="button-shop-office-printers">
                 Shop Office Printers
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -978,7 +978,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Link href="/products?category=Home+Inkjet+Printers">
+            <a href="/products#!/Home-Printers/c/193853315">
               <Card
                 className="hover-elevate transition-all cursor-pointer h-full group"
                 data-testid="category-home-office"
@@ -1006,9 +1006,9 @@ export default function HomePage() {
                   </div>
                 </CardContent>
               </Card>
-            </Link>
+            </a>
 
-            <Link href="/products?category=Office+Inkjet+Printers">
+            <a href="/products#!/Office-Printers/c/193855066">
               <Card
                 className="hover-elevate transition-all cursor-pointer h-full group"
                 data-testid="category-small-office"
@@ -1036,7 +1036,7 @@ export default function HomePage() {
                   </div>
                 </CardContent>
               </Card>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

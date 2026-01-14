@@ -57,7 +57,7 @@ export default function OrdersPage() {
           <p className="text-muted-foreground mb-8">
             Start shopping to see your orders here!
           </p>
-          <Button size="lg" onClick={() => navigate("/products")} data-testid="button-start-shopping">
+          <Button size="lg" onClick={() => window.location.href = "/products#!/Inkjet-Printers/c/193859557"} data-testid="button-start-shopping">
             Start Shopping
           </Button>
         </div>

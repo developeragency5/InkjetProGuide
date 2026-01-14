@@ -83,11 +83,11 @@ export default function AboutPage() {
               with comprehensive guides, curated selection, and educational resources.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/products">
+              <a href="/products#!/Inkjet-Printers/c/193859557">
                 <Button size="lg" className="h-12 px-8 text-base" data-testid="button-shop-printers">
                   Shop Printers
                 </Button>
-              </Link>
+              </a>
               <Link href="/contact">
                 <Button size="lg" variant="outline" className="h-12 px-8 text-base" data-testid="button-contact-us">
                   Contact Us
@@ -408,11 +408,11 @@ export default function AboutPage() {
                 read our guides, and make an informed decision with confidence.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <Link href="/products">
+                <a href="/products#!/Inkjet-Printers/c/193859557">
                   <Button size="lg" variant="secondary" className="h-12 px-8 text-base" data-testid="button-browse-printers">
                     Browse Printers
                   </Button>
-                </Link>
+                </a>
                 <Link href="/guides">
                   <Button size="lg" variant="outline" className="h-12 px-8 text-base border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" data-testid="button-view-guides">
                     View Buying Guides

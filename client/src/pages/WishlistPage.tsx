@@ -64,11 +64,11 @@ export default function WishlistPage() {
           <p className="text-muted-foreground mb-8">
             Save your favorite printers here for later!
           </p>
-          <Link href="/products">
+          <a href="/products#!/Inkjet-Printers/c/193859557">
             <Button size="lg" data-testid="button-browse-products">
               Browse Products
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     );

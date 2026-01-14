@@ -166,7 +166,7 @@ export default function ComparisonPage() {
               You haven't selected any products to compare yet. Add products from the product listing or detail pages.
             </p>
             <Button asChild className="w-full" data-testid="button-browse-products">
-              <Link href="/products">Browse Products</Link>
+              <a href="/products#!/Inkjet-Printers/c/193859557">Browse Products</a>
             </Button>
           </CardContent>
         </Card>
