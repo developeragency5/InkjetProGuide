@@ -194,8 +194,11 @@ export default function RefundPolicyPage() {
                   <DollarSign className="w-5 h-5 text-primary" />
                   Refund Method
                 </h3>
-                <p data-testid="text-refund-method-1">
-                  Refunds are processed to your original payment method (credit or debit card) within 5-7 business days. Please allow an additional 3-5 business days for your bank to post the credit to your account.
+                <p data-testid="text-refund-method-1" className="mb-3">
+                  Credit/Debit Cards (Stripe): Refunded to the original payment method. We process refunds within 5–7 business days after inspection. Your bank may take an additional 3–5 business days to post the credit.
+                </p>
+                <p data-testid="text-refund-method-2">
+                  If a payment fails or a card is closed/expired: We may request an alternative refund method (such as store credit or a replacement card) to complete the refund securely.
                 </p>
               </div>
 
