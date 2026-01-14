@@ -159,6 +159,9 @@ export default function PrivacyPolicyPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-slate dark:prose-invert max-w-none space-y-4">
+                  <p className="text-muted-foreground leading-relaxed" data-testid="text-quick-summary">
+                    Quick Summary: We do not sell your personal information. We use information to process orders, provide customer assistance, improve our site, and (with your consent) send marketing emails. You can opt out of marketing at any time.
+                  </p>
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-intro-1">
                     InkjetProGuide is an independent online retailer serving customers in the United States. We are committed to protecting your personal information and your right to privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website, make a purchase, create an account, or otherwise interact with our services.
                   </p>
@@ -166,7 +169,7 @@ export default function PrivacyPolicyPage() {
                     This Privacy Policy applies to all information collected through our website (inkjetproguide.com), as well as any related services, sales, marketing, or events conducted by InkjetProGuide. We have carefully designed this policy to be transparent about our data practices and to give you meaningful control over your personal information. By accessing or using our website, placing an order, creating an account, subscribing to our newsletter, or contacting us, you acknowledge that you have read and understood this Privacy Policy and agree to its terms. If you do not agree with our policies and practices, please discontinue use of our services immediately. We encourage you to review this policy periodically, as we may update it from time to time to reflect changes in our practices, legal requirements, or industry standards.
                   </p>
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-intro-3">
-                    This Privacy Policy was last updated on January 9, 2026. The effective date listed above indicates when this policy became effective. We maintain historical versions of our privacy policies and will provide copies upon request. Our commitment to your privacy extends beyond mere compliance with applicable laws; we strive to earn and maintain your trust through transparent communication and responsible data stewardship. If you have any questions about this Privacy Policy or our data practices, please contact us using the information provided in the "Contact Us" section at the end of this document. We value your feedback and are committed to addressing any concerns you may have about how we handle your personal information.
+                    This Privacy Policy was last updated on January 9, 2026. The effective date listed above indicates when this policy became effective. We may retain prior versions for recordkeeping and can provide them upon request where available. Our commitment to your privacy extends beyond mere compliance with applicable laws; we strive to earn and maintain your trust through transparent communication and responsible data stewardship. If you have any questions about this Privacy Policy or our data practices, please contact us using the information provided in the "Contact Us" section at the end of this document. We value your feedback and are committed to addressing any concerns you may have about how we handle your personal information.
                   </p>
                   <div className="bg-muted/50 p-4 rounded-md mt-4">
                     <p className="text-sm text-muted-foreground" data-testid="text-business-info">
@@ -619,6 +622,22 @@ export default function PrivacyPolicyPage() {
               </Card>
             </section>
 
+            <section id="other-state-rights">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3 text-2xl">
+                    <Globe className="w-7 h-7 text-primary" />
+                    Other U.S. State Privacy Rights
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed" data-testid="text-other-state-rights">
+                    Residents of certain states may have privacy rights similar to California's. You can contact us to request access, deletion, or correction of personal information.
+                  </p>
+                </CardContent>
+              </Card>
+            </section>
+
             <section id="do-not-sell">
               <Card className="border-destructive/50">
                 <CardHeader className="bg-destructive/5">
@@ -656,7 +675,7 @@ export default function PrivacyPolicyPage() {
                     </p>
                     <ul className="space-y-2 ml-6 list-disc text-muted-foreground">
                       <li data-testid="text-optout-method-1"><strong className="text-foreground">Email Request:</strong> Send an email to <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a> with the subject "Do Not Sell or Share My Data" and include your name and email address associated with your account.</li>
-                      <li data-testid="text-optout-method-2"><strong className="text-foreground">Cookie Settings:</strong> Adjust your browser settings to reject non-essential cookies, or use our cookie preference center to disable marketing and advertising cookies.</li>
+                      <li data-testid="text-optout-method-2"><strong className="text-foreground">Cookie Settings:</strong> You can manage cookies through your browser settings. Where available, you may also manage cookie preferences using tools provided on our site.</li>
                       <li data-testid="text-optout-method-3"><strong className="text-foreground">Global Privacy Control (GPC):</strong> We honor Global Privacy Control signals sent by your browser. If your browser is configured to send a GPC signal, we will treat this as a valid opt-out request for data sharing.</li>
                       <li data-testid="text-optout-method-4"><strong className="text-foreground">Industry Opt-Out Tools:</strong> Visit the Digital Advertising Alliance's opt-out page at <a href="https://optout.aboutads.info" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">optout.aboutads.info</a> to opt out of personalized advertising from participating companies.</li>
                     </ul>
@@ -699,7 +718,7 @@ export default function PrivacyPolicyPage() {
                         Analytics Cookies (Optional)
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-cookies-analytics">
-                        Analytics cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. These cookies track metrics such as page views, session duration, bounce rates, and navigation paths. We use analytics data to identify popular content, understand user behavior, diagnose technical problems, and improve website performance. Analytics cookies may be provided by third-party services that aggregate data across multiple websites. You can opt out of analytics cookies through your browser settings or our cookie preference center without affecting your ability to browse and shop on our website.
+                        Analytics cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. These cookies track metrics such as page views, session duration, bounce rates, and navigation paths. We use analytics data to identify popular content, understand user behavior, diagnose technical problems, and improve website performance. Analytics cookies may be provided by third-party services that aggregate data across multiple websites. You can manage cookies through your browser settings. Where available, you may also manage cookie preferences using tools provided on our site.
                       </p>
                     </div>
 
@@ -709,7 +728,7 @@ export default function PrivacyPolicyPage() {
                         Marketing Cookies (Optional)
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-cookies-marketing">
-                        Marketing cookies are used to track visitors across websites and display advertisements that are relevant and engaging for individual users. These cookies may be set by our advertising partners to build a profile of your interests and show you relevant ads on other sites. Marketing cookies also help us measure the effectiveness of our advertising campaigns and understand which ads lead to purchases. You can opt out of marketing cookies at any time through your browser settings, our cookie preference center, or industry opt-out tools. Opting out of marketing cookies will not reduce the number of ads you see, but the ads may be less relevant to your interests.
+                        Marketing cookies are used to track visitors across websites and display advertisements that are relevant and engaging for individual users. These cookies may be set by our advertising partners to build a profile of your interests and show you relevant ads on other sites. Marketing cookies also help us measure the effectiveness of our advertising campaigns and understand which ads lead to purchases. You can manage cookies through your browser settings. Where available, you may also manage cookie preferences using tools provided on our site. You may also use industry opt-out tools. Opting out of marketing cookies will not reduce the number of ads you see, but the ads may be less relevant to your interests.
                       </p>
                     </div>
                   </div>
@@ -818,7 +837,7 @@ export default function PrivacyPolicyPage() {
 
                   <div className="bg-muted/50 p-4 rounded-md">
                     <p className="text-sm text-muted-foreground" data-testid="text-changes-archive">
-                      <strong className="text-foreground">Policy Archive:</strong> We maintain archived versions of previous Privacy Policies. If you would like to request a copy of a previous version of this Privacy Policy, please contact us at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a>.
+                      <strong className="text-foreground">Policy Archive:</strong> We may retain prior versions for recordkeeping and can provide them upon request where available. If you would like to request a copy of a previous version of this Privacy Policy, please contact us at <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a>.
                     </p>
                   </div>
                 </CardContent>

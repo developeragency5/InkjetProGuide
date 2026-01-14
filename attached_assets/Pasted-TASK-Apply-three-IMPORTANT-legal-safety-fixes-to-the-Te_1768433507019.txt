@@ -1,0 +1,69 @@
+TASK: Apply three IMPORTANT legal-safety fixes to the Terms & Conditions.
+
+────────────────────────
+FIX 1: “AS IS” wording (consumer-law safe)
+────────────────────────
+
+ISSUE:
+“All products sold ‘AS IS’” can conflict with consumer protection laws in some U.S. states.
+
+TEXT TO REMOVE:
+“All products sold through InkjetProGuide are sold ‘AS IS’…”
+
+APPROVED SAFER REPLACEMENT
+(MUST MATCH EXACTLY — COPY/PASTE, NO EDITS):
+
+“All products are sold with any applicable manufacturer warranty. InkjetProGuide does not provide additional warranties beyond those offered by the manufacturer, except as required by applicable law.”
+
+SCOPE:
+- Replace only the sentence containing “AS IS”.
+- Do NOT remove manufacturer-warranty references elsewhere.
+
+────────────────────────
+FIX 2: Risk of Loss clause (carrier liability)
+────────────────────────
+
+ISSUE:
+Absolute “risk of loss passes to you upon delivery to the carrier” language can cause disputes in buyer-friendly states.
+
+TEXT TO REMOVE:
+“Risk of loss passes to you upon delivery to the carrier”
+
+APPROVED SAFER REPLACEMENT
+(MUST MATCH EXACTLY):
+
+“Risk of loss passes to you upon delivery of the product to the shipping carrier, except where otherwise required by applicable consumer protection laws.”
+
+SCOPE:
+- Replace the sentence only.
+- Keep the rest of the shipping or risk section unchanged.
+
+────────────────────────
+FIX 3: Arbitration opt-out (recommended for enforceability)
+────────────────────────
+
+ISSUE:
+Adding an opt-out improves arbitration enforceability and reduces legal challenge risk.
+
+ADD THIS SECTION directly AFTER the “Binding Arbitration” header
+(MUST MATCH EXACTLY — COPY/PASTE, NO EDITS):
+
+Arbitration Opt-Out
+You may opt out of this arbitration agreement by sending written notice to inkjetproguide@outlook.com within thirty (30) days of first using the Site or placing your first order. Your notice must include your name, email address, and a clear statement that you wish to opt out of arbitration.
+
+STYLE RULES:
+- Use normal body text.
+- Do NOT bold or highlight.
+- Keep heading levels consistent.
+
+────────────────────────
+ACCEPTANCE CHECK:
+- No “AS IS” product-sale wording remains.
+- Risk of loss language now includes consumer-law protection.
+- Arbitration Opt-Out section appears once, immediately after the Binding Arbitration header.
+- No other Terms sections are modified.
+
+GOAL:
+- Stronger consumer-law compatibility
+- Reduced dispute and chargeback risk
+- Improved arbitration enforceability
