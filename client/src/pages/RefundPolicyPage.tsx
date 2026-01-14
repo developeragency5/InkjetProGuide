@@ -36,7 +36,7 @@ export default function RefundPolicyPage() {
                 <strong className="text-foreground">30-Day Return Policy:</strong> Return any inkjet printer within 30 days of delivery. Full refund on unopened items; opened items showing signs of use may incur up to 15% restocking fee.
               </p>
               <p data-testid="text-summary-2">
-                <strong className="text-foreground">FREE Prepaid Return Shipping:</strong> We provide a FREE prepaid UPS/FedEx return label for all eligible returns. You pay nothing to ship your return.
+                <strong className="text-foreground">Return Shipping:</strong> Return shipping eligibility and label availability are determined based on your return request. Contact us to initiate a return.
               </p>
               <p data-testid="text-summary-3">
                 <strong className="text-foreground">Fast Refunds:</strong> Refunds processed within 5-7 business days of receiving your return.
@@ -91,13 +91,13 @@ export default function RefundPolicyPage() {
                 </p>
               </div>
 
-              <div className="mt-6 p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+              <div className="mt-6 p-4 bg-muted/50 rounded-lg border">
                 <h3 className="text-xl font-semibold mb-3 text-foreground flex items-center gap-2" data-testid="heading-rma-shipping">
-                  <Package className="w-5 h-5 text-green-600" />
-                  RMA Return Shipping - FREE Prepaid Label
+                  <Package className="w-5 h-5 text-primary" />
+                  Return Shipping
                 </h3>
                 <p data-testid="text-rma-shipping">
-                  <strong className="text-foreground">We cover return shipping costs.</strong> Once your return is approved, we will email you a FREE prepaid UPS or FedEx shipping label. Simply print the label, attach it to your package, and drop it off at any UPS or FedEx location. <strong>You pay $0 for return shipping.</strong>
+                  Return shipping eligibility and label availability are determined according to this Return & Refund Policy. Once your return is approved, we will provide instructions for shipping your item back to us. Please contact us to initiate a return request.
                 </p>
               </div>
             </CardContent>
@@ -129,7 +129,7 @@ export default function RefundPolicyPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-2">Receive Return Authorization</h3>
                     <p className="text-muted-foreground" data-testid="text-step-2">
-                      We'll send you a Return Merchandise Authorization (RMA) number and a prepaid shipping label within 24 hours.
+                      We'll send you a Return Merchandise Authorization (RMA) number and return instructions within 24 hours.
                     </p>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export default function RefundPolicyPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-4">Ship Your Return</h3>
                     <p className="text-muted-foreground" data-testid="text-step-4">
-                      Attach the prepaid return label and drop off at any authorized shipping location. We recommend obtaining a tracking number for your records.
+                      Follow the return shipping instructions provided with your RMA. Drop off at an authorized shipping location and retain your tracking number for your records.
                     </p>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function RefundPolicyPage() {
                   <div className="p-3 bg-muted/50 rounded-md">
                     <p className="font-medium text-foreground mb-1">Return Shipping (You to Us):</p>
                     <p className="text-sm" data-testid="text-return-shipping-cost">
-                      <strong className="text-green-600 dark:text-green-400">FREE</strong> - We provide a prepaid UPS/FedEx label at no cost to you.
+                      Return shipping eligibility and costs are determined based on your return request and reason for return.
                     </p>
                   </div>
                   <div className="p-3 bg-muted/50 rounded-md">

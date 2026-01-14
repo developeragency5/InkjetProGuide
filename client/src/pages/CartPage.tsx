@@ -236,7 +236,7 @@ export default function CartPage() {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-primary">✓</span>
-                    <span className="text-muted-foreground">30-day returns with FREE prepaid label</span>
+                    <span className="text-muted-foreground">30-day returns per Return Policy</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-primary">✓</span>

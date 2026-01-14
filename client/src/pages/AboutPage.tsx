@@ -59,7 +59,7 @@ export default function AboutPage() {
     {
       icon: Package,
       title: "Easy Returns",
-      description: "30-day returns with FREE prepaid return shipping label included."
+      description: "30-day returns in accordance with our Return & Refund Policy."
     },
     {
       icon: Zap,
