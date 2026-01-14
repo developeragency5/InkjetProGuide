@@ -186,38 +186,73 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {/* Product Image */}
-          <Link href={`/product/${product.id}`}>
-            <span className="block cursor-pointer" data-testid={`link-product-${product.id}`}>
-              <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border relative overflow-hidden group/image">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-contain"
-                />
-                
-                
-                {/* Quick View Button - Always accessible on mobile, hover on desktop */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-100 md:opacity-0 md:group-hover/image:opacity-100 transition-opacity duration-300">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="bg-background/95 backdrop-blur-sm shadow-lg"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      setShowQuickView(true);
-                    }}
-                    data-testid={`button-quick-view-${product.id}`}
-                  >
-                    <Eye className="w-4 h-4 mr-2" />
-                    Quick View
-                  </Button>
+          {product.ecwidProductId ? (
+            <a href={`/products#!/~/product/id=${product.ecwidProductId}`}>
+              <span className="block cursor-pointer" data-testid={`link-product-${product.id}`}>
+                <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border relative overflow-hidden group/image">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-contain"
+                  />
+                  
+                  
+                  {/* Quick View Button - Always accessible on mobile, hover on desktop */}
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-100 md:opacity-0 md:group-hover/image:opacity-100 transition-opacity duration-300">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="bg-background/95 backdrop-blur-sm shadow-lg"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setShowQuickView(true);
+                      }}
+                      data-testid={`button-quick-view-${product.id}`}
+                    >
+                      <Eye className="w-4 h-4 mr-2" />
+                      Quick View
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </span>
-          </Link>
+              </span>
+            </a>
+          ) : (
+            <Link href={`/product/${product.id}`}>
+              <span className="block cursor-pointer" data-testid={`link-product-${product.id}`}>
+                <div className="aspect-square bg-background rounded-md mb-4 flex items-center justify-center p-4 border relative overflow-hidden group/image">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-contain"
+                  />
+                  
+                  
+                  {/* Quick View Button - Always accessible on mobile, hover on desktop */}
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-100 md:opacity-0 md:group-hover/image:opacity-100 transition-opacity duration-300">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="bg-background/95 backdrop-blur-sm shadow-lg"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setShowQuickView(true);
+                      }}
+                      data-testid={`button-quick-view-${product.id}`}
+                    >
+                      <Eye className="w-4 h-4 mr-2" />
+                      Quick View
+                    </Button>
+                  </div>
+                </div>
+              </span>
+            </Link>
+          )}
 
           {/* Product Info */}
           <div className="space-y-2">
@@ -227,13 +262,23 @@ export function ProductCard({ product }: ProductCardProps) {
             </p>
 
             {/* Product Name */}
-            <Link href={`/product/${product.id}`}>
-              <span className="cursor-pointer" data-testid={`link-product-name-${product.id}`}>
-                <h3 className="font-medium text-sm mb-1 line-clamp-2 hover:text-primary transition-colors">
-                  {product.name}
-                </h3>
-              </span>
-            </Link>
+            {product.ecwidProductId ? (
+              <a href={`/products#!/~/product/id=${product.ecwidProductId}`}>
+                <span className="cursor-pointer" data-testid={`link-product-name-${product.id}`}>
+                  <h3 className="font-medium text-sm mb-1 line-clamp-2 hover:text-primary transition-colors">
+                    {product.name}
+                  </h3>
+                </span>
+              </a>
+            ) : (
+              <Link href={`/product/${product.id}`}>
+                <span className="cursor-pointer" data-testid={`link-product-name-${product.id}`}>
+                  <h3 className="font-medium text-sm mb-1 line-clamp-2 hover:text-primary transition-colors">
+                    {product.name}
+                  </h3>
+                </span>
+              </Link>
+            )}
 
             {/* Key Specifications */}
             <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
@@ -417,11 +462,19 @@ export function ProductCard({ product }: ProductCardProps) {
                   <ShoppingCart className="w-4 h-4 mr-2" />
                   {addToCartMutation.isPending ? "Adding..." : "Add to Cart"}
                 </Button>
-                <Link href={`/product/${product.id}`}>
-                  <Button variant="outline" onClick={() => setShowQuickView(false)}>
-                    View Full Details
-                  </Button>
-                </Link>
+                {product.ecwidProductId ? (
+                  <a href={`/products#!/~/product/id=${product.ecwidProductId}`}>
+                    <Button variant="outline" onClick={() => setShowQuickView(false)}>
+                      View Full Details
+                    </Button>
+                  </a>
+                ) : (
+                  <Link href={`/product/${product.id}`}>
+                    <Button variant="outline" onClick={() => setShowQuickView(false)}>
+                      View Full Details
+                    </Button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

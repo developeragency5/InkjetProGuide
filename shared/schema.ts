@@ -30,6 +30,7 @@ export const products = pgTable("products", {
   features: text("features").array().notNull(),
   inStock: boolean("in_stock").notNull().default(true),
   mpn: text("mpn"), // Manufacturer Part Number (Product Number) - for printers only
+  ecwidProductId: text("ecwid_product_id"), // Ecwid store product ID for linking
   // SEO fields
   metaTitle: text("meta_title"),
   metaDescription: text("meta_description"),
