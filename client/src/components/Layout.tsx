@@ -33,7 +33,9 @@ export function Layout({ children }: LayoutProps) {
 
   const navigationLinks = [
     { name: "Home", path: "/", exact: true },
-    { name: "Shop", path: "/products", exact: true },
+    { name: "Inkjet Printers", path: "/products#!/Inkjet-Printers/c/193859557", exact: false },
+    { name: "Home Printers", path: "/products#!/Home-Printers/c/193853315", exact: false },
+    { name: "Office Printers", path: "/products#!/Office-Printers/c/193855066", exact: false },
     { name: "Guides", path: "/guides", exact: false },
     { name: "About", path: "/about", exact: false },
     { name: "Contact", path: "/contact", exact: false },
@@ -155,7 +157,7 @@ export function Layout({ children }: LayoutProps) {
                       onClick={(e) => {
                         e.preventDefault();
                         setMobileMenuOpen(false);
-                        if (link.path.includes('?')) {
+                        if (link.path.includes('?') || link.path.includes('#')) {
                           window.location.href = link.path;
                         } else {
                           setLocation(link.path);
@@ -187,7 +189,7 @@ export function Layout({ children }: LayoutProps) {
                   href={link.path}
                   onClick={(e) => {
                     e.preventDefault();
-                    if (link.path.includes('?')) {
+                    if (link.path.includes('?') || link.path.includes('#')) {
                       window.location.href = link.path;
                     } else {
                       setLocation(link.path);
