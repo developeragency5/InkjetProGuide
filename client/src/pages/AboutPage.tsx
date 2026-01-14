@@ -79,8 +79,7 @@ export default function AboutPage() {
               About InkjetProGuide
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-subtitle">
-              Your source for inkjet printers in the USA. We simplify printer shopping 
-              with comprehensive guides, curated selection, and educational resources.
+              InkjetProGuide is an independent online retailer serving customers in the United States.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a href="/products#!/Inkjet-Printers/c/193859557">
@@ -130,10 +129,9 @@ export default function AboutPage() {
                       About Our Team
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      InkjetProGuide is operated by a small, dedicated team of printing professionals based in 
-                      Fort Worth, Texas. Our team brings together years of experience in printer retail 
-                      and e-commerce to provide you with the best possible shopping experience. We're 
-                      real people who genuinely care about delivering quality products and useful information.
+                      InkjetProGuide is an independent online retailer serving customers in the United States. 
+                      Our team brings together years of experience in printer retail and e-commerce to provide 
+                      you with the best possible shopping experience.
                     </p>
                   </div>
                   <div>
@@ -142,11 +140,8 @@ export default function AboutPage() {
                       What We Do
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      We are an online retailer specializing exclusively in inkjet printers for homes, offices, 
-                      and small businesses across the United States. Our website offers a curated selection of 
-                      printers, detailed product guides, buying recommendations, and educational resources 
-                      for informed purchasing decisions. We handle product sourcing, order fulfillment, 
-                      and shipping all under one roof.
+                      We offer a curated selection of inkjet printers, detailed product guides, buying 
+                      recommendations, and educational resources for informed purchasing decisions.
                     </p>
                   </div>
                 </div>
@@ -157,11 +152,7 @@ export default function AboutPage() {
                       Our Location
                     </h3>
                     <div className="text-muted-foreground leading-relaxed space-y-2">
-                      <p>
-                        InkjetProGuide is proudly based in Fort Worth, Texas. While we operate primarily online, 
-                        we serve customers nationwide with fast shipping across all 50 states.
-                      </p>
-                      <div className="mt-4 p-4 bg-background rounded-lg border">
+                      <div className="p-4 bg-background rounded-lg border">
                         <p className="font-medium text-foreground">InkjetProGuide</p>
                         <p className="text-xs text-muted-foreground/70 mb-1">Corporate Mailing Address</p>
                         <p>2704 Handley Ederville Rd</p>

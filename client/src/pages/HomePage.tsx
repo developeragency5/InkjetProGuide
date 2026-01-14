@@ -1081,13 +1081,9 @@ export default function HomePage() {
               Why Choose InkjetProGuide
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              InkjetProGuide stands apart as a specialized inkjet printer
-              retailer focused on customer education and satisfaction. Unlike
-              big-box stores that carry thousands of products across dozens of
-              categories, we concentrate exclusively on inkjet printing
-              solutions. This specialization allows us to provide deeper product
-              knowledge, more relevant recommendations, and more comprehensive
-              educational resources than generalist retailers.
+              InkjetProGuide is an independent online retailer serving customers in the United States. 
+              We focus on inkjet printers and provide comprehensive buying guides and educational resources 
+              to help you make informed purchasing decisions.
             </p>
           </div>
 

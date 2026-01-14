@@ -185,7 +185,7 @@ export default function PurchasePolicyPage() {
               </ul>
 
               <p data-testid="text-tax-5">
-                InkjetProGuide is headquartered in Texas. For orders shipped within Texas, Texas state sales tax applies. For orders shipped to other states, the applicable state's sales tax rate will be applied where we have established nexus.
+                For orders shipped within Texas, Texas state sales tax applies. For orders shipped to other states, the applicable state's sales tax rate will be applied where we have established nexus.
               </p>
             </CardContent>
           </Card>

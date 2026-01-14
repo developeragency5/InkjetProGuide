@@ -190,7 +190,7 @@ export default function WarrantyPage() {
                 <HelpCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p data-testid="text-our-role-1">
-                    As an authorized retailer, InkjetProGuide's primary role is to provide you with genuine products at competitive prices. Here's how we support you regarding warranties:
+                    InkjetProGuide is an independent online retailer serving customers in the United States. Here's how we can assist you regarding warranties:
                   </p>
                 </div>
               </div>

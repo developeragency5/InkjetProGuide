@@ -160,7 +160,7 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Our Location</CardTitle>
-                <CardDescription>Visit our headquarters</CardDescription>
+                <CardDescription>Corporate Mailing Address</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex items-start gap-3 mb-4">
@@ -222,10 +222,9 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-lg mb-3">Order Inquiries Only</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   This contact page is specifically for order-related questions including shipping inquiries, 
-                  return requests, order status updates, and payment questions. Based in Fort Worth, Texas, 
-                  InkjetProGuide serves customers across the United States with a commitment to responsive 
-                  order handling. For product information, specifications, and buying guidance, please visit 
-                  our <a href="/guides" className="text-primary hover:underline">Guides & Resources</a> section.
+                  return requests, order status updates, and payment questions. InkjetProGuide is an independent 
+                  online retailer serving customers in the United States. For product information, specifications, 
+                  and buying guidance, please visit our <a href="/guides" className="text-primary hover:underline">Guides & Resources</a> section.
                 </p>
               </CardContent>
             </Card>

@@ -119,7 +119,7 @@ export default function DisclaimerPage() {
                 All other trademarks, service marks, and trade names referenced on this Website are the property of their respective owners. The use of these marks does not imply any affiliation with or endorsement by their owners.
               </p>
               <p data-testid="text-trademark-3">
-                InkjetProGuide is an independent online retailer specializing in inkjet printers. Product warranties are provided according to the manufacturer's terms and conditions. Please refer to the manufacturer's warranty documentation included with each product for specific coverage details.
+                InkjetProGuide is an independent online retailer serving customers in the United States. Product warranties are provided according to the manufacturer's terms and conditions. Please refer to the manufacturer's warranty documentation included with each product for specific coverage details.
               </p>
             </CardContent>
           </Card>

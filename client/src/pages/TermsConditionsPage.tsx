@@ -191,7 +191,7 @@ export default function TermsConditionsPage() {
                       <div className="p-4 bg-muted/30 rounded-lg" data-testid="def-products">
                         <h3 className="font-semibold text-foreground mb-2">"Products"</h3>
                         <p>
-                          Refers to all inkjet printers, printer accessories, replacement parts, ink cartridges, paper supplies, cables, connectivity accessories, maintenance kits, and any other physical or digital goods offered for sale through the InkjetProGuide website. Products include items from various manufacturers that we sell as an authorized retailer, as well as any bundled packages, promotional offerings, or refurbished items we may offer. Product descriptions, specifications, and availability are subject to change without notice, and all Products are sold subject to the terms and conditions outlined in this Agreement.
+                          Refers to all inkjet printers, printer accessories, replacement parts, ink cartridges, paper supplies, cables, connectivity accessories, maintenance kits, and any other physical or digital goods offered for sale through the InkjetProGuide website. Products include items from various manufacturers, as well as any bundled packages, promotional offerings, or refurbished items we may offer. Product descriptions, specifications, and availability are subject to change without notice, and all Products are sold subject to the terms and conditions outlined in this Agreement.
                         </p>
                       </div>
                       <div className="p-4 bg-muted/30 rounded-lg" data-testid="def-user">
@@ -203,7 +203,7 @@ export default function TermsConditionsPage() {
                       <div className="p-4 bg-muted/30 rounded-lg" data-testid="def-company">
                         <h3 className="font-semibold text-foreground mb-2">"We," "Us," "Our," or "Company"</h3>
                         <p>
-                          Refers to InkjetProGuide, a business entity operating from Fort Worth, Texas, United States. This includes our owners, directors, officers, employees, agents, contractors, affiliates, subsidiaries, and any other individuals or entities acting on our behalf in connection with the operation of the Site and the sale of Products. InkjetProGuide operates as an independent online retailer specializing in inkjet printing solutions and is not affiliated with, sponsored by, or endorsed by any printer manufacturers unless expressly stated.
+                          InkjetProGuide is an independent online retailer serving customers in the United States. This includes our owners, directors, officers, employees, agents, contractors, affiliates, subsidiaries, and any other individuals or entities acting on our behalf in connection with the operation of the Site and the sale of Products.
                         </p>
                       </div>
                       <div className="p-4 bg-muted/30 rounded-lg" data-testid="def-content">
