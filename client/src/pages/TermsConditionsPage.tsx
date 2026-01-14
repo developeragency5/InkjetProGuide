@@ -291,7 +291,7 @@ export default function TermsConditionsPage() {
                         All prices displayed on the Site are in United States Dollars (USD) and are subject to change without notice. While we make every effort to ensure pricing accuracy, errors may occasionally occur. In the event of a pricing error, we reserve the right to cancel any orders placed at the incorrect price and notify you of the correct price. If the correct price is higher than the listed price, we will give you the option to confirm your order at the correct price or cancel the order for a full refund.
                       </p>
                       <p>
-                        Promotional prices, discounts, and special offers are valid only for the time period specified and are subject to availability. We reserve the right to limit quantities, modify promotional terms, or discontinue promotions at any time. Promotional codes must be entered at checkout and cannot be applied retroactively to previously placed orders. We are not responsible for pricing or promotional errors resulting from third-party price aggregators or affiliate websites.
+                        Promotional prices, discounts, and special offers are valid only for the time period specified and are subject to availability. We reserve the right to limit quantities, modify promotional terms, or discontinue promotions at any time. Promotional codes must be entered at checkout and cannot be applied retroactively to previously placed orders. We are not responsible for pricing or promotional errors resulting from third-party websites.
                       </p>
                     </div>
                     <div data-testid="text-order-acceptance">
