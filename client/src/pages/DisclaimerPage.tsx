@@ -46,7 +46,7 @@ export default function DisclaimerPage() {
                 The information provided on InkjetProGuide (the "Website") is for general informational purposes only. All information on the Website is provided in good faith; however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Website.
               </p>
               <p data-testid="text-general-2">
-                Under no circumstance shall InkjetProGuide have any liability to you for any loss or damage of any kind incurred as a result of the use of the Website or reliance on any information provided on the Website. Your use of the Website and your reliance on any information on the Website is solely at your own risk.
+                To the fullest extent permitted by applicable law, InkjetProGuide shall not be liable to you for any loss or damage of any kind incurred as a result of the use of the Website or reliance on any information provided on the Website. Your use of the Website and your reliance on any information on the Website is solely at your own risk.
               </p>
             </CardContent>
           </Card>
@@ -69,6 +69,7 @@ export default function DisclaimerPage() {
                 <li data-testid="text-product-3">Specifications are provided by manufacturers and may be subject to change without notice</li>
                 <li data-testid="text-product-4">Prices are subject to change without prior notice</li>
                 <li data-testid="text-product-5">Product availability is not guaranteed and may vary</li>
+                <li data-testid="text-product-5b">Orders are subject to acceptance and product availability at the time of purchase confirmation</li>
                 <li data-testid="text-product-6">We reserve the right to correct any errors in product information, pricing, or availability</li>
               </ul>
               <p data-testid="text-product-7">
