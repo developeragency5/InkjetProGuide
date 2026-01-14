@@ -10,6 +10,7 @@ import ShopPage from "@/pages/ShopPage";
 import OrderLookupPage from "@/pages/OrderLookupPage";
 import BuyingGuidesPage from "@/pages/BuyingGuidesPage";
 import BeginnersGuidePage from "@/pages/guides/BeginnersGuidePage";
+import GuideArticlePage from "@/pages/GuideArticlePage";
 import GuidePage from "@/pages/GuidePage";
 import ProductGuidePage from "@/pages/ProductGuidePage";
 import HelpCenterPage from "@/pages/HelpCenterPage";
@@ -65,6 +66,7 @@ function MainRouter() {
         <Route path="/guide/:id" component={ProductGuidePage} />
         <Route path="/guides" component={BuyingGuidesPage} />
         <Route path="/guides/:guideId" component={BeginnersGuidePage} />
+        <Route path="/buying-guide/:id" component={GuideArticlePage} />
         <Route path="/resources" component={ResourceCenterPage} />
         <Route path="/ink-guide" component={InkGuidePage} />
         <Route path="/help" component={HelpCenterPage} />

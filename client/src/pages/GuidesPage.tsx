@@ -358,30 +358,32 @@ export default function GuidesPage() {
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {guides.map((guide) => (
-              <Card key={guide.number} className="hover-elevate transition-all">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-sm font-bold text-primary">{guide.number}</span>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <Badge variant="secondary" className="mb-2 text-xs">
-                        {guide.category}
-                      </Badge>
-                      <h3 className="font-semibold text-sm mb-2 line-clamp-2" data-testid={`guide-title-${guide.number}`}>
-                        {guide.title}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
-                        {guide.description}
-                      </p>
-                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <Clock className="w-3 h-3" />
-                        <span>{guide.readTime}</span>
+              <Link key={guide.number} href={`/buying-guide/${guide.number}`}>
+                <Card className="hover-elevate transition-all cursor-pointer h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-sm font-bold text-primary">{guide.number}</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <Badge variant="secondary" className="mb-2 text-xs">
+                          {guide.category}
+                        </Badge>
+                        <h3 className="font-semibold text-sm mb-2 line-clamp-2" data-testid={`guide-title-${guide.number}`}>
+                          {guide.title}
+                        </h3>
+                        <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
+                          {guide.description}
+                        </p>
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Clock className="w-3 h-3" />
+                          <span>{guide.readTime}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
