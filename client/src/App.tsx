@@ -6,17 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/Layout";
 import { ComparisonProvider } from "@/contexts/ComparisonContext";
 import HomePage from "@/pages/HomePage";
-import ProductsPage from "@/pages/ProductsPage";
-import ProductDetailPage from "@/pages/ProductDetailPage";
-import CartPage from "@/pages/CartPage";
-import WishlistPage from "@/pages/WishlistPage";
-import CheckoutPage from "@/pages/CheckoutPage";
-import ComparisonPage from "@/pages/ComparisonPage";
-import AuthPage from "@/pages/AuthPage";
-import AccountPage from "@/pages/AccountPage";
-import ProfilePage from "@/pages/ProfilePage";
-import OrdersPage from "@/pages/OrdersPage";
-import OrderDetailPage from "@/pages/OrderDetailPage";
+import ShopPage from "@/pages/ShopPage";
 import OrderLookupPage from "@/pages/OrderLookupPage";
 import BuyingGuidesPage from "@/pages/BuyingGuidesPage";
 import BeginnersGuidePage from "@/pages/guides/BeginnersGuidePage";
@@ -68,17 +58,8 @@ function MainRouter() {
     <Layout>
       <Switch>
         <Route path="/" component={HomePage} />
-        <Route path="/products" component={ProductsPage} />
-        <Route path="/product/:id" component={ProductDetailPage} />
-        <Route path="/cart" component={CartPage} />
-        <Route path="/wishlist" component={WishlistPage} />
-        <Route path="/checkout" component={CheckoutPage} />
-        <Route path="/compare" component={ComparisonPage} />
-        <Route path="/auth" component={AuthPage} />
-        <Route path="/account" component={AccountPage} />
-        <Route path="/profile" component={ProfilePage} />
-        <Route path="/orders" component={OrdersPage} />
-        <Route path="/order/:id" component={OrderDetailPage} />
+        <Route path="/products" component={ShopPage} />
+        <Route path="/shop" component={ShopPage} />
         <Route path="/order-lookup" component={OrderLookupPage} />
         <Route path="/guide" component={GuidePage} />
         <Route path="/guide/:id" component={ProductGuidePage} />

@@ -1,17 +1,15 @@
-import { ReactNode, useState, useEffect, useRef } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Search, ShoppingCart, Heart, User, Menu, X, Shield, Lock, Truck } from "lucide-react";
+import { Menu, X, Shield, Lock, Truck } from "lucide-react";
 import { SiVisa, SiMastercard, SiAmericanexpress, SiDiscover, SiStripe } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import ComparisonBar from "@/components/ComparisonBar";
 import { CookieConsentBanner } from "@/components/CookieConsentBanner";
 import { MARKETING_COPY, SHIPPING, BUSINESS_INFO } from "@/lib/constants";
-import type { Product } from "@shared/schema";
+import { initEcwidScript } from "@/components/EcwidStore";
 
 interface LayoutProps {
   children: ReactNode;
@@ -20,56 +18,12 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const [location, setLocation] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [showSuggestions, setShowSuggestions] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const searchRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
-  // Fetch cart count
-  const { data: cartData } = useQuery<{ items: any[] }>({
-    queryKey: ["/api/cart"],
-  });
-  const cartCount = cartData?.items?.reduce((sum: number, item: any) => sum + (item.quantity || 0), 0) || 0;
-
-  // Fetch wishlist count
-  const { data: wishlistData } = useQuery<{ items: any[] }>({
-    queryKey: ["/api/wishlist"],
-  });
-  const wishlistCount = wishlistData?.items?.length || 0;
-
-  // Fetch current user
-  const { data: currentUser } = useQuery({
-    queryKey: ["/api/user"],
-    retry: false,
-  });
-  const isLoggedIn = !!currentUser;
-
-  // Fetch products for search suggestions
-  const { data: products } = useQuery<Product[]>({
-    queryKey: ["/api/products"],
-  });
-
-  // Filter products based on search query (only search in name and category for relevance)
-  const searchSuggestions = products?.filter(product => {
-    if (!searchQuery.trim()) return false;
-    const query = searchQuery.toLowerCase();
-    return (
-      product.name.toLowerCase().includes(query) ||
-      product.category.toLowerCase().includes(query)
-    );
-  }).slice(0, 5) || [];
-
-  // Close suggestions when clicking outside
+  // Initialize Ecwid script on mount
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setShowSuggestions(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    initEcwidScript();
   }, []);
 
   // Scroll to top when route changes
@@ -79,9 +33,7 @@ export function Layout({ children }: LayoutProps) {
 
   const navigationLinks = [
     { name: "Home", path: "/", exact: true },
-    { name: "Shop All", path: "/products", exact: true },
-    { name: "Home Printers", path: "/products?category=Home+Inkjet+Printers", exact: false },
-    { name: "Office Printers", path: "/products?category=Office+Inkjet+Printers", exact: false },
+    { name: "Shop", path: "/products", exact: true },
     { name: "Guides", path: "/guides", exact: false },
     { name: "About", path: "/about", exact: false },
     { name: "Contact", path: "/contact", exact: false },
@@ -106,21 +58,6 @@ export function Layout({ children }: LayoutProps) {
       return fullCurrentUrl === link.path;
     }
     return currentPath.startsWith(link.path);
-  };
-
-  const handleSearch = (e?: React.FormEvent) => {
-    if (e) e.preventDefault();
-    if (searchQuery.trim()) {
-      setLocation(`/products?search=${encodeURIComponent(searchQuery)}`);
-      setMobileMenuOpen(false);
-      setShowSuggestions(false);
-    }
-  };
-
-  const handleSuggestionClick = (productId: string | number) => {
-    setLocation(`/product/${productId}`);
-    setSearchQuery("");
-    setShowSuggestions(false);
   };
 
   // Newsletter subscription mutation
@@ -163,19 +100,7 @@ export function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-base">
           <p className="font-medium">{MARKETING_COPY.freeShippingMessage}</p>
           <div className="flex items-center gap-4">
-            {isLoggedIn ? (
-              <Link href="/profile">
-                <span className="hover-elevate px-2 py-1 rounded-md cursor-pointer" data-testid="link-account">
-                  My Account
-                </span>
-              </Link>
-            ) : (
-              <Link href="/auth">
-                <span className="hover-elevate px-2 py-1 rounded-md cursor-pointer" data-testid="link-signin-top">
-                  Sign In / Sign Up
-                </span>
-              </Link>
-            )}
+            <div className="ec-cart-widget" data-testid="ecwid-cart-top"></div>
           </div>
         </div>
       </div>
@@ -193,101 +118,15 @@ export function Layout({ children }: LayoutProps) {
               </span>
             </Link>
 
-            {/* Search Bar - Desktop */}
-            <div className="hidden lg:flex flex-1 max-w-xl" ref={searchRef}>
-              <form onSubmit={handleSearch} className="relative w-full flex gap-2">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <Input
-                    type="search"
-                    placeholder="Search for printers..."
-                    value={searchQuery}
-                    onChange={(e) => {
-                      setSearchQuery(e.target.value);
-                      setShowSuggestions(true);
-                    }}
-                    onFocus={() => searchQuery && setShowSuggestions(true)}
-                    className="pl-10 pr-4 h-11"
-                    data-testid="input-search"
-                  />
-                  
-                  {/* Search Suggestions Dropdown */}
-                  {showSuggestions && searchSuggestions.length > 0 && (
-                    <div className="absolute top-full mt-2 w-full bg-card border rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
-                      {searchSuggestions.map((product) => (
-                        <button
-                          key={product.id}
-                          type="button"
-                          onClick={() => handleSuggestionClick(product.id)}
-                          className="w-full px-4 py-3 text-left hover-elevate flex items-center gap-3 border-b last:border-b-0"
-                          data-testid={`suggestion-${product.id}`}
-                        >
-                          <div className="flex-1">
-                            <div className="font-medium text-sm">{product.name}</div>
-                            <div className="text-xs text-muted-foreground">{product.category}</div>
-                          </div>
-                          <div className="text-sm font-semibold text-primary">${product.price}</div>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <Button type="submit" className="h-11 px-6" data-testid="button-search">
-                  Search
-                </Button>
-              </form>
+            {/* Ecwid Search Widget */}
+            <div className="hidden lg:flex flex-1 max-w-xl justify-center">
+              <div className="ec-search" data-testid="ecwid-search"></div>
             </div>
 
             {/* Icons */}
-            <div className="flex items-center gap-2">
-              <Link href="/wishlist">
-                <span data-testid="button-wishlist">
-                  <Button size="icon" variant="ghost" className="relative h-11 w-11" asChild aria-label="View wishlist">
-                    <span>
-                      <Heart className="w-6 h-6" aria-hidden="true" />
-                      {wishlistCount > 0 && (
-                        <Badge 
-                          className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
-                          data-testid="badge-wishlist-count"
-                        >
-                          {wishlistCount}
-                        </Badge>
-                      )}
-                    </span>
-                  </Button>
-                </span>
-              </Link>
-
-              <Link href="/cart">
-                <span data-testid="button-cart">
-                  <Button size="icon" variant="ghost" className="relative h-11 w-11" asChild aria-label="View shopping cart">
-                    <span>
-                      <ShoppingCart className="w-6 h-6" aria-hidden="true" />
-                      {cartCount > 0 && (
-                        <Badge 
-                          className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
-                          data-testid="badge-cart-count"
-                        >
-                          {cartCount}
-                        </Badge>
-                      )}
-                    </span>
-                  </Button>
-                </span>
-              </Link>
-
-              {isLoggedIn && (
-                <Link href="/profile">
-                  <span data-testid="button-profile">
-                    <Button size="icon" variant="ghost" className="h-11 w-11" asChild aria-label="View profile">
-                      <span>
-                        <User className="w-6 h-6" aria-hidden="true" />
-                      </span>
-                    </Button>
-                  </span>
-                </Link>
-              )}
-
+            <div className="flex items-center gap-3">
+              <div className="ec-minicart" data-testid="ecwid-minicart"></div>
+              
               <Button
                 size="icon"
                 variant="ghost"
@@ -302,25 +141,6 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
-          {/* Search Bar - Mobile/Tablet */}
-          <div className="lg:hidden mt-3">
-            <form onSubmit={handleSearch} className="flex gap-2">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search for printers..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-9 pr-4 text-sm"
-                  data-testid="input-search-mobile"
-                />
-              </div>
-              <Button type="submit" size="sm" data-testid="button-search-mobile">
-                Search
-              </Button>
-            </form>
-          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -352,19 +172,6 @@ export function Layout({ children }: LayoutProps) {
                     </a>
                   </li>
                 ))}
-                {!isLoggedIn && (
-                  <li>
-                    <Link href="/auth">
-                      <Button 
-                        className="w-full" 
-                        onClick={() => setMobileMenuOpen(false)}
-                        data-testid="button-signin-mobile"
-                      >
-                        Sign In / Sign Up
-                      </Button>
-                    </Link>
-                  </li>
-                )}
               </ul>
             </div>
           </nav>
@@ -404,8 +211,6 @@ export function Layout({ children }: LayoutProps) {
       {/* Main Content */}
       <main className="flex-1">{children}</main>
 
-      {/* Comparison Bar */}
-      <ComparisonBar />
 
       {/* Footer */}
       <footer className="bg-gradient-to-b from-card to-muted/20 border-t mt-auto">
