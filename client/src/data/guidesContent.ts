@@ -168,45 +168,180 @@ export const guidesContent: Record<string, GuideContent> = {
   
   "home-office": {
     id: "home-office",
-    title: "How to Choose the Right Printer for Home Office",
-    description: "Find the perfect printer for your home office needs with our comprehensive comparison and recommendations.",
+    title: "Entry-Level vs Office vs Photo Inkjet Printers",
+    description: "A deep, real-world comparison to help you choose the inkjet printer category that truly fits how you print.",
     icon: Users,
     color: "bg-purple-500",
-    readTime: "10 min read",
+    readTime: "20 min read",
     sections: [
       {
         id: "introduction",
-        title: "Introduction",
-        content: "Working from home requires reliable printing equipment. This guide will help you choose the perfect inkjet printer for your home office, balancing performance, features, and cost-effectiveness."
+        title: "Introduction: Why This Comparison Matters More Than It Seems",
+        content: "Choosing between entry-level, office, and photo inkjet printers looks simple on the surface. Most people assume the difference is only about speed, print quality, or price. That assumption causes more printer regret than almost anything else.\n\nThe truth is that these three inkjet printer series are built for completely different human behaviors. They are not just technical tiers. They are responses to how people print, how often they print, and how much pressure they put on their printers.\n\nA home printer used occasionally behaves very differently from an office printer in a busy office or small business. A printer optimized for high quality prints will feel inefficient if you mostly print black and white documents. A printer designed for high volume work will feel unnecessary if you print only a few pages per month.\n\nThis guide does not rank printers. It explains why these three categories exist, what they expect from you, and what happens when you choose the wrong one."
       },
       {
-        id: "essential-features",
-        title: "Essential Features for Home Office",
-        content: "Home office printers should offer fast print speeds (15+ PPM), automatic document feeders for scanning multiple pages, wireless connectivity for multiple devices, and low operating costs. Professional office inkjet models are specifically designed for home office productivity."
+        id: "categories-behavior",
+        title: "Inkjet Printer Categories Are About Behavior, Not Technology",
+        content: "At a basic level, all inkjet printers work the same way. They spray liquid ink onto paper. They use ink cartridges or ink tank printers, not toner cartridges. They support color printing, scanning copying, and wireless printing.\n\nWhat separates entry-level, office, and photo inkjet printers is assumed behavior. Each category is designed with a different assumption about pages per month, urgency of print jobs, tolerance for interruptions, importance of print quality, and sensitivity to cost per page.\n\nWhen your behavior matches the assumption, the printer feels 'right.' When it doesn't, frustration appears."
       },
       {
-        id: "connectivity",
-        title: "Connectivity Options",
-        content: "Modern home offices require flexible connectivity. Look for printers with WiFi, Ethernet, USB, and mobile printing support (AirPrint, Google Cloud Print). The Smart app enables printing, scanning, and printer management from anywhere."
+        id: "core-behaviors",
+        title: "The Three Core Printing Behaviors",
+        content: "Before looking at categories, identify which behavior describes you best.\n\nThe Reactive Printer: Prints occasionally, often prints at the last minute, prints mostly black and white documents, low pages per month, printing feels like a task, not a routine.\n\nThe Routine Printer: Prints regularly, uses scanning copying, prints from multiple devices, moderate pages per month, printing is part of daily work.\n\nThe Intentional Printer: Prints selectively, cares deeply about output, prints photos or creative materials, print quality matters more than speed, printing is purposeful, not frequent.\n\nEach inkjet category maps directly to one of these behaviors."
+      },
+      {
+        id: "entry-level-design",
+        title: "Entry-Level Inkjet Printers: Built for Access and Simplicity",
+        content: "Entry-level inkjet printers exist to solve one problem: 'I need to print sometimes, without making printing a big commitment.'\n\nThey are designed for light pages per month, occasional home printer use, students, and budget-conscious households. They assume printing is reactive, not planned."
+      },
+      {
+        id: "entry-level-behavior",
+        title: "How Entry-Level Inkjets Behave in Real Life",
+        content: "Entry-level printers sit idle most of the time, wake up when needed, print short jobs, and return to idle.\n\nThey support wireless printer functionality, printing from a mobile device, simple setup process, and basic scanning copying.\n\nThey are intentionally limited in pages per minute, paper tray size, and high print endurance. This is not a flaw. It is a design choice."
+      },
+      {
+        id: "entry-level-quality",
+        title: "Print Quality in Entry-Level Printers",
+        content: "Entry-level printers usually deliver good print quality for text, homework, forms, and casual photos.\n\nThey are not optimized for high quality prints, color-critical work, or high volume jobs. Expect clarity, not perfection."
+      },
+      {
+        id: "entry-level-ink",
+        title: "Ink Costs and Entry-Level Reality",
+        content: "Entry-level printers usually rely on standard ink cartridges. That means lower upfront printer cost, higher cost per page, and more frequent replacements.\n\nThis is acceptable only when pages per month remain low."
+      },
+      {
+        id: "entry-level-wrong",
+        title: "When Entry-Level Printers Start to Feel Wrong",
+        content: "Entry-level printers feel wrong when printing becomes frequent, multiple people use the printer, duplex printing is needed regularly, or the paper tray empties constantly.\n\nAt that point, the printer is not 'bad.' It is simply out of its comfort zone."
+      },
+      {
+        id: "office-design",
+        title: "Office Inkjet Printers: Built for Flow and Repetition",
+        content: "Office inkjet printers are built to solve a different problem: 'Printing is part of my workflow, and interruptions cost me time.'\n\nThey assume moderate to high pages per month, regular printing, multiple users, and time-sensitive documents. They are ideal for home offices, small business environments, and busy office settings."
+      },
+      {
+        id: "office-difference",
+        title: "How Office Inkjets Feel Different Immediately",
+        content: "Office printers feel different within days. You notice faster pages per minute, larger paper tray capacity, automatic duplex printing, and faster recovery between jobs.\n\nMost importantly, you notice less friction."
+      },
+      {
+        id: "office-scanning",
+        title: "Office Inkjets and Scanning Copying Workflows",
+        content: "Office printers assume scanning copying is routine. They are designed to handle multi-page documents, batch scanning, and regular copying.\n\nWithout automation, scanning feels heavy. With it, scanning becomes normal."
+      },
+      {
+        id: "office-cost",
+        title: "Cost Per Page in Office Printers",
+        content: "Office printers usually use higher-capacity ink systems, deliver lower cost per page, and offer predictable operating costs.\n\nOver time, this matters more than the purchase price."
+      },
+      {
+        id: "office-security",
+        title: "Security Features in Office Printers",
+        content: "Office environments introduce risk. Office printers often include security features, controlled access, and better handling of shared usage.\n\nThese features matter more in a busy office or small business than at home."
+      },
+      {
+        id: "office-wrong",
+        title: "When Office Inkjets Feel Wrong",
+        content: "Office printers feel wrong when printing is rare, space is limited, noise sensitivity is high, or budget is extremely tight.\n\nIn these cases, office-class durability feels unnecessary."
+      },
+      {
+        id: "photo-design",
+        title: "Photo Inkjet Printers: Built for Output and Expression",
+        content: "Photo inkjet printers exist to solve this problem: 'How the print looks matters more than how fast it prints.'\n\nThey assume intentional printing, visual sensitivity, creative output, and pride in results. They are ideal for photography enthusiasts, creative professionals, and households printing photos regularly."
+      },
+      {
+        id: "photo-behavior",
+        title: "How Photo Printers Behave in Use",
+        content: "Photo printers print more slowly, use more ink per page, focus on precision, and support specialty paper.\n\nThey are not built for high volume office work, high pages per minute demands, or constant batch printing. They trade efficiency for excellence."
+      },
+      {
+        id: "photo-quality",
+        title: "Print Quality in Photo Inkjets",
+        content: "Photo inkjets prioritize color accuracy, smooth gradients, rich tones, and high quality prints.\n\nThey often use more complex ink systems to achieve this."
+      },
+      {
+        id: "photo-paper",
+        title: "Paper Handling in Photo Printers",
+        content: "Photo printers are optimized for photo paper, specialty media, and borderless printing.\n\nThey are less focused on large paper tray capacity or high speed document handling."
+      },
+      {
+        id: "photo-wrong",
+        title: "When Photo Printers Feel Wrong",
+        content: "Photo printers feel wrong when printing is mostly text, speed matters more than output, or high volume printing is required.\n\nThey are specialists, not generalists."
+      },
+      {
+        id: "pages-per-month",
+        title: "Pages Per Month: The Clearest Divider Between Categories",
+        content: "If you ignore everything else, do not ignore pages per month.\n\nUnder 100 pages per month → Entry-level fits naturally\n100–500 pages per month → Office fits comfortably\n500+ pages per month → Office or ink tank printers are required\nPhoto-centric printing → Photo printers dominate regardless of volume\n\nMost regret comes from ignoring this."
+      },
+      {
+        id: "speed-vs-experience",
+        title: "Print Speed vs Print Experience",
+        content: "Print speed numbers alone are misleading. Real experience depends on consistency, recovery time, duplex printing performance, and wireless stability.\n\nOffice printers often feel faster than entry-level models even when numbers look close."
+      },
+      {
+        id: "ink-tank-categories",
+        title: "Ink Tank Printers Across Categories",
+        content: "Ink tank printers can exist in entry-level, office, and hybrid roles. They change cost dynamics dramatically.\n\nInk tank printers are especially useful when pages per month are high, ink costs cause stress, or printing is frequent. They do not change category behavior — only economics."
+      },
+      {
+        id: "wireless-mobile",
+        title: "Wireless Printing and Mobile Devices",
+        content: "All categories support wireless printing. The difference is stability under load, recovery after disconnection, and ease of use from a smartphone or tablet.\n\nOffice printers usually handle network stress better than entry-level models."
+      },
+      {
+        id: "duplex-signal",
+        title: "Duplex Printing as a Category Signal",
+        content: "Duplex printing is often optional in entry-level printers, standard in office printers, and secondary in photo printers.\n\nThis reflects intended usage."
+      },
+      {
+        id: "paper-tray-friction",
+        title: "Paper Tray Size and Daily Friction",
+        content: "Small paper trays create constant interruptions. Office printers reduce this friction. Entry-level printers accept it. Photo printers ignore it in favor of media flexibility."
+      },
+      {
+        id: "small-business",
+        title: "Small Business Printing Reality",
+        content: "Small business printing combines high volume, shared use, and time pressure. Office inkjet printers are designed for this.\n\nEntry-level printers struggle. Photo printers are misaligned."
+      },
+      {
+        id: "common-mismatches",
+        title: "Common Category Mismatches",
+        content: "Most common mistakes: Using entry-level printers in busy offices, using photo printers for daily documents, using office printers for occasional home use.\n\nCategory mismatch feels like 'bad quality,' but it is actually poor fit."
+      },
+      {
+        id: "decision-framework",
+        title: "How to Choose the Right Series (Decision Framework)",
+        content: "Ask yourself: How many pages per month do I print? How urgent are my print jobs? How important is print quality? How much interruption can I tolerate?\n\nYour answers point directly to the correct category."
+      },
+      {
+        id: "final-perspective",
+        title: "Final Perspective: Categories Exist for a Reason",
+        content: "Entry-level, office, and photo inkjet printers are not competing products. They are tools designed for different pressures, different priorities, and different people.\n\nWhen you choose the category that matches your actual printing behavior, the printer feels natural. When you choose based on price alone or aspirational usage, friction appears.\n\nThe right category is the one where your printing behavior and the printer's design assumptions align. That alignment creates the experience of a printer that 'just works.'"
       }
     ],
     keyPoints: [
-      "Consider print volume - home offices typically print 100-500 pages monthly",
-      "All-in-one functionality saves space and money",
-      "Automatic two-sided printing reduces paper costs",
-      "Fast print speeds improve productivity",
-      "Professional-quality output enhances business image"
+      "Printer categories are built for different behaviors — entry-level for reactive printing, office for routine workflows, photo for intentional output",
+      "Pages per month is the clearest divider: under 100 = entry-level, 100-500 = office, 500+ = office or ink tank",
+      "Category mismatch feels like 'bad quality' but is actually poor fit between printer design and your printing behavior",
+      "Office printers feel faster due to consistency, recovery time, and duplex performance — not just raw speed numbers",
+      "Ink tank printers change economics but not category behavior — choose category first, then consider ink system"
     ],
     recommendations: [
       {
-        title: "Best Overall",
-        description: "Professional office inkjet - Fast, reliable, and cost-effective",
-        product: "OfficeJet Pro 9025e All-in-One Wireless Color Printer"
+        title: "Entry-Level (Under 100 pages/month)",
+        description: "Simple, affordable, perfect for reactive printing and light home use",
+        product: "DeskJet 4255e Wireless All-in-One Color Printer"
       },
       {
-        title: "Compact Option",
-        description: "Professional office inkjet - Perfect for small home offices",
-        product: "OfficeJet Pro 8035e All-in-One Wireless Color Printer"
+        title: "Office (100-500 pages/month)",
+        description: "Built for workflow, duplex printing, and daily reliability",
+        product: "OfficeJet 8015e All-in-One Wireless Color Printer"
+      },
+      {
+        title: "Photo (Quality-focused)",
+        description: "Exceptional color accuracy and print quality for photos and creative work",
+        product: "Envy 7955e All-in-One Photo Printer"
       }
     ]
   },
