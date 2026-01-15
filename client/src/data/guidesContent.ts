@@ -357,7 +357,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "why-students-struggle",
         title: "Why Students Struggle With Printers More Than Anyone Else",
-        content: "Student printing is different from any other kind of printing. It combines the worst possible conditions: tight budgets, irregular schedules, last-minute deadlines, shared spaces, and zero tolerance for failure. A printer that works fine in a home office becomes a nightmare in a dorm room.\n\nThe problem is not technology. The problem is that student printing is inherently chaotic. You print nothing for two weeks, then desperately need fifty pages at midnight before a deadline. You share a printer with roommates who have their own emergencies. You cannot afford expensive ink, but you cannot afford a failed print job either.\n\nThis guide does not list 'best student printers.' Instead, it explains how students actually print, what goes wrong, and how to choose a printer that survives academic life without constant frustration."
+        content: "Student printing is different from any other kind of printing. It combines the worst possible conditions: tight budgets, irregular schedules, last-minute deadlines, shared spaces, and zero tolerance for failure. A home printer that works fine in a home office becomes a nightmare in a dorm room.\n\nThe problem is not technology. The problem is that student printing is inherently chaotic. You print nothing for two weeks, then desperately need fifty pages at midnight before a deadline. You share an inkjet printer with roommates who have their own emergencies. You cannot afford expensive ink cartridges, but you cannot afford a failed print job either.\n\nThis guide does not list 'best student printers.' Instead, it explains how students actually print, what goes wrong, and how to choose a wireless printer that survives academic life without constant frustration."
       },
       {
         id: "student-printing-behavior",
@@ -392,7 +392,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "wireless-mobile-essential",
         title: "Wireless and Mobile Printing: Not Optional for Students",
-        content: "Students work from multiple devices. Laptops at desks. Tablets on couches. Phones everywhere. A printer requiring USB connection to a single computer does not match student workflows.\n\nWireless printing is essential. The printer should connect once and stay connected. Printing should work from any device on the network without complex configuration. Mobile printing from smartphones should be straightforward.\n\nThe real test is not whether wireless works under perfect conditions. The test is whether it works reliably in a dorm with congested WiFi, multiple devices, and irregular usage patterns."
+        content: "Students work from multiple devices. Laptops at desks. Tablets on couches. Phones everywhere. A printer requiring USB connection to a single computer does not match student workflows.\n\nA wireless printer is essential. The printer should connect once and stay connected. Printing should work from any mobile device on the network without complex configuration. Mobile printing from a smartphone or tablet should be straightforward with a simple setup process.\n\nThe real test is not whether wireless works under perfect conditions. The test is whether it works reliably in a dorm with congested WiFi, multiple devices, and irregular usage patterns."
       },
       {
         id: "ink-anxiety",
@@ -402,7 +402,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "entry-level-fit",
         title: "When Entry-Level Printers Fit Student Needs",
-        content: "Entry-level inkjet printers often suit students well. They are compact, affordable, and handle basic document printing. For students printing under 100 pages per month — mostly text documents and occasional color — entry-level models work fine.\n\nThe match works when printing is occasional, speed does not matter much, document complexity is low, and budget is extremely tight. Entry-level printers struggle when printing becomes frequent, when deadlines create time pressure, or when ink costs accumulate to painful levels."
+        content: "Entry-level inkjet printers often suit students well. They are compact, affordable, and handle basic document printing with decent print quality. For students printing under 100 pages per month — mostly text documents and occasional color — entry-level models work fine. The paper tray capacity is typically sufficient for light printing needs.\n\nThe match works when printing is occasional, pages per minute speed does not matter much, document complexity is low, and budget is extremely tight. Entry-level printers struggle when printing becomes frequent, when deadlines create time pressure, or when ink cartridge costs accumulate to painful levels."
       },
       {
         id: "ink-tank-student",
@@ -422,7 +422,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "print-quality-student",
         title: "Print Quality: What Actually Matters for Academic Work",
-        content: "Students rarely need exceptional print quality. Academic documents are text-heavy. Presentations involve basic graphics. Photo printing is rare.\n\nWhat matters is readability. Text should be sharp and clear. Graphics should reproduce recognizably. Colors should be accurate enough for charts and diagrams. Beyond that, premium print quality is wasted on documents professors will scan quickly.\n\nDraft mode handles most student printing. Normal quality serves formal submissions. High quality mode is rarely necessary and wastes ink. Understanding these tiers helps students balance quality against cost."
+        content: "Students rarely need exceptional print quality. Academic documents are text-heavy, mostly black and white documents. Presentations involve basic graphics. Photo printing is rare.\n\nWhat matters is readability. Text should be sharp and clear. Graphics should reproduce recognizably. Colors should be accurate enough for charts and diagrams. Beyond that, high quality prints are wasted on documents professors will scan quickly.\n\nDraft mode handles most student printing. Normal print quality serves formal submissions. High quality mode is rarely necessary and wastes ink. Understanding these tiers helps students balance quality against cost."
       },
       {
         id: "campus-alternatives",
@@ -492,7 +492,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "why-photo-printing-different",
         title: "Why Photo Printing Is Fundamentally Different",
-        content: "Photo printing is not just document printing with color. It requires different thinking, different expectations, and different equipment. Most people discover this the hard way — they print a cherished photo and wonder why it looks nothing like what they saw on screen.\n\nThe gap between expectation and result is where photo printing frustration lives. Understanding why that gap exists, and how to close it, transforms disappointment into satisfaction.\n\nThis guide does not promote specific printers. It explains what actually matters in photo printing, why most first attempts disappoint, and how to achieve results worth framing."
+        content: "Photo printing is not just document printing with color. It requires different thinking, different expectations, and different equipment. Most people discover this the hard way — they print a cherished photo on their home printer and wonder why it looks nothing like what they saw on screen.\n\nThe gap between expectation and result is where photo printing frustration lives. Understanding why that gap exists, and how to close it, transforms disappointment into high quality prints worth displaying.\n\nThis guide does not promote specific inkjet printers. It explains what actually matters in photo printing, why most first attempts disappoint, and how to achieve print quality worth framing."
       },
       {
         id: "screen-vs-print",
@@ -517,7 +517,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "ink-systems-photo",
         title: "Ink Systems for Photo Printing: More Colors Matter",
-        content: "Standard inkjets use four inks: cyan, magenta, yellow, and black. Photo printers often use six or more inks, adding light cyan, light magenta, or dedicated photo black.\n\nAdditional inks improve gradients — the smooth transitions between colors that make photos look natural rather than posterized. Skin tones, sky gradations, and subtle shadows benefit enormously from expanded ink systems.\n\nThis is why the same photo looks different on different printers. More ink colors allow finer control over subtle variations. The difference is most visible in portraits and landscapes where smooth gradients matter."
+        content: "Standard inkjet printers use four ink cartridges: cyan, magenta, yellow, and black. Photo printers often use six or more ink cartridges, adding light cyan, light magenta, or dedicated photo black.\n\nAdditional inks improve gradients — the smooth transitions between colors that make photos look natural rather than posterized. Skin tones, sky gradations, and subtle shadows benefit enormously from expanded ink systems.\n\nThis is why the same photo looks different on different inkjet printers. More ink colors allow finer control over subtle variations. The difference is most visible in portraits and landscapes where smooth gradients matter."
       },
       {
         id: "resolution-explained",
@@ -567,12 +567,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "printing-from-phones",
         title: "Printing From Phones: The Modern Reality",
-        content: "Most photos now live on phones. Printing directly from phones is convenient but requires attention to image quality.\n\nPhone photos compressed for sharing may lack resolution for large prints. Original resolution photos print better. Most manufacturer apps support direct phone printing with reasonable quality.\n\nThe convenience of phone-to-printer workflow matters for most users. A slightly imperfect print you actually make beats a perfect print you never bother to create."
+        content: "Most photos now live on phones. Printing directly from a mobile device like a smartphone or tablet is convenient but requires attention to image quality.\n\nPhone photos compressed for sharing may lack resolution for large prints. Original resolution photos print better. Most manufacturer apps support direct mobile printing from any mobile device with reasonable quality. A wireless printer makes this process seamless.\n\nThe convenience of phone-to-printer workflow matters for most users. A slightly imperfect print you actually make beats a perfect print you never bother to create."
       },
       {
         id: "when-photo-printer-worth-it",
         title: "When a Dedicated Photo Printer Is Worth It",
-        content: "Dedicated photo printers make sense for photographers who print regularly, creative professionals who need consistent quality, families who print photos frequently, and anyone frustrated by inconsistent results from all-purpose printers.\n\nThey make less sense for occasional photo printing, users satisfied with drugstore quality, and users primarily printing documents with rare photos.\n\nThe question is not 'which is better' but 'which matches your behavior.' Honest assessment of how often you actually print photos determines whether a dedicated photo printer is worthwhile."
+        content: "Dedicated photo inkjet printers make sense for photographers who print regularly, creative professionals who need consistent high quality prints, families who print photos frequently, and anyone frustrated by inconsistent results from all-purpose home printers.\n\nThey make less sense for occasional photo printing, users satisfied with drugstore quality, and users primarily printing black and white documents with rare photos.\n\nThe question is not 'which is better' but 'which matches your behavior.' Honest assessment of how often you actually print photos determines whether a dedicated photo printer is worthwhile."
       },
       {
         id: "common-photo-mistakes",
@@ -852,7 +852,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "why-connection-matters",
         title: "Why Printer Connection Matters More Than You Think",
-        content: "Most people choose wireless printers by default without considering the implications. Wireless sounds modern and convenient. Cables seem outdated. This assumption leads many people toward frustration.\n\nConnection type is not about technology preference. It is about how you actually use your printer, how many devices need access, how reliable your network is, and how tolerant you are of troubleshooting.\n\nThis guide does not argue that one connection type is universally better. It explains when each excels, when each struggles, and how to match connection type to your real behavior."
+        content: "Most people choose a wireless printer by default without considering the implications. Wireless sounds modern and convenient. Cables seem outdated. This assumption leads many home printer and office printer buyers toward frustration.\n\nConnection type is not about technology preference. It is about how you actually use your inkjet printer, how many devices need access, how reliable your network is, and how tolerant you are of troubleshooting.\n\nThis guide does not argue that one connection type is universally better. It explains when each excels, when each struggles, and how to match connection type to your real behavior."
       },
       {
         id: "wireless-reality",
@@ -872,7 +872,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "mobile-printing-need",
         title: "Mobile Printing: When Wireless Becomes Essential",
-        content: "Mobile printing changes the equation entirely. Printing from smartphones and tablets requires wireless connection — USB cannot serve mobile devices directly.\n\nIf you print from phones frequently, wireless is essential. If mobile printing is rare or unnecessary, USB remains viable.\n\nModern households often print from phones more than computers. Emailed documents, photos, tickets, recipes — mobile printing has become normal. For these households, wireless is not optional despite its complexity."
+        content: "Mobile printing changes the equation entirely. Printing from a smartphone or tablet requires wireless connection — USB cannot serve mobile devices directly.\n\nIf you print from your mobile device frequently, a wireless printer is essential. If mobile printing is rare or unnecessary, USB remains viable.\n\nModern households often print from phones more than computers. Emailed documents, photos, tickets, recipes — mobile printing has become normal. For these households, wireless is not optional despite its complexity."
       },
       {
         id: "placement-flexibility",
@@ -907,7 +907,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "setup-comparison",
         title: "Setup Comparison: Initial Effort Required",
-        content: "USB setup is minimal. Connect cable. Install drivers if prompted. Print. Five minutes maximum, usually less.\n\nWireless setup involves connecting the printer to your network (often via app or display panel), installing drivers on each device, and verifying each device can find the printer. Fifteen to thirty minutes typically, longer if problems arise.\n\nSetup effort is a one-time investment, but first impressions matter. Complex setup frustrates users before printing even begins. Simple setup builds confidence."
+        content: "USB setup is minimal. Connect cable. Install drivers if prompted. Print. Five minutes maximum, usually less. The setup process is straightforward.\n\nWireless setup process involves connecting the printer to your network (often via app or display panel), installing drivers on each device, and verifying each device can find the printer. Fifteen to thirty minutes typically, longer if problems arise.\n\nSetup effort is a one-time investment, but first impressions matter. Complex setup frustrates users before printing even begins. Simple setup builds confidence."
       },
       {
         id: "ongoing-maintenance",
@@ -917,7 +917,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "security-considerations",
         title: "Security Considerations: Network Exposure",
-        content: "Wireless printers join your network and can theoretically be accessed by anything on that network. For most home users, this is not a significant concern — your network should already be secured.\n\nUSB printers have no network exposure. Data travels only through the cable. For users handling sensitive documents or operating in security-conscious environments, this isolation has value.\n\nPractical security risk from wireless printers is low for typical users. But security-focused users may prefer USB's complete network isolation."
+        content: "Wireless printers join your network and can theoretically be accessed by anything on that network. For most home printer users, this is not a significant concern — your network should already be secured. Many office printers include security features to address this.\n\nUSB printers have no network exposure. Data travels only through the cable. For users handling sensitive documents in a small business or operating in security-conscious environments, this isolation has value.\n\nPractical security risk from wireless printers is low for typical users. But security-focused users may prefer USB's complete network isolation."
       },
       {
         id: "both-options",
@@ -982,7 +982,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "why-choices-fail",
         title: "Why Most Printer Choices Fail",
-        content: "Most people choose printers wrong. Not because printers are complicated, but because they approach the decision incorrectly.\n\nThe typical approach: compare features, compare prices, pick something that looks good. The result: frustration within months. Ink costs more than expected. Speed feels slow. Features go unused while needed capabilities are missing.\n\nThe problem is that printer choice is not about printers. It is about behavior — how you print, how often, under what conditions, and with what tolerance for friction. Understanding your behavior first makes printer choice straightforward. Ignoring behavior makes any choice feel wrong eventually."
+        content: "Most people choose inkjet printers wrong. Not because printers are complicated, but because they approach the decision incorrectly.\n\nThe typical approach: compare features, compare prices, pick a home printer or office printer that looks good. The result: frustration within months. Ink cartridge costs more than expected. Speed feels slow. Features go unused while needed capabilities are missing.\n\nThe problem is that printer choice is not about printers. It is about behavior — how you print, how often, under what conditions, and with what tolerance for friction. Understanding your behavior first makes printer choice straightforward. Ignoring behavior makes any choice feel wrong eventually."
       },
       {
         id: "behavior-first",
@@ -1022,12 +1022,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "ink-systems-explained",
         title: "Ink Systems: Cartridges vs Tanks",
-        content: "Ink cartridges are convenient and familiar but have higher cost per page. Ink tank printers use refillable reservoirs with dramatically lower cost per page but higher purchase price.\n\nThe choice depends on volume. Low volume (under 100 pages monthly) favors cartridges — simpler, cheaper upfront, acceptable cost per page at low volume. High volume (200+ pages monthly) favors tanks — lower lifetime cost despite higher entry price.\n\nFor moderate volume, calculate honestly. The break-even point is often within the first year for regular printers."
+        content: "Ink cartridges are convenient and familiar but have higher cost per page. Ink tank printers use refillable reservoirs with dramatically lower cost per page but higher purchase price. Note that inkjet printers use ink cartridges, not toner cartridges — those belong to laser printers.\n\nThe choice depends on volume. Low volume (under 100 pages monthly) favors cartridges — simpler, cheaper upfront, acceptable cost per page at low volume. High volume (200+ pages monthly) favors ink tank printers — lower lifetime cost despite higher entry price.\n\nFor moderate volume, calculate honestly. The break-even point is often within the first year for regular printers."
       },
       {
         id: "wireless-necessity",
         title: "Wireless Printing: Essential or Optional",
-        content: "Wireless printing seems obviously better, but it depends on how you actually print.\n\nWireless is essential when multiple devices print, when phones and tablets need access, when placement flexibility matters, and when modern convenience is expected.\n\nWireless adds complexity — network dependency, occasional troubleshooting, connection drops. For single-computer users who value simplicity, USB remains viable despite seeming 'outdated.'"
+        content: "A wireless printer seems obviously better, but it depends on how you actually print.\n\nWireless is essential when multiple devices print, when a smartphone or tablet needs access, when placement flexibility matters, and when modern convenience is expected. Mobile device printing has become normal for most households.\n\nWireless adds complexity — network dependency, occasional troubleshooting, connection drops. For single-computer users who value simplicity, USB remains viable despite seeming 'outdated.'"
       },
       {
         id: "duplex-value",
@@ -1037,17 +1037,17 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "scanning-copying-need",
         title: "Scanning and Copying: Often Undervalued",
-        content: "People often overlook scanning and copying until they need it. Then they wish they had chosen an all-in-one.\n\nScanning is useful for digitizing receipts, archiving documents, converting paper to digital, and sending signed forms. Copying is useful for quick duplicates without computers.\n\nAll-in-one printers add these capabilities for minimal extra cost. The question is not 'will I scan' but 'will I wish I could scan.' For most users, the answer is yes."
+        content: "People often overlook scanning copying until they need it. Then they wish they had chosen an all-in-one.\n\nScanning is useful for digitizing receipts, archiving documents, converting paper to digital, and sending signed forms. Copying is useful for quick duplicates without computers. A small business often relies heavily on scanning copying capabilities.\n\nAll-in-one printers add these capabilities for minimal extra cost. The question is not 'will I scan' but 'will I wish I could scan.' For most users, the answer is yes."
       },
       {
         id: "speed-reality",
         title: "Print Speed: What Actually Matters",
-        content: "Print speed is measured in pages per minute, but real-world experience differs from specifications. First-page-out time matters — how long before the first page appears. Consistency matters — does speed hold up during long jobs? Draft vs quality mode matters — fast speeds often assume draft mode.\n\nFor most home users, speed barely matters. For office users under time pressure, speed differences feel significant. Match speed expectations to your actual urgency."
+        content: "Print speed is measured in pages per minute, but real-world experience differs from specifications. First-page-out time matters — how long before the first page appears. Consistency matters — does speed hold up during long jobs? Draft vs high print quality mode matters — fast speeds often assume draft mode.\n\nFor most home users, speed barely matters. For office users in a busy office under time pressure, speed differences feel significant. Match speed expectations to your actual urgency."
       },
       {
         id: "print-quality-needs",
         title: "Print Quality: What Do You Actually Need",
-        content: "Print quality varies from basic text clarity to photo-grade precision. Most people overestimate their quality needs.\n\nBasic quality suffices for everyday documents, drafts, internal use, and reference copies. Higher quality matters for client-facing documents, presentations, photos, and creative projects.\n\nPaying for photo quality on a document-heavy printer wastes money. Accepting document quality on a photo-focused workflow wastes potential. Match quality to purpose."
+        content: "Print quality varies from basic text clarity to photo-grade precision. Most people overestimate their quality needs.\n\nBasic print quality suffices for everyday black and white documents, drafts, internal use, and reference copies. Higher quality matters for client-facing documents, presentations, high quality prints, and creative projects.\n\nPaying for photo quality on a document-heavy printer wastes money. Accepting document quality on a photo-focused workflow wastes potential. Match quality to purpose."
       },
       {
         id: "reliability-importance",
@@ -1117,7 +1117,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "why-categories-exist",
         title: "Why Printer Categories Exist in the First Place",
-        content: "Printer categories are not marketing inventions. They reflect fundamentally different assumptions about how people print.\n\nEntry-level printers assume occasional, light, budget-conscious use. Office printers assume regular, sustained, productivity-focused use. Photo printers assume intentional, quality-focused, creative use.\n\nThese assumptions shape every design decision — speed, ink efficiency, paper handling, noise levels, build quality. Choosing the right category means matching your behavior to the assumptions a printer was designed around. Choosing wrong creates friction between how you print and how the printer expects to be used."
+        content: "Printer categories are not marketing inventions. They reflect fundamentally different assumptions about how people print.\n\nEntry-level home printers assume occasional, light, budget-conscious use. Office printers assume regular, sustained, productivity-focused use in a busy office or small business. Photo inkjet printers assume intentional, quality-focused, creative use.\n\nThese assumptions shape every design decision — pages per minute speed, ink efficiency, paper tray capacity, noise levels, build quality. Choosing the right category means matching your behavior to the assumptions a printer was designed around. Choosing wrong creates friction between how you print and how the printer expects to be used."
       },
       {
         id: "category-as-behavior",
@@ -1127,7 +1127,7 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "entry-level-deep-dive",
         title: "Entry-Level Inkjets: Built for Occasional Use",
-        content: "Entry-level inkjet printers are designed for people who need printing access without making printing a priority. They assume low pages per month, irregular printing patterns, single-user or family use, budget constraints, and limited space.\n\nEntry-level printers excel at handling long idle periods without problems, waking up reliably when needed, fitting in small spaces, keeping purchase costs low, and meeting basic needs without complexity.\n\nThe trade-off is clear: lower cost per page efficiency, slower speeds, smaller paper capacity, and limited high-volume endurance."
+        content: "Entry-level inkjet printers are designed for people who need home printer access without making printing a priority. They assume low pages per month, irregular printing patterns, single-user or family use, budget constraints, and limited space.\n\nEntry-level printers excel at handling long idle periods without problems, waking up reliably when needed, fitting in small spaces, keeping purchase costs low, and meeting basic needs without complexity. They work as a simple wireless printer for occasional use.\n\nThe trade-off is clear: lower cost per page efficiency, slower pages per minute speeds, smaller paper tray capacity, and limited high volume endurance."
       },
       {
         id: "entry-level-right-fit",
@@ -1142,12 +1142,12 @@ export const guidesContent: Record<string, GuideContent> = {
       {
         id: "office-deep-dive",
         title: "Office Inkjets: Built for Sustained Productivity",
-        content: "Office inkjet printers assume printing is part of work. They expect regular use, time-sensitive printing, multiple users, higher monthly volumes, and reliability under pressure.\n\nOffice printers excel at faster print speeds, larger paper capacity, automatic duplex printing, efficient ink usage at volume, and professional document quality.\n\nThe trade-off: higher purchase price, larger physical size, and complexity that light users do not need."
+        content: "Office inkjet printers assume printing is part of work. They expect regular use, time-sensitive printing, multiple users, higher pages per month volumes, and reliability under pressure in a busy office.\n\nOffice printers excel at faster pages per minute speeds, larger paper tray capacity, automatic duplex printing, efficient ink cartridge usage at volume, and professional print quality for black and white documents and color output.\n\nThe trade-off: higher purchase price, larger physical size, and complexity that light users do not need."
       },
       {
         id: "office-right-fit",
         title: "When Office Inkjets Are the Right Choice",
-        content: "Office inkjets fit well when printing is routine (100-500+ pages monthly), when time pressure exists, when multiple people share access, when reliability affects productivity, and when lower cost per page matters.\n\nHome offices, small businesses, busy households, and remote workers often find office inkjets worth the higher upfront cost."
+        content: "Office inkjets fit well when printing is routine (100-500+ pages per month), when time pressure exists in a busy office, when multiple people share access, when reliability affects productivity, and when lower cost per page matters. Many include security features for sensitive documents.\n\nHome offices, small business operations, busy households, and remote workers often find office inkjets worth the higher upfront cost."
       },
       {
         id: "office-wrong-fit",

@@ -851,15 +851,6 @@ export default function HomePage() {
                         <span className="text-sm text-muted-foreground line-through">${product.originalPrice}</span>
                       )}
                     </div>
-                    <div className="flex items-center gap-1">
-                      {Array(5).fill(0).map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-4 h-4 ${i < Math.floor(parseFloat(product.rating)) ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'}`} 
-                        />
-                      ))}
-                      <span className="text-sm text-muted-foreground ml-1">({product.reviewCount})</span>
-                    </div>
                     <Button className="w-full mt-4" data-testid={`button-shop-${product.slug}`}>
                       Shop Now
                     </Button>
