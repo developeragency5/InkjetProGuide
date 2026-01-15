@@ -24,33 +24,93 @@ export const guidesContent: Record<string, GuideContent> = {
   "beginners-guide": {
     id: "beginners-guide",
     title: "Beginner's Guide to Inkjet Printers",
-    description: "Everything you need to know about inkjet printers - from basic features to choosing your first printer.",
+    description: "A practical introduction to inkjet printers — what they do, how they work, and how to choose one without overthinking it.",
     icon: Book,
     color: "bg-blue-500",
-    readTime: "8 min read",
+    readTime: "14 min read",
     sections: [
       {
-        id: "introduction",
-        title: "Introduction",
-        content: "Welcome to our comprehensive beginner's guide to inkjet printers. Whether you're buying your first printer or looking to upgrade, this guide will help you understand the basics and make an informed decision."
+        id: "why-guide-exists",
+        title: "Why This Guide Exists",
+        content: "Most people don't think about printers until they need one. Then they search online, get overwhelmed by specs and jargon, and either buy the cheapest option or the one with the most reviews. Both approaches often lead to regret. This guide exists to help you understand what actually matters — and what doesn't — when choosing an inkjet printer. No technical expertise required. Just practical knowledge that helps you buy the right printer the first time."
       },
       {
         id: "what-is-inkjet",
-        title: "What is an Inkjet Printer?",
-        content: "An inkjet printer works by spraying microscopic droplets of liquid ink onto paper to create text and images. Inkjet printers are known for their high-quality color output, versatility, and affordability, making them perfect for home and small office use."
+        title: "What Is an Inkjet Printer, Really?",
+        content: "An inkjet printer creates images by spraying microscopic droplets of liquid ink onto paper. Thousands of tiny nozzles fire in precise patterns, building up text and images dot by dot. This technology produces excellent color quality, handles photos well, and works quietly. Most home and small office printers are inkjets. The alternative — laser printers — use toner powder and heat instead of liquid ink. Laser printers excel at high-volume text printing but cost more upfront and handle photos less gracefully. For most home users, inkjet is the practical choice."
+      },
+      {
+        id: "how-inkjet-works",
+        title: "How Inkjet Technology Actually Works",
+        content: "Inside every inkjet printer is a printhead — a component containing hundreds or thousands of nozzles. Each nozzle is thinner than a human hair. When you print, the printhead moves across the page, firing ink droplets at precisely timed intervals. Different colored inks (typically black, cyan, magenta, and yellow) combine to create the full color spectrum. Some photo-focused printers add extra colors like light cyan and light magenta for smoother gradients. The technology is mature and reliable. Modern inkjets rarely fail mechanically. Most problems stem from dried ink — which is preventable with regular use."
+      },
+      {
+        id: "types-of-inkjets",
+        title: "Types of Inkjet Printers",
+        content: "Inkjet printers come in several categories. Entry-level inkjets are affordable, compact, and perfect for occasional printing — homework, basic documents, the occasional photo. Office inkjets are built for heavier use with faster speeds, larger paper trays, and lower cost per page. Photo inkjets prioritize color accuracy and print quality for photos and creative projects. Smart Tank printers use refillable ink tanks instead of cartridges, dramatically reducing ink costs for high-volume users. All-in-one models add scanning and copying to printing capability. The right type depends on what you'll actually print — not what you imagine you might print someday."
+      },
+      {
+        id: "all-in-one-explained",
+        title: "All-in-One vs. Print-Only: What You Actually Need",
+        content: "Most inkjet printers today are all-in-ones, meaning they print, scan, and copy. The price difference between print-only and all-in-one models is often small — sometimes just twenty or thirty dollars. For most people, an all-in-one makes sense. Scanning is useful for digitizing documents, receipts, and photos. Copying comes in handy more often than expected. That said, if you're absolutely certain you'll never scan or copy, a print-only model saves desk space and simplifies the interface. But most people underestimate how often scanning becomes useful once it's convenient."
       },
       {
         id: "key-features",
-        title: "Key Features to Consider",
-        content: "When choosing an inkjet printer, consider: print quality (DPI), print speed (PPM), connectivity options (WiFi, USB, mobile), paper handling capacity, and cost per page. Modern printers offer features like wireless printing, automatic two-sided printing, and mobile app support."
+        title: "Features That Actually Matter",
+        content: "Printer specs can be confusing. Here's what actually matters for most users. Print speed (pages per minute) indicates how fast the printer outputs documents — 10-15 PPM is adequate for home use. Print quality (DPI) measures resolution — 4800 x 1200 DPI handles photos well, though most documents look fine at lower resolutions. Paper capacity determines how often you refill the tray — 100-250 sheets is standard. Automatic two-sided printing (duplex) saves paper and is worth having. Connectivity (WiFi, USB, mobile printing) affects convenience. Features like automatic document feeders matter primarily for office use."
+      },
+      {
+        id: "connectivity-matters",
+        title: "Wireless Connectivity: More Important Than You Think",
+        content: "Modern printers should connect wirelessly. Period. Wireless connectivity means printing from any device in your home — laptop, smartphone, tablet — without cables. It means placing the printer wherever convenient, not necessarily next to your computer. Most wireless printers also support mobile printing standards like AirPrint (Apple) and Mopria (Android), letting you print directly from your phone. USB connections still exist as backup but rarely get used once wireless is working. If you're buying a printer today, wireless isn't optional — it's essential."
+      },
+      {
+        id: "print-quality-explained",
+        title: "Understanding Print Quality",
+        content: "Print quality gets measured in DPI — dots per inch. Higher numbers mean more detail. But here's the thing: most documents look identical whether printed at 600 DPI or 4800 DPI. The difference matters for photos and graphics, not text. A printer advertising 4800 x 1200 DPI handles photos well. One advertising 1200 x 1200 DPI is fine for documents. Don't pay extra for ultra-high resolution unless you specifically print photos. Also, paper quality affects results as much as printer capability. Photo paper on a basic printer often beats plain paper on a premium printer."
+      },
+      {
+        id: "ink-costs-basics",
+        title: "Understanding Ink Costs (The Real Expense)",
+        content: "Here's what printer advertisements don't emphasize: the printer is cheap, the ink is expensive. A fifty-dollar printer might need thirty-dollar cartridge replacements every few months. Over years, ink costs often exceed the printer's purchase price — sometimes several times over. This is where choice matters. Some printers use ink efficiently; others don't. XL cartridges cost more upfront but print more pages, lowering cost per page. Ink subscription services can reduce costs for predictable print volumes. Smart Tank printers virtually eliminate ink anxiety for high-volume users. Consider ink costs before purchasing, not after."
+      },
+      {
+        id: "cartridges-explained",
+        title: "Ink Cartridges: What You Need to Know",
+        content: "Ink cartridges come in different configurations. Some printers use separate cartridges for each color (black, cyan, magenta, yellow). When blue runs out, you replace only the blue. Other printers use tri-color cartridges combining three colors in one unit. When any color runs out, you replace the whole cartridge — even if two colors remain. For occasional users, tri-color cartridges are fine. For regular users, individual color cartridges save money over time. Also, genuine manufacturer cartridges ensure quality and maintain warranty coverage. Third-party cartridges exist but carry risks of poor quality or damage."
+      },
+      {
+        id: "maintenance-basics",
+        title: "Basic Maintenance: What Actually Matters",
+        content: "Inkjet printers require minimal maintenance, but one habit matters tremendously: regular use. Ink is liquid. Liquid dries. Unused printers develop clogged printheads — the leading cause of print quality problems. The solution is simple: print something at least weekly. A single page keeps ink flowing through the nozzles. Beyond that, occasional cleaning cycles (accessible through the printer menu) clear minor clogs. Keep the printer free of dust. Store paper properly to prevent moisture damage. That's really all most users need to know about maintenance."
+      },
+      {
+        id: "choosing-first-printer",
+        title: "Choosing Your First Printer",
+        content: "For first-time buyers, the decision framework is straightforward. Ask yourself: How often will I print? Rarely (a few pages monthly) suggests an entry-level inkjet. Regularly (weekly documents) points toward a mid-range all-in-one. Frequently (daily documents or photos) warrants considering office-class or Smart Tank models. What will I print? Mostly documents? Any inkjet works. Photos and graphics? Consider photo-focused models. How many people will use it? Multiple users benefit from wireless connectivity and larger paper capacity. Answer these questions honestly — based on reality, not aspiration — and the right printer category becomes obvious."
+      },
+      {
+        id: "setup-expectations",
+        title: "What to Expect When Setting Up",
+        content: "Modern printer setup is genuinely easy. Unbox, install cartridges, connect power, download the manufacturer's app on your phone, and follow the prompts. The app walks you through WiFi connection, software installation, and initial alignment. Most setups complete in under fifteen minutes. The initial cartridges included with new printers are typically 'starter' cartridges with less ink than standard replacements. This is normal — plan to buy regular or XL cartridges soon. Don't be alarmed if the printer runs through initial alignment and calibration processes that use some ink."
+      },
+      {
+        id: "common-beginner-mistakes",
+        title: "Common Beginner Mistakes to Avoid",
+        content: "New printer owners often make predictable mistakes. Buying based on price alone — ignoring ink costs that dwarf purchase price over time. Letting the printer sit unused — leading to clogged printheads and wasted cartridges. Not using the manufacturer's app — missing firmware updates, diagnostic tools, and convenient features. Buying specialty paper for every print — regular paper works fine for documents. Assuming all printers are alike — they're not, and differences matter over years of use. Learn from others' mistakes. A little knowledge prevents a lot of frustration."
+      },
+      {
+        id: "final-perspective",
+        title: "Final Perspective: Printers Should Just Work",
+        content: "A good printer is one you don't think about. It prints when you need it. The ink lasts reasonably long. Setup was forgettable. Problems are rare. That's the goal — not impressive specs or premium features, but reliable invisibility. For most people, a mid-range all-in-one with wireless connectivity and reasonable ink efficiency accomplishes exactly that. Don't overthink it. Buy something appropriate for your actual needs, use it regularly, and printing becomes a non-issue. That's success. When chosen correctly, a printer fades into the background of your life — and that's exactly what you want."
       }
     ],
     keyPoints: [
-      "Inkjet printers are ideal for home use and photo printing",
-      "Consider your monthly print volume when choosing a model",
-      "Wireless connectivity allows printing from smartphones and tablets",
-      "All-in-one models include scanning and copying functions",
-      "XL ink cartridges offer better value for regular users"
+      "Use your printer regularly (weekly) to prevent the most common problem: dried ink and clogged printheads",
+      "Ink costs over time often exceed the printer's purchase price — factor this into your decision",
+      "Wireless connectivity is essential, not optional, for modern convenience",
+      "All-in-one printers (print, scan, copy) offer significant value for minimal extra cost",
+      "Match the printer to your actual printing habits, not what you imagine you might do someday"
     ],
     recommendations: [
       {
@@ -203,34 +263,84 @@ export const guidesContent: Record<string, GuideContent> = {
 
   "ink-cost": {
     id: "ink-cost",
-    title: "Ink Cost Comparison Guide",
-    description: "Understand ink cartridge costs, page yields, and how to save money on printing with our detailed analysis.",
+    title: "Understanding Ink Page Yield and How It Affects Cost",
+    description: "A practical guide to understanding page yield, calculating true printing costs, and making ink decisions that actually save money.",
     icon: DollarSign,
     color: "bg-yellow-500",
-    readTime: "9 min read",
+    readTime: "14 min read",
     sections: [
       {
-        id: "introduction",
-        title: "Introduction",
-        content: "Ink costs can significantly impact your total cost of ownership. This guide helps you understand ink pricing, calculate cost per page, and find ways to reduce printing expenses."
+        id: "why-page-yield-matters",
+        title: "Why Page Yield Matters More Than Price",
+        content: "Most people compare ink cartridge prices. That's the wrong comparison. A thirty-dollar cartridge that prints 800 pages costs less than a twenty-dollar cartridge that prints 300 pages. The first cartridge costs about 3.75 cents per page. The second costs nearly 7 cents per page. Over a year of regular printing, that difference adds up to serious money. This is why page yield — the number of pages a cartridge produces — matters more than the price on the shelf. Understanding page yield transforms ink shopping from guesswork to straightforward math."
       },
       {
-        id: "understanding-costs",
-        title: "Understanding Ink Costs",
-        content: "Cost per page is more important than initial ink price. Calculate by dividing cartridge price by page yield. XL cartridges cost more upfront but offer better value. Standard cartridges typically yield 100-200 pages, while XL cartridges can print 300-800 pages."
+        id: "how-yield-measured",
+        title: "How Page Yield Is Actually Measured",
+        content: "Manufacturers don't just make up page yield numbers. They follow ISO standards — specifically ISO/IEC 24711 for inkjet cartridges. These tests use standardized documents with specific text and graphics coverage, typically about 5% page coverage per color. The testing conditions are controlled: specific paper, specific temperature, specific humidity. This standardization allows fair comparisons between brands and models. However, it also means the numbers represent laboratory conditions, not your actual printing habits."
       },
       {
-        id: "saving-strategies",
-        title: "Money-Saving Strategies",
-        content: "Use Instant Ink subscription service for automatic deliveries and potential savings. Choose XL cartridges for regular printing. Print in draft mode for internal documents. Use grayscale printing when color isn't necessary. Bundle cartridges can offer discounts."
+        id: "rated-vs-real-world",
+        title: "Real-World Yield vs. Rated Yield",
+        content: "The rated yield on the box is rarely what you'll get at home. If you print documents with more text, graphics, or photos than the standard test page, you'll get fewer pages. If you print mostly light text documents, you might exceed the rated yield. Color-heavy printing — photos, graphics, marketing materials — uses dramatically more ink than text documents. A cartridge rated for 800 pages might produce 400 pages of photo prints. This isn't deception; it's the reality of variable content. Plan accordingly and treat rated yields as benchmarks, not guarantees."
+      },
+      {
+        id: "standard-vs-xl",
+        title: "Standard vs. XL Cartridges: The Real Math",
+        content: "Cartridges typically come in standard and high-yield (XL or XXL) versions. Standard cartridges cost less upfront but print fewer pages. XL cartridges cost more upfront but print significantly more pages. Here's where the math matters: XL cartridges almost always offer a lower cost per page. A standard black cartridge might cost fifteen dollars for 200 pages (7.5 cents per page). The XL version might cost twenty-five dollars for 600 pages (4.2 cents per page). You pay more, but you save money. For anyone who prints regularly, XL cartridges are the obvious choice."
+      },
+      {
+        id: "calculating-true-cost",
+        title: "Calculating Your True Cost Per Page",
+        content: "True cost per page is simple math: divide cartridge price by page yield. But complete cost calculation includes all cartridges used. For color printing, add up the cost of black, cyan, magenta, and yellow cartridges, total their combined yields, and divide. Account for how you actually print — mostly black text? Heavy color graphics? A mix? Track your actual cartridge replacement frequency for a few months. Multiply that by cartridge costs. Divide by pages printed. This gives you your real cost per page, which may differ significantly from manufacturer estimates."
+      },
+      {
+        id: "when-high-yield-makes-sense",
+        title: "When High-Yield Cartridges Make Sense",
+        content: "High-yield cartridges make sense for almost everyone who prints regularly. If you replace standard cartridges more than once or twice a year, XL versions will save money. If you print weekly, the savings become substantial. If you print daily, there's no question. The only scenario where standard cartridges make sense is extremely light printing — fewer than a hundred pages per year. Even then, the convenience of less frequent replacement often justifies the modest extra investment. For most users, buying standard cartridges is leaving money on the table."
+      },
+      {
+        id: "ink-subscription-options",
+        title: "Ink Subscription Services Explained",
+        content: "Ink subscription services change the cost equation entirely. Instead of buying cartridges, you pay a monthly fee based on pages printed. The service monitors your ink levels and ships replacements automatically before you run out. Plans range from occasional (15-50 pages monthly) to heavy (300-700 pages monthly). Cost per page on subscription plans often undercuts even XL cartridge purchases. You trade cartridge ownership for predictable costs and zero trips to the store. The catch: subscription cartridges only work while you're enrolled. Cancel, and you'll need to buy retail cartridges."
+      },
+      {
+        id: "draft-mode-and-settings",
+        title: "Draft Mode and Print Settings: Hidden Savings",
+        content: "Your printer's settings significantly affect ink consumption. Draft mode uses less ink by reducing coverage density. The output is lighter but perfectly readable for internal documents, drafts, and reference copies. Switching to draft mode for everyday printing can reduce ink usage by 30-50%. Grayscale printing uses only black ink, preserving expensive color cartridges for when you actually need color. Adjusting print quality to 'normal' instead of 'best' saves ink with minimal visible difference on text documents. These settings exist for a reason — use them."
+      },
+      {
+        id: "individual-vs-combo",
+        title: "Individual vs. Combo Cartridges",
+        content: "Some printers use individual cartridges for each color. Others use tri-color cartridges combining cyan, magenta, and yellow in one unit. The difference matters financially. With individual cartridges, you replace only the empty color. With tri-color cartridges, you replace the entire unit when any color runs out — even if two colors remain. If you print color-heavy documents with uneven color usage, tri-color cartridges waste money. Individual cartridges cost more initially but prevent discarding usable ink. For regular color printing, individual cartridges are more economical long-term."
+      },
+      {
+        id: "smart-tank-alternative",
+        title: "Smart Tank Printers: The Alternative Approach",
+        content: "If ink costs genuinely frustrate you, Smart Tank printers offer a fundamentally different approach. Instead of cartridges, these printers use refillable ink tanks. A single bottle of ink might print thousands of pages — sometimes exceeding two years of typical home use. The upfront cost is higher than traditional inkjets. But the ink savings are dramatic: often less than one cent per page for both black and color. For high-volume users or anyone tired of cartridge anxiety, Smart Tank printers eliminate the entire ink cost problem."
+      },
+      {
+        id: "third-party-cartridges",
+        title: "Third-Party Cartridges: Worth the Risk?",
+        content: "Third-party and remanufactured cartridges cost less than genuine manufacturer cartridges. The temptation is obvious. However, quality varies wildly. Some work fine. Others produce poor prints, clog printheads, or leak. Using third-party cartridges may void your warranty. If a cheap cartridge damages your printhead, the 'savings' become an expensive lesson. For critical printing, genuine cartridges ensure consistent results and protect your investment. If you experiment with third-party options, stick to reputable remanufacturers with solid reviews and return policies."
+      },
+      {
+        id: "common-mistakes",
+        title: "Common Ink-Buying Mistakes",
+        content: "The most common mistake is buying based on shelf price alone. A cheaper cartridge often costs more per page. Another mistake: letting cartridges sit unused until they dry out. Ink has a shelf life, and cartridges should be used within six to twelve months of purchase. Buying ahead in bulk seems smart but risks waste if you switch printers or cartridges expire. Ignoring printer settings wastes ink on documents that don't need high quality. And treating ink subscription services with suspicion often costs more than subscribing would."
+      },
+      {
+        id: "final-perspective",
+        title: "Final Perspective: Ink Cost Is Manageable",
+        content: "Ink costs don't have to be frustrating. The key is understanding what you're actually paying for: cost per page, not shelf price. Buy XL cartridges for regular use. Use draft mode for everyday documents. Consider subscription services for predictable costs. Choose printers with individual color cartridges if you print color frequently. And if ink cost truly bothers you, Smart Tank printers offer an escape from the whole cartridge cycle. Ink is a recurring expense, but it's a manageable one when you approach it with information instead of frustration."
       }
     ],
     keyPoints: [
-      "Calculate cost per page, not just cartridge price",
-      "XL cartridges provide better long-term value",
-      "Instant Ink can save up to 50% on ink costs",
-      "Draft mode uses less ink for everyday documents",
-      "Individual color cartridges prevent waste"
+      "Page yield matters more than cartridge price — always calculate cost per page",
+      "XL cartridges cost more upfront but almost always save money over standard cartridges",
+      "Rated yields assume 5% page coverage — your real-world results will vary based on what you print",
+      "Draft mode and grayscale settings can reduce ink usage by 30-50% for everyday documents",
+      "For high-volume printing, Smart Tank printers or ink subscriptions fundamentally change the cost equation"
     ],
     recommendations: [
       {
@@ -1084,48 +1194,93 @@ export const guidesContent: Record<string, GuideContent> = {
   "printer-troubleshooting": {
     id: "printer-troubleshooting",
     title: "Inkjet Printer Troubleshooting Guide",
-    description: "Solve common inkjet printer problems with our step-by-step troubleshooting guide.",
+    description: "A practical guide to diagnosing and fixing common inkjet printer problems yourself — before calling support or considering replacement.",
     icon: Wrench,
     color: "bg-red-500",
-    readTime: "12 min read",
+    readTime: "15 min read",
     sections: [
       {
-        id: "introduction",
-        title: "Introduction",
-        content: "Even the most reliable printers occasionally encounter issues. Before seeking repairs or considering replacement, many common problems have simple solutions you can perform at home. This troubleshooting guide covers the most frequent inkjet printer issues with step-by-step solutions to get you printing again quickly."
+        id: "why-troubleshooting-matters",
+        title: "Why Troubleshooting Matters",
+        content: "Most printer problems have simple solutions. But people panic, assume the worst, and either call expensive support lines or throw away working printers. The reality is that 90% of common issues can be resolved at home in minutes. A paper jam doesn't mean your printer is broken. Streaky prints don't mean you need a new printhead. Wireless issues rarely require professional help. This guide walks you through the most common problems and their solutions — practical fixes that save time, money, and frustration."
       },
       {
-        id: "paper-jams",
-        title: "Paper Jam Solutions",
-        content: "Paper jams are the most common printer issue. First, turn off the printer and unplug it. Open all access doors and gently remove any visible paper, pulling in the direction of paper travel to avoid tearing. Check for small torn pieces that might remain inside. Inspect paper for wrinkles, curls, or damage before reloading. Fan the paper stack to prevent static and load with proper alignment. If jams persist, clean the rollers with a lint-free cloth dampened with water."
+        id: "paper-jam-solutions",
+        title: "Paper Jams: The Most Common Problem",
+        content: "Paper jams happen to every printer eventually. The solution is methodical, not forceful. First, turn off the printer and unplug it. Open all access panels — front, back, and top if applicable. Locate the jammed paper and pull it gently in the direction of normal paper travel, not against it. Yanking paper backwards can tear it, leaving fragments inside. After removing visible paper, check carefully for small torn pieces. Even a tiny scrap can cause repeat jams. Inspect the paper path and rollers for debris. Reload paper properly, ensuring the stack is aligned and not overfilled."
       },
       {
-        id: "print-quality",
-        title: "Print Quality Issues",
-        content: "Streaky, faded, or missing colors indicate printhead problems. Run the automatic printhead cleaning utility from your printer's control panel or the Smart app—this clears dried ink from nozzles. Print a test page after cleaning to check improvement. If issues persist, run the cleaning cycle again (up to 3 times). For stubborn clogs, let the printer sit overnight to allow ink to soften dried residue. Check ink levels; low ink causes faded output. Replace empty cartridges promptly."
+        id: "preventing-paper-jams",
+        title: "Preventing Future Paper Jams",
+        content: "Paper jams usually result from preventable causes. Damaged, curled, or wrinkled paper jams easily — inspect your paper before loading. Humid paper absorbs moisture and sticks together; store paper in a dry location. Overfilled trays cause misfeeds; keep paper below the maximum line. Mixed paper types and sizes in the same tray confuse the printer. Dirty rollers lose grip on paper; clean them monthly with a lint-free cloth slightly dampened with water. Fan the paper stack before loading to separate sheets and reduce static. These habits prevent most jams before they happen."
       },
       {
-        id: "connectivity",
-        title: "Connectivity Problems",
-        content: "Wireless printing failures often stem from network issues. Restart your printer and router; this resolves most connection problems. Ensure your printer and device are on the same WiFi network. Check that your router hasn't blocked the printer's connection. Use the printer's network setup wizard to reconnect if needed. For USB issues, try a different USB port or cable. The Smart app can diagnose and repair many connectivity issues automatically."
+        id: "print-quality-issues",
+        title: "Print Quality Problems: Streaks, Fading, and Missing Colors",
+        content: "When prints look streaky, faded, or show missing colors, the printhead is almost always the cause. Ink dries in the microscopic nozzles when the printer sits unused, causing partial clogs. The solution starts with built-in cleaning cycles. Access printhead cleaning through your printer's control panel or companion app. Run the cleaning cycle, then print a test page. If issues remain, run another cleaning cycle — up to three times. Each cycle uses some ink but usually resolves the problem. For stubborn clogs, let the printer sit overnight after cleaning to allow dried ink to soften."
       },
       {
-        id: "cartridge-issues",
-        title: "Cartridge Problems",
-        content: "Cartridge errors prevent printing until resolved. Remove and reinstall cartridges, ensuring they click firmly into place. Check that protective tape has been removed from new cartridges. Clean the cartridge contacts and printhead contacts with a dry lint-free cloth. Verify cartridges are compatible with your specific printer model. Genuine cartridges ensure best compatibility and results. If a cartridge is defective, replacement is necessary even if recently purchased."
+        id: "when-cleaning-doesnt-work",
+        title: "When Cleaning Cycles Don't Fix Print Quality",
+        content: "If multiple cleaning cycles don't resolve print quality issues, consider other causes. Check ink levels — low ink produces faded output regardless of printhead condition. Ensure you're using appropriate print settings; draft mode produces lighter prints intentionally. Verify you're using compatible paper; some papers don't accept ink properly. Try a different paper brand to rule out paper issues. If the printhead is removable, manual cleaning with distilled water and a lint-free cloth may help. Genuine cartridges ensure proper ink chemistry; third-party inks sometimes cause problems. If all else fails, printhead replacement (if applicable) or service may be necessary."
       },
       {
-        id: "software-issues",
-        title: "Software Issues",
-        content: "Driver and software problems cause various symptoms. Update your printer drivers from the manufacturer's website or through the Smart app. Uninstall and reinstall printer software if problems persist. Check that print jobs aren't stuck in the queue—clear pending jobs before trying again. Restart your computer after driver updates. For Mac users, remove and re-add the printer in System Preferences. Ensure your operating system is current with latest updates."
+        id: "connectivity-problems",
+        title: "Wireless Connectivity Problems",
+        content: "Wireless printing failures frustrate users more than almost any other issue. But the fix is usually simple: restart everything. Turn off your printer, wait thirty seconds, turn it back on. Do the same with your router. This resolves most wireless connectivity issues. If problems persist, verify your printer and device are on the same WiFi network — printers often can't see devices on different networks or bands. Check if your router has isolated wireless clients or blocked the printer's MAC address. The printer's network setup wizard can reconnect to WiFi if the password changed. The manufacturer's smartphone app often includes diagnostic tools for connectivity issues."
+      },
+      {
+        id: "usb-connection-issues",
+        title: "USB Connection Issues",
+        content: "USB connections are more reliable than wireless but not immune to problems. If your computer doesn't recognize the printer, start with basics: try a different USB port. Try a different USB cable if available. Ensure the cable is fully seated at both ends. Some USB hubs cause problems — connect directly to your computer. Restart your computer after connecting the printer. If the printer still isn't recognized, check Device Manager (Windows) or System Information (Mac) to see if the printer appears. Driver issues often masquerade as connection problems — reinstall printer software and drivers."
+      },
+      {
+        id: "cartridge-errors",
+        title: "Cartridge Errors and Recognition Problems",
+        content: "Cartridge errors prevent printing until resolved. The 'cartridge not recognized' message usually means a poor electrical connection, not a defective cartridge. Remove the cartridge and reinstall it firmly until it clicks. Check that you've removed all protective tape from new cartridges — even small tabs. Clean the cartridge's electrical contacts with a dry, lint-free cloth. Clean the corresponding contacts inside the printer. Verify the cartridge is compatible with your specific printer model — even printers from the same manufacturer use different cartridges. If a new cartridge repeatedly fails, it may be defective; contact the retailer for replacement."
+      },
+      {
+        id: "software-and-driver-issues",
+        title: "Software and Driver Issues",
+        content: "Outdated or corrupted drivers cause various symptoms: printing fails silently, documents print incorrectly, or the printer appears offline when it's not. The solution is straightforward: download and install the latest drivers from the manufacturer's website. Uninstall existing printer software first for a clean installation. Check for operating system updates that might affect printer compatibility. Clear stuck print jobs from the queue — sometimes a corrupted job blocks everything behind it. On Mac, removing and re-adding the printer in System Preferences often resolves mysterious issues. The manufacturer's smartphone app can diagnose software problems and guide updates."
+      },
+      {
+        id: "slow-printing",
+        title: "Slow Printing: Causes and Fixes",
+        content: "Slow printing has several potential causes. High-quality print settings take longer than draft mode — check your settings if speed matters more than quality. Large files, especially high-resolution images, take longer to process and print. Wireless connections can be slower than USB, especially on congested networks. Low ink sometimes causes the printer to slow down to conserve supplies. Memory-intensive jobs on printers with limited RAM process slowly. For faster printing: use draft mode when possible, reduce image resolution in documents, connect via USB for large jobs, and close unnecessary applications on your computer that might compete for resources."
+      },
+      {
+        id: "unusual-noises",
+        title: "Unusual Noises: When to Worry",
+        content: "Printers make noise — it's normal. But new or unusual noises warrant attention. Grinding sounds often indicate paper stuck in the mechanism or debris in the paper path. Check thoroughly for jammed paper and foreign objects. Clicking sounds during printing might indicate a failing pickup roller or other mechanical component. Loud whirring at startup is usually normal printhead initialization and maintenance. Squeaking suggests something needs lubrication, though user-serviceable lubrication isn't typically possible — this may require service. If unusual noises accompany error messages or printing failures, document the symptoms before contacting support."
+      },
+      {
+        id: "error-messages",
+        title: "Understanding Error Messages",
+        content: "Error messages range from specific and helpful to cryptic and frustrating. For specific errors (paper jam, low ink, cartridge problem), follow the on-screen guidance. For cryptic codes, search the manufacturer's support site with the exact error code — solutions usually exist. 'Printer offline' typically means a communication problem, not a printer malfunction. 'Carriage jam' means something is blocking the printhead's movement path. 'Service required' errors sometimes reset after turning the printer off and on; if they persist, professional service may be needed. Document exact error messages before seeking help — vague descriptions make remote troubleshooting difficult."
+      },
+      {
+        id: "when-to-seek-help",
+        title: "When to Seek Professional Help",
+        content: "Some problems exceed home troubleshooting. Seek professional help when: error messages persist after multiple restart attempts, mechanical components are visibly damaged, the printer produces electrical smells or visible sparks, printhead damage is evident (on printers with permanent printheads), or internal components are broken. Consider the printer's age and value before investing in repairs — older printers may not justify repair costs. Warranty coverage may provide free repairs for manufacturing defects. Manufacturer support lines can help diagnose whether repair is worthwhile."
+      },
+      {
+        id: "preventive-measures",
+        title: "Preventive Measures: Avoiding Problems",
+        content: "Prevention beats troubleshooting. Print something at least weekly to prevent ink from drying in the printhead. Use quality paper and store it properly. Keep the printer in a stable environment — extreme temperatures and humidity cause problems. Don't ignore minor issues; small problems become big problems. Keep firmware and drivers updated. Use genuine cartridges for best reliability. Clean the exterior monthly to prevent dust accumulation inside. Turn off the printer using its power button, not by unplugging — proper shutdown allows the printer to cap the printhead and prevent drying."
+      },
+      {
+        id: "final-perspective",
+        title: "Final Perspective: Most Problems Are Fixable",
+        content: "The most important thing to remember: most printer problems are fixable, often easily. Paper jams clear in minutes. Print quality issues usually resolve with cleaning cycles. Connectivity problems yield to systematic troubleshooting. Error messages have documented solutions. Before concluding your printer is broken, work through the obvious fixes. Restart everything. Check the simple things. Consult the manufacturer's support resources. Most 'broken' printers aren't broken at all — they just need a few minutes of attention. Approach problems calmly and methodically, and you'll resolve most issues without spending money or replacing equipment."
       }
     ],
     keyPoints: [
-      "Paper jams usually result from damaged paper or dirty rollers",
-      "Printhead cleaning resolves most print quality problems",
-      "Restart printer and router to fix wireless issues",
-      "Always remove protective tape from new cartridges",
-      "Keep drivers updated for best compatibility"
+      "Most printer problems have simple solutions — work through basics before assuming the worst",
+      "Paper jams usually result from preventable causes: damaged paper, overfilled trays, or dirty rollers",
+      "Print quality issues almost always trace to printhead clogs — cleaning cycles resolve most cases",
+      "For connectivity problems, restart the printer and router first; this fixes most wireless issues",
+      "Prevention beats troubleshooting: print weekly, use quality paper, and don't ignore minor issues"
     ],
     recommendations: [
       {
@@ -1143,44 +1298,99 @@ export const guidesContent: Record<string, GuideContent> = {
 
   "printer-maintenance": {
     id: "printer-maintenance",
-    title: "Inkjet Printer Maintenance Tips",
-    description: "Keep your inkjet printer running smoothly with regular maintenance and care guidelines.",
+    title: "Inkjet Printhead Maintenance & Cleaning Guide",
+    description: "A practical guide to keeping your inkjet printer producing clean, consistent output through proper printhead care and maintenance.",
     icon: Settings,
     color: "bg-gray-600",
-    readTime: "8 min read",
+    readTime: "14 min read",
     sections: [
       {
-        id: "introduction",
-        title: "Introduction",
-        content: "Regular maintenance extends your printer's lifespan, prevents problems, and ensures consistent print quality. Inkjet printers require minimal but important care to perform their best. This guide outlines essential maintenance tasks and schedules to keep your printer running smoothly for years."
+        id: "why-maintenance-matters",
+        title: "Why Printer Maintenance Matters More Than People Think",
+        content: "Most people ignore their printer until something goes wrong. Then they wonder why prints look streaky, colors are off, or pages come out faded. The answer is almost always the same: the printhead. Printheads are the heart of every inkjet printer. When they clog, dry out, or get dirty, everything suffers. This guide explains how to maintain your printhead properly — not with complicated procedures, but with simple habits that prevent problems before they start."
       },
       {
-        id: "printhead-care",
-        title: "Printhead Care",
-        content: "Printheads are the most critical component for print quality. Print at least one page weekly to prevent ink from drying in the nozzles—even a simple text page maintains ink flow. If you print infrequently, run the automatic cleaning cycle monthly. Avoid touching the printhead or its contacts. Never leave the printer open longer than necessary, as exposure to air dries ink faster. If storing the printer for extended periods, print a test page and run cleaning before storage."
+        id: "what-printhead-does",
+        title: "What a Printhead Actually Does",
+        content: "A printhead contains thousands of microscopic nozzles. Each nozzle sprays tiny droplets of ink onto paper — sometimes over 30,000 droplets per second. When nozzles get blocked, you see streaks, missing colors, or uneven coverage. The printhead is either built into the printer (permanent) or built into the cartridge (replaceable). Knowing which type you have affects how you maintain it."
       },
       {
-        id: "physical-cleaning",
-        title: "Physical Cleaning",
-        content: "Dust and debris accumulate over time, affecting performance. Monthly, wipe the exterior with a dry, lint-free cloth. Clean the paper tray and remove any debris. Inspect paper feed rollers for dust buildup—clean with a slightly damp lint-free cloth if needed. Never use aerosol sprays, ammonia-based cleaners, or alcohol inside the printer. Keep the area around your printer clean and free of dust sources. Cover the printer when not in use for extended periods."
+        id: "why-printheads-clog",
+        title: "Why Printheads Clog in the First Place",
+        content: "Ink is liquid. Liquids evaporate. When a printer sits unused, ink inside the nozzles dries and hardens. This creates partial or full clogs. The longer the printer sits, the worse the clogs become. Other causes include dust entering the printer, using low-quality paper that sheds fibers, and improper storage. Clogs are preventable — but once they form, they require intervention."
+      },
+      {
+        id: "single-best-habit",
+        title: "The Single Best Maintenance Habit",
+        content: "Print something at least once per week. That's it. A single page keeps ink flowing through the nozzles, preventing clogs before they form. It doesn't need to be anything important — a simple document or test page works fine. This one habit prevents more problems than any cleaning cycle ever could."
+      },
+      {
+        id: "automatic-cleaning",
+        title: "Understanding Automatic Cleaning Cycles",
+        content: "Every inkjet printer has a built-in cleaning cycle. This forces ink through the nozzles to clear minor blockages. Access it through the printer's control panel or the companion app. Use cleaning cycles when print quality declines — not as a routine habit. Cleaning cycles use ink. Running them unnecessarily wastes supplies. One or two cycles usually clear minor issues. If three cycles don't help, the problem may require different solutions."
+      },
+      {
+        id: "deep-cleaning",
+        title: "When Deep Cleaning Makes Sense",
+        content: "Deep cleaning is more aggressive than standard cleaning. It uses more ink and takes longer. Use deep cleaning only when standard cleaning fails and the printer has sat unused for weeks. Deep cleaning is not a maintenance routine — it's a rescue operation. After deep cleaning, print a test page to check results. If issues persist, the clog may be too severe for software-based cleaning."
+      },
+      {
+        id: "manual-cleaning",
+        title: "Manual Printhead Cleaning: When and How",
+        content: "Some clogs require hands-on intervention. If your printhead is removable, you can clean it manually. Remove the printhead carefully according to your printer's instructions. Dampen a lint-free cloth with distilled water (not tap water). Gently wipe the printhead surface and contacts. Let it dry completely before reinstalling. Never touch the nozzle plate directly. Never use alcohol or harsh chemicals unless specifically recommended."
+      },
+      {
+        id: "physical-maintenance",
+        title: "Physical Printer Maintenance Beyond the Printhead",
+        content: "Printheads aren't the only thing that needs attention. Paper feed rollers collect dust and debris over time. Dirty rollers cause paper jams and misfeeds. Clean them monthly with a slightly damp lint-free cloth. The exterior collects dust that eventually finds its way inside. Wipe the outside monthly. Keep the paper tray clean and free of debris. Never use aerosol sprays or harsh cleaners inside the printer."
       },
       {
         id: "paper-handling",
-        title: "Paper Handling Best Practices",
-        content: "Proper paper handling prevents jams and ensures consistent results. Store paper in its original packaging away from humidity until use. Fan the paper stack before loading to prevent static and sticking. Never overfill paper trays beyond their marked capacity. Use paper appropriate for your printer and print job—check specifications for supported weights and sizes. Remove printed pages promptly to prevent ink transfer. Don't mix paper types or sizes in the same tray."
+        title: "Paper Handling and Its Impact on Print Quality",
+        content: "Paper quality affects more than you'd expect. Low-quality paper sheds fibers that accumulate on the printhead. Humid paper causes jams and smearing. Curled paper feeds poorly. Store paper in its original packaging until use. Keep it away from humidity. Fan the stack before loading to prevent static and sticking. Never overfill the paper tray."
       },
       {
-        id: "software-updates",
-        title: "Software and Firmware",
-        content: "Keep printer software current for best performance and security. Enable automatic firmware updates when available. The Smart app notifies you of updates and simplifies installation. Updated firmware fixes bugs, improves reliability, and adds features. Check for driver updates when upgrading your computer's operating system. Periodically verify your printer appears in the Smart app and is functioning correctly in its diagnostic tools."
+        id: "storage-guidelines",
+        title: "Proper Printer Storage",
+        content: "If you won't use the printer for an extended period, prepare it properly. Print a test page and run a cleaning cycle before storage. Leave cartridges installed — removing them exposes the printhead to air. Cover the printer to prevent dust accumulation. Store in a climate-controlled area away from extreme temperatures. When you return, print a test page and run cleaning if needed before important jobs."
+      },
+      {
+        id: "ink-cartridge-care",
+        title: "Ink Cartridge Care and Handling",
+        content: "Cartridges affect printhead health. Install new cartridges promptly after opening — they begin drying once exposed to air. Never touch the electrical contacts or nozzle area. Store spare cartridges in their sealed packaging until needed. Use cartridges before their expiration date. Expired ink may clog or produce poor results."
+      },
+      {
+        id: "environmental-factors",
+        title: "Environmental Factors That Affect Maintenance",
+        content: "Temperature and humidity impact printer health. Extreme cold thickens ink. Extreme heat accelerates drying. High humidity causes paper problems. Low humidity speeds evaporation. Keep your printer in a stable environment between 60-80°F with moderate humidity. Avoid placing printers near windows, heating vents, or air conditioners."
+      },
+      {
+        id: "warning-signs",
+        title: "Warning Signs That Maintenance Is Needed",
+        content: "Watch for these indicators: Streaky or faded prints, missing colors, uneven coverage, unusual noises during printing, frequent paper jams, error messages about printhead or cartridges. Address issues early. Small problems become big problems when ignored. A quick cleaning cycle today prevents a clogged printhead tomorrow."
+      },
+      {
+        id: "maintenance-schedule",
+        title: "A Simple Maintenance Schedule",
+        content: "Weekly: Print at least one page. Monthly: Wipe exterior with dry cloth, clean paper tray, inspect for dust. Quarterly: Clean paper feed rollers if needed, check for firmware updates. As needed: Run cleaning cycles when print quality declines. This minimal schedule prevents most problems with minimal effort."
+      },
+      {
+        id: "common-mistakes",
+        title: "Common Maintenance Mistakes to Avoid",
+        content: "Running cleaning cycles too often — this wastes ink without benefit. Using tap water for manual cleaning — minerals can damage the printhead. Ignoring the printer for months then expecting perfect prints. Removing cartridges during storage — this exposes the printhead. Using harsh chemicals inside the printer. These mistakes create more problems than they solve."
+      },
+      {
+        id: "final-perspective",
+        title: "Final Perspective: Maintenance Is Prevention, Not Repair",
+        content: "Good printer maintenance isn't about fixing problems. It's about preventing them. A printer that prints regularly, stays clean, and lives in a stable environment rarely needs intervention. The best maintenance is invisible — you never notice it because problems never appear. That's the goal: a printer that just works, every time you need it."
       }
     ],
     keyPoints: [
-      "Print weekly to prevent printhead clogs",
-      "Clean exterior monthly with dry, lint-free cloth",
-      "Store paper properly to prevent humidity damage",
-      "Enable automatic firmware updates for best performance",
-      "Run cleaning cycles if print quality declines"
+      "Print at least once per week — this single habit prevents most printhead clogs",
+      "Use cleaning cycles only when print quality declines, not as routine maintenance",
+      "Store paper properly and keep the printer in a stable environment",
+      "Address warning signs early — small problems become big problems when ignored",
+      "Good maintenance is prevention, not repair"
     ],
     recommendations: [
       {
@@ -1198,44 +1408,89 @@ export const guidesContent: Record<string, GuideContent> = {
 
   "warranty-protection": {
     id: "warranty-protection",
-    title: "Warranty & Extended Protection Plans",
-    description: "Understand warranty coverage and extended protection options for your inkjet printer.",
+    title: "Warranty & Protection Plans",
+    description: "A practical guide to understanding printer warranties, maintaining coverage, and deciding whether extended protection makes sense for you.",
     icon: Shield,
     color: "bg-green-600",
-    readTime: "7 min read",
+    readTime: "13 min read",
     sections: [
       {
-        id: "introduction",
-        title: "Introduction",
-        content: "Understanding your printer's warranty coverage helps you make informed decisions about protection and repairs. This guide explains standard warranty terms, what's covered and excluded, and how extended protection plans can provide additional peace of mind for your investment."
+        id: "why-warranty-matters",
+        title: "Why Warranty Coverage Matters",
+        content: "Most people ignore warranty information until something breaks. Then they scramble to find receipts, figure out coverage terms, and learn they've inadvertently voided their protection. Understanding warranty coverage before you need it saves frustration and money. Printer warranties aren't complicated, but they have specific rules. Knowing those rules helps you maintain coverage, make informed repair decisions, and avoid expensive surprises. This guide explains what warranties actually cover, what they don't, and how to think about extended protection."
       },
       {
-        id: "standard-warranty",
-        title: "Standard Warranty Coverage",
-        content: "Most inkjet printers include a one-year limited warranty covering manufacturing defects in materials and workmanship. Coverage begins from the purchase date and includes repair or replacement at the manufacturer's discretion. The warranty covers the printer hardware and included printhead. Keep your purchase receipt as proof of warranty start date—registration helps verify coverage and provides product update notifications."
+        id: "standard-warranty-coverage",
+        title: "Standard Warranty Coverage Explained",
+        content: "Most inkjet printers include a one-year limited warranty starting from the purchase date. This covers manufacturing defects in materials and workmanship — essentially, problems that aren't your fault. If a component fails under normal use due to a manufacturing issue, the warranty covers repair or replacement. Coverage typically includes the printer hardware, electronic components, and mechanical parts. The manufacturer decides whether to repair your printer or replace it with an equivalent model. Registration isn't usually required for coverage, but it helps verify your purchase date if receipts are lost."
       },
       {
         id: "whats-covered",
-        title: "What's Covered",
-        content: "Standard warranties cover defects arising from normal use as intended. This includes hardware failures, electronic component defects, and manufacturer printhead problems. Many printers offer printhead coverage for extended periods, sometimes up to 3 years. Firmware-related issues are typically addressed through updates. Warranties cover printers used with genuine ink cartridges as specified. Coverage includes parts and labor for authorized repairs or replacement with equivalent units if repair isn't feasible."
+        title: "What Standard Warranties Actually Cover",
+        content: "Standard warranties cover failures resulting from normal, intended use. This includes electronic component failures, motor malfunctions, display defects, power supply issues, and factory printhead problems. If your printer stops working properly and you've used it as designed, the warranty likely applies. Coverage includes parts and labor for authorized repairs. If repair isn't feasible, manufacturers provide replacement with equivalent units — sometimes refurbished, sometimes new. Firmware issues are addressed through software updates rather than warranty repairs. The warranty ensures you get a working printer for at least the covered period when used as intended."
       },
       {
-        id: "exclusions",
-        title: "What's Excluded",
-        content: "Warranties don't cover consumables like ink cartridges and paper. Physical damage from drops, spills, or improper handling isn't covered. Issues arising from non-genuine ink cartridges may void warranty protection. Damage from power surges, unless using recommended surge protection, is excluded. Normal wear items like paper feed rollers may have limited coverage. Modifications, unauthorized repairs, or commercial use of consumer models may void coverage. Software issues unrelated to printer firmware are typically excluded."
+        id: "whats-excluded",
+        title: "What Warranties Don't Cover",
+        content: "Warranties exclude many things. Consumables — ink cartridges, paper, maintenance kits — are never covered. Physical damage from drops, spills, or mishandling is excluded. Damage from power surges isn't covered unless you used recommended surge protection. Normal wear on components like paper rollers may have limited coverage. Using the printer for purposes beyond its intended design (commercial use on a home printer, for example) can void coverage. Software problems unrelated to printer firmware aren't covered. And modifications or unauthorized repairs immediately void most warranties."
       },
       {
-        id: "extended-options",
-        title: "Extended Protection Options",
-        content: "Extended protection plans provide coverage beyond standard warranties. Available from manufacturers and retailers, these plans extend coverage for additional years and may include accidental damage protection. Coverage typically mirrors the standard warranty with longer duration. Some plans include expedited replacement rather than repair. Consider extended protection for premium printers where replacement costs are significant. Weigh plan costs against printer price and your risk tolerance to determine value."
+        id: "printhead-warranty",
+        title: "Printhead Warranty: A Special Case",
+        content: "Printheads deserve special attention because they're expensive components. Some printers have replaceable printheads; others have permanent printheads built into the printer. Replaceable printhead warranties vary — some manufacturers cover them for the same period as the printer, others for longer. Permanent printheads are covered as part of the printer warranty. Importantly, printhead coverage often depends on using genuine ink cartridges. Non-genuine inks may damage printheads in ways not covered by warranty. If printhead replacement costs approach the printer's value, warranty coverage becomes particularly valuable."
+      },
+      {
+        id: "third-party-ink-impact",
+        title: "How Third-Party Ink Affects Your Warranty",
+        content: "This is where many people unknowingly void their warranty. Using non-genuine ink cartridges doesn't automatically void the entire warranty — that would likely violate consumer protection laws in many regions. However, if a problem is caused by third-party ink, that specific damage isn't covered. Third-party inks may clog printheads, leak inside the printer, or damage sensors. If the manufacturer determines that non-genuine ink caused the failure, warranty claims can be denied. Genuine cartridges cost more but maintain full warranty protection. It's a trade-off worth considering, especially for printers with expensive printheads."
+      },
+      {
+        id: "maintaining-warranty-validity",
+        title: "How to Maintain Warranty Validity",
+        content: "Keeping your warranty valid is straightforward. Save your purchase receipt — it proves your warranty start date. Register your printer with the manufacturer if they offer registration. Use the printer as intended; don't use a home printer for commercial volumes. Use genuine ink cartridges, especially if printhead coverage matters to you. Don't attempt repairs yourself or have unauthorized parties service the printer. Keep the printer in a reasonable environment; extreme conditions may void coverage. Follow maintenance guidelines in the manual. These aren't burdensome requirements — they're common-sense usage."
+      },
+      {
+        id: "when-extended-protection-makes-sense",
+        title: "When Extended Protection Makes Sense",
+        content: "Extended protection plans extend coverage beyond the standard warranty period. Whether they're worth purchasing depends on several factors. Consider the printer's price: extended protection on a fifty-dollar printer makes little sense, but it might make sense on a three-hundred-dollar model. Consider your risk tolerance: some people prefer paying for certainty. Consider usage: heavy users stress printers more than light users. Consider the plan's cost relative to the printer's price — if the plan costs thirty percent of the printer's value, replacement might be a better bet. Extended protection provides peace of mind, but that peace has a price."
+      },
+      {
+        id: "what-extended-plans-cover",
+        title: "What Extended Protection Plans Cover",
+        content: "Extended plans typically mirror standard warranty coverage with longer duration. They cover manufacturing defects, component failures, and sometimes accidental damage. Accidental damage protection — drops, spills, power surges — is a significant upgrade from standard warranties. Some plans include expedited replacement rather than repair, minimizing downtime. Coverage may include peripherals like power adapters and cables. Read the fine print carefully; exclusions exist. Consumables are still excluded. Pre-existing conditions aren't covered. There may be deductibles or service fees. Understand exactly what you're buying before purchasing."
+      },
+      {
+        id: "manufacturer-vs-retailer-plans",
+        title: "Manufacturer vs. Retailer Protection Plans",
+        content: "Both manufacturers and retailers offer extended protection. Manufacturer plans are specific to their products and typically handled through their service network. Retailer plans cover products from multiple manufacturers and may be handled through different service providers. Manufacturer plans may offer better integration with the product's service infrastructure. Retailer plans may offer more flexibility in coverage options. Compare terms, coverage limits, deductibles, and claim processes before deciding. Neither option is universally better; evaluate each on its merits for your specific printer and situation."
+      },
+      {
+        id: "filing-warranty-claims",
+        title: "How to File Warranty Claims",
+        content: "When something goes wrong, the claim process matters. Start by contacting the manufacturer's support line or website. Have your model number, serial number, and purchase information ready. Describe the problem clearly and accurately. Support may walk you through troubleshooting steps first — this isn't stalling, it's standard procedure that often resolves issues. If repair or replacement is needed, you'll receive instructions for shipping (often prepaid) or locating authorized service centers. Keep records of all communications. Repairs may take one to three weeks depending on parts availability. Be patient but persistent if the process stalls."
+      },
+      {
+        id: "common-warranty-mistakes",
+        title: "Common Warranty Mistakes to Avoid",
+        content: "The most common mistake is losing purchase receipts. Digital receipts and email confirmations help, but keep physical receipts for major purchases. Another mistake: attempting DIY repairs that void coverage. Opening the printer beyond user-accessible areas typically voids the warranty. Using third-party repair services — even competent ones — usually voids manufacturer coverage. Ignoring registration reminders means losing a backup proof of purchase. Assuming damage is 'too minor' to claim wastes coverage you've paid for. And waiting until after the warranty expires to address problems means paying for repairs that would have been free."
+      },
+      {
+        id: "evaluating-protection-value",
+        title: "Evaluating Protection Plan Value",
+        content: "To evaluate a protection plan, consider the math. If a plan costs forty dollars annually and the printer costs two hundred dollars, you'd need the plan to prevent at least one significant repair over its lifetime to break even. Estimate repair probability based on manufacturer reputation, your usage patterns, and historical reliability. Consider what you'd do without coverage — would you repair or replace? If replacement is likely either way, protection plans add less value. If you'd repair, plans may save money. Also value peace of mind: some people prefer certain costs over uncertain risks, even when the math doesn't favor protection."
+      },
+      {
+        id: "final-perspective",
+        title: "Final Perspective: Warranty as Risk Management",
+        content: "Warranties and protection plans are risk management tools. Standard warranties protect against manufacturing defects at no additional cost — use them by maintaining coverage properly. Extended plans transfer repair risk from you to the insurer — worthwhile for some people and printers, unnecessary for others. The key is making informed decisions: understand what's covered, maintain your coverage, and evaluate extended protection based on real math rather than sales pressure. Most inkjet printers work reliably for years. But when problems occur, understanding your warranty situation turns a stressful surprise into a manageable process."
       }
     ],
     keyPoints: [
-      "Standard warranty typically lasts one year from purchase",
-      "Keep purchase receipt for warranty verification",
-      "Genuine ink cartridge use maintains warranty validity",
-      "Consumables like ink and paper aren't covered",
-      "Extended plans provide longer coverage and peace of mind"
+      "Standard warranties cover manufacturing defects for one year — maintain coverage by using genuine ink and keeping receipts",
+      "Third-party ink doesn't automatically void warranty, but damage caused by non-genuine ink isn't covered",
+      "Printhead coverage often depends on genuine cartridge use — particularly important given printhead replacement costs",
+      "Extended protection makes more sense for expensive printers and heavy users than for budget models",
+      "Save purchase receipts and register your printer — you'll need proof of purchase for warranty claims"
     ],
     recommendations: [
       {
