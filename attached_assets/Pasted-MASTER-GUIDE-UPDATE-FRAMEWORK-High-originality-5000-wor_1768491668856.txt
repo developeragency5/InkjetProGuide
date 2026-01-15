@@ -1,0 +1,268 @@
+MASTER GUIDE UPDATE FRAMEWORK
+
+(High originality • 5000+ words • Semrush-safe • Human tone)
+
+1. START WITH BEHAVIOR, NOT FEATURES
+
+❌ Don’t start with specs, models, or categories
+✅ Start with how people actually print
+
+Rule
+
+Always describe real-world behavior first (frequency, urgency, stress, habits)
+
+Why
+
+Semrush flags feature-first content as template-based
+
+Behavior-first writing breaks similarity patterns
+
+2. REDEFINE THE PROBLEM IN HUMAN TERMS
+
+❌ “This guide compares X vs Y”
+✅ “People struggle because…”
+
+Rule
+
+Explain why users feel confused or frustrated
+
+Name the pain, not the product
+
+Why
+
+Originality increases when content reframes the problem instead of repeating known facts
+
+3. NEVER USE GENERIC GUIDE STRUCTURES
+
+Avoid these headings:
+
+“Overview”
+
+“Features”
+
+“Specifications”
+
+“Pros and Cons”
+
+“Which One Is Best”
+
+Replace with:
+
+“How This Feels in Real Use”
+
+“Where People Get This Wrong”
+
+“What Happens After 6 Months”
+
+“Why This Starts to Feel Expensive”
+
+4. BUILD A NON-LINEAR STRUCTURE
+
+❌ Step 1 → Step 2 → Step 3
+✅ Jump between cause → effect → consequence
+
+Rule
+
+Mix psychology, cost, workflow, and behavior
+
+Don’t follow predictable SEO flows
+
+Why
+
+Semrush rewards entropy (variation in sentence & idea patterns)
+
+5. PAGES PER MONTH IS ALWAYS THE ANCHOR
+
+Every guide must reference:
+
+pages per month
+
+light / moderate / high volume
+
+how wrong estimation causes regret
+
+Why
+
+This is the most realistic printer decision metric
+
+Reinforces authority & practicality
+
+6. ALWAYS EXPLAIN TRADE-OFFS
+
+❌ “This is better”
+✅ “This is better if…”
+
+Rule
+
+Every benefit must have a cost
+
+Every weakness must have a reason
+
+Why
+
+Balanced explanations sound human
+
+Removes marketing tone → boosts originality
+
+7. WRITE IN ACTIVE, CONFIDENT VOICE
+
+❌ “Printers are designed to…”
+✅ “These printers assume you will…”
+
+Rule
+
+Address the reader directly
+
+Use short, confident sentences
+
+Avoid academic phrasing
+
+8. REMOVE BRAND DEPENDENCY
+
+❌ Relying on product names
+✅ Explain decisions without brands
+
+Rule
+
+Brands may appear only once if required
+
+Never structure content around brands
+
+Why
+
+Brand-heavy content triggers similarity detection
+
+Decision logic is more evergreen
+
+9. COST = MONEY + TIME + MENTAL LOAD
+
+Always cover:
+
+Cost per page
+
+Ink behavior
+
+Time lost to interruptions
+
+Stress and inconvenience
+
+Why
+
+Most guides ignore mental cost
+
+This differentiates content strongly
+
+10. EXPLAIN “WHY IT FEELS BAD” MOMENTS
+
+Include sections like:
+
+“Why this starts to feel slow”
+
+“Why people regret this later”
+
+“Why this becomes annoying over time”
+
+Why
+
+These insights are rarely stated directly
+
+Massive originality boost
+
+11. NEVER PAD — EXPAND THROUGH DEPTH
+
+To reach 5000+ words, expand by:
+
+Adding consequences
+
+Adding scenarios
+
+Adding long-term effects
+
+Adding growth considerations
+
+❌ Don’t repeat facts
+✅ Expand impact
+
+12. MAINTAIN INTERNAL CONSISTENCY
+
+Across all guides:
+
+Same logic rules
+
+Same definitions
+
+Same decision anchors
+
+Why
+
+Prevents cross-guide plagiarism flags
+
+Builds topical authority
+
+13. USE SEO KEYWORDS AS NATURAL CONSEQUENCES
+
+❌ Force keywords into sentences
+✅ Let them appear naturally as part of explanation
+
+Example:
+
+duplex printing → discussed while explaining paper savings
+
+pages per minute → explained during speed frustration
+
+small business → appears in workload pressure sections
+
+14. REMOVE “SALES LANGUAGE” COMPLETELY
+
+Avoid words like:
+
+best
+
+top
+
+revolutionary
+
+ultimate
+
+perfect choice
+
+Replace with:
+
+“fits better”
+
+“makes sense when”
+
+“becomes a problem if”
+
+15. END WITH CONFIRMATION, NOT CTA
+
+❌ “Buy now / Choose wisely”
+✅ “You chose right if…”
+
+Why
+
+Reinforces trust
+
+Feels human, not promotional
+
+16. FINAL QUALITY CHECK (MANDATORY)
+
+Before publishing, confirm:
+
+✔ No images mentioned
+
+✔ No ALT text
+
+✔ No links
+
+✔ No UI/app mentions
+
+✔ No repetitive headings
+
+✔ Over 5000 words
+
+✔ No copy-paste structures
+
+ONE-SENTENCE SUMMARY (SAVE THIS)
+
+We don’t write printer guides — we explain printing behavior and let the correct decision become obvious.
