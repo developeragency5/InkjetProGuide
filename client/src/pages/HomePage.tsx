@@ -1123,7 +1123,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-2xl mb-4">Competitive Pricing</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Fair and competitive pricing with periodic promotions and special offers.
+                  We work with independent distribution channels to offer fair, competitive pricing on every printer in our catalog. Our pricing reflects real market value without inflated markups. We periodically run promotions and special offers on select models, giving you opportunities to save even more. Check back regularly or browse our current inventory to find the best value for your printing needs.
                 </p>
               </CardContent>
             </Card>
