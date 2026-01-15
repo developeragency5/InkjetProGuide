@@ -1,6 +1,6 @@
 import { Link, useParams } from "wouter";
 import { useEffect } from "react";
-import { CheckCircle, ShoppingCart } from "lucide-react";
+import { CheckCircle, ShoppingCart, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -29,6 +29,19 @@ export default function BeginnersGuidePage() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Sticky Back to Guides Bar */}
+      <div className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <Link href="/guides">
+            <Button variant="ghost" size="sm" className="gap-2" data-testid="button-back-to-guides">
+              <ArrowLeft className="w-4 h-4" />
+              Back to All Guides
+            </Button>
+          </Link>
+          <Badge variant="secondary">{guideData.readTime}</Badge>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-background py-12">
         <div className="max-w-4xl mx-auto px-4">
@@ -49,7 +62,6 @@ export default function BeginnersGuidePage() {
             <div className={`w-12 h-12 ${guideData.color} rounded-lg flex items-center justify-center`}>
               <Icon className="w-6 h-6 text-white" />
             </div>
-            <Badge>{guideData.readTime}</Badge>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4" data-testid="text-guide-title">
             {guideData.title}
