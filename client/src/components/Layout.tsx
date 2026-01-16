@@ -1,6 +1,7 @@
 import { ReactNode, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, User, ShoppingCart } from "lucide-react";
+import logoImage from "@assets/Gemini_Generated_Image_ngig6ingig6ingig_1768592289709.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useMutation } from "@tanstack/react-query";
@@ -153,10 +154,12 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <Link href="/">
-              <span className="flex items-center gap-2 cursor-pointer" data-testid="link-home">
-                <h1 className="text-3xl font-bold text-primary tracking-tight">
-                  InkjetProGuide
-                </h1>
+              <span className="flex items-center cursor-pointer" data-testid="link-home">
+                <img 
+                  src={logoImage} 
+                  alt="InkjetProGuide - Printers and Guides" 
+                  className="h-12 md:h-14 w-auto"
+                />
               </span>
             </Link>
 
@@ -286,11 +289,12 @@ export function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             {/* Company Info - Larger Column */}
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">I</span>
-                </div>
-                <h3 className="font-bold text-xl">InkjetProGuide</h3>
+              <div className="mb-4">
+                <img 
+                  src={logoImage} 
+                  alt="InkjetProGuide - Printers and Guides" 
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                 InkjetProGuide is an independent online retailer serving customers in the United States. We provide informational buying guides and sell printers sourced through independent distribution channels. We are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
