@@ -166,7 +166,7 @@ export default function PrivacyPolicyPage() {
                     InkjetProGuide is an independent online retailer serving customers in the United States. We are committed to protecting your personal information and your right to privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website, make a purchase, create an account, or otherwise interact with our services.
                   </p>
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-intro-2">
-                    This Privacy Policy applies to all information collected through our website (inkjetproguide.com), as well as any related services, sales, marketing, or events conducted by InkjetProGuide. We have carefully designed this policy to be transparent about our data practices and to give you meaningful control over your personal information. By accessing or using our website, placing an order, creating an account, subscribing to our newsletter, or contacting us, you acknowledge that you have read and understood this Privacy Policy and agree to its terms. If you do not agree with our policies and practices, please discontinue use of our services immediately. We encourage you to review this policy periodically, as we may update it from time to time to reflect changes in our practices, legal requirements, or industry standards.
+                    This Privacy Policy applies to all information collected through our website (inkjetproguide.com), as well as any related services, sales, marketing, or events conducted by InkjetProGuide. We have carefully designed this policy to be transparent about our data practices and to give you meaningful control over your personal information. By using the Site, you acknowledge you have read this Privacy Policy. We encourage you to review this policy periodically, as we may update it from time to time to reflect changes in our practices, legal requirements, or industry standards.
                   </p>
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-intro-3">
                     This Privacy Policy was last updated on January 9, 2026. The effective date listed above indicates when this policy became effective. We may retain prior versions for recordkeeping and can provide them upon request where available. Our commitment to your privacy extends beyond mere compliance with applicable laws; we strive to earn and maintain your trust through transparent communication and responsible data stewardship. If you have any questions about this Privacy Policy or our data practices, please contact us using the information provided in the "Contact Us" section at the end of this document. We value your feedback and are committed to addressing any concerns you may have about how we handle your personal information.
@@ -282,7 +282,7 @@ export default function PrivacyPolicyPage() {
                         Automatically Collected Information
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-auto-collection">
-                        When you access our website, certain information is collected automatically through cookies, pixel tags, web beacons, and similar tracking technologies. Cookies are small data files stored on your device that help us recognize your browser and remember your preferences. We use session cookies that expire when you close your browser and persistent cookies that remain on your device for a set period. Pixel tags and web beacons are tiny graphic images embedded in web pages or emails that help us track page views and email engagement. Our analytics tools automatically collect information about your browsing behavior, including pages visited, time spent on each page, navigation paths, scroll depth, and click patterns. We also automatically collect technical information about your device and internet connection, including your IP address, browser type and version, operating system, screen resolution, device identifiers, and language preferences. This automated collection enables us to maintain website functionality, analyze site performance, personalize your experience, and detect security threats.
+                        When you access our website, certain information is collected automatically through cookies, pixel tags, web beacons, and similar tracking technologies. Cookies are small data files stored on your device that help us recognize your browser and remember your preferences. We use session cookies that expire when you close your browser and persistent cookies that remain on your device for a set period. Pixel tags and web beacons are tiny graphic images embedded in web pages or emails that help us track page views and email engagement. Our analytics tools automatically collect information about your browsing behavior, including pages visited, time spent on each page, navigation paths, and click patterns. We also automatically collect technical information about your device and internet connection, including your IP address, browser type and version, operating system, screen resolution, device identifiers, and language preferences. This automated collection enables us to maintain website functionality, analyze site performance, personalize your experience, and detect security threats.
                       </p>
                     </div>
 
@@ -360,7 +360,7 @@ export default function PrivacyPolicyPage() {
                         Fraud Prevention & Security
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-use-security">
-                        We use personal information to detect, prevent, and investigate fraudulent transactions, security breaches, and other harmful activities. This includes analyzing order patterns, verifying payment information, confirming shipping addresses, and monitoring for suspicious account activity. We may use IP addresses, device fingerprints, and behavioral data to identify potential fraud risks and protect both our customers and our business. Security monitoring helps us maintain the integrity of our website and protect customer data from unauthorized access or misuse.
+                        We use personal information to detect, prevent, and investigate fraudulent transactions, security breaches, and other harmful activities. This includes analyzing order patterns, verifying payment information, confirming shipping addresses, and monitoring for suspicious account activity. We may use IP addresses and behavioral data to identify potential fraud risks and protect both our customers and our business. Security monitoring helps us maintain the integrity of our website and protect customer data from unauthorized access or misuse.
                       </p>
                     </div>
 
@@ -408,7 +408,7 @@ export default function PrivacyPolicyPage() {
                         Shipping Carriers
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-share-shipping">
-                        We share your shipping information with carrier partners to fulfill and deliver your orders. This includes your name, delivery address, phone number, and order details necessary for successful delivery. Shipping carriers use this information to create shipping labels, plan delivery routes, provide tracking information, and contact you regarding delivery issues or special instructions. Our carrier partners may include major services such as USPS, UPS, FedEx, and DHL, depending on your location and shipping preferences. Carriers maintain their own privacy practices and are required to protect your information and use it only for delivery purposes. We may also receive tracking updates and delivery confirmations from carriers, which we use to update your order status and resolve any delivery issues.
+                        We share your shipping information with carrier partners to fulfill and deliver your orders. This includes your name, delivery address, phone number, and order details necessary for successful delivery. Shipping carriers use this information to create shipping labels, plan delivery routes, provide tracking information, and contact you regarding delivery issues or special instructions. Our carrier partners may include USPS, UPS, FedEx, or other carriers you select at checkout. Carriers maintain their own privacy practices and are required to protect your information and use it only for delivery purposes. We may also receive tracking updates and delivery confirmations from carriers, which we use to update your order status and resolve any delivery issues.
                       </p>
                     </div>
 
@@ -428,7 +428,7 @@ export default function PrivacyPolicyPage() {
                         Marketing Platforms
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-share-marketing">
-                        With your consent, we may share your information with marketing platforms to deliver personalized advertising and promotional communications. This includes email marketing services that help us send newsletters and promotional offers, as well as advertising platforms that enable us to show you relevant ads on other websites. You can control marketing communications through your account settings and opt-out links in our emails. We only share information with marketing partners when you have provided appropriate consent, and we honor your opt-out requests promptly. Marketing platforms are contractually required to use your information only for the marketing purposes we specify and to maintain appropriate data protection measures.
+                        With your consent, we may share your information with marketing platforms to deliver personalized advertising and promotional communications. This includes email marketing services that help us send newsletters and promotional offers, as well as advertising platforms that enable us to show you relevant ads on other websites. We may share online identifiers (such as cookie IDs, device identifiers, and IP address) with advertising partners for measurement and ad delivery, subject to your cookie choices and applicable law. You can control marketing communications through your account settings and opt-out links in our emails. We only share information with marketing partners when you have provided appropriate consent, and we honor your opt-out requests promptly. Marketing platforms are contractually required to use your information only for the marketing purposes we specify and to maintain appropriate data protection measures.
                       </p>
                     </div>
 
@@ -516,7 +516,7 @@ export default function PrivacyPolicyPage() {
                         </div>
                       </div>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-retention-marketing">
-                        Your email address and marketing preferences are retained for as long as you remain subscribed to our marketing communications. When you unsubscribe, we will stop sending you marketing emails immediately and will delete your marketing preferences within 30 days. However, we maintain a suppression list of unsubscribed email addresses to ensure we do not accidentally re-add you to our marketing list. You may also request complete deletion of your email address from our systems, which will remove you from both active and suppression lists.
+                        Your email address and marketing preferences are retained for as long as you remain subscribed to our marketing communications. When you unsubscribe, we will stop sending you marketing emails immediately and will delete your marketing preferences within 30 days. We may retain a record of your opt-out to ensure we honor your request.
                       </p>
                     </div>
                   </div>
@@ -584,7 +584,7 @@ export default function PrivacyPolicyPage() {
                         Right to Limit Use of Sensitive Personal Information
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-right-limit">
-                        You have the right to limit our use of sensitive personal information to purposes necessary for providing goods or services. Sensitive personal information includes precise geolocation data, racial or ethnic origin, religious beliefs, union membership, personal health information, sexual orientation, and similar categories. We collect limited sensitive personal information (primarily precise billing addresses for payment verification) and use it only for purposes necessary to fulfill your orders and prevent fraud. You may request that we limit our use of sensitive personal information at any time.
+                        You have the right to limit our use of sensitive personal information to purposes necessary for providing goods or services. Sensitive personal information includes precise geolocation data, racial or ethnic origin, religious beliefs, union membership, personal health information, sexual orientation, and similar categories. We do not use sensitive personal information for purposes other than providing our services, security, fraud prevention, and compliance with law. You may request that we limit our use of sensitive personal information at any time.
                       </p>
                     </div>
 
@@ -681,7 +681,7 @@ export default function PrivacyPolicyPage() {
                     </ul>
 
                     <p className="text-muted-foreground leading-relaxed" data-testid="text-optout-processing">
-                      We will process your opt-out request within 15 business days and will not share your personal information for cross-context behavioral advertising purposes going forward. Please note that opting out of data sharing does not opt you out of all advertising; you may still see generic advertisements that are not personalized based on your browsing behavior. Additionally, opting out on one device or browser does not automatically opt you out on other devices or browsers—you will need to submit opt-out requests for each device and browser you use.
+                      We will process requests as soon as reasonably possible, and within the time required by applicable law. Opt-out applies to cross-context behavioral advertising; it does not stop contextual ads. Please note that opting out of data sharing does not opt you out of all advertising; you may still see generic advertisements that are not personalized based on your browsing behavior. Additionally, opting out on one device or browser does not automatically opt you out on other devices or browsers—you will need to submit opt-out requests for each device and browser you use.
                     </p>
                   </div>
                 </CardContent>
@@ -747,7 +747,7 @@ export default function PrivacyPolicyPage() {
                       Some browsers offer "Do Not Track" settings. Because there is no widely accepted standard for how to interpret these signals, our site may not respond to DNT signals.
                     </p>
                     <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-dnt-2">
-                      We do honor Global Privacy Control (GPC) signals where required and treat GPC as a valid request to opt out of "sharing" for cross-context behavioral advertising for California residents.
+                      Where supported, we will process Global Privacy Control (GPC) signals and treat GPC as a valid request to opt out of "sharing" for cross-context behavioral advertising for California residents.
                     </p>
                   </div>
                 </CardContent>

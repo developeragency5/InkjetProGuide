@@ -1,0 +1,167 @@
+TASK: Apply targeted legal-compliance fixes to the Terms & Conditions / Purchase Policy.
+
+SCOPE:
+- Apply ONLY to the Terms & Conditions (including Purchase / Order sections).
+- Do NOT modify Privacy Policy, Disclaimer, or Warranty pages unless explicitly referenced.
+- Replace only the specified sentences/paragraphs.
+
+────────────────────────
+HIGH-RISK FIX 1: Risk of Loss (CRITICAL – MUST FIX)
+────────────────────────
+
+LOCATION:
+Section 6 – Title and Risk of Loss (or equivalent section).
+
+TEXT TO REMOVE:
+“Risk of loss passes to you upon delivery to the carrier.”
+
+APPROVED SAFE REPLACEMENT (USE EXACTLY):
+
+“Title to Products passes to you upon delivery to the shipping address specified in your order. Risk of loss remains with InkjetProGuide until the Product is delivered to the carrier-confirmed destination, except where otherwise required by applicable law.”
+
+RULES:
+- Replace the entire risk-of-loss paragraph.
+- Do NOT state risk transfers at carrier pickup.
+
+────────────────────────
+HIGH-RISK FIX 2: Order Refusal – Resale Language
+────────────────────────
+
+LOCATION:
+Order Acceptance and Refusal section.
+
+TEXT TO REMOVE:
+“Orders that appear to be for resale purposes.”
+
+APPROVED CLARIFIED REPLACEMENT (USE EXACTLY):
+
+“Orders that appear to be placed for unauthorized resale in violation of manufacturer or distributor policies, or that exceed reasonable household or business quantities.”
+
+RULES:
+- Replace wording only.
+- Do NOT add discretionary or vague language.
+
+────────────────────────
+HIGH-RISK FIX 3: Arbitration vs Venue Consistency
+────────────────────────
+
+LOCATION:
+Section 12 – Governing Law / Venue
+AND
+Section 13 – Arbitration
+
+ADD the following sentence at the END of Section 12 (Venue):
+
+“This venue provision applies only to matters not subject to arbitration under Section 13.”
+
+RULES:
+- Do NOT remove arbitration language.
+- Do NOT remove small-claims exception.
+
+────────────────────────
+HIGH-RISK FIX 4: Warranty Disclaimer – Consumer Law Carve-Out
+────────────────────────
+
+LOCATION:
+Section 9 – Warranty Disclaimer.
+
+ADD the following sentence at the END of the warranty disclaimer section:
+
+“Nothing in these Terms limits rights you may have under applicable consumer protection laws.”
+
+RULES:
+- Keep existing “some jurisdictions do not allow exclusions” language.
+- This sentence must be clearly visible, not buried.
+
+────────────────────────
+MEDIUM-RISK FIX 5: Changes to Terms – Notice Language
+────────────────────────
+
+LOCATION:
+Section 15 – Changes to Terms (or similar).
+
+TEXT TO REMOVE:
+“There is no obligation on our part to notify you of changes…”
+
+APPROVED SAFER REPLACEMENT (USE EXACTLY):
+
+“We will provide reasonable notice of material changes where required by law.”
+
+────────────────────────
+MEDIUM-RISK FIX 6: Data Scraping Clarification (Optional but Recommended)
+────────────────────────
+
+LOCATION:
+Prohibited Conduct – Data Scraping / Automated Access.
+
+ADD this sentence at the END of the scraping prohibition:
+
+“This restriction applies regardless of whether content is publicly accessible.”
+
+────────────────────────
+MEDIUM-RISK FIX 7: Restocking Fee Disclosure
+────────────────────────
+
+LOCATION:
+Returns / Restocking Fees section.
+
+ADD this sentence (USE EXACTLY):
+
+“Any applicable restocking fee will be disclosed before return authorization.”
+
+RULES:
+- Do NOT change fee percentages or eligibility rules.
+
+────────────────────────
+MEDIUM-RISK FIX 8: Warranty Assistance Expectations
+────────────────────────
+
+LOCATION:
+Defective Products & Warranty Claims section.
+
+TEXT TO REPLACE:
+“We will provide assistance with warranty claims…”
+
+APPROVED SAFER VERSION (USE EXACTLY):
+
+“We may, at our discretion, provide manufacturer contact information to assist customers in initiating warranty claims.”
+
+RULES:
+- Avoid implying obligation or service responsibility.
+
+────────────────────────
+LOW-RISK POLISH 9: Acceptance Language Consistency
+────────────────────────
+
+GLOBAL CHANGE (OPTIONAL BUT RECOMMENDED):
+
+Ensure acceptance language is consistent by using:
+“acknowledge and agree”
+
+Replace any final sentence that says only:
+“By using the website, you agree…”
+
+WITH:
+“By using the website, you acknowledge and agree…”
+
+────────────────────────
+LOW-RISK POLISH 10: Minor Terminology Cleanup (OPTIONAL)
+────────────────────────
+
+- Replace repeated “order inquiries” with “order inquiries and support”.
+- Replace “inkjet printing needs” with “printing needs”.
+
+Do NOT change meaning or scope.
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- Risk of loss does NOT transfer at carrier pickup.
+- Order refusal language is objective and defensible.
+- Arbitration and venue sections no longer conflict.
+- Warranty disclaimer acknowledges consumer law rights.
+- No hostile “no obligation to notify” language remains.
+- Restocking fees are clearly disclosed pre-authorization.
+- Warranty assistance is discretionary, not promised.
+
+GOAL:
+Make the Terms enforceable, chargeback-resistant, and compliant with U.S. consumer protection expectations while remaining Google Ads and brand-policy safe.

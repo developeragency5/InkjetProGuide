@@ -1,0 +1,155 @@
+TASK: Patch the Privacy Policy to remove consent/over-claim risks and align wording with an independent US e-commerce store + guides running search ads.
+
+SCOPE:
+- Apply ONLY to the Privacy Policy page.
+- Make wording edits only; do NOT change site functionality.
+- Do NOT add technical claims (pixels/GPC detection) unless the policy already states them and they are truly implemented.
+
+────────────────────────
+HIGH-RISK FIX 1: Remove “agree to this Privacy Policy” contract-style language
+────────────────────────
+
+FIND the sentence(s) like:
+“By using the Site… you acknowledge… and agree to its terms… If you do not agree, discontinue…”
+
+REPLACE that language with (USE EXACTLY):
+
+By using the Site, you acknowledge you have read this Privacy Policy.
+
+RULES:
+- Do NOT use “agree”, “consent”, or “accept” for the Privacy Policy as a whole.
+- Keep consent language ONLY where consent is actually collected (e.g., cookies/marketing emails).
+
+────────────────────────
+HIGH-RISK FIX 2: Marketing platforms / personalized ads — add safe identifier clarification + opt-out scope
+────────────────────────
+
+UNDER the section discussing “Marketing Platforms”, “Advertising”, “Personalized ads”, or similar,
+ADD this sentence (USE EXACTLY):
+
+We may share online identifiers (such as cookie IDs, device identifiers, and IP address) with advertising partners for measurement and ad delivery, subject to your cookie choices and applicable law.
+
+UNDER the opt-out / Do Not Sell or Share / CPRA “sharing” explanation,
+ADD this sentence (USE EXACTLY):
+
+Opt-out applies to cross-context behavioral advertising; it does not stop contextual ads.
+
+RULES:
+- Do NOT mention specific pixels (Meta, etc.) unless you actually use them.
+- Keep wording as “may” unless you are certain it is used.
+
+────────────────────────
+HIGH-RISK FIX 3: Sensitive personal information — remove incorrect billing-address framing
+────────────────────────
+
+FIND the “Sensitive personal information” paragraph that says or implies:
+“We collect limited sensitive personal information (primarily precise billing addresses…)”
+
+REPLACE that entire paragraph with (USE EXACTLY):
+
+We do not use sensitive personal information for purposes other than providing our services, security, fraud prevention, and compliance with law.
+
+RULES:
+- Do NOT classify billing address as “sensitive personal information.”
+- Do NOT list CPRA SPI categories unless you are sure.
+
+────────────────────────
+HIGH-RISK FIX 4: Payment processor naming consistency (choose ONE approach)
+────────────────────────
+
+Choose ONE option below and apply consistently across the Privacy Policy:
+
+OPTION A (Name Stripe everywhere):
+- Wherever the policy says “payment processor” or “payment provider”, update to “our payment processor, Stripe”.
+
+OPTION B (Do not name any processor):
+- Replace any mention of “Stripe” with “our payment processor”.
+
+IMPORTANT:
+- Use only ONE option site-wide within the Privacy Policy.
+
+Also ensure the Payment Information sentence remains (or is updated to match this approach):
+We collect only the information necessary to process payments and fulfill orders. Payment details are handled by our payment processor, and we do not store full card numbers on our servers.
+
+────────────────────────
+MEDIUM-RISK FIX 5: Remove or soften over-disclosure lists that may be untrue
+────────────────────────
+
+REVIEW lists mentioning items you may not actually use, such as:
+- DHL
+- U.S. territories claims
+- affiliate/partner referrals
+- co-branded promotions
+- device fingerprints
+- scroll depth
+- broad “marketing partner demographics”
+
+RULE:
+- Convert absolute statements to “may” ONLY if truly possible, or remove items that are not used.
+- If listing carriers, use safe wording:
+“USPS, UPS, FedEx (or other carriers you select at checkout).”
+
+Do NOT claim “device fingerprinting” unless actually used.
+
+────────────────────────
+MEDIUM-RISK FIX 6: Suppression list deletion promise (CAN-SPAM safe)
+────────────────────────
+
+FIND language like:
+“remove from both active and suppression lists”
+
+REPLACE with (USE EXACTLY):
+
+We may retain a record of your opt-out to ensure we honor your request.
+
+────────────────────────
+MEDIUM-RISK FIX 7: GPC wording — only if not technically guaranteed
+────────────────────────
+
+If the policy currently states an absolute claim like:
+“We honor Global Privacy Control (GPC) signals…”
+
+REPLACE that sentence with (USE EXACTLY):
+
+Where supported, we will process Global Privacy Control (GPC) signals and treat GPC as a valid request to opt out of “sharing” for cross-context behavioral advertising for California residents.
+
+RULE:
+- Use this “Where supported” version unless you are 100% sure GPC is implemented.
+
+────────────────────────
+MEDIUM-RISK FIX 8: Timing language for opt-out processing
+────────────────────────
+
+If the policy states a fixed SLA like:
+“Respond within 15 business days” for opt-out / sale-share requests,
+
+REPLACE with (USE EXACTLY):
+
+We will process requests as soon as reasonably possible, and within the time required by applicable law.
+
+────────────────────────
+LOW-RISK POLISH (OPTIONAL): Add Notice at Collection summary at the top
+────────────────────────
+
+Add a short section near the beginning titled:
+Notice at Collection (Summary)
+
+Include only high-level bullets:
+- Categories collected
+- Purposes
+- Whether you sell/share (and link to “Do Not Sell or Share” if present)
+
+RULE:
+- Keep it brief and consistent with the rest of the policy.
+
+────────────────────────
+ACCEPTANCE CHECK:
+- No “agree to this Privacy Policy” language remains.
+- Sensitive PI section is no longer incorrect.
+- Suppression list promise is compliant.
+- Marketing/ad identifier sharing is described safely with opt-out scope.
+- Payment processor naming is consistent (either always Stripe or never Stripe).
+- No false tech claims remain (GPC, fingerprinting, etc.).
+
+GOAL:
+Make the Privacy Policy audit-safe for Google Ads/manual review, CPRA/consumer expectations, and payment processor scrutiny—without over-claiming features you may not control.
