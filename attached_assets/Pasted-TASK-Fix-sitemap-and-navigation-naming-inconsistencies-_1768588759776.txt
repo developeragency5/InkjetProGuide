@@ -1,0 +1,124 @@
+TASK: Fix sitemap and navigation naming inconsistencies and apply light compliance-safe polish.
+
+SCOPE:
+- Sitemap page
+- Main navigation
+- Footer navigation
+- Do NOT modify product pages, checkout, or policies
+
+────────────────────────
+FIX 1: “All Products” vs “All Printers” inconsistency (REQUIRED)
+────────────────────────
+
+ISSUE:
+The sitemap uses “All Products” while navigation and footer use “All Printers”, creating taxonomy confusion and ad-review QA flags.
+
+DECISION (USE THIS):
+Standardize on: “All Printers”
+
+ACTION:
+- Replace “All Products” with “All Printers” in the sitemap.
+- Ensure “All Printers” is used consistently in:
+  - Sitemap
+  - Header navigation
+  - Footer navigation
+
+RULES:
+- Replace label text only.
+- Do NOT change URLs unless absolutely required.
+- Do NOT introduce both terms anywhere.
+
+────────────────────────
+MEDIUM-PRIORITY FIX 2: Wishlist visibility (ONLY IF NOT FULLY FUNCTIONAL)
+────────────────────────
+
+ISSUE:
+If Wishlist is not fully functional, listing it without context can be misleading.
+
+CHOOSE ONE OPTION:
+
+OPTION A (REMOVE):
+- Remove “Wishlist” from the sitemap and navigation.
+
+OPTION B (KEEP WITH CLARIFIER):
+- Update label to:
+  “Wishlist (available for registered users)”
+
+RULE:
+- Use ONLY one option.
+- Apply consistently wherever Wishlist appears.
+
+────────────────────────
+MEDIUM-PRIORITY FIX 3: “Model Guide” ambiguity
+────────────────────────
+
+ISSUE:
+“Model Guide” can be misread as manufacturer-official.
+
+RENAME “Model Guide” to ONE of the following (choose one and use consistently):
+
+- Printer Model Guides
+OR
+- Printer Comparison Guides
+OR
+- Inkjet Model Guides
+
+RULE:
+- Replace wording only.
+- Keep content unchanged.
+
+────────────────────────
+OPTIONAL POLISH 4: Student / Home Office guide naming
+────────────────────────
+
+OPTIONAL:
+If these appear in sitemap or guide lists, rename as follows:
+
+- “Student Guide” → “Student Printing Guide”
+- “Home Office Guide” → “Home Office Printing Guide”
+
+RULE:
+- Optional but recommended.
+- Do NOT change guide content.
+
+────────────────────────
+OPTIONAL POLISH 5: Sitemap intro sentence
+────────────────────────
+
+TEXT TO REPLACE:
+“Browse all pages and sections of InkjetProGuide to find exactly what you're looking for.”
+
+OPTIONAL SAFER VERSION:
+“Browse all pages and sections of InkjetProGuide from one place.”
+
+────────────────────────
+OPTIONAL POLISH 6: Date consistency
+────────────────────────
+
+ISSUE:
+“Last Updated: January 2025” conflicts with © 2026 footer.
+
+CHOOSE ONE OPTION:
+
+OPTION A:
+Update “Last Updated” to:
+January 2026
+
+OPTION B:
+Update footer copyright to:
+© 2025–2026 InkjetProGuide
+
+RULE:
+- Choose one approach.
+- Keep dates consistent site-wide.
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- “All Printers” is the single, consistent term everywhere.
+- No non-functional features are implied.
+- Guide names are neutral and informational.
+- Sitemap tone avoids guarantees.
+- Dates are consistent.
+
+GOAL:
+Eliminate taxonomy confusion, reduce ad-review QA flags, and keep sitemap/navigation clean, neutral, and reseller-safe.

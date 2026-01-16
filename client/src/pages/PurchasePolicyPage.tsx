@@ -34,7 +34,7 @@ export default function PurchasePolicyPage() {
             </h2>
             <div className="space-y-3 text-muted-foreground">
               <p data-testid="text-overview-1">
-                <strong className="text-foreground">Secure Checkout:</strong> All transactions are processed through secure, encrypted payment systems to protect your financial information.
+                <strong className="text-foreground">Secure Checkout:</strong> All transactions are processed through secure, encrypted payment systems to protect your financial information. Payment details are processed by our payment processor(s). We do not store full card numbers on our servers.
               </p>
               <p data-testid="text-overview-2">
                 <strong className="text-foreground">Order Confirmation:</strong> You will receive an email confirmation immediately after placing your order with your order details and tracking information once shipped.
@@ -139,20 +139,15 @@ export default function PurchasePolicyPage() {
                 <DollarSign className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p data-testid="text-tax-1">
-                    InkjetProGuide is required to collect sales tax in states where we have a tax obligation (nexus). The applicable sales tax will be calculated and displayed during checkout before you complete your purchase.
+                    Applicable sales tax (if any) is calculated at checkout based on your shipping address and the tax rules that apply to the transaction at the time of purchase. We collect sales tax where required by law.
                   </p>
                 </div>
               </div>
               
               <ul className="space-y-2 ml-6 list-disc">
-                <li data-testid="text-tax-2"><strong className="text-foreground">Tax Calculation:</strong> Sales tax is calculated based on the shipping destination address and the applicable state and local tax rates at the time of purchase.</li>
-                <li data-testid="text-tax-3"><strong className="text-foreground">Tax-Exempt Purchases:</strong> If you are a tax-exempt organization, please contact us with your tax-exempt certificate before placing your order. We will verify your exemption and adjust your order accordingly.</li>
-                <li data-testid="text-tax-4"><strong className="text-foreground">International Orders:</strong> We currently only ship within the United States. International duties, tariffs, or import taxes do not apply.</li>
+                <li data-testid="text-tax-2"><strong className="text-foreground">Tax-Exempt Purchases:</strong> If you are a tax-exempt organization, please contact us with your tax-exempt certificate before placing your order. We will verify your exemption and adjust your order accordingly.</li>
+                <li data-testid="text-tax-3"><strong className="text-foreground">International Orders:</strong> We currently only ship within the United States. International duties, tariffs, or import taxes do not apply.</li>
               </ul>
-
-              <p data-testid="text-tax-5">
-                For orders shipped within Texas, Texas state sales tax applies. For orders shipped to other states, the applicable state's sales tax rate will be applied where we have established nexus.
-              </p>
             </CardContent>
           </Card>
         </div>
@@ -177,15 +172,19 @@ export default function PurchasePolicyPage() {
                 <ul className="space-y-2 ml-6 list-disc">
                   <li data-testid="text-cancel-2"><strong className="text-foreground">Before Shipping:</strong> Orders can be cancelled free of charge if they have not yet been shipped. Contact us immediately at inkjetproguide@outlook.com or 1-325-400-8874.</li>
                   <li data-testid="text-cancel-3"><strong className="text-foreground">After Shipping:</strong> Once an order has shipped, it cannot be cancelled. You may refuse delivery or initiate a return once the package is delivered according to our Return Policy.</li>
-                  <li data-testid="text-cancel-4"><strong className="text-foreground">Cancellation Refunds:</strong> For successfully cancelled orders, refunds are processed within 3-5 business days to your original payment method.</li>
+                  <li data-testid="text-cancel-4"><strong className="text-foreground">Cancellation Refunds:</strong> For approved cancellations, refunds are typically issued within 3–5 business days, and timing may vary depending on your payment provider and bank.</li>
                 </ul>
               </div>
 
               <div className="p-4 bg-muted/50 rounded-lg">
                 <p className="text-sm" data-testid="text-cancel-5">
-                  <strong className="text-foreground">Tip:</strong> Orders placed before 12:00 PM CT typically ship the same day. For best results, contact us within 1 hour of placing your order if you need to make changes or cancel.
+                  <strong className="text-foreground">Tip:</strong> If you need to cancel or change an order, contact us as soon as possible. We'll do our best to help, but we can't guarantee changes once fulfillment processing begins.
                 </p>
               </div>
+
+              <p className="text-sm text-muted-foreground" data-testid="text-order-processing-time">
+                Orders are typically processed within 1–2 business days. Processing times may vary based on payment verification, address validation, and fulfillment partner schedules.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -198,16 +197,18 @@ export default function PurchasePolicyPage() {
                 <AlertCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p data-testid="text-availability-1">
-                    We strive to maintain accurate inventory information on our website. However, product availability is subject to change and cannot be guaranteed until your order is confirmed.
+                    We work to keep product availability information accurate; however, availability may change due to demand, fulfillment updates, and inventory adjustments. "In Stock" indicates the item is expected to be available at the time of purchase, but availability is not guaranteed until your order is processed and confirmed for shipment.
                   </p>
                 </div>
               </div>
               
+              <p data-testid="text-availability-2">
+                If an item becomes unavailable after you place an order, we will notify you and offer a full refund or (with your approval) a comparable substitute.
+              </p>
+
               <ul className="space-y-2 ml-6 list-disc">
-                <li data-testid="text-availability-2"><strong className="text-foreground">Real-Time Inventory:</strong> Our website displays real-time inventory levels. If a product shows as "In Stock," it is available for immediate shipment.</li>
                 <li data-testid="text-availability-3"><strong className="text-foreground">Out of Stock Items:</strong> If a product is out of stock, you may contact us to inquire about expected restock dates or alternative products.</li>
-                <li data-testid="text-availability-4"><strong className="text-foreground">Backorders:</strong> We do not accept backorders. All products must be in stock at the time of purchase.</li>
-                <li data-testid="text-availability-5"><strong className="text-foreground">Inventory Discrepancies:</strong> In the rare event that a product becomes unavailable after your order is placed, we will notify you immediately and offer a full refund or a comparable substitute product.</li>
+                <li data-testid="text-availability-4"><strong className="text-foreground">Backorders:</strong> We do not accept backorders. All products must be in stock at the time of purchase. If an item becomes unavailable after an order is placed, we may cancel the item and issue a refund or offer alternatives.</li>
               </ul>
             </CardContent>
           </Card>
