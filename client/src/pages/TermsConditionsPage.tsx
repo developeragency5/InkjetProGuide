@@ -212,7 +212,7 @@ export default function TermsConditionsPage() {
                       <div className="p-4 bg-muted/30 rounded-lg" data-testid="def-content">
                         <h3 className="font-semibold text-foreground mb-2">"Content"</h3>
                         <p>
-                          Refers to all text, graphics, images, photographs, videos, audio clips, data, software, product descriptions, reviews, ratings, comments, and any other materials displayed, uploaded, or transmitted through the Site. Content includes both material created and owned by InkjetProGuide and material submitted by users, including customer reviews, feedback, and communications sent through our contact forms or order inquiries channels.
+                          Refers to all text, graphics, images, photographs, videos, audio clips, data, software, product descriptions, reviews, ratings, comments, and any other materials displayed, uploaded, or transmitted through the Site. Content includes both material created and owned by InkjetProGuide and material submitted by users, including customer reviews, feedback, and communications sent through our contact forms or order inquiries and support channels.
                         </p>
                       </div>
                       <div className="p-4 bg-muted/30 rounded-lg" data-testid="def-order">
@@ -252,7 +252,7 @@ export default function TermsConditionsPage() {
                       <ul className="list-disc pl-6 space-y-2">
                         <li><strong className="text-foreground">Fraud and Misrepresentation:</strong> Providing false, inaccurate, or misleading information; impersonating another person or entity; using false payment information; or engaging in any deceptive practices.</li>
                         <li><strong className="text-foreground">Unauthorized Access and Hacking:</strong> Attempting to gain unauthorized access to any portion of the Site, other accounts, computer systems, or networks connected to the Site through hacking, password mining, or any other means.</li>
-                        <li><strong className="text-foreground">Data Scraping and Harvesting:</strong> Using any automated system, including "robots," "spiders," "offline readers," or similar tools, to access the Site in a manner that sends more request messages to our servers than a human can reasonably produce using a conventional web browser.</li>
+                        <li><strong className="text-foreground">Data Scraping and Harvesting:</strong> Using any automated system, including "robots," "spiders," "offline readers," or similar tools, to access the Site in a manner that sends more request messages to our servers than a human can reasonably produce using a conventional web browser. This restriction applies regardless of whether content is publicly accessible.</li>
                         <li><strong className="text-foreground">Malicious Activities:</strong> Uploading, transmitting, or distributing any computer viruses, worms, Trojan horses, or other malicious code; attempting to interfere with the proper functioning of the Site.</li>
                         <li><strong className="text-foreground">Intellectual Property Violations:</strong> Copying, modifying, or distributing our content without permission; removing any copyright or proprietary notices from our materials.</li>
                       </ul>
@@ -300,7 +300,7 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-order-acceptance">
                       <h3 className="text-lg font-semibold text-foreground mb-3">Order Acceptance and Refusal</h3>
                       <p className="mb-3">
-                        Your submission of an order constitutes an offer to purchase the Products listed in your order, subject to these Terms. We reserve the right, at our sole discretion, to accept, decline, or limit any order for any reason, including but not limited to: product unavailability, errors in product or pricing information, suspected fraudulent activity, orders that appear to be for resale purposes, orders that exceed our stated quantity limits, or inability to verify your identity or payment information.
+                        Your submission of an order constitutes an offer to purchase the Products listed in your order, subject to these Terms. We reserve the right, at our sole discretion, to accept, decline, or limit any order for any reason, including but not limited to: product unavailability, errors in product or pricing information, suspected fraudulent activity, orders that appear to be placed for unauthorized resale in violation of manufacturer or distributor policies, or that exceed reasonable household or business quantities, orders that exceed our stated quantity limits, or inability to verify your identity or payment information.
                       </p>
                       <p>
                         Order confirmation emails are sent as a courtesy and do not constitute acceptance of your order. Your order is not accepted until we ship your Products and send you a shipping confirmation email. We may verify information provided with your order before acceptance, and processing times may vary accordingly. If we cancel your order after you have been charged, we will process a full refund to your original payment method within five to seven business days.
@@ -383,7 +383,7 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-title-risk">
                       <h3 className="text-lg font-semibold text-foreground mb-3">Title and Risk of Loss</h3>
                       <p className="mb-3">
-                        Title to Products purchased from InkjetProGuide passes to you upon our delivery of the Products to the shipping carrier at our fulfillment facility. Risk of loss passes to you upon delivery of the product to the shipping carrier, except where otherwise required by applicable consumer protection laws. This means that once the carrier has accepted your package from our facility, you bear the risk of loss, damage, or theft during transit. We are not liable for delays, damage, or loss that occurs after the carrier has taken possession of your shipment.
+                        Title to Products passes to you upon delivery to the shipping address specified in your order. Risk of loss remains with InkjetProGuide until the Product is delivered to the carrier-confirmed destination, except where otherwise required by applicable law.
                       </p>
                       <p>
                         We strongly recommend that you inspect all packages upon delivery and note any visible damage on the carrier's delivery receipt. If your package arrives damaged, please retain all packaging materials and contact both the carrier and us immediately. While we will assist you in filing claims with the carrier, the ultimate responsibility for pursuing shipping damage claims rests with you as the owner of the goods. For high-value orders, we recommend considering shipping insurance if offered by the carrier at checkout.
@@ -395,7 +395,7 @@ export default function TermsConditionsPage() {
                         Delivery estimates provided at checkout and in shipping confirmation emails are estimates only and are not guaranteed. Actual delivery times may vary based on carrier performance, weather conditions, natural disasters, customs delays for certain areas, local delivery conditions, and other factors beyond our control. We make every effort to ship orders promptly and accurately, but we cannot guarantee specific delivery dates or times.
                       </p>
                       <p>
-                        Standard processing time for most orders is one to two business days before shipment. During peak seasons, promotional periods, or high-volume events, processing times may be extended. We will notify you of any significant delays in processing your order. If your order has not arrived within a reasonable time after the estimated delivery date, please contact us for order inquiries about tracking your shipment. We are not liable for any damages, losses, or expenses resulting from delayed delivery, including but not limited to lost business opportunities, project delays, or consequential damages.
+                        Standard processing time for most orders is one to two business days before shipment. During peak seasons, promotional periods, or high-volume events, processing times may be extended. We will notify you of any significant delays in processing your order. If your order has not arrived within a reasonable time after the estimated delivery date, please contact us for order inquiries and support about tracking your shipment. We are not liable for any damages, losses, or expenses resulting from delayed delivery, including but not limited to lost business opportunities, project delays, or consequential damages.
                       </p>
                     </div>
                     <div data-testid="text-shipping-restrictions">
@@ -426,7 +426,7 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-30-day-summary">
                       <h3 className="text-lg font-semibold text-foreground mb-3">30-Day Return Window Summary</h3>
                       <p className="mb-3">
-                        InkjetProGuide offers a thirty (30) day return window on most Products purchased through our website. The return period begins on the date you receive your order, as confirmed by the carrier's delivery record. To be eligible for a return, Products must be in their original, unused condition with all original packaging, accessories, manuals, and documentation included. Products that have been opened, installed, used, damaged, or modified may be subject to a restocking fee of up to fifteen percent (15%) of the purchase price.
+                        InkjetProGuide offers a thirty (30) day return window on most Products purchased through our website. The return period begins on the date you receive your order, as confirmed by the carrier's delivery record. To be eligible for a return, Products must be in their original, unused condition with all original packaging, accessories, manuals, and documentation included. Products that have been opened, installed, used, damaged, or modified may be subject to a restocking fee of up to fifteen percent (15%) of the purchase price. Any applicable restocking fee will be disclosed before return authorization.
                       </p>
                       <p className="mb-3">
                         To initiate a return, you must contact us to obtain a Return Merchandise Authorization (RMA) number before shipping the Product back to us. Returns sent without an RMA number may be refused or subject to delays in processing. Return shipping eligibility and label availability are determined according to our Return & Refund Policy. Once we receive and inspect your return, refunds are typically processed within five to seven business days.
@@ -438,7 +438,7 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-defective-products">
                       <h3 className="text-lg font-semibold text-foreground mb-3">Defective Products and Warranty Claims</h3>
                       <p>
-                        If you receive a defective product or a product that is different from what you ordered, please contact us immediately. We will arrange for a replacement or refund at no additional cost to you. For products covered by manufacturer warranty, defects discovered after our return window may need to be addressed directly with the manufacturer. We will provide you with manufacturer contact information and assist you in initiating warranty claims when possible. InkjetProGuide does not provide additional warranties beyond those offered by the manufacturer.
+                        If you receive a defective product or a product that is different from what you ordered, please contact us immediately. We will arrange for a replacement or refund at no additional cost to you. For products covered by manufacturer warranty, defects discovered after our return window may need to be addressed directly with the manufacturer. We may, at our discretion, provide manufacturer contact information to assist customers in initiating warranty claims. InkjetProGuide does not provide additional warranties beyond those offered by the manufacturer.
                       </p>
                     </div>
                   </div>
@@ -515,7 +515,7 @@ export default function TermsConditionsPage() {
                     <div className="p-4 bg-muted/50 rounded-lg" data-testid="text-warranty-disclaimer">
                       <h3 className="text-sm font-semibold text-foreground mb-3 uppercase">Warranty Disclaimer Notice</h3>
                       <p className="text-sm">
-                        TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, INKJETPROGUIDE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. INKJETPROGUIDE DOES NOT WARRANT THAT THE SITE, ITS SERVERS, OR EMAIL SENT FROM INKJETPROGUIDE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. INKJETPROGUIDE WILL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING FROM THE USE OF THIS SITE, INCLUDING, BUT NOT LIMITED TO DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, AND CONSEQUENTIAL DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES, SO SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
+                        TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, INKJETPROGUIDE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. INKJETPROGUIDE DOES NOT WARRANT THAT THE SITE, ITS SERVERS, OR EMAIL SENT FROM INKJETPROGUIDE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. INKJETPROGUIDE WILL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING FROM THE USE OF THIS SITE, INCLUDING, BUT NOT LIMITED TO DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, AND CONSEQUENTIAL DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES, SO SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU. Nothing in these Terms limits rights you may have under applicable consumer protection laws.
                       </p>
                     </div>
                     <div data-testid="text-no-fitness-warranty">
@@ -626,7 +626,7 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-venue">
                       <h3 className="text-lg font-semibold text-foreground mb-3">Venue in Tarrant County, Texas</h3>
                       <p className="mb-3">
-                        You agree that any legal action or proceeding arising out of or relating to these Terms or your use of the Site shall be brought exclusively in the state or federal courts located in Tarrant County, Texas, and you hereby consent to the personal jurisdiction and venue of such courts. You agree to waive any objection to jurisdiction or venue in such courts, including any claim of inconvenient forum.
+                        You agree that any legal action or proceeding arising out of or relating to these Terms or your use of the Site shall be brought exclusively in the state or federal courts located in Tarrant County, Texas, and you hereby consent to the personal jurisdiction and venue of such courts. You agree to waive any objection to jurisdiction or venue in such courts, including any claim of inconvenient forum. This venue provision applies only to matters not subject to arbitration under Section 13.
                       </p>
                       <p>
                         This exclusive jurisdiction provision applies to all claims, whether based on contract, tort, statute, or otherwise, and whether the claim is brought against InkjetProGuide or by InkjetProGuide against you. By using the Site, you agree to submit to the jurisdiction of the courts of Tarrant County, Texas for the purpose of litigating any disputes. If any court or arbitrator finds this exclusive jurisdiction provision to be unenforceable, you agree that any dispute shall nonetheless be heard in a court or forum located in Texas.
@@ -718,7 +718,7 @@ export default function TermsConditionsPage() {
                         You agree that email communication shall constitute valid legal notice for all purposes under these Terms. Notices sent by email shall be deemed given when sent, provided that the sender does not receive an automated delivery failure notification. For notices from you to InkjetProGuide, notice shall be effective upon actual receipt by us at our designated email address. We are not responsible for any failure or delay in receiving notices due to spam filters, technical issues with your email provider, or incorrect email addresses provided by you.
                       </p>
                       <p>
-                        For legal notices, you may contact us at inkjetproguide@outlook.com. For all other inquiries, including order inquiries matters, you may reach us at the contact information provided in Section 18 of these Terms. We may also provide legal notices by posting them on the Site, and such notices shall be effective upon posting. It is your responsibility to review the Site periodically for important notices and updates to these Terms.
+                        For legal notices, you may contact us at inkjetproguide@outlook.com. For all other inquiries, including order inquiries and support matters, you may reach us at the contact information provided in Section 18 of these Terms. We may also provide legal notices by posting them on the Site, and such notices shall be effective upon posting. It is your responsibility to review the Site periodically for important notices and updates to these Terms.
                       </p>
                     </div>
                     <div data-testid="text-electronic-records">
@@ -743,7 +743,7 @@ export default function TermsConditionsPage() {
                     <div data-testid="text-right-modify">
                       <h3 className="text-lg font-semibold text-foreground mb-3">Right to Modify Terms</h3>
                       <p className="mb-3">
-                        InkjetProGuide reserves the right to modify, amend, update, or replace these Terms and Conditions at any time at our sole discretion. We may modify these Terms to reflect changes in our business practices, to comply with applicable laws and regulations, to address new products or services, or for any other reason we deem appropriate. There is no obligation on our part to notify you of changes to these Terms other than by posting the revised Terms on our website and updating the "Last Updated" date.
+                        InkjetProGuide reserves the right to modify, amend, update, or replace these Terms and Conditions at any time at our sole discretion. We may modify these Terms to reflect changes in our business practices, to comply with applicable laws and regulations, to address new products or services, or for any other reason we deem appropriate. We will provide reasonable notice of material changes where required by law.
                       </p>
                       <p>
                         We encourage you to review these Terms periodically to stay informed about our terms and conditions. The version of these Terms posted on the Site at the time of your use shall govern that use. By continuing to access or use our Site after any revisions become effective, you agree to be bound by the revised Terms. If you do not agree to the new Terms, you must stop using the Site immediately.
@@ -889,7 +889,7 @@ export default function TermsConditionsPage() {
 
                     <div className="pt-6 border-t">
                       <p className="text-sm" data-testid="text-contact-response">
-                        We value your feedback and take all inquiries seriously. Our goal is to provide you with exceptional order inquiries and to address any concerns you may have in a timely and professional manner. For the fastest response, please contact us by email or through the contact form on our website. Thank you for choosing InkjetProGuide for your inkjet printing needs.
+                        We value your feedback and take all inquiries seriously. Our goal is to provide you with exceptional order inquiries and support and to address any concerns you may have in a timely and professional manner. For the fastest response, please contact us by email or through the contact form on our website. Thank you for choosing InkjetProGuide for your printing needs.
                       </p>
                     </div>
                   </div>
