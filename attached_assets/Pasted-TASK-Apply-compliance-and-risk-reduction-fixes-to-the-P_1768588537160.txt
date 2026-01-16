@@ -1,0 +1,129 @@
+TASK: Apply compliance and risk-reduction fixes to the Purchase Policy ONLY.
+
+SCOPE:
+- Purchase Policy page only
+- Do NOT modify other policies (Privacy, Terms, Returns) except where referenced
+- Replace wording exactly as instructed
+- Do NOT add guarantees or new promises
+
+────────────────────────
+HIGH-RISK FIX 1: “Real-time inventory” claim (CRITICAL)
+────────────────────────
+
+ISSUE:
+“Real-time inventory” implies guaranteed accuracy, which is rarely true with sync/3PL/manual updates.
+
+ACTION:
+- REMOVE any heading, label, or sentence stating “Real-Time Inventory”.
+
+REPLACE the entire “Product Availability” section with the following
+(USE EXACTLY):
+
+Product Availability
+
+We work to keep product availability information accurate; however, availability may change due to demand, fulfillment updates, and inventory adjustments. “In Stock” indicates the item is expected to be available at the time of purchase, but availability is not guaranteed until your order is processed and confirmed for shipment.
+
+If an item becomes unavailable after you place an order, we will notify you and offer a full refund or (with your approval) a comparable substitute.
+
+────────────────────────
+HIGH-RISK FIX 2: Same-day shipping / cutoff claims
+────────────────────────
+
+ISSUE:
+Statements like “ships same day” or “orders before 12:00 PM CT ship same day” are treated as promises.
+
+REMOVE any sentence referencing:
+- “same-day shipping”
+- “orders placed before 12:00 PM CT”
+- specific cutoff times
+
+REPLACE with (USE EXACTLY):
+
+Orders are typically processed within 1–2 business days. Processing times may vary based on payment verification, address validation, and fulfillment partner schedules.
+
+OPTIONAL ADDITION (allowed):
+In some cases, orders placed earlier in the business day may ship the same day; however, same-day shipping is not guaranteed.
+
+────────────────────────
+HIGH-RISK FIX 3: Cancellation “within 1 hour” wording
+────────────────────────
+
+ISSUE:
+“Within 1 hour” sounds like a guarantee and implies live support.
+
+FIND and REMOVE:
+“contact us within 1 hour…”
+
+REPLACE the “Tip” or cancellation guidance with (USE EXACTLY):
+
+Tip: If you need to cancel or change an order, contact us as soon as possible. We’ll do our best to help, but we can’t guarantee changes once fulfillment processing begins.
+
+────────────────────────
+HIGH-RISK FIX 4: Refund timing over-precision
+────────────────────────
+
+ISSUE:
+Exact timelines can be treated as contractual promises.
+
+FIND:
+“refunds are processed within 3–5 business days”
+
+REPLACE with (USE EXACTLY):
+
+For approved cancellations, refunds are typically issued within 3–5 business days, and timing may vary depending on your payment provider and bank.
+
+────────────────────────
+MEDIUM-RISK FIX 5: Secure checkout clarification
+────────────────────────
+
+UNDER the “Secure Checkout” or payment security section,
+ADD this sentence (USE EXACTLY):
+
+Payment details are processed by our payment processor(s). We do not store full card numbers on our servers.
+
+────────────────────────
+MEDIUM-RISK FIX 6: Sales tax wording (future-proof)
+────────────────────────
+
+ISSUE:
+Hard claims about Texas tax or nexus can become inaccurate.
+
+REPLACE any tax-specific language with (USE EXACTLY):
+
+Applicable sales tax (if any) is calculated at checkout based on your shipping address and the tax rules that apply to the transaction at the time of purchase. We collect sales tax where required by law.
+
+────────────────────────
+MEDIUM-RISK FIX 7: Backorders + availability consistency
+────────────────────────
+
+IF the policy states “we do not accept backorders” or “items must be in stock”,
+KEEP that language but ENSURE this sentence appears (USE EXACTLY):
+
+If an item becomes unavailable after an order is placed, we may cancel the item and issue a refund or offer alternatives.
+
+────────────────────────
+MEDIUM-RISK FIX 8: Comparable substitute consent
+────────────────────────
+
+ISSUE:
+Substituting without consent can cause disputes.
+
+FIND:
+“offer a full refund or a comparable substitute product”
+
+REPLACE with (USE EXACTLY):
+
+offer a full refund or (with your approval) a comparable substitute product.
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- No “real-time inventory” claims remain
+- No same-day or cutoff-time promises remain
+- Cancellation language is best-effort, not guaranteed
+- Refund timing is softened
+- Payment data storage is clearly disclaimed
+- Sales tax wording is jurisdiction-agnostic
+- Substitutions require customer approval
+
+GOAL:
+Eliminate over-promises, reduce chargeback and complaint risk, and keep the Purchase Policy reseller-safe and ad-platform compliant.

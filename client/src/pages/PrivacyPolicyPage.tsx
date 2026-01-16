@@ -162,6 +162,12 @@ export default function PrivacyPolicyPage() {
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-quick-summary">
                     Quick Summary: We do not sell your personal information. We use information to process orders, provide customer assistance, improve our site, and (with your consent) send marketing emails. You can opt out of marketing at any time.
                   </p>
+                  <div className="bg-muted/50 p-4 rounded-md mt-4">
+                    <h4 className="font-semibold text-foreground mb-2">Notice at Collection (California)</h4>
+                    <p className="text-sm text-muted-foreground" data-testid="text-notice-at-collection">
+                      We collect the categories of personal information described below to process orders, provide customer service, improve our site, and help prevent fraud. We retain information as described in the Data Retention section.
+                    </p>
+                  </div>
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-intro-1">
                     InkjetProGuide is an independent online retailer serving customers in the United States. We are committed to protecting your personal information and your right to privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website, make a purchase, create an account, or otherwise interact with our services.
                   </p>
@@ -292,7 +298,7 @@ export default function PrivacyPolicyPage() {
                         Information from Third Parties
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-third-party-collection">
-                        We may receive personal information about you from third-party sources and combine it with information we collect directly. Our payment processor provides us with transaction verification information, fraud risk assessments, and limited payment details necessary for order processing. Shipping carriers share delivery status updates, confirmation of delivery, and any exception notifications related to your orders. If you are referred to our website through an affiliate or partner, we may receive referral information indicating the source of your visit. Analytics providers supply aggregated and anonymized usage data that helps us understand website traffic patterns and user behavior trends. Marketing partners may provide information about your interests or demographics if you have consented to such sharing with those partners. We may also receive information from business partners in connection with co-branded services or promotions you choose to participate in. All third-party data is handled in accordance with applicable privacy laws and integrated with appropriate safeguards to protect your privacy rights.
+                        We may receive limited information from service providers that help us process payments, deliver orders, prevent fraud, and measure website performance. Our payment processor provides us with transaction verification information, fraud risk assessments, and limited payment details necessary for order processing. Shipping carriers share delivery status updates, confirmation of delivery, and any exception notifications related to your orders. Analytics providers supply aggregated and anonymized usage data that helps us understand website traffic patterns and user behavior trends. All third-party data is handled in accordance with applicable privacy laws and integrated with appropriate safeguards to protect your privacy rights.
                       </p>
                     </div>
                   </div>
@@ -398,7 +404,7 @@ export default function PrivacyPolicyPage() {
                         Payment Processors
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-share-payment">
-                        We share your payment information with our payment processor to facilitate secure transaction processing for your purchases. Our payment processor receives your payment card details, billing address, and transaction information directly during checkout. They use this information to authorize and process payments, detect and prevent fraud, and comply with payment network regulations. We do not store complete payment card information on our own servers. Our payment processor may also collect additional fraud prevention data as part of their security protocols. Their use of your data is governed by their own privacy policy.
+                        We share your payment information with our payment processor(s) (for example, Stripe) to facilitate secure transaction processing for your purchases. Our payment processor receives your payment card details, billing address, and transaction information directly during checkout. They use this information to authorize and process payments, detect and prevent fraud, and comply with payment network regulations. We do not store complete payment card information on our own servers. Our payment processor may also collect additional fraud prevention data as part of their security protocols. Their use of your data is governed by their own privacy policy.
                       </p>
                     </div>
 
@@ -408,7 +414,7 @@ export default function PrivacyPolicyPage() {
                         Shipping Carriers
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-share-shipping">
-                        We share your shipping information with carrier partners to fulfill and deliver your orders. This includes your name, delivery address, phone number, and order details necessary for successful delivery. Shipping carriers use this information to create shipping labels, plan delivery routes, provide tracking information, and contact you regarding delivery issues or special instructions. Our carrier partners may include USPS, UPS, FedEx, or other carriers you select at checkout. Carriers maintain their own privacy practices and are required to protect your information and use it only for delivery purposes. We may also receive tracking updates and delivery confirmations from carriers, which we use to update your order status and resolve any delivery issues.
+                        We share your shipping information with carrier partners to fulfill and deliver your orders. This includes your name, delivery address, phone number, and order details necessary for successful delivery. Shipping carriers use this information to create shipping labels, plan delivery routes, provide tracking information, and contact you regarding delivery issues or special instructions. Our carrier partners may include common carriers (for example, USPS, UPS, or FedEx) or other carriers you select at checkout. Carriers maintain their own privacy practices and are required to protect your information and use it only for delivery purposes. We may also receive tracking updates and delivery confirmations from carriers, which we use to update your order status and resolve any delivery issues.
                       </p>
                     </div>
 
@@ -428,7 +434,7 @@ export default function PrivacyPolicyPage() {
                         Marketing Platforms
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-share-marketing">
-                        With your consent, we may share your information with marketing platforms to deliver personalized advertising and promotional communications. This includes email marketing services that help us send newsletters and promotional offers, as well as advertising platforms that enable us to show you relevant ads on other websites. We may share online identifiers (such as cookie IDs, device identifiers, and IP address) with advertising partners for measurement and ad delivery, subject to your cookie choices and applicable law. You can control marketing communications through your account settings and opt-out links in our emails. We only share information with marketing partners when you have provided appropriate consent, and we honor your opt-out requests promptly. Marketing platforms are contractually required to use your information only for the marketing purposes we specify and to maintain appropriate data protection measures.
+                        With your consent (where required), we may use marketing platforms to send email communications and to measure the effectiveness of our advertising. We do not use personal information for cross-context behavioral advertising unless described in this Privacy Policy and unless you have the right to opt out. This includes email marketing services that help us send newsletters and promotional offers. You can control marketing communications through your account settings and opt-out links in our emails. We only share information with marketing partners when you have provided appropriate consent, and we honor your opt-out requests promptly. Marketing platforms are contractually required to use your information only for the marketing purposes we specify and to maintain appropriate data protection measures.
                       </p>
                     </div>
 
@@ -486,7 +492,7 @@ export default function PrivacyPolicyPage() {
                         </div>
                       </div>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-retention-account">
-                        Your account information, including your profile details, saved addresses, preferences, and wishlist, is retained for as long as your account remains active. You may request deletion of your account at any time by contacting us or using the account deletion feature in your account settings. Upon receiving a valid deletion request, we will delete or anonymize your account data within 45 days, except for information we are required to retain for legal, tax, or fraud prevention purposes. Deleted accounts cannot be recovered.
+                        Your account information, including your profile details, saved addresses, preferences, and wishlist, is retained for as long as your account remains active. You may request deletion of your account at any time by contacting us or using the account deletion feature in your account settings. Upon receiving a valid deletion request, we will delete or anonymize your account data within the timeframes required by applicable law (typically 45 days, with extensions where permitted), except for information we are required to retain for legal, tax, or fraud prevention purposes. Deleted accounts cannot be recovered.
                       </p>
                     </div>
 
@@ -584,7 +590,7 @@ export default function PrivacyPolicyPage() {
                         Right to Limit Use of Sensitive Personal Information
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-right-limit">
-                        You have the right to limit our use of sensitive personal information to purposes necessary for providing goods or services. Sensitive personal information includes precise geolocation data, racial or ethnic origin, religious beliefs, union membership, personal health information, sexual orientation, and similar categories. We do not use sensitive personal information for purposes other than providing our services, security, fraud prevention, and compliance with law. You may request that we limit our use of sensitive personal information at any time.
+                        You have the right to limit our use of sensitive personal information to purposes necessary for providing goods or services. Sensitive personal information (as defined by CPRA) may include government identifiers, precise geolocation, and certain account credentials. We do not intentionally collect sensitive personal information except where necessary to provide our services (for example, account login credentials) and to help prevent fraud. We do not use sensitive personal information to infer characteristics about you. You may request that we limit our use of sensitive personal information at any time.
                       </p>
                     </div>
 
@@ -654,7 +660,7 @@ export default function PrivacyPolicyPage() {
                         Our Commitment: We Do Not Sell Your Personal Information
                       </h3>
                       <p className="text-muted-foreground leading-relaxed" data-testid="text-no-sell-statement">
-                        InkjetProGuide does not sell your personal information for monetary or other valuable consideration. We have not sold personal information in the preceding 12 months and do not have plans to sell personal information in the future. Your data is not a product that we monetize through third-party sales, and we are committed to protecting your privacy by keeping your personal information under our control and using it only for the purposes described in this Privacy Policy.
+                        InkjetProGuide does not sell personal information for money. We may "share" certain identifiers and online activity information for cross-context behavioral advertising, as that term is defined under CPRA, unless you opt out. We have not sold personal information in the preceding 12 months and do not have plans to sell personal information in the future. Your data is not a product that we monetize through third-party sales, and we are committed to protecting your privacy by keeping your personal information under our control and using it only for the purposes described in this Privacy Policy.
                       </p>
                     </div>
                   </div>
@@ -676,12 +682,12 @@ export default function PrivacyPolicyPage() {
                     <ul className="space-y-2 ml-6 list-disc text-muted-foreground">
                       <li data-testid="text-optout-method-1"><strong className="text-foreground">Email Request:</strong> Send an email to <a href="mailto:inkjetproguide@outlook.com" className="text-primary hover:underline">inkjetproguide@outlook.com</a> with the subject "Do Not Sell or Share My Data" and include your name and email address associated with your account.</li>
                       <li data-testid="text-optout-method-2"><strong className="text-foreground">Cookie Settings:</strong> You can manage cookies through your browser settings. Where available, you may also manage cookie preferences using tools provided on our site.</li>
-                      <li data-testid="text-optout-method-3"><strong className="text-foreground">Global Privacy Control (GPC):</strong> We honor Global Privacy Control signals sent by your browser. If your browser is configured to send a GPC signal, we will treat this as a valid opt-out request for data sharing.</li>
+                      <li data-testid="text-optout-method-3"><strong className="text-foreground">Global Privacy Control (GPC):</strong> Where required by applicable law, we treat Global Privacy Control (GPC) signals as a request to opt out of selling or sharing for cross-context behavioral advertising.</li>
                       <li data-testid="text-optout-method-4"><strong className="text-foreground">Industry Opt-Out Tools:</strong> Visit the Digital Advertising Alliance's opt-out page at <a href="https://optout.aboutads.info" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">optout.aboutads.info</a> to opt out of personalized advertising from participating companies.</li>
                     </ul>
 
                     <p className="text-muted-foreground leading-relaxed" data-testid="text-optout-processing">
-                      We will process requests as soon as reasonably possible, and within the time required by applicable law. Opt-out applies to cross-context behavioral advertising; it does not stop contextual ads. Please note that opting out of data sharing does not opt you out of all advertising; you may still see generic advertisements that are not personalized based on your browsing behavior. Additionally, opting out on one device or browser does not automatically opt you out on other devices or browsers—you will need to submit opt-out requests for each device and browser you use.
+                      We aim to process opt-out requests as promptly as possible, generally within 15 business days. Opt-out applies to cross-context behavioral advertising; it does not stop contextual ads. Please note that opting out of data sharing does not opt you out of all advertising; you may still see generic advertisements that are not personalized based on your browsing behavior. Additionally, opting out on one device or browser does not automatically opt you out on other devices or browsers—you will need to submit opt-out requests for each device and browser you use.
                     </p>
                   </div>
                 </CardContent>
@@ -747,7 +753,7 @@ export default function PrivacyPolicyPage() {
                       Some browsers offer "Do Not Track" settings. Because there is no widely accepted standard for how to interpret these signals, our site may not respond to DNT signals.
                     </p>
                     <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-dnt-2">
-                      Where supported, we will process Global Privacy Control (GPC) signals and treat GPC as a valid request to opt out of "sharing" for cross-context behavioral advertising for California residents.
+                      Where required by applicable law, we treat Global Privacy Control (GPC) signals as a request to opt out of selling or sharing for cross-context behavioral advertising.
                     </p>
                   </div>
                 </CardContent>
@@ -799,7 +805,7 @@ export default function PrivacyPolicyPage() {
                     We use reasonable administrative, technical, and physical safeguards designed to protect personal information. This includes HTTPS (SSL/TLS) for data transmission and access controls to limit who can access personal information.
                   </p>
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-security-payment">
-                    Payment information is processed by our payment processor (Stripe) and we do not store full payment card numbers on our servers.
+                    Payment information is processed by our payment processor(s) (for example, Stripe), and we do not store full payment card numbers on our servers.
                   </p>
                 </CardContent>
               </Card>
