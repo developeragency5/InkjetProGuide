@@ -7,7 +7,7 @@ import { SEOHead } from "@/components/SEOHead";
 export default function AboutPage() {
   const stats = [
     { value: "25+", label: "Printer Models" },
-    { value: "2-3 Days", label: "Fast Delivery" },
+    { value: "2-5 Days", label: "Shipping" },
     { value: "30 Days", label: "Easy Returns" },
     { value: "US", label: "Shipping Available" },
   ];
@@ -44,7 +44,7 @@ export default function AboutPage() {
     {
       icon: Truck,
       title: "Fast Shipping",
-      description: "Fast 2-3 business day delivery across the United States."
+      description: "Most orders ship within 2–3 business days. Delivery timelines may vary by location and carrier."
     },
     {
       icon: DollarSign,
@@ -78,8 +78,11 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent" data-testid="heading-about-title">
               About InkjetProGuide
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-subtitle">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4 leading-relaxed" data-testid="text-about-subtitle">
               InkjetProGuide is an independent online retailer serving customers in the United States. We provide informational buying guides and sell printers sourced through independent distribution channels. We are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
+            </p>
+            <p className="text-sm text-muted-foreground mb-8">
+              All buying guides are provided for informational purposes only and are not sponsored, endorsed, or reviewed by any printer manufacturer.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a href="/products#!/Inkjet-Printers/c/193859557">
@@ -231,7 +234,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-semibold text-lg mb-1" data-testid="reason-title-4">Secure Shopping Experience</h4>
                     <p className="text-muted-foreground">
-                      Shop with confidence using our secure checkout and encrypted payment processing. We accept secure electronic payment methods shown at checkout. Cash on delivery, checks, wire transfers, and cryptocurrency are not accepted.
+                      Shop with confidence using our secure checkout and encrypted payment processing. We accept secure electronic payment methods as displayed at checkout. Payment availability may vary by order and location. Cash on delivery, checks, wire transfers, and cryptocurrency are not accepted.
                     </p>
                   </div>
                 </div>
@@ -258,11 +261,10 @@ export default function AboutPage() {
                   Commitment to Quality
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Every inkjet printer we sell is new, factory-sealed, and sourced through independent distribution channels. Products are covered by the manufacturer's quality standards and warranty terms.
+                  Every inkjet printer we sell is new, factory-sealed, and sourced through independent distribution channels. Products may be covered by the manufacturer's warranty according to the manufacturer's terms and conditions. InkjetProGuide does not provide manufacturer warranty service.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  We offer the latest models, exclusive features, and 
-                  cutting-edge printing technology to keep you ahead of the curve.
+                  We offer the latest models and highlight advanced features and modern printing technologies available across current printer lineups.
                 </p>
               </CardContent>
             </Card>

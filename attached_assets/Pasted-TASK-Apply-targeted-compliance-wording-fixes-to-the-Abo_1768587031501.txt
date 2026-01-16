@@ -1,0 +1,109 @@
+TASK: Apply targeted compliance wording fixes to the “About InkjetProGuide” page ONLY.
+
+PAGE SCOPE:
+- About InkjetProGuide page content
+- Do NOT modify navigation, layout, footer, or other pages
+- Do NOT remove existing independence disclaimers or structure
+
+────────────────────────
+REQUIRED FIX 1: Remove “exclusive features” wording
+────────────────────────
+
+ISSUE:
+The phrase “exclusive features” can imply manufacturer partnership or reseller privilege.
+
+TEXT TO REMOVE:
+“We offer the latest models, exclusive features, and cutting-edge printing technology…”
+
+APPROVED SAFE REPLACEMENT
+(USE EXACTLY):
+
+“We offer the latest models and highlight advanced features and modern printing technologies available across current printer lineups.”
+
+RULES:
+- Replace the sentence only
+- Do NOT add exclusivity or partnership language
+
+────────────────────────
+REQUIRED FIX 2: Manufacturer warranty clarification
+────────────────────────
+
+ISSUE:
+Warranty wording should avoid implying seller-provided warranty service.
+
+TEXT TO REMOVE:
+“Products are covered by the manufacturer's quality standards and warranty terms.”
+
+APPROVED SAFER VERSION
+(USE EXACTLY):
+
+“Products may be covered by the manufacturer’s warranty according to the manufacturer’s terms and conditions. InkjetProGuide does not provide manufacturer warranty service.”
+
+RULES:
+- Replace sentence only
+- Do NOT add brand names
+- Do NOT promise warranty handling
+
+────────────────────────
+OPTIONAL BUT RECOMMENDED FIX 3: Payment language clarity
+────────────────────────
+
+TEXT TO REPLACE:
+“We accept secure electronic payment methods shown at checkout.”
+
+APPROVED SAFER VERSION
+(USE EXACTLY):
+
+“We accept secure electronic payment methods as displayed at checkout. Payment availability may vary by order and location.”
+
+RULES:
+- Replace wording only
+- Do NOT add processor names
+
+────────────────────────
+OPTIONAL HARDENING A: Editorial independence disclaimer
+────────────────────────
+
+ADD this sentence ONCE, directly under the first paragraph of the page:
+
+All buying guides are provided for informational purposes only and are not sponsored, endorsed, or reviewed by any printer manufacturer.
+
+STYLE:
+- Plain text
+- No bold, no icons
+
+────────────────────────
+OPTIONAL HARDENING B: Shipping claim softening
+────────────────────────
+
+TEXT TO REMOVE:
+“Fast 2–3 business day delivery across the United States.”
+
+APPROVED SAFER VERSION
+(USE EXACTLY):
+
+“Most orders ship within 2–3 business days. Delivery timelines may vary by location and carrier.”
+
+RULES:
+- Replace wording only
+- Do NOT add guarantees
+
+────────────────────────
+DO NOT CHANGE (IMPORTANT):
+- Independent retailer disclaimers
+- “Not affiliated / not endorsed / not sponsored” language
+- Separation between guides and store
+- Payment transparency sections
+- Returns and shipping structure
+- No logos, no manufacturer branding
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- No exclusivity or partnership implication remains
+- Warranty responsibility is clearly assigned to manufacturer
+- Payment and shipping language is non-guaranteed
+- Editorial independence is clearly stated
+- Page remains LOW-RISK for Google Ads and brand review
+
+GOAL:
+Maintain a near-bulletproof About page for ads approval, trademark safety, and consumer-protection audits.
