@@ -1,0 +1,100 @@
+TASK: Apply CRITICAL Google Ads + trademark compliance fixes to the “Home Printers” category page ONLY.
+
+PAGE SCOPE:
+- Page title: “Home Printers”
+- Product grid and badges on this page
+- Page header and footer elements shown on this page
+- Do NOT modify checkout, cart, or individual product detail pages
+
+────────────────────────
+FIX 1: ADD TOP-LEVEL DISCLAIMER (MANDATORY)
+────────────────────────
+
+ADD the following text ONCE, directly under the “Home Printers” heading and before the product grid:
+
+InkjetProGuide is an independent online retailer. We are not affiliated with, endorsed by, or sponsored by HP or any other printer manufacturer. Product names are used solely for identification purposes.
+
+STYLE:
+- Plain text
+- No icons
+- No bold
+- Visible above products
+
+────────────────────────
+FIX 2: REMOVE “HP” FROM ALL VISIBLE PRODUCT TITLES (CRITICAL)
+────────────────────────
+
+REMOVE the brand name “HP” from EVERY product title on this page.
+
+REPLACE TITLES USING THIS SAFE FORMAT:
+
+Wireless All-in-One Color Inkjet Printer (DeskJet 2855e)
+Wireless All-in-One Color Inkjet Printer (DeskJet 4255e)
+Compact Wireless Inkjet Printer (DeskJet 2827e)
+Wireless All-in-One Inkjet Printer (Envy 6155e)
+Wireless Duplex Inkjet Printer (Envy 6555e)
+Wireless Photo Inkjet Printer (Envy 7255e)
+Wireless Photo Inkjet Printer (Envy 7955e)
+Wireless Photo Inkjet Printer (Envy 7958e)
+Cartridge-Free Inkjet Printer (Smart Tank 651)
+High-Volume Ink Tank Printer (Smart Tank 5101)
+Ink Tank Printer for Home Use (Smart Tank 5103)
+Ink Tank All-in-One Printer (Smart Tank 6001)
+High-Volume Ink Tank Printer (Smart Tank 7001)
+Ink Tank All-in-One Printer (Smart Tank 7301)
+High-Volume Ink Tank Printer (Smart Tank 7602)
+
+RULES:
+- Do NOT show “HP” in titles
+- “HP” may remain only in descriptions or specs
+
+────────────────────────
+FIX 3: REMOVE BRAND FROM SALE BADGES
+────────────────────────
+
+REPLACE all sale badges that say:
+“ON SALE HP …”
+
+WITH one of the following (choose one style site-wide):
+- Special Offer
+- Limited-Time Price
+
+DO NOT include brand names in badges.
+
+────────────────────────
+FIX 4: REMOVE “SAVE XX%” PRICING (MANDATORY)
+────────────────────────
+
+REMOVE all percentage savings language.
+
+REPLACE pricing blocks like:
+“was $89.99 Save 44%”
+
+WITH:
+Previous price: $89.99
+Current price: $49.99
+
+Do NOT display percentage discounts.
+
+────────────────────────
+FIX 5: REMOVE “POWERED BY LIGHTSPEED” FROM STOREFRONT
+────────────────────────
+
+REMOVE “Powered by Lightspeed” from the Home Printers page.
+
+OPTIONAL:
+- Move to Privacy Policy
+- Or keep only in small legal footer
+- Do NOT show in storefront category pages
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- No product title contains “HP”
+- No sale badge contains a brand name
+- No percentage discount text exists
+- Disclaimer appears under page title
+- Page reads neutral and independent
+- Page is safe for Google Ads review
+
+GOAL:
+Eliminate trademark enforcement risk and Google Ads suspension risk while keeping products purchasable.
