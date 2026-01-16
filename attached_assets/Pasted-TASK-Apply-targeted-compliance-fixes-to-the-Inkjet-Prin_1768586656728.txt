@@ -1,0 +1,119 @@
+TASK: Apply targeted compliance fixes to the “Inkjet Printer Guide Library” page ONLY.
+
+PAGE SCOPE:
+- Inkjet Printer Guide Library index page
+- Individual guide titles and meta text shown in the library
+- Guide CTAs shown in the library
+- Do NOT change product pages, checkout, or category pages
+
+────────────────────────
+REQUIRED FIX 1: “Instant Ink Subscription” guide title (MANDATORY)
+────────────────────────
+
+ISSUE:
+“Instant Ink” is a registered HP subscription program. Using it without clarification creates brand-program misrepresentation risk.
+
+APPLY OPTION A (SAFEST — REQUIRED):
+
+RENAME THIS GUIDE:
+❌ Guide #28 – Instant Ink Subscription: Complete Guide
+✅ Guide #28 – Ink Subscription Programs Explained (Including Instant Ink)
+
+DO NOT:
+- Imply partnership
+- Imply administration of the program
+- Use HP logos
+
+NOTE:
+Footer disclaimer alone is NOT sufficient for program-level trademarks.
+
+────────────────────────
+REQUIRED FIX 2: “Professionally Reviewed” wording
+────────────────────────
+
+ISSUE:
+“Professionally reviewed” may trigger substantiation requests (“by whom?”).
+
+TEXT TO REPLACE:
+“Professionally Reviewed”
+
+APPROVED SAFE REPLACEMENT (USE ONE):
+
+Option A:
+Written by experienced printing professionals
+
+Option B:
+Reviewed by industry professionals with hands-on experience
+
+RULES:
+- Replace wording only
+- Do NOT add names, credentials, or certifications
+
+────────────────────────
+REQUIRED FIX 3: “Updated 2024” consistency
+────────────────────────
+
+ISSUE:
+Footer year (©2026) conflicts with “Updated 2024”.
+
+TEXT TO REMOVE:
+“Updated 2024”
+
+APPROVED SAFE REPLACEMENT (USE ONE):
+
+Option A:
+Updated regularly
+
+Option B:
+Updated periodically to reflect current models and standards
+
+────────────────────────
+OPTIONAL (STRONGLY RECOMMENDED): Guides Independence Disclaimer
+────────────────────────
+
+ADD this text ONCE, directly under the heading:
+“Inkjet Printer Guide Library”
+
+TEXT (MUST MATCH EXACTLY):
+
+All buying guides are informational only. InkjetProGuide is an independent retailer and does not receive compensation from printer manufacturers for guide content or rankings. Product names are used solely for identification purposes.
+
+STYLE:
+- Plain text
+- No bold or icons
+- Show once only
+
+────────────────────────
+OPTIONAL: Soften “Ready to Buy” CTA
+────────────────────────
+
+TEXT TO REPLACE:
+“Ready to Buy”
+
+APPROVED NEUTRAL REPLACEMENTS (USE ONE):
+- Explore Available Printers
+- Browse Available Models
+
+RULES:
+- Replace CTA text only
+- Keep button style and link unchanged
+
+────────────────────────
+DO NOT CHANGE (IMPORTANT):
+- “19,000+ Words”
+- “Hands-on experience”
+- “Real-world testing”
+- Long-form educational tone
+- Existing guide structure
+- Footer independence disclaimer
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- No guide implies manufacturer partnership
+- “Instant Ink” is contextualized, not promoted
+- No unverifiable review claims remain
+- Guide timestamps are consistent
+- Educational neutrality is preserved
+
+GOAL:
+Maintain LOW–MEDIUM risk profile and ensure guide library is safe for Google Ads, brand review, and consumer protection audits.
