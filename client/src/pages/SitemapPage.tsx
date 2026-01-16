@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Home, ShoppingCart, BookOpen, HelpCircle, FileText, User, Search, Package, Heart, CreditCard, GitCompare, Mail, Info, Shield, Scale, Map } from "lucide-react";
+import { Home, ShoppingCart, BookOpen, HelpCircle, FileText, User, Search, Package, CreditCard, Mail, Info, Shield, Scale, Map } from "lucide-react";
 import { Link } from "wouter";
 
 export default function SitemapPage() {
@@ -9,22 +9,20 @@ export default function SitemapPage() {
       icon: ShoppingCart,
       links: [
         { name: "Home", path: "/", icon: Home },
-        { name: "All Products", path: "/products", icon: Package },
+        { name: "All Printers", path: "/products", icon: Package },
         { name: "Shopping Cart", path: "/cart", icon: ShoppingCart },
-        { name: "Wishlist", path: "/wishlist", icon: Heart },
         { name: "Checkout", path: "/checkout", icon: CreditCard },
-        { name: "Compare Products", path: "/compare", icon: GitCompare },
       ]
     },
     {
       title: "Resources & Guides",
       icon: BookOpen,
       links: [
-        { name: "Model Guide", path: "/guide", icon: BookOpen },
+        { name: "Printer Model Guides", path: "/guide", icon: BookOpen },
         { name: "Buying Guides", path: "/guides", icon: BookOpen },
         { name: "Beginner's Guide", path: "/guides/beginners-guide", icon: BookOpen },
-        { name: "Home Office Guide", path: "/guides/home-office", icon: BookOpen },
-        { name: "Student Guide", path: "/guides/students", icon: BookOpen },
+        { name: "Home Office Printing Guide", path: "/guides/home-office", icon: BookOpen },
+        { name: "Student Printing Guide", path: "/guides/students", icon: BookOpen },
         { name: "Photo Printing Guide", path: "/guides/photo-printing", icon: BookOpen },
         { name: "Ink Cost Guide", path: "/guides/ink-cost", icon: BookOpen },
         { name: "Small Business Guide", path: "/guides/small-business", icon: BookOpen },
@@ -34,13 +32,11 @@ export default function SitemapPage() {
       ]
     },
     {
-      title: "Help Center",
+      title: "Customer Service",
       icon: HelpCircle,
       links: [
-        { name: "Help Center", path: "/help", icon: HelpCircle },
         { name: "FAQ", path: "/faq", icon: HelpCircle },
         { name: "Contact Us", path: "/contact", icon: Mail },
-        { name: "Track Order", path: "/order-lookup", icon: Package },
       ]
     },
     {
@@ -85,7 +81,7 @@ export default function SitemapPage() {
               </h1>
             </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6" data-testid="text-sitemap-subtitle">
-              Browse all pages and sections of InkjetProGuide to find exactly what you're looking for
+              Browse all pages and sections of InkjetProGuide from one place
             </p>
             <p className="text-base text-muted-foreground max-w-3xl mx-auto">
               This comprehensive sitemap provides quick access to every section of our website. Whether you are 
@@ -177,9 +173,9 @@ export default function SitemapPage() {
                 </h3>
                 <p data-testid="text-need-help">
                   If you can't find what you're looking for, please visit our{" "}
-                  <Link href="/help">
-                    <span className="text-primary hover:underline cursor-pointer" data-testid="link-help-center-footer">
-                      Help Center
+                  <Link href="/faq">
+                    <span className="text-primary hover:underline cursor-pointer" data-testid="link-faq-footer">
+                      FAQ
                     </span>
                   </Link>
                   {" "}or{" "}
@@ -197,7 +193,7 @@ export default function SitemapPage() {
 
         {/* Last Updated */}
         <div className="mt-6 text-center text-sm text-muted-foreground" data-testid="text-last-updated">
-          Last Updated: January 2025
+          Last Updated: January 2026
         </div>
       </div>
     </div>
