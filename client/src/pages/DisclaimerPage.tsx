@@ -34,6 +34,9 @@ export default function DisclaimerPage() {
                 2704 Handley Ederville Rd, Fort Worth, TX 76118, United States<br />
                 Email: inkjetproguide@outlook.com | Phone: 1-325-400-8874
               </p>
+              <p className="text-xs text-muted-foreground mt-2">
+                This address is used for mailing and administrative purposes only. Product fulfillment is handled by third-party logistics partners.
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -65,12 +68,12 @@ export default function DisclaimerPage() {
                 </div>
               </div>
               <ul className="space-y-2 ml-6 list-disc">
-                <li data-testid="text-product-2">Product images may vary from actual products in color, size, or appearance</li>
-                <li data-testid="text-product-3">Specifications are provided by manufacturers and may be subject to change without notice</li>
-                <li data-testid="text-product-4">Prices are subject to change without prior notice</li>
-                <li data-testid="text-product-5">Product availability is not guaranteed and may vary</li>
-                <li data-testid="text-product-5b">Orders are subject to acceptance and product availability at the time of purchase confirmation</li>
-                <li data-testid="text-product-6">We reserve the right to correct any errors in product information, pricing, or availability</li>
+                <li data-testid="text-product-2">Product images may vary from actual products in color, size, or appearance.</li>
+                <li data-testid="text-product-3">Specifications are provided by manufacturers and may be subject to change without notice.</li>
+                <li data-testid="text-product-4">Prices are subject to change without prior notice.</li>
+                <li data-testid="text-product-5">Product availability is not guaranteed and may vary.</li>
+                <li data-testid="text-product-5b">Orders are subject to acceptance and product availability at the time of purchase confirmation.</li>
+                <li data-testid="text-product-6">We reserve the right to correct any errors in product information, pricing, or availability.</li>
               </ul>
               <p data-testid="text-product-7">
                 For the most accurate and up-to-date product information, please refer to the manufacturer website or contact us.
@@ -164,8 +167,11 @@ export default function DisclaimerPage() {
               <p data-testid="text-warranty-1">
                 All products sold by InkjetProGuide are covered by the manufacturer's warranty where applicable. InkjetProGuide does not provide manufacturer warranty service, repairs, or technical support.
               </p>
+              <p data-testid="text-warranty-1b">
+                Warranty coverage, duration, and eligibility are determined solely by the manufacturer and may vary by product.
+              </p>
               <p data-testid="text-warranty-2">
-                THE WEBSITE AND ITS CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+                The Website and its content are provided on an "as is" and "as available" basis, except as required by applicable law. InkjetProGuide makes no warranties beyond any manufacturer warranties that may apply.
               </p>
             </CardContent>
           </Card>

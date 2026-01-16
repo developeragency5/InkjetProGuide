@@ -1,0 +1,111 @@
+TASK: Apply targeted compliance fixes to the “Disclaimer” page ONLY.
+
+PAGE SCOPE:
+- Page titled “Disclaimer”
+- Do NOT modify other pages (Privacy, Terms, Returns, Footer)
+- Do NOT remove existing legal sections unless explicitly instructed
+
+────────────────────────
+FIX 1: ADDRESS CLARITY (REQUIRED – TRUST & ADS SAFETY)
+────────────────────────
+
+ISSUE:
+A physical street address is shown without clarification. This can trigger:
+- “fake office” flags
+- Google Business confusion
+- Payment processor questions
+
+ADD the following line DIRECTLY UNDER the address block:
+
+“This address is used for mailing and administrative purposes only. Product fulfillment is handled by third-party logistics partners.”
+
+RULES:
+- Plain text
+- No icons or emphasis
+- Do NOT remove the address itself
+
+────────────────────────
+FIX 2: “AS IS” WARRANTY LANGUAGE (IMPORTANT LEGAL SOFTENING)
+────────────────────────
+
+ISSUE:
+The ALL-CAPS “AS IS” disclaimer can conflict with consumer-protection expectations if left unqualified.
+
+CURRENT TEXT (KEEP STRUCTURE BUT MODIFY SENTENCE):
+“THE WEBSITE AND ITS CONTENT ARE PROVIDED ‘AS IS’ AND ‘AS AVAILABLE’ WITHOUT ANY WARRANTIES…”
+
+REPLACE THAT SENTENCE WITH (USE EXACTLY):
+
+“The Website and its content are provided on an ‘as is’ and ‘as available’ basis, except as required by applicable law. InkjetProGuide makes no warranties beyond any manufacturer warranties that may apply.”
+
+RULES:
+- Replace sentence only
+- Do NOT remove the Manufacturer Warranty paragraph above it
+- Do NOT add new warranty promises
+
+────────────────────────
+FIX 3: PRODUCT INFORMATION BULLET FORMATTING (MINOR CLEANUP)
+────────────────────────
+
+ISSUE:
+Several bullet lines lack punctuation consistency.
+
+UPDATE THESE LINES TO END WITH PERIODS:
+
+- “Product images may vary from actual products in color, size, or appearance.”
+- “Specifications are provided by manufacturers and may be subject to change without notice.”
+- “Prices are subject to change without prior notice.”
+- “Product availability is not guaranteed and may vary.”
+- “Orders are subject to acceptance and product availability at the time of purchase confirmation.”
+- “We reserve the right to correct any errors in product information, pricing, or availability.”
+
+(No wording change — punctuation only.)
+
+────────────────────────
+FIX 4: MANUFACTURER WARRANTY CLARITY (KEEP BUT ALIGN)
+────────────────────────
+
+CURRENT TEXT (KEEP, BUT ADD ONE LINE BELOW IT):
+
+“All products sold by InkjetProGuide are covered by the manufacturer's warranty where applicable. InkjetProGuide does not provide manufacturer warranty service, repairs, or technical support.”
+
+ADD THIS LINE IMMEDIATELY AFTER:
+
+“Warranty coverage, duration, and eligibility are determined solely by the manufacturer and may vary by product.”
+
+(This matches your Warranty page and prevents disputes.)
+
+────────────────────────
+FIX 5: IDENTITY DUPLICATION (OPTIONAL CLEANUP)
+────────────────────────
+
+ISSUE:
+The identity statement appears multiple times verbatim. This is not harmful, but redundancy can look sloppy.
+
+OPTIONAL:
+- Keep ONE instance in the Trademark Disclaimer section
+- Keep ONE instance in the footer
+- Do NOT change wording (must remain identical everywhere it appears)
+
+(If left unchanged, this is still compliant.)
+
+────────────────────────
+DO NOT CHANGE (VERY IMPORTANT):
+- Independent retailer language
+- “Not affiliated / not endorsed / not sponsored” wording
+- External Links Disclaimer
+- Limitation of Liability structure
+- Professional Advice Disclaimer
+- Contact information
+- Footer trademark notice
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- Address is clearly administrative only
+- No absolute or aggressive “AS IS” over-disclaimer remains
+- Warranty responsibility is unambiguous
+- Product info disclaimer is clean and consistent
+- Page remains LOW-RISK for Google Ads & brand review
+
+GOAL:
+Make the Disclaimer page fully aligned with ads policy, consumer-protection standards, and manufacturer brand enforcement expectations.
