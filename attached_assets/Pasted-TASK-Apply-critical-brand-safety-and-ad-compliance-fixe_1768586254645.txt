@@ -1,0 +1,151 @@
+TASK: Apply critical brand-safety and ad-compliance fixes to homepage, category pages, and related sections.
+
+────────────────────────
+FIX 1: Product names using brand-identifiable model numbers (CRITICAL)
+────────────────────────
+
+ISSUE:
+Model numbers like DeskJet 4255e, Envy 7955e, OfficeJet 8015e, Smart Tank 7602 uniquely identify HP products and create brand-targeting risk.
+
+REQUIRED ACTION (SAFEST OPTION — USE THIS):
+- REMOVE model numbers from:
+  - Homepage product grids
+  - Category page product grids
+- Replace with generic, descriptive product names ONLY.
+
+EXAMPLES:
+❌ “DeskJet 4255e Wireless All-in-One”
+✅ “Wireless All-in-One Inkjet Printer for Home Use”
+
+❌ “OfficeJet 8015e”
+✅ “High-Volume Inkjet Printer for Small Offices”
+
+DO NOT:
+- Show model numbers on homepage or category pages
+- Use manufacturer-specific series names
+
+NOTE:
+(Model numbers may remain on individual product detail pages if already compliant elsewhere.)
+
+────────────────────────
+FIX 2: Processing time claim (CRITICAL)
+────────────────────────
+
+TEXT TO REMOVE:
+“Most orders ship within 24 hours”
+
+APPROVED REPLACEMENT (USE EXACTLY):
+
+Orders are typically processed within 1–2 business days, subject to availability and verification.
+
+────────────────────────
+FIX 3: Delivery time claim (CRITICAL)
+────────────────────────
+
+TEXT TO REMOVE:
+“delivery in 2–3 business days”
+
+APPROVED REPLACEMENT (USE EXACTLY):
+
+Estimated delivery times typically range from 2–5 business days depending on carrier and destination.
+
+────────────────────────
+FIX 4: Manufacturer-sounding collection names
+────────────────────────
+
+TEXT TO REMOVE:
+“Professional Office Series”
+
+APPROVED SAFE REPLACEMENTS (choose ONE):
+
+Office Inkjet Collection
+OR
+Inkjet Printers for Office Use
+
+────────────────────────
+FIX 5: “Curated selection” wording (minor but recommended)
+────────────────────────
+
+TEXT TO REMOVE:
+“curated selection”
+
+OPTIONAL SAFER REPLACEMENT:
+
+independently sourced selection
+
+────────────────────────
+FIX 6: Comparison / superiority language
+────────────────────────
+
+TEXT TO REMOVE:
+“why inkjet often beats laser printers”
+
+APPROVED FACT-BASED REPLACEMENT:
+
+situations where inkjet printers may be more suitable than laser printers
+
+────────────────────────
+FIX 7: Customer reviews presentation (MODERATE RISK)
+────────────────────────
+
+ADD THIS LINE directly ABOVE the reviews section (USE EXACTLY):
+
+Reviews reflect individual customer experiences and are not guarantees of performance. Reviews may be collected manually or through internal verification processes.
+
+AND SIMPLIFY REVIEW LABELS:
+REPLACE:
+“Verified Buyer • Order IPG-2025-4521”
+
+WITH:
+“Verified Purchase”
+
+DO NOT:
+- Show order numbers
+- Imply third-party verification unless actually used
+
+────────────────────────
+FIX 8: Newsletter quantitative claim
+────────────────────────
+
+TEXT TO REMOVE:
+“Join thousands of inkjet printer owners”
+
+APPROVED SAFE REPLACEMENT:
+
+Join our newsletter for printer deals, updates, and buying guides.
+
+────────────────────────
+FIX 9: Trademark disclaimer placement (CRITICAL)
+────────────────────────
+
+ADD THIS DISCLAIMER ONCE near the TOP of the page
+(Directly BELOW the hero section — USE EXACTLY):
+
+InkjetProGuide is an independent online retailer and informational resource. We are not affiliated with, endorsed by, or sponsored by any printer manufacturer.
+
+RULES:
+- Show once per page (not repeated)
+- Plain text, no emphasis
+- Footer disclaimer remains unchanged
+
+────────────────────────
+GLOBAL RULES:
+- Do NOT add brand names (HP, Canon, Epson, Brother) to homepage or category grids
+- Do NOT use “official”, “authorized”, “series”, “collection by brand”
+- Keep layout, styling, and URLs unchanged
+- Replace wording ONLY
+
+────────────────────────
+ACCEPTANCE CHECK:
+- No model numbers appear on homepage or category pages
+- No absolute shipping or delivery guarantees remain
+- No manufacturer-sounding collections remain
+- Reviews no longer imply external verification
+- Trademark disclaimer appears near top of page
+- Language is neutral, factual, and ad-safe
+
+GOAL:
+- Prevent brand-enforcement action
+- Pass Google Ads manual review
+- Maintain independent-retailer positioning
+- Reduce legal and misrepresentation risk

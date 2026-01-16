@@ -1,0 +1,162 @@
+TASK: Apply CRITICAL brand-safety fixes to the “Inkjet Printers” category page ONLY.
+
+PAGE SCOPE:
+- Category page titled “Inkjet Printers”
+- Product grid items shown on this page
+- Category page header and pricing badges
+- Do NOT modify checkout, cart, or individual product detail pages unless specified
+
+────────────────────────
+FIX 1: REMOVE “HP” FROM PRODUCT TITLES (CRITICAL – MUST DO)
+────────────────────────
+
+ISSUE:
+Using “HP” in visible product titles on a category page creates:
+- Trademark misuse risk
+- Google Ads brand-association violations
+- Implied authorized reseller risk
+
+ACTION (MANDATORY):
+- REMOVE the brand name “HP” from ALL VISIBLE PRODUCT TITLES on this category page.
+
+APPROVED SAFE TITLE FORMATS (USE ONE):
+
+Format A:
+DeskJet 4255e Wireless All-in-One Color Inkjet Printer
+
+Format B (SAFER):
+Wireless All-in-One Color Inkjet Printer (DeskJet 4255e)
+
+EXAMPLES – APPLY EXACTLY:
+❌ HP DeskJet 2855e Wireless All-in-One
+✅ DeskJet 2855e Wireless All-in-One Inkjet Printer
+
+❌ HP Envy 7955e Wireless Photo Printer
+✅ Wireless Photo Inkjet Printer (Envy 7955e)
+
+❌ HP OfficeJet 9730e Wide-Format Printer
+✅ Wide-Format Inkjet Printer (OfficeJet 9730e)
+
+❌ HP Smart Tank 7602
+✅ Cartridge-Free Inkjet Printer (Smart Tank 7602)
+
+IMPORTANT:
+- “HP” MAY remain ONLY in:
+  - Product description body text (lower section)
+  - Specifications table
+  - Trademark notices
+  - Backend schema / metadata (not visible titles)
+
+────────────────────────
+FIX 2: REMOVE BRAND FROM SALE BADGES (CRITICAL)
+────────────────────────
+
+ISSUE:
+Badges like “ON SALE HP DeskJet … Save XX%” imply official manufacturer pricing.
+
+ACTION:
+- REMOVE brand names from ALL sale / promo badges.
+
+REPLACE BADGE TEXT AS FOLLOWS:
+
+❌ ON SALE HP DeskJet 2855e
+✅ ON SALE – Limited Time Price
+
+OR
+✅ Special Offer
+
+DO NOT:
+- Combine brand + discount
+- Use “HP Sale”, “HP Deal”, or similar wording
+
+────────────────────────
+FIX 3: INK TRIAL CLAIMS (VERY IMPORTANT)
+────────────────────────
+
+ISSUE:
+“3 Months of Ink Trial” is a manufacturer subscription program.
+You cannot present it as guaranteed.
+
+ACTION:
+- REMOVE any guarantee-style ink trial wording from product cards.
+
+REPLACEMENT TEXT (USE EXACTLY):
+Ink trial eligibility, if any, is provided by the manufacturer and subject to manufacturer terms. InkjetProGuide does not administer or guarantee ink subscription programs.
+
+PLACEMENT:
+- Replace the existing “3 Months of Ink Trial” text
+- Use small neutral text
+- Tooltip / info icon may be used if supported
+
+────────────────────────
+FIX 4: PRICING + “SAVE XX%” MATH (MODERATE RISK)
+────────────────────────
+
+ISSUE:
+Percentage savings require verifiable MSRP → ads policy risk.
+
+ACTION:
+- REMOVE “Save XX%” language from category page pricing.
+
+APPROVED SAFE FORMATS (USE ONE):
+
+Option A:
+Previous price: $109.99  
+Current price: $79.99
+
+Option B:
+Price reduced from $109.99
+
+DO NOT:
+- Display percentage savings
+- Claim MSRP unless provable
+
+────────────────────────
+FIX 5: TOP-LEVEL CATEGORY DISCLAIMER (MANDATORY)
+────────────────────────
+
+ISSUE:
+Footer disclaimer is NOT sufficient on a commercial category page.
+
+ACTION:
+- ADD the following disclaimer ONCE, directly under the “Inkjet Printers” page heading.
+
+DISCLAIMER TEXT (MUST MATCH EXACTLY):
+
+InkjetProGuide is an independent online retailer. We are not affiliated with, endorsed by, or sponsored by HP or any other printer manufacturer. Product names are used for identification purposes only.
+
+STYLE:
+- Plain text
+- No bold, no icons
+- Visible before product grid
+
+────────────────────────
+FIX 6: “POWERED BY LIGHTSPEED” (MINOR, CLEANUP)
+────────────────────────
+
+ISSUE:
+Looks unprofessional in trust / ads reviews.
+
+ACTION:
+- REMOVE “Powered by Lightspeed” from storefront category pages.
+
+OPTIONAL:
+- Move to:
+  - Privacy Policy footer
+  - Small-print site footer
+- OR remove entirely from public storefront pages
+
+────────────────────────
+FINAL ACCEPTANCE CHECK (MANDATORY):
+- No product title on the category page contains “HP”
+- No sale badge contains any brand name
+- No guaranteed ink trial language exists
+- No percentage-based savings appear
+- Disclaimer appears once under page title
+- Category page reads neutral, factual, and independent
+
+GOAL:
+- Prevent Google Ads account suspension
+- Prevent HP trademark enforcement
+- Eliminate implied authorization risk
+- Maintain compliant, independent-retailer positioning
