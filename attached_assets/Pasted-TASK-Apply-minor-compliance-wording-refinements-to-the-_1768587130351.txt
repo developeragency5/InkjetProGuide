@@ -1,0 +1,87 @@
+TASK: Apply minor compliance wording refinements to the “Contact Us” page ONLY.
+
+PAGE SCOPE:
+- Contact Us page content
+- FAQs shown on the Contact page
+- Phone support section text
+- Do NOT change layout, navigation, footer, or other pages
+
+────────────────────────
+REQUIRED FIX 1: Soften shipping speed language (IMPORTANT)
+────────────────────────
+
+ISSUE:
+“Standard delivery takes 2–3 business days” reads like a guarantee.
+
+TEXT TO REMOVE:
+“Standard delivery takes 2–3 business days…”
+
+APPROVED SAFE REPLACEMENT
+(USE EXACTLY):
+
+“Standard delivery typically takes 2–3 business days after shipment. Delivery times may vary based on location, carrier conditions, and order processing.”
+
+RULES:
+- Replace wording only
+- Do NOT add guarantees or promises
+
+────────────────────────
+REQUIRED FIX 2: Phone support clarification (VERY LOW RISK, BUT IMPORTANT)
+────────────────────────
+
+ISSUE:
+Users may assume phone support includes technical troubleshooting.
+
+ADD THIS LINE directly BELOW:
+“Phone Support (Order Assistance Only)”
+
+TEXT TO ADD (USE EXACTLY):
+
+“We do not provide manufacturer technical support or product troubleshooting by phone.”
+
+STYLE:
+- Plain text
+- Same font size as surrounding copy
+- No icons or emphasis
+
+────────────────────────
+OPTIONAL HARDENING A: Manufacturer independence reminder
+────────────────────────
+
+ADD this sentence ONCE under the “Order Inquiries Only” section:
+
+“InkjetProGuide does not provide manufacturer-authorized technical support or warranty service.”
+
+RULES:
+- Optional but recommended
+- Plain text only
+
+────────────────────────
+OPTIONAL HARDENING B: Response-time softening
+────────────────────────
+
+TEXT TO REPLACE (OPTIONAL):
+“Response within 24 business hours”
+
+SAFER VERSION (USE IF APPLIED):
+
+“We aim to respond within 24 business hours.”
+
+────────────────────────
+DO NOT CHANGE (IMPORTANT):
+- Administrative / mailing address explanation
+- Third-party fulfillment disclosure
+- Payment method restrictions
+- Order-only support scope
+- Business hours display
+- No manufacturer affiliation language
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- Shipping timelines are clearly non-guaranteed
+- Phone support scope is unambiguous
+- No technical or warranty support is implied
+- Page remains LOW-RISK for Google Ads review
+
+GOAL:
+Make the Contact page near-bulletproof for ads approval, consumer-protection review, and brand-policy enforcement while preserving existing trust signals.

@@ -55,8 +55,11 @@ export default function ContactPage() {
                 <Phone className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">Phone Inquiries</h3>
-              <p className="text-sm text-muted-foreground mb-2">
+              <p className="text-sm text-muted-foreground mb-1">
                 Phone Support (Order Assistance Only)
+              </p>
+              <p className="text-xs text-muted-foreground mb-2">
+                We do not provide manufacturer technical support or product troubleshooting by phone.
               </p>
               <a href="tel:+13254008874" className="font-semibold text-primary hover:underline" data-testid="link-phone-contact">
                 1-325-400-8874
@@ -71,7 +74,7 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold mb-2">Email Us</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Response within 24 business hours
+                We aim to respond within 24 business hours
               </p>
               <a href="mailto:inkjetproguide@outlook.com" className="font-semibold text-primary hover:underline" data-testid="link-email-contact">
                 inkjetproguide@outlook.com
@@ -189,7 +192,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">What are your shipping options?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Standard delivery takes 2-3 business days, with express shipping available for urgent orders. 
+                    Standard delivery typically takes 2–3 business days after shipment. Delivery times may vary based on location, carrier conditions, and order processing. 
                     All shipments include tracking information sent directly to your email.
                   </p>
                 </div>
@@ -222,11 +225,14 @@ export default function ContactPage() {
             <Card className="bg-primary/5 border-primary/20">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-3">Order Inquiries Only</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                   This contact page is specifically for order-related questions including shipping inquiries, 
                   return requests, order status updates, and payment questions. InkjetProGuide is an independent 
                   online retailer serving customers in the United States. For product information, specifications, 
                   and buying guidance, please visit our <a href="/guides" className="text-primary hover:underline">Guides & Resources</a> section.
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  InkjetProGuide does not provide manufacturer-authorized technical support or warranty service.
                 </p>
               </CardContent>
             </Card>
