@@ -43,6 +43,7 @@ export default function AccessibilityPage() {
                 <p className="text-sm" data-testid="text-business-info">
                   <strong className="text-foreground">InkjetProGuide</strong><br />
                   2704 Handley Ederville Rd, Fort Worth, TX 76118, United States<br />
+                  <span className="text-sm">This address is used for mailing and administrative purposes only.</span><br />
                   Email: inkjetproguide@outlook.com | Phone: 1-325-400-8874
                 </p>
               </div>
@@ -98,7 +99,7 @@ export default function AccessibilityPage() {
           <Card>
             <CardContent className="p-8 space-y-6 text-muted-foreground">
               <p data-testid="text-features-intro">
-                We have implemented the following accessibility features on our website to improve usability for all visitors:
+                We have implemented accessibility features designed to improve usability for many users, including:
               </p>
 
               <div className="flex items-start gap-4">
@@ -120,7 +121,7 @@ export default function AccessibilityPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1" data-testid="heading-screen-reader">Screen Reader Compatibility</h3>
                   <p className="text-sm" data-testid="text-screen-reader">
-                    We have designed our website to be compatible with popular screen readers including JAWS, NVDA, and VoiceOver. All images include descriptive alt text, and ARIA labels are used where appropriate to provide context for screen reader users.
+                    Our website is designed to work with popular screen readers such as JAWS, NVDA, and VoiceOver. All images include descriptive alt text, and ARIA labels are used where appropriate to provide context for screen reader users.
                   </p>
                 </div>
               </div>
@@ -209,6 +210,9 @@ export default function AccessibilityPage() {
                 <li data-testid="text-effort-3"><strong className="text-foreground">User Feedback:</strong> We actively seek and respond to accessibility feedback from our users to guide our improvement efforts.</li>
                 <li data-testid="text-effort-4"><strong className="text-foreground">Technology Updates:</strong> We stay current with evolving accessibility standards and assistive technology developments.</li>
               </ul>
+              <p className="mt-4" data-testid="text-ongoing-disclaimer">
+                Despite our best efforts, some accessibility issues may occur due to evolving technology, third-party integrations, or user environments.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -238,7 +242,7 @@ export default function AccessibilityPage() {
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-feedback">Accessibility Feedback</h2>
             <p className="text-muted-foreground mb-6" data-testid="text-feedback">
-              We welcome your feedback on the accessibility of InkjetProGuide. If you encounter accessibility barriers, have suggestions for improvement, or need help accessing any content on our website, please contact us. We take all feedback seriously and will respond within 5 business days.
+              We welcome your feedback on the accessibility of InkjetProGuide. If you encounter accessibility barriers, have suggestions for improvement, or need help accessing any content on our website, please contact us. We take all feedback seriously and aim to respond within 5 business days.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild data-testid="button-email-accessibility">
@@ -261,7 +265,7 @@ export default function AccessibilityPage() {
           <CardContent className="p-8">
             <h2 className="text-xl font-bold mb-3" data-testid="heading-legal-compliance">Legal Compliance</h2>
             <p className="text-muted-foreground text-sm" data-testid="text-legal-compliance">
-              InkjetProGuide is committed to compliance with the Americans with Disabilities Act (ADA) and Section 508 of the Rehabilitation Act. This accessibility statement is provided in accordance with best practices for transparency and accountability. We recognize that accessibility is not just a legal obligation but a moral imperative to ensure equal access to information and services for all users.
+              InkjetProGuide is committed to making its website accessible in accordance with applicable accessibility laws and recognized best practices, including the Americans with Disabilities Act (ADA) and WCAG guidelines. While Section 508 primarily applies to U.S. federal agencies, we strive to follow its principles where applicable.
             </p>
           </CardContent>
         </Card>

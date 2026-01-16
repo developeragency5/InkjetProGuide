@@ -1,0 +1,155 @@
+TASK: Apply CPRA/CCPA and ad-platform risk fixes to the Privacy Policy ONLY.
+
+SCOPE:
+- Privacy Policy page only
+- Make wording edits only; do NOT add technical claims
+- Ensure policy remains accurate even if vendors/tools change
+
+────────────────────────
+CRITICAL FIX 1: Vendor / service naming (future-proofing)
+────────────────────────
+
+ISSUE:
+Hard-coding specific vendors (Stripe, DHL, etc.) can make the policy inaccurate if tools change.
+
+APPLY THESE REPLACEMENTS:
+
+A) PAYMENT PROCESSING
+FIND any sentence naming a specific processor (e.g., “Stripe”).
+
+REPLACE with (USE EXACTLY):
+
+Payment information is processed by our payment processor(s) (for example, Stripe), and we do not store full payment card numbers on our servers.
+
+B) SHIPPING CARRIERS
+FIND any list like:
+“USPS, UPS, FedEx, DHL”
+
+REPLACE with:
+
+common carriers (for example, USPS, UPS, or FedEx)
+
+RULES:
+- Use “for example” instead of fixed lists
+- Do NOT imply exclusivity
+
+────────────────────────
+CRITICAL FIX 2: “We do not sell” vs “share” clarification (CPRA)
+────────────────────────
+
+ISSUE:
+Policy says “we do not sell” but also references “sharing” for advertising.
+
+UNDER the statement “We do not sell personal information”, ADD these TWO lines (USE EXACTLY):
+
+We do not sell personal information for money.  
+We may “share” certain identifiers and online activity information for cross-context behavioral advertising, as that term is defined under CPRA, unless you opt out.
+
+RULES:
+- Keep both lines together
+- Do NOT remove the original “we do not sell” statement
+
+────────────────────────
+CRITICAL FIX 3: Soften exact response / deletion timelines
+────────────────────────
+
+ISSUE:
+Hard deadlines create compliance exposure if missed.
+
+APPLY THESE EXACT REPLACEMENTS:
+
+A) OPT-OUT TIMELINE
+REPLACE:
+“We will process your opt-out request within 15 business days.”
+
+WITH:
+“We aim to process opt-out requests as promptly as possible, generally within 15 business days.”
+
+B) RESPONSE TIMELINE
+REPLACE:
+“We will respond within 5 business days.”
+
+WITH:
+“We aim to respond typically within 5 business days.”
+
+C) DELETION TIMELINE
+REPLACE:
+“delete within 45 days”
+
+WITH:
+“within the timeframes required by applicable law (typically 45 days, with extensions where permitted).”
+
+────────────────────────
+CRITICAL FIX 4: Sensitive personal information (CPRA accuracy)
+────────────────────────
+
+ISSUE:
+Billing/shipping address is not automatically CPRA “Sensitive Personal Information.”
+
+REMOVE the entire existing paragraph describing sensitive personal information and
+REPLACE with (USE EXACTLY):
+
+Sensitive personal information (as defined by CPRA) may include government identifiers, precise geolocation, and certain account credentials. We do not intentionally collect sensitive personal information except where necessary to provide our services (for example, account login credentials) and to help prevent fraud. We do not use sensitive personal information to infer characteristics about you.
+
+────────────────────────
+IMPORTANT FIX 5: Global Privacy Control (GPC) wording
+────────────────────────
+
+ISSUE:
+GPC should not be overstated or limited incorrectly.
+
+REPLACE any absolute GPC language with (USE EXACTLY):
+
+Where required by applicable law, we treat Global Privacy Control (GPC) signals as a request to opt out of selling or sharing for cross-context behavioral advertising.
+
+RULES:
+- Do NOT restrict to California residents only
+- Do NOT claim technical detection unless true
+
+────────────────────────
+IMPORTANT FIX 6: Marketing platforms / advertising scope
+────────────────────────
+
+IF you do NOT run remarketing or cross-site tracking,
+REPLACE “personalized advertising” language with (USE EXACTLY):
+
+With your consent (where required), we may use marketing platforms to send email communications and to measure the effectiveness of our advertising. We do not use personal information for cross-context behavioral advertising unless described in this Privacy Policy and unless you have the right to opt out.
+
+────────────────────────
+IMPORTANT FIX 7: Third-party information sources
+────────────────────────
+
+ISSUE:
+Affiliate/partner language can imply programs you do not run.
+
+REPLACE any sentence like:
+“If you are referred through an affiliate or partner…”
+
+WITH (USE EXACTLY):
+
+We may receive limited information from service providers that help us process payments, deliver orders, prevent fraud, and measure website performance.
+
+────────────────────────
+OPTIONAL BUT STRONGLY RECOMMENDED: Notice at Collection (CPRA optics)
+────────────────────────
+
+ADD the following short section near the top of the policy, after any Quick Summary:
+
+Notice at Collection (California)  
+We collect the categories of personal information described below to process orders, provide customer service, improve our site, and help prevent fraud. We retain information as described in the Data Retention section.
+
+STYLE:
+- Plain text
+- No legal jargon beyond this
+
+────────────────────────
+ACCEPTANCE CHECK:
+- No hard vendor lock-in statements remain
+- “Sell” vs “share” is CPRA-clear
+- Timelines are softened and law-aligned
+- Sensitive PI definition is accurate
+- GPC language is conditional and defensible
+- No affiliate or remarketing claims unless true
+
+GOAL:
+Make the Privacy Policy accurate, future-proof, CPRA-safe, and trustworthy for Google Ads, Bing Ads, and consumer-protection review—without overstating technical capabilities.
