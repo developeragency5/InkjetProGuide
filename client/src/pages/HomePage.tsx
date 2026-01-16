@@ -125,7 +125,7 @@ export default function HomePage() {
                   className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg"
                   data-testid="hero-subtext"
                 >
-                  Explore in-depth printer buying guides and shop a curated selection of inkjet printers for home and office use.
+                  Explore in-depth printer buying guides and shop an independently sourced selection of inkjet printers for home and office use.
                 </p>
               </div>
 
@@ -201,7 +201,7 @@ export default function HomePage() {
                                 Featured Printer
                               </p>
                               <p className="font-semibold">
-                                Professional Office Series
+                                Office Inkjet Collection
                               </p>
                             </div>
                             <a href="/products#!/Inkjet-Printers/c/193859557">
@@ -515,7 +515,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-xl mb-3">Browse Printer Types</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Explore our curated selection of inkjet printers, wireless
+                  Explore our independently sourced selection of inkjet printers, wireless
                   printers, and photo printers. Sort by type—whether you need a
                   wireless printer for flexible connectivity, a photo printer
                   for vivid images, or comparing inkjet printer vs laser printer
@@ -539,7 +539,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground leading-relaxed">
                   Compare inkjet printer models, wireless printer connectivity
                   options, and photo printer specifications with our guides.
-                  Learn why inkjet printers often outperform laser printers for
+                  Learn about situations where inkjet printers may be more suitable than laser printers for
                   photo printing and home use.
                 </p>
               </div>
@@ -1090,7 +1090,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-bold text-2xl mb-4">Fast Shipping</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Most orders ship within 24 hours from our fulfillment centers, with delivery in 2–3 business days to addresses across the continental United States. Printers typically arrive factory-sealed. Manufacturer warranty coverage may be available and is provided by the manufacturer according to their terms and conditions. We use protective packaging to help ensure products arrive in good condition.
+                  Orders are typically processed within 1–2 business days, subject to availability and verification. Estimated delivery times typically range from 2–5 business days depending on carrier and destination. Printers typically arrive factory-sealed. Manufacturer warranty coverage may be available and is provided by the manufacturer according to their terms and conditions. We use protective packaging to help ensure products arrive in good condition.
                 </p>
               </CardContent>
             </Card>
@@ -1178,7 +1178,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 mt-4 pt-4 border-t">
                   <BadgeCheck className="w-4 h-4 text-green-600" />
                   <span className="text-xs text-muted-foreground">
-                    Verified Buyer • Order IPG-2025-4521
+                    Verified Purchase
                   </span>
                 </div>
               </CardContent>
@@ -1201,8 +1201,8 @@ export default function HomePage() {
                   "As a small business owner, I needed a printer that could
                   handle our daily document volume without breaking the bank on
                   ink. The cost analysis guides here were incredibly helpful in
-                  calculating our true cost per page. We ended up with the Smart
-                  Tank 7602 and it has been running flawlessly for six months.
+                  calculating our true cost per page. We ended up with a tank-based inkjet
+                  and it has been running flawlessly for six months.
                   The tank system saves us hundreds compared to cartridges."
                 </blockquote>
                 <div className="flex items-center gap-4">
@@ -1219,7 +1219,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 mt-4 pt-4 border-t">
                   <BadgeCheck className="w-4 h-4 text-green-600" />
                   <span className="text-xs text-muted-foreground">
-                    Verified Buyer • Order IPG-2025-3187
+                    Verified Purchase
                   </span>
                 </div>
               </CardContent>
@@ -1261,7 +1261,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 mt-4 pt-4 border-t">
                   <BadgeCheck className="w-4 h-4 text-green-600" />
                   <span className="text-xs text-muted-foreground">
-                    Verified Buyer • Order IPG-2025-2854
+                    Verified Purchase
                   </span>
                 </div>
               </CardContent>
@@ -1269,7 +1269,7 @@ export default function HomePage() {
           </div>
           
           <p className="text-center text-xs text-muted-foreground mt-8">
-            Customer reviews are submitted by purchasers and reflect individual experiences. Results may vary.
+            Reviews reflect individual customer experiences and are not guarantees of performance. Reviews may be collected manually or through internal verification processes.
           </p>
         </div>
       </section>
@@ -1292,8 +1292,8 @@ export default function HomePage() {
             Save Money & Stay Informed
           </h2>
           <p className="text-lg md:text-xl mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Join thousands of inkjet printer owners who subscribe to our weekly
-            newsletter. Get exclusive deals, new product announcements, and
+            Join our newsletter for printer deals, updates, and buying guides.
+            Get exclusive deals, new product announcements, and
             buying guide updates delivered directly to your inbox.
           </p>
           <form
