@@ -169,10 +169,11 @@ export function ProductCard({ product }: ProductCardProps) {
           {/* Top badge and buttons */}
           <div className="absolute top-4 left-4 right-4 z-10 flex items-start justify-between gap-2">
             <div>
-              {/* Show only one badge with priority: Discount > Best Seller > New Arrival */}
+              {/* Show only one badge with priority: Special Offer > Best Seller > New Arrival */}
+              {/* Note: Removed percentage-based discounts for ad compliance - now shows generic "Special Offer" */}
               {hasDiscount ? (
                 <Badge className="bg-destructive text-destructive-foreground" data-testid={`badge-discount-${product.id}`}>
-                  -{discountPercent}%
+                  Special Offer
                 </Badge>
               ) : isBestSeller ? (
                 <Badge className="bg-yellow-500 text-yellow-950" data-testid={`badge-bestseller-${product.id}`}>

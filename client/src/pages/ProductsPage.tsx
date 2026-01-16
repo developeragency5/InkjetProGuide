@@ -183,8 +183,12 @@ export default function ProductsPage() {
               ? category
               : "Inkjet Printers"}
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mb-4">
             Discover our complete collection of inkjet printers
+          </p>
+          {/* Independent Retailer Disclaimer - Required for brand compliance */}
+          <p className="text-sm text-muted-foreground">
+            InkjetProGuide is an independent online retailer. We are not affiliated with, endorsed by, or sponsored by HP or any other printer manufacturer. Product names are used for identification purposes only.
           </p>
         </div>
 
@@ -200,7 +204,7 @@ export default function ProductsPage() {
                 </h2>
                 
                 <p className="mb-4">
-                  InkjetProGuide provides informational buying guides and a curated online store featuring inkjet printers sourced through independent distribution channels.
+                  InkjetProGuide provides informational buying guides and an independently sourced online store featuring inkjet printers from independent distribution channels.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 my-6">

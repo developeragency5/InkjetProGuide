@@ -100,7 +100,7 @@ export const staticProducts: StaticProduct[] = [
     id: "6",
     name: "OfficeJet 8135e Wireless All-in-One",
     slug: "officejet-8135e",
-    description: "Wireless all-in-one color inkjet printer with 3 months of ink trial included. Perfect for office productivity and professional documents.",
+    description: "Wireless all-in-one color inkjet printer designed for office productivity and professional documents. Ink subscription eligibility, if any, is provided by the manufacturer and subject to manufacturer terms.",
     price: "199.99",
     originalPrice: "239.99",
     image: "https://d2j6dbq0eux0bg.cloudfront.net/images/128774264/5501374379.png",
@@ -110,7 +110,7 @@ export const staticProducts: StaticProduct[] = [
     inStock: true,
     ecwidProductId: "806466580",
     ecwidUrl: "https://www.inkjetproguide.com/products#!/HP-OfficeJet-8135e-Wireless-All-in-One-Color-Inkjet-Printer-with-3-Months-of-Ink-Trial-for-Office-Use/p/806466580",
-    features: ["Ink Trial Included", "Office Use", "Wireless", "Professional Output"]
+    features: ["Office Use", "Wireless", "Professional Output", "High-Yield Compatible"]
   },
   {
     id: "7",

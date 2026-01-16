@@ -1,0 +1,202 @@
+TASK: Apply CRITICAL brand-safety and Google Ads compliance fixes to the “Office Printers” category page ONLY.
+
+PAGE SCOPE:
+- Category page titled “Office Printers”
+- All product cards and pricing badges shown on this page
+- Category page header and disclaimer area
+- Do NOT change checkout, cart, or backend integrations
+
+────────────────────────
+FIX 1: REMOVE “HP” FROM ALL VISIBLE PRODUCT TITLES (NON-NEGOTIABLE)
+────────────────────────
+
+ISSUE:
+Using “HP” in visible product titles on a commercial category page is the #1 trigger for:
+- Trademark enforcement
+- Google Ads misrepresentation flags
+- Implied authorized reseller violations
+
+ACTION (MANDATORY):
+- REMOVE the brand name “HP” from ALL VISIBLE PRODUCT TITLES on this page.
+
+APPROVED SAFE TITLE FORMATS (USE ONE):
+
+Format A:
+OfficeJet 8135e Wireless All-in-One Color Inkjet Printer
+
+Format B (SAFER):
+Wireless All-in-One Color Inkjet Printer (OfficeJet 8135e)
+
+APPLY TO ALL PRODUCTS, INCLUDING:
+❌ HP OfficeJet 8015e
+❌ HP LaserJet M607n
+❌ HP LaserJet 4301fdw
+❌ HP LaserJet Enterprise M554dn
+
+EXAMPLES OF REQUIRED CHANGES:
+❌ HP OfficeJet 8135e Wireless All-in-One Color Inkjet Printer
+✅ OfficeJet 8135e Wireless All-in-One Color Inkjet Printer
+
+❌ HP LaserJet 4301fdw
+✅ Monochrome Laser Printer (Model 4301fdw)
+
+IMPORTANT:
+“HP” MAY appear ONLY in:
+- Product description body text
+- Technical specifications table
+- Warranty section
+- Trademark notice
+- Backend/schema (not visible headlines)
+
+────────────────────────
+FIX 2: REMOVE “HP LASERJET ENTERPRISE” WORDING (VERY DANGEROUS)
+────────────────────────
+
+ISSUE:
+“Enterprise” combined with HP implies:
+- Authorized corporate distribution
+- Contract pricing
+- Official B2B relationship
+This is a known HP enforcement keyword.
+
+ACTION (MANDATORY):
+- REMOVE the word “Enterprise” from ALL visible product titles.
+
+REQUIRED REPLACEMENTS:
+❌ HP LaserJet Enterprise M554dn High-Speed Color Laser Printer
+✅ LaserJet M554dn High-Speed Color Laser Printer
+OR
+✅ High-Speed Color Laser Printer (Model M554dn)
+
+────────────────────────
+FIX 3: REMOVE BRAND FROM SALE BADGES
+────────────────────────
+
+ISSUE:
+“ON SALE HP …” implies official manufacturer discounting.
+
+ACTION:
+- REMOVE brand names from ALL sale / promo badges.
+
+APPROVED SAFE BADGE TEXT (USE ONE):
+- Special Offer
+- Limited-Time Price
+- Promotional Price
+
+DO NOT USE:
+- ON SALE HP …
+- HP Discount
+- HP Deal
+
+────────────────────────
+FIX 4: INK TRIAL / SUBSCRIPTION LANGUAGE (CRITICAL)
+────────────────────────
+
+ISSUE:
+HP Instant Ink is a manufacturer program.
+You cannot imply availability or guarantee.
+
+ACTION:
+- REMOVE all “3 Months of Ink Trial” or similar wording.
+
+REQUIRED REPLACEMENT TEXT (USE EXACTLY):
+
+Ink subscription eligibility, if any, is determined and provided by the manufacturer and subject to manufacturer terms. InkjetProGuide does not administer or guarantee ink subscription programs.
+
+PLACEMENT:
+- On product card OR
+- On product page near the price
+- Use small, neutral text (no icons or emphasis)
+
+────────────────────────
+FIX 5: REMOVE “SAVE XX%” PRICING
+────────────────────────
+
+ISSUE:
+Percentage discounts require verifiable MSRP proof and trigger Google pricing audits.
+
+ACTION:
+- REMOVE all percentage-based savings.
+
+APPROVED SAFE FORMATS (USE ONE):
+
+Previous price: $309.99  
+Current price: $209.99
+
+OR
+
+Price reduced from $309.99
+
+DO NOT:
+- Show percentages
+- Claim MSRP unless provable
+
+────────────────────────
+FIX 6: SKU FORMAT ERROR (VERY IMPORTANT)
+────────────────────────
+
+ISSUE:
+This is NOT a valid SKU:
+❌ SKU HP LaserJet M209 High-Speed Monochrome Laser Printer for Office Use
+
+ACTION:
+- Replace with an INTERNAL, NEUTRAL SKU.
+
+APPROVED FORMAT EXAMPLE:
+SKU PRN-LJ-M209-EN-LSR
+
+RULES:
+- SKUs must be internal identifiers
+- No brand names
+- No descriptive phrases
+
+────────────────────────
+FIX 7: TOP-LEVEL CATEGORY DISCLAIMER (MANDATORY)
+────────────────────────
+
+ISSUE:
+Footer disclaimer alone is NOT sufficient on a branded category page.
+
+ACTION:
+- ADD the following disclaimer ONCE, directly under the “Office Printers” page heading.
+
+DISCLAIMER TEXT (MUST MATCH EXACTLY):
+
+InkjetProGuide is an independent online retailer. We are not affiliated with, endorsed by, or sponsored by HP or any other printer manufacturer. Product names are used solely for identification purposes.
+
+STYLE:
+- Plain text
+- No bold, no icons
+- Visible before product grid
+
+────────────────────────
+FIX 8: REMOVE “POWERED BY LIGHTSPEED” FROM STOREFRONT
+────────────────────────
+
+ISSUE:
+Not a policy violation, but harms trust and merchant reviews.
+
+ACTION:
+- REMOVE “Powered by Lightspeed” from Office Printers category page.
+
+OPTIONAL:
+- Move to Privacy Policy
+- Move to legal footer
+- Or remove entirely from public storefront pages
+
+────────────────────────
+FINAL ACCEPTANCE CHECK (MANDATORY):
+- No product title contains “HP”
+- No product title contains “Enterprise”
+- No sale badge contains a brand name
+- No ink trial is presented as guaranteed
+- No percentage-based savings exist
+- All SKUs are neutral and internal
+- Disclaimer appears under page title
+- Page reads independent, neutral, non-authorized
+
+GOAL:
+- Prevent Google Ads suspension
+- Prevent HP trademark enforcement
+- Eliminate implied authorization
+- Make Office Printers page ad-safe and audit-safe
