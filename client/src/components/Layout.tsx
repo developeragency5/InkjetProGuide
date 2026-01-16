@@ -158,7 +158,7 @@ export function Layout({ children }: LayoutProps) {
                 <img 
                   src={logoImage} 
                   alt="InkjetProGuide - Printers and Guides" 
-                  className="h-16 md:h-20 w-auto"
+                  className="h-10 md:h-12 w-auto"
                 />
               </span>
             </Link>
@@ -293,7 +293,7 @@ export function Layout({ children }: LayoutProps) {
                 <img 
                   src={logoImage} 
                   alt="InkjetProGuide - Printers and Guides" 
-                  className="h-14 w-auto"
+                  className="h-10 w-auto"
                 />
               </div>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
