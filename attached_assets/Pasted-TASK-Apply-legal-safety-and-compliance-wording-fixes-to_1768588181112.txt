@@ -1,0 +1,111 @@
+TASK: Apply legal-safety and compliance wording fixes to the “Accessibility Statement” page ONLY.
+
+PAGE SCOPE:
+- Accessibility Statement page
+- Do NOT modify footer, navigation, or other policies
+- Keep structure and headings unless explicitly replaced
+
+────────────────────────
+CRITICAL FIX 1: Remove absolute accessibility guarantees
+────────────────────────
+
+ISSUE:
+Current wording makes specific, testable guarantees (e.g., “fully navigable,” “all images include alt text,” universal compatibility). These claims are commonly used in ADA demand letters if any element fails.
+
+FIND this sentence:
+“We have implemented the following accessibility features on our website to improve usability for all visitors:”
+
+REPLACE WITH (USE EXACTLY):
+
+“We have implemented accessibility features designed to improve usability for many users, including:”
+
+RULES:
+- Replace the sentence only
+- Keep the feature list unchanged
+- Do NOT add “fully,” “all,” or “guaranteed” language
+
+────────────────────────
+CRITICAL FIX 2: Screen reader compatibility — soften certainty
+────────────────────────
+
+FIND this sentence:
+“We have designed our website to be compatible with popular screen readers including JAWS, NVDA, and VoiceOver.”
+
+REPLACE WITH (USE EXACTLY):
+
+“Our website is designed to work with popular screen readers such as JAWS, NVDA, and VoiceOver.”
+
+RULES:
+- Replace wording only
+- Do NOT add certification or testing claims
+
+────────────────────────
+CRITICAL FIX 3: ADA / Section 508 compliance wording
+────────────────────────
+
+ISSUE:
+Section 508 applies primarily to U.S. federal agencies and contractors. Claiming compliance can be misused legally.
+
+REMOVE the entire existing “Legal Compliance” paragraph and
+REPLACE with the following block (USE EXACTLY):
+
+Legal Compliance
+
+InkjetProGuide is committed to making its website accessible in accordance with applicable accessibility laws and recognized best practices, including the Americans with Disabilities Act (ADA) and WCAG guidelines. While Section 508 primarily applies to U.S. federal agencies, we strive to follow its principles where applicable.
+
+RULES:
+- Keep heading style consistent
+- No certification or audit claims
+
+────────────────────────
+RECOMMENDED FIX 4: Response-time flexibility
+────────────────────────
+
+FIND this sentence:
+“We will respond within 5 business days.”
+
+REPLACE WITH (USE EXACTLY):
+
+“We aim to respond within 5 business days.”
+
+────────────────────────
+RECOMMENDED FIX 5: Add ongoing-compliance disclaimer (VERY IMPORTANT)
+────────────────────────
+
+ADD the following sentence under the “Ongoing Efforts” section (USE EXACTLY):
+
+“Despite our best efforts, some accessibility issues may occur due to evolving technology, third-party integrations, or user environments.”
+
+RULES:
+- Single sentence
+- Plain text
+- No emphasis
+
+────────────────────────
+OPTIONAL CLEANUP 6: Address clarification (consistency)
+────────────────────────
+
+If the address is listed without clarification, ADD this line directly under the address block:
+
+“This address is used for mailing and administrative purposes only.”
+
+────────────────────────
+DO NOT CHANGE (IMPORTANT):
+- WCAG 2.1 Level AA goal statement (“We strive to meet…”)
+- POUR principles explanation
+- Tips for Accessible Browsing section
+- Known Limitations section
+- Feedback contact details
+- Footer disclaimers
+
+────────────────────────
+FINAL ACCEPTANCE CHECK:
+- No absolute accessibility guarantees remain
+- Screen reader language is aspirational, not absolute
+- Section 508 is referenced accurately
+- Response-time expectations are flexible
+- Ongoing-technology disclaimer is present
+- Page remains professional and trust-building
+
+GOAL:
+Reduce ADA demand-letter risk, eliminate false-representation exposure, and keep the Accessibility Statement honest, defensible, and compliant.

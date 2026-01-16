@@ -36,10 +36,10 @@ export default function RefundPolicyPage() {
                 <strong className="text-foreground">30-Day Return Policy:</strong> Return eligible printers within 30 days of delivery. Unopened or opened-but-unused items may qualify for a full refund. Items that show signs of use may incur up to a 15% restocking fee.
               </p>
               <p data-testid="text-summary-2">
-                <strong className="text-foreground">Return Shipping:</strong> Return shipping eligibility and label availability are determined based on your return request. Contact us to initiate a return.
+                <strong className="text-foreground">Return Shipping:</strong> Return shipping costs depend on the return reason. If the return is due to our error (wrong item) or a verified defective item, we will provide a prepaid return label at no cost. For change-of-mind returns, the customer is responsible for return shipping costs unless we state otherwise in writing.
               </p>
               <p data-testid="text-summary-3">
-                <strong className="text-foreground">Fast Refunds:</strong> Refunds processed within 5-7 business days of receiving your return.
+                <strong className="text-foreground">Fast Refunds:</strong> Refunds are processed within 5-7 business days after inspection; banks may take additional time to post the credit.
               </p>
               <div className="mt-4 p-4 bg-muted/50 rounded-md">
                 <p className="text-sm" data-testid="text-business-info">
@@ -67,6 +67,9 @@ export default function RefundPolicyPage() {
                   <li data-testid="text-fee-tier-2"><strong>Opened, unused, like-new condition:</strong> No restocking fee - Full 100% refund</li>
                   <li data-testid="text-fee-tier-3"><strong>Opened items with signs of use:</strong> Up to 15% restocking fee (based on condition)</li>
                 </ul>
+                <p className="mt-3 text-sm" data-testid="text-restocking-disclosure">
+                  Restocking fees (if any) are based on the condition of the returned item after inspection (e.g., ink installed/used, test pages printed, missing packaging, missing accessories, or signs of installation). If a restocking fee applies, we will email you the reason before finalizing the refund.
+                </p>
               </div>
               
               <div className="mt-6">
@@ -74,8 +77,7 @@ export default function RefundPolicyPage() {
                   Eligible Returns
                 </h3>
                 <ul className="space-y-2 ml-6 list-disc">
-                  <li data-testid="text-eligible-1">Products must be returned in original, unopened packaging when possible</li>
-                  <li data-testid="text-eligible-2">All accessories, manuals, and components must be included</li>
+                  <li data-testid="text-eligible-1">Products must be returned in original packaging when available, with all accessories, manuals, and included components</li>
                   <li data-testid="text-eligible-3">Product must be in resalable condition with no physical damage</li>
                   <li data-testid="text-eligible-4">Original purchase receipt or order number required</li>
                   <li data-testid="text-eligible-5">Returns must be initiated within 30 days of delivery date</li>
@@ -100,7 +102,7 @@ export default function RefundPolicyPage() {
                   Return Shipping
                 </h3>
                 <p data-testid="text-rma-shipping">
-                  Return shipping eligibility and label availability are determined according to this Return & Refund Policy. Once your return is approved, we will provide instructions for shipping your item back to us. Please contact us to initiate a return request.
+                  Return shipping costs depend on the return reason. If the return is due to our error (wrong item) or a verified defective item, we will provide a prepaid return label at no cost. For change-of-mind returns, the customer is responsible for return shipping costs unless we state otherwise in writing. Once your return is approved, we will provide instructions for shipping your item back to us. Please contact us to initiate a return request.
                 </p>
               </div>
             </CardContent>
@@ -132,7 +134,7 @@ export default function RefundPolicyPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2" data-testid="heading-step-2">Receive Return Authorization</h3>
                     <p className="text-muted-foreground" data-testid="text-step-2">
-                      We'll send you a Return Merchandise Authorization (RMA) number and return instructions within 24 business hours.
+                      We'll send you a Return Merchandise Authorization (RMA) number and return instructions within 24 business hours. Do not ship returns to our corporate mailing address. Returns must be sent only to the return address provided with your RMA instructions.
                     </p>
                   </div>
                 </div>
@@ -201,7 +203,7 @@ export default function RefundPolicyPage() {
                   Credit/Debit Cards (Stripe): Refunded to the original payment method. We process refunds within 5–7 business days after inspection. Your bank may take an additional 3–5 business days to post the credit.
                 </p>
                 <p data-testid="text-refund-method-2">
-                  If a payment fails or a card is closed/expired: We may request an alternative refund method (such as store credit or a replacement card) to complete the refund securely.
+                  If a refund to the original payment method is not possible (for example, the account is closed), we will contact you to confirm an alternative method. We will not substitute store credit unless you agree.
                 </p>
               </div>
 
@@ -213,7 +215,7 @@ export default function RefundPolicyPage() {
                   <div className="p-3 bg-muted/50 rounded-md">
                     <p className="font-medium text-foreground mb-1">Return Shipping (You to Us):</p>
                     <p className="text-sm" data-testid="text-return-shipping-cost">
-                      Return shipping eligibility and costs are determined based on your return request and reason for return.
+                      Return shipping costs depend on the return reason. If the return is due to our error (wrong item) or a verified defective item, we will provide a prepaid return label at no cost. For change-of-mind returns, the customer is responsible for return shipping costs unless we state otherwise in writing.
                     </p>
                   </div>
                   <div className="p-3 bg-muted/50 rounded-md">
@@ -268,7 +270,7 @@ export default function RefundPolicyPage() {
                   What to Do
                 </h3>
                 <ul className="space-y-2 ml-6 list-disc">
-                  <li data-testid="text-damaged-1">Contact us as soon as possible (preferably within 48 hours) of delivery</li>
+                  <li data-testid="text-damaged-1">Contact us as soon as possible after delivery. For fastest resolution, we recommend reporting visible shipping damage within 48 hours. Reporting after 48 hours may limit carrier-claim options, but we will still review your request under this policy and applicable law.</li>
                   <li data-testid="text-damaged-2">Provide photos of the damage or describe the defect</li>
                   <li data-testid="text-damaged-3">Keep all original packaging and materials</li>
                   <li data-testid="text-damaged-4">We'll arrange a return shipment or pickup where available and issue a replacement or refund at no cost to you</li>
@@ -365,7 +367,7 @@ export default function RefundPolicyPage() {
             </h3>
             <div className="space-y-3 text-sm text-muted-foreground">
               <p data-testid="text-policy-updates">
-                <strong className="text-foreground">Policy Updates:</strong> We reserve the right to update this return policy at any time. Changes will be effective immediately upon posting to our website.
+                <strong className="text-foreground">Policy Updates:</strong> We may update this policy from time to time. The version in effect on the date you place your order will apply to that order.
               </p>
               <p data-testid="text-fraud-prevention">
                 <strong className="text-foreground">Fraud Prevention:</strong> We reserve the right to refuse returns that show signs of fraud, abuse, or violation of our terms of service.
