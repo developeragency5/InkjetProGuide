@@ -199,7 +199,7 @@ export default function GuidesPage() {
     {
       number: 28,
       category: "Cost Analyzing",
-      title: "Instant Ink Subscription: Complete Guide",
+      title: "Ink Subscription Programs Explained (Including Instant Ink)",
       description: "Pricing, limits, and whether subscription ink is worth it.",
       readTime: "9 min read"
     }

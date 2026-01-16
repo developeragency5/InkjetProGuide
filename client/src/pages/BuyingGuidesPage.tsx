@@ -351,8 +351,8 @@ const guides = [
   },
   {
     id: "instant-ink",
-    title: "Instant Ink Subscription: Complete Guide",
-    description: "Everything you need to know about Instant Ink subscription service, pricing tiers, and whether it's worth it.",
+    title: "Ink Subscription Programs Explained (Including Instant Ink)",
+    description: "Learn about printer ink subscription programs, pricing tiers, and whether subscription services are worth it for your printing needs.",
     icon: DollarSign,
     color: "bg-yellow-500",
     readTime: "9 min read",
@@ -397,6 +397,9 @@ export default function BuyingGuidesPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4" data-testid="text-hero-title">
               Inkjet Printer Guide Library
             </h1>
+            <p className="text-sm text-muted-foreground mb-4">
+              All buying guides are informational only. InkjetProGuide is an independent retailer and does not receive compensation from printer manufacturers for guide content or rankings. Product names are used solely for identification purposes.
+            </p>
             <p className="text-xl text-muted-foreground mb-6">
               Your complete resource for inkjet printer buying decisions, maintenance tips, cost optimization, and technical knowledge.
             </p>
@@ -409,11 +412,11 @@ export default function BuyingGuidesPage() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium">Professionally Reviewed</span>
+                <span className="text-sm font-medium">Written by experienced printing professionals</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium">Updated 2024</span>
+                <span className="text-sm font-medium">Updated regularly</span>
               </div>
             </div>
 
@@ -429,7 +432,7 @@ export default function BuyingGuidesPage() {
                 Make Smart Choices
               </Badge>
               <Badge className="bg-primary/10 text-primary hover:bg-primary/20" data-testid="badge-ready-buy">
-                Ready to Buy
+                Explore Available Printers
               </Badge>
             </div>
 
