@@ -1,7 +1,7 @@
 import { ReactNode, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, User, ShoppingCart } from "lucide-react";
-import logoImage from "@assets/Gemini_Generated_Image_ngig6ingig6ingig_1768592289709.png";
+import logoImage from "@assets/Gemini_Generated_Image_ngig6ingig6ingig_(1)_1768593260552.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useMutation } from "@tanstack/react-query";
