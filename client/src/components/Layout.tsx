@@ -346,13 +346,7 @@ export function Layout({ children }: LayoutProps) {
                     Office Inkjet Printers
                   </a>
                 </li>
-                <li>
-                  <Link href="/compare">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-compare">
-                      Compare Products
-                    </span>
-                  </Link>
-                </li>
+                
               </ul>
             </div>
 
@@ -374,13 +368,7 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="font-semibold text-base mb-4 text-foreground">Help & Company</h3>
               <ul className="space-y-2.5 text-sm">
-                <li>
-                  <Link href="/help">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-help-center">
-                      Help Center
-                    </span>
-                  </Link>
-                </li>
+                
                 <li>
                   <Link href="/contact">
                     <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-contact">
@@ -388,13 +376,7 @@ export function Layout({ children }: LayoutProps) {
                     </span>
                   </Link>
                 </li>
-                <li>
-                  <Link href="/order-lookup">
-                    <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-order-lookup">
-                      Track Order
-                    </span>
-                  </Link>
-                </li>
+                
                 <li>
                   <Link href="/about">
                     <span className="text-muted-foreground hover:text-primary hover-elevate px-2 py-1 -ml-2 rounded-md cursor-pointer block transition-colors" data-testid="link-footer-about">
