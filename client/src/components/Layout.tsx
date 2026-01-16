@@ -1,4 +1,4 @@
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, User, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,11 +18,62 @@ export function Layout({ children }: LayoutProps) {
   const [location, setLocation] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [cartItemCount, setCartItemCount] = useState(0);
   const { toast } = useToast();
+  const cartListenerAdded = useRef(false);
 
-  // Initialize Ecwid script on mount
+  // Initialize Ecwid script on mount and track cart changes
   useEffect(() => {
     initEcwidScript();
+    
+    let checkInterval: NodeJS.Timeout | null = null;
+    let cleanupTimeout: NodeJS.Timeout | null = null;
+    
+    // Cart change handler
+    const handleCartChange = (cart: any) => {
+      if (cart && typeof cart.productsQuantity === 'number') {
+        setCartItemCount(cart.productsQuantity);
+      }
+    };
+    
+    // Set up cart change listener for dynamic cart badge
+    const setupCartListener = () => {
+      if (cartListenerAdded.current) return;
+      
+      if (window.Ecwid && window.Ecwid.OnCartChanged) {
+        cartListenerAdded.current = true;
+        window.Ecwid.OnCartChanged.add(handleCartChange);
+        
+        // Get initial cart state
+        if (window.Ecwid.Cart && typeof window.Ecwid.Cart.get === 'function') {
+          window.Ecwid.Cart.get(handleCartChange);
+        }
+      }
+    };
+    
+    // Wait for Ecwid API to be ready
+    if (window.Ecwid && window.Ecwid.OnAPILoaded) {
+      window.Ecwid.OnAPILoaded.add(setupCartListener);
+    } else {
+      // Poll for Ecwid to be available
+      checkInterval = setInterval(() => {
+        if (window.Ecwid && window.Ecwid.OnAPILoaded) {
+          window.Ecwid.OnAPILoaded.add(setupCartListener);
+          if (checkInterval) clearInterval(checkInterval);
+        }
+      }, 500);
+      
+      // Clean up interval after 10 seconds
+      cleanupTimeout = setTimeout(() => {
+        if (checkInterval) clearInterval(checkInterval);
+      }, 10000);
+    }
+    
+    // Cleanup function
+    return () => {
+      if (checkInterval) clearInterval(checkInterval);
+      if (cleanupTimeout) clearTimeout(cleanupTimeout);
+    };
   }, []);
 
   // Scroll to top when route changes
@@ -126,10 +177,20 @@ export function Layout({ children }: LayoutProps) {
               </a>
               <a 
                 href="/products#!/~/cart" 
-                className="flex flex-col items-center gap-1 text-foreground hover:text-primary transition-colors cursor-pointer"
+                className="flex flex-col items-center gap-1 text-foreground hover:text-primary transition-colors cursor-pointer relative"
                 data-testid="ecwid-cart-header"
               >
-                <ShoppingCart className="w-6 h-6" />
+                <div className="relative">
+                  <ShoppingCart className="w-6 h-6" />
+                  {cartItemCount > 0 && (
+                    <span 
+                      className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1"
+                      data-testid="cart-badge-count"
+                    >
+                      {cartItemCount > 99 ? '99+' : cartItemCount}
+                    </span>
+                  )}
+                </div>
                 <span className="text-xs font-medium">Cart</span>
               </a>
               
